@@ -30,6 +30,9 @@
 # vercel
 .vercel/
 
+# local patch backups
+.manna-patch-backup-*/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

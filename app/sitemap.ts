@@ -56,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const countryRoutes: MetadataRoute.Sitemap = countries.map((country) => ({
     url: `${siteConfig.url}/countries/${country.slug}`,
-    lastModified: new Date(),
+    lastModified: new Date(`${country.updatedAt}T00:00:00+09:00`),
     changeFrequency: "monthly",
     priority: 0.8,
   }));

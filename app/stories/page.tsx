@@ -250,8 +250,8 @@ export default async function StoriesPage({
                 aria-current={activeCountry === "all" ? "page" : undefined}
                 className={`shrink-0 rounded-full border px-5 py-2.5 text-sm font-bold no-underline transition ${
                   activeCountry === "all"
-                    ? "border-neutral-950 bg-neutral-950 !text-white"
-                    : "border-stone-300 bg-white !text-neutral-600 hover:border-neutral-950 hover:!text-neutral-950"
+                    ? "border-[#b9480c] bg-[#b9480c] !text-white"
+                    : "border-stone-300 bg-white !text-neutral-600 hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
                 }`}
               >
                 전체 지역
@@ -268,8 +268,8 @@ export default async function StoriesPage({
                     aria-current={active ? "page" : undefined}
                     className={`shrink-0 rounded-full border px-5 py-2.5 text-sm font-bold no-underline transition ${
                       active
-                        ? "border-neutral-950 bg-neutral-950 !text-white"
-                        : "border-stone-300 bg-white !text-neutral-600 hover:border-neutral-950 hover:!text-neutral-950"
+                        ? "border-[#b9480c] bg-[#b9480c] !text-white"
+                        : "border-stone-300 bg-white !text-neutral-600 hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
                     }`}
                   >
                     {country.nameKo}

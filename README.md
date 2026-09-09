@@ -92,9 +92,23 @@ API는 서버의 서비스 역할 키로 `public.inquiries` 테이블에 데이�
 
 정적 콘텐츠는 `lib/content.ts`에서 관리합니다.
 
-- `countries`: 나라·지역 소개
+- `countries`: 나라·지역 소개, 식탁의 장면, 지역·공간별 특징, 식사 이해 노트와 참고 자료
 - `stories`: 문화 이야기와 참고 자료
 - `recipes`: 재료, 조리 순서와 문화적 배경
+
+나라 상세 페이지는 `countries` 데이터의 다음 필드를 자동으로 표시합니다.
+
+```text
+introduction             식문화 개요
+representativeFlavors    대표적인 맛
+mainIngredients          주요 재료
+foodCulture              식문화 키워드
+representativeFoods      대표 음식
+tableScenes              일상에서 나타나는 식사 장면
+regionalNotes            지역 또는 식사 공간별 차이
+diningNotes              문화적 일반화를 피하기 위한 안내
+sources                  공식 기관과 참고 자료
+```
 
 새 상세 페이지는 별도로 만들 필요가 없습니다. 배열에 콘텐츠를 추가하면
 동적 경로와 사이트맵에 함께 반영됩니다.

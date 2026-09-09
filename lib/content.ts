@@ -35,6 +35,23 @@ export type SourceLink = {
   url: string;
 };
 
+export type CountryTableScene = {
+  eyebrow: string;
+  title: string;
+  description: string;
+};
+
+export type CountryRegionalNote = {
+  name: string;
+  description: string;
+  foods: string[];
+};
+
+export type CountryDiningNote = {
+  title: string;
+  description: string;
+};
+
 export type Country = {
   slug: CountrySlug;
   nameKo: string;
@@ -47,8 +64,13 @@ export type Country = {
   mainIngredients: string[];
   foodCulture: string[];
   representativeFoods: string[];
+  tableScenes: CountryTableScene[];
+  regionalNotes: CountryRegionalNote[];
+  diningNotes: CountryDiningNote[];
+  sources: SourceLink[];
   storySlugs: string[];
   recipeSlugs: string[];
+  updatedAt: string;
   palette: Palette;
 };
 
@@ -140,12 +162,89 @@ export const countries: Country[] = [
       "한국 음식은 한 가지 대표 메뉴만으로 설명하기 어렵습니다. 밥을 중심에 두고 국이나 찌개, 김치와 여러 반찬을 함께 놓는 구성 자체가 식사의 중요한 특징입니다.",
       "발효 장류와 저장 음식, 계절에 따라 달라지는 나물과 국물 요리는 지역과 가정의 생활방식을 보여 줍니다. 다만 오늘날의 식사는 1인 가구, 외식, 배달 문화의 영향으로 매우 다양한 형태를 갖습니다.",
     ],
-    representativeFlavors: ["발효의 깊은 맛", "국물의 감칠맛", "매콤달콤한 양념"],
+    representativeFlavors: [
+      "발효의 깊은 맛",
+      "국물의 감칠맛",
+      "매콤달콤한 양념",
+    ],
     mainIngredients: ["쌀", "콩과 장류", "배추와 무", "제철 나물", "돼지고기"],
-    foodCulture: ["한 상 차림", "반찬을 나누는 식사", "김장과 저장 음식", "시장 먹거리"],
+    foodCulture: [
+      "한 상 차림",
+      "반찬을 나누는 식사",
+      "김장과 저장 음식",
+      "시장 먹거리",
+    ],
     representativeFoods: ["김치", "비빔밥", "불고기", "순대볶음"],
+    tableScenes: [
+      {
+        eyebrow: "DAILY TABLE",
+        title: "밥·국·반찬이 서로 역할을 나누는 한 끼",
+        description:
+          "밥을 중심으로 국이나 찌개, 김치와 반찬을 곁들이는 구조가 널리 알려져 있습니다. 한 접시보다 여러 맛의 관계를 읽는 것이 한국 식탁을 이해하는 출발점입니다.",
+      },
+      {
+        eyebrow: "SEASONAL WORK",
+        title: "함께 만들고 오래 두고 먹는 저장 음식",
+        description:
+          "김치와 장류, 말린 나물처럼 계절의 재료를 보존하는 방식은 조리 기술이면서 가족과 이웃이 노동을 나누는 문화이기도 합니다.",
+      },
+      {
+        eyebrow: "MARKET & STREET",
+        title: "장보기와 식사가 자연스럽게 이어지는 시장",
+        description:
+          "전통시장과 분식점에서는 떡볶이, 순대, 전, 국수처럼 빠르게 먹거나 여럿이 나눌 수 있는 음식이 일상적인 장보기 동선과 연결됩니다.",
+      },
+    ],
+    regionalNotes: [
+      {
+        name: "강원 산지와 내륙",
+        description:
+          "산지가 많은 환경에서 메밀, 감자, 옥수수 같은 작물이 음식의 중요한 기반이 되었습니다.",
+        foods: ["막국수", "감자옹심이", "메밀전"],
+      },
+      {
+        name: "전라권의 여러 지역",
+        description:
+          "농수산물과 발효 재료를 폭넓게 활용하며, 지역과 계절에 따라 다양한 반찬과 해산물 음식이 발달했습니다.",
+        foods: ["비빔밥", "젓갈", "남도식 해산물 음식"],
+      },
+      {
+        name: "제주",
+        description:
+          "섬의 해산물과 보리, 돼지고기 등 지역에서 구할 수 있는 재료가 제주만의 식탁을 만듭니다.",
+        foods: ["고기국수", "갈치 요리", "몸국"],
+      },
+    ],
+    diningNotes: [
+      {
+        title: "한 상은 음식의 관계로 읽기",
+        description:
+          "국, 김치, 장류와 반찬은 각각 독립된 메뉴라기보다 밥과 함께 먹을 때 맛의 균형이 완성되는 경우가 많습니다.",
+      },
+      {
+        title: "공유식과 개인식이 함께 존재하기",
+        description:
+          "반찬을 나누는 식사가 익숙하지만 오늘날에는 개인 접시, 1인 메뉴와 덜어 먹는 방식도 폭넓게 사용됩니다.",
+      },
+      {
+        title: "지역과 가정의 차이를 남겨 두기",
+        description:
+          "같은 음식도 장의 종류와 간, 재료 손질법이 다릅니다. 하나의 조리법을 한국 전체의 유일한 방식으로 보지 않는 것이 중요합니다.",
+      },
+    ],
+    sources: [
+      {
+        label: "한국관광공사 — 한국 전통 음식 안내",
+        url: "https://english1.visitkorea.or.kr/enu/AKR/AK_ENG_2_3.jsp",
+      },
+      {
+        label: "UNESCO — 김장, 김치를 담그고 나누는 문화",
+        url: "https://ich.unesco.org/en/RL/kimjang-making-and-sharing-kimchi-in-the-republic-of-korea-00881",
+      },
+    ],
     storySlugs: ["korean-banchan-culture", "korean-market-food"],
     recipeSlugs: ["osam-bulgogi", "korean-sundae-bokkeum"],
+    updatedAt: "2026-09-09",
     palette: {
       from: "#f1e4d6",
       mid: "#dfe8df",
@@ -165,12 +264,84 @@ export const countries: Country[] = [
       "일본의 식문화는 쌀, 생선, 채소와 산나물 등 지역에서 얻은 재료를 활용해 왔습니다. 지역마다 기후와 생산물이 달라 향토 음식의 차이도 큽니다.",
       "가정식, 편의점 식사, 라멘 전문점, 이자카야처럼 현대 일본의 식사 공간은 매우 다양합니다. 이 페이지에서는 하나의 전형으로 단정하기보다 음식이 놓이는 상황과 지역 차이를 함께 살펴봅니다.",
     ],
-    representativeFlavors: ["다시의 감칠맛", "간장과 된장의 풍미", "제철 재료의 담백함"],
+    representativeFlavors: [
+      "다시의 감칠맛",
+      "간장과 된장의 풍미",
+      "제철 재료의 담백함",
+    ],
     mainIngredients: ["쌀", "생선", "다시 재료", "간장", "제철 채소"],
     foodCulture: ["와쇼쿠", "향토 음식", "이자카야", "도시형 간편식"],
     representativeFoods: ["스시", "미소시루", "오코노미야키", "라멘"],
+    tableScenes: [
+      {
+        eyebrow: "SEASONAL TABLE",
+        title: "제철 재료와 그릇으로 계절을 보여 주는 식사",
+        description:
+          "전통적인 와쇼쿠에서는 계절의 식재료뿐 아니라 색, 그릇과 배치까지 활용해 시기를 표현하는 경향이 있습니다.",
+      },
+      {
+        eyebrow: "LOCAL SPECIALTY",
+        title: "여행 경로가 곧 향토 음식 지도가 되는 나라",
+        description:
+          "기후와 생산물이 다른 지역마다 면, 초밥, 전골과 발효 음식의 형태가 달라집니다. 역 도시락과 지역 전문점도 향토 음식을 경험하는 통로입니다.",
+      },
+      {
+        eyebrow: "AFTER WORK",
+        title: "작은 요리와 술을 천천히 이어 가는 이자카야",
+        description:
+          "여러 종류의 안주를 나누어 주문하고 대화를 이어 가는 이자카야는 직장 모임과 친구 모임에서 볼 수 있는 현대적인 식사 장면입니다.",
+      },
+    ],
+    regionalNotes: [
+      {
+        name: "홋카이도",
+        description:
+          "차가운 바다와 넓은 농지에서 얻은 해산물, 유제품, 감자와 옥수수 등이 지역 음식의 인상을 만듭니다.",
+        foods: ["해산물 덮밥", "수프카레", "미소 라멘"],
+      },
+      {
+        name: "간사이",
+        description:
+          "다시의 향과 비교적 부드러운 간을 살리는 요리, 밀가루를 활용한 대중 음식이 널리 알려져 있습니다.",
+        foods: ["오코노미야키", "다코야키", "우동"],
+      },
+      {
+        name: "규슈",
+        description:
+          "돼지고기와 발효 조미료, 지역별 면 요리와 닭 요리처럼 섬 안에서도 서로 다른 향토 음식이 발달했습니다.",
+        foods: ["돈코츠 라멘", "미즈타키", "멘타이코"],
+      },
+    ],
+    diningNotes: [
+      {
+        title: "‘와쇼쿠’와 오늘의 일본 식사를 구분하기",
+        description:
+          "와쇼쿠는 중요한 전통이지만 현대의 일상식은 양식, 중식, 편의점 음식과 지역 음식이 함께 섞인 매우 넓은 범위를 가집니다.",
+      },
+      {
+        title: "젓가락 예절은 기본만 기억하기",
+        description:
+          "젓가락을 밥에 세워 두거나 젓가락에서 젓가락으로 음식을 건네는 행동은 피하는 것이 일반적입니다.",
+      },
+      {
+        title: "면을 소리 내 먹는 것은 의무가 아니기",
+        description:
+          "면을 소리 내어 먹는 장면이 익숙한 곳도 있지만 반드시 따라야 하는 규칙은 아닙니다. 주변 분위기에 맞추면 됩니다.",
+      },
+    ],
+    sources: [
+      {
+        label: "UNESCO — 와쇼쿠, 일본의 전통 식문화",
+        url: "https://ich.unesco.org/en/RL/washoku-traditional-dietary-cultures-of-the-japanese-notably-for-the-celebration-of-new-year-00869",
+      },
+      {
+        label: "일본정부관광국 — 이자카야 안내",
+        url: "https://www.japan.travel/de/de/guide/izakaya-japan-essen/",
+      },
+    ],
     storySlugs: ["japanese-izakaya-culture"],
     recipeSlugs: ["japanese-beef-bean-sprout-stir-fry"],
+    updatedAt: "2026-09-09",
     palette: {
       from: "#f2ded9",
       mid: "#ead0ca",
@@ -190,12 +361,89 @@ export const countries: Country[] = [
       "중국의 식문화를 하나의 맛으로 묶기는 어렵습니다. 쓰촨의 복합적인 매운맛, 후난의 선명한 매운맛과 산미, 광둥의 재료 중심 조리처럼 지역별 특징이 뚜렷합니다.",
       "볶기, 찌기, 삶기, 튀기기와 같은 조리법은 같은 재료도 전혀 다른 음식으로 바꿉니다. 이 페이지에서는 특정 지역의 특징을 중국 전체의 보편적인 모습으로 확대하지 않도록 구분해 소개합니다.",
     ],
-    representativeFlavors: ["마라의 얼얼함", "발효 조미료의 깊이", "센 불에서 만든 향"],
+    representativeFlavors: [
+      "마라의 얼얼함",
+      "발효 조미료의 깊이",
+      "센 불에서 만든 향",
+    ],
     mainIngredients: ["쌀과 밀", "돼지고기", "두부", "채소", "향신료"],
-    foodCulture: ["지역 요리", "공유하는 원형 식탁", "차 문화", "야시장과 길거리 음식"],
+    foodCulture: [
+      "지역 요리",
+      "공유하는 원형 식탁",
+      "차 문화",
+      "야시장과 길거리 음식",
+    ],
     representativeFoods: ["마라샹궈", "훠궈", "딤섬", "면 요리"],
+    tableScenes: [
+      {
+        eyebrow: "SHARED TABLE",
+        title: "여러 요리를 가운데 놓고 각자의 그릇으로 옮기는 식사",
+        description:
+          "가족 식사와 모임에서는 여러 요리를 함께 주문해 나누는 장면이 흔합니다. 주식은 지역과 메뉴에 따라 밥, 면, 만터우 등으로 달라질 수 있습니다.",
+      },
+      {
+        eyebrow: "FIRE & TECHNIQUE",
+        title: "불의 세기와 조리법이 맛의 성격을 바꾸는 주방",
+        description:
+          "센 불의 볶음향, 약한 불로 오래 끓인 탕, 찜과 튀김처럼 조리 기술 자체가 음식의 정체성을 만드는 경우가 많습니다.",
+      },
+      {
+        eyebrow: "TEA & SMALL BITES",
+        title: "차와 작은 음식을 함께 즐기는 다양한 방식",
+        description:
+          "광둥권의 얌차와 딤섬부터 지역별 찻집과 간식까지 차는 식사, 휴식, 모임의 시간과 여러 방식으로 연결됩니다.",
+      },
+    ],
+    regionalNotes: [
+      {
+        name: "쓰촨·충칭",
+        description:
+          "고추의 매운맛과 화자오의 얼얼함, 발효 조미료를 겹쳐 복합적인 향을 만드는 음식이 널리 알려져 있습니다.",
+        foods: ["훠궈", "마파두부", "마라샹궈"],
+      },
+      {
+        name: "광둥",
+        description:
+          "재료의 식감과 신선함을 살리는 찜과 구이, 맑은 국물과 딤섬 문화가 중요한 축을 이룹니다.",
+        foods: ["딤섬", "차슈", "완탕면"],
+      },
+      {
+        name: "장난 지역",
+        description:
+          "쌀과 수산물, 간장과 발효 재료를 활용하며 부드러운 단맛을 더하는 요리도 볼 수 있습니다.",
+        foods: ["샤오롱바오", "홍샤오 요리", "민물고기 요리"],
+      },
+    ],
+    diningNotes: [
+      {
+        title: "‘중국 음식’보다 먼저 지역 이름 보기",
+        description:
+          "중국은 매우 넓기 때문에 쓰촨, 광둥, 후난, 산둥처럼 지역을 함께 확인해야 맛과 조리법을 더 정확하게 이해할 수 있습니다.",
+      },
+      {
+        title: "공유 접시와 개인 그릇의 역할 구분하기",
+        description:
+          "가운데 놓인 요리는 개인 그릇으로 덜어 먹는 경우가 많습니다. 식당에 공용 집게나 덜기용 젓가락이 있으면 사용하는 편이 좋습니다.",
+      },
+      {
+        title: "매운맛을 한 단어로 묶지 않기",
+        description:
+          "마라, 샹라, 쏸라처럼 매운맛에 얼얼함, 향, 산미가 결합하는 방식이 다르므로 메뉴 설명을 함께 보는 것이 유용합니다.",
+      },
+    ],
+    sources: [
+      {
+        label: "UNESCO 창의도시 네트워크 — 청두 미식 도시",
+        url: "https://www.unesco.org/en/creative-cities/chengdu",
+      },
+      {
+        label: "후난성 정부 — 후난 음식 문화",
+        url: "https://www.enghunan.gov.cn/hneng/AboutHunan/HistoryCulture/CTC/index.html",
+      },
+    ],
     storySlugs: ["chinese-regional-spiciness"],
     recipeSlugs: ["mala-xiang-guo"],
+    updatedAt: "2026-09-09",
     palette: {
       from: "#efd6c0",
       mid: "#e2b596",
@@ -215,12 +463,89 @@ export const countries: Country[] = [
       "차찬텡에서는 밀크티, 토스트, 마카로니 수프, 면과 볶음밥을 함께 만날 수 있습니다. 서로 다른 문화권에서 시작된 재료가 홍콩의 속도와 취향에 맞게 재구성된 결과입니다.",
       "얌차와 딤섬, 광둥식 구이와 해산물 요리도 홍콩 식문화의 중요한 축입니다. 이 페이지에서는 관광용 이미지에 머물지 않고 일상적인 식사 공간과 메뉴 조합을 중심으로 살펴봅니다.",
     ],
-    representativeFlavors: ["간장과 육수의 감칠맛", "차와 우유의 진한 풍미", "구이의 단짠 양념"],
+    representativeFlavors: [
+      "간장과 육수의 감칠맛",
+      "차와 우유의 진한 풍미",
+      "구이의 단짠 양념",
+    ],
     mainIngredients: ["쌀과 면", "돼지고기", "해산물", "차", "연유와 무가당 연유"],
-    foodCulture: ["차찬텡", "얌차와 딤섬", "도시형 아침 식사", "늦은 시간의 간편식"],
+    foodCulture: [
+      "차찬텡",
+      "얌차와 딤섬",
+      "도시형 아침 식사",
+      "늦은 시간의 간편식",
+    ],
     representativeFoods: ["딤섬", "완탕면", "마카로니 수프", "밀크티"],
+    tableScenes: [
+      {
+        eyebrow: "MORNING RUSH",
+        title: "토스트와 밀크티, 면과 수프가 함께 놓이는 아침",
+        description:
+          "차찬텡의 아침 메뉴는 서양식 재료와 광둥식 육수, 빠른 서비스가 한 식탁에 놓이는 홍콩의 도시성을 잘 보여 줍니다.",
+      },
+      {
+        eyebrow: "YUM CHA",
+        title: "차를 마시며 딤섬을 나누는 시간",
+        description:
+          "얌차에서는 차와 여러 종류의 딤섬을 주문해 함께 나눕니다. 가족 모임과 주말 식사처럼 사람을 만나는 시간이 식사의 중요한 일부가 됩니다.",
+      },
+      {
+        eyebrow: "QUICK MEAL",
+        title: "면가와 구이점에서 완성되는 빠른 한 그릇",
+        description:
+          "완탕면, 차슈와 거위구이 덮밥처럼 전문점의 빠른 한 끼는 밀도 높은 도시 생활 속에서 반복해 찾는 일상 음식입니다.",
+      },
+    ],
+    regionalNotes: [
+      {
+        name: "차찬텡",
+        description:
+          "아침부터 늦은 시간까지 폭넓은 메뉴를 제공하며 홍콩식 밀크티와 토스트, 면과 볶음밥을 한곳에서 만날 수 있습니다.",
+        foods: ["마카로니 수프", "홍콩식 밀크티", "프렌치토스트"],
+      },
+      {
+        name: "딤섬 찻집",
+        description:
+          "차를 중심으로 찐 요리와 튀김, 구이와 디저트를 작은 접시에 나누어 주문하는 식사 공간입니다.",
+        foods: ["하가우", "시우마이", "차슈바오"],
+      },
+      {
+        name: "동네 면가와 구이점",
+        description:
+          "전문 메뉴를 빠르게 제공하는 작은 식당에서는 육수, 면, 구이 고기 조합으로 간결한 한 끼가 완성됩니다.",
+        foods: ["완탕면", "차슈 덮밥", "거위구이"],
+      },
+    ],
+    diningNotes: [
+      {
+        title: "메뉴의 혼합을 홍콩식 재해석으로 보기",
+        description:
+          "마카로니와 밀크티처럼 외부에서 들어온 재료도 현지의 조리법과 생활 리듬 속에서 새로운 일상 음식으로 자리 잡았습니다.",
+      },
+      {
+        title: "차찬텡마다 대표 메뉴가 다르기",
+        description:
+          "차찬텡이라는 이름이 같은 메뉴 구성을 보장하지는 않습니다. 가게별 세트 메뉴와 주문 방식을 확인하는 편이 좋습니다.",
+      },
+      {
+        title: "바쁜 시간의 합석과 빠른 회전을 이해하기",
+        description:
+          "인기 있는 오래된 식당에서는 합석이나 빠른 주문이 이루어질 수 있지만 모든 가게의 규칙은 아니므로 현장 안내를 따릅니다.",
+      },
+    ],
+    sources: [
+      {
+        label: "홍콩관광청 — Wai Kee Noodle Cafe",
+        url: "https://www.discoverhongkong.com/eng/place-to-go/travel.guide-wai-kee-noodle-cafe.html",
+      },
+      {
+        label: "홍콩관광청 — Swiss Cafe",
+        url: "https://www.discoverhongkong.com/eng/place-to-go/travel.guide-swiss-cafe.html",
+      },
+    ],
     storySlugs: ["hong-kong-cha-chaan-teng", "hong-kong-macaroni-soup"],
     recipeSlugs: ["hong-kong-macaroni-soup", "hong-kong-milk-tea"],
+    updatedAt: "2026-09-09",
     palette: {
       from: "#ecdac3",
       mid: "#dfcfb9",
@@ -240,12 +565,89 @@ export const countries: Country[] = [
       "베트남의 북부, 중부, 남부는 기후와 역사적 교류가 달라 같은 음식도 국물, 허브, 단맛의 정도가 다르게 나타납니다.",
       "쌀국수와 반미는 아침이나 간단한 한 끼로 널리 접할 수 있지만, 모든 지역과 가정이 같은 방식으로 먹는 것은 아닙니다. 시장과 노점, 전문점, 가정식의 차이도 함께 볼 필요가 있습니다.",
     ],
-    representativeFlavors: ["피시소스의 감칠맛", "라임과 식초의 산미", "생허브의 향"],
+    representativeFlavors: [
+      "피시소스의 감칠맛",
+      "라임과 식초의 산미",
+      "생허브의 향",
+    ],
     mainIngredients: ["쌀과 쌀국수", "피시소스", "허브", "돼지고기", "라임"],
-    foodCulture: ["거리의 아침 식사", "지역별 쌀국수", "허브를 곁들이는 식사", "커피 문화"],
+    foodCulture: [
+      "거리의 아침 식사",
+      "지역별 쌀국수",
+      "허브를 곁들이는 식사",
+      "커피 문화",
+    ],
     representativeFoods: ["퍼", "반미", "분짜", "고이꾸온"],
+    tableScenes: [
+      {
+        eyebrow: "STREET BREAKFAST",
+        title: "거리와 시장에서 빠르게 시작하는 아침",
+        description:
+          "퍼, 반미, 죽과 면 요리는 노점과 작은 전문점에서 아침 한 끼로 널리 만날 수 있습니다. 지역과 도시마다 대표 메뉴는 다릅니다.",
+      },
+      {
+        eyebrow: "HERBS & CONDIMENTS",
+        title: "허브와 소스로 마지막 맛을 직접 조절하는 식탁",
+        description:
+          "생허브, 라임, 고추와 피시소스 기반 소스를 곁들이며 한 그릇 안에서도 향과 산미, 매운맛을 개인 취향에 맞게 조절합니다.",
+      },
+      {
+        eyebrow: "COFFEE BREAK",
+        title: "진한 커피와 대화가 이어지는 도시의 휴식",
+        description:
+          "연유를 넣은 커피와 얼음 커피는 빠른 음료이면서도 사람들이 머물고 대화하는 카페 문화와 연결됩니다.",
+      },
+    ],
+    regionalNotes: [
+      {
+        name: "북부",
+        description:
+          "맑은 육수와 향의 균형을 살리는 음식이 널리 알려져 있으며, 허브와 조미료를 비교적 절제해 사용하는 경향이 있습니다.",
+        foods: ["퍼 박", "분짜", "짜까"],
+      },
+      {
+        name: "중부",
+        description:
+          "선명한 향신료와 매운맛, 작은 접시의 섬세한 구성이 나타납니다. 후에와 꽝남의 음식은 서로 다른 특징을 지닙니다.",
+        foods: ["분보후에", "미꽝", "반베오"],
+      },
+      {
+        name: "남부",
+        description:
+          "풍부한 허브와 채소, 코코넛과 단맛을 활용하는 음식이 많으며 메콩델타의 농수산물이 식탁에 반영됩니다.",
+        foods: ["껌땀", "후띠우", "반쎄오"],
+      },
+    ],
+    diningNotes: [
+      {
+        title: "곁들임을 넣기 전에 국물부터 맛보기",
+        description:
+          "라임, 고추, 소스는 맛을 크게 바꿉니다. 먼저 기본 국물을 맛본 뒤 조금씩 더하면 음식의 원래 균형을 확인할 수 있습니다.",
+      },
+      {
+        title: "피시소스도 지역과 용도에 따라 다르기",
+        description:
+          "찍어 먹는 느억쩜과 조리용 피시소스는 단맛, 산미와 농도가 다를 수 있으므로 하나의 맛으로 단정하기 어렵습니다.",
+      },
+      {
+        title: "북부·중부·남부 구분은 출발점일 뿐",
+        description:
+          "세 지역 안에서도 도시와 민족, 가정에 따라 조리법이 달라집니다. 지역 구분은 차이를 이해하기 위한 첫 지도처럼 사용합니다.",
+      },
+    ],
+    sources: [
+      {
+        label: "Vietnam Tourism — 꼭 맛봐야 할 베트남 음식",
+        url: "https://beta-v2.vietnam.travel/things-to-do/21-must-try-vietnamese-dishes",
+      },
+      {
+        label: "Vietnam Tourism — 다낭의 시장과 지역 음식",
+        url: "https://vietnam.travel/things-to-do/da-nang-eat-play-relax-your-ultimate-coastal-escape",
+      },
+    ],
     storySlugs: ["vietnamese-breakfast-culture"],
     recipeSlugs: ["vietnamese-banh-mi"],
+    updatedAt: "2026-09-09",
     palette: {
       from: "#deead0",
       mid: "#cbdcb8",
@@ -265,12 +667,84 @@ export const countries: Country[] = [
       "이탈리아 음식은 ‘파스타와 피자’라는 이미지보다 훨씬 넓습니다. 북부의 쌀과 버터, 중부의 밀과 육류, 남부의 토마토와 올리브오일처럼 지역 산물이 요리의 성격을 만듭니다.",
       "같은 이름의 음식도 지역과 가족에 따라 조리법이 달라질 수 있습니다. 식탁은 음식을 먹는 장소이면서 대화와 기억, 세대 간 기술 전승이 일어나는 공간으로 다뤄집니다.",
     ],
-    representativeFlavors: ["올리브오일의 향", "치즈의 숙성 풍미", "토마토의 산미와 단맛"],
+    representativeFlavors: [
+      "올리브오일의 향",
+      "치즈의 숙성 풍미",
+      "토마토의 산미와 단맛",
+    ],
     mainIngredients: ["밀과 파스타", "올리브오일", "토마토", "치즈", "지역 채소"],
     foodCulture: ["지역 요리", "가족 식사", "코스 구성", "커피와 디저트"],
     representativeFoods: ["파스타", "리소토", "피자", "티라미수"],
+    tableScenes: [
+      {
+        eyebrow: "REGIONAL KITCHEN",
+        title: "나라 이름보다 도시와 지역 이름이 먼저 나오는 음식",
+        description:
+          "같은 파스타도 면의 형태와 소스, 치즈가 지역에 따라 달라집니다. 음식 이름에 붙은 도시와 지역은 재료와 조리법을 읽는 중요한 단서입니다.",
+      },
+      {
+        eyebrow: "COURSE & RHYTHM",
+        title: "여러 코스로 식사의 흐름을 나누는 방식",
+        description:
+          "안티파스토, 프리모, 세콘도와 디저트의 구분이 알려져 있지만 모든 일상 식사가 완전한 코스로 구성되는 것은 아닙니다.",
+      },
+      {
+        eyebrow: "BAR & COFFEE",
+        title: "짧은 에스프레소 한 잔이 만드는 일상의 리듬",
+        description:
+          "바에 서서 빠르게 마시는 커피부터 식사 뒤의 에스프레소까지 커피는 이동과 휴식, 대화를 연결하는 일상적인 장면입니다.",
+      },
+    ],
+    regionalNotes: [
+      {
+        name: "북부",
+        description:
+          "쌀, 폴렌타, 버터와 숙성 치즈를 활용하는 음식이 많고 알프스와 포 계곡의 환경이 지역 식재료에 반영됩니다.",
+        foods: ["리소토", "폴렌타", "오소부코"],
+      },
+      {
+        name: "중부",
+        description:
+          "밀과 콩, 올리브오일, 육류를 활용한 소박하고 선명한 조리법이 여러 지역의 향토 음식에서 나타납니다.",
+        foods: ["카초 에 페페", "리볼리타", "비스테카"],
+      },
+      {
+        name: "남부와 섬",
+        description:
+          "듀럼밀, 토마토, 올리브오일과 해산물을 폭넓게 사용하며 풀리아, 캄파니아, 시칠리아도 서로 다른 식문화를 가집니다.",
+        foods: ["오레키에테", "나폴리 피자", "아란치니"],
+      },
+    ],
+    diningNotes: [
+      {
+        title: "전국 공통 레시피보다 지역 이름 확인하기",
+        description:
+          "같은 음식명도 지방과 가정마다 재료와 순서가 달라질 수 있습니다. 어느 지역의 방식인지 확인하면 차이를 더 잘 이해할 수 있습니다.",
+      },
+      {
+        title: "코스는 규칙보다 식사의 구조로 이해하기",
+        description:
+          "정식 식사에서는 코스가 뚜렷하지만 가정의 평일 식사는 간결할 수 있습니다. 모든 끼니에 전체 코스를 기대할 필요는 없습니다.",
+      },
+      {
+        title: "단순한 재료일수록 품질과 조리점이 중요하기",
+        description:
+          "재료 수가 적은 파스타와 샐러드는 소금, 익힘 정도, 올리브오일과 치즈의 선택이 완성도에 직접 영향을 줍니다.",
+      },
+    ],
+    sources: [
+      {
+        label: "Italia.it — 이탈리아 지역 음식과 식탁 문화",
+        url: "https://www.italia.it/it/italia/cosa-fare/cucina-italiana-patrimonio-unesco",
+      },
+      {
+        label: "UNESCO — 지중해 식단과 공동체 문화",
+        url: "https://ich.unesco.org/en/RL/mediterranean-diet-00884",
+      },
+    ],
     storySlugs: ["italian-family-table"],
     recipeSlugs: ["italian-tiramisu"],
+    updatedAt: "2026-09-09",
     palette: {
       from: "#e8dec8",
       mid: "#dce1ce",

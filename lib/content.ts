@@ -140,9 +140,18 @@ export const countries: Country[] = [
       "한국 음식은 한 가지 대표 메뉴만으로 설명하기 어렵습니다. 밥을 중심에 두고 국이나 찌개, 김치와 여러 반찬을 함께 놓는 구성 자체가 식사의 중요한 특징입니다.",
       "발효 장류와 저장 음식, 계절에 따라 달라지는 나물과 국물 요리는 지역과 가정의 생활방식을 보여 줍니다. 다만 오늘날의 식사는 1인 가구, 외식, 배달 문화의 영향으로 매우 다양한 형태를 갖습니다.",
     ],
-    representativeFlavors: ["발효의 깊은 맛", "국물의 감칠맛", "매콤달콤한 양념"],
+    representativeFlavors: [
+      "발효의 깊은 맛",
+      "국물의 감칠맛",
+      "매콤달콤한 양념",
+    ],
     mainIngredients: ["쌀", "콩과 장류", "배추와 무", "제철 나물", "돼지고기"],
-    foodCulture: ["한 상 차림", "반찬을 나누는 식사", "김장과 저장 음식", "시장 먹거리"],
+    foodCulture: [
+      "한 상 차림",
+      "반찬을 나누는 식사",
+      "김장과 저장 음식",
+      "시장 먹거리",
+    ],
     representativeFoods: ["김치", "비빔밥", "불고기", "순대볶음"],
     storySlugs: ["korean-banchan-culture", "korean-market-food"],
     recipeSlugs: ["osam-bulgogi", "korean-sundae-bokkeum"],
@@ -165,7 +174,11 @@ export const countries: Country[] = [
       "일본의 식문화는 쌀, 생선, 채소와 산나물 등 지역에서 얻은 재료를 활용해 왔습니다. 지역마다 기후와 생산물이 달라 향토 음식의 차이도 큽니다.",
       "가정식, 편의점 식사, 라멘 전문점, 이자카야처럼 현대 일본의 식사 공간은 매우 다양합니다. 이 페이지에서는 하나의 전형으로 단정하기보다 음식이 놓이는 상황과 지역 차이를 함께 살펴봅니다.",
     ],
-    representativeFlavors: ["다시의 감칠맛", "간장과 된장의 풍미", "제철 재료의 담백함"],
+    representativeFlavors: [
+      "다시의 감칠맛",
+      "간장과 된장의 풍미",
+      "제철 재료의 담백함",
+    ],
     mainIngredients: ["쌀", "생선", "다시 재료", "간장", "제철 채소"],
     foodCulture: ["와쇼쿠", "향토 음식", "이자카야", "도시형 간편식"],
     representativeFoods: ["스시", "미소시루", "오코노미야키", "라멘"],
@@ -190,9 +203,18 @@ export const countries: Country[] = [
       "중국의 식문화를 하나의 맛으로 묶기는 어렵습니다. 쓰촨의 복합적인 매운맛, 후난의 선명한 매운맛과 산미, 광둥의 재료 중심 조리처럼 지역별 특징이 뚜렷합니다.",
       "볶기, 찌기, 삶기, 튀기기와 같은 조리법은 같은 재료도 전혀 다른 음식으로 바꿉니다. 이 페이지에서는 특정 지역의 특징을 중국 전체의 보편적인 모습으로 확대하지 않도록 구분해 소개합니다.",
     ],
-    representativeFlavors: ["마라의 얼얼함", "발효 조미료의 깊이", "센 불에서 만든 향"],
+    representativeFlavors: [
+      "마라의 얼얼함",
+      "발효 조미료의 깊이",
+      "센 불에서 만든 향",
+    ],
     mainIngredients: ["쌀과 밀", "돼지고기", "두부", "채소", "향신료"],
-    foodCulture: ["지역 요리", "공유하는 원형 식탁", "차 문화", "야시장과 길거리 음식"],
+    foodCulture: [
+      "지역 요리",
+      "공유하는 원형 식탁",
+      "차 문화",
+      "야시장과 길거리 음식",
+    ],
     representativeFoods: ["마라샹궈", "훠궈", "딤섬", "면 요리"],
     storySlugs: ["chinese-regional-spiciness"],
     recipeSlugs: ["mala-xiang-guo"],
@@ -215,9 +237,24 @@ export const countries: Country[] = [
       "차찬텡에서는 밀크티, 토스트, 마카로니 수프, 면과 볶음밥을 함께 만날 수 있습니다. 서로 다른 문화권에서 시작된 재료가 홍콩의 속도와 취향에 맞게 재구성된 결과입니다.",
       "얌차와 딤섬, 광둥식 구이와 해산물 요리도 홍콩 식문화의 중요한 축입니다. 이 페이지에서는 관광용 이미지에 머물지 않고 일상적인 식사 공간과 메뉴 조합을 중심으로 살펴봅니다.",
     ],
-    representativeFlavors: ["간장과 육수의 감칠맛", "차와 우유의 진한 풍미", "구이의 단짠 양념"],
-    mainIngredients: ["쌀과 면", "돼지고기", "해산물", "차", "연유와 무가당 연유"],
-    foodCulture: ["차찬텡", "얌차와 딤섬", "도시형 아침 식사", "늦은 시간의 간편식"],
+    representativeFlavors: [
+      "간장과 육수의 감칠맛",
+      "차와 우유의 진한 풍미",
+      "구이의 단짠 양념",
+    ],
+    mainIngredients: [
+      "쌀과 면",
+      "돼지고기",
+      "해산물",
+      "차",
+      "연유와 무가당 연유",
+    ],
+    foodCulture: [
+      "차찬텡",
+      "얌차와 딤섬",
+      "도시형 아침 식사",
+      "늦은 시간의 간편식",
+    ],
     representativeFoods: ["딤섬", "완탕면", "마카로니 수프", "밀크티"],
     storySlugs: ["hong-kong-cha-chaan-teng", "hong-kong-macaroni-soup"],
     recipeSlugs: ["hong-kong-macaroni-soup", "hong-kong-milk-tea"],
@@ -240,9 +277,18 @@ export const countries: Country[] = [
       "베트남의 북부, 중부, 남부는 기후와 역사적 교류가 달라 같은 음식도 국물, 허브, 단맛의 정도가 다르게 나타납니다.",
       "쌀국수와 반미는 아침이나 간단한 한 끼로 널리 접할 수 있지만, 모든 지역과 가정이 같은 방식으로 먹는 것은 아닙니다. 시장과 노점, 전문점, 가정식의 차이도 함께 볼 필요가 있습니다.",
     ],
-    representativeFlavors: ["피시소스의 감칠맛", "라임과 식초의 산미", "생허브의 향"],
+    representativeFlavors: [
+      "피시소스의 감칠맛",
+      "라임과 식초의 산미",
+      "생허브의 향",
+    ],
     mainIngredients: ["쌀과 쌀국수", "피시소스", "허브", "돼지고기", "라임"],
-    foodCulture: ["거리의 아침 식사", "지역별 쌀국수", "허브를 곁들이는 식사", "커피 문화"],
+    foodCulture: [
+      "거리의 아침 식사",
+      "지역별 쌀국수",
+      "허브를 곁들이는 식사",
+      "커피 문화",
+    ],
     representativeFoods: ["퍼", "반미", "분짜", "고이꾸온"],
     storySlugs: ["vietnamese-breakfast-culture"],
     recipeSlugs: ["vietnamese-banh-mi"],
@@ -265,8 +311,18 @@ export const countries: Country[] = [
       "이탈리아 음식은 ‘파스타와 피자’라는 이미지보다 훨씬 넓습니다. 북부의 쌀과 버터, 중부의 밀과 육류, 남부의 토마토와 올리브오일처럼 지역 산물이 요리의 성격을 만듭니다.",
       "같은 이름의 음식도 지역과 가족에 따라 조리법이 달라질 수 있습니다. 식탁은 음식을 먹는 장소이면서 대화와 기억, 세대 간 기술 전승이 일어나는 공간으로 다뤄집니다.",
     ],
-    representativeFlavors: ["올리브오일의 향", "치즈의 숙성 풍미", "토마토의 산미와 단맛"],
-    mainIngredients: ["밀과 파스타", "올리브오일", "토마토", "치즈", "지역 채소"],
+    representativeFlavors: [
+      "올리브오일의 향",
+      "치즈의 숙성 풍미",
+      "토마토의 산미와 단맛",
+    ],
+    mainIngredients: [
+      "밀과 파스타",
+      "올리브오일",
+      "토마토",
+      "치즈",
+      "지역 채소",
+    ],
     foodCulture: ["지역 요리", "가족 식사", "코스 구성", "커피와 디저트"],
     representativeFoods: ["파스타", "리소토", "피자", "티라미수"],
     storySlugs: ["italian-family-table"],
@@ -288,8 +344,7 @@ export const stories: Story[] = [
     category: "food-culture",
     summary:
       "밀크티와 토스트, 마카로니 수프와 볶음밥이 한 메뉴판에 놓이는 홍콩식 대중 식당의 성격을 살펴봅니다.",
-    lead:
-      "차찬텡은 ‘차를 파는 식당’이라는 이름보다 훨씬 넓은 역할을 합니다. 빠른 서비스와 폭넓은 메뉴, 비교적 부담 없는 한 끼가 홍콩의 도시 생활과 맞물려 만들어진 공간입니다.",
+    lead: "차찬텡은 ‘차를 파는 식당’이라는 이름보다 훨씬 넓은 역할을 합니다. 빠른 서비스와 폭넓은 메뉴, 비교적 부담 없는 한 끼가 홍콩의 도시 생활과 맞물려 만들어진 공간입니다.",
     readTime: 7,
     visualLabel: "茶餐廳",
     visualCaption: "CHA CHAAN TENG",
@@ -344,8 +399,7 @@ export const stories: Story[] = [
     category: "food-origin",
     summary:
       "서양식 마카로니가 광둥식 국물과 햄, 달걀을 만나 차찬텡의 아침 메뉴가 된 과정을 살펴봅니다.",
-    lead:
-      "마카로니를 토마토소스나 치즈가 아니라 맑은 국물에 넣는 조합은 낯설 수 있습니다. 그러나 홍콩의 차찬텡에서는 빠르고 따뜻한 아침 식사를 구성하는 익숙한 선택지입니다.",
+    lead: "마카로니를 토마토소스나 치즈가 아니라 맑은 국물에 넣는 조합은 낯설 수 있습니다. 그러나 홍콩의 차찬텡에서는 빠르고 따뜻한 아침 식사를 구성하는 익숙한 선택지입니다.",
     readTime: 6,
     visualLabel: "通粉",
     visualCaption: "MACARONI SOUP",
@@ -400,8 +454,7 @@ export const stories: Story[] = [
     category: "food-culture",
     summary:
       "밥과 국, 김치와 반찬이 서로 역할을 나누는 한국식 한 상의 구조와 오늘날의 변화를 살펴봅니다.",
-    lead:
-      "한국 음식의 특징은 개별 메뉴뿐 아니라 음식들이 한 상에서 맺는 관계에도 있습니다. 밥을 중심으로 국과 반찬을 오가며 먹는 방식은 맛과 영양, 계절 재료를 한 끼 안에서 조절합니다.",
+    lead: "한국 음식의 특징은 개별 메뉴뿐 아니라 음식들이 한 상에서 맺는 관계에도 있습니다. 밥을 중심으로 국과 반찬을 오가며 먹는 방식은 맛과 영양, 계절 재료를 한 끼 안에서 조절합니다.",
     readTime: 8,
     visualLabel: "飯床",
     visualCaption: "KOREAN TABLE",
@@ -452,8 +505,7 @@ export const stories: Story[] = [
     category: "drinks",
     summary:
       "술과 함께 여러 작은 요리를 주문하는 이자카야의 구조와 주문 방식, 현대적 다양성을 알아봅니다.",
-    lead:
-      "이자카야는 단순히 술만 마시는 바가 아닙니다. 술의 흐름에 맞춰 구이, 튀김, 조림, 생선, 마무리 식사를 조금씩 주문하는 공간입니다.",
+    lead: "이자카야는 단순히 술만 마시는 바가 아닙니다. 술의 흐름에 맞춰 구이, 튀김, 조림, 생선, 마무리 식사를 조금씩 주문하는 공간입니다.",
     readTime: 7,
     visualLabel: "居酒屋",
     visualCaption: "IZAKAYA",
@@ -508,8 +560,7 @@ export const stories: Story[] = [
     category: "food-culture",
     summary:
       "쓰촨의 마라와 후난의 선명한 매운맛을 비교하며 ‘중국식 매운맛’이라는 한 문장 뒤의 지역 차이를 살펴봅니다.",
-    lead:
-      "고추가 들어간다고 모두 같은 매운맛은 아닙니다. 향신료의 조합, 발효 재료, 산미, 기름의 사용 방식에 따라 매운맛의 방향이 달라집니다.",
+    lead: "고추가 들어간다고 모두 같은 매운맛은 아닙니다. 향신료의 조합, 발효 재료, 산미, 기름의 사용 방식에 따라 매운맛의 방향이 달라집니다.",
     readTime: 9,
     visualLabel: "麻辣",
     visualCaption: "REGIONAL HEAT",
@@ -564,8 +615,7 @@ export const stories: Story[] = [
     category: "daily-life",
     summary:
       "쌀국수와 반미, 커피를 통해 시장과 노점, 출근길이 식탁이 되는 베트남의 아침 풍경을 살펴봅니다.",
-    lead:
-      "베트남의 아침 식사는 집 안에서만 이루어지지 않습니다. 이른 시간부터 문을 여는 노점과 작은 식당은 따뜻한 국수와 빠른 샌드위치를 제공하며 도시의 이동 동선과 연결됩니다.",
+    lead: "베트남의 아침 식사는 집 안에서만 이루어지지 않습니다. 이른 시간부터 문을 여는 노점과 작은 식당은 따뜻한 국수와 빠른 샌드위치를 제공하며 도시의 이동 동선과 연결됩니다.",
     readTime: 6,
     visualLabel: "BỮA SÁNG",
     visualCaption: "MORNING TABLE",
@@ -620,8 +670,7 @@ export const stories: Story[] = [
     category: "table-manners",
     summary:
       "하나의 ‘이탈리아 음식’ 대신 지역과 가족마다 다른 조리법, 함께 먹는 시간의 의미를 살펴봅니다.",
-    lead:
-      "이탈리아의 식탁을 이해하려면 유명 메뉴 목록보다 지역의 재료와 가족의 조리 기억을 함께 봐야 합니다. 같은 음식 이름도 도시와 집에 따라 전혀 다른 모습을 가질 수 있습니다.",
+    lead: "이탈리아의 식탁을 이해하려면 유명 메뉴 목록보다 지역의 재료와 가족의 조리 기억을 함께 봐야 합니다. 같은 음식 이름도 도시와 집에 따라 전혀 다른 모습을 가질 수 있습니다.",
     readTime: 7,
     visualLabel: "A TAVOLA",
     visualCaption: "REGION & CONVIVIALITY",
@@ -653,7 +702,8 @@ export const stories: Story[] = [
     ],
     sources: [
       {
-        label: "Italia.it — Italian cuisine, regional traditions and conviviality",
+        label:
+          "Italia.it — Italian cuisine, regional traditions and conviviality",
         url: "https://www.italia.it/it/italia/cosa-fare/cucina-italiana-patrimonio-unesco",
       },
     ],
@@ -672,8 +722,7 @@ export const stories: Story[] = [
     category: "market",
     summary:
       "장보기와 간식, 식사가 한 공간에서 이어지는 한국 전통시장의 먹거리 문화를 살펴봅니다.",
-    lead:
-      "전통시장은 식재료를 사는 장소이면서 바로 조리된 음식을 먹는 장소입니다. 지역의 재료와 상인의 기술, 손님의 이동이 짧은 거리 안에서 연결됩니다.",
+    lead: "전통시장은 식재료를 사는 장소이면서 바로 조리된 음식을 먹는 장소입니다. 지역의 재료와 상인의 기술, 손님의 이동이 짧은 거리 안에서 연결됩니다.",
     readTime: 6,
     visualLabel: "市場",
     visualCaption: "MARKET FOOD",
@@ -705,7 +754,8 @@ export const stories: Story[] = [
     ],
     sources: [
       {
-        label: "Korea Tourism Organization — Traditional market promotion material",
+        label:
+          "Korea Tourism Organization — Traditional market promotion material",
         url: "https://kto.visitkorea.or.kr/upload/flexer/upload/ktobiz/20180710/7b42845d-83c6-11e8-be15-b740af9dff37.hwp.files/Sections1.html",
       },
     ],
@@ -816,7 +866,12 @@ export const recipes: Recipe[] = [
     ingredientGroups: [
       {
         title: "주재료",
-        items: ["차돌박이 또는 얇은 소고기 250g", "숙주 300g", "대파 1/2대", "마늘 2쪽"],
+        items: [
+          "차돌박이 또는 얇은 소고기 250g",
+          "숙주 300g",
+          "대파 1/2대",
+          "마늘 2쪽",
+        ],
       },
       {
         title: "양념",
@@ -1071,7 +1126,13 @@ export const recipes: Recipe[] = [
     ingredientGroups: [
       {
         title: "절임 채소",
-        items: ["당근 80g", "무 80g", "식초 3큰술", "설탕 2큰술", "소금 1/3작은술"],
+        items: [
+          "당근 80g",
+          "무 80g",
+          "식초 3큰술",
+          "설탕 2큰술",
+          "소금 1/3작은술",
+        ],
       },
       {
         title: "고기",
@@ -1164,7 +1225,11 @@ export const recipes: Recipe[] = [
     ingredientGroups: [
       {
         title: "커피 시럽",
-        items: ["진한 에스프레소 또는 커피 220ml", "설탕 1큰술", "무가당 코코아가루 1큰술"],
+        items: [
+          "진한 에스프레소 또는 커피 220ml",
+          "설탕 1큰술",
+          "무가당 코코아가루 1큰술",
+        ],
       },
       {
         title: "크림과 층",
@@ -1304,7 +1369,8 @@ export const recipes: Recipe[] = [
     relatedStorySlugs: ["korean-market-food"],
     sources: [
       {
-        label: "Korea Tourism Organization — Traditional markets and local food",
+        label:
+          "Korea Tourism Organization — Traditional markets and local food",
         url: "https://kto.visitkorea.or.kr/upload/flexer/upload/ktobiz/20180710/7b42845d-83c6-11e8-be15-b740af9dff37.hwp.files/Sections1.html",
       },
     ],
@@ -1345,8 +1411,7 @@ export const recipes: Recipe[] = [
     steps: [
       {
         title: "물을 끓이기",
-        description:
-          "냄비에 물을 완전히 끓인 뒤 홍차 잎을 넣습니다.",
+        description: "냄비에 물을 완전히 끓인 뒤 홍차 잎을 넣습니다.",
       },
       {
         title: "진하게 우리기",

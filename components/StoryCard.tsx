@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ContentVisual from "@/components/ContentVisual";
 import {
+  experienceStatusLabels,
   getCountry,
   storyCategoryLabels,
   type Story,
@@ -24,13 +25,20 @@ export default function StoryCard({ story }: { story: Story }) {
         />
 
         <div className="flex min-h-[340px] flex-col p-7">
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-3">
             <span className="text-xs font-black tracking-[0.16em] text-[#b9480c]">
               {country?.nameKo ?? "세계"}
             </span>
-            <span className="rounded-full bg-[#f5f1ea] px-3 py-1.5 text-[11px] font-bold text-neutral-600">
-              {storyCategoryLabels[story.category]}
-            </span>
+            <div className="flex flex-wrap justify-end gap-2">
+              {story.experienceStatus && (
+                <span className="rounded-full border border-[#e5b596] bg-[#fff3ea] px-3 py-1.5 text-[11px] font-black text-[#943706]">
+                  {experienceStatusLabels[story.experienceStatus]}
+                </span>
+              )}
+              <span className="rounded-full bg-[#f5f1ea] px-3 py-1.5 text-[11px] font-bold text-neutral-600">
+                {storyCategoryLabels[story.category]}
+              </span>
+            </div>
           </div>
 
           <h2 className="mt-5 break-keep text-xl font-black leading-8 tracking-tight">

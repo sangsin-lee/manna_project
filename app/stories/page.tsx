@@ -4,7 +4,9 @@ import ContentVisual from "@/components/ContentVisual";
 import StoryCard from "@/components/StoryCard";
 import {
   countries,
+  experienceStatusLabels,
   getCountry,
+  getStory,
   stories,
   storyCategoryLabels,
   type CountrySlug,
@@ -82,7 +84,8 @@ export default async function StoriesPage({
     return categoryMatches && countryMatches;
   });
 
-  const featuredStory = stories[0];
+  const featuredStory =
+    getStory("hawaii-local-food-migration") ?? stories[0]!;
   const featuredCountry = getCountry(featuredStory.country);
   const isUnfiltered =
     activeCategory === "all" && activeCountry === "all";
@@ -161,6 +164,11 @@ export default async function StoriesPage({
                 <span className="text-neutral-500">
                   {storyCategoryLabels[featuredStory.category]}
                 </span>
+                {featuredStory.experienceStatus && (
+                  <span className="rounded-full border border-[#e5b596] bg-[#fff3ea] px-3 py-1.5 text-[11px] font-black tracking-normal text-[#943706]">
+                    {experienceStatusLabels[featuredStory.experienceStatus]}
+                  </span>
+                )}
               </div>
               <h3 className="mt-5 break-keep text-3xl font-black leading-tight tracking-tight sm:text-4xl">
                 {featuredStory.title}
@@ -250,8 +258,8 @@ export default async function StoriesPage({
                 aria-current={activeCountry === "all" ? "page" : undefined}
                 className={`shrink-0 rounded-full border px-5 py-2.5 text-sm font-bold no-underline transition ${
                   activeCountry === "all"
-                    ? "border-neutral-950 bg-neutral-950 !text-white"
-                    : "border-stone-300 bg-white !text-neutral-600 hover:border-neutral-950 hover:!text-neutral-950"
+                    ? "border-[#b9480c] bg-[#b9480c] !text-white"
+                    : "border-stone-300 bg-white !text-neutral-600 hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
                 }`}
               >
                 전체 지역
@@ -268,8 +276,8 @@ export default async function StoriesPage({
                     aria-current={active ? "page" : undefined}
                     className={`shrink-0 rounded-full border px-5 py-2.5 text-sm font-bold no-underline transition ${
                       active
-                        ? "border-neutral-950 bg-neutral-950 !text-white"
-                        : "border-stone-300 bg-white !text-neutral-600 hover:border-neutral-950 hover:!text-neutral-950"
+                        ? "border-[#b9480c] bg-[#b9480c] !text-white"
+                        : "border-stone-300 bg-white !text-neutral-600 hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
                     }`}
                   >
                     {country.nameKo}

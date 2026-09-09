@@ -5,13 +5,37 @@ import JsonLd from "@/components/JsonLd";
 import RecipeCard from "@/components/RecipeCard";
 import ReservationForm from "@/components/ReservationForm";
 import StoryCard from "@/components/StoryCard";
-import { countries, recipes, stories } from "@/lib/content";
+import {
+  getCountry,
+  getRecipe,
+  getStory,
+  stories,
+} from "@/lib/content";
 import { siteConfig } from "@/lib/site";
 
-const featuredCountries = countries.slice(0, 4);
-const featuredStories = stories.slice(0, 3);
-const featuredRecipes = recipes.slice(0, 3);
-const heroStory = stories[0];
+function isDefined<T>(value: T | undefined): value is T {
+  return value !== undefined;
+}
+
+const featuredCountries = ["macau", "usa", "thailand", "hong-kong"]
+  .map((slug) => getCountry(slug))
+  .filter(isDefined);
+
+const featuredStories = [
+  "hawaii-local-food-migration",
+  "macau-portuguese-chinese-table",
+  "thai-street-food-daily-life",
+]
+  .map((slug) => getStory(slug))
+  .filter(isDefined);
+
+const featuredRecipes = ["hawaii-loco-moco", "macau-minchi", "thai-pad-thai"]
+  .map((slug) => getRecipe(slug))
+  .filter(isDefined);
+
+const heroStory =
+  getStory("hawaii-local-food-migration") ?? stories[0]!;
+const heroCountry = getCountry(heroStory.country);
 
 export default function HomePage() {
   return (
@@ -39,9 +63,9 @@ export default function HomePage() {
               세계 문화
             </h1>
             <p className="mt-7 max-w-2xl break-keep text-base leading-8 text-neutral-600 sm:text-lg">
-              음식에는 그곳에서 살아온 사람들의 역사와 생활방식이 담겨
-              있습니다. 만나의 식탁은 무엇을 먹는지만 알려 주지 않고, 왜
-              그렇게 먹게 되었는지 함께 기록합니다.
+              직접 다녀온 곳의 한 끼에서 시작해 그 지역의 역사와 생활방식을
+              기록합니다. 무엇을 먹는지만 알려 주지 않고, 왜 그렇게 먹게
+              되었는지 문화 이야기와 레시피로 연결합니다.
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
@@ -66,7 +90,7 @@ export default function HomePage() {
           >
             <div className="overflow-hidden rounded-[1.5rem] bg-white">
               <ContentVisual
-                eyebrow="FEATURED STORY · HONG KONG"
+                eyebrow={`FEATURED STORY · ${heroCountry?.nameEn ?? "WORLD TABLE"}`}
                 label={heroStory.visualLabel}
                 caption={heroStory.visualCaption}
                 palette={heroStory.palette}
@@ -99,8 +123,8 @@ export default function HomePage() {
                 나라별 식탁
               </h2>
               <p className="mt-4 max-w-2xl break-keep leading-7 text-neutral-600">
-                지역의 기후와 재료, 역사와 생활방식이 어떻게 음식의
-                특징으로 이어지는지 살펴보세요.
+                마카오, 하와이와 태국을 포함해 직접 다녀온 지역의 기후와
+                역사, 생활방식이 음식으로 이어지는 과정을 살펴보세요.
               </p>
             </div>
             <Link

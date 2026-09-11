@@ -3,18 +3,18 @@ import { siteConfig } from "@/lib/site";
 
 const footerLinks = [
   { label: "나라별 식탁", href: "/countries" },
+  { label: "유럽 여행 기록", href: "/journeys/europe" },
   { label: "문화 이야기", href: "/stories" },
   { label: "세계 레시피", href: "/recipes" },
+  { label: "영상", href: "/videos" },
   { label: "클래스", href: "/classes" },
   { label: "브랜드 소개", href: "/about" },
   { label: "개인정보 처리 안내", href: "/privacy" },
-];
+] as const;
 
 export default function Footer() {
   const socialLinks = [
-    siteConfig.instagramUrl
-      ? { label: "Instagram", href: siteConfig.instagramUrl }
-      : null,
+    { label: `Instagram ${siteConfig.instagramHandle}`, href: siteConfig.instagramUrl },
     siteConfig.youtubeUrl
       ? { label: "YouTube", href: siteConfig.youtubeUrl }
       : null,
@@ -28,8 +28,8 @@ export default function Footer() {
         <div>
           <p className="text-2xl font-black tracking-tight">만나의 식탁</p>
           <p className="mt-3 max-w-xl break-keep text-sm leading-7 text-neutral-300">
-            한 끼의 음식에서 시작해 그 지역의 역사와 생활방식, 사람들의
-            이야기를 기록합니다.
+            직접 다녀온 곳의 한 끼에서 시작해 그 지역의 역사와 생활방식,
+            사람들의 이야기를 기록합니다.
           </p>
 
           {siteConfig.contactEmail && (
@@ -65,23 +65,17 @@ export default function Footer() {
               CHANNEL
             </p>
             <div className="mt-4 flex flex-col gap-3">
-              {socialLinks.length > 0 ? (
-                socialLinks.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm !text-neutral-300 no-underline transition hover:!text-white"
-                  >
-                    {item.label}
-                  </a>
-                ))
-              ) : (
-                <p className="break-keep text-sm leading-6 text-neutral-500">
-                  채널 주소는 환경변수에서 연결할 수 있습니다.
-                </p>
-              )}
+              {socialLinks.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm !text-neutral-300 no-underline transition hover:!text-white"
+                >
+                  {item.label} ↗
+                </a>
+              ))}
             </div>
           </div>
         </div>
@@ -90,7 +84,7 @@ export default function Footer() {
       <div className="border-t border-neutral-800">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-5 text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Manna Table.</p>
-          <p>음식과 문화는 지역·시대·가정에 따라 다를 수 있습니다.</p>
+          <p>여행 기록과 문화 설명은 출처와 경험 범위를 구분합니다.</p>
         </div>
       </div>
     </footer>

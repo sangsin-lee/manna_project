@@ -59,7 +59,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" data-scroll-behavior="smooth">
       <body className="min-h-screen bg-[#fffdf9] text-neutral-950">
         <a
           href="#main-content"

@@ -8,10 +8,11 @@ const navigation = [
   { label: "나라별 식탁", href: "/countries" },
   { label: "문화 이야기", href: "/stories" },
   { label: "레시피", href: "/recipes" },
+  { label: "여행 기록", href: "/journeys/europe" },
   { label: "영상", href: "/videos" },
   { label: "클래스", href: "/classes" },
   { label: "소개", href: "/about" },
-];
+] as const;
 
 export default function Header() {
   const pathname = usePathname();
@@ -24,8 +25,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-stone-200 bg-[#fffdf9]/95 backdrop-blur-md">
-      <div className="mx-auto max-w-6xl px-5 sm:px-6">
-        <div className="flex min-h-20 items-center justify-between gap-5">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
+        <div className="flex min-h-20 items-center justify-between gap-4">
           <Link
             href="/"
             className="shrink-0 no-underline"
@@ -40,7 +41,7 @@ export default function Header() {
           </Link>
 
           <nav
-            className="hidden items-center gap-6 lg:flex"
+            className="hidden items-center gap-4 xl:flex"
             aria-label="주요 메뉴"
           >
             {navigation.map((item) => {
@@ -51,7 +52,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={`relative py-2 text-sm font-semibold no-underline transition-colors ${
+                  className={`relative whitespace-nowrap py-2 text-[13px] font-semibold no-underline transition-colors ${
                     active
                       ? "!text-[#b9480c]"
                       : "!text-neutral-600 hover:!text-neutral-950"
@@ -96,7 +97,7 @@ export default function Header() {
 
         <nav
           aria-label="모바일 주요 메뉴"
-          className="-mx-5 flex gap-5 overflow-x-auto px-5 pb-4 lg:hidden sm:-mx-6 sm:px-6"
+          className="-mx-5 flex gap-5 overflow-x-auto px-5 pb-4 xl:hidden sm:-mx-6 sm:px-6"
         >
           {navigation.map((item) => {
             const active = isActive(item.href);

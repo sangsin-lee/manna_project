@@ -3,10 +3,14 @@ import Link from "next/link";
 import ContentVisual from "@/components/ContentVisual";
 import StoryCard from "@/components/StoryCard";
 import {
+  continentLabels,
   countries,
+  experienceStatusLabels,
   getCountry,
+  getStory,
   stories,
   storyCategoryLabels,
+  type Continent,
   type CountrySlug,
   type StoryCategory,
 } from "@/lib/content";
@@ -14,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "문화 이야기",
   description:
-    "세계 각지의 음식에 담긴 역사, 생활방식, 식사 문화와 사람들의 이야기를 살펴보세요.",
+    "파리, 슈투트가르트, 융프라우, 로마와 바티칸을 포함해 세계 각지의 음식에 담긴 역사와 생활방식을 살펴보세요.",
   alternates: {
     canonical: "/stories",
   },
@@ -31,17 +35,32 @@ const categoryOptions: Array<{
   })),
 ];
 
+const continentOptions: Array<{
+  value: "all" | Continent;
+  label: string;
+}> = [
+  { value: "all", label: "전체 대륙" },
+  ...Object.entries(continentLabels).map(([value, label]) => ({
+    value: value as Continent,
+    label,
+  })),
+];
+
 type CountryFilter = "all" | CountrySlug;
+type ContinentFilter = "all" | Continent;
 
 function buildStoriesHref({
   category,
+  continent,
   country,
 }: {
   category: "all" | StoryCategory;
+  continent: ContinentFilter;
   country: CountryFilter;
 }) {
   const query = new URLSearchParams();
   if (category !== "all") query.set("category", category);
+  if (continent !== "all") query.set("continent", continent);
   if (country !== "all") query.set("country", country);
   const queryString = query.toString();
 
@@ -53,6 +72,7 @@ function buildStoriesHref({
 type StoriesPageProps = {
   searchParams: Promise<{
     category?: string;
+    continent?: string;
     country?: string;
   }>;
 };
@@ -68,24 +88,52 @@ export default async function StoriesPage({
     ? (params.category as StoryCategory)
     : "all";
 
-  const activeCountry: CountryFilter = countries.some(
+  const activeContinent: ContinentFilter = continentOptions.some(
+    (item) => item.value === params.continent,
+  )
+    ? (params.continent as Continent)
+    : "all";
+
+  const requestedCountry: CountryFilter = countries.some(
     (country) => country.slug === params.country,
   )
     ? (params.country as CountrySlug)
     : "all";
 
+  const requestedCountryData =
+    requestedCountry === "all" ? undefined : getCountry(requestedCountry);
+
+  const activeCountry: CountryFilter =
+    requestedCountryData &&
+    activeContinent !== "all" &&
+    requestedCountryData.continent !== activeContinent
+      ? "all"
+      : requestedCountry;
+
+  const visibleCountries = countries.filter(
+    (country) =>
+      activeContinent === "all" || country.continent === activeContinent,
+  );
+
   const filteredStories = stories.filter((story) => {
+    const storyCountry = getCountry(story.country);
     const categoryMatches =
       activeCategory === "all" || story.category === activeCategory;
+    const continentMatches =
+      activeContinent === "all" ||
+      storyCountry?.continent === activeContinent;
     const countryMatches =
       activeCountry === "all" || story.country === activeCountry;
-    return categoryMatches && countryMatches;
+
+    return categoryMatches && continentMatches && countryMatches;
   });
 
-  const featuredStory = stories[0];
+  const featuredStory = getStory("rome-vatican-food-route") ?? stories[0]!;
   const featuredCountry = getCountry(featuredStory.country);
   const isUnfiltered =
-    activeCategory === "all" && activeCountry === "all";
+    activeCategory === "all" &&
+    activeContinent === "all" &&
+    activeCountry === "all";
 
   return (
     <main className="min-h-screen bg-[#fffdf9] text-neutral-950">
@@ -99,15 +147,29 @@ export default async function StoriesPage({
               </p>
             </div>
             <h1 className="max-w-3xl break-keep text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              음식 뒤에 놓인
+              여행의 한 장면에서
               <br />
-              사람들의 이야기
+              식문화의 맥락까지
             </h1>
             <p className="mt-7 max-w-2xl break-keep text-base leading-8 text-neutral-600 sm:text-lg">
-              한 접시의 음식은 조리법만으로 완성되지 않습니다. 지역의
-              기후와 역사, 사람들의 일상과 관계가 모여 하나의 식문화를
-              만듭니다.
+              개인 여행 기록은 실제 방문 경험으로, 문화 설명은 공식 자료로
+              구분해 정리합니다. 음식이 어느 장소와 생활 방식에서
+              만들어졌는지 차근히 살펴보세요.
             </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#story-archive"
+                className="inline-flex rounded-full bg-[#b9480c] px-6 py-3 text-sm font-black !text-white transition hover:bg-[#943706]"
+              >
+                이야기 찾아보기
+              </a>
+              <Link
+                href="/journeys/europe"
+                className="inline-flex rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-black !text-neutral-900 transition hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
+              >
+                유럽 여행 기록
+              </Link>
+            </div>
           </div>
 
           <aside className="rounded-[2rem] border border-[#ddd2c5] bg-white/80 p-7 shadow-[0_18px_50px_rgba(80,60,35,0.06)]">
@@ -115,11 +177,11 @@ export default async function StoriesPage({
               EDITORIAL PRINCIPLE
             </p>
             <p className="mt-4 break-keep text-xl font-bold leading-8">
-              무엇을 먹는지만 소개하지 않고, 왜 그렇게 먹게 되었는지
-              기록합니다.
+              무엇을 먹는지만 소개하지 않고, 어디에서 왜 그렇게 먹게
+              되었는지 기록합니다.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {["역사", "지역", "생활", "시장", "사람"].map((item) => (
+              {["방문지", "역사", "지역", "생활", "사람"].map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-stone-300 bg-white px-4 py-2 text-sm text-neutral-600"
@@ -157,10 +219,23 @@ export default async function StoriesPage({
                 <span className="text-[#b9480c]">
                   {featuredCountry?.nameKo}
                 </span>
+                {featuredCountry && (
+                  <>
+                    <span className="text-stone-300">·</span>
+                    <span className="text-neutral-500">
+                      {continentLabels[featuredCountry.continent]}
+                    </span>
+                  </>
+                )}
                 <span className="text-stone-300">·</span>
                 <span className="text-neutral-500">
                   {storyCategoryLabels[featuredStory.category]}
                 </span>
+                {featuredStory.experienceStatus && (
+                  <span className="rounded-full border border-[#e5b596] bg-[#fff3ea] px-3 py-1.5 text-[11px] font-black tracking-normal text-[#943706]">
+                    {experienceStatusLabels[featuredStory.experienceStatus]}
+                  </span>
+                )}
               </div>
               <h3 className="mt-5 break-keep text-3xl font-black leading-tight tracking-tight sm:text-4xl">
                 {featuredStory.title}
@@ -195,7 +270,8 @@ export default async function StoriesPage({
                 문화 이야기 모아보기
               </h2>
               <p className="mt-4 break-keep leading-7 text-neutral-600">
-                주제와 나라·지역을 선택해 관련 이야기를 살펴보세요.
+                대륙, 이야기 주제와 나라·지역을 선택해 관련 콘텐츠를
+                살펴보세요.
               </p>
             </div>
             <p className="text-sm text-neutral-500">
@@ -204,6 +280,45 @@ export default async function StoriesPage({
           </div>
 
           <div className="mt-10">
+            <p className="mb-4 text-xs font-black tracking-[0.18em] text-neutral-500">
+              대륙
+            </p>
+            <nav
+              aria-label="문화 이야기 대륙 필터"
+              className="flex gap-3 overflow-x-auto pb-2"
+            >
+              {continentOptions.map((option) => {
+                const active = option.value === activeContinent;
+                const nextCountry =
+                  activeCountry === "all" ||
+                  option.value === "all" ||
+                  getCountry(activeCountry)?.continent === option.value
+                    ? activeCountry
+                    : "all";
+
+                return (
+                  <Link
+                    key={option.value}
+                    href={buildStoriesHref({
+                      category: activeCategory,
+                      continent: option.value,
+                      country: nextCountry,
+                    })}
+                    aria-current={active ? "page" : undefined}
+                    className={`shrink-0 rounded-full border px-5 py-2.5 text-sm font-bold no-underline transition ${
+                      active
+                        ? "border-[#b9480c] bg-[#b9480c] !text-white"
+                        : "border-stone-300 bg-white !text-neutral-600 hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
+                    }`}
+                  >
+                    {option.label}
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+
+          <div className="mt-7">
             <p className="mb-4 text-xs font-black tracking-[0.18em] text-neutral-500">
               이야기 주제
             </p>
@@ -218,6 +333,7 @@ export default async function StoriesPage({
                     key={option.value}
                     href={buildStoriesHref({
                       category: option.value,
+                      continent: activeContinent,
                       country: activeCountry,
                     })}
                     aria-current={active ? "page" : undefined}
@@ -239,37 +355,39 @@ export default async function StoriesPage({
               나라·지역
             </p>
             <nav
-              aria-label="나라 및 지역"
+              aria-label="문화 이야기 나라 및 지역 필터"
               className="flex gap-3 overflow-x-auto pb-2"
             >
               <Link
                 href={buildStoriesHref({
                   category: activeCategory,
+                  continent: activeContinent,
                   country: "all",
                 })}
                 aria-current={activeCountry === "all" ? "page" : undefined}
                 className={`shrink-0 rounded-full border px-5 py-2.5 text-sm font-bold no-underline transition ${
                   activeCountry === "all"
-                    ? "border-neutral-950 bg-neutral-950 !text-white"
-                    : "border-stone-300 bg-white !text-neutral-600 hover:border-neutral-950 hover:!text-neutral-950"
+                    ? "border-[#b9480c] bg-[#b9480c] !text-white"
+                    : "border-stone-300 bg-white !text-neutral-600 hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
                 }`}
               >
                 전체 지역
               </Link>
-              {countries.map((country) => {
+              {visibleCountries.map((country) => {
                 const active = country.slug === activeCountry;
                 return (
                   <Link
                     key={country.slug}
                     href={buildStoriesHref({
                       category: activeCategory,
+                      continent: activeContinent,
                       country: country.slug,
                     })}
                     aria-current={active ? "page" : undefined}
                     className={`shrink-0 rounded-full border px-5 py-2.5 text-sm font-bold no-underline transition ${
                       active
-                        ? "border-neutral-950 bg-neutral-950 !text-white"
-                        : "border-stone-300 bg-white !text-neutral-600 hover:border-neutral-950 hover:!text-neutral-950"
+                        ? "border-[#b9480c] bg-[#b9480c] !text-white"
+                        : "border-stone-300 bg-white !text-neutral-600 hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
                     }`}
                   >
                     {country.nameKo}
@@ -278,6 +396,22 @@ export default async function StoriesPage({
               })}
             </nav>
           </div>
+
+          {activeContinent === "europe" && (
+            <div className="mt-8 flex flex-col justify-between gap-4 rounded-2xl border border-[#e5d1c2] bg-[#fff8f2] px-5 py-5 sm:flex-row sm:items-center">
+              <p className="break-keep text-sm leading-7 text-neutral-700">
+                파리 → 슈투트가르트 → 융프라우 → 로마·바티칸의 여행
+                순서로 콘텐츠를 보고 싶다면 유럽 여행 기록 페이지를
+                이용하세요.
+              </p>
+              <Link
+                href="/journeys/europe"
+                className="shrink-0 text-sm font-black !text-[#943706] no-underline"
+              >
+                유럽 기록 보기 →
+              </Link>
+            </div>
+          )}
 
           {filteredStories.length > 0 ? (
             <div className="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3">

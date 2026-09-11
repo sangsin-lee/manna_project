@@ -3,10 +3,14 @@ import Link from "next/link";
 import ContentVisual from "@/components/ContentVisual";
 import RecipeCard from "@/components/RecipeCard";
 import {
+  continentLabels,
   countries,
+  experienceStatusLabels,
   getCountry,
+  getRecipe,
   recipeCategoryLabels,
   recipes,
+  type Continent,
   type CountrySlug,
   type RecipeCategory,
 } from "@/lib/content";
@@ -14,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "세계 레시피",
   description:
-    "세계 각지의 음식에 담긴 문화적 배경을 알아보고, 한국에서 구할 수 있는 재료로 직접 만들어 보세요.",
+    "파리, 슈투트가르트, 융프라우, 로마와 바티칸의 여행 기록에서 확장한 유럽 음식과 세계 레시피를 만나보세요.",
   alternates: {
     canonical: "/recipes",
   },
@@ -31,17 +35,32 @@ const categoryOptions: Array<{
   })),
 ];
 
+const continentOptions: Array<{
+  value: "all" | Continent;
+  label: string;
+}> = [
+  { value: "all", label: "전체 대륙" },
+  ...Object.entries(continentLabels).map(([value, label]) => ({
+    value: value as Continent,
+    label,
+  })),
+];
+
 type CountryFilter = "all" | CountrySlug;
+type ContinentFilter = "all" | Continent;
 
 function buildRecipesHref({
   category,
+  continent,
   country,
 }: {
   category: "all" | RecipeCategory;
+  continent: ContinentFilter;
   country: CountryFilter;
 }) {
   const query = new URLSearchParams();
   if (category !== "all") query.set("category", category);
+  if (continent !== "all") query.set("continent", continent);
   if (country !== "all") query.set("country", country);
   const queryString = query.toString();
 
@@ -53,6 +72,7 @@ function buildRecipesHref({
 type RecipesPageProps = {
   searchParams: Promise<{
     category?: string;
+    continent?: string;
     country?: string;
   }>;
 };
@@ -68,24 +88,52 @@ export default async function RecipesPage({
     ? (params.category as RecipeCategory)
     : "all";
 
-  const activeCountry: CountryFilter = countries.some(
+  const activeContinent: ContinentFilter = continentOptions.some(
+    (item) => item.value === params.continent,
+  )
+    ? (params.continent as Continent)
+    : "all";
+
+  const requestedCountry: CountryFilter = countries.some(
     (country) => country.slug === params.country,
   )
     ? (params.country as CountrySlug)
     : "all";
 
+  const requestedCountryData =
+    requestedCountry === "all" ? undefined : getCountry(requestedCountry);
+
+  const activeCountry: CountryFilter =
+    requestedCountryData &&
+    activeContinent !== "all" &&
+    requestedCountryData.continent !== activeContinent
+      ? "all"
+      : requestedCountry;
+
+  const visibleCountries = countries.filter(
+    (country) =>
+      activeContinent === "all" || country.continent === activeContinent,
+  );
+
   const filteredRecipes = recipes.filter((recipe) => {
+    const recipeCountry = getCountry(recipe.country);
     const categoryMatches =
       activeCategory === "all" || recipe.category === activeCategory;
+    const continentMatches =
+      activeContinent === "all" ||
+      recipeCountry?.continent === activeContinent;
     const countryMatches =
       activeCountry === "all" || recipe.country === activeCountry;
-    return categoryMatches && countryMatches;
+
+    return categoryMatches && continentMatches && countryMatches;
   });
 
-  const featuredRecipe = recipes[0];
+  const featuredRecipe = getRecipe("roman-cacio-e-pepe") ?? recipes[0]!;
   const featuredCountry = getCountry(featuredRecipe.country);
   const isUnfiltered =
-    activeCategory === "all" && activeCountry === "all";
+    activeCategory === "all" &&
+    activeContinent === "all" &&
+    activeCountry === "all";
 
   return (
     <main className="min-h-screen bg-[#fffdf9] text-neutral-950">
@@ -99,14 +147,29 @@ export default async function RecipesPage({
               </p>
             </div>
             <h1 className="max-w-3xl break-keep text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              세계의 음식을
+              여행에서 만난 맛을
               <br />
               나의 식탁에서
             </h1>
             <p className="mt-7 max-w-2xl break-keep text-base leading-8 text-neutral-600 sm:text-lg">
-              음식이 태어난 문화적 배경을 알아보고, 한국에서 구할 수
-              있는 재료로 세계 각지의 요리를 직접 만들어 보세요.
+              직접 방문한 지역에서 영감을 얻고, 공식 자료로 문화적 배경을
+              검토한 뒤 한국에서 구할 수 있는 재료로 다시 구성한 레시피를
+              제공합니다.
             </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#recipe-archive"
+                className="inline-flex rounded-full bg-[#b9480c] px-6 py-3 text-sm font-black !text-white transition hover:bg-[#943706]"
+              >
+                레시피 찾아보기
+              </a>
+              <Link
+                href="/journeys/europe"
+                className="inline-flex rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-black !text-neutral-900 transition hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
+              >
+                유럽 여행 기록
+              </Link>
+            </div>
           </div>
 
           <aside className="rounded-[2rem] border border-[#ddd2c5] bg-white/80 p-7 shadow-[0_18px_50px_rgba(80,60,35,0.06)]">
@@ -114,11 +177,11 @@ export default async function RecipesPage({
               MANNA RECIPE
             </p>
             <p className="mt-4 break-keep text-xl font-bold leading-8">
-              조리법만 따라 하는 것이 아니라 음식에 담긴 이야기까지
-              이해합니다.
+              여행 사진을 그대로 요리로 단정하지 않고, 음식의 지역성과
+              조리 원리를 확인해 다시 만듭니다.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {["문화적 배경", "조리 시간", "난이도", "대체 재료"].map(
+              {["문화적 배경", "방문지", "조리 시간", "대체 재료"].map(
                 (item) => (
                   <span
                     key={item}
@@ -139,7 +202,7 @@ export default async function RecipesPage({
             FEATURED RECIPE
           </p>
           <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
-            이번 주의 세계 레시피
+            이번 주의 유럽 레시피
           </h2>
 
           <Link
@@ -158,10 +221,23 @@ export default async function RecipesPage({
                 <span className="text-[#b9480c]">
                   {featuredCountry?.nameKo}
                 </span>
+                {featuredCountry && (
+                  <>
+                    <span className="text-stone-300">·</span>
+                    <span className="text-neutral-500">
+                      {continentLabels[featuredCountry.continent]}
+                    </span>
+                  </>
+                )}
                 <span className="text-stone-300">·</span>
                 <span className="text-neutral-500">
                   {recipeCategoryLabels[featuredRecipe.category]}
                 </span>
+                {featuredRecipe.experienceStatus && (
+                  <span className="rounded-full border border-[#e5b596] bg-[#fff3ea] px-3 py-1.5 text-[11px] font-black tracking-normal text-[#943706]">
+                    {experienceStatusLabels[featuredRecipe.experienceStatus]}
+                  </span>
+                )}
               </div>
               <h3 className="mt-5 break-keep text-3xl font-black leading-tight tracking-tight sm:text-4xl">
                 {featuredRecipe.title}
@@ -215,7 +291,8 @@ export default async function RecipesPage({
                 세계 레시피 모아보기
               </h2>
               <p className="mt-4 break-keep leading-7 text-neutral-600">
-                음식 종류와 나라·지역을 선택해 원하는 레시피를 찾아보세요.
+                대륙, 음식 종류와 나라·지역을 선택해 원하는 레시피를
+                찾아보세요.
               </p>
             </div>
             <p className="text-sm text-neutral-500">
@@ -224,6 +301,45 @@ export default async function RecipesPage({
           </div>
 
           <div className="mt-10">
+            <p className="mb-4 text-xs font-black tracking-[0.18em] text-neutral-500">
+              대륙
+            </p>
+            <nav
+              aria-label="레시피 대륙 필터"
+              className="flex gap-3 overflow-x-auto pb-2"
+            >
+              {continentOptions.map((option) => {
+                const active = option.value === activeContinent;
+                const nextCountry =
+                  activeCountry === "all" ||
+                  option.value === "all" ||
+                  getCountry(activeCountry)?.continent === option.value
+                    ? activeCountry
+                    : "all";
+
+                return (
+                  <Link
+                    key={option.value}
+                    href={buildRecipesHref({
+                      category: activeCategory,
+                      continent: option.value,
+                      country: nextCountry,
+                    })}
+                    aria-current={active ? "page" : undefined}
+                    className={`shrink-0 rounded-full border px-5 py-2.5 text-sm font-bold no-underline transition ${
+                      active
+                        ? "border-[#b9480c] bg-[#b9480c] !text-white"
+                        : "border-stone-300 bg-white !text-neutral-600 hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
+                    }`}
+                  >
+                    {option.label}
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+
+          <div className="mt-7">
             <p className="mb-4 text-xs font-black tracking-[0.18em] text-neutral-500">
               음식 종류
             </p>
@@ -238,6 +354,7 @@ export default async function RecipesPage({
                     key={option.value}
                     href={buildRecipesHref({
                       category: option.value,
+                      continent: activeContinent,
                       country: activeCountry,
                     })}
                     aria-current={active ? "page" : undefined}
@@ -259,37 +376,39 @@ export default async function RecipesPage({
               나라·지역
             </p>
             <nav
-              aria-label="나라 및 지역"
+              aria-label="레시피 나라 및 지역 필터"
               className="flex gap-3 overflow-x-auto pb-2"
             >
               <Link
                 href={buildRecipesHref({
                   category: activeCategory,
+                  continent: activeContinent,
                   country: "all",
                 })}
                 aria-current={activeCountry === "all" ? "page" : undefined}
                 className={`shrink-0 rounded-full border px-5 py-2.5 text-sm font-bold no-underline transition ${
                   activeCountry === "all"
-                    ? "border-neutral-950 bg-neutral-950 !text-white"
-                    : "border-stone-300 bg-white !text-neutral-600 hover:border-neutral-950 hover:!text-neutral-950"
+                    ? "border-[#b9480c] bg-[#b9480c] !text-white"
+                    : "border-stone-300 bg-white !text-neutral-600 hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
                 }`}
               >
                 전체 지역
               </Link>
-              {countries.map((country) => {
+              {visibleCountries.map((country) => {
                 const active = country.slug === activeCountry;
                 return (
                   <Link
                     key={country.slug}
                     href={buildRecipesHref({
                       category: activeCategory,
+                      continent: activeContinent,
                       country: country.slug,
                     })}
                     aria-current={active ? "page" : undefined}
                     className={`shrink-0 rounded-full border px-5 py-2.5 text-sm font-bold no-underline transition ${
                       active
-                        ? "border-neutral-950 bg-neutral-950 !text-white"
-                        : "border-stone-300 bg-white !text-neutral-600 hover:border-neutral-950 hover:!text-neutral-950"
+                        ? "border-[#b9480c] bg-[#b9480c] !text-white"
+                        : "border-stone-300 bg-white !text-neutral-600 hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
                     }`}
                   >
                     {country.nameKo}
@@ -298,6 +417,21 @@ export default async function RecipesPage({
               })}
             </nav>
           </div>
+
+          {activeContinent === "europe" && (
+            <div className="mt-8 flex flex-col justify-between gap-4 rounded-2xl border border-[#e5d1c2] bg-[#fff8f2] px-5 py-5 sm:flex-row sm:items-center">
+              <p className="break-keep text-sm leading-7 text-neutral-700">
+                파리의 크로크무슈, 슈투트가르트의 마울타셴, 융프라우의
+                뢰스티와 로마 파스타를 여행 순서로 살펴볼 수 있습니다.
+              </p>
+              <Link
+                href="/journeys/europe"
+                className="shrink-0 text-sm font-black !text-[#943706] no-underline"
+              >
+                유럽 기록 보기 →
+              </Link>
+            </div>
+          )}
 
           {filteredRecipes.length > 0 ? (
             <div className="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3">

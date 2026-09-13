@@ -230,7 +230,7 @@ export const countries: Country[] = [
       "김장과 저장 음식",
       "시장 먹거리",
     ],
-    representativeFoods: ["김치", "비빔밥", "불고기", "순대볶음"],
+    representativeFoods: ["김치", "비빔밥", "불고기", "순대볶음", "수육"],
     tableScenes: [
       {
         eyebrow: "DAILY TABLE",
@@ -299,8 +299,13 @@ export const countries: Country[] = [
       },
     ],
     storySlugs: ["korean-banchan-culture", "korean-market-food"],
-    recipeSlugs: ["osam-bulgogi", "korean-sundae-bokkeum"],
-    updatedAt: "2026-09-09",
+    recipeSlugs: [
+      "osam-bulgogi",
+      "korean-sundae-bokkeum",
+      "club-suyuk-platter",
+      "club-bean-sprout-egg-ramyeon",
+    ],
+    updatedAt: "2026-09-13",
     palette: {
       from: "#f1e4d6",
       mid: "#dfe8df",
@@ -4684,6 +4689,228 @@ export const recipes: Recipe[] = [
       mid: "#d9ba82",
       to: "#c7d0ae",
       ink: "#4a3b25",
+    },
+  },
+
+  {
+    slug: "club-suyuk-platter",
+    experienceStatus: "researched",
+    title: "요리동아리 수육 한 상",
+    country: "korea",
+    category: "main",
+    summary:
+      "수육과 라면을 함께 먹는 15명 기준으로 돼지고기 3.2kg을 두 냄비에 나누어 삶고 알배추, 김치와 무말랭이를 곁들이는 단체 조리용 레시피입니다.",
+    culturalNote:
+      "수육은 돼지고기나 소고기 덩어리를 삶아 얇게 썰어 내는 한국식 고기 요리입니다. 이 레시피는 한 가정의 소량 조리법이 아니라 요리동아리 15명이 함께 준비하고 바로 나누어 먹을 수 있도록 냄비 분할, 휴지 시간과 상차림 분량을 포함한 운영형 버전입니다.",
+    cookingTime: 100,
+    difficulty: "보통",
+    servings: 15,
+    visualLabel: "수육 한 상",
+    visualCaption: "EAT CLUB · 15 SERVINGS",
+    keywords: ["요리동아리", "15인분", "단체요리", "수육"],
+    ingredientGroups: [
+      {
+        title: "돼지고기",
+        items: [
+          "통삼겹살 1.6kg",
+          "돼지 앞다리살 또는 목살 1.6kg",
+          "고기가 잠길 정도의 물 약 6~7L(냄비 크기에 따라 조절)",
+        ],
+      },
+      {
+        title: "삶는 향신 재료",
+        items: [
+          "된장 6큰술",
+          "양파 3개(반으로 자르기)",
+          "대파 4대(큰 토막)",
+          "통마늘 30쪽",
+          "생강 50g(편으로 썰기)",
+          "통후추 2큰술",
+          "맛술 250ml",
+          "진간장 4큰술",
+          "월계수잎 6장(선택)",
+        ],
+      },
+      {
+        title: "상차림 곁들임",
+        items: [
+          "알배추 작은 것 3통",
+          "배추김치 1.2kg",
+          "무말랭이무침 600g",
+          "쌈장 500g",
+          "새우젓 250g",
+          "편마늘 250g",
+          "청양고추 15개",
+        ],
+      },
+    ],
+    steps: [
+      {
+        title: "냄비와 고기를 두 조로 나누기",
+        description:
+          "10L 안팎의 큰 냄비 2개에 삼겹살과 앞다리살을 절반씩 나눕니다. 고기 덩어리가 너무 크면 700~800g 정도가 되도록 잘라 두께를 비슷하게 맞춥니다.",
+        tip: "한 냄비에 고기를 몰아 넣으면 끓는 온도가 크게 내려가고 익는 시간이 달라지므로 두 냄비로 나누는 것이 안정적입니다.",
+      },
+      {
+        title: "향신 육수 끓이기",
+        description:
+          "각 냄비에 물과 향신 재료를 절반씩 넣고 된장이 완전히 풀리도록 저은 뒤 센 불에서 끓입니다.",
+      },
+      {
+        title: "고기를 넣고 다시 끓이기",
+        description:
+          "육수가 팔팔 끓으면 고기를 넣습니다. 다시 끓기 시작하면 떠오르는 거품을 걷고 중약불로 낮춥니다.",
+      },
+      {
+        title: "60~70분 천천히 삶기",
+        description:
+          "뚜껑을 반쯤 덮고 60~70분 삶습니다. 30분이 지나면 고기의 위아래를 바꾸고 물이 부족하면 뜨거운 물을 추가합니다.",
+        tip: "가장 두꺼운 고기의 중심온도가 75℃ 이상에서 1분 이상 유지됐는지 확인합니다.",
+      },
+      {
+        title: "10~15분 휴지하기",
+        description:
+          "익은 고기를 건져 포일이나 뚜껑을 느슨하게 덮고 10~15분 둡니다. 바로 자르는 것보다 육즙이 안정되고 모양이 덜 부서집니다.",
+      },
+      {
+        title: "먹기 직전에 썰어 상차림하기",
+        description:
+          "결 반대 방향으로 약 7~8mm 두께로 썰어 넓은 접시에 담습니다. 알배추, 김치, 무말랭이, 쌈장과 새우젓을 구역별로 나누어 함께 냅니다.",
+        tip: "먼저 먹을 분량만 썰고 남은 고기는 덩어리째 따뜻하게 보관하면 표면이 덜 마릅니다.",
+      },
+    ],
+    substitutions: [
+      "기름진 맛을 줄이려면 통삼겹살을 1kg으로 줄이고 앞다리살을 2.2kg으로 늘립니다.",
+      "맛술은 청주나 물로 대체할 수 있으며, 월계수잎은 없어도 됩니다.",
+      "무말랭이 대신 보쌈김치나 겉절이를 준비해도 됩니다.",
+    ],
+    tips: [
+      "조리 시작 전에 수육팀, 상차림팀과 라면팀으로 역할을 나누면 마지막 20분에 작업이 몰리지 않습니다.",
+      "대량 조리한 수육은 가능한 한 조리 후 2시간 이내 제공하고, 바로 먹지 않으면 따뜻한 상태는 60℃ 이상 또는 차갑게 보관할 때는 5℃ 이하를 유지합니다.",
+      "남은 고기는 얕은 용기에 나누어 빠르게 식힌 뒤 냉장 보관하고, 다시 먹을 때 중심까지 충분히 재가열합니다.",
+    ],
+    publishedAt: "2026-09-13",
+    relatedStorySlugs: ["korean-banchan-culture"],
+    sources: [
+      {
+        label: "VISITKOREA — 수육",
+        url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=178486",
+      },
+      {
+        label: "식품안전나라 — 대량 조리 음식 식중독 주의 요령",
+        url: "https://www.foodsafetykorea.go.kr/portal/sympathyplus/infographicDetail.do?bbs_no=bbs001&menu_no=2892&ntctxt_no=1089474",
+      },
+    ],
+    palette: {
+      from: "#efe2d4",
+      mid: "#dfc4a8",
+      to: "#c9d6c2",
+      ink: "#493425",
+    },
+  },
+  {
+    slug: "club-bean-sprout-egg-ramyeon",
+    experienceStatus: "researched",
+    title: "요리동아리 숙주 계란 라면",
+    country: "korea",
+    category: "main",
+    summary:
+      "수육과 함께 먹는 15명 기준으로 라면 12봉을 4봉씩 세 번 나누어 끓이고, 숙주와 풀어 넣은 계란으로 식감과 포만감을 더하는 단체 조리 레시피입니다.",
+    culturalNote:
+      "숙주와 계란을 넣은 라면은 정해진 전통 음식이라기보다 즉석면을 인원과 취향에 맞게 확장한 생활 요리입니다. 동아리 조리에서는 한 냄비에 전량을 넣는 것보다 4봉 단위로 나누어 면의 익힘을 맞추고 완성되는 즉시 제공하는 운영 방식이 더 중요합니다.",
+    cookingTime: 35,
+    difficulty: "쉬움",
+    servings: 15,
+    visualLabel: "숙주 계란 라면",
+    visualCaption: "EAT CLUB · 3 BATCHES",
+    keywords: ["요리동아리", "15인분", "라면", "숙주", "계란"],
+    ingredientGroups: [
+      {
+        title: "라면 기본",
+        items: [
+          "봉지라면 12봉(수육과 함께 먹는 기준, 라면이 주식이면 15봉)",
+          "제품 표기 물 총량의 약 90%(12봉 기준 대략 5.8~6.0L, 제품별 조절)",
+          "동봉된 분말스프와 건더기스프 전량",
+        ],
+      },
+      {
+        title: "추가 재료",
+        items: [
+          "숙주 1kg",
+          "계란 8개",
+          "대파 4대",
+          "청양고추 8개(선택)",
+          "다진 마늘 2큰술(선택)",
+        ],
+      },
+      {
+        title: "한 번 끓일 분량 · 총 3회",
+        items: [
+          "라면 4봉",
+          "숙주 약 330g",
+          "계란 2~3개",
+          "대파와 청양고추 전체의 1/3",
+          "라면 4봉에 해당하는 표기 물의 약 90%",
+        ],
+      },
+    ],
+    steps: [
+      {
+        title: "숙주와 고명을 세 묶음으로 나누기",
+        description:
+          "숙주는 흐르는 물에 두세 번 씻어 물기를 빼고 약 330g씩 세 묶음으로 나눕니다. 대파와 청양고추도 세 등분해 둡니다.",
+      },
+      {
+        title: "계란은 가볍게 풀어 두기",
+        description:
+          "계란 8개를 한 그릇에 깨서 흰자와 노른자가 섞일 정도로만 풉니다. 매 회차마다 1/3씩 사용할 수 있도록 국자나 계량컵을 준비합니다.",
+      },
+      {
+        title: "첫 번째 4봉 끓이기",
+        description:
+          "냄비에 4봉 분량 물의 약 90%와 건더기스프를 넣어 끓입니다. 끓으면 분말스프와 면 4개를 넣고 젓가락으로 면을 풀어 줍니다.",
+        tip: "숙주에서 수분이 나오므로 처음부터 제품 표기 물을 모두 넣지 말고, 마지막에 간을 보며 뜨거운 물을 보충합니다.",
+      },
+      {
+        title: "숙주와 계란 넣기",
+        description:
+          "제품 권장 조리시간이 약 1분 30초 남았을 때 숙주 330g을 넣습니다. 30초 뒤 계란 1/3을 원을 그리듯 부은 뒤 크게 한두 번만 저어 부드러운 덩어리를 만듭니다.",
+      },
+      {
+        title: "파와 고추로 마무리해 즉시 제공",
+        description:
+          "면이 원하는 익힘이 되면 대파와 청양고추를 넣고 10~20초 더 끓입니다. 준비한 그릇에 바로 나누어 담습니다.",
+      },
+      {
+        title: "같은 방식으로 두 번 더 조리",
+        description:
+          "첫 회차를 배식하는 동안 다음 냄비를 끓입니다. 가능하면 버너와 냄비 2개를 번갈아 사용해 세 회차의 대기 시간을 줄입니다.",
+        tip: "12봉을 한 냄비에 한꺼번에 끓이면 면을 고르게 풀기 어렵고 먼저 익은 면이 불기 쉬우므로 4봉씩 나누는 것을 권장합니다.",
+      },
+    ],
+    substitutions: [
+      "숙주 식감을 약하게 하고 싶으면 800g으로 줄입니다.",
+      "계란을 개별로 넣고 싶으면 12개를 준비해 각 회차에 4개씩 넣습니다.",
+      "라면을 단독 식사로 제공하면 15봉과 숙주 1.2kg으로 늘리고 5봉씩 세 번 끓입니다.",
+    ],
+    tips: [
+      "라면을 끓이기 전에 그릇 15개, 젓가락, 국자와 받침대를 먼저 배치해야 완성된 면이 기다리지 않습니다.",
+      "수육을 써는 시간과 첫 라면 조리 시작을 맞추면 두 메뉴를 함께 따뜻하게 낼 수 있습니다.",
+      "완성된 라면은 보관하지 말고 즉시 먹으며, 남은 국물을 실온에 오래 두지 않습니다.",
+    ],
+    publishedAt: "2026-09-13",
+    relatedStorySlugs: [],
+    sources: [
+      {
+        label: "식품안전나라 — 대량 조리 음식 식중독 주의 요령",
+        url: "https://www.foodsafetykorea.go.kr/portal/sympathyplus/infographicDetail.do?bbs_no=bbs001&menu_no=2892&ntctxt_no=1089474",
+      },
+    ],
+    palette: {
+      from: "#f3dfbd",
+      mid: "#e1b96f",
+      to: "#c8d8b3",
+      ink: "#47351f",
     },
   },
 ];

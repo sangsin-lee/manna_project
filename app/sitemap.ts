@@ -47,6 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${siteConfig.url}/clubs/eat`,
+      lastModified: new Date("2026-09-13T00:00:00+09:00"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${siteConfig.url}/about`,
       lastModified: new Date(),
       changeFrequency: "monthly",

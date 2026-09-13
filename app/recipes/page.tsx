@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContentVisual from "@/components/ContentVisual";
+import EatClubBanner from "@/components/EatClubBanner";
 import RecipeCard from "@/components/RecipeCard";
 import {
   continentLabels,
@@ -18,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: "세계 레시피",
   description:
-    "파리, 슈투트가르트, 융프라우, 로마와 바티칸의 여행 기록에서 확장한 유럽 음식과 세계 레시피를 만나보세요.",
+    "여행에서 만난 세계 음식과 요리동아리 단체 조리 메뉴를 문화적 배경, 재료와 단계별 조리법으로 만나보세요.",
   alternates: {
     canonical: "/recipes",
   },
@@ -195,6 +196,8 @@ export default async function RecipesPage({
           </aside>
         </div>
       </section>
+
+      <EatClubBanner />
 
       {isUnfiltered && (
         <section className="mx-auto max-w-6xl px-6 py-20 lg:py-28">

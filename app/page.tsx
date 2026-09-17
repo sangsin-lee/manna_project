@@ -5,6 +5,7 @@ import JsonLd from "@/components/JsonLd";
 import RecipeCard from "@/components/RecipeCard";
 import ReservationForm from "@/components/ReservationForm";
 import StoryCard from "@/components/StoryCard";
+import TonightPick from "@/components/TonightPick";
 import { getCountry, getRecipe, getStory, stories } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
 
@@ -79,6 +80,8 @@ export default function HomePage() {
           description: siteConfig.description,
         }}
       />
+
+      <TonightPick />
 
       <section className="border-b border-stone-200 bg-[#fffdf9]">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-24">

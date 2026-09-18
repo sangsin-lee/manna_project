@@ -22,7 +22,7 @@ export default function RecipeArticle({ recipe, relatedRecipes }: { recipe: Reci
                 <p className="editorial-eyebrow"><span className="editorial-dot" /> THE RECIPE JOURNAL <span>— {country?.nameEn}</span></p>
                 <h1>{recipe.title}</h1>
                 <p className="recipe-cover-summary">{recipe.summary}</p>
-                <div className="recipe-cover-actions"><PresentationPlayer key={recipe.slug} frames={recipeFrames(recipe)} title={recipe.title} /><a className="manna-button manna-button-outline" href="#ingredients">재료부터 보기 <span>↗</span></a></div>
+                <div className="recipe-cover-actions"><PresentationPlayer key={recipe.slug} frames={recipeFrames(recipe)} title={recipe.title} /><Link className="manna-button manna-button-outline" href={`/videos/studio?recipe=${recipe.slug}`}>영상 만들기 <span>↗</span></Link><a className="manna-button manna-button-outline" href="#ingredients">재료부터 보기 <span>↗</span></a></div>
                 <p className="recipe-screen-hint">유래 → 시대와 문화 → 맛과 식감 → 조리법, 한 장씩 크게 만나보세요.</p>
               </div>
               <aside className="recipe-note" aria-label="레시피 한눈에 보기">

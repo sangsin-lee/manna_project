@@ -7,10 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "check:presentations": "node scripts/check-presentations.mjs"
+    "check:presentations": "node scripts/check-presentations.mjs",
+    "check:video": "node scripts/check-video-studio.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.100.0",
+    "mediabunny": "1.58.0",
     "next": "16.2.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",

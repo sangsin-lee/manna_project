@@ -50,6 +50,7 @@ export default function VideosPage() {
             식문화의 모습을 영상으로 기록합니다.
           </p>
 
+          <Link href="/videos/studio" className="mt-8 mr-3 inline-flex rounded-full bg-[#294c34] px-6 py-3.5 text-sm font-black !text-white">글로 영상 만들기 ↗</Link>
           {siteConfig.youtubeUrl ? (
             <a
               href={siteConfig.youtubeUrl}
@@ -61,7 +62,7 @@ export default function VideosPage() {
             </a>
           ) : (
             <p className="mt-8 inline-flex rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-bold text-neutral-600">
-              채널 주소 연결 전 · NEXT_PUBLIC_YOUTUBE_URL 설정 필요
+              식탁 이야기를 영상으로 준비하고 있어요
             </p>
           )}
         </div>

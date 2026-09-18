@@ -81,7 +81,7 @@ export default function PresentationPlayer({ frames, title }: { frames: Presenta
               <div className="film-sheet">
                 <div className="film-brand"><span>만나의 식탁<span className="film-brand-en">MANNA TABLE</span></span><span>{frame.section}</span></div>
                 <div key={index} data-direction={direction} className={`film-content film-scene-enter${frame.title.length > 35 ? " has-long-title" : ""}`}>
-                  <p className="film-kicker">{frame.number ? `STEP ${frame.number}` : frame.kind === "cover" ? "FOOD, CULTURE & YOU" : "A STORY ON YOUR TABLE"}</p>
+                  <p className="film-kicker">{frame.kicker ?? (frame.number ? `STEP ${frame.number}` : frame.kind === "cover" ? "FOOD, CULTURE & YOU" : "A STORY ON YOUR TABLE")}</p>
                   <h2>{frame.title}</h2>
                   {frame.body && <p className="film-body">{frame.body}</p>}
                   {frame.items && <ul className={frame.kind === "cover" ? "film-facts" : "film-ingredients"}>{frame.items.map((item, i) => <li key={`${i}-${item}`}>{item}</li>)}</ul>}

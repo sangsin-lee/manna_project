@@ -1,16 +1,26 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { PresentationFrame } from "@/lib/presentation";
 
 export default function PresentationPlayer({ frames, title }: { frames: PresentationFrame[]; title: string }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
   const [open, setOpen] = useState(false);
-  const [index, setIndex] = useState(0);
+  const [{ index, direction }, setScene] = useState({ index: 0, direction: "forward" });
   const [portrait, setPortrait] = useState(false);
   const [clean, setClean] = useState(false);
   const frame = frames[index];
+
+  const navigate = useCallback((destination: number | "next" | "previous") => {
+    setScene((current) => {
+      const requested = destination === "next" ? current.index + 1
+        : destination === "previous" ? current.index - 1 : destination;
+      const next = Math.max(0, Math.min(requested, frames.length - 1));
+      if (next === current.index) return current;
+      return { index: next, direction: next > current.index ? "forward" : "backward" };
+    });
+  }, [frames.length]);
 
   useEffect(() => {
     if (!open) return;
@@ -25,18 +35,18 @@ export default function PresentationPlayer({ frames, title }: { frames: Presenta
       const target = event.target as HTMLElement;
       if (target.closest("select, input, textarea")) return;
       if (event.key === "ArrowRight" || event.key === "PageDown") {
-        event.preventDefault(); setIndex((value) => Math.min(value + 1, frames.length - 1));
+        event.preventDefault(); navigate("next");
       }
       if (event.key === "ArrowLeft" || event.key === "PageUp") {
-        event.preventDefault(); setIndex((value) => Math.max(0, value - 1));
+        event.preventDefault(); navigate("previous");
       }
-      if (event.key === "Home") { event.preventDefault(); setIndex(0); }
-      if (event.key === "End") { event.preventDefault(); setIndex(frames.length - 1); }
+      if (event.key === "Home") { event.preventDefault(); navigate(0); }
+      if (event.key === "End") { event.preventDefault(); navigate(frames.length - 1); }
       if (event.key.toLowerCase() === "h") { event.preventDefault(); setClean((value) => !value); }
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open, frames.length]);
+  }, [open, frames.length, navigate]);
 
   function close() {
     dialog.current?.close();
@@ -70,7 +80,7 @@ export default function PresentationPlayer({ frames, title }: { frames: Presenta
             <section className={`film-stage${portrait ? " is-portrait" : ""} film-${frame.kind}`} aria-label="현재 촬영 화면">
               <div className="film-sheet">
                 <div className="film-brand"><span>만나의 식탁<span className="film-brand-en">MANNA TABLE</span></span><span>{frame.section}</span></div>
-                <div className={`film-content${frame.title.length > 35 ? " has-long-title" : ""}`}>
+                <div key={index} data-direction={direction} className={`film-content film-scene-enter${frame.title.length > 35 ? " has-long-title" : ""}`}>
                   <p className="film-kicker">{frame.number ? `STEP ${frame.number}` : frame.kind === "cover" ? "FOOD, CULTURE & YOU" : "A STORY ON YOUR TABLE"}</p>
                   <h2>{frame.title}</h2>
                   {frame.body && <p className="film-body">{frame.body}</p>}
@@ -84,12 +94,12 @@ export default function PresentationPlayer({ frames, title }: { frames: Presenta
           <footer className="film-controls">
             <p>← → 이동 <span>·</span> H 도구 숨기기·복원 <span>·</span> 화면 두 번 클릭으로 복원 <span>·</span> Esc 닫기</p>
             <div className="film-navigation">
-              <button aria-label="이전 장면" disabled={index === 0} onClick={() => setIndex(index - 1)}>← 이전</button>
+              <button aria-label="이전 장면" disabled={index === 0} onClick={() => navigate("previous")}>← 이전</button>
               <label className="sr-only" htmlFor={`film-scene-${frames.length}`}>장면 선택</label>
-              <select id={`film-scene-${frames.length}`} value={index} onChange={(event) => setIndex(Number(event.target.value))}>
+              <select id={`film-scene-${frames.length}`} value={index} onChange={(event) => navigate(Number(event.target.value))}>
                 {frames.map((item, i) => <option key={i} value={i}>{i + 1}. {item.section} · {item.title}</option>)}
               </select>
-              <button aria-label="다음 장면" disabled={index === frames.length - 1} onClick={() => setIndex(index + 1)}>다음 →</button>
+              <button aria-label="다음 장면" disabled={index === frames.length - 1} onClick={() => navigate("next")}>다음 →</button>
             </div>
           </footer>
           {clean && <button className="film-restore" onClick={() => setClean(false)}>도구 표시 · H</button>}

@@ -49,3 +49,31 @@
 @media(max-width:640px){.editorial-wrap{width:calc(100% - 40px)}.recipe-cover-grid{grid-template-columns:1fr;padding:35px 0 48px;gap:35px}.recipe-cover-copy h1{font-size:36px;margin-top:18px}.recipe-cover-summary{font-size:16px}.recipe-cover-copy .editorial-eyebrow>span:last-child{display:none}.recipe-note{transform:none;box-shadow:5px 6px 0 #e9e5db;max-width:440px}.recipe-note-art{display:none}.recipe-note-top{padding-bottom:14px}.recipe-facts{border:0;padding-top:18px}.recipe-facts dd{font-size:29px}.recipe-note-bottom{margin-top:12px}.recipe-chapters>div{gap:24px}.recipe-chapters a{font-size:12px;padding:16px 0}.recipe-chapters{top:116px}.editorial-section{padding:48px 0;scroll-margin-top:185px}.editorial-section-grid{grid-template-columns:1fr;gap:28px}.culture-prose{font-size:19px;line-height:1.9}.recipe-notes-grid{grid-template-columns:1fr;gap:35px}.editorial-steps>li{grid-template-columns:42px 1fr;gap:18px;padding:28px 0}.step-numeral{font-size:39px}.editorial-steps h3{font-size:22px}.editorial-steps p{font-size:16px}.step-tip{grid-template-columns:1fr;gap:6px;padding:15px}.step-tip p{font-size:14px}.method-heading{align-items:start}.recipe-more .method-heading{flex-direction:column}.home-opening-grid{grid-template-columns:1fr;padding:46px 0}.home-feature{border-left:0;border-top:1px solid #c6cebb;padding:25px 0 0}.home-opening h1{font-size:40px}.film-workspace{padding:0 10px;grid-template-rows:96px minmax(0,1fr) 65px}.film-toolbar{align-content:center;flex-wrap:wrap;gap:10px;padding:12px 0}.film-toolbar-actions{gap:6px;width:100%;justify-content:space-between}.film-toolbar button{font-size:10px;padding:7px}.film-toolbar kbd{display:none}.film-navigation{gap:6px;width:100%}.film-navigation select{min-width:0;flex:1;width:160px;font-size:11px}.film-controls button{white-space:nowrap;font-size:11px;padding:8px}.film-canvas{padding:12px 0}.journal-card>a{padding:22px 4px}.journal-card-mark{height:125px}.journal-card-mark span{font-size:28px}}
 .film-dialog.is-clean .film-workspace{grid-template-rows:0 minmax(0,1fr) 0;padding:0}.film-dialog.is-clean .film-canvas{padding:0}
 .film-dialog,.film-workspace{overflow:hidden}
+
+/* Keep the brand and page frame still while the next scene gently enters. */
+.film-stage {
+  transition: background-color 380ms ease, color 380ms ease;
+}
+.film-brand, .film-footer, .film-brand > span:last-child {
+  transition: color 380ms ease, border-color 380ms ease;
+}
+.film-scene-enter {
+  animation: film-scene-forward 380ms cubic-bezier(.22, 1, .36, 1) both;
+}
+.film-scene-enter[data-direction="backward"] {
+  animation-name: film-scene-backward;
+}
+@keyframes film-scene-forward {
+  from { opacity: 0; transform: translateX(18px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes film-scene-backward {
+  from { opacity: 0; transform: translateX(-18px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .film-scene-enter { animation: none; }
+  .film-stage, .film-brand, .film-footer, .film-brand > span:last-child {
+    transition: none;
+  }
+}

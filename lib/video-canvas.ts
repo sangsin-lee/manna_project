@@ -1,4 +1,4 @@
-import type { TimedScene } from "./video-project";
+import { dimensions, type TimedScene } from "./video-project";
 
 const fontFamily = '"Malgun Gothic", "Apple SD Gothic Neo", sans-serif';
 
@@ -74,12 +74,17 @@ function drawScene(ctx: CanvasRenderingContext2D, scene: TimedScene, width: numb
   ctx.restore();
 }
 
-export function drawVideoFrame(canvas: HTMLCanvasElement, timeline: TimedScene[], time: number, animate = true) {
+export function drawVideoFrame(canvas: HTMLCanvasElement, timeline: TimedScene[], time: number, { animate = true, showCaptions = true }: { animate?: boolean; showCaptions?: boolean } = {}) {
   const ctx = canvas.getContext("2d", { alpha: false });
   if (!ctx || !timeline.length) return;
-  const { width, height } = canvas;
-  const portrait = height > width;
-  const index = Math.max(0, timeline.findIndex((scene) => time < scene.start + scene.duration));
+  const portrait = canvas.height > canvas.width;
+  // Draw text and shapes directly at the output resolution using the same layout.
+  // This never enlarges a previously rendered 1080p bitmap.
+  const { width, height } = dimensions(portrait ? "portrait" : "landscape");
+  ctx.save();
+  ctx.scale(canvas.width / width, canvas.height / height);
+  const found = timeline.findIndex((scene) => time < scene.start + scene.duration);
+  const index = found < 0 ? timeline.length - 1 : found;
   const scene = timeline[index];
   ctx.textBaseline = "top";
   const elapsed = Math.max(0, time - scene.start);
@@ -91,7 +96,7 @@ export function drawVideoFrame(canvas: HTMLCanvasElement, timeline: TimedScene[]
   } else drawScene(ctx, scene, width, height);
 
   const caption = scene.captions.find((item) => item.start <= time && item.end > time);
-  if (caption) {
+  if (showCaptions && caption) {
     const x = portrait ? 74 : 220;
     const y = height - (portrait ? 300 : 210);
     const captionWidth = width - x * 2;
@@ -106,4 +111,5 @@ export function drawVideoFrame(canvas: HTMLCanvasElement, timeline: TimedScene[]
   ctx.textAlign = "right";
   ctx.fillText(`${String(index + 1).padStart(2, "0")} / ${String(timeline.length).padStart(2, "0")}`, width - (portrait ? 94 : 130), height - 72);
   ctx.textAlign = "left";
+  ctx.restore();
 }

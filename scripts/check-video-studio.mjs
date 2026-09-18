@@ -11,7 +11,8 @@ load.extensions[".ts"] = (module, filename) => {
 };
 const { recipes } = load("../lib/content.ts");
 const { recipeFrames } = load("../lib/presentation.ts");
-const { buildScenes, buildTimeline, captionsFor, draftFromFrames, scriptFor, splitSceneText, srtFor, timelineDuration, VOICE_LEAD } = load("../lib/video-project.ts");
+const { buildScenes, buildTimeline, captionsFor, dimensions, draftFromFrames, scriptFor, splitSceneText, srtFor, timelineDuration, VIDEO_QUALITIES, VOICE_LEAD } = load("../lib/video-project.ts");
+const { drawVideoFrame } = load("../lib/video-canvas.ts");
 const compact = (text) => text.replace(/\s/g, "");
 for (const recipe of recipes) {
   const frames = recipeFrames(recipe);
@@ -50,6 +51,42 @@ assert.ok(srtFor(timeline).startsWith("1\n00:00:00,500 -->"));
 assert.ok(srtFor(timeline).includes("63°C"));
 // A changed script must not accidentally reuse audio from the previous text.
 assert.equal(buildTimeline([{ ...scenes[0], narration: "수정한 내용" }], new Map([[spoken, { buffer: { duration }, ...aligned }]]))[0].clip, undefined);
+
+// Compare actual drawing commands: captions disappear without dropping recipe text,
+// timing, or SRT; high resolution redraws use the same composition and no bitmap scaling.
+const captionText = timeline[0].captions[0].text;
+function drawCalls(width, height, showCaptions) {
+  const calls = [];
+  const ctx = {
+    font: "", fillText: (...args) => calls.push(["text", ...args]),
+    scale: (...args) => calls.push(["scale", ...args]),
+    roundRect: (...args) => calls.push(["caption-background", ...args]),
+    measureText: (text) => ({ width: text.length * 12 }),
+    save() {}, restore() {}, translate() {}, fillRect() {}, beginPath() {}, arc() {}, stroke() {}, fill() {},
+  };
+  drawVideoFrame({ width, height, getContext: () => ctx }, timeline, VOICE_LEAD + 0.1, { animate: false, showCaptions });
+  return calls;
+}
+for (const [resolution, width, height] of [["1080p", 1920, 1080], ["1440p", 2560, 1440], ["4k", 3840, 2160]]) {
+  assert.deepEqual(dimensions("landscape", resolution), { width, height });
+  assert.deepEqual(dimensions("portrait", resolution), { width: height, height: width });
+  for (const portrait of [false, true]) {
+    const w = portrait ? height : width;
+    const h = portrait ? width : height;
+    const withCaptions = drawCalls(w, h, true);
+    const withoutCaptions = drawCalls(w, h, false);
+    assert.equal(withCaptions.filter((call) => call[0] === "caption-background").length, 1);
+    assert.equal(withoutCaptions.filter((call) => call[0] === "caption-background").length, 0);
+    assert.ok(withCaptions.some((call) => call[0] === "text" && call[1] === captionText));
+    assert.ok(!withoutCaptions.some((call) => call[0] === "text" && call[1] === captionText));
+    assert.ok(withoutCaptions.some((call) => call[0] === "text" && call[1] === spoken));
+    assert.deepEqual(withoutCaptions[0], ["scale", height / 1080, height / 1080]);
+    const baseline = drawCalls(portrait ? 1080 : 1920, portrait ? 1920 : 1080, false);
+    assert.deepEqual(withoutCaptions.slice(1), baseline.slice(1), "Resolution must preserve layout and line breaks");
+  }
+}
+assert.ok(VIDEO_QUALITIES["4k"].bitrate > VIDEO_QUALITIES["1440p"].bitrate && VIDEO_QUALITIES["1440p"].bitrate > VIDEO_QUALITIES["1080p"].bitrate);
+assert.ok(srtFor(timeline).includes("63°C"), "Separate captions remain available");
 
 const route = load("../app/api/video/narration/route.ts");
 const originalFetch = globalThis.fetch;
@@ -98,4 +135,4 @@ try {
     else process.env[name] = originalEnv[name];
   }
 }
-console.log(`PASS: ${recipes.length} recipe scripts, intact safety text, aligned/fallback captions, timeline offsets, SRT, API authentication and bounded requests.`);
+console.log(`PASS: ${recipes.length} recipe scripts, intact safety text, captions on/off, 1080p/1440p/4K layouts in both orientations, timeline/SRT, API authentication and bounded requests.`);

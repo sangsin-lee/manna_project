@@ -1,19 +1,21 @@
 import { drawVideoFrame } from "./video-canvas";
-import { dimensions, MAX_DURATION, timelineDuration, VOICE_LEAD, type TimedScene, type VideoFormat } from "./video-project";
+import { dimensions, MAX_DURATION, timelineDuration, VIDEO_QUALITIES, VOICE_LEAD, type TimedScene, type VideoFormat, type VideoResolution } from "./video-project";
 
-export async function renderVideo(timeline: TimedScene[], format: VideoFormat, withVoice: boolean, signal: AbortSignal, onProgress: (value: number, format: string) => void) {
+export type VideoExportOptions = { format: VideoFormat; resolution: VideoResolution; withVoice: boolean; showCaptions: boolean };
+
+export async function renderVideo(timeline: TimedScene[], { format, resolution, withVoice, showCaptions }: VideoExportOptions, signal: AbortSignal, onProgress: (value: number, format: string) => void) {
   const duration = timelineDuration(timeline);
   if (!duration || duration > MAX_DURATION) throw new Error("영상 길이는 10분 이내로 구성해 주세요.");
   if (withVoice && timeline.some((scene) => scene.narration && !scene.clip)) throw new Error("모든 장면의 음성을 먼저 완성해 주세요.");
   if (!globalThis.VideoEncoder) throw new Error("이 브라우저는 영상 저장을 지원하지 않습니다. 최신 Chrome 또는 Edge에서 제작실을 열어 주세요.");
   const media = await import("mediabunny");
-  const { width, height } = dimensions(format);
+  const { width, height } = dimensions(format, resolution);
   const frameRate = 30;
-  const quality = new media.Quality({ bitrate: 5_000_000 });
+  const quality = new media.Quality({ bitrate: VIDEO_QUALITIES[resolution].bitrate, bitrateMode: "variable" });
   const audioOptions = { numberOfChannels: 1, sampleRate: 44100 };
   const mp4 = await media.canEncodeVideo("avc", { width, height, frameRate, quality }) && (!withVoice || await media.canEncodeAudio("aac", audioOptions));
   if (!mp4 && !(await media.canEncodeVideo("vp9", { width, height, frameRate, quality }) && (!withVoice || await media.canEncodeAudio("opus", audioOptions)))) {
-    throw new Error("영상 저장 형식이 지원되지 않습니다. 최신 Chrome 또는 Edge에서 다시 시도해 주세요.");
+    throw new Error(`이 브라우저에서는 ${VIDEO_QUALITIES[resolution].label} 영상을 저장할 수 없습니다. 화질을 낮추거나 최신 Chrome 또는 Edge에서 다시 시도해 주세요.`);
   }
   signal.throwIfAborted();
   const extension = mp4 ? "mp4" : "webm";
@@ -47,7 +49,7 @@ export async function renderVideo(timeline: TimedScene[], format: VideoFormat, w
     const frameCount = Math.ceil(duration * frameRate);
     for (let frame = 0; frame < frameCount; frame++) {
       signal.throwIfAborted();
-      drawVideoFrame(canvas, timeline, frame / frameRate);
+      drawVideoFrame(canvas, timeline, frame / frameRate, { showCaptions });
       await video.add(frame / frameRate, Math.min(1 / frameRate, duration - frame / frameRate));
       if (frame % 15 === 0) {
         onProgress(Math.round(frame / frameCount * 98), extension.toUpperCase());

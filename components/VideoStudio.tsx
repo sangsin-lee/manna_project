@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { PresentationFrame } from "@/lib/presentation";
-import { buildScenes, buildTimeline, captionsFor, dimensions, draftFromFrames, MAX_DURATION, scriptFor, srtFor, timelineDuration, VOICE_LEAD, type DraftScene, type VideoFormat, type VoiceClip } from "@/lib/video-project";
+import { buildScenes, buildTimeline, captionsFor, dimensions, draftFromFrames, MAX_DURATION, scriptFor, srtFor, timelineDuration, VIDEO_QUALITIES, VOICE_LEAD, type DraftScene, type VideoFormat, type VideoResolution, type VoiceClip } from "@/lib/video-project";
 import { drawVideoFrame } from "@/lib/video-canvas";
 
 type RecipeOption = { slug: string; title: string; frames: PresentationFrame[] };
@@ -23,6 +23,8 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
   const [drafts, setDrafts] = useState(() => draftFromFrames(initial.frames, true));
   const [selected, setSelected] = useState(0);
   const [format, setFormat] = useState<VideoFormat>("landscape");
+  const [resolution, setResolution] = useState<VideoResolution>("4k");
+  const [showCaptions, setShowCaptions] = useState(true);
   const [voices, setVoices] = useState<ReadonlyMap<string, VoiceClip>>(new Map());
   const [ready, setReady] = useState<boolean | null>(null);
   const [connectionError, setConnectionError] = useState(false);
@@ -33,7 +35,7 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
   const [progress, setProgress] = useState(0);
-  const [result, setResult] = useState<{ url: string; extension: string; withVoice: boolean } | null>(null);
+  const [result, setResult] = useState<{ url: string; extension: string; withVoice: boolean; resolution: VideoResolution; showCaptions: boolean } | null>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
   const abort = useRef<AbortController | null>(null);
   const stopPlayback = useRef<(() => void) | null>(null);
@@ -41,6 +43,7 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
   const timeline = useMemo(() => buildTimeline(scenes, voices), [scenes, voices]);
   const duration = timelineDuration(timeline);
   const size = dimensions(format);
+  const exportSize = dimensions(format, resolution);
   const narrations = [...new Set(scenes.map((scene) => scene.narration).filter(Boolean))];
   const voiced = narrations.filter((text) => voices.has(text)).length;
   const allVoiced = narrations.length > 0 && voiced === narrations.length;
@@ -57,13 +60,14 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
     return () => controller.abort();
   }, []);
   useEffect(() => {
-    if (canvas.current) drawVideoFrame(canvas.current, timeline, Math.min(time, Math.max(0, duration - 0.001)), playing);
-  }, [timeline, time, duration, format, playing]);
+    if (canvas.current) drawVideoFrame(canvas.current, timeline, Math.min(time, Math.max(0, duration - 0.001)), { animate: playing, showCaptions });
+  }, [timeline, time, duration, format, playing, showCaptions]);
   useEffect(() => () => { stopPlayback.current?.(); abort.current?.abort(); }, []);
   useEffect(() => () => { if (result) URL.revokeObjectURL(result.url); }, [result]);
 
   function pause() { stopPlayback.current?.(); stopPlayback.current = null; setPlaying(false); }
   function invalidate() { pause(); setResult(null); setError(""); setStatus(""); setTime(0); }
+  function changeOutput() { pause(); setResult(null); setError(""); setStatus(""); }
   function loadRecipe() {
     const recipe = recipes.find((item) => item.slug === recipeSlug)!;
     invalidate(); setDrafts(draftFromFrames(recipe.frames, storyOnly)); setSelected(0); setVoices(new Map());
@@ -147,11 +151,11 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
     const controller = new AbortController(); abort.current = controller;
     try {
       const { renderVideo } = await import("@/lib/video-export");
-      const exported = await renderVideo(timeline, format, withVoice, controller.signal, (percent, type) => {
-        setProgress(percent); setStatus(`${type} 영상 만드는 중 · ${percent}%`);
+      const exported = await renderVideo(timeline, { format, resolution, withVoice, showCaptions }, controller.signal, (percent, type) => {
+        setProgress(percent); setStatus(`${VIDEO_QUALITIES[resolution].label} ${type} 영상 만드는 중 · ${percent}%`);
       });
-      setResult({ url: URL.createObjectURL(exported.blob), extension: exported.extension, withVoice });
-      setStatus(`${withVoice ? "내레이션과 자막이 있는" : "자막이 있는 무음"} 영상이 완성됐어요.${exported.extension === "webm" ? " 이 브라우저에서는 WebM으로 저장됩니다." : ""}`);
+      setResult({ url: URL.createObjectURL(exported.blob), extension: exported.extension, withVoice, resolution, showCaptions });
+      setStatus(`${VIDEO_QUALITIES[resolution].label} ${withVoice ? "내레이션" : "무음"} 영상이 완성됐어요. ${showCaptions ? "하단 자막 포함" : "하단 자막 없음"}.${exported.extension === "webm" ? " 이 브라우저에서는 WebM으로 저장됩니다." : ""}`);
     } catch (cause) {
       setStatus(controller.signal.aborted ? "영상 만들기를 중단했어요. 대본은 그대로 남아 있습니다." : "");
       if (!controller.signal.aborted) setError(cause instanceof Error ? cause.message : "영상을 만들지 못했습니다.");
@@ -162,7 +166,7 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
     <main className="video-studio">
       <header className="studio-heading">
         <Link href="/videos" className="studio-back">← 영상 이야기</Link>
-        <div className="studio-title-row"><div><p className="studio-eyebrow">MANNA TABLE / FILM STUDIO</p><h1>한 편의 식탁 이야기.</h1><p>글을 다듬고, 목소리를 입히고, 영상으로 간직하세요.</p></div><span className="studio-badge">1080p · 자막 · 부드러운 장면 전환</span></div>
+        <div className="studio-title-row"><div><p className="studio-eyebrow">MANNA TABLE / FILM STUDIO</p><h1>한 편의 식탁 이야기.</h1><p>글을 다듬고, 목소리를 입히고, 영상으로 간직하세요.</p></div><span className="studio-badge">최대 4K · 자막 선택 · 부드러운 장면 전환</span></div>
       </header>
       <div className="studio-layout">
         <section className="studio-editor" aria-label="영상 대본 편집">
@@ -187,10 +191,15 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
         </section>
         <div className="studio-workspace">
           <section className="studio-preview-panel" aria-label="영상 미리 보기">
-            <div className="studio-preview-heading"><div><p className="studio-eyebrow">YOUR STORY, ON SCREEN</p><h2>이렇게 담깁니다.</h2></div><div className="studio-format" aria-label="화면 비율">{(["landscape", "portrait"] as const).map((value) => <button key={value} disabled={busy !== null} aria-pressed={format === value} onClick={() => { pause(); setFormat(value); setResult(null); }}>{value === "landscape" ? "가로 16:9" : "세로 9:16"}</button>)}</div></div>
+            <div className="studio-preview-heading"><div><p className="studio-eyebrow">YOUR STORY, ON SCREEN</p><h2>이렇게 담깁니다.</h2></div><div className="studio-format" aria-label="화면 비율">{(["landscape", "portrait"] as const).map((value) => <button key={value} disabled={busy !== null} aria-pressed={format === value} onClick={() => { changeOutput(); setFormat(value); }}>{value === "landscape" ? "가로 16:9" : "세로 9:16"}</button>)}</div></div>
+            <fieldset className="studio-output-settings" disabled={busy !== null}>
+              <legend className="sr-only">영상 저장 설정</legend>
+              <div><label htmlFor="studio-resolution">저장 화질</label><select id="studio-resolution" value={resolution} onChange={(event) => { changeOutput(); setResolution(event.target.value as VideoResolution); }}>{(Object.keys(VIDEO_QUALITIES) as VideoResolution[]).map((value) => <option key={value} value={value}>{VIDEO_QUALITIES[value].label}{value === "4k" ? " · 최고 화질" : ""}</option>)}</select><p className="studio-help">{exportSize.width} × {exportSize.height} · 30fps</p></div>
+              <div><label htmlFor="studio-captions">하단 자막</label><select id="studio-captions" value={showCaptions ? "on" : "off"} onChange={(event) => { changeOutput(); setShowCaptions(event.target.value === "on"); }}><option value="on">자막 포함</option><option value="off">자막 없이</option></select><p className="studio-help">제목과 레시피 본문은 그대로 보여요.</p></div>
+            </fieldset>
             <div className={`studio-canvas-wrap ${format}`}><canvas ref={canvas} width={size.width} height={size.height} aria-label="식문화 영상 미리 보기">대본을 영상으로 보여주는 미리 보기입니다.</canvas></div>
             <div className="studio-playback"><button className="studio-play" disabled={busy !== null || !valid} onClick={preview}>{playing ? "일시 정지" : "▶ 재생"}</button><input aria-label="영상 재생 위치" type="range" min={0} max={Math.max(0.001, duration - 0.001)} step={0.05} value={Math.min(time, Math.max(0.001, duration - 0.001))} disabled={busy !== null} onChange={(event) => { pause(); setTime(Number(event.target.value)); }} /><span>{clock(time)} / {clock(duration)}</span></div>
-            <p className="studio-preview-note">{scenes.length}개 화면 · {voiced ? `내레이션 ${voiced}/${narrations.length} 완성` : "현재 무음 미리 보기"}{!allVoiced && voiced > 0 ? " · 미완성 장면은 무음" : ""} · {hasEstimated ? "자막 시간 추정" : "음성에 맞춘 자막"}</p>
+            <p className="studio-preview-note">{scenes.length}개 화면 · {voiced ? `내레이션 ${voiced}/${narrations.length} 완성` : "현재 무음 미리 보기"}{!allVoiced && voiced > 0 ? " · 미완성 장면은 무음" : ""} · {showCaptions ? hasEstimated ? "자막 시간 추정" : "음성에 맞춘 자막" : "하단 자막 없음"}</p>
           </section>
           <section className="studio-produce" aria-label="음성과 영상 만들기">
             <div className="studio-section-heading"><span>03</span><h2>목소리를 입혀 완성하기</h2><small className={ready ? "studio-connected" : ""}>{ready ? "AI 음성 연결됨" : connectionError ? "연결 확인 실패" : ready === null ? "연결 확인 중" : "AI 음성 연결 전"}</small></div>
@@ -198,11 +207,11 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
             {ready && <p className="studio-help">음성 생성은 ElevenLabs 계정의 사용량을 소모합니다. 완성된 음성은 이 탭에서 재사용하며, 새로고침하면 사라집니다. 유튜브 수익화 등 상업적 사용은 음성 서비스의 이용 권한을 확인해 주세요.</p>}
             {!valid && <p className="studio-error" role="alert">제목과 대본을 채우고, 영상 길이를 10분 이내로 줄여 주세요.</p>}
             <div className="studio-export-actions"><button className="studio-primary" disabled={busy !== null || !allVoiced || !valid} onClick={() => exportVideo(true)}>음성 포함 영상 만들기 ↓</button><button className="studio-outline" disabled={busy !== null || !valid} onClick={() => exportVideo(false)}>무음 영상 만들기</button><button className="studio-text-button" disabled={busy !== null || !valid} onClick={() => downloadText(srtFor(timeline), "manna-captions.srt")}>자막 저장 .srt</button></div>
-            <p className="studio-help">영상에 자막이 함께 표시됩니다. MP4를 우선 사용하고, 지원하지 않는 브라우저는 WebM으로 저장합니다. 영상이 완성될 때까지 이 탭을 열어 두세요.</p>
+            <p className="studio-help">{VIDEO_QUALITIES[resolution].label} · {showCaptions ? "자막 포함" : "자막 없이"} 설정으로 저장합니다. 자막 파일은 별도로 저장할 수 있어요. MP4를 우선 사용하고, 지원하지 않는 브라우저는 WebM으로 저장합니다.{resolution !== "1080p" ? " 고화질은 제작 시간과 파일 크기가 늘어날 수 있어요." : ""} 영상이 완성될 때까지 이 탭을 열어 두세요.</p>
             {busy && <div className="studio-progress"><progress max={100} value={progress} aria-label="영상 제작 진행률" /><button className="studio-text-button" onClick={() => abort.current?.abort()}>중단</button></div>}
             <p className="studio-status" role="status" aria-live="polite">{status}</p>
             {error && <p className="studio-error" role="alert">{error}</p>}
-            {result && <div className="studio-result"><div><strong>{result.withVoice ? "내레이션 영상" : "무음 영상"} 완성</strong><a className="studio-primary" href={result.url} download={`manna-table.${result.extension}`}>{result.extension.toUpperCase()} 내려받기 ↓</a></div><video src={result.url} controls playsInline aria-label="완성된 영상 확인" /></div>}
+            {result && <div className="studio-result"><div><strong>{VIDEO_QUALITIES[result.resolution].label} · {result.withVoice ? "내레이션" : "무음"} · {result.showCaptions ? "자막 포함" : "자막 없음"}</strong><a className="studio-primary" href={result.url} download={`manna-table-${result.resolution}${result.showCaptions ? "-captions" : "-no-captions"}.${result.extension}`}>{result.extension.toUpperCase()} 내려받기 ↓</a></div><video src={result.url} controls playsInline aria-label="완성된 영상 확인" /></div>}
           </section>
           <p className="studio-footnote">대본과 생성한 음성은 현재 탭에서 작업합니다. 창을 닫기 전에 대본·영상·자막 파일을 저장해 주세요.</p>
         </div>

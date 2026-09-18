@@ -28,6 +28,12 @@ export type TimedScene = VideoScene & {
   clip?: VoiceClip;
 };
 export type VideoFormat = "landscape" | "portrait";
+export const VIDEO_QUALITIES = {
+  "1080p": { label: "1080p Full HD", width: 1920, height: 1080, bitrate: 8_000_000 },
+  "1440p": { label: "1440p QHD", width: 2560, height: 1440, bitrate: 16_000_000 },
+  "4k": { label: "4K UHD", width: 3840, height: 2160, bitrate: 40_000_000 },
+} as const;
+export type VideoResolution = keyof typeof VIDEO_QUALITIES;
 export const VOICE_LEAD = 0.5;
 export const MAX_DURATION = 600;
 
@@ -117,6 +123,7 @@ export function scriptFor(drafts: DraftScene[]): string {
   return drafts.map((scene) => `${scene.section} / ${scene.title}\n${scene.text}${scene.sources?.length ? "\n" + scene.sources.map((source) => `${source.label}\n${source.url}`).join("\n") : ""}`).join("\n\n");
 }
 
-export function dimensions(format: VideoFormat): { width: number; height: number } {
-  return format === "portrait" ? { width: 1080, height: 1920 } : { width: 1920, height: 1080 };
+export function dimensions(format: VideoFormat, resolution: VideoResolution = "1080p"): { width: number; height: number } {
+  const { width, height } = VIDEO_QUALITIES[resolution];
+  return format === "portrait" ? { width: height, height: width } : { width, height };
 }

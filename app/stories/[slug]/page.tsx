@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ContentVisual from "@/components/ContentVisual";
 import JsonLd from "@/components/JsonLd";
+import PresentationPlayer from "@/components/PresentationPlayer";
+import { storyFrames } from "@/lib/presentation";
 import RecipeCard from "@/components/RecipeCard";
 import StoryCard from "@/components/StoryCard";
 import {
@@ -260,6 +262,7 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
                 <h1 className="mt-5 break-keep text-3xl font-black leading-tight tracking-tight sm:text-4xl lg:text-5xl">
                   {story.title}
                 </h1>
+                <div className="mt-6"><PresentationPlayer key={story.slug} frames={storyFrames(story)} title={story.title} /></div>
 
                 <p className="mt-6 max-w-2xl break-keep text-base leading-8 text-neutral-600 sm:text-lg">
                   {story.lead}

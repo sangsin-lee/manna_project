@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ContentVisual from "@/components/ContentVisual";
 import CountryCard from "@/components/CountryCard";
 import JsonLd from "@/components/JsonLd";
 import RecipeCard from "@/components/RecipeCard";
@@ -35,7 +34,6 @@ const featuredRecipes = [
   .filter(isDefined);
 
 const heroStory = getStory("rome-vatican-food-route") ?? stories[0]!;
-const heroCountry = getCountry(heroStory.country);
 
 const europeStops = [
   {
@@ -82,7 +80,23 @@ export default function HomePage() {
         }}
       />
 
-      <TonightPick />
+      <section className="home-opening">
+        <div className="editorial-wrap home-opening-grid">
+          <div>
+            <p className="editorial-eyebrow"><span className="editorial-dot" /> FOOD, CULTURE & YOU</p>
+            <h1>한 끼를 만들고,<br /><em>세계를 만나다.</em></h1>
+            <p className="home-intro">식탁 위의 음식에는 그곳의 일상이 담겨 있습니다. 음식의 배경을 읽고, 재료를 준비하고, 나의 한 끼로 이어 보세요.</p>
+            <div className="home-opening-links"><Link className="manna-button manna-button-primary" href="/recipes">오늘의 레시피 찾기 ↗</Link><Link className="manna-button manna-button-outline" href="/stories">식문화 이야기</Link></div>
+          </div>
+          <div className="home-feature">
+            <p className="home-feature-label">THIS WEEK’S TABLE / 이번 주의 식탁</p>
+            <h2>스테이크 한 접시,<br />이야기부터 굽는 순간까지.</h2>
+            <p>추성훈의 리베라 스테이크 소개에서 영감 받은 가정용 레시피. 소스의 풍미와 한 끼의 배경을 함께 살펴보세요.</p>
+            <Link href="/recipes/choo-inspired-garlic-butter-steak">레시피와 촬영 보기 열기 ↗</Link>
+            <div className="mini-flow"><span>01 음식과 문화</span><span>→</span><span>02 준비할 재료</span><span>→</span><span>03 만드는 순서</span></div>
+          </div>
+        </div>
+      </section>
 
       <section aria-labelledby="steak-recipes-title" className="border-b border-stone-200 bg-[#fffdf9]">
         <div className="mx-auto max-w-6xl px-6 py-12 lg:py-16">
@@ -99,67 +113,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-b border-stone-200 bg-[#fffdf9]">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-24">
-          <div>
-            <p className="text-xs font-black tracking-[0.28em] text-[#b9480c]">
-              FOOD · CULTURE · JOURNEY
-            </p>
-            <h1 className="mt-5 max-w-2xl break-keep text-4xl font-black leading-[1.14] tracking-tight sm:text-5xl lg:text-6xl">
-              여행의 한 끼를
-              <br />
-              문화와 레시피로
-            </h1>
-            <p className="mt-7 max-w-2xl break-keep text-base leading-8 text-neutral-600 sm:text-lg">
-              파리, 슈투트가르트, 융프라우, 로마와 바티칸에서 남긴 여행
-              기록을 출발점으로 지역의 역사와 생활방식을 정리합니다. 개인
-              기록과 공식 자료, 직접 따라 할 수 있는 레시피를 구분해
-              연결합니다.
-            </p>
-
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link
-                href="/journeys/europe"
-                className="rounded-full bg-neutral-950 px-6 py-3.5 text-sm font-black !text-white no-underline transition hover:bg-[#943706]"
-              >
-                유럽 여행 기록 보기
-              </Link>
-              <Link
-                href="/countries?continent=europe#country-archive"
-                className="rounded-full border border-stone-300 bg-white px-6 py-3.5 text-sm font-black !text-neutral-950 no-underline transition hover:border-neutral-950"
-              >
-                유럽의 식탁 둘러보기
-              </Link>
-            </div>
-          </div>
-
-          <Link
-            href={`/stories/${heroStory.slug}`}
-            className="block overflow-hidden rounded-[2.25rem] border border-[#dfd4c7] bg-[#eee2d0] p-5 no-underline shadow-[0_24px_70px_rgba(70,50,25,0.08)] transition hover:-translate-y-1"
-          >
-            <div className="overflow-hidden rounded-[1.5rem] bg-white">
-              <ContentVisual
-                eyebrow={`FEATURED JOURNEY · ${heroCountry?.nameEn ?? "EUROPE"}`}
-                label={heroStory.visualLabel}
-                caption={heroStory.visualCaption}
-                palette={heroStory.palette}
-                size="feature"
-              />
-              <div className="p-6 sm:p-7">
-                <p className="text-xs font-black tracking-[0.2em] text-[#b9480c]">
-                  이번 주의 여행 문화 이야기
-                </p>
-                <h2 className="mt-3 break-keep text-xl font-black leading-8">
-                  {heroStory.title}
-                </h2>
-                <p className="mt-3 break-keep text-sm leading-7 text-neutral-600">
-                  {heroStory.summary}
-                </p>
-              </div>
-            </div>
-          </Link>
-        </div>
-      </section>
+      <TonightPick />
 
       <section className="border-b border-stone-200 bg-neutral-950 text-white">
         <div className="mx-auto max-w-6xl px-6 py-16 lg:py-20">
@@ -186,6 +140,7 @@ export default function HomePage() {
               >
                 여행 동선 자세히 보기
               </Link>
+              <Link href={`/stories/${heroStory.slug}`} className="rounded-full border border-neutral-600 px-6 py-3 text-sm font-black !text-white">로마의 식문화 이야기 ↗</Link>
               <a
                 href={siteConfig.instagramUrl}
                 target="_blank"

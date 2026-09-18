@@ -8,6 +8,7 @@ import StoryCard from "@/components/StoryCard";
 import TonightPick from "@/components/TonightPick";
 import { getCountry, getRecipe, getStory, stories } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
+import { steakRecipes } from "@/lib/steak-recipes";
 
 function isDefined<T>(value: T | undefined): value is T {
   return value !== undefined;
@@ -82,6 +83,21 @@ export default function HomePage() {
       />
 
       <TonightPick />
+
+      <section aria-labelledby="steak-recipes-title" className="border-b border-stone-200 bg-[#fffdf9]">
+        <div className="mx-auto max-w-6xl px-6 py-12 lg:py-16">
+          <p className="text-xs font-black tracking-[0.2em] text-[#943706]">STEAK AT HOME · 2026.09.18</p>
+          <h2 id="steak-recipes-title" className="mt-3 text-3xl font-black tracking-tight">이마트 장보기로 완성하는 스테이크</h2>
+          <p className="mt-4 max-w-3xl break-keep leading-7 text-neutral-600">
+            리베라 스타일에서 영감 받은 소고기 스테이크와 촉촉한 돼지 등심 스테이크.
+            1인분 재료, 소스, 굽기와 휴지 순서를 함께 정리했습니다.
+            돼지고기는 색이 아닌 중심온도 63°C 이상과 최소 3분 휴지로 익힘을 확인하세요.
+          </p>
+          <div className="mt-8 grid gap-7 md:grid-cols-2">
+            {steakRecipes.map((recipe) => <RecipeCard key={recipe.slug} recipe={recipe} />)}
+          </div>
+        </div>
+      </section>
 
       <section className="border-b border-stone-200 bg-[#fffdf9]">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-24">

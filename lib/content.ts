@@ -1,3 +1,5 @@
+import { steakRecipes } from "./steak-recipes";
+
 export type CountrySlug =
   | "korea"
   | "japan"
@@ -2775,6 +2777,7 @@ export const stories: Story[] = [
 ];
 
 export const recipes: Recipe[] = [
+  ...steakRecipes,
   {
     slug: "hong-kong-macaroni-soup",
     experienceStatus: "researched",

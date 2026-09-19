@@ -1,7 +1,9 @@
 import type { Recipe, SourceLink, Story } from "./content";
 import { getRecipeNarrative, getRecipeSources } from "./recipe-narratives";
+import { getRecipeDesign, type RecipeDesign } from "./recipe-design";
 
 export type PresentationFrame = {
+  design?: RecipeDesign;
   section: string;
   title: string;
   body?: string;
@@ -47,6 +49,7 @@ export function recipeFrames(recipe: Recipe): PresentationFrame[] {
       textFrames(chapter.section, chapter.title, chapter.body, "culture").map((frame) => ({ ...frame, kicker: chapter.kicker })),
     ) ?? []),
     ...textFrames("이번 레시피", "우리 집 식탁으로", recipe.culturalNote, "culture"),
+    ...(recipe.localTable ? textFrames("지역과 계절", recipe.localTable.season, recipe.localTable.note, "culture") : []),
   ];
   for (const group of recipe.ingredientGroups) {
     // Long ingredient descriptions get their own frame rather than being clipped.
@@ -71,7 +74,8 @@ export function recipeFrames(recipe: Recipe): PresentationFrame[] {
   });
   for (const tip of recipe.tips) frames.push(...textFrames("기억할 것", "마지막 한 끗", tip, "note"));
   for (const item of recipe.substitutions) frames.push(...textFrames("대체 재료", "우리 집 재료로", item, "note"));
-  return [...frames, ...sourceFrames(getRecipeSources(recipe))];
+  const design = getRecipeDesign(recipe);
+  return [...frames, ...sourceFrames(getRecipeSources(recipe))].map((frame) => ({ ...frame, design }));
 }
 
 export function storyFrames(story: Story): PresentationFrame[] {

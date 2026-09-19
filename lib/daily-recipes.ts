@@ -4,6 +4,12 @@ import type { Recipe } from "./content";
 export const dailyRecipes: Recipe[] = [
   {
     slug: "chicken-mushroom-takikomi-gohan",
+    localTable: {
+      region: "일본 · 가을의 식탁",
+      ingredient: "표고·느타리·쌀",
+      season: "가을의 버섯 요리",
+      note: "일본에서 버섯밥은 가을의 맛을 즐기는 한 방식입니다. 국내 마트의 재배 버섯을 사용하는 가정용 응용이며, 특정 지역산 버섯이나 가을에만 유통되는 상품을 뜻하지 않습니다. 시가현의 쇼이메시는 함께 읽을 수 있는 별도의 지역 양념밥 이야기입니다.",
+    },
     title: "가을 버섯 닭고기 솥밥",
     country: "japan",
     category: "main",
@@ -81,6 +87,7 @@ export const dailyRecipes: Recipe[] = [
     sources: [
       { label: "일본 농림수산성 · Taste of Japan — 닭고기와 버섯 다키코미고항", url: "https://japan-food.jetro.go.jp/fr/recipes/detail/72.html" },
       { label: "Yutaka — 가을 버섯 다키코미고항과 밥물 계량 (2026.09.01)", url: "https://shop.yutaka.london/blogs/recipes/takikomi-gohan-recipe" },
+      { label: "농촌진흥청 — 느타리버섯 재배환경과 연중 재배사 운영", url: "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1729" },
       { label: "FoodSafety.gov — 닭고기 중심온도 74°C와 식품용 온도계", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
     ],
     palette: { from: "#e9dfc8", mid: "#c7bb97", to: "#87977b", ink: "#283c2b" },

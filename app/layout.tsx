@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 import "./editorial.css";
+import "./recipe-themes.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

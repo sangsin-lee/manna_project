@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { PresentationFrame } from "@/lib/presentation";
+import { defaultRecipeDesign, recipeDesignStyle } from "@/lib/recipe-design";
 
 export default function PresentationPlayer({ frames, title }: { frames: PresentationFrame[]; title: string }) {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -63,7 +64,7 @@ export default function PresentationPlayer({ frames, title }: { frames: Presenta
         <svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="m10 9 5 3-5 3Z" fill="currentColor"/></svg>
         촬영 보기
       </button>
-      <dialog ref={dialog} className={`film-dialog${clean ? " is-clean" : ""}`} aria-label={`${title} 촬영 보기`} onCancel={(event) => { event.preventDefault(); close(); }} onClose={() => setOpen(false)}>
+      <dialog ref={dialog} style={recipeDesignStyle(frame.design ?? defaultRecipeDesign)} data-pattern={(frame.design ?? defaultRecipeDesign).pattern} className={`film-dialog${clean ? " is-clean" : ""}`} aria-label={`${title} 촬영 보기`} onCancel={(event) => { event.preventDefault(); close(); }} onClose={() => setOpen(false)}>
         <div className="film-workspace">
           <header className="film-toolbar">
             <div><strong>만나의 식탁</strong><span> 촬영 보기</span></div>
@@ -87,7 +88,7 @@ export default function PresentationPlayer({ frames, title }: { frames: Presenta
                   {frame.items && <ul className={frame.kind === "cover" ? "film-facts" : "film-ingredients"}>{frame.items.map((item, i) => <li key={`${i}-${item}`}>{item}</li>)}</ul>}
                   {frame.sources && <ol className="film-sources">{frame.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a></li>)}</ol>}
                 </div>
-                <footer className="film-footer"><span>한 끼로 만나는 세계 문화</span><span>{String(index + 1).padStart(2, "0")} / {String(frames.length).padStart(2, "0")}</span></footer>
+                <footer className="film-footer"><span>{frame.design?.place ?? "한 끼로 만나는 세계 문화"}</span><span>{String(index + 1).padStart(2, "0")} / {String(frames.length).padStart(2, "0")}</span></footer>
               </div>
             </section>
           </div>

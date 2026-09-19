@@ -1,6 +1,7 @@
 import Link from "next/link";
 import history from "@/data/daily-menu-history.json";
 import { getRecipe } from "@/lib/content";
+import { getRecipeDesign, recipeDesignStyle } from "@/lib/recipe-design";
 
 export default function TonightPick() {
   const entries = [...history.daily].sort((a, b) => b.date.localeCompare(a.date));
@@ -10,7 +11,7 @@ export default function TonightPick() {
   const [year, month, day] = pick.date.split("-").map(Number);
 
   return (
-    <section id="tonight-pick" aria-labelledby="tonight-pick-title" className="scroll-mt-32 border-b border-[#e5d5c3] bg-[#f6f2ec]">
+    <section id="tonight-pick" aria-labelledby="tonight-pick-title" style={recipeDesignStyle(getRecipeDesign(recipe))} className="tonight-themed scroll-mt-32 border-b border-[#e5d5c3] bg-[#f6f2ec]">
       <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 lg:grid-cols-[1fr_0.9fr] lg:items-start lg:py-14">
         <div>
           <div className="flex flex-wrap items-center gap-3 text-xs font-black">

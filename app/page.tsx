@@ -5,6 +5,7 @@ import RecipeCard from "@/components/RecipeCard";
 import ReservationForm from "@/components/ReservationForm";
 import StoryCard from "@/components/StoryCard";
 import TonightPick from "@/components/TonightPick";
+import SeasonalFeature from "@/components/SeasonalFeature";
 import { getCountry, getRecipe, getStory, stories } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
 import { steakRecipes } from "@/lib/steak-recipes";
@@ -85,16 +86,10 @@ export default function HomePage() {
           <div>
             <p className="editorial-eyebrow"><span className="editorial-dot" /> FOOD, CULTURE & YOU</p>
             <h1>한 끼를 만들고,<br /><em>세계를 만나다.</em></h1>
-            <p className="home-intro">식탁 위의 음식에는 그곳의 일상이 담겨 있습니다. 음식의 배경을 읽고, 재료를 준비하고, 나의 한 끼로 이어 보세요.</p>
+            <p className="home-intro">지역의 특산물과 계절의 재료를 따라 세계의 식탁을 만납니다. 한 끼의 배경을 읽고, 우리 집 재료로 그 맛을 이어 보세요.</p>
             <div className="home-opening-links"><Link className="manna-button manna-button-primary" href="/recipes">오늘의 레시피 찾기 ↗</Link><Link className="manna-button manna-button-outline" href="/stories">식문화 이야기</Link></div>
           </div>
-          <div className="home-feature">
-            <p className="home-feature-label">THIS WEEK’S TABLE / 이번 주의 식탁</p>
-            <h2>스테이크 한 접시,<br />이야기부터 굽는 순간까지.</h2>
-            <p>추성훈의 리베라 스테이크 소개에서 영감 받은 가정용 레시피. 소스의 풍미와 한 끼의 배경을 함께 살펴보세요.</p>
-            <Link href="/recipes/choo-inspired-garlic-butter-steak">레시피와 촬영 보기 열기 ↗</Link>
-            <div className="mini-flow"><span>01 음식과 문화</span><span>→</span><span>02 준비할 재료</span><span>→</span><span>03 만드는 순서</span></div>
-          </div>
+          <SeasonalFeature />
         </div>
       </section>
 

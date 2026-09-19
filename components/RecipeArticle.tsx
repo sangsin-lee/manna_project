@@ -5,14 +5,17 @@ import { recipeFrames } from "@/lib/presentation";
 import { getRecipeNarrative, getRecipeSources } from "@/lib/recipe-narratives";
 import PresentationPlayer from "./PresentationPlayer";
 import RecipeCard from "./RecipeCard";
+import RecipeArtwork from "./RecipeArtwork";
+import { getRecipeDesign, recipeDesignStyle } from "@/lib/recipe-design";
 
 export default function RecipeArticle({ recipe, relatedRecipes }: { recipe: Recipe; relatedRecipes: Recipe[] }) {
   const country = getCountry(recipe.country);
   const stories = getStoriesBySlugs(recipe.relatedStorySlugs);
   const narrative = getRecipeNarrative(recipe);
   const sources = getRecipeSources(recipe);
+  const design = getRecipeDesign(recipe);
   return (
-    <div className="recipe-editorial">
+    <div className="recipe-editorial" style={recipeDesignStyle(design)} data-pattern={design.pattern}>
       <article>
         <header className="recipe-cover">
           <div className="editorial-wrap">
@@ -22,12 +25,12 @@ export default function RecipeArticle({ recipe, relatedRecipes }: { recipe: Reci
                 <p className="editorial-eyebrow"><span className="editorial-dot" /> THE RECIPE JOURNAL <span>— {country?.nameEn}</span></p>
                 <h1>{recipe.title}</h1>
                 <p className="recipe-cover-summary">{recipe.summary}</p>
+                <div className="recipe-place-tags"><span>{design.place}</span><span>{recipe.localTable?.season ?? "지역의 맛을 우리 집으로"}</span></div>
                 <div className="recipe-cover-actions"><PresentationPlayer key={recipe.slug} frames={recipeFrames(recipe)} title={recipe.title} /><Link className="manna-button manna-button-outline" href={`/videos/studio?recipe=${recipe.slug}`}>영상 만들기 <span>↗</span></Link><a className="manna-button manna-button-outline" href="#ingredients">재료부터 보기 <span>↗</span></a></div>
                 <p className="recipe-screen-hint">유래 → 시대와 문화 → 맛과 식감 → 조리법, 한 장씩 크게 만나보세요.</p>
               </div>
               <aside className="recipe-note" aria-label="레시피 한눈에 보기">
-                <div className="recipe-note-top"><span>MANNA TABLE</span><span>RECIPE NOTES</span></div>
-                <div className="recipe-note-art" aria-hidden="true"><div className="plate-ring"><span>한 끼의<br /><em>이야기</em></span></div><span className="plate-sprig">✳</span></div>
+                <RecipeArtwork design={design} label={recipe.visualLabel} />
                 <dl className="recipe-facts"><div><dt>조리 시간</dt><dd>{recipe.cookingTime}<small>분</small></dd></div><div><dt>함께 먹을 인원</dt><dd>{recipe.servings}<small>인분</small></dd></div><div><dt>난이도</dt><dd className="fact-word">{recipe.difficulty}</dd></div></dl>
                 <p className="recipe-note-bottom">{recipe.steps.length}개의 단계로 완성하는 한 접시</p>
               </aside>
@@ -39,6 +42,7 @@ export default function RecipeArticle({ recipe, relatedRecipes }: { recipe: Reci
           <div className="editorial-wrap editorial-section-grid">
             <div><p className="editorial-eyebrow">01 / FOOD & CULTURE</p><h2>맛을 알면,<br />이야기가 보입니다.</h2><p className="section-caption">어디에서 시작해, 어떤 식탁을 거쳐,<br />오늘 어떤 맛으로 만나는지.</p></div>
             <div>
+              {recipe.localTable && <aside className="local-table-note"><p className="narrative-label">지역과 계절의 기록</p><h3>{recipe.localTable.ingredient}</h3><p>{recipe.localTable.note}</p></aside>}
               {narrative && <div className="recipe-narrative">{narrative.chapters.map((chapter) => <section key={chapter.section} className="narrative-chapter"><p className="narrative-label">{chapter.section}</p><h3>{chapter.title}</h3><p className="narrative-body">{chapter.body}</p></section>)}</div>}
               <div className={narrative ? "narrative-adaptation" : undefined}>{narrative && <p className="narrative-label">이번 레시피</p>}<p className={narrative ? "narrative-body" : "culture-prose"}>{recipe.culturalNote}</p></div>
               <div className="culture-links">{country && <Link href={`/countries/${country.slug}`}>{country.nameKo}의 식탁 ↗</Link>}{stories[0] && <Link href={`/stories/${stories[0].slug}`}>문화 이야기 읽기 ↗</Link>}<a href="#sources">이야기의 출처 ↗</a></div>

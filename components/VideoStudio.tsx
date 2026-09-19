@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { PresentationFrame } from "@/lib/presentation";
 import { buildScenes, buildTimeline, captionsFor, dimensions, draftFromFrames, MAX_DURATION, scriptFor, srtFor, timelineDuration, VIDEO_QUALITIES, VOICE_LEAD, type DraftScene, type VideoFormat, type VideoResolution, type VoiceClip } from "@/lib/video-project";
 import { drawVideoFrame } from "@/lib/video-canvas";
+import { defaultRecipeDesign, recipeDesignStyle } from "@/lib/recipe-design";
 
 type RecipeOption = { slug: string; title: string; frames: PresentationFrame[] };
 const clock = (seconds: number) => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, "0")}`;
@@ -49,6 +50,7 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
   const allVoiced = narrations.length > 0 && voiced === narrations.length;
   const hasEstimated = timeline.some((scene) => scene.narration && (!scene.clip || scene.clip.estimated));
   const draft = drafts[selected];
+  const design = drafts[0]?.design ?? defaultRecipeDesign;
   const valid = drafts.length > 0 && drafts.every((item) => item.title.trim() && (item.text.trim() || item.kind === "cover" || item.kind === "sources")) && duration <= MAX_DURATION;
 
   useEffect(() => {
@@ -163,7 +165,7 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
   }
 
   return (
-    <main className="video-studio">
+    <main className="video-studio" style={recipeDesignStyle(design)} data-pattern={design.pattern}>
       <header className="studio-heading">
         <Link href="/videos" className="studio-back">← 영상 이야기</Link>
         <div className="studio-title-row"><div><p className="studio-eyebrow">MANNA TABLE / FILM STUDIO</p><h1>한 편의 식탁 이야기.</h1><p>글을 다듬고, 목소리를 입히고, 영상으로 간직하세요.</p></div><span className="studio-badge">최대 4K · 자막 선택 · 부드러운 장면 전환</span></div>
@@ -184,7 +186,7 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
             {draft && <div className="studio-scene-editor">
               <label htmlFor="scene-title">장면 제목</label><input id="scene-title" maxLength={90} value={draft.title} onChange={(event) => updateDraft({ title: event.target.value })} />
               {draft.kind === "sources" ? <p className="studio-help">참고 자료는 마지막 화면에 표시됩니다. 원문 링크는 대본 파일에 함께 저장됩니다.</p> : <><label htmlFor="scene-text">화면에 보일 글 · 내레이션 대본</label><textarea id="scene-text" rows={7} maxLength={3000} value={draft.text} onChange={(event) => updateDraft({ text: event.target.value })} /><p className="studio-help">긴 글은 읽기 편한 여러 화면으로 자동 분할합니다. 표지는 제목도 함께 읽습니다.</p></>}
-              <div className="studio-inline-actions"><button className="studio-text-button" onClick={() => { invalidate(); const next = { id: `custom-${Date.now()}`, section: "식탁 이야기", title: "새로운 이야기", text: "이곳에 들려주고 싶은 이야기를 적어 주세요.", kind: "culture" as const }; setDrafts([...drafts.slice(0, selected + 1), next, ...drafts.slice(selected + 1)]); setSelected(selected + 1); }} disabled={drafts.length >= 100}>+ 다음 장면 추가</button><button className="studio-text-button" disabled={drafts.length <= 1} onClick={() => { invalidate(); setDrafts(drafts.filter((_, i) => i !== selected)); setSelected(Math.max(0, selected - 1)); }}>이 장면 삭제</button></div>
+              <div className="studio-inline-actions"><button className="studio-text-button" onClick={() => { invalidate(); const next = { id: `custom-${Date.now()}`, section: "식탁 이야기", title: "새로운 이야기", text: "이곳에 들려주고 싶은 이야기를 적어 주세요.", kind: "culture" as const, design }; setDrafts([...drafts.slice(0, selected + 1), next, ...drafts.slice(selected + 1)]); setSelected(selected + 1); }} disabled={drafts.length >= 100}>+ 다음 장면 추가</button><button className="studio-text-button" disabled={drafts.length <= 1} onClick={() => { invalidate(); setDrafts(drafts.filter((_, i) => i !== selected)); setSelected(Math.max(0, selected - 1)); }}>이 장면 삭제</button></div>
             </div>}
             <button className="studio-outline studio-wide" onClick={() => downloadText(scriptFor(drafts), "manna-script.txt")}>대본과 출처 저장 .txt</button>
           </fieldset>
@@ -197,6 +199,7 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
               <div><label htmlFor="studio-resolution">저장 화질</label><select id="studio-resolution" value={resolution} onChange={(event) => { changeOutput(); setResolution(event.target.value as VideoResolution); }}>{(Object.keys(VIDEO_QUALITIES) as VideoResolution[]).map((value) => <option key={value} value={value}>{VIDEO_QUALITIES[value].label}{value === "4k" ? " · 최고 화질" : ""}</option>)}</select><p className="studio-help">{exportSize.width} × {exportSize.height} · 30fps</p></div>
               <div><label htmlFor="studio-captions">하단 자막</label><select id="studio-captions" value={showCaptions ? "on" : "off"} onChange={(event) => { changeOutput(); setShowCaptions(event.target.value === "on"); }}><option value="on">자막 포함</option><option value="off">자막 없이</option></select><p className="studio-help">제목과 레시피 본문은 그대로 보여요.</p></div>
             </fieldset>
+            <p className="studio-theme-note"><strong>{design.place}</strong><span>{design.caption}</span></p>
             <div className={`studio-canvas-wrap ${format}`}><canvas ref={canvas} width={size.width} height={size.height} aria-label="식문화 영상 미리 보기">대본을 영상으로 보여주는 미리 보기입니다.</canvas></div>
             <div className="studio-playback"><button className="studio-play" disabled={busy !== null || !valid} onClick={preview}>{playing ? "일시 정지" : "▶ 재생"}</button><input aria-label="영상 재생 위치" type="range" min={0} max={Math.max(0.001, duration - 0.001)} step={0.05} value={Math.min(time, Math.max(0.001, duration - 0.001))} disabled={busy !== null} onChange={(event) => { pause(); setTime(Number(event.target.value)); }} /><span>{clock(time)} / {clock(duration)}</span></div>
             <p className="studio-preview-note">{scenes.length}개 화면 · {voiced ? `내레이션 ${voiced}/${narrations.length} 완성` : "현재 무음 미리 보기"}{!allVoiced && voiced > 0 ? " · 미완성 장면은 무음" : ""} · {showCaptions ? hasEstimated ? "자막 시간 추정" : "음성에 맞춘 자막" : "하단 자막 없음"}</p>

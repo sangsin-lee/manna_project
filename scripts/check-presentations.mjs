@@ -27,7 +27,7 @@ for (const recipe of recipes) {
   const narrative = recipeNarratives[recipe.slug];
   assert.ok(narrative, `${recipe.slug}: missing food story`);
   assert.deepEqual(narrative.chapters.map((chapter) => chapter.section), ["음식의 유래", "시대와 문화", "맛과 식감"]);
-  assert.equal(join(frames.filter((frame) => frame.kind === "culture")), normalize([...narrative.chapters.map((chapter) => chapter.body), recipe.culturalNote].join(" ")), recipe.slug);
+  assert.equal(join(frames.filter((frame) => frame.kind === "culture")), normalize([...narrative.chapters.map((chapter) => chapter.body), recipe.culturalNote, recipe.localTable?.note ?? ""].join(" ")), recipe.slug);
   const firstIngredient = frames.findIndex((frame) => frame.kind === "ingredients");
   let previousChapter = 0;
   for (const chapter of narrative.chapters) {
@@ -51,7 +51,7 @@ for (const recipe of recipes) {
   for (const url of actualSources) assert.equal(new URL(url).protocol, "https:");
 }
 assert.deepEqual(Object.keys(recipeNarratives).sort(), recipes.map((recipe) => recipe.slug).sort(), "Orphaned food stories");
-const unpublishedRecipe = { ...recipes[0], slug: "not-yet-authored" };
+const unpublishedRecipe = { ...recipes[0], slug: "not-yet-authored", localTable: undefined };
 assert.equal(join(recipeFrames(unpublishedRecipe).filter((frame) => frame.kind === "culture")), normalize(unpublishedRecipe.culturalNote), "Unwritten stories must retain the existing cultural note");
 for (const story of stories) {
   const frames = storyFrames(story);

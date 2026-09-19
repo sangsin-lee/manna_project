@@ -1,4 +1,5 @@
 import { dimensions, type TimedScene } from "./video-project";
+import { defaultRecipeDesign, type RecipeDesign } from "./recipe-design";
 
 const fontFamily = '"Malgun Gothic", "Apple SD Gothic Neo", sans-serif';
 
@@ -33,32 +34,49 @@ function textBlock(ctx: CanvasRenderingContext2D, text: string, x: number, y: nu
   lines.forEach((line, i) => ctx.fillText(line, x, y + i * size * lineHeight));
 }
 
+function drawMotif(ctx: CanvasRenderingContext2D, theme: RecipeDesign, width: number, height: number) {
+  ctx.strokeStyle = theme.accent;
+  ctx.lineWidth = 2;
+  for (let i = 0; i < 7; i++) {
+    ctx.beginPath();
+    if (theme.pattern === "contours" || theme.pattern === "waves") {
+      ctx.arc(width + 160, height * .55, 170 + i * 45, 0, Math.PI * 2);
+    } else if (theme.pattern === "tiles") {
+      const x = width - 280 + (i % 2) * 100;
+      const y = 160 + i * 115;
+      ctx.moveTo(x, y - 65); ctx.lineTo(x + 65, y); ctx.lineTo(x, y + 65); ctx.lineTo(x - 65, y); ctx.closePath();
+    } else {
+      ctx.moveTo(width - 250 + i * 35, 0); ctx.lineTo(width - 450 + i * 35, height);
+    }
+    ctx.stroke();
+  }
+}
+
 function drawScene(ctx: CanvasRenderingContext2D, scene: TimedScene, width: number, height: number, offset = 0, opacity = 1) {
   const portrait = height > width;
-  const dark = scene.kind === "cover" || scene.kind === "culture";
+  const theme = scene.design ?? defaultRecipeDesign;
+  const cover = scene.kind === "cover";
   const pad = portrait ? 94 : 130;
   const contentWidth = width - pad * 2;
   ctx.save();
   ctx.globalAlpha = opacity;
   ctx.translate(offset, 0);
-  ctx.fillStyle = dark ? "#243d2d" : "#f5f2e9";
+  ctx.fillStyle = cover ? theme.soft : theme.paper;
   ctx.fillRect(-Math.abs(offset), 0, width + Math.abs(offset) * 2, height);
-  ctx.strokeStyle = dark ? "#6e7f65" : "#c1c9b7";
-  ctx.lineWidth = 2;
-  ctx.globalAlpha = opacity * 0.25;
-  for (const radius of [230, 270, 310]) {
-    ctx.beginPath(); ctx.arc(width - 50, height * 0.46, radius, 0, Math.PI * 2); ctx.stroke();
-  }
+  ctx.fillStyle = theme.accent;
+  ctx.fillRect(0, 0, width, 12);
+  ctx.globalAlpha = opacity * 0.12;
+  drawMotif(ctx, theme, width, height);
   ctx.globalAlpha = opacity;
-  ctx.fillStyle = dark ? "#b7c9a2" : "#677c55";
+  ctx.fillStyle = theme.muted;
   ctx.font = `600 24px ${fontFamily}`;
   ctx.fillText("MANNA TABLE  /  만나의 식탁", pad, portrait ? 110 : 90);
-  ctx.fillStyle = dark ? "#e3bb79" : "#a15330";
+  ctx.fillStyle = theme.accent;
   ctx.font = `600 ${portrait ? 30 : 26}px ${fontFamily}`;
   ctx.fillText(scene.section, pad, portrait ? 265 : 210);
-  ctx.fillStyle = dark ? "#fcf8eb" : "#253b2f";
+  ctx.fillStyle = theme.ink;
   textBlock(ctx, scene.title, pad, portrait ? 355 : 290, contentWidth, portrait ? 310 : 200, portrait ? 88 : 84, 700, 1.25);
-  ctx.fillStyle = dark ? "#e0e5d6" : "#485744";
+  ctx.fillStyle = theme.muted;
   if (scene.kind === "sources" && scene.sources?.length) {
     scene.sources.forEach((source, i) => {
       const y = (portrait ? 730 : 535) + i * (portrait ? 235 : 125);
@@ -105,9 +123,9 @@ export function drawVideoFrame(canvas: HTMLCanvasElement, timeline: TimedScene[]
     ctx.fillStyle = "#fffdf3";
     textBlock(ctx, caption.text, x + 32, y + 24, captionWidth - 64, portrait ? 130 : 82, portrait ? 47 : 36, 500, 1.4);
   }
-  ctx.fillStyle = scene.kind === "cover" || scene.kind === "culture" ? "#b7c9a2" : "#677c55";
+  ctx.fillStyle = (scene.design ?? defaultRecipeDesign).muted;
   ctx.font = `500 ${portrait ? 24 : 22}px ${fontFamily}`;
-  ctx.fillText("음식으로 읽는 세계", portrait ? 94 : 130, height - 72);
+  ctx.fillText(scene.design?.place ?? "음식으로 읽는 세계", portrait ? 94 : 130, height - 72);
   ctx.textAlign = "right";
   ctx.fillText(`${String(index + 1).padStart(2, "0")} / ${String(timeline.length).padStart(2, "0")}`, width - (portrait ? 94 : 130), height - 72);
   ctx.textAlign = "left";

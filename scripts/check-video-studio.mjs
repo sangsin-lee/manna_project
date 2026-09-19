@@ -13,11 +13,23 @@ const { recipes } = load("../lib/content.ts");
 const { recipeFrames } = load("../lib/presentation.ts");
 const { buildScenes, buildTimeline, captionsFor, dimensions, draftFromFrames, scriptFor, splitSceneText, srtFor, timelineDuration, VIDEO_QUALITIES, VOICE_LEAD } = load("../lib/video-project.ts");
 const { drawVideoFrame } = load("../lib/video-canvas.ts");
+const { getRecipeDesign } = load("../lib/recipe-design.ts");
+const luminance = (hex) => {
+  const c = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255).map((v) => v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4);
+  return c[0] * .2126 + c[1] * .7152 + c[2] * .0722;
+};
+const contrast = (a, b) => (Math.max(luminance(a), luminance(b)) + .05) / (Math.min(luminance(a), luminance(b)) + .05);
 const compact = (text) => text.replace(/\s/g, "");
 for (const recipe of recipes) {
   const frames = recipeFrames(recipe);
   const drafts = draftFromFrames(frames, false);
   const scenes = buildScenes(drafts);
+  const design = getRecipeDesign(recipe);
+  assert.ok(frames.every((frame) => JSON.stringify(frame.design) === JSON.stringify(design)), `${recipe.slug}: capture theme`);
+  assert.ok(scenes.every((scene) => JSON.stringify(scene.design) === JSON.stringify(design)), `${recipe.slug}: draft theme survived splitting`);
+  for (const background of [design.paper, design.soft]) {
+    for (const color of [design.ink, design.muted, design.accent]) assert.ok(contrast(color, background) >= 4.5, `${recipe.slug}: readable text contrast`);
+  }
   assert.equal(compact(scenes.map((scene) => scene.text).join("")), compact(drafts.map((scene) => scene.text).join("")), `${recipe.slug}: text preserved`);
   assert.ok(scenes.every((scene) => scene.text.length <= 145));
   assert.ok(scenes.filter((scene) => scene.kind === "sources").every((scene) => !scene.narration));
@@ -55,16 +67,17 @@ assert.equal(buildTimeline([{ ...scenes[0], narration: "수정한 내용" }], ne
 // Compare actual drawing commands: captions disappear without dropping recipe text,
 // timing, or SRT; high resolution redraws use the same composition and no bitmap scaling.
 const captionText = timeline[0].captions[0].text;
-function drawCalls(width, height, showCaptions) {
+function drawCalls(width, height, showCaptions, sceneTimeline = timeline) {
   const calls = [];
   const ctx = {
     font: "", fillText: (...args) => calls.push(["text", ...args]),
     scale: (...args) => calls.push(["scale", ...args]),
     roundRect: (...args) => calls.push(["caption-background", ...args]),
     measureText: (text) => ({ width: text.length * 12 }),
-    save() {}, restore() {}, translate() {}, fillRect() {}, beginPath() {}, arc() {}, stroke() {}, fill() {},
+    fillRect: (...args) => calls.push(["background", ctx.fillStyle, ...args]),
+    save() {}, restore() {}, translate() {}, beginPath() {}, arc() {}, stroke() {}, fill() {}, moveTo() {}, lineTo() {}, closePath() {},
   };
-  drawVideoFrame({ width, height, getContext: () => ctx }, timeline, VOICE_LEAD + 0.1, { animate: false, showCaptions });
+  drawVideoFrame({ width, height, getContext: () => ctx }, sceneTimeline, VOICE_LEAD + 0.1, { animate: false, showCaptions });
   return calls;
 }
 for (const [resolution, width, height] of [["1080p", 1920, 1080], ["1440p", 2560, 1440], ["4k", 3840, 2160]]) {
@@ -87,6 +100,14 @@ for (const [resolution, width, height] of [["1080p", 1920, 1080], ["1440p", 2560
 }
 assert.ok(VIDEO_QUALITIES["4k"].bitrate > VIDEO_QUALITIES["1440p"].bitrate && VIDEO_QUALITIES["1440p"].bitrate > VIDEO_QUALITIES["1080p"].bitrate);
 assert.ok(srtFor(timeline).includes("63°C"), "Separate captions remain available");
+for (const recipe of recipes) {
+  const themedTimeline = buildTimeline(buildScenes(draftFromFrames(recipeFrames(recipe), false)));
+  for (const [width, height] of [[3840, 2160], [2160, 3840]]) {
+    const calls = drawCalls(width, height, false, themedTimeline);
+    assert.equal(calls.find((call) => call[0] === "background")[1], getRecipeDesign(recipe).soft, `${recipe.slug}: native 4K uses this recipe's palette`);
+  }
+}
+assert.ok(new Set(recipes.map((recipe) => getRecipeDesign(recipe).soft)).size >= 12, "Keep distinct food palettes");
 
 const route = load("../app/api/video/narration/route.ts");
 const originalFetch = globalThis.fetch;

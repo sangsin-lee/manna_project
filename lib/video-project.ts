@@ -2,6 +2,7 @@ import type { PresentationFrame } from "./presentation";
 import type { SourceLink } from "./content";
 
 export type DraftScene = {
+  design?: PresentationFrame["design"];
   id: string;
   section: string;
   title: string;
@@ -40,7 +41,7 @@ export const MAX_DURATION = 600;
 export function draftFromFrames(frames: PresentationFrame[], storyOnly: boolean): DraftScene[] {
   return frames.filter((frame) => !storyOnly || ["cover", "culture", "sources"].includes(frame.kind)).map((frame, i) => ({
     id: `recipe-${i}`, section: frame.section, title: frame.title, kind: frame.kind,
-    text: frame.body ?? frame.items?.join("\n") ?? "", sources: frame.sources,
+    text: frame.body ?? frame.items?.join("\n") ?? "", sources: frame.sources, design: frame.design,
   }));
 }
 

@@ -143,6 +143,7 @@ export type RecipeStep = {
 };
 
 export type Recipe = {
+  localTable?: { region: string; ingredient: string; season: string; note: string };
   slug: string;
   title: string;
   country: CountrySlug;

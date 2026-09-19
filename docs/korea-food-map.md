@@ -1,0 +1,12 @@
+# Domestic food atlas
+
+`/korea` is a map of nine culinary browsing areas. Icons select a region; spring, summer, autumn and winter select the food context. The query parameters `region` and `season` preserve shareable selections and work with Back/Forward through Next's native history integration. Invalid regions fall back to Jeju. The initial season is computed for Asia/Seoul at request time.
+
+- `lib/korea-table.ts`: regional palettes, coordinates, specialties, harvest notes, sources and household cooking ideas. Off-season views explicitly identify stored/processed produce instead of claiming a fresh harvest. Map areas are not administrative subdivisions and do not claim coverage of every city or specialty.
+- `lib/korea-sources.ts`: primary tourism, agriculture, producer and cultural references, reviewed September 20, 2026. Claims are limited to food identity and seasonality, not health benefits, live stock, prices or current festival schedules.
+- `lib/jeju-recipes.ts`: four complete Jeju-inspired household recipes, independent of the daily dinner record. All are included in the shared recipe library, Korean country page, presentations, video studio and sitemap. `domesticRegion` connects any future Korean recipe to the map; update the region's `recipeSlugs` as well.
+- `lib/recipe-design.ts` and `components/RecipeArtwork.tsx`: dish-specific palettes and original vector covers. Map illustrations use `components/SpecialtyIcon.tsx`. They are illustrations, not photographs or authenticated traditional motifs.
+
+Coastline: [Natural Earth 1:50m countries](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_admin_0_countries.geojson), public-domain data. `data/korea-coastline.json` retains the South Korea geometry only. `lib/korea-map.ts` projects it into an SVG; no map API key or external map requests are needed. The generalised scale omits small features; markers indicate broad culinary areas, not shops.
+
+For validation run `npm run check:korea`, existing recipe/presentation/video/daily checks, targeted ESLint and a production build. In a browser check region icons, all seasons, direct query links, Back/Forward, mobile reading order, map-to-recipe return links and reduced motion. Recipe links open full quantities, methods and cultural sources; video links retain 4K and optional captions.

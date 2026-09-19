@@ -14,6 +14,8 @@ The immutable `baseline` records the 26 original recipes plus the previous rice-
 
 Compare every earlier title, alias, core ingredient and cooking method, including the full recipe library, food narratives and relevant Git history. The automated check catches repeated dates, URLs and normalized names; an editorial review is still needed for semantic duplicates, renamed dishes and changes of sauce.
 
+The user-requested regional collection in `lib/jeju-recipes.ts` is also part of the existing recipe library, not a new daily recommendation. Preserve it and include it in duplicate review. The `/korea` map reads `lib/korea-table.ts`. For future domestic recipes, set `domesticRegion` to the matching map region id, update that region's sourced specialties and recipeSlugs, and keep the map, recipe article and video theme connected. The nine map areas are culinary browsing groups, not an exhaustive administrative map. Keep harvest seasons distinct from year-round stored, frozen or processed products.
+
 For a new date, save the selected dish in `daily` before proceeding. Record the canonical dish, aliases, ingredients, method, research links, duplicate review and recipe-specific preparation labels. Add its complete recipe in `lib/daily-recipes.ts` and a sourced three-part opening in `lib/recipe-narratives.ts`. Add the slug to its country's recipe list. The homepage reads the newest history entry; recipe, filming and video pages use the shared content.
 
 Include purchase units versus amounts used, servings, total time, substitutions, verified cooking temperatures where relevant, and a practical filming idea. Never claim store availability, current prices, virality or view counts without evidence.

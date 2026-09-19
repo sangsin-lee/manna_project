@@ -2,6 +2,7 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 
 const footerLinks = [
+  { label: "국내 미식 지도", href: "/korea" },
   { label: "나라별 식탁", href: "/countries" },
   { label: "유럽 여행 기록", href: "/journeys/europe" },
   { label: "문화 이야기", href: "/stories" },

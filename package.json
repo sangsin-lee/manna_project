@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "check:daily-menu": "node scripts/check-daily-menu.mjs",
+    "check:korea": "node scripts/check-korea-map.mjs",
     "check:presentations": "node scripts/check-presentations.mjs",
     "check:video": "node scripts/check-video-studio.mjs"
   },

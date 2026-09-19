@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import type { CountrySlug, Recipe } from "./content";
 
 export type RecipePattern = "grain" | "tiles" | "waves" | "contours" | "linen";
-export type RecipeArt = "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco";
+export type RecipeArt = "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus";
 export type RecipeDesign = {
   paper: string; soft: string; from: string; mid: string; to: string;
   ink: string; muted: string; accent: string; dark: string; line: string;
@@ -19,7 +19,11 @@ const places: Record<CountrySlug, [string, RecipePattern]> = {
 };
 
 // Visual interpretations of ingredients and places, not claims of traditional patterns.
-const details: Record<string, { art: RecipeArt; caption: string; place?: string; colors?: [string, string, string, string] }> = {
+const details: Record<string, { art: RecipeArt; caption: string; place?: string; pattern?: RecipePattern; colors?: [string, string, string, string] }> = {
+  "jeju-dombe-guksu": { art: "pork-noodles", caption: "나무 도마의 갈색과 우윳빛 고기 국물", pattern: "grain" },
+  "jeju-galchi-jorim": { art: "fish-stew", caption: "은갈치의 바다와 붉은 양념의 온기", pattern: "waves" },
+  "jeju-grilled-fish-platter": { art: "grilled-fish", caption: "제주 바다의 청록과 노릇한 생선", pattern: "waves" },
+  "jeju-tangerine-yogurt-cup": { art: "citrus", caption: "감귤 과수원의 주황과 요거트의 흰빛", pattern: "contours" },
   "chicken-mushroom-takikomi-gohan": { art: "rice", place: "일본 · 가을의 식탁", caption: "쌀의 아이보리, 표고의 갈색, 흙빛 냄비", colors: ["#f3e5c9", "#d5b489", "#a87951", "#442d22"] },
   "choo-inspired-garlic-butter-steak": { art: "steak", place: "일본 · 도쿄에서 얻은 영감", caption: "구운 고기, 갈릭버터, 짙은 나무색", colors: ["#efd9bc", "#ca9774", "#925844", "#482b27"] },
   "juicy-pork-loin-steak": { art: "steak", caption: "노릇한 겉면과 머스터드의 금빛", colors: ["#f5e6d5", "#dfb79d", "#b78958", "#49332a"] },
@@ -63,7 +67,7 @@ export function getRecipeDesign(recipe: Recipe): RecipeDesign {
     from, mid, to, ink, muted: mix(ink, "#ffffff", 0.22),
     paper: mix(from, "#ffffff", 0.9), soft: mix(mid, "#ffffff", 0.68),
     accent: mix(baseInk, "#4c241b", 0.22), dark: mix(ink, "#171310", 0.15),
-    line: mix(mid, "#ffffff", 0.32), pattern,
+    line: mix(mid, "#ffffff", 0.32), pattern: detail?.pattern ?? pattern,
     art: detail?.art ?? "bowl", place: recipe.localTable?.region ?? detail?.place ?? place,
     caption: detail?.caption ?? "이 음식의 재료와 식탁에서 가져온 색",
   };

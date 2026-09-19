@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 const navigation = [
   { label: "홈", href: "/" },
+  { label: "국내 지도", href: "/korea" },
   { label: "나라별 식탁", href: "/countries" },
   { label: "문화 이야기", href: "/stories" },
   { label: "레시피", href: "/recipes" },

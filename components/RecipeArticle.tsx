@@ -22,6 +22,7 @@ export default function RecipeArticle({ recipe, relatedRecipes }: { recipe: Reci
             <nav className="recipe-breadcrumb" aria-label="현재 위치"><Link href="/">만나의 식탁</Link><span>/</span><Link href="/recipes">레시피</Link><span>/</span><span>{country?.nameKo}</span></nav>
             <div className="recipe-cover-grid">
               <div className="recipe-cover-copy">
+                {recipe.domesticRegion && <Link className="recipe-region-return" href={`/korea?region=${recipe.domesticRegion}`}>← 국내 지도에서 이 지역 보기</Link>}
                 <p className="editorial-eyebrow"><span className="editorial-dot" /> THE RECIPE JOURNAL <span>— {country?.nameEn}</span></p>
                 <h1>{recipe.title}</h1>
                 <p className="recipe-cover-summary">{recipe.summary}</p>

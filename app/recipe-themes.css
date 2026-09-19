@@ -1,4 +1,5 @@
 /* Food-led palettes. The page, capture view and film studio share these tokens. */
+.recipe-region-return{display:inline-flex;margin-bottom:20px;font-size:12px;font-weight:650;color:var(--dish-accent)}
 .recipe-editorial{--ink:var(--dish-ink);--paper:var(--dish-paper);--line:var(--dish-line)}
 .recipe-editorial .recipe-cover{background:var(--dish-soft)}
 .recipe-cover-grid{grid-template-columns:1.1fr 1fr;gap:64px}

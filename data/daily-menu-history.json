@@ -1,0 +1,530 @@
+{
+  "schemaVersion": 1,
+  "timeZone": "Asia/Seoul",
+  "initializedAt": "2026-09-19",
+  "baselineCommit": "1ec1384",
+  "baseline": [
+    {
+      "recipeSlug": "choo-inspired-garlic-butter-steak",
+      "title": "추성훈 스테이크에서 영감 받은 갈릭버터 스테이크",
+      "firstPublishedAt": "2026-09-18",
+      "aliases": [
+        "추성훈 스테이크",
+        "리베라 응용 스테이크",
+        "갈릭버터 소고기 스테이크"
+      ],
+      "ingredientSummary": [
+        "소고기 채끝 또는 등심 250g, 두께 약 2~3cm",
+        "무염버터 15g",
+        "양파 1/4개",
+        "마늘 2쪽",
+        "캔 옥수수 3큰술, 물기 제거",
+        "즉석밥 1개 또는 밥 1공기"
+      ],
+      "method": "고기와 소스 준비 → 양면 노릇하게 굽기 → 버터 향을 입히고 온도 확인 → 최소 3분 휴지 → 양파 간장 소스와 곁들임 → 썰어서 한 상 차리기"
+    },
+    {
+      "recipeSlug": "juicy-pork-loin-steak",
+      "title": "은은한 핑크빛이 남을 수 있는 돼지 등심 스테이크",
+      "firstPublishedAt": "2026-09-18",
+      "aliases": [
+        "돼지 등심 스테이크",
+        "핑크 돼지 스테이크",
+        "포크 찹"
+      ],
+      "ingredientSummary": [
+        "뼈 없는 돼지 통등심 스테이크 200~250g, 두께 약 2~3cm",
+        "무염버터 10g",
+        "마늘 2쪽",
+        "양송이버섯 3개",
+        "양파 1/4개",
+        "즉석밥 1개 또는 밥 1공기"
+      ],
+      "method": "고기 준비 → 겉면 굽기 → 중심온도로 익힘 확인 → 최소 3분 휴지 → 곁들임 완성"
+    },
+    {
+      "recipeSlug": "hong-kong-macaroni-soup",
+      "title": "홍콩식 마카로니 수프",
+      "firstPublishedAt": "2026-09-01",
+      "aliases": [
+        "홍콩 마카로니탕",
+        "차찬텡 마카로니 수프"
+      ],
+      "ingredientSummary": [
+        "엘보 마카로니 120g",
+        "저염 닭 육수 또는 채소 육수 700ml",
+        "슬라이스 햄 100g",
+        "냉동 옥수수 50g(선택)",
+        "진간장 1작은술",
+        "흰후추 약간"
+      ],
+      "method": "마카로니 삶기 → 국물 끓이기 → 마카로니 데우기 → 달걀과 함께 담기"
+    },
+    {
+      "recipeSlug": "japanese-beef-bean-sprout-stir-fry",
+      "title": "차돌박이 숙주볶음",
+      "firstPublishedAt": "2026-09-02",
+      "aliases": [
+        "소고기 숙주볶음",
+        "소고기 숙주덮밥",
+        "차돌 숙주볶음"
+      ],
+      "ingredientSummary": [
+        "차돌박이 또는 얇은 소고기 250g",
+        "숙주 300g",
+        "대파 1/2대",
+        "마늘 2쪽"
+      ],
+      "method": "재료 준비 → 소고기 굽기 → 향과 숙주 더하기 → 양념해 마무리"
+    },
+    {
+      "recipeSlug": "mala-xiang-guo",
+      "title": "집에서 만드는 마라샹궈",
+      "firstPublishedAt": "2026-09-03",
+      "aliases": [
+        "마라샹궈",
+        "마라 볶음"
+      ],
+      "ingredientSummary": [
+        "얇은 돼지고기 또는 소고기 300g",
+        "청경채 150g",
+        "연근 150g",
+        "버섯 150g",
+        "푸주 또는 두부 150g",
+        "불린 목이버섯 80g"
+      ],
+      "method": "재료별 전처리 → 고기 볶기 → 향신료와 소스 볶기 → 단단한 재료부터 합치기 → 수분을 날려 마무리"
+    },
+    {
+      "recipeSlug": "osam-bulgogi",
+      "title": "매콤한 오삼불고기",
+      "firstPublishedAt": "2026-09-04",
+      "aliases": [
+        "오삼불고기",
+        "오징어 삼겹살 볶음"
+      ],
+      "ingredientSummary": [
+        "손질 오징어 1마리(약 300g)",
+        "삼겹살 300g",
+        "양파 1개",
+        "양배추 200g",
+        "대파 1대",
+        "깻잎 8장"
+      ],
+      "method": "재료 손질 → 삼겹살 먼저 굽기 → 채소와 양념 볶기 → 오징어 짧게 익히기"
+    },
+    {
+      "recipeSlug": "vietnamese-banh-mi",
+      "title": "베트남식 반미 샌드위치",
+      "firstPublishedAt": "2026-09-05",
+      "aliases": [
+        "반미",
+        "바인미",
+        "banh mi"
+      ],
+      "ingredientSummary": [
+        "당근 80g",
+        "무 80g",
+        "식초 3큰술",
+        "설탕 2큰술",
+        "소금 1/3작은술"
+      ],
+      "method": "채소 절이기 → 고기 재우기 → 고기 굽기 → 바게트 데우기 → 조립하기"
+    },
+    {
+      "recipeSlug": "italian-tiramisu",
+      "title": "커피 향을 담은 티라미수",
+      "firstPublishedAt": "2026-09-06",
+      "aliases": [
+        "티라미수",
+        "tiramisu"
+      ],
+      "ingredientSummary": [
+        "진한 에스프레소 또는 커피 220ml",
+        "설탕 1큰술",
+        "무가당 코코아가루 1큰술"
+      ],
+      "method": "커피 식히기 → 크림 만들기 → 첫 번째 층 쌓기 → 두 번째 층과 숙성 → 코코아로 마무리"
+    },
+    {
+      "recipeSlug": "korean-sundae-bokkeum",
+      "title": "시장식 순대볶음",
+      "firstPublishedAt": "2026-09-07",
+      "aliases": [
+        "순대볶음",
+        "백순대볶음"
+      ],
+      "ingredientSummary": [
+        "시판 순대 500g",
+        "양배추 250g",
+        "양파 1/2개",
+        "대파 1대",
+        "깻잎 10장",
+        "불린 쫄면 또는 당면 150g(선택)"
+      ],
+      "method": "순대 데우기 → 채소 볶기 → 양념과 면 넣기 → 순대는 마지막에"
+    },
+    {
+      "recipeSlug": "hong-kong-milk-tea",
+      "title": "홍콩식 밀크티",
+      "firstPublishedAt": "2026-09-08",
+      "aliases": [
+        "홍콩 밀크티",
+        "스타킹 밀크티"
+      ],
+      "ingredientSummary": [
+        "실론계 홍차 잎 18g 또는 진한 홍차 티백 5개",
+        "물 450ml",
+        "무가당 연유 140ml",
+        "설탕 1~2큰술",
+        "얼음(차갑게 마실 경우)"
+      ],
+      "method": "물을 끓이기 → 진하게 우리기 → 우유와 설탕 섞기 → 뜨겁게 또는 차갑게"
+    },
+    {
+      "recipeSlug": "macau-minchi",
+      "title": "마카오식 민치",
+      "firstPublishedAt": "2026-09-09",
+      "aliases": [
+        "민치",
+        "민찌",
+        "minchi"
+      ],
+      "ingredientSummary": [
+        "다진 돼지고기 또는 소고기 350g",
+        "감자 2개(약 350g)",
+        "양파 1개",
+        "마늘 3쪽",
+        "달걀 3개",
+        "따뜻한 밥 3공기"
+      ],
+      "method": "감자와 양파 준비 → 감자를 노릇하게 익히기 → 고기와 향채 볶기 → 양념과 감자 합치기 → 달걀과 함께 담기"
+    },
+    {
+      "recipeSlug": "macau-portuguese-egg-tart",
+      "title": "마카오식 포르투갈 에그타르트",
+      "firstPublishedAt": "2026-09-09",
+      "aliases": [
+        "마카오 에그타르트",
+        "포르투갈 에그타르트",
+        "파스텔 드 나타"
+      ],
+      "ingredientSummary": [
+        "냉동 퍼프 페이스트리 1장(약 250g)",
+        "무염버터 약간"
+      ],
+      "method": "오븐과 틀 준비 → 페이스트리 성형 → 커스터드 섞기 → 채우고 굽기 → 잠시 식혀 제공"
+    },
+    {
+      "recipeSlug": "hawaii-loco-moco",
+      "title": "하와이식 로코모코",
+      "firstPublishedAt": "2026-09-09",
+      "aliases": [
+        "로코모코",
+        "하와이 함박 덮밥"
+      ],
+      "ingredientSummary": [
+        "다진 소고기 300g",
+        "다진 양파 1/4개",
+        "빵가루 3큰술",
+        "우유 2큰술",
+        "소금 1/3작은술",
+        "후추 약간",
+        "따뜻한 밥 2공기",
+        "달걀 2개"
+      ],
+      "method": "패티 반죽 → 패티 익히기 → 그레이비 만들기 → 달걀 굽기 → 한 그릇에 조립"
+    },
+    {
+      "recipeSlug": "hawaii-poke-bowl",
+      "title": "하와이 로컬 스타일 포케볼",
+      "firstPublishedAt": "2026-09-09",
+      "aliases": [
+        "포케",
+        "포키",
+        "poke bowl"
+      ],
+      "ingredientSummary": [
+        "회용 참치 300g",
+        "양파 1/4개",
+        "쪽파 2줄기",
+        "진간장 2큰술",
+        "참기름 1큰술",
+        "라임즙 1큰술",
+        "통깨 1작은술",
+        "불린 미역 또는 해초 30g(선택)"
+      ],
+      "method": "생선 상태 확인 → 채소 손질 → 짧게 버무리기 → 볼에 담기"
+    },
+    {
+      "recipeSlug": "thai-pad-thai",
+      "title": "타마린드 소스 팟타이",
+      "firstPublishedAt": "2026-09-09",
+      "aliases": [
+        "팟타이",
+        "태국 볶음 쌀국수"
+      ],
+      "ingredientSummary": [
+        "팟타이용 쌀국수 200g",
+        "새우 또는 닭고기 200g",
+        "단단한 두부 100g",
+        "달걀 2개",
+        "숙주 150g",
+        "부추 또는 쪽파 60g",
+        "다진 땅콩 3큰술",
+        "식용유 2큰술"
+      ],
+      "method": "쌀국수 불리기 → 소스 섞기 → 단백질과 두부 볶기 → 면과 소스 합치기 → 달걀과 채소 마무리"
+    },
+    {
+      "recipeSlug": "thai-som-tam",
+      "title": "태국식 그린 파파야 쏨땀",
+      "firstPublishedAt": "2026-09-09",
+      "aliases": [
+        "쏨땀",
+        "솜땀",
+        "그린 파파야 샐러드"
+      ],
+      "ingredientSummary": [
+        "그린 파파야 400g",
+        "방울토마토 8개",
+        "줄기콩 또는 그린빈 60g",
+        "볶은 땅콩 3큰술",
+        "말린 새우 1큰술(선택)"
+      ],
+      "method": "파파야 채 썰기 → 향 재료 찧기 → 드레싱 만들기 → 파파야와 가볍게 섞기 → 즉시 제공"
+    },
+    {
+      "recipeSlug": "french-croque-monsieur",
+      "title": "프랑스식 크로크무슈",
+      "firstPublishedAt": "2026-09-11",
+      "aliases": [
+        "크로크무슈",
+        "크로크마담",
+        "croque monsieur"
+      ],
+      "ingredientSummary": [
+        "식빵 4장",
+        "슬라이스 햄 4장",
+        "그뤼예르 또는 에멘탈 치즈 100g",
+        "디종 머스터드 2작은술",
+        "무염버터 약간"
+      ],
+      "method": "베샤멜 만들기 → 빵과 속재료 준비 → 팬에서 바닥 굽기 → 베샤멜과 치즈 올리기 → 오븐에서 마무리"
+    },
+    {
+      "recipeSlug": "french-onion-soup",
+      "title": "프렌치 어니언 수프",
+      "firstPublishedAt": "2026-09-11",
+      "aliases": [
+        "프렌치 어니언 수프",
+        "프랑스 양파 수프"
+      ],
+      "ingredientSummary": [
+        "양파 700g",
+        "무염버터 30g",
+        "올리브오일 1큰술",
+        "밀가루 1큰술",
+        "소고기 또는 채소 육수 900ml",
+        "드라이 화이트와인 100ml 선택",
+        "타임 1줄기",
+        "소금과 후추"
+      ],
+      "method": "양파 얇게 썰기 → 천천히 갈색 내기 → 밀가루와 와인 넣기 → 육수와 끓이기 → 빵과 치즈로 마무리"
+    },
+    {
+      "recipeSlug": "swabian-maultaschen",
+      "title": "슈바벤식 마울타셴",
+      "firstPublishedAt": "2026-09-11",
+      "aliases": [
+        "마울타셴",
+        "슈바벤 만두"
+      ],
+      "ingredientSummary": [
+        "중력분 300g",
+        "달걀 3개",
+        "물 1~2큰술",
+        "소금 1/2작은술"
+      ],
+      "method": "반죽 만들기 → 속재료 준비 → 반죽 얇게 밀기 → 속을 채워 자르기 → 육수에서 익히기 → 육수와 함께 제공"
+    },
+    {
+      "recipeSlug": "swabian-potato-salad",
+      "title": "슈바벤식 따뜻한 감자 샐러드",
+      "firstPublishedAt": "2026-09-11",
+      "aliases": [
+        "슈바벤 감자 샐러드",
+        "독일식 따뜻한 감자 샐러드"
+      ],
+      "ingredientSummary": [
+        "중간 크기 감자 800g",
+        "소금 약간"
+      ],
+      "method": "감자 삶기 → 따뜻할 때 썰기 → 드레싱 데우기 → 감자에 흡수시키기 → 기름과 허브로 마무리"
+    },
+    {
+      "recipeSlug": "swiss-cheese-fondue",
+      "title": "스위스 치즈 퐁뒤",
+      "firstPublishedAt": "2026-09-11",
+      "aliases": [
+        "치즈 퐁뒤",
+        "스위스 퐁뒤"
+      ],
+      "ingredientSummary": [
+        "그뤼예르 치즈 250g",
+        "에멘탈 치즈 200g",
+        "드라이 화이트와인 300ml",
+        "옥수수전분 1큰술",
+        "마늘 1쪽",
+        "레몬즙 1작은술",
+        "후추와 넛맥 약간"
+      ],
+      "method": "냄비에 마늘 향 내기 → 치즈에 전분 묻히기 → 와인 데우기 → 치즈 나누어 녹이기 → 식탁에서 따뜻하게 유지하기"
+    },
+    {
+      "recipeSlug": "swiss-rosti",
+      "title": "스위스식 뢰스티",
+      "firstPublishedAt": "2026-09-11",
+      "aliases": [
+        "뢰스티",
+        "로스티",
+        "스위스 감자전"
+      ],
+      "ingredientSummary": [
+        "감자 700g",
+        "소금 1/2작은술",
+        "후추 약간",
+        "무염버터 20g",
+        "식용유 1큰술"
+      ],
+      "method": "감자 미리 익히기 → 굵게 갈기 → 팬에 눌러 굽기 → 뒤집어 마무리"
+    },
+    {
+      "recipeSlug": "roman-cacio-e-pepe",
+      "title": "로마식 카초 에 페페",
+      "firstPublishedAt": "2026-09-11",
+      "aliases": [
+        "카초 에 페페",
+        "카치오 페페"
+      ],
+      "ingredientSummary": [
+        "스파게티 또는 톤나렐리 200g",
+        "페코리노 로마노 곱게 간 것 100g",
+        "통후추 1과 1/2작은술",
+        "소금",
+        "면수 약 180ml"
+      ],
+      "method": "후추 볶기 → 파스타 삶기 → 치즈 크림 만들기 → 팬에서 면 마무리 → 치즈와 빠르게 섞기"
+    },
+    {
+      "recipeSlug": "roman-carbonara",
+      "title": "로마식 카르보나라",
+      "firstPublishedAt": "2026-09-11",
+      "aliases": [
+        "카르보나라",
+        "까르보나라"
+      ],
+      "ingredientSummary": [
+        "스파게티 또는 리가토니 200g",
+        "구안찰레 100g",
+        "달걀노른자 3개",
+        "달걀 1개",
+        "페코리노 로마노 70g",
+        "통후추 1작은술",
+        "소금",
+        "면수 약 150ml"
+      ],
+      "method": "달걀 치즈 혼합물 만들기 → 구안찰레 지방 내기 → 파스타 삶기 → 팬에서 면과 지방 섞기 → 잔열로 소스 완성"
+    },
+    {
+      "recipeSlug": "club-suyuk-platter",
+      "title": "요리동아리 수육 한 상",
+      "firstPublishedAt": "2026-09-13",
+      "aliases": [
+        "수육",
+        "삶은 돼지고기 한 상"
+      ],
+      "ingredientSummary": [
+        "통삼겹살 1.6kg",
+        "돼지 앞다리살 또는 목살 1.6kg",
+        "고기가 잠길 정도의 물 약 6~7L(냄비 크기에 따라 조절)"
+      ],
+      "method": "냄비와 고기를 두 조로 나누기 → 향신 육수 끓이기 → 고기를 넣고 다시 끓이기 → 60~70분 천천히 삶기 → 10~15분 휴지하기 → 먹기 직전에 썰어 상차림하기"
+    },
+    {
+      "recipeSlug": "club-bean-sprout-egg-ramyeon",
+      "title": "요리동아리 숙주 계란 라면",
+      "firstPublishedAt": "2026-09-13",
+      "aliases": [
+        "숙주 계란 라면",
+        "계란 숙주 라면"
+      ],
+      "ingredientSummary": [
+        "봉지라면 12봉(수육과 함께 먹는 기준, 라면이 주식이면 15봉)",
+        "제품 표기 물 총량의 약 90%(12봉 기준 대략 5.8~6.0L, 제품별 조절)",
+        "동봉된 분말스프와 건더기스프 전량"
+      ],
+      "method": "숙주와 고명을 세 묶음으로 나누기 → 계란은 가볍게 풀어 두기 → 첫 번째 4봉 끓이기 → 숙주와 계란 넣기 → 파와 고추로 마무리해 즉시 제공 → 같은 방식으로 두 번 더 조리"
+    },
+    {
+      "recipeSlug": null,
+      "title": "불고기 치즈 떡피자",
+      "firstPublishedAt": "2026-09-17",
+      "aliases": [
+        "떡국떡 피자",
+        "불고기 떡피자",
+        "피자설기 응용"
+      ],
+      "ingredientSummary": [
+        "떡국떡 150g",
+        "양념 소불고기 150g",
+        "모차렐라 60g",
+        "피자소스 2큰술",
+        "양파 1/4개"
+      ],
+      "method": "불고기를 볶고 떡국떡을 찐 뒤 소스와 치즈를 올려 뚜껑을 덮어 녹인다.",
+      "archivePath": "/dinners/2026-09-17"
+    }
+  ],
+  "daily": [
+    {
+      "date": "2026-09-19",
+      "recipeSlug": "chicken-mushroom-takikomi-gohan",
+      "title": "가을 버섯 닭고기 솥밥",
+      "canonicalDish": "takikomi-gohan",
+      "aliases": [
+        "닭고기 버섯 솥밥",
+        "다키코미고항",
+        "키노코 고항",
+        "고모쿠 고항",
+        "일본식 버섯밥"
+      ],
+      "keyIngredients": [
+        "생쌀",
+        "닭다리살",
+        "표고버섯",
+        "느타리버섯",
+        "당근",
+        "간장"
+      ],
+      "method": "불린 생쌀 위에 닭고기와 버섯을 얹어 간장 밥물로 함께 짓고 뜸 들인다.",
+      "selectionReason": "가을에 어울리는 버섯 향과 든든한 닭고기를 한 냄비에 담습니다. 뚜껑을 열 때의 김과 밥을 섞는 장면이 영상의 시작이 됩니다.",
+      "videoIdea": "뚜껑을 열며 오르는 김 → 두 종류의 버섯 손질 → 간장 밥물 붓기 → 익힘 확인 → 밥알을 살려 섞기 → 한 숟갈. 제목 아이디어: “가을 저녁, 버섯 향을 가둔 닭고기 솥밥”.",
+      "duplicateReview": "기존 레시피 26개, 홈 추천과 Git 이력을 대조했다. 이전 소고기 숙주덮밥은 차돌 숙주볶음의 별칭으로 함께 기록했다. 민치·로코모코·포케는 지은 밥 위에 토핑을 얹는 음식으로, 생쌀과 재료를 함께 짓는 이번 메뉴와 구성이 다르다.",
+      "research": {
+        "checkedAt": "2026-09-19",
+        "seasonalNote": "Yutaka의 2026-09-01 버섯 다키코미고항 레시피와 가을 식재료 설명을 확인했다. 최근 게시 사례를 참고했으며 유튜브 조회 수나 대중적 유행을 입증하는 자료로 사용하지 않는다.",
+        "sources": [
+          "https://shop.yutaka.london/blogs/recipes/takikomi-gohan-recipe",
+          "https://japan-food.jetro.go.jp/fr/recipes/detail/72.html",
+          "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6700/index.html",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+        ]
+      },
+      "preparationLabels": [
+        "불리기·뜸 포함",
+        "뚜껑 있는 냄비"
+      ]
+    }
+  ]
+}

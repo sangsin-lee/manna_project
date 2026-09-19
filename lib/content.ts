@@ -1,4 +1,5 @@
 import { steakRecipes } from "./steak-recipes";
+import { dailyRecipes } from "./daily-recipes";
 
 export type CountrySlug =
   | "korea"
@@ -410,7 +411,7 @@ export const countries: Country[] = [
       },
     ],
     storySlugs: ["japanese-izakaya-culture"],
-    recipeSlugs: ["japanese-beef-bean-sprout-stir-fry"],
+    recipeSlugs: ["chicken-mushroom-takikomi-gohan", "japanese-beef-bean-sprout-stir-fry"],
     updatedAt: "2026-09-09",
     palette: {
       from: "#f2ded9",
@@ -2777,6 +2778,7 @@ export const stories: Story[] = [
 ];
 
 export const recipes: Recipe[] = [
+  ...dailyRecipes,
   ...steakRecipes,
   {
     slug: "hong-kong-macaroni-soup",

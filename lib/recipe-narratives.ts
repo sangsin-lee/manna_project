@@ -40,6 +40,15 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "chicken-mushroom-takikomi-gohan": narrative(
+    ["쌀과 재료가 함께 익는 밥", "일본의 다키코미고항은 쌀에 채소나 고기, 양념을 함께 넣어 짓는 밥입니다. 닭고기와 버섯을 쓰는 형태도 있으며, 이번에는 표고와 느타리로 가정용 솥밥을 구성했습니다."],
+    ["행사의 밥에서 일상의 한 끼로", "일본 시가현의 쇼이메시는 축제 때 먹던 양념밥에서 오늘날 급식과 역 도시락으로 이어졌습니다. 재료를 함께 짓는 밥이 지역의 일상에 남은 사례입니다. 이번 닭고기 솥밥과는 별도의 향토 음식입니다."],
+    ["버섯 향이 밥알 사이에", "이 레시피에서는 표고의 짙은 향과 느타리의 부드러운 결이 닭고기의 고소함을 만납니다. 간장 밥물이 스민 밥알과 쫄깃한 버섯을 함께 씹고, 마지막 쪽파로 산뜻한 향을 더합니다."],
+    [
+      { label: "일본 농림수산성 · Taste of Japan — 닭고기와 버섯 다키코미고항", url: "https://japan-food.jetro.go.jp/fr/recipes/detail/72.html" },
+      { label: "일본 농림수산성 — 시가현 쇼이메시의 행사식과 일상식 문화", url: "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6700/index.html" },
+    ],
+  ),
   "choo-inspired-garlic-butter-steak": narrative(
     ["도쿄의 한 접시에서 시작해", "추성훈이 영상에서 소개한 곳은 도쿄의 리베라 스테이크 하우스. 고기에 특제 소스를 곁들여 먹는 장면에서 이번 메뉴의 아이디어를 얻었습니다."],
     ["영상 속 외식이 오늘의 집밥으로", "2025년 소개 기사에도 등장한 리베라 방문 영상은 식당의 한 끼가 온라인에서 공유되는 사례입니다. 여기서는 그 즐거움을 간장·마늘·버터로 풀어낸 가정용 응용을 만듭니다."],

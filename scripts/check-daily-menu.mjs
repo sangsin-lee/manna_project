@@ -13,6 +13,8 @@ const history = load("../data/daily-menu-history.json");
 const { recipes } = load("../lib/content.ts");
 const { dailyRecipes } = load("../lib/daily-recipes.ts");
 const { recipeNarratives } = load("../lib/recipe-narratives.ts");
+const { recipeFrames } = load("../lib/presentation.ts");
+const { buildScenes, buildTimeline, draftFromFrames, MAX_DURATION, timelineDuration } = load("../lib/video-project.ts");
 
 function validateHistory(candidate) {
   assert.equal(candidate.timeZone, "Asia/Seoul");
@@ -47,6 +49,12 @@ function validateHistory(candidate) {
 }
 
 validateHistory(history);
+// Daily recipes must be usable in the studio without deleting content first.
+for (const recipe of dailyRecipes) {
+  const timeline = buildTimeline(buildScenes(draftFromFrames(recipeFrames(recipe), false)));
+  assert.ok(timelineDuration(timeline) <= MAX_DURATION, `${recipe.slug}: daily full recipe fits video duration`);
+}
+
 assert.equal(history.baseline.length, 27, "Preserve the original 26 recipes and homepage dinner");
 for (const entry of history.baseline) {
   if (entry.recipeSlug) assert.ok(recipes.some((recipe) => recipe.slug === entry.recipeSlug), "Keep earlier recipe URLs");

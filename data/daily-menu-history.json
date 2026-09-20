@@ -525,6 +525,46 @@
         "불리기·뜸 포함",
         "뚜껑 있는 냄비"
       ]
+    },
+    {
+      "date": "2026-09-20",
+      "recipeSlug": "mantua-inspired-pumpkin-gnocchi",
+      "title": "단호박 버터 뇨키",
+      "canonicalDish": "gnocchi-di-zucca",
+      "aliases": [
+        "단호박 뇨키",
+        "호박 뇨키",
+        "만토바 호박 뇨키",
+        "gnocchi di zucca",
+        "pumpkin gnocchi"
+      ],
+      "keyIngredients": [
+        "단호박",
+        "중력분",
+        "달걀",
+        "버터",
+        "파르메산 치즈"
+      ],
+      "method": "구워 수분을 줄인 단호박을 밀가루·달걀과 섞어 작은 뇨키로 빚고, 물에 충분히 익힌 뒤 버터와 치즈로 버무린다.",
+      "selectionReason": "이탈리아 만토바의 가을 호박 식탁을 집으로 옮깁니다. 단호박을 작은 반죽으로 빚어 익혀, 전날의 냄비밥과 다른 손맛과 식감을 즐길 수 있습니다.",
+      "videoIdea": "주황빛 호박 단면 → 으깨는 포크 → 뇨키에 골 내기 → 끓는 물에 떠오르는 장면 → 버터와 치즈로 마무리. 제목 아이디어: “단호박 하나로 만나는 이탈리아의 가을, 버터 뇨키”.",
+      "duplicateReview": "기존 전체 레시피 31개, 최초 추천 27개 기록과 별칭, 제주 4종 및 국내 지도의 활용 요리를 비교했다. 기존 카초 에 페페·카르보나라는 면 파스타, 마울타셴은 속을 채운 만두다. 이번 메뉴는 호박 자체를 반죽에 섞어 빚는 뇨키로 핵심 재료와 성형·조리법이 다르다. 최근 일본 솥밥과 제주 모음 이후 이탈리아 롬바르디아로 지역을 바꾼다.",
+      "research": {
+        "checkedAt": "2026-09-20",
+        "seasonalNote": "만토바시 공식 식문화 안내서와 관광 포털에서 지역 호박과 가을 뇨키를 확인했다. 공식 포털의 2026 Festa delle Lumere 예고도 확인했으나 이를 유튜브 인기·조회 수 근거로 해석하지 않는다. 국내 단호박은 만토바산 품종과 구분하고, 국내 유통 및 저장 제품의 구매 시기가 현지 가을 식문화와 같다고 단정하지 않는다.",
+        "sources": [
+          "https://turismo.mantova.it/cosa-mangiare/171/zucca-mantovana",
+          "https://www.comune.mantova.it/area-documentale/turismo-allegati/3245-mantovagustosa-2025-rid/file",
+          "https://www.buonalombardia.regione.lombardia.it/wps/portal/site/buonalombardia/DettaglioRedazionale/ricette/gnocchi-zucca",
+          "https://www.turismo.mantova.it/en_GB/eventi/48326/festa-delle-lumere-2026",
+          "https://www.fda.gov/consumers/consumer-updates/flour-raw-food-and-other-safety-facts",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+        ]
+      },
+      "preparationLabels": [
+        "호박 굽기 포함",
+        "오븐 또는 에어프라이어"
+      ]
     }
   ]
 }

@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import type { CountrySlug, Recipe } from "./content";
 
 export type RecipePattern = "grain" | "tiles" | "waves" | "contours" | "linen";
-export type RecipeArt = "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus";
+export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus";
 export type RecipeDesign = {
   paper: string; soft: string; from: string; mid: string; to: string;
   ink: string; muted: string; accent: string; dark: string; line: string;
@@ -20,6 +20,7 @@ const places: Record<CountrySlug, [string, RecipePattern]> = {
 
 // Visual interpretations of ingredients and places, not claims of traditional patterns.
 const details: Record<string, { art: RecipeArt; caption: string; place?: string; pattern?: RecipePattern; colors?: [string, string, string, string] }> = {
+  "mantua-inspired-pumpkin-gnocchi": { art: "gnocchi", caption: "단호박의 황금빛, 버터의 크림색, 따뜻한 흙빛", pattern: "tiles" },
   "jeju-dombe-guksu": { art: "pork-noodles", caption: "나무 도마의 갈색과 우윳빛 고기 국물", pattern: "grain" },
   "jeju-galchi-jorim": { art: "fish-stew", caption: "은갈치의 바다와 붉은 양념의 온기", pattern: "waves" },
   "jeju-grilled-fish-platter": { art: "grilled-fish", caption: "제주 바다의 청록과 노릇한 생선", pattern: "waves" },

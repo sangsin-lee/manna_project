@@ -41,6 +41,15 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "mantua-inspired-pumpkin-gnocchi": narrative(
+    ["호박을 빚는 만토바의 가을", "호박은 이탈리아 만토바의 대표 식재료입니다. 지역에서는 속을 채우는 토르텔리뿐 아니라, 호박을 반죽에 섞는 뇨키로도 즐깁니다. 이 한 접시는 국내 단호박으로 그 가을 식탁을 응용했습니다."],
+    ["궁정의 기록에서 오늘의 식탁으로", "만토바시 안내서는 곤차가 궁정의 요리사 바르톨로메오 스테파니가 1662년 요리서에 지역의 식문화를 기록했다고 설명합니다. 호박 뇨키도 지역 음식으로 소개하지만, 특정 인물이 처음 발명한 요리라고 단정하지는 않습니다."],
+    ["호박의 단맛, 버터의 고소함", "구운 단호박의 부드러운 단맛을 버터가 감싸고, 숙성 치즈의 짭짤한 맛이 뒤를 받칩니다. 반죽을 짧게 섞고 속까지 익히면, 포크로 나눠 먹기 좋은 작은 한 입이 됩니다. 파슬리는 향을 가볍게 더하는 선택 재료입니다."],
+    [
+      { label: "만토바 관광 포털 — 호박과 지역 요리", url: "https://turismo.mantova.it/cosa-mangiare/171/zucca-mantovana" },
+      { label: "만토바시 — Mantova Gustosa의 궁정 식문화와 호박 뇨키", url: "https://www.comune.mantova.it/area-documentale/turismo-allegati/3245-mantovagustosa-2025-rid/file" },
+    ],
+  ),
   "jeju-dombe-guksu": narrative(
     ["도마에서 시작하는 한 상", "돔베고기는 삶은 돼지고기를 도마에 썰어 내는 제주 음식입니다. ‘돔베’라는 이름에는 고기를 담는 도구와 먹는 풍경이 함께 남아 있습니다."],
     ["고기와 국수를 함께 나누다", "제주의 국수 이야기는 함께 음식을 나누는 자리와 연결됩니다. 오늘날에는 고기국수와 돔베고기를 한 끼로 함께 내는 식탁도 만날 수 있습니다. 이번에는 그 구성을 두 사람의 집밥으로 옮겼습니다."],

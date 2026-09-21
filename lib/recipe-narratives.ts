@@ -5,6 +5,7 @@ import { gangwonSources } from "./gangwon-sources";
 import { chungnamSources } from "./chungnam-sources";
 import { chungbukSources } from "./chungbuk-sources";
 import { jeonbukSources } from "./jeonbuk-sources";
+import { jeonnamSources } from "./jeonnam-sources";
 
 export type RecipeNarrativeChapter = {
   section: string;
@@ -46,6 +47,30 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "goheung-yuja-salmon": narrative(
+    ["고흥 과수원의 노란 향", "한국관광공사는 11월 고흥의 유자밭과 수확 체험을 소개합니다. 유자 껍질의 향을 청에 담아 두면 생과가 없는 계절에도 차와 요리에 조금씩 사용할 수 있습니다."],
+    ["유자청이 구이 소스가 되다", "차로 익숙한 유자청을 오늘은 생선 위에 얇게 바릅니다. 지역 재료를 새로운 집밥에 연결한 가정용 응용입니다. 연어는 고흥 특산물로 다루지 않고 실제 구매한 제품의 산지를 따릅니다."],
+    ["산호색 살결과 향긋한 단맛", "연어의 부드러운 살결에 유자청의 달큰함과 껍질 향이 어울립니다. 간장과 레몬즙으로 간과 산미를 가볍게 맞추고, 청이 타지 않도록 굽기 마지막에 발라 마무리합니다."],
+    [jeonnamSources.yuja],
+  ),
+  "yeongam-fig-cream-cheese-toast": narrative(
+    ["영암의 무화과 농장", "전남농업기술원은 영암 무화과를 지역특화 과수로 소개합니다. 늦여름부터 만나는 부드러운 생과를 잘라, 과육의 색과 씨의 식감을 보여 주는 간단한 토스트로 즐깁니다."],
+    ["재배 기술이 넓히는 계절", "무화과는 8월 중·하순부터 본격 수확하며, 시설재배로 수확 시기를 늦춘 사례도 있습니다. 농장마다 달라지는 계절을 읽고 신선한 생과를 고릅니다. 치즈 토스트는 지역 전통 음식이 아닌 현대적인 응용입니다."],
+    ["작은 씨, 부드러운 치즈, 바삭한 빵", "잘 익은 무화과는 부드러운 과육 사이로 작은 씨가 씹힙니다. 크림치즈의 은근한 산미와 빵의 바삭함이 서로 다른 식감을 만듭니다. 과일이 충분히 달면 꿀을 더하지 않아도 좋습니다."],
+    [jeonnamSources.fig],
+  ),
+  "muan-octopus-yeonpotang": narrative(
+    ["무안의 낙지골목에서", "무안의 낙지 식탁은 연포탕부터 볶음, 무침, 호롱까지 여러 모습으로 이어집니다. 한국관광공사가 소개한 이 지역 먹거리에서 출발해, 집에서는 손질 낙지로 맑은 국물을 끓입니다."],
+    ["가을 갯벌을 식탁으로", "해양수산부는 낙지를 가을을 대표하는 10월 수산물로 소개했습니다. 실제 어획은 해황에 따라 달라집니다. 무안산과 다른 산지의 제품을 구분하고, 이번에는 무와 다시마로 가정용 육수를 냅니다."],
+    ["맑은 국물과 쫄깃한 한입", "무가 부드럽게 익은 국물에 낙지의 맛이 더해지고, 미나리는 산뜻한 향을 보탭니다. 낙지를 중심까지 충분히 익힌 뒤 따뜻한 밥과 함께 먹습니다. 간은 마지막에 조금씩 맞춥니다."],
+    [jeonnamSources.octopus, jeonnamSources.octopusSeason],
+  ),
+  "beolgyo-cockle-bibimbap": narrative(
+    ["찬바람과 함께 찾는 벌교", "한국관광공사는 늦가을과 겨울에 즐기는 벌교 꼬막의 식문화를 소개합니다. 갯벌에서 온 재료의 씹는 맛을 이번에는 따뜻한 밥과 채소가 함께 담긴 한 그릇으로 옮겼습니다."],
+    ["제철의 꼬막과 냉동 꼬막살", "참꼬막과 새꼬막은 종류가 다르므로 포장의 종명과 원산지를 확인합니다. 이 레시피는 자숙 꼬막살로 손질을 줄인 가정용 배합입니다. 냉동 제품의 연중 판매와 갓 잡는 제철은 구분합니다."],
+    ["쫄깃함 사이로 아삭한 채소", "충분히 익힌 꼬막의 쫄깃함에 오이와 부추, 김을 더합니다. 간장과 참기름은 밥과 재료를 이어 주며 고춧가루는 은근한 매운맛을 보탭니다. 꼬막의 염도에 따라 양념은 나눠 넣습니다."],
+    [jeonnamSources.cockle],
+  ),
   "gochang-bokbunja-duck": narrative(
     ["고창의 짙은 열매", "전북농업기술원은 고창을 복분자의 주요 산지로 소개합니다. 검붉게 익는 작은 열매를 푹 끓여, 오늘은 고기 옆에 놓는 새콤달콤한 소스로 만듭니다."],
     ["초여름의 색을 가을에도", "복분자는 6월 무렵 수확합니다. 가을 식탁에서는 무가당 냉동 과육으로 그 색과 향을 이어갑니다. 훈제오리와의 조합은 지역 열매를 활용한 가정용 응용이며 전통 향토요리의 재현은 아닙니다."],

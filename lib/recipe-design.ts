@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import type { CountrySlug, Recipe } from "./content";
 
 export type RecipePattern = "grain" | "tiles" | "waves" | "contours" | "linen";
-export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble" | "lentil-stew" | "jujube-porridge" | "garlic-chicken" | "perilla-kalguksu" | "grape-salad" | "berry-duck" | "cheese-jeon" | "shiitake-japchae" | "apple-pork-rolls";
+export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble" | "lentil-stew" | "jujube-porridge" | "garlic-chicken" | "perilla-kalguksu" | "grape-salad" | "berry-duck" | "cheese-jeon" | "shiitake-japchae" | "apple-pork-rolls" | "yuja-salmon" | "fig-toast" | "octopus-soup" | "cockle-rice";
 export type RecipeDesign = {
   paper: string; soft: string; from: string; mid: string; to: string;
   ink: string; muted: string; accent: string; dark: string; line: string;
@@ -20,6 +20,10 @@ const places: Record<CountrySlug, [string, RecipePattern]> = {
 
 // Visual interpretations of ingredients and places, not claims of traditional patterns.
 const details: Record<string, { art: RecipeArt; caption: string; place?: string; pattern?: RecipePattern; colors?: [string, string, string, string] }> = {
+  "goheung-yuja-salmon": { art: "yuja-salmon", caption: "고흥 유자의 노란 향과 연어의 따뜻한 산호색", pattern: "grain" },
+  "yeongam-fig-cream-cheese-toast": { art: "fig-toast", caption: "영암 무화과의 보라와 장밋빛 단면, 흰 크림치즈", pattern: "linen" },
+  "muan-octopus-yeonpotang": { art: "octopus-soup", caption: "무안 갯벌의 회갈색과 맑은 국물, 미나리의 초록", pattern: "waves" },
+  "beolgyo-cockle-bibimbap": { art: "cockle-rice", caption: "벌교 갯벌의 흙빛과 꼬막살의 주황, 따뜻한 밥의 흰빛", pattern: "grain" },
   "gochang-bokbunja-duck": { art: "berry-duck", caption: "고창 복분자의 자주색과 구운 오리의 따뜻한 갈색", pattern: "grain" },
   "iksan-sweet-potato-cheese-jeon": { art: "cheese-jeon", caption: "익산 고구마 속살의 금빛과 치즈의 크림색", pattern: "linen" },
   "jinan-shiitake-japchae": { art: "shiitake-japchae", caption: "진안 표고의 흙빛과 산자락을 떠올리는 겹친 선", pattern: "contours" },

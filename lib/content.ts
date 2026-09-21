@@ -6,6 +6,7 @@ import { gangwonRecipes } from "./gangwon-recipes";
 import { chungnamRecipes } from "./chungnam-recipes";
 import { chungbukRecipes } from "./chungbuk-recipes";
 import { jeonbukRecipes } from "./jeonbuk-recipes";
+import { jeonnamRecipes } from "./jeonnam-recipes";
 
 export type CountrySlug =
   | "korea"
@@ -311,6 +312,7 @@ export const countries: Country[] = [
     ],
     storySlugs: ["korean-banchan-culture", "korean-market-food"],
     recipeSlugs: [
+      ...jeonnamRecipes.map((recipe) => recipe.slug),
       ...jeonbukRecipes.map((recipe) => recipe.slug),
       ...chungbukRecipes.map((recipe) => recipe.slug),
       ...chungnamRecipes.map((recipe) => recipe.slug),
@@ -2793,6 +2795,7 @@ export const stories: Story[] = [
 ];
 
 export const recipes: Recipe[] = [
+  ...jeonnamRecipes,
   ...jeonbukRecipes,
   ...chungbukRecipes,
   ...chungnamRecipes,

@@ -4,6 +4,23 @@ import type { SpecialtyArt } from "@/lib/korea-table";
 export default function SpecialtyIcon({ art, className = "" }: { art: SpecialtyArt; className?: string }) {
   return <svg className={className} viewBox="0 0 100 100" fill="none" aria-hidden="true">
     <ellipse cx="51" cy="85" rx="30" ry="5" fill="#45392c" opacity=".1" />
+    {art === "fig" && <g>
+      <path d="M47 12C43 33 11 40 16 68c4 29 62 29 68 0 6-27-27-37-31-56Z" fill="#927080" stroke="#654c61" strokeWidth="2"/>
+      <path d="M50 25C41 43 24 48 28 68c4 17 40 17 44 0 4-20-15-25-22-43Z" fill="#d297a5"/>
+      {[[43,47],[56,48],[35,61],[49,59],[63,64],[44,72],[58,73]].map(([x,y])=><path key={x+y} d={`m${x} ${y} 1 4`} stroke="#f5d5ac" strokeWidth="2.5" strokeLinecap="round"/>)}
+      <path d="M52 18q15-19 29-7-11 19-29 7Z" fill="#839166"/>
+    </g>}
+    {art === "octopus" && <g>
+      <path d="M32 49C8 45 7 71 21 72c12 0 10-11 5-9m11-10C19 74 31 91 43 80m9-29c-5 17-1 38 13 32 10-5 2-13-3-9m-3-23c19 5 23 31 35 17 7-11-8-15-11-8" stroke="#aa8075" strokeWidth="8" strokeLinecap="round"/>
+      <ellipse cx="48" cy="33" rx="22" ry="28" fill="#b69283" stroke="#8f6a61" strokeWidth="2"/>
+      <path d="M37 18q-9 10-4 22" stroke="#d8b9a4" strokeWidth="4" strokeLinecap="round"/>
+      {[[21,72],[36,80],[65,81],[89,71]].map(([x,y])=><circle key={x} cx={x} cy={y} r="2.5" fill="#ead0bd"/>)}
+    </g>}
+    {art === "cockle" && <g>
+      <path d="M49 82C-9 61 11 15 50 18c41-4 59 43-1 64Z" fill="#b99875" stroke="#806448" strokeWidth="2"/>
+      <path d="M49 79 25 30m24 49L38 23m11 56 2-57m-2 57 17-54M49 79l29-40M49 79 18 45m31 34 34-24" stroke="#dfc5a1" strokeWidth="5" strokeLinecap="round"/>
+      <path d="M39 80q11 9 22-1" stroke="#806448" strokeWidth="4" strokeLinecap="round"/>
+    </g>}
     {art === "mushroom" && <g>
       <path d="M40 45 33 82q18 9 35 0L59 45Z" fill="#e7d7b7" stroke="#aa9070" strokeWidth="2"/>
       <path d="M12 49C13 5 86 5 88 49q-33 24-76 0Z" fill="#916d50" stroke="#654e3c" strokeWidth="2"/>

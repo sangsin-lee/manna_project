@@ -5,6 +5,7 @@ import { gangwonSources } from "./gangwon-sources";
 import { chungnamSources } from "./chungnam-sources";
 import { chungbukSources } from "./chungbuk-sources";
 import { jeonbukSources } from "./jeonbuk-sources";
+import { jeonnamSources } from "./jeonnam-sources";
 
 export const seasons = [
   { id: "spring", label: "봄", months: "3–5월", mark: "✿" },
@@ -13,7 +14,7 @@ export const seasons = [
   { id: "winter", label: "겨울", months: "12–2월", mark: "❄" },
 ] as const;
 export type Season = (typeof seasons)[number]["id"];
-export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean" | "buckwheat" | "deodeok" | "corn" | "shrimp" | "ginger" | "jujube" | "garlic" | "cabbage" | "mushroom";
+export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean" | "buckwheat" | "deodeok" | "corn" | "shrimp" | "ginger" | "jujube" | "garlic" | "cabbage" | "mushroom" | "fig" | "octopus" | "cockle";
 export type PantryRecipe = { title: string; meta: string; ingredients: string; steps: string[]; note?: string };
 export type Specialty = { name: string; art: SpecialtyArt; timing: string; seasons: Season[]; note: string };
 export type KoreanRegion = {
@@ -113,13 +114,23 @@ export const koreanRegions: KoreanRegion[] = [
     recipeSlugs: ["gochang-bokbunja-duck", "iksan-sweet-potato-cheese-jeon", "jinan-shiitake-japchae", "jangsu-apple-pork-rolls"], sources: [jeonbukSources.berry, jeonbukSources.sweetPotato, jeonbukSources.mushroom, jeonbukSources.mushroomGrowing, jeonbukSources.apple, jeonbukSources.appleSeason],
   },
   {
-    id: "jeonnam", name: "전남", english: "JEONNAM", area: "고흥의 유자밭", icon: "citrus", pin: [126.58, 34.68],
-    headline: "남쪽 바람에 익은 노란 향", description: "고흥 유자의 산뜻한 향을 차와 소스, 샐러드에 담습니다. 남쪽 과수원의 노란빛을 식탁으로 옮겨 보세요.",
+    id: "jeonnam", name: "전남", english: "JEONNAM", area: "고흥 · 영암 · 무안 · 보성 벌교", icon: "citrus", pin: [126.58, 34.68],
+    headline: "과수원의 향에서 갯벌의 한 그릇까지", description: "고흥 유자의 향과 영암 무화과의 단맛, 무안 낙지와 벌교 꼬막의 씹는 맛. 남쪽의 과수원과 갯벌을 네 가지 집밥으로 이어 봅니다.",
     colors: ["#655322", "#f0e9bc", "#d4bf62"], colorStory: "유자의 노랑과 남쪽 들녘의 밝은 색",
-    specialties: [{ name: "고흥 유자", art: "citrus", timing: "늦가을 · 황유자 11월 중심", seasons: ["autumn"], note: "노랗게 익은 황유자와 일찍 수확한 청유자는 구분합니다. 유자청은 생과 수확기가 지난 뒤에도 활용합니다." }],
-    seasonNotes: { spring: "유자청을 드레싱으로 풀어 봄 채소에 곁들입니다. 수확기가 아닌 계절에는 가공한 유자를 활용합니다.", summer: "유자청에 차가운 물을 더하거나 샐러드 소스로 즐깁니다. 황유자의 주요 수확기는 늦가을입니다.", autumn: "11월 무렵 노랗게 익는 고흥 유자. 생과를 고를 때는 껍질의 향과 산지를 함께 살펴보세요.", winter: "가을에 담근 유자청을 차와 요리에 씁니다. 생과와 가공품의 유통 시기는 서로 다릅니다." },
+    specialties: [
+      { name: "고흥 유자", art: "citrus", timing: "늦가을 · 황유자 11월 중심", seasons: ["autumn"], note: "노랗게 익은 황유자의 수확과 유자청의 연중 활용을 구분합니다. 9월의 유자 연어구이는 이미 담근 청으로 만드는 응용입니다." },
+      { name: "영암 무화과", art: "fig", timing: "늦여름~가을 · 8월 중·하순부터", seasons: ["summer", "autumn"], note: "전남농업기술원은 8월 중·하순을 본격 수확 시작으로 소개합니다. 시설재배로 시기를 늘린 사례가 있으나 농장·품종에 따라 다릅니다. 겨울의 잼·건과와 생과를 구분합니다." },
+      { name: "무안 낙지", art: "octopus", timing: "가을 추천 · 10월 중심", seasons: ["autumn"], note: "해양수산부가 소개한 가을 수산물입니다. 실제 어획·유통은 해황과 산지에 따라 달라지고 냉동 제품의 판매 시기와 제철은 다릅니다." },
+      { name: "벌교 꼬막", art: "cockle", timing: "늦가을~겨울 · 이른 봄까지", seasons: ["autumn", "winter", "spring"], note: "찬바람이 불 때 즐기는 벌교의 먹거리입니다. 봄 표시는 이른 봄까지의 추천이며, 참꼬막·새꼬막의 종명과 원산지를 확인합니다. 9월에는 냉동 자숙살도 활용합니다." },
+    ],
+    seasonNotes: {
+      spring: "이른 봄까지 꼬막을 즐기고, 봄이 깊어지면 냉동 자숙 제품과 구분합니다. 유자청은 저장한 향을 활용하는 재료이며 생무화과와 가을 낙지를 봄 햇제철로 소개하지 않습니다.",
+      summer: "8월 중·하순부터 본격 수확하는 영암 무화과로 토스트를 만듭니다. 초여름의 생과 여부는 재배 방식에 따라 다릅니다. 유자청과 냉동 수산물은 여름 수확이 아닌 가공·저장 재료로 활용합니다.",
+      autumn: "초가을에는 무화과, 가을에는 낙지, 늦가을에는 노란 유자와 꼬막으로 계절이 이어집니다. 네 재료가 모두 9월에 절정이라는 뜻은 아닙니다. 유자청과 냉동 자숙 꼬막살을 쓰면 기다리는 계절에도 요리할 수 있습니다.",
+      winter: "겨울의 꼬막을 따뜻하게 익혀 밥에 비빕니다. 유자는 청으로, 낙지는 원산지를 확인한 냉동 제품으로 이어갈 수 있습니다. 생무화과를 구하기 어려우면 잼 토스트로 응용하되 생과와 같은 식감으로 소개하지 않습니다.",
+    },
     pantry: { title: "유자 두부 샐러드", meta: "2인분 · 15분", ingredients: "바로 먹을 수 있는 두부 300g, 샐러드 채소 100g, 유자청 1큰술, 간장 1큰술, 식초 1작은술, 식용유 1작은술", steps: ["채소를 씻어 물기를 빼고 두부는 한입 크기로 자릅니다. 두부 제품에 가열 안내가 있으면 먼저 익혀 식힙니다.", "유자청·간장·식초·기름을 섞어 소스를 만듭니다.", "채소와 두부를 담고 먹기 직전에 소스를 끼얹습니다."], note: "지역 유자청을 활용한 가정용 요리입니다. 제주 귤 디저트와는 다른 재료입니다." },
-    recipeSlugs: [], sources: [sources.yuja],
+    recipeSlugs: ["goheung-yuja-salmon", "yeongam-fig-cream-cheese-toast", "muan-octopus-yeonpotang", "beolgyo-cockle-bibimbap"], sources: [jeonnamSources.yuja, jeonnamSources.fig, jeonnamSources.octopus, jeonnamSources.octopusSeason, jeonnamSources.cockle],
   },
   {
     id: "gyeongbuk", name: "경북", english: "GYEONGBUK", area: "청송의 사과 과수원", icon: "apple", pin: [128.88, 36.23],

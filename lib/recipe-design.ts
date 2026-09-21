@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import type { CountrySlug, Recipe } from "./content";
 
 export type RecipePattern = "grain" | "tiles" | "waves" | "contours" | "linen";
-export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup";
+export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble";
 export type RecipeDesign = {
   paper: string; soft: string; from: string; mid: string; to: string;
   ink: string; muted: string; accent: string; dark: string; line: string;
@@ -20,6 +20,10 @@ const places: Record<CountrySlug, [string, RecipePattern]> = {
 
 // Visual interpretations of ingredients and places, not claims of traditional patterns.
 const details: Record<string, { art: RecipeArt; caption: string; place?: string; pattern?: RecipePattern; colors?: [string, string, string, string] }> = {
+  "gongju-chestnut-cream-pasta": { art: "chestnut-pasta", caption: "공주 알밤의 갈색과 부드러운 크림 소스의 아이보리", pattern: "grain" },
+  "taean-salt-roasted-prawns": { art: "salt-shrimp", caption: "태안 바다의 푸른색과 소금 위 새우의 산호빛", pattern: "waves" },
+  "seosan-ginger-pork-rice-bowl": { art: "ginger-pork", caption: "서산 생강의 연노랑과 간장 볶음의 따뜻한 호박빛", pattern: "linen" },
+  "yesan-apple-crumble": { art: "apple-crumble", caption: "예산 사과의 붉은빛과 바삭하게 구운 크럼블의 금빛", pattern: "grain" },
   "pyeongchang-potato-ongsimi": { art: "ongsimi", caption: "평창 감자의 아이보리와 산안개를 닮은 회청색", pattern: "contours" },
   "bongpyeong-buckwheat-cabbage-jeon": { art: "cabbage-jeon", caption: "봉평 메밀의 회갈색과 배추 잎맥의 연둣빛", pattern: "linen" },
   "hoengseong-gochujang-deodeok-gui": { art: "deodeok-gui", caption: "횡성 더덕의 흙빛과 고추장 양념의 벽돌빛", pattern: "grain" },

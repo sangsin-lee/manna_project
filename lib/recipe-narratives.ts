@@ -2,6 +2,7 @@ import type { Recipe, SourceLink } from "./content";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
+import { chungnamSources } from "./chungnam-sources";
 
 export type RecipeNarrativeChapter = {
   section: string;
@@ -43,6 +44,30 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "gongju-chestnut-cream-pasta": narrative(
+    ["공주의 가을을 크림에 담다", "공주에서는 가을 알밤 수확 체험을 만날 수 있습니다. 숲에서 거둔 밤의 포슬포슬한 속살에 주목해, 이번에는 익힌 밤을 으깨 파스타 소스에 넣었습니다."],
+    ["지역 재료의 새로운 쓰임", "알밤을 줍는 계절의 풍경을 집의 식탁으로 가져오는 방법입니다. 공주 전통 음식의 재현이 아니라 지역 재료를 오늘의 파스타에 연결한 가정용 응용입니다."],
+    ["포슬한 밤, 매끄러운 면", "으깬 밤은 크림에 은은한 단맛과 입자감을 더합니다. 반으로 남긴 밤은 씹는 맛을, 볶은 버섯은 고소한 향을 보태며 후추가 부드러운 소스에 작은 대비를 만듭니다."],
+    [chungnamSources.chestnut],
+  ),
+  "taean-salt-roasted-prawns": narrative(
+    ["백사장항에서 만나는 가을", "태안 안면도 백사장항은 가을 대하를 즐기는 식문화로 알려져 있습니다. 여기서는 새우를 굵은소금 위에 올려 익히는 간결한 방식으로 서해의 한 접시를 차립니다."],
+    ["같은 새우처럼 보여도", "해양수산부는 가을 음식으로 대하와 흰다리새우 소금구이를 소개합니다. 서로 다른 종이므로 장바구니에서는 종명과 원산지를 읽고, 흰다리새우로 만들 때는 그 이름을 그대로 밝혀 둡니다."],
+    ["껍질 안에 남은 촉촉함", "두꺼운 소금 바닥과 뚜껑을 이용해 새우를 속까지 익힙니다. 껍질을 벗기면 드러나는 단맛과 탱글한 살이 중심입니다. 레몬은 먹기 직전 조금만 더해 향을 살립니다."],
+    [chungnamSources.shrimp, chungnamSources.shrimpSeason],
+  ),
+  "seosan-ginger-pork-rice-bowl": narrative(
+    ["서산의 밭에서 자란 알싸함", "충남농업기술원은 1930년대 서산 부석면에서 시작된 지역 생강 재배를 소개합니다. 오랫동안 이어진 밭의 재료를 이번에는 간장 돼지고기 덮밥에 활용합니다."],
+    ["늦가을 수확, 계절을 잇는 양념", "노지 생강은 주로 10월 하순부터 11월 상순에 거둡니다. 햇생강과 저장 생강을 구분해 읽으면 작은 양념 하나에도 계절이 보입니다. 이 덮밥은 그 재료에서 출발한 만나의 식탁의 집밥입니다."],
+    ["달큰한 양파 사이로 생강 향", "곱게 간 생강은 간장 소스에 고르게 퍼지고, 볶은 양파의 단맛이 알싸함을 받쳐 줍니다. 얇은 고기에 소스를 가볍게 입혀 따뜻한 밥과 함께 먹습니다."],
+    [chungnamSources.ginger, chungnamSources.gingerHarvest],
+  ),
+  "yesan-apple-crumble": narrative(
+    ["예산 과수원의 사과를 굽다", "예산군은 홍로 사과를 명절 무렵 만나는 지역의 햇과일로 소개합니다. 아삭한 사과를 얇게 썰어 굽고, 버터 부스러기를 얹어 따뜻한 디저트로 바꾸었습니다."],
+    ["품종을 따라 달라지는 가을", "홍로의 수확 시기는 늦여름부터 초가을까지 이어집니다. 사과마다 숙기가 달라 품종 이름을 확인하는 일이 계절을 읽는 단서가 됩니다. 이 크럼블은 예산의 사과를 활용한 현대적인 가정용 응용입니다."],
+    ["바삭한 윗면, 부드러운 과육", "오븐에서는 사과가 부드러워지고 버터와 밀가루 부스러기가 노릇해집니다. 숟가락으로 두 층을 함께 뜨면 사과의 단맛과 산미, 구운 버터 향을 한 입에 느낄 수 있습니다."],
+    [chungnamSources.apple],
+  ),
   "pyeongchang-potato-ongsimi": narrative(
     ["감자를 갈아 한 알씩 빚다", "평창에서는 직접 재배한 감자를 갈아 옹심이로 만드는 식탁을 만날 수 있습니다. 삶은 감자를 으깨는 요리와 달리, 생감자를 갈아 건더기와 가라앉힌 전분을 모아 반죽하는 방식입니다."],
     ["지역의 밭에서 오늘의 한 그릇으로", "평창군의 음식 안내에는 맑은 멸치육수의 옹심이와 장칼국수 등 여러 구성이 등장합니다. 여기서는 감자 맛을 살리는 맑은 국물로 집밥을 구성했습니다. 특정 식당의 배합을 그대로 재현한 것은 아닙니다."],

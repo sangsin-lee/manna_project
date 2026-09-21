@@ -2,6 +2,7 @@ import type { SourceLink } from "./content";
 import { koreaSources as sources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
+import { chungnamSources } from "./chungnam-sources";
 
 export const seasons = [
   { id: "spring", label: "봄", months: "3–5월", mark: "✿" },
@@ -10,7 +11,7 @@ export const seasons = [
   { id: "winter", label: "겨울", months: "12–2월", mark: "❄" },
 ] as const;
 export type Season = (typeof seasons)[number]["id"];
-export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean" | "buckwheat" | "deodeok" | "corn";
+export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean" | "buckwheat" | "deodeok" | "corn" | "shrimp" | "ginger";
 export type PantryRecipe = { title: string; meta: string; ingredients: string; steps: string[]; note?: string };
 export type Specialty = { name: string; art: SpecialtyArt; timing: string; seasons: Season[]; note: string };
 export type KoreanRegion = {
@@ -72,13 +73,18 @@ export const koreanRegions: KoreanRegion[] = [
     recipeSlugs: [], sources: [sources.grape],
   },
   {
-    id: "chungnam", name: "충남", english: "CHUNGNAM", area: "공주의 알밤 숲", icon: "chestnut", pin: [126.63, 36.55],
-    headline: "밤 한 알에 담긴 가을", description: "공주 알밤의 포슬포슬한 식감과 은은한 단맛을 밥 한 그릇에 담습니다. 따뜻한 갈색으로 차리는 내륙의 식탁입니다.",
-    colors: ["#67432c", "#ecdfcb", "#b99570"], colorStory: "밤 껍질의 갈색과 속살의 크림색",
-    specialties: [{ name: "공주 알밤", art: "chestnut", timing: "가을 · 9~10월 중심", seasons: ["autumn"], note: "공주의 가을 관광 코스에는 9~10월 알밤 수확 체험이 포함됩니다. 저장·냉동 밤은 계절 밖에도 활용할 수 있습니다." }],
-    seasonNotes: { spring: "껍질을 벗겨 냉동한 밤이나 익힌 밤으로 밥을 짓습니다. 가을에 거둔 재료를 이어 먹는 방법입니다.", summer: "생밤 수확 전에는 냉동·가공 밤을 활용합니다. 포장지의 해동·가열 안내를 따라 주세요.", autumn: "알밤을 줍는 계절. 속껍질까지 벗겨 밥에 넣으면 은은한 단맛이 밥알 사이에 배어듭니다.", winter: "저장한 밤을 따뜻한 밥과 수프로 즐깁니다. 단맛을 더하지 않아도 포근한 한 그릇이 됩니다." },
+    id: "chungnam", name: "충남", english: "CHUNGNAM", area: "공주 · 태안 · 서산 · 예산", icon: "chestnut", pin: [126.63, 36.55],
+    headline: "알밤 숲에서 서해의 한 접시까지", description: "공주 알밤의 포근함, 태안 대하의 단맛, 서산 생강의 알싸한 향과 예산 사과의 아삭함. 숲과 바다, 밭과 과수원을 따라 충남의 계절을 차립니다.",
+    colors: ["#67432c", "#ecdfcb", "#b99570"], colorStory: "알밤의 갈색 · 서해의 푸른색 · 생강의 연노랑 · 사과의 붉은빛",
+    specialties: [
+      { name: "공주 알밤", art: "chestnut", timing: "가을 · 9~10월 중심", seasons: ["autumn"], note: "공주의 가을 관광 코스에는 9~10월 알밤 수확 체험이 포함됩니다. 저장·냉동 밤은 계절 밖에도 활용할 수 있습니다." },
+      { name: "태안 대하", art: "shrimp", timing: "가을 · 어획·유통에 따라 차이", seasons: ["autumn"], note: "백사장항의 가을 식탁을 떠올리게 하는 새우입니다. 대하와 흰다리새우는 다른 종이므로 종명과 원산지를 확인합니다." },
+      { name: "서산 생강", art: "ginger", timing: "늦가을 · 노지 10월 하순~11월 상순", seasons: ["autumn"], note: "서산은 오래된 생강 재배 지역입니다. 노지 수확은 늦가을 중심이며, 9월 상품을 모두 햇생강으로 단정하지 않고 저장 여부를 확인합니다." },
+      { name: "예산 사과", art: "apple", timing: "늦여름~가을 · 품종별 수확", seasons: ["summer", "autumn"], note: "홍로는 8월 하순~9월 중순 수확 안내가 있습니다. 다른 품종은 숙기가 다르므로 예산 사과 전체의 출하 시기로 일반화하지 않습니다." },
+    ],
+    seasonNotes: { spring: "저장 생강으로 덮밥을, 무가당 익힌 밤으로 크림 파스타를 만듭니다. 새 수확이 아닌 저장·가공 재료의 쓰임입니다.", summer: "홍로 사과는 8월 하순 무렵부터 수확하는 품종입니다. 초여름과 늦여름을 구분하고, 알밤·생강은 저장 상품 여부를 살펴봅니다.", autumn: "알밤과 대하, 품종별 사과가 이어지는 계절입니다. 노지 햇생강은 주로 10월 하순~11월 상순에 거두므로 초가을과 늦가을의 장바구니를 구분합니다.", winter: "가을에 거둔 저장 사과와 생강, 냉동·익힌 밤으로 따뜻한 요리를 만듭니다. 냉동 새우는 종명과 원산지를 확인하고 냉장 해동합니다." },
     pantry: { title: "알밤 냄비밥", meta: "2인분 · 70분", ingredients: "쌀 200g, 깐 밤 100g, 밥물 250ml", steps: ["쌀을 30분 불려 5분 물기를 빼고, 껍질을 모두 벗긴 밤은 반으로 자릅니다.", "두꺼운 냄비에 쌀·물·밤을 넣고 끓입니다. 뚜껑을 덮어 약불에서 약 15분 익힙니다.", "불을 끄고 10분 뜸을 들입니다. 밤과 쌀이 단단하면 뜨거운 물을 조금 더해 추가 가열합니다."], note: "냉동 밤은 제품 안내에 맞게 해동하여 사용합니다." },
-    recipeSlugs: [], sources: [sources.chestnut],
+    recipeSlugs: ["gongju-chestnut-cream-pasta", "taean-salt-roasted-prawns", "seosan-ginger-pork-rice-bowl", "yesan-apple-crumble"], sources: [chungnamSources.chestnut, chungnamSources.shrimp, chungnamSources.shrimpSeason, chungnamSources.ginger, chungnamSources.gingerHarvest, chungnamSources.apple],
   },
   {
     id: "jeonbuk", name: "전북", english: "JEONBUK", area: "고창의 복분자 밭", icon: "berry", pin: [126.95, 35.7],

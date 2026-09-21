@@ -4,6 +4,18 @@ import type { SpecialtyArt } from "@/lib/korea-table";
 export default function SpecialtyIcon({ art, className = "" }: { art: SpecialtyArt; className?: string }) {
   return <svg className={className} viewBox="0 0 100 100" fill="none" aria-hidden="true">
     <ellipse cx="51" cy="85" rx="30" ry="5" fill="#45392c" opacity=".1" />
+    {art === "shrimp" && <g transform="rotate(-15 50 50)">
+      <path d="M66 26C35 9 9 34 19 62c8 23 39 30 56 10L59 59C48 72 31 60 35 47c4-12 17-11 23-5Z" fill="#e69b80" stroke="#af6753" strokeWidth="2"/>
+      <path d="m65 26 17-7-8 24-16-1Z" fill="#dc896d" stroke="#af6753" strokeWidth="2"/>
+      <path d="m61 58 21-3-8 18Z" fill="#c97861" stroke="#af6753" strokeWidth="2"/>
+      <path d="m27 29 9 13m-18 2 15 5m-13 13 16-5m-6 20 10-13m5 18 4-15M76 24q15-16 19-7M77 27q20-4 18 8" stroke="#a56852" strokeWidth="2" strokeLinecap="round"/>
+      <circle cx="71" cy="29" r="2.5" fill="#493c33"/>
+    </g>}
+    {art === "ginger" && <g transform="rotate(-15 50 50)">
+      <path d="M29 79q-13-4-6-17l15-16-5-18q-2-12 10-12 9 0 10 12l2 14 11-8q13-8 19 3 5 10-7 16L60 65l-3 16q-5 13-16 5l-2-10Z" fill="#d7b87c" stroke="#987548" strokeWidth="2"/>
+      <path d="m38 32 13-2m-12 9 14-3m-18 23 11 8m19-21 6 10m-24 18 10 1" stroke="#b38d56" strokeWidth="2" strokeLinecap="round"/>
+      <ellipse cx="76" cy="77" rx="15" ry="11" fill="#f1dba1" stroke="#c5a16b" strokeWidth="3"/><ellipse cx="76" cy="77" rx="9" ry="6" stroke="#dcc58c"/>
+    </g>}
     {art === "buckwheat" && <g>
       <path d="m43 85 8-65m-4 34L26 35m23 7 20-15m-25 43 25-13" stroke="#8c8c64" strokeWidth="3" strokeLinecap="round"/>
       {[[51,22],[26,35],[71,27]].map(([x,y])=><g key={x} transform={`translate(${x} ${y})`}>{[0,72,144,216,288].map(r=><ellipse key={r} cy="-6" rx="5" ry="7" fill="#fff8e7" stroke="#c4b79a" transform={`rotate(${r})`}/>)}<circle r="3" fill="#c8a866"/></g>)}

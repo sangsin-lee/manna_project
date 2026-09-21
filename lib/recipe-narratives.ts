@@ -1,6 +1,7 @@
 import type { Recipe, SourceLink } from "./content";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
+import { gangwonSources } from "./gangwon-sources";
 
 export type RecipeNarrativeChapter = {
   section: string;
@@ -42,6 +43,30 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "pyeongchang-potato-ongsimi": narrative(
+    ["감자를 갈아 한 알씩 빚다", "평창에서는 직접 재배한 감자를 갈아 옹심이로 만드는 식탁을 만날 수 있습니다. 삶은 감자를 으깨는 요리와 달리, 생감자를 갈아 건더기와 가라앉힌 전분을 모아 반죽하는 방식입니다."],
+    ["지역의 밭에서 오늘의 한 그릇으로", "평창군의 음식 안내에는 맑은 멸치육수의 옹심이와 장칼국수 등 여러 구성이 등장합니다. 여기서는 감자 맛을 살리는 맑은 국물로 집밥을 구성했습니다. 특정 식당의 배합을 그대로 재현한 것은 아닙니다."],
+    ["맑은 국물 속 쫀득한 감자", "감자 건더기는 소박한 입자감을, 전분은 쫀득함을 만듭니다. 애호박과 양파의 은은한 단맛을 더하고 옹심이를 작게 빚어, 중심까지 익은 따뜻한 한 입으로 즐깁니다."],
+    [gangwonSources.ongsimi, gangwonSources.potatoHarvest],
+  ),
+  "bongpyeong-buckwheat-cabbage-jeon": narrative(
+    ["봉평의 메밀을 얇게 부치다", "봉평 장터에서는 메밀국수와 메밀전, 만두 등 여러 메밀 음식을 만납니다. 이번에는 얇게 편 배추 잎에 메밀 반죽을 입혀, 집의 팬에서 굽기 쉬운 작은 전으로 만들었습니다."],
+    ["문학 속 장터에서 이어지는 음식", "봉평장은 이효석의 소설 『메밀꽃 필 무렵』의 배경과 연결됩니다. 장터를 오가던 삶의 이야기와 메밀 음식이 함께 남은 곳입니다. 꽃이 피는 풍경과 곡식을 거두어 먹는 시기는 구분해 살펴봅니다."],
+    ["구수한 가장자리, 달큰한 잎맥", "메밀의 구수함 사이로 배추 줄기의 단맛이 드러납니다. 반죽은 얇게, 배추는 미리 부드럽게 준비하면 가장자리는 바삭하고 안쪽은 촉촉한 대비를 만들기 좋습니다."],
+    [gangwonSources.market, gangwonSources.buckwheatHarvest],
+  ),
+  "hoengseong-gochujang-deodeok-gui": narrative(
+    ["횡성 밭에서 만나는 뿌리의 향", "횡성 청일면의 농가 식탁은 직접 재배한 더덕을 여러 요리로 활용합니다. 껍질을 벗기면 드러나는 흰 속살과 특유의 향을 살려, 이번에는 고추장구이로 차립니다."],
+    ["산의 재료를 밭과 식탁으로", "농촌진흥청은 더덕의 밭 재배와 수확을 소개하며 구이·장아찌 등 다양한 쓰임을 설명합니다. 몇 해 자란 뿌리를 가을 이후 거두는 식문화에서 출발해, 집에서는 손질한 더덕과 프라이팬으로 간편하게 준비합니다."],
+    ["향긋한 결에 얇게 입힌 양념", "더덕을 가볍게 두드리면 결 사이에 양념이 스며듭니다. 향긋하면서 쌉싸름한 맛을 고추장의 단맛과 매운맛이 받치도록, 더덕을 먼저 굽고 양념은 마지막에 얇게 바릅니다."],
+    [gangwonSources.deodeok, gangwonSources.deodeokHarvest],
+  ),
+  "hongcheon-waxy-corn-soup": narrative(
+    ["홍천의 차진 옥수수 한 알", "홍천의 찰옥수수는 지역을 대표하는 농산물입니다. 홍천군은 지역 시험장과의 종자 개발을 소개합니다. 이번 수프는 그 찰옥수수를 우유와 함께 즐기는 가정용 응용입니다."],
+    ["여름의 수확을 다른 계절에도", "홍천군은 생물 찰옥수수의 구매 시기와 냉동·진공 포장 제품의 연중 유통을 구분합니다. 여름의 재료를 보관해 가을과 겨울에도 즐기는 방법입니다. 수프에는 생것 대신 충분히 익힌 알갱이를 씁니다."],
+    ["부드러운 바탕, 쫀득한 고명", "찰옥수수는 스위트콘과 달리 차진 식감이 중심입니다. 대부분은 우유와 갈아 부드럽게 만들고 일부는 알갱이로 남겨 씹는 재미를 줍니다. 옅은 크림빛에 버터와 양파의 고소한 향이 겹칩니다."],
+    [gangwonSources.corn],
+  ),
   "yeoju-sweet-potato-chicken-jorim": narrative(
     ["여주 밭에서 온 달큰한 한 입", "여주는 이천과 함께 경기도의 고구마 주산지로 소개됩니다. 이 레시피는 그 고구마를 닭다리살과 조려, 지역의 가을 재료를 두 사람의 저녁으로 옮긴 가정용 응용입니다."],
     ["수확의 가을, 저장으로 잇는 계절", "고구마의 보통재배 수확기는 대체로 9월 하순부터 10월 중순입니다. 농촌진흥청은 수확 뒤 관리도 중요하게 다룹니다. 지금 캐낸 고구마와 저장해 두었다 먹는 고구마를 구분하면 한 재료의 계절을 더 정확히 읽을 수 있습니다."],

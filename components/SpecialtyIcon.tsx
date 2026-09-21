@@ -4,6 +4,21 @@ import type { SpecialtyArt } from "@/lib/korea-table";
 export default function SpecialtyIcon({ art, className = "" }: { art: SpecialtyArt; className?: string }) {
   return <svg className={className} viewBox="0 0 100 100" fill="none" aria-hidden="true">
     <ellipse cx="51" cy="85" rx="30" ry="5" fill="#45392c" opacity=".1" />
+    {art === "buckwheat" && <g>
+      <path d="m43 85 8-65m-4 34L26 35m23 7 20-15m-25 43 25-13" stroke="#8c8c64" strokeWidth="3" strokeLinecap="round"/>
+      {[[51,22],[26,35],[71,27]].map(([x,y])=><g key={x} transform={`translate(${x} ${y})`}>{[0,72,144,216,288].map(r=><ellipse key={r} cy="-6" rx="5" ry="7" fill="#fff8e7" stroke="#c4b79a" transform={`rotate(${r})`}/>)}<circle r="3" fill="#c8a866"/></g>)}
+      {[[67,57],[30,70],[58,77]].map(([x,y])=><g key={x} transform={`translate(${x} ${y})`}><path d="M0-10 10 8H-10Z" fill="#8f7258" stroke="#654f40" strokeWidth="1.5"/><path d="M0-10V8" stroke="#ccb898" strokeWidth="2"/></g>)}
+    </g>}
+    {art === "deodeok" && <g transform="rotate(18 50 50)">
+      <path d="M45 23q-17 14-13 39l9 17 2 10 7-13 11-6q10-30-1-47Z" fill="#c6aa81" stroke="#927551" strokeWidth="2"/>
+      <path d="m45 29-3 24 6 19m7-43-4 24 4 11M37 43l20 2m-23 10 23 1m-18 8 16 1m-22-14-9 6m37-16 11 3m-13 20 9 8" stroke="#977b55" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M51 26V10m0 9q-21-15-24-1 11 11 24 1m0-3q14-16 23-5-7 12-23 5" stroke="#77825e" strokeWidth="3" strokeLinecap="round" fill="#97a078"/>
+    </g>}
+    {art === "corn" && <g transform="rotate(15 50 50)">
+      <path d="M33 66V35c0-31 34-31 34 0v31Z" fill="#ead6a0" stroke="#af995f" strokeWidth="2"/>
+      {Array.from({length:6},(_,row)=>[0,1,2].map(col=><rect key={`${row}-${col}`} x={37+col*9} y={21+row*7} width="7" height="6" rx="2.5" fill={(row+col)%3===0?"#dfc483":"#fff0c7"}/>))}
+      <path d="M49 84C24 76 14 54 22 36q28 16 27 48Z" fill="#9ba47a" stroke="#6f7f55" strokeWidth="2"/><path d="M49 84c27-8 34-29 28-49Q55 49 49 84Z" fill="#798c63" stroke="#5b714d" strokeWidth="2"/><path d="m29 49 18 29m24-28L53 78" stroke="#bec79b" strokeWidth="2"/>
+    </g>}
     {art === "sweet-potato" && <g transform="rotate(-28 50 50)"><path d="M12 52C17 24 70 19 88 48 74 77 22 85 12 52Z" fill="#985d75" stroke="#663d50" strokeWidth="2"/><path d="m25 45 7-4m21 18 7-4m7-20 5 2" stroke="#c38b9a" strokeWidth="3" strokeLinecap="round"/><ellipse cx="29" cy="60" rx="18" ry="24" fill="#d2a04e" stroke="#985d75" strokeWidth="5"/><ellipse cx="29" cy="60" rx="11" ry="18" fill="#f1d38b"/></g>}
     {art === "pear" && <g><path d="M48 28q-2-12 7-18" stroke="#705235" strokeWidth="4" strokeLinecap="round"/><path d="M52 22Q63 6 79 18 67 32 52 22Z" fill="#85916a"/><path d="M49 30C17 18 8 45 18 69c10 26 54 27 66-1C96 41 79 19 49 30Z" fill="#cfac61" stroke="#947845" strokeWidth="2"/><path d="M28 42q-7 12-2 23" stroke="#efdaa0" strokeWidth="5" strokeLinecap="round"/>{[[38,42],[62,39],[74,52],[38,71],[65,73],[51,57],[24,55]].map(([x,y])=><circle key={x+y} cx={x} cy={y} r="1.5" fill="#a38851"/>)}</g>}
     {art === "pine-nut" && <g><path d="M46 15C22 22 19 62 45 79c26-20 24-54 1-64Z" fill="#946c4c" stroke="#644c37" strokeWidth="2"/><path d="m34 32 12 7 12-7m-28 13 16 8 16-8m-29 13 13 8 14-8M46 22v52" stroke="#c3a178" strokeWidth="3" strokeLinecap="round"/>{[[71,55,-22],[68,76,28],[27,78,-52]].map(([x,y,r])=><path key={x} transform={`translate(${x} ${y}) rotate(${r})`} d="M0-14C-12-3-8 13 0 15 8 13 12-3 0-14Z" fill="#f2e1b4" stroke="#b99c6e" strokeWidth="1.5"/>)}</g>}

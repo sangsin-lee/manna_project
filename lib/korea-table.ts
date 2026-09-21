@@ -1,6 +1,7 @@
 import type { SourceLink } from "./content";
 import { koreaSources as sources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
+import { gangwonSources } from "./gangwon-sources";
 
 export const seasons = [
   { id: "spring", label: "봄", months: "3–5월", mark: "✿" },
@@ -9,7 +10,7 @@ export const seasons = [
   { id: "winter", label: "겨울", months: "12–2월", mark: "❄" },
 ] as const;
 export type Season = (typeof seasons)[number]["id"];
-export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean";
+export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean" | "buckwheat" | "deodeok" | "corn";
 export type PantryRecipe = { title: string; meta: string; ingredients: string; steps: string[]; note?: string };
 export type Specialty = { name: string; art: SpecialtyArt; timing: string; seasons: Season[]; note: string };
 export type KoreanRegion = {
@@ -42,13 +43,24 @@ export const koreanRegions: KoreanRegion[] = [
     sources: [sources.rice, gyeonggiSources.sweetPotato, gyeonggiSources.sweetPotatoHarvest, gyeonggiSources.pear, gyeonggiSources.pineNut, gyeonggiSources.pineNutHarvest, gyeonggiSources.jangdan, gyeonggiSources.beanHarvest],
   },
   {
-    id: "gangwon", name: "강원", english: "GANGWON", area: "평창의 고랭지", icon: "potato", pin: [128.55, 37.75],
-    headline: "산의 바람이 키운 감자", description: "평창의 감자와 옥수수에서 시작해, 포슬포슬한 속과 노릇한 겉면을 함께 즐기는 산지의 식탁입니다.",
+    id: "gangwon", name: "강원", english: "GANGWON", area: "평창 · 봉평 · 횡성 · 홍천", icon: "potato", pin: [128.55, 37.75],
+    headline: "높은 밭에서 장터의 한 그릇까지", description: "평창 감자와 봉평 메밀, 횡성 더덕, 홍천 찰옥수수. 산지의 재료를 쫀득한 옹심이, 얇은 배추전, 향긋한 구이, 크림빛 수프로 차려 봅니다.",
     colors: ["#415e57", "#dde7d8", "#b5c8aa"], colorStory: "산의 청록, 감자 껍질의 흙빛",
-    specialties: [{ name: "평창 감자", art: "potato", timing: "여름~초가을 · 재배 작형별 차이", seasons: ["summer", "autumn"], note: "고랭지 감자의 수확기와 저장 감자의 유통 시기는 다릅니다. 평창 수확 체험은 감자 8~9월, 옥수수 7~8월로 안내됩니다." }],
-    seasonNotes: { spring: "새 감자철을 기다리며 저장 감자를 활용합니다. 싹이 나거나 초록빛이 도는 감자는 피하세요.", summer: "평창의 여름은 감자와 옥수수를 만나는 때입니다. 품종과 농장별 수확 일정을 살펴보세요.", autumn: "초가을까지 이어지는 고랭지 감자. 노릇하게 구워 산지 재료의 담백한 맛을 즐겨 보세요.", winter: "저장 감자를 수프나 따뜻한 구이로 즐깁니다. 겨울 수확 감자로 오해하지 않도록 산지와 작형을 확인하세요." },
+    specialties: [
+      { name: "평창 감자", art: "potato", timing: "여름~초가을 · 재배 작형별 차이", seasons: ["summer", "autumn"], note: "평창의 감자 수확 체험은 8~9월로 안내됩니다. 저장 감자의 연중 유통과 고랭지 수확기를 구분하고 산지와 상태를 살펴보세요." },
+      { name: "봉평 메밀", art: "buckwheat", timing: "여름 7월 · 가을 10월 수확 중심", seasons: ["summer", "autumn"], note: "중북부 기준 여름 작형은 7월 상~중순, 가을 작형은 10월 상~중순 수확합니다. 메밀꽃 감상 시기와 알곡 수확은 다르며, 가루는 연중 활용합니다." },
+      { name: "횡성 더덕", art: "deodeok", timing: "10월 중순 이후~이듬해 봄 싹트기 전", seasons: ["autumn", "winter", "spring"], note: "심은 지 2~3년 된 더덕의 일반적인 수확 가능 시기입니다. 봄 전체가 아닌 싹트기 전을 뜻하며, 실제 작업은 땅 상태와 농가 일정에 따라 달라집니다." },
+      { name: "홍천 찰옥수수", art: "corn", timing: "생물 유통 7월 중순~9월 말 안내", seasons: ["summer", "autumn"], note: "홍천군은 생물 구매 기간과 냉동·진공 포장 제품의 연중 유통을 따로 안내합니다. 늦가을에는 저장 제품을 활용하고 출하 상태를 확인하세요." },
+    ],
+    seasonNotes: {
+      spring: "더덕은 새싹이 나기 전까지 수확 가능한 재료입니다. 싹이 난 뒤에는 저장·가공 제품인지 확인하세요. 감자와 메밀가루, 냉동 찰옥수수로 다른 계절의 맛도 이어갈 수 있습니다.",
+      summer: "평창 감자와 홍천 찰옥수수, 여름 작형 메밀을 만나는 계절입니다. 감자는 8~9월 수확 체험, 옥수수는 7월 중순부터의 생물 유통 안내를 참고하되 농가별 차이를 살펴보세요.",
+      autumn: "9월에는 감자와 생물 찰옥수수의 끝자락을, 10월에는 가을 메밀과 더덕 수확을 이어 만납니다. 9월 메밀꽃을 올해 가을 햇곡 수확으로 혼동하지 말고, 늦가을 옥수수는 냉동 제품을 활용하세요.",
+      winter: "더덕은 땅과 생육 조건에 따라 봄 싹트기 전까지 수확할 수 있습니다. 감자·메밀가루·찰옥수수는 저장·가공한 재료로 옹심이와 전, 따뜻한 수프를 만듭니다.",
+    },
     pantry: { title: "노릇한 감자 버터구이", meta: "2인분 · 30분", ingredients: "감자 400g, 버터 15g, 소금 1/4작은술, 후추", steps: ["감자를 씻어 3cm 크기로 자르고 찬물에 넣어 끓입니다. 끓은 뒤 약 12분, 속이 부드러워질 때까지 삶습니다.", "물을 빼고 팬에 버터를 녹여 감자를 넣습니다. 중약불에서 6~8분 굴려가며 굽습니다.", "소금과 후추를 뿌리고 노릇한 면이 위로 오게 담습니다."], note: "지역 감자를 활용한 가정용 구이입니다." },
-    recipeSlugs: [], sources: [sources.potato],
+    recipeSlugs: ["pyeongchang-potato-ongsimi", "bongpyeong-buckwheat-cabbage-jeon", "hoengseong-gochujang-deodeok-gui", "hongcheon-waxy-corn-soup"],
+    sources: [gangwonSources.potatoHarvest, gangwonSources.ongsimi, gangwonSources.market, gangwonSources.buckwheatHarvest, gangwonSources.deodeok, gangwonSources.deodeokHarvest, gangwonSources.corn],
   },
   {
     id: "chungbuk", name: "충북", english: "CHUNGBUK", area: "영동의 포도밭", icon: "grape", pin: [127.88, 36.93],

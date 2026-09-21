@@ -10,6 +10,35 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="151" fill="#fffaf0" fillOpacity=".75" stroke={ink} strokeOpacity=".3" />
         <circle cx="300" cy="186" r="132" stroke={ink} strokeOpacity=".18" />
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
+        {art === "ongsimi" && <g>
+          <circle cx="300" cy="186" r="111" fill="#789398"/><circle cx="300" cy="186" r="102" fill="#dfd5b6"/>
+          {[[247,139],[299,126],[351,153],[248,203],[301,187],[352,217],[290,250]].map(([x,y])=><g key={x+y}><ellipse cx={x} cy={y} rx="22" ry="20" fill="#f5eddb" stroke="#bbae91" strokeWidth="2"/><path d={`M${x-10} ${y-8}q8-7 17-3`} stroke="#fffbed" strokeWidth="4" strokeLinecap="round"/></g>)}
+          {[[273,165,-20],[331,247,30],[227,241,-10]].map(([x,y,r])=><path key={x} d="M-16-8h32q0 25-32 0Z" transform={`translate(${x} ${y}) rotate(${r})`} fill="#a6b584" stroke="#789364" strokeWidth="3"/>)}
+          <path d="m315 155 13-4m-55 70 16 5m66-51 9-5" stroke="#66856a" strokeWidth="5" strokeLinecap="round"/>
+        </g>}
+        {art === "cabbage-jeon" && <g>
+          {[[270,164,-27],[337,211,20]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <ellipse rx="64" ry="83" fill="#c5ad7d" stroke="#927c58" strokeWidth="3"/><ellipse rx="57" ry="76" fill="#d6c49a"/>
+            <path d="M0 61C-28 26-42-27-19-53-5-70 13-63 24-49 47-21 26 24 0 61Z" fill="#a5ad75" stroke="#829260" strokeWidth="2"/>
+            <path d="M0 57 1-48m-2 16-19-13M0-15l23-22M0 5l-24-22M0 22l25-30M0 38l-17-14" stroke="#f2e6bd" strokeWidth="5" strokeLinecap="round"/>
+            <path d="m-43-25 8-6m68 40 8-7m-72 44 7 3" stroke="#a88856" strokeWidth="4" strokeLinecap="round"/>
+          </g>)}
+        </g>}
+        {art === "deodeok-gui" && <g transform="rotate(-19 300 186)">
+          {[[249,172],[289,166],[332,178],[372,191]].map(([x,y],i)=><g key={x} transform={`translate(${x} ${y}) rotate(${i%2?5:-3})`}>
+            <path d="M-13-65Q-24-24-17 35L0 65l15-26q11-68-4-104Z" fill="#b96547" stroke="#80462f" strokeWidth="2"/>
+            <path d="M-5-54q-8 52 5 103M6-47q5 35-3 64" stroke="#dfad72" strokeWidth="3" strokeLinecap="round"/>
+            <path d="m-14-21 25-3m-23 28 21-2m-15 22 13-2" stroke="#874a32" strokeWidth="4" strokeLinecap="round"/>
+          </g>)}
+          <path d="m255 148 13 7m41 68 12-5m19-86 13 4" stroke="#789064" strokeWidth="5" strokeLinecap="round"/>
+          {[[269,189],[308,162],[344,220],[359,183],[285,136]].map(([x,y])=><ellipse key={x} cx={x} cy={y} rx="3" ry="1.5" transform={`rotate(25 ${x} ${y})`} fill="#fae1a5"/>)}
+        </g>}
+        {art === "corn-soup" && <g>
+          <circle cx="300" cy="186" r="110" fill="#bd9f66"/><circle cx="300" cy="186" r="101" fill="#f1e4b7"/>
+          <path d="M238 175c-7-42 121-57 124-8s-91 71-104 28 68-58 78-19-39 51-53 23" stroke="#fcf1d0" strokeWidth="9" strokeLinecap="round"/>
+          {[[259,151],[279,143],[300,154],[271,170],[324,229],[342,219],[342,239],[361,230]].map(([x,y],i)=><path key={x+y} d="M-6-7q9-6 13 3l-2 10q-9 5-13-3Z" transform={`translate(${x} ${y}) rotate(${i*23})`} fill={i%2?"#e6cf91":"#fff2cb"} stroke="#c8af78" strokeWidth="1.5"/>)}
+          <path d="M449 182v101" stroke={ink} strokeWidth="4" strokeLinecap="round" opacity=".6"/><ellipse cx="449" cy="159" rx="13" ry="25" stroke={ink} strokeWidth="3" opacity=".6"/>
+        </g>}
         {art === "sweet-potato-chicken" && <g>
           <circle cx="300" cy="186" r="109" fill="#b38456"/><circle cx="300" cy="186" r="98" fill="#8d593e"/>
           {[[239,150,-12],[301,125,18],[330,211,-18],[250,225,20],[371,178,12]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><rect x="-23" y="-17" width="46" height="34" rx="12" fill="#c68f59" stroke="#714831" strokeWidth="2"/><path d="m-12-6 15-3m-8 18 15-3" stroke="#e3b87a" strokeWidth="3" strokeLinecap="round"/></g>)}
@@ -63,7 +92,7 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         {art === "dessert" && <g><path d="m206 165 91-51 106 54-9 80-94 31-90-40Z" fill="#cd9957" stroke={accent} strokeWidth="3"/><path d="m214 176 87 38 91-36-3 34-88 34-87-35Z" fill="#fbebcb"/><path d="m206 165 94 42 103-39-106-54Z" fill="#a46a42"/><path d="m238 158 65 27 63-23-66-28Z" fill="#e8bf77"/><path d="m246 160 11-4m49 6 12 6m13-22 10 4" stroke={accent} strokeWidth="6" strokeLinecap="round"/></g>}
         {art === "tart" && <g><path d="m218 160 13 91q69 51 139 0l13-91Z" fill="#b77c45"/><ellipse cx="300" cy="164" rx="91" ry="75" fill="#e0ab60" stroke="#a26a36" strokeWidth="6"/><ellipse cx="300" cy="164" rx="73" ry="58" fill="#f4d388"/>{[0,1,2,3,4,5,6].map(i=><ellipse key={i} cx={259+(i*29)%88} cy={130+(i*19)%61} rx={i%2 ? 11 : 7} ry="5" transform={`rotate(${i*31} ${259+(i*29)%88} ${130+(i*19)%61})`} fill="#855038"/>)}</g>}
         {art === "drink" && <g><path d="M226 140h136l-14 119q-55 35-108 0Z" fill="#fff1d9" stroke={accent} strokeWidth="4"/><path d="M364 155c74-17 65 87-11 69" stroke={accent} strokeWidth="12"/><ellipse cx="294" cy="142" rx="67" ry="24" fill="#a97240" stroke={accent} strokeWidth="4"/><path d="M268 104q-23-23 0-48m43 48q-23-23 0-48" stroke={ink} strokeOpacity=".4" strokeWidth="3" strokeLinecap="round"/></g>}
-        {["rice", "bowl", "noodles", "sweet-potato-chicken", "pear-shrimp", "pine-noodles", "tofu-hotpot"].includes(art) ? <path d="M453 113 486 283M466 107 500 279" stroke={ink} strokeWidth="4" strokeLinecap="round" opacity=".6"/> : <path d="M458 132v152m-10-166v31q10 18 20 0v-31m-10 0v38m34-38v166m0-166q30 55 0 72" stroke={ink} strokeWidth="4" strokeLinecap="round" opacity=".6"/>}
+        {art !== "corn-soup" && (["rice", "bowl", "noodles", "sweet-potato-chicken", "pear-shrimp", "pine-noodles", "tofu-hotpot", "ongsimi", "cabbage-jeon", "deodeok-gui"].includes(art) ? <path d="M453 113 486 283M466 107 500 279" stroke={ink} strokeWidth="4" strokeLinecap="round" opacity=".6"/> : <path d="M458 132v152m-10-166v31q10 18 20 0v-31m-10 0v38m34-38v166m0-166q30 55 0 72" stroke={ink} strokeWidth="4" strokeLinecap="round" opacity=".6"/>)}
       </svg>
       <div className="artwork-caption"><strong>{label}</strong><span>{design.caption}</span></div>
     </div>

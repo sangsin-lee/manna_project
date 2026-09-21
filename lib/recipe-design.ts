@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import type { CountrySlug, Recipe } from "./content";
 
 export type RecipePattern = "grain" | "tiles" | "waves" | "contours" | "linen";
-export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot";
+export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup";
 export type RecipeDesign = {
   paper: string; soft: string; from: string; mid: string; to: string;
   ink: string; muted: string; accent: string; dark: string; line: string;
@@ -20,6 +20,10 @@ const places: Record<CountrySlug, [string, RecipePattern]> = {
 
 // Visual interpretations of ingredients and places, not claims of traditional patterns.
 const details: Record<string, { art: RecipeArt; caption: string; place?: string; pattern?: RecipePattern; colors?: [string, string, string, string] }> = {
+  "pyeongchang-potato-ongsimi": { art: "ongsimi", caption: "평창 감자의 아이보리와 산안개를 닮은 회청색", pattern: "contours" },
+  "bongpyeong-buckwheat-cabbage-jeon": { art: "cabbage-jeon", caption: "봉평 메밀의 회갈색과 배추 잎맥의 연둣빛", pattern: "linen" },
+  "hoengseong-gochujang-deodeok-gui": { art: "deodeok-gui", caption: "횡성 더덕의 흙빛과 고추장 양념의 벽돌빛", pattern: "grain" },
+  "hongcheon-waxy-corn-soup": { art: "corn-soup", caption: "홍천 찰옥수수의 크림빛과 버터의 연노랑", pattern: "grain" },
   "yeoju-sweet-potato-chicken-jorim": { art: "sweet-potato-chicken", caption: "여주 고구마의 자주색과 달큰한 조림의 금빛", pattern: "grain" },
   "anseong-pear-shrimp-salad": { art: "pear-shrimp", caption: "안성 배의 금빛, 아삭한 속살, 새우의 산호빛", pattern: "linen" },
   "gapyeong-pine-nut-buckwheat-noodles": { art: "pine-noodles", caption: "가평 잣의 크림색과 메밀의 차분한 회갈색", pattern: "contours" },

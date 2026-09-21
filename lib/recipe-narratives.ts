@@ -1,5 +1,6 @@
 import type { Recipe, SourceLink } from "./content";
 import { koreaSources } from "./korea-sources";
+import { gyeonggiSources } from "./gyeonggi-sources";
 
 export type RecipeNarrativeChapter = {
   section: string;
@@ -41,6 +42,30 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "yeoju-sweet-potato-chicken-jorim": narrative(
+    ["여주 밭에서 온 달큰한 한 입", "여주는 이천과 함께 경기도의 고구마 주산지로 소개됩니다. 이 레시피는 그 고구마를 닭다리살과 조려, 지역의 가을 재료를 두 사람의 저녁으로 옮긴 가정용 응용입니다."],
+    ["수확의 가을, 저장으로 잇는 계절", "고구마의 보통재배 수확기는 대체로 9월 하순부터 10월 중순입니다. 농촌진흥청은 수확 뒤 관리도 중요하게 다룹니다. 지금 캐낸 고구마와 저장해 두었다 먹는 고구마를 구분하면 한 재료의 계절을 더 정확히 읽을 수 있습니다."],
+    ["포슬한 고구마에 배어든 간장", "고구마의 단맛에 간장의 짭짤함과 닭다리살의 감칠맛이 겹칩니다. 보랏빛 껍질과 노란 단면을 남기고, 국물을 조금만 졸여 밥에 곁들이기 좋은 윤기를 만듭니다."],
+    [gyeonggiSources.sweetPotato, gyeonggiSources.sweetPotatoHarvest],
+  ),
+  "anseong-pear-shrimp-salad": narrative(
+    ["과수원의 배를 식사로", "안성의 배는 지역을 대표하는 과일 가운데 하나입니다. 가을에 만나는 과즙 많은 배를 새우와 채소에 곁들여, 후식 과일을 한 접시의 식사로 응용했습니다."],
+    ["과일이 모이던 안성장", "경기도는 안성장을 조선 시대의 큰 시장 중 하나로 소개하며, 9~10월에 지역의 배와 포도를 만날 수 있다고 안내합니다. 오래된 장터의 이야기와 오늘의 배 요리를 연결하되, 이 냉채의 기원이 안성장이라는 뜻은 아닙니다."],
+    ["아삭함, 탱글함, 알싸함", "배의 시원한 단맛이 겨자의 알싸함과 식초의 산미를 부드럽게 잇습니다. 충분히 익힌 새우는 탱글하게, 배는 먹기 직전에 썰어 아삭하게 대비시킵니다."],
+    [gyeonggiSources.pear],
+  ),
+  "gapyeong-pine-nut-buckwheat-noodles": narrative(
+    ["잣나무 숲에서 시작되는 맛", "가평을 대표하는 재료인 잣은 작은 알갱이에 짙은 고소함을 품고 있습니다. 가을 잣 수확의 풍경에서 출발해, 껍질을 벗겨 유통하는 잣을 집에서 다루기 쉬운 소스로 만듭니다."],
+    ["죽과 국수에서 카페의 디저트까지", "경기도의 지역 음식 소개에는 가평 잣을 활용한 두부, 죽, 국수와 디저트가 함께 등장합니다. 전통적으로 귀하게 쓰던 재료를 여러 방식으로 즐기는 흐름을 따라, 여기서는 메밀면과 무가당 두유를 조합했습니다."],
+    ["크림빛 소스와 메밀의 향", "곱게 간 잣은 두유와 만나 면에 부드럽게 달라붙습니다. 메밀의 구수함과 오이의 산뜻함을 살리려면 소금은 조금씩 넣고, 면의 물기를 충분히 빼 소스가 묽어지지 않게 합니다."],
+    [gyeonggiSources.pineNut, gyeonggiSources.pineNutHarvest],
+  ),
+  "paju-jangdan-tofu-mushroom-hotpot": narrative(
+    ["장단은 콩이 자라는 곳의 이름", "파주 장단콩의 장단은 특정 품종이 아니라 지역에서 온 이름입니다. 두부를 고를 때도 제품 이름만 보기보다 어떤 산지의 콩을 사용했는지 표시를 확인하면 지역 식탁과 더 정확히 연결됩니다."],
+    ["콩을 갈고 두부와 장으로 잇다", "지역 체험 자료는 늦가을 콩 수확과 함께 두부 만들기, 장 담그기 문화를 소개합니다. 수확한 콩을 가공해 다른 계절에도 먹는 방식입니다. 이 전골은 구입한 두부로 그 식탁을 간편하게 응용했습니다."],
+    ["담백한 두부, 버섯의 깊은 향", "맑은 국물에 두부와 버섯을 끓이면 콩의 고소함과 버섯의 향을 함께 느낄 수 있습니다. 들깨가루를 마지막에 풀면 국물이 조금 되직해지고, 아이보리색 재료 사이로 대파의 초록이 드러납니다."],
+    [gyeonggiSources.jangdan, gyeonggiSources.beanHarvest],
+  ),
   "mantua-inspired-pumpkin-gnocchi": narrative(
     ["호박을 빚는 만토바의 가을", "호박은 이탈리아 만토바의 대표 식재료입니다. 지역에서는 속을 채우는 토르텔리뿐 아니라, 호박을 반죽에 섞는 뇨키로도 즐깁니다. 이 한 접시는 국내 단호박으로 그 가을 식탁을 응용했습니다."],
     ["궁정의 기록에서 오늘의 식탁으로", "만토바시 안내서는 곤차가 궁정의 요리사 바르톨로메오 스테파니가 1662년 요리서에 지역의 식문화를 기록했다고 설명합니다. 호박 뇨키도 지역 음식으로 소개하지만, 특정 인물이 처음 발명한 요리라고 단정하지는 않습니다."],

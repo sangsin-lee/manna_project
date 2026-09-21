@@ -1,5 +1,6 @@
 import type { SourceLink } from "./content";
 import { koreaSources as sources } from "./korea-sources";
+import { gyeonggiSources } from "./gyeonggi-sources";
 
 export const seasons = [
   { id: "spring", label: "봄", months: "3–5월", mark: "✿" },
@@ -8,7 +9,7 @@ export const seasons = [
   { id: "winter", label: "겨울", months: "12–2월", mark: "❄" },
 ] as const;
 export type Season = (typeof seasons)[number]["id"];
-export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork";
+export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean";
 export type PantryRecipe = { title: string; meta: string; ingredients: string; steps: string[]; note?: string };
 export type Specialty = { name: string; art: SpecialtyArt; timing: string; seasons: Season[]; note: string };
 export type KoreanRegion = {
@@ -20,13 +21,25 @@ export type KoreanRegion = {
 
 export const koreanRegions: KoreanRegion[] = [
   {
-    id: "gyeonggi", name: "경기", english: "GYEONGGI", area: "이천의 들녘", icon: "rice", pin: [127.15, 37.65],
-    headline: "흰 쌀밥에서 시작되는 식탁", description: "이천쌀의 담백한 맛을 중심으로, 한 그릇의 밥이 계절마다 다른 곁들임을 만나는 식탁입니다.",
+    id: "gyeonggi", name: "경기", english: "GYEONGGI", area: "이천 · 여주 · 안성 · 가평 · 파주", icon: "rice", pin: [127.15, 37.65],
+    headline: "들녘과 과수원, 숲을 잇는 식탁", description: "이천쌀과 여주 고구마, 안성 배, 가평 잣, 파주 장단콩. 서로 다른 산지의 재료로 달큰한 조림부터 산뜻한 냉채와 고소한 국수, 따뜻한 전골까지 차립니다.",
     colors: ["#76602e", "#ece2c6", "#d2bd79"], colorStory: "쌀의 아이보리와 가을 들녘의 금빛",
-    specialties: [{ name: "이천쌀", art: "rice", timing: "가을 수확 · 품종별 차이", seasons: ["autumn"], note: "햅쌀 수확과 도정한 쌀의 연중 유통을 구분합니다. 포장의 생산 연도·도정일을 함께 살펴보세요." }],
-    seasonNotes: { spring: "저장 쌀로 지은 밥에 봄 채소를 곁들여 보세요. 쌀이 봄에 새로 수확된다는 뜻은 아닙니다.", summer: "쌀은 연중 만날 수 있습니다. 덥고 습한 때에는 소포장으로 준비해 밥을 조금씩 지어 보세요.", autumn: "가을 들녘의 주인공은 햅쌀. 이천쌀은 일반적으로 9월 하순~10월 수확하며 품종마다 차이가 있습니다.", winter: "가을에 거둔 쌀로 뜨끈한 밥과 국을 차립니다. 겨울에는 저장과 도정 상태를 살펴보세요." },
+    specialties: [
+      { name: "이천쌀", art: "rice", timing: "가을 수확 · 품종별 차이", seasons: ["autumn"], note: "햅쌀 수확과 도정한 쌀의 연중 유통을 구분합니다. 포장의 생산 연도·도정일을 함께 살펴보세요." },
+      { name: "여주 고구마", art: "sweet-potato", timing: "가을 · 보통재배 9월 하순~10월 중순", seasons: ["autumn"], note: "여주는 경기도 고구마 주산지 중 하나입니다. 수확기는 재배 방식에 따라 다르고, 저장 고구마는 다른 계절에도 활용합니다." },
+      { name: "안성 배", art: "pear", timing: "가을 · 9~10월 중심", seasons: ["autumn"], note: "안성 과수원과 장터를 연결하는 가을 과일. 품종별 수확 시기가 다르며 저장 배와 햇배는 구분해 고릅니다." },
+      { name: "가평 잣", art: "pine-nut", timing: "가을 채취 · 산지·작황별 차이", seasons: ["autumn"], note: "가평의 잣은 죽·두부·국수에도 쓰입니다. 깐 잣의 연중 유통과 가을 채취는 다르므로 원산지와 생산 정보를 살펴보세요." },
+      { name: "파주 장단콩", art: "soybean", timing: "늦가을 · 10월 말~11월 초순 중심", seasons: ["autumn"], note: "장단은 품종이 아닌 지역 이름입니다. 올해 햇콩 수확 전에는 저장 콩이나 두부·장류로 만나며, 실제 수확일은 날씨에 따라 달라집니다." },
+    ],
+    seasonNotes: {
+      spring: "봄에는 저장 쌀과 고구마, 보관한 잣과 콩 가공품을 활용합니다. 아래 재료는 봄 햇수확 목록이 아닌 저장·가공 식탁입니다. 배는 판매 제품의 보관 상태를 확인하세요.",
+      summer: "깐 잣으로 차가운 국수를, 두부로 가벼운 식사를 준비해 보세요. 여름 햇잣·햇콩이라는 뜻은 아닙니다. 저장·가공품의 포장 보관 안내를 따릅니다.",
+      autumn: "9~10월 안성 배, 보통재배 기준 9월 하순~10월 중순 고구마, 가을의 햅쌀과 잣을 만납니다. 장단콩은 10월 말~11월 초순 수확이 중심이라 9월에는 두부 등 가공품을 활용하세요. 품종·작황별 차이가 있습니다.",
+      winter: "가을에 거둔 쌀과 고구마, 저장 배와 잣, 콩으로 만든 두부를 즐깁니다. 겨울 햇수확으로 소개하지 않으며 각 재료의 보관 상태와 가공일을 살펴보세요.",
+    },
     pantry: { title: "쌀의 맛을 살린 냄비밥", meta: "2인분 · 65분", ingredients: "백미 200g, 밥물 240ml, 불릴 물 별도", steps: ["쌀을 씻어 30분 불리고 체에서 5분 물기를 뺍니다.", "두꺼운 냄비에 쌀과 물 240ml를 넣고 중불로 끓입니다. 끓으면 덮어 아주 약불로 12분 익힙니다.", "불을 끄고 10분 뜸을 들여 섞습니다. 밥이 단단하면 뜨거운 물을 조금 보충해 더 익힙니다."], note: "쌀의 품종과 도정 상태, 냄비에 따라 물과 시간을 조정합니다." },
-    recipeSlugs: [], sources: [sources.rice],
+    recipeSlugs: ["yeoju-sweet-potato-chicken-jorim", "anseong-pear-shrimp-salad", "gapyeong-pine-nut-buckwheat-noodles", "paju-jangdan-tofu-mushroom-hotpot"],
+    sources: [sources.rice, gyeonggiSources.sweetPotato, gyeonggiSources.sweetPotatoHarvest, gyeonggiSources.pear, gyeonggiSources.pineNut, gyeonggiSources.pineNutHarvest, gyeonggiSources.jangdan, gyeonggiSources.beanHarvest],
   },
   {
     id: "gangwon", name: "강원", english: "GANGWON", area: "평창의 고랭지", icon: "potato", pin: [128.55, 37.75],

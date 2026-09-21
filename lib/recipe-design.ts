@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import type { CountrySlug, Recipe } from "./content";
 
 export type RecipePattern = "grain" | "tiles" | "waves" | "contours" | "linen";
-export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus";
+export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot";
 export type RecipeDesign = {
   paper: string; soft: string; from: string; mid: string; to: string;
   ink: string; muted: string; accent: string; dark: string; line: string;
@@ -20,6 +20,10 @@ const places: Record<CountrySlug, [string, RecipePattern]> = {
 
 // Visual interpretations of ingredients and places, not claims of traditional patterns.
 const details: Record<string, { art: RecipeArt; caption: string; place?: string; pattern?: RecipePattern; colors?: [string, string, string, string] }> = {
+  "yeoju-sweet-potato-chicken-jorim": { art: "sweet-potato-chicken", caption: "여주 고구마의 자주색과 달큰한 조림의 금빛", pattern: "grain" },
+  "anseong-pear-shrimp-salad": { art: "pear-shrimp", caption: "안성 배의 금빛, 아삭한 속살, 새우의 산호빛", pattern: "linen" },
+  "gapyeong-pine-nut-buckwheat-noodles": { art: "pine-noodles", caption: "가평 잣의 크림색과 메밀의 차분한 회갈색", pattern: "contours" },
+  "paju-jangdan-tofu-mushroom-hotpot": { art: "tofu-hotpot", caption: "장단콩 두부의 아이보리와 버섯의 흙빛", pattern: "grain" },
   "mantua-inspired-pumpkin-gnocchi": { art: "gnocchi", caption: "단호박의 황금빛, 버터의 크림색, 따뜻한 흙빛", pattern: "tiles" },
   "jeju-dombe-guksu": { art: "pork-noodles", caption: "나무 도마의 갈색과 우윳빛 고기 국물", pattern: "grain" },
   "jeju-galchi-jorim": { art: "fish-stew", caption: "은갈치의 바다와 붉은 양념의 온기", pattern: "waves" },

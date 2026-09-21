@@ -1199,8 +1199,8 @@ export const countries: Country[] = [
       "paris-boulangerie-cafe-daily-life",
       "french-regional-gastronomy",
     ],
-    recipeSlugs: ["french-croque-monsieur", "french-onion-soup"],
-    updatedAt: "2026-09-11",
+    recipeSlugs: ["auvergne-inspired-lentil-sausage-stew", "french-croque-monsieur", "french-onion-soup"],
+    updatedAt: "2026-09-21",
     palette: {
       from: "#ece4d5",
       mid: "#d8d9c9",

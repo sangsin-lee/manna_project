@@ -10,6 +10,16 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="151" fill="#fffaf0" fillOpacity=".75" stroke={ink} strokeOpacity=".3" />
         <circle cx="300" cy="186" r="132" stroke={ink} strokeOpacity=".18" />
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
+
+        {art === "lentil-stew" && <g>
+          <circle cx="300" cy="188" r="115" fill="#8b6860" stroke="#634c45" strokeWidth="3"/><circle cx="300" cy="188" r="101" fill="#c1a077"/>
+          <path d="M188 157h-17v62h17m224-62h17v62h-17" stroke="#8b6860" strokeWidth="13" strokeLinejoin="round"/>
+          {Array.from({length:66},(_,i)=>{const a=i*2.4,r=18+Math.sqrt(i/66)*74;return <ellipse key={i} cx={300+Math.cos(a)*r} cy={188+Math.sin(a)*r} rx="7" ry="4" transform={`rotate(${i*29} ${300+Math.cos(a)*r} ${188+Math.sin(a)*r})`} fill={i%3===0?"#a7956d":i%3===1?"#8c8260":"#b6a17b"} stroke="#766b52" strokeWidth="1"/>;})}
+          {[[267,141,-24],[327,175,25],[274,219,-14],[343,237,34]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><ellipse rx="29" ry="21" fill="#9c5e43" stroke="#74442e" strokeWidth="3"/><ellipse rx="22" ry="15" fill="#cf9e78"/><path d="m-12-5 5 3m9-6 4 2m-9 10 5 3m9-1 3-2" stroke="#e9c5a3" strokeWidth="3" strokeLinecap="round"/></g>)}
+          {[[233,183],[330,132],[315,247],[368,194]].map(([x,y])=><rect key={x} x={x} y={y} width="12" height="12" rx="3" fill="#d69b5d" transform={`rotate(20 ${x} ${y})`}/>)}
+          <path d="m298 133 8 4m-70 85 10-5m81-5 9-3" stroke="#718064" strokeWidth="5" strokeLinecap="round"/>
+          <path d="M396 84q30-13 43 12l8 34q-23 20-41 1Z" fill="#c79b62" stroke="#9c794d" strokeWidth="3"/><path d="m406 93 22 16m-19-5 23 16" stroke="#f2ddb2" strokeWidth="6" strokeLinecap="round"/>
+        </g>}
         {art === "chestnut-pasta" && <g>
           <ellipse cx="300" cy="192" rx="107" ry="88" fill="#eee1ba"/>
           {Array.from({length:12},(_,i)=><path key={i} d={`M${218+i*5} ${142+i*8}C${385-i*4} ${95+i*10} ${226+i*4} ${259-i*5} ${374-i*3} ${211+i*3}`} stroke={i%2?"#d4b779":"#f7edca"} strokeWidth="5" strokeLinecap="round"/>)}

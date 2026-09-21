@@ -44,6 +44,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "auvergne-inspired-lentil-sausage-stew": narrative(
+    ["벨레 고원의 작은 렌틸콩","프랑스 오트루아르의 벨레 고원은 르퓌 렌틸콩으로 알려져 있습니다. 지방정부는 지역의 재배 흔적을 갈로로마 시대로 거슬러 소개합니다. 오래된 것은 이 재료의 지역 역사이며, 오늘의 소시지 스튜 배합이 그때부터 전해졌다는 뜻은 아닙니다."],
+    ["수확한 콩이 일상의 식탁으로","현지의 렌틸 수확은 통상 늦여름부터 초가을까지 이어집니다. 건조해 보관하는 콩은 이후 계절에도 요리에 쓰입니다. 오베르뉴의 렌틸콩과 샤퀴트리 식문화에서 출발해, 여기서는 통렌틸콩과 시판 가열 소시지로 집밥을 구성했습니다."],
+    ["작은 알갱이와 구운 소시지의 대비","완전히 익힌 통렌틸은 구수하면서도 알갱이가 남고, 양파와 당근은 국물에 단맛을 보탭니다. 구운 소시지의 짭짤함 위에 머스터드를 조금 더하면 은근한 산미가 생깁니다. 빵으로 국물을 떠먹으며 두 식감을 함께 즐깁니다."],
+    [{"label":"오트루아르 지방정부 — 르퓌 렌틸콩의 재배 역사와 수확 시기","url":"https://www.hauteloire.fr/La-Lentille-Verte-du-Puy.html"},{"label":"오베르뉴 관광청 — 지역 렌틸콩과 샤퀴트리 식문화","url":"https://www.auvergne-destination.com/gastronomie-cuisine-et-terroir-dauvergne/"}],
+  ),
   "gongju-chestnut-cream-pasta": narrative(
     ["공주의 가을을 크림에 담다", "공주에서는 가을 알밤 수확 체험을 만날 수 있습니다. 숲에서 거둔 밤의 포슬포슬한 속살에 주목해, 이번에는 익힌 밤을 으깨 파스타 소스에 넣었습니다."],
     ["지역 재료의 새로운 쓰임", "알밤을 줍는 계절의 풍경을 집의 식탁으로 가져오는 방법입니다. 공주 전통 음식의 재현이 아니라 지역 재료를 오늘의 파스타에 연결한 가정용 응용입니다."],

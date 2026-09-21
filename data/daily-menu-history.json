@@ -565,6 +565,45 @@
         "호박 굽기 포함",
         "오븐 또는 에어프라이어"
       ]
+    },
+    {
+      "date": "2026-09-21",
+      "recipeSlug": "auvergne-inspired-lentil-sausage-stew",
+      "title": "오베르뉴풍 렌틸콩 소시지 스튜",
+      "canonicalDish": "lentil-sausage-stew",
+      "aliases": [
+        "렌틸콩 소시지 스튜",
+        "렌틸 소시지 스튜",
+        "소시지 렌틸 스튜",
+        "saucisses aux lentilles",
+        "lentil sausage stew"
+      ],
+      "keyIngredients": [
+        "통렌틸콩",
+        "가열한 소시지",
+        "양파",
+        "당근",
+        "셀러리"
+      ],
+      "method": "통렌틸콩을 향채와 함께 은근히 끓여 익힌 뒤 구운 소시지를 합치고, 빵을 곁들인다.",
+      "selectionReason": "프랑스 오베르뉴의 렌틸콩 식탁에서 영감을 얻어, 수확 뒤 저장해 먹는 콩을 따뜻한 냄비 요리로 즐깁니다. 소시지와 빵을 곁들여 두 사람의 든든한 저녁을 만듭니다.",
+      "videoIdea": "마른 렌틸콩이 쏟아지는 장면 → 소시지의 구운 단면 → 향채 위로 물 붓기 → 렌틸이 부드러워지는 냄비 → 빵으로 국물 떠먹기. 제목 아이디어: “작은 콩 한 컵으로 차리는 프랑스 시골 저녁”.",
+      "duplicateReview": "공유 레시피 44개, 최초 기록 27개와 두 날짜의 일일 메뉴, steak-recipes·음식별 이야기·홈 추천 및 Git 이력을 비교했다. 기존 양파 수프는 양파 갈색 내기와 빵·치즈 그라탱, 옥수수 수프는 갈아 만드는 우유 수프다. 이번 요리는 통렌틸콩을 향채와 끓여 소시지와 먹는 스튜로 핵심 재료·조리법이 다르며, 소스만 바꾼 메뉴가 아니다. 최근 일일 일본·이탈리아 메뉴와 국내 지역 모음 이후 프랑스 오베르뉴로 순환한다.",
+      "research": {
+        "checkedAt": "2026-09-21",
+        "seasonalNote": "오트루아르 지방정부가 안내한 통상 수확기 8월~9월 중순과 오베르뉴 관광청의 지역 렌틸콩 문화를 확인했다. 실제 수확일은 해마다 달라지며 한국의 건조 렌틸콩 구매 시기를 현지 햇수확과 동일시하지 않는다. Lentils.org의 2026 식품 트렌드 전망에서 콩류 활용과 간편 식사 관심을 참고했으나 한국에서의 유행이나 유튜브 조회 수를 입증하지 않는다. 일반 통렌틸콩과 시판 가열 소시지로 만드는 가정용 응용이며 르퓌 원산지 제품을 사용했다고 단정하지 않는다.",
+        "sources": [
+          "https://www.hauteloire.fr/La-Lentille-Verte-du-Puy.html",
+          "https://www.auvergne-destination.com/gastronomie-cuisine-et-terroir-dauvergne/",
+          "https://www.lentils.org/recipes-cooking/how-to-cook-lentils",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://www.lentils.org/spotlight-on-the-top-food-trends-for-2026/"
+        ]
+      },
+      "preparationLabels": [
+        "불리기 없이",
+        "냄비와 프라이팬"
+      ]
     }
   ]
 }

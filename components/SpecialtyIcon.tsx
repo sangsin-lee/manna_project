@@ -4,6 +4,20 @@ import type { SpecialtyArt } from "@/lib/korea-table";
 export default function SpecialtyIcon({ art, className = "" }: { art: SpecialtyArt; className?: string }) {
   return <svg className={className} viewBox="0 0 100 100" fill="none" aria-hidden="true">
     <ellipse cx="51" cy="85" rx="30" ry="5" fill="#45392c" opacity=".1" />
+    {art === "jujube" && <g>
+      {[[35,54,-28],[67,54,20]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><ellipse rx="21" ry="30" fill="#a15842" stroke="#723e32" strokeWidth="2"/><path d="M-9-18q-8 12-5 27" stroke="#d68b66" strokeWidth="4" strokeLinecap="round"/><path d="M0-28v-10" stroke="#72553a" strokeWidth="3"/></g>)}
+      <path d="M49 23Q65 4 81 18 68 34 49 23Z" fill="#819165"/>
+    </g>}
+    {art === "garlic" && <g>
+      <path d="M46 12h9l1 20c26 10 32 28 21 43-13 18-47 16-57 0-11-18 0-35 23-43Z" fill="#f2e7ce" stroke="#a7957a" strokeWidth="2"/>
+      <path d="M48 32Q27 55 35 81m18-49q22 25 10 49M50 34v50" stroke="#c3b59a" strokeWidth="2"/>
+      <path d="m39 84-5 8m15-7v9m10-10 6 7" stroke="#a7957a" strokeWidth="2" strokeLinecap="round"/>
+    </g>}
+    {art === "cabbage" && <g>
+      <path d="M35 84C3 67 12 31 28 32 20 4 47 8 51 25 67 1 88 20 77 36 99 42 86 74 66 85Z" fill="#9da875" stroke="#738451" strokeWidth="2"/>
+      <path d="M40 85C27 66 28 36 43 28c8-9 20-1 19 9 18 13 13 34-2 49Z" fill="#d9dcb1" stroke="#a7b17e" strokeWidth="2"/>
+      <path d="m49 82 1-48m-1 34L34 50m17 8 13-14m-11 32 15-14" stroke="#f9f1d8" strokeWidth="5" strokeLinecap="round"/>
+    </g>}
     {art === "shrimp" && <g transform="rotate(-15 50 50)">
       <path d="M66 26C35 9 9 34 19 62c8 23 39 30 56 10L59 59C48 72 31 60 35 47c4-12 17-11 23-5Z" fill="#e69b80" stroke="#af6753" strokeWidth="2"/>
       <path d="m65 26 17-7-8 24-16-1Z" fill="#dc896d" stroke="#af6753" strokeWidth="2"/>

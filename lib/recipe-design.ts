@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import type { CountrySlug, Recipe } from "./content";
 
 export type RecipePattern = "grain" | "tiles" | "waves" | "contours" | "linen";
-export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble" | "lentil-stew";
+export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble" | "lentil-stew" | "jujube-porridge" | "garlic-chicken" | "perilla-kalguksu" | "grape-salad";
 export type RecipeDesign = {
   paper: string; soft: string; from: string; mid: string; to: string;
   ink: string; muted: string; accent: string; dark: string; line: string;
@@ -20,6 +20,10 @@ const places: Record<CountrySlug, [string, RecipePattern]> = {
 
 // Visual interpretations of ingredients and places, not claims of traditional patterns.
 const details: Record<string, { art: RecipeArt; caption: string; place?: string; pattern?: RecipePattern; colors?: [string, string, string, string] }> = {
+  "boeun-jujube-rice-porridge": { art: "jujube-porridge", caption: "보은 대추의 적갈색과 부드럽게 내린 죽의 따뜻한 빛", pattern: "grain" },
+  "danyang-garlic-roast-chicken": { art: "garlic-chicken", caption: "단양의 밝은 돌빛과 통마늘, 노릇한 닭구이의 금빛", pattern: "contours" },
+  "goesan-cabbage-perilla-kalguksu": { art: "perilla-kalguksu", caption: "괴산 배추 속잎의 연두와 들깨 국물의 크림색", pattern: "linen" },
+  "yeongdong-grape-ricotta-salad": { art: "grape-salad", caption: "영동 포도의 보라와 흰 리코타, 과수원 잎의 초록", pattern: "grain" },
   "auvergne-inspired-lentil-sausage-stew": { art: "lentil-stew", caption: "오베르뉴 고원의 회청색, 렌틸콩의 흙빛과 소시지의 구운 갈색", pattern: "contours" },
   "gongju-chestnut-cream-pasta": { art: "chestnut-pasta", caption: "공주 알밤의 갈색과 부드러운 크림 소스의 아이보리", pattern: "grain" },
   "taean-salt-roasted-prawns": { art: "salt-shrimp", caption: "태안 바다의 푸른색과 소금 위 새우의 산호빛", pattern: "waves" },

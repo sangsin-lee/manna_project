@@ -3,6 +3,7 @@ import { koreaSources as sources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
 import { chungnamSources } from "./chungnam-sources";
+import { chungbukSources } from "./chungbuk-sources";
 
 export const seasons = [
   { id: "spring", label: "봄", months: "3–5월", mark: "✿" },
@@ -11,7 +12,7 @@ export const seasons = [
   { id: "winter", label: "겨울", months: "12–2월", mark: "❄" },
 ] as const;
 export type Season = (typeof seasons)[number]["id"];
-export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean" | "buckwheat" | "deodeok" | "corn" | "shrimp" | "ginger";
+export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean" | "buckwheat" | "deodeok" | "corn" | "shrimp" | "ginger" | "jujube" | "garlic" | "cabbage";
 export type PantryRecipe = { title: string; meta: string; ingredients: string; steps: string[]; note?: string };
 export type Specialty = { name: string; art: SpecialtyArt; timing: string; seasons: Season[]; note: string };
 export type KoreanRegion = {
@@ -64,13 +65,18 @@ export const koreanRegions: KoreanRegion[] = [
     sources: [gangwonSources.potatoHarvest, gangwonSources.ongsimi, gangwonSources.market, gangwonSources.buckwheatHarvest, gangwonSources.deodeok, gangwonSources.deodeokHarvest, gangwonSources.corn],
   },
   {
-    id: "chungbuk", name: "충북", english: "CHUNGBUK", area: "영동의 포도밭", icon: "grape", pin: [127.88, 36.93],
-    headline: "알알이 맺힌 보랏빛 계절", description: "영동의 포도를 생과와 가벼운 소스로 즐깁니다. 과수원에서 식탁까지, 품종마다 다른 산미와 향을 읽어 보세요.",
-    colors: ["#59445e", "#e9dce8", "#bca0be"], colorStory: "포도 껍질의 보라와 잎의 차분한 색",
-    specialties: [{ name: "영동 포도", art: "grape", timing: "늦여름~가을 · 품종별 차이", seasons: ["summer", "autumn"], note: "영동군은 8월 말~9월 초 포도 수확기의 농장 체험을 소개합니다. 모든 품종의 수확 시기가 같지는 않습니다." }],
-    seasonNotes: { spring: "생과 수확 전에는 포도잼이나 가공품으로 과일의 향을 만납니다. 봄 제철 포도로 표시하지 않습니다.", summer: "여름 끝자락, 포도가 익기 시작합니다. 포도밭의 수확 시기는 품종별로 달라집니다.", autumn: "가을에는 품종별 향과 산미를 비교해 보세요. 씨와 껍질의 식감에 따라 생과 또는 소스로 즐깁니다.", winter: "저장·냉동 포도나 잼으로 여름의 향을 이어갑니다. 가공품은 당 함량을 보고 사용량을 조절하세요." },
+    id: "chungbuk", name: "충북", english: "CHUNGBUK", area: "보은 · 단양 · 괴산 · 영동", icon: "grape", pin: [127.88, 36.93],
+    headline: "과수원의 단맛, 밭에서 온 온기", description: "보은 대추의 은근한 단맛, 단양 마늘의 구운 향, 괴산 배추의 달큰함과 영동 포도의 산미. 과수원과 밭을 따라 충북의 계절을 한 접시씩 만납니다.",
+    colors: ["#59445e", "#e9dce8", "#bca0be"], colorStory: "영동 포도의 보라와 보은 대추의 적갈색, 배추 잎의 연둣빛",
+    specialties: [
+      { name: "영동 포도", art: "grape", timing: "늦여름~가을 · 품종별 차이", seasons: ["summer", "autumn"], note: "영동군은 한 농장의 8월 말~9월 초 수확기 체험을 소개합니다. 모든 품종의 수확 시기나 올해 체험 일정이 같다는 뜻은 아닙니다." },
+      { name: "보은 대추", art: "jujube", timing: "가을 수확 · 건대추는 연중", seasons: ["autumn"], note: "가을에 수확하는 생대추와 말려 보관하는 건대추를 구분합니다. 죽에는 무가당 건대추를 사용해 다른 계절에도 향을 즐깁니다." },
+      { name: "단양 마늘", art: "garlic", timing: "여름 · 6월 하지 무렵", seasons: ["summer"], note: "단양군은 6월 마늘 수확과 지역의 석회암 토양을 소개합니다. 가을·겨울의 마늘 요리에는 저장 마늘을 활용합니다." },
+      { name: "괴산 배추", art: "cabbage", timing: "늦가을 · 김장배추 수확철", seasons: ["autumn"], note: "가을 김장배추 출하는 10월 중·하순부터 이어지며 품종·산지에 따라 다릅니다. 칼국수에는 절임배추가 아닌 생배추를 씁니다." },
+    ],
+    seasonNotes: { spring: "저장 마늘로 닭구이를, 말린 대추로 부드러운 죽을 만듭니다. 생과와 김장배추의 새 수확철은 아니므로 구입한 재료의 산지를 확인합니다.", summer: "하지 무렵 단양 마늘 수확이 이어지고, 늦여름에는 품종별 포도가 익습니다. 한여름과 여름 끝자락의 장바구니를 구분해 보세요.", autumn: "포도와 대추에서 늦가을 김장배추로 이어지는 계절입니다. 9월의 배추를 모두 괴산 햇김장배추로 표시하지 않으며, 마늘은 여름에 거둔 저장 재료를 씁니다.", winter: "건대추와 저장 마늘로 따뜻한 죽과 구이를 만듭니다. 저장 배추와 겨울 산지의 배추를 구분하고, 신선한 포도가 없으면 기존 콩포트에 냉동 포도를 활용합니다." },
     pantry: { title: "포도 콩포트 요거트", meta: "2인분 · 25분", ingredients: "씨 없는 포도 200g, 설탕 10g, 물 1큰술, 요거트 200g", steps: ["포도를 씻어 반으로 자릅니다. 씨가 있는 품종은 씨를 제거합니다.", "냄비에 포도, 설탕, 물을 넣고 중약불에서 8~10분 졸입니다.", "얕은 그릇에 옮겨 식힌 뒤 요거트에 나누어 얹습니다."], note: "제철 밖에는 냉동 포도를 쓰거나, 포도잼 40g으로 소스 단계를 대신할 수 있습니다." },
-    recipeSlugs: [], sources: [sources.grape],
+    recipeSlugs: ["boeun-jujube-rice-porridge", "danyang-garlic-roast-chicken", "goesan-cabbage-perilla-kalguksu", "yeongdong-grape-ricotta-salad"], sources: [chungbukSources.jujube, chungbukSources.jujubeSeason, chungbukSources.garlic, chungbukSources.cabbage, chungbukSources.cabbageCulture, chungbukSources.cabbageSeason, chungbukSources.grape],
   },
   {
     id: "chungnam", name: "충남", english: "CHUNGNAM", area: "공주 · 태안 · 서산 · 예산", icon: "chestnut", pin: [126.63, 36.55],

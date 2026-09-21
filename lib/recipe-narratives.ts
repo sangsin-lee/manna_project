@@ -3,6 +3,7 @@ import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
 import { chungnamSources } from "./chungnam-sources";
+import { chungbukSources } from "./chungbuk-sources";
 
 export type RecipeNarrativeChapter = {
   section: string;
@@ -44,6 +45,30 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "boeun-jujube-rice-porridge": narrative(
+    ["보은의 대추가 한 그릇으로", "한국문화원연합회는 보은대추를 조선시대부터 알려진 토산물로 소개합니다. 오래된 지역 재료의 이야기에서 출발해, 이번에는 말린 대추를 푹 끓이고 체에 내린 부드러운 죽을 만듭니다."],
+    ["가을 열매를 다른 계절에도", "생대추는 가을 수확의 즐거움을, 건대추는 보관하며 쓰는 편리함을 줍니다. 이 죽은 무가당 건대추와 찹쌀가루를 쓰는 가정용 배합입니다. 옛 문헌에 실린 보은 향토죽의 조리법을 재현한 것은 아닙니다."],
+    ["은근한 단맛과 매끄러운 질감", "대추 과육을 눌러 내리면 거친 껍질은 줄고 향은 국물에 남습니다. 찹쌀가루는 부드러운 농도를 만들며, 작은 소금 한 꼬집이 대추의 단맛을 또렷하게 합니다. 따뜻한 간식으로 천천히 떠먹습니다."],
+    [chungbukSources.jujube, chungbukSources.jujubeSeason],
+  ),
+  "danyang-garlic-roast-chicken": narrative(
+    ["단양의 밭에서 온 통마늘", "단양군은 지역 마늘이 석회암 지대의 토양과 큰 일교차 속에서 자란다고 소개합니다. 통마늘을 넉넉하게 넣고 닭다리살과 함께 구워 재료의 향을 식탁의 중심에 둡니다."],
+    ["여름 수확을 가을의 팬으로", "단양의 마늘 수확은 하지 무렵 이어집니다. 가을에 이 요리를 만들 때는 여름에 거둔 저장 마늘을 사용합니다. 지역의 전통 닭요리라는 설명 대신, 산지 재료를 활용한 오늘의 집밥으로 소개합니다."],
+    ["바삭한 껍질, 부드러운 마늘", "노릇한 닭 껍질과 속까지 익혀 촉촉한 살에 구운 마늘이 어울립니다. 마늘은 충분히 익으면 으깨 먹기 부드러워지고, 마지막의 레몬즙이 버터 향에 산뜻함을 보탭니다."],
+    [chungbukSources.garlic],
+  ),
+  "goesan-cabbage-perilla-kalguksu": narrative(
+    ["김장 산지의 배추를 국수에", "괴산군농업기술센터는 절임배추를 지역의 대표 특산물로 소개합니다. 이 칼국수는 같은 산지의 절이지 않은 배추를 선택해, 줄기와 잎이 가진 달큰한 맛을 국물로 옮긴 응용입니다."],
+    ["늦가을의 밭과 집의 냄비", "김장배추의 가을 출하는 10월 중·하순부터 이어집니다. 산지와 품종에 따라 차이가 있으므로 초가을의 배추와 구분합니다. 배추를 김치로 저장하는 쓰임에서 한 걸음 넓혀 따뜻한 국수 한 끼로 즐깁니다."],
+    ["달큰한 배추와 고소한 들깨", "배추 줄기는 얇게 썰어 부드럽게 익히고 잎은 국물의 단맛을 보탭니다. 들깨가루와 면의 전분이 크림빛 국물을 만들며, 버섯이 사이사이에 씹는 맛을 더합니다."],
+    [chungbukSources.cabbage, chungbukSources.cabbageCulture, chungbukSources.cabbageSeason],
+  ),
+  "yeongdong-grape-ricotta-salad": narrative(
+    ["포도밭에서 접시까지", "영동군의 관광 안내에는 포도를 재배하는 농장과 와인 만들기 체험이 함께 등장합니다. 생과와 가공으로 이어지는 지역 재료를 이번에는 익히지 않은 포도 샐러드로 맛봅니다."],
+    ["품종을 읽으면 계절이 보입니다", "영동군이 소개한 농장 사례의 수확기는 늦여름에서 초가을입니다. 모든 포도가 같은 때 익는 것은 아니므로 품종과 산지를 살펴 고릅니다. 리코타를 곁들이는 조합은 만나의 식탁의 가정용 응용입니다."],
+    ["과즙과 치즈 사이의 대비", "반으로 자른 포도에서 새콤달콤한 과즙이 퍼지고, 리코타는 부드러운 우유 맛으로 받쳐 줍니다. 잎채소와 호두, 구운 빵이 서로 다른 씹는 맛을 더합니다. 드레싱은 먹기 직전에 가볍게 더합니다."],
+    [chungbukSources.grape],
+  ),
   "auvergne-inspired-lentil-sausage-stew": narrative(
     ["벨레 고원의 작은 렌틸콩","프랑스 오트루아르의 벨레 고원은 르퓌 렌틸콩으로 알려져 있습니다. 지방정부는 지역의 재배 흔적을 갈로로마 시대로 거슬러 소개합니다. 오래된 것은 이 재료의 지역 역사이며, 오늘의 소시지 스튜 배합이 그때부터 전해졌다는 뜻은 아닙니다."],
     ["수확한 콩이 일상의 식탁으로","현지의 렌틸 수확은 통상 늦여름부터 초가을까지 이어집니다. 건조해 보관하는 콩은 이후 계절에도 요리에 쓰입니다. 오베르뉴의 렌틸콩과 샤퀴트리 식문화에서 출발해, 여기서는 통렌틸콩과 시판 가열 소시지로 집밥을 구성했습니다."],

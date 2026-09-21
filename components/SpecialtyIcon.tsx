@@ -4,6 +4,12 @@ import type { SpecialtyArt } from "@/lib/korea-table";
 export default function SpecialtyIcon({ art, className = "" }: { art: SpecialtyArt; className?: string }) {
   return <svg className={className} viewBox="0 0 100 100" fill="none" aria-hidden="true">
     <ellipse cx="51" cy="85" rx="30" ry="5" fill="#45392c" opacity=".1" />
+    {art === "mushroom" && <g>
+      <path d="M40 45 33 82q18 9 35 0L59 45Z" fill="#e7d7b7" stroke="#aa9070" strokeWidth="2"/>
+      <path d="M12 49C13 5 86 5 88 49q-33 24-76 0Z" fill="#916d50" stroke="#654e3c" strokeWidth="2"/>
+      <path d="m31 30 36 9m-12-20-12 28" stroke="#d9c4a4" strokeWidth="5" strokeLinecap="round"/>
+      <path d="M23 51q26 14 54 0m-29 13-2 15" stroke="#c5ac88" strokeWidth="3" strokeLinecap="round"/>
+    </g>}
     {art === "jujube" && <g>
       {[[35,54,-28],[67,54,20]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><ellipse rx="21" ry="30" fill="#a15842" stroke="#723e32" strokeWidth="2"/><path d="M-9-18q-8 12-5 27" stroke="#d68b66" strokeWidth="4" strokeLinecap="round"/><path d="M0-28v-10" stroke="#72553a" strokeWidth="3"/></g>)}
       <path d="M49 23Q65 4 81 18 68 34 49 23Z" fill="#819165"/>

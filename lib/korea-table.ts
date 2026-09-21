@@ -4,6 +4,7 @@ import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
 import { chungnamSources } from "./chungnam-sources";
 import { chungbukSources } from "./chungbuk-sources";
+import { jeonbukSources } from "./jeonbuk-sources";
 
 export const seasons = [
   { id: "spring", label: "봄", months: "3–5월", mark: "✿" },
@@ -12,7 +13,7 @@ export const seasons = [
   { id: "winter", label: "겨울", months: "12–2월", mark: "❄" },
 ] as const;
 export type Season = (typeof seasons)[number]["id"];
-export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean" | "buckwheat" | "deodeok" | "corn" | "shrimp" | "ginger" | "jujube" | "garlic" | "cabbage";
+export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean" | "buckwheat" | "deodeok" | "corn" | "shrimp" | "ginger" | "jujube" | "garlic" | "cabbage" | "mushroom";
 export type PantryRecipe = { title: string; meta: string; ingredients: string; steps: string[]; note?: string };
 export type Specialty = { name: string; art: SpecialtyArt; timing: string; seasons: Season[]; note: string };
 export type KoreanRegion = {
@@ -93,13 +94,23 @@ export const koreanRegions: KoreanRegion[] = [
     recipeSlugs: ["gongju-chestnut-cream-pasta", "taean-salt-roasted-prawns", "seosan-ginger-pork-rice-bowl", "yesan-apple-crumble"], sources: [chungnamSources.chestnut, chungnamSources.shrimp, chungnamSources.shrimpSeason, chungnamSources.ginger, chungnamSources.gingerHarvest, chungnamSources.apple],
   },
   {
-    id: "jeonbuk", name: "전북", english: "JEONBUK", area: "고창의 복분자 밭", icon: "berry", pin: [126.95, 35.7],
-    headline: "짙은 열매, 산뜻한 한 스푼", description: "고창을 비롯한 전북의 복분자는 짙은 자주색이 매력입니다. 과일의 산미를 살려 디저트의 작은 포인트로 씁니다.",
+    id: "jeonbuk", name: "전북", english: "JEONBUK", area: "고창 · 익산 · 진안 · 장수", icon: "berry", pin: [126.95, 35.7],
+    headline: "밭의 단맛, 산의 향, 고원의 과즙", description: "고창 복분자의 짙은 산미, 익산 고구마의 포슬함, 진안 표고의 쫄깃함, 장수 사과의 과즙. 네 지역의 재료를 구이와 전, 잡채와 고기말이로 즐깁니다.",
     colors: ["#65364b", "#efdee5", "#c68b9e"], colorStory: "복분자의 자주색과 황토의 부드러운 분홍",
-    specialties: [{ name: "고창 복분자", art: "berry", timing: "초여름 · 6월 중심", seasons: ["summer"], note: "수확 기간이 짧은 열매입니다. 냉동 과육이나 가공 소스로 다른 계절에도 향과 색을 이어갑니다." }],
-    seasonNotes: { spring: "올해의 수확을 기다리는 때입니다. 냉동 복분자나 과일 소스를 활용할 수 있습니다.", summer: "복분자가 짙게 익는 초여름. 수확한 열매는 오래 두지 않고 소스로 만들어 즐기기 좋습니다.", autumn: "냉동 복분자로 여름의 색을 꺼내 보세요. 가을에 새로 수확한 복분자와는 구분합니다.", winter: "따뜻한 팬케이크에 복분자 소스를 조금 얹어 보세요. 저장·가공한 재료를 활용하는 겨울의 방법입니다." },
+    specialties: [
+      { name: "고창 복분자", art: "berry", timing: "초여름 · 6월 중심", seasons: ["summer"], note: "전북농업기술원이 소개하는 주요 산지의 열매입니다. 가을과 겨울에는 냉동 과육을 쓰며 그 계절의 햇복분자와 구분합니다." },
+      { name: "익산 고구마", art: "sweet-potato", timing: "늦여름~가을 · 농장별 차이", seasons: ["summer", "autumn"], note: "죽청대파니마을의 2026년 수확 체험은 8~10월 안내입니다. 특정 농장의 운영 기간으로, 모든 품종의 수확일을 뜻하지 않습니다. 저장품도 활용합니다." },
+      { name: "진안 표고버섯", art: "mushroom", timing: "재배 방식별 차이 · 시설재배 연중", seasons: ["spring", "summer", "autumn", "winter"], note: "진안 성수면의 지역 특산품입니다. 원목·톱밥과 품종에 따라 생산 시기가 다르며, 시설재배 생표고는 가을 이외의 계절에도 만날 수 있습니다." },
+      { name: "장수 사과", art: "apple", timing: "가을 · 홍로는 9월 수확기", seasons: ["autumn"], note: "장수 고원의 사과를 과즙 있는 요리에 활용합니다. 홍로와 다른 품종의 수확기는 다르며 저장 사과의 유통과도 구분합니다." },
+    ],
+    seasonNotes: {
+      spring: "시설재배 표고로 따뜻한 잡채를 만들고, 보관 상태가 좋은 저장 고구마나 냉동 복분자를 함께 활용합니다. 아래 생표고는 봄에도 생산되지만 복분자와 사과의 새 수확철은 아닙니다.",
+      summer: "6월 무렵 복분자를 만납니다. 익산 고구마는 늦여름부터 수확 체험이 안내되어 6월 햇고구마와 구분해야 합니다. 표고는 재배 방식에 따라 연중 생산됩니다.",
+      autumn: "익산 고구마와 장수 사과의 수확철에 재배 표고를 더합니다. 홍로는 9월 수확기이며 다른 품종은 차이가 있습니다. 복분자 오리구이는 초여름 열매를 냉동해 두었다가 활용하는 메뉴입니다.",
+      winter: "시설재배 생표고와 저장 사과·고구마, 냉동 복분자로 식탁을 잇습니다. 표고는 겨울에도 생산될 수 있지만 다른 세 재료를 겨울 햇수확으로 소개하지 않습니다. 제품별 보관 안내를 확인하세요.",
+    },
     pantry: { title: "복분자 요거트 볼", meta: "2인분 · 25분", ingredients: "복분자 150g, 설탕 15g, 물 1큰술, 요거트 200g, 그래놀라 30g", steps: ["복분자와 설탕, 물을 냄비에 넣고 중약불에서 7~8분 끓입니다. 냉동 제품은 포장의 가열 안내도 따릅니다.", "거친 씨가 싫으면 체에 거른 뒤 얕은 그릇에서 식힙니다.", "요거트 위에 소스와 그래놀라를 나누어 올립니다."], note: "우유·견과류 등 그래놀라의 알레르기 성분을 확인합니다." },
-    recipeSlugs: [], sources: [sources.berry],
+    recipeSlugs: ["gochang-bokbunja-duck", "iksan-sweet-potato-cheese-jeon", "jinan-shiitake-japchae", "jangsu-apple-pork-rolls"], sources: [jeonbukSources.berry, jeonbukSources.sweetPotato, jeonbukSources.mushroom, jeonbukSources.mushroomGrowing, jeonbukSources.apple, jeonbukSources.appleSeason],
   },
   {
     id: "jeonnam", name: "전남", english: "JEONNAM", area: "고흥의 유자밭", icon: "citrus", pin: [126.58, 34.68],

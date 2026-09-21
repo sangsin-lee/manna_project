@@ -4,6 +4,7 @@ import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
 import { chungnamSources } from "./chungnam-sources";
 import { chungbukSources } from "./chungbuk-sources";
+import { jeonbukSources } from "./jeonbuk-sources";
 
 export type RecipeNarrativeChapter = {
   section: string;
@@ -45,6 +46,30 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "gochang-bokbunja-duck": narrative(
+    ["고창의 짙은 열매", "전북농업기술원은 고창을 복분자의 주요 산지로 소개합니다. 검붉게 익는 작은 열매를 푹 끓여, 오늘은 고기 옆에 놓는 새콤달콤한 소스로 만듭니다."],
+    ["초여름의 색을 가을에도", "복분자는 6월 무렵 수확합니다. 가을 식탁에서는 무가당 냉동 과육으로 그 색과 향을 이어갑니다. 훈제오리와의 조합은 지역 열매를 활용한 가정용 응용이며 전통 향토요리의 재현은 아닙니다."],
+    ["짙은 산미와 노릇한 오리", "복분자의 산미와 단맛이 훈제오리의 짭짤함에 대비를 만듭니다. 거친 씨를 체에 거르면 소스가 매끄러워지고, 아삭한 오이와 잎채소를 곁들이면 한입마다 씹는 맛이 달라집니다."],
+    [jeonbukSources.berry],
+  ),
+  "iksan-sweet-potato-cheese-jeon": narrative(
+    ["익산의 밭에서 캐는 고구마", "익산 삼기면의 죽청대파니마을은 직접 재배한 고구마를 캐는 체험을 소개합니다. 흙 속에서 꺼낸 지역 재료를 찌고 으깨, 손바닥보다 작은 전으로 옮겨 봅니다."],
+    ["수확 경험에서 집의 팬으로", "마을의 2026년 수확 체험 안내는 8월부터 10월까지입니다. 한 농장의 운영 기간으로 품종 전체의 수확 달력과는 다릅니다. 치즈를 채워 굽는 방식은 오늘의 가정용 조합입니다."],
+    ["포슬한 속과 늘어나는 치즈", "찐 고구마는 포슬하고 달큰하며, 팬에 닿은 겉면은 얇게 구워집니다. 가운데 치즈는 짭짤하고 부드러운 대비를 줍니다. 잠깐 식힌 뒤 반으로 열면 따뜻한 속의 질감을 볼 수 있습니다."],
+    [jeonbukSources.sweetPotato],
+  ),
+  "jinan-shiitake-japchae": narrative(
+    ["진안의 표고 재배 이야기", "진안군 성수면은 표고버섯을 지역 특산품으로 소개합니다. 나무에서 자라는 버섯의 이야기를 식탁으로 가져와, 도톰하게 썬 표고가 중심이 되는 잡채를 만듭니다."],
+    ["계절과 재배 방식을 함께 읽기", "표고는 품종과 원목·톱밥 재배 방식에 따라 생산 시기가 달라집니다. 시설을 갖추면 연중 생산할 수 있어 가을에만 나는 버섯은 아닙니다. 이번 잡채는 지역 재료를 활용한 집밥 응용입니다."],
+    ["쫄깃한 갓, 매끄러운 당면", "충분히 볶은 표고는 부드러우면서도 쫄깃합니다. 당면에 간장 양념을 가볍게 배게 하고 시금치와 당근으로 색을 보탭니다. 마지막 참기름은 표고 향 위에 고소한 여운을 남깁니다."],
+    [jeonbukSources.mushroom, jeonbukSources.mushroomGrowing],
+  ),
+  "jangsu-apple-pork-rolls": narrative(
+    ["장수 고원의 사과밭", "장수군은 고원 지역에서 자라는 사과와 큰 일교차를 지역 재배의 특징으로 소개합니다. 생과로 즐기는 사과를 얇은 고기에 말아 익혀 과즙을 따뜻한 요리 속에 담았습니다."],
+    ["추석 사과의 새로운 쓰임", "장수군의 홍로 출하 사례와 농촌진흥청 자료는 9월의 홍로 수확기를 보여 줍니다. 다른 품종은 시기가 다릅니다. 사과를 돼지고기에 말아 굽는 배합은 전통 음식의 재현이 아닌 가정용 응용입니다."],
+    ["부드러운 과즙과 간장의 윤기", "가늘게 썬 사과는 고기 안에서 익으며 부드러워지고, 간장 양념은 바깥에 가벼운 윤기를 남깁니다. 두껍게 말지 않고 중심까지 충분히 익힌 뒤 밥과 함께 먹으면 달큰함과 짭짤함이 어울립니다."],
+    [jeonbukSources.apple, jeonbukSources.appleSeason],
+  ),
   "boeun-jujube-rice-porridge": narrative(
     ["보은의 대추가 한 그릇으로", "한국문화원연합회는 보은대추를 조선시대부터 알려진 토산물로 소개합니다. 오래된 지역 재료의 이야기에서 출발해, 이번에는 말린 대추를 푹 끓이고 체에 내린 부드러운 죽을 만듭니다."],
     ["가을 열매를 다른 계절에도", "생대추는 가을 수확의 즐거움을, 건대추는 보관하며 쓰는 편리함을 줍니다. 이 죽은 무가당 건대추와 찹쌀가루를 쓰는 가정용 배합입니다. 옛 문헌에 실린 보은 향토죽의 조리법을 재현한 것은 아닙니다."],

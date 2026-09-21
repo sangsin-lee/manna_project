@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import type { CountrySlug, Recipe } from "./content";
 
 export type RecipePattern = "grain" | "tiles" | "waves" | "contours" | "linen";
-export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble" | "lentil-stew" | "jujube-porridge" | "garlic-chicken" | "perilla-kalguksu" | "grape-salad";
+export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble" | "lentil-stew" | "jujube-porridge" | "garlic-chicken" | "perilla-kalguksu" | "grape-salad" | "berry-duck" | "cheese-jeon" | "shiitake-japchae" | "apple-pork-rolls";
 export type RecipeDesign = {
   paper: string; soft: string; from: string; mid: string; to: string;
   ink: string; muted: string; accent: string; dark: string; line: string;
@@ -20,6 +20,10 @@ const places: Record<CountrySlug, [string, RecipePattern]> = {
 
 // Visual interpretations of ingredients and places, not claims of traditional patterns.
 const details: Record<string, { art: RecipeArt; caption: string; place?: string; pattern?: RecipePattern; colors?: [string, string, string, string] }> = {
+  "gochang-bokbunja-duck": { art: "berry-duck", caption: "고창 복분자의 자주색과 구운 오리의 따뜻한 갈색", pattern: "grain" },
+  "iksan-sweet-potato-cheese-jeon": { art: "cheese-jeon", caption: "익산 고구마 속살의 금빛과 치즈의 크림색", pattern: "linen" },
+  "jinan-shiitake-japchae": { art: "shiitake-japchae", caption: "진안 표고의 흙빛과 산자락을 떠올리는 겹친 선", pattern: "contours" },
+  "jangsu-apple-pork-rolls": { art: "apple-pork-rolls", caption: "장수 사과의 붉은 껍질과 고원 과수원의 부드러운 빛", pattern: "contours" },
   "boeun-jujube-rice-porridge": { art: "jujube-porridge", caption: "보은 대추의 적갈색과 부드럽게 내린 죽의 따뜻한 빛", pattern: "grain" },
   "danyang-garlic-roast-chicken": { art: "garlic-chicken", caption: "단양의 밝은 돌빛과 통마늘, 노릇한 닭구이의 금빛", pattern: "contours" },
   "goesan-cabbage-perilla-kalguksu": { art: "perilla-kalguksu", caption: "괴산 배추 속잎의 연두와 들깨 국물의 크림색", pattern: "linen" },

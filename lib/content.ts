@@ -5,6 +5,7 @@ import { gyeonggiRecipes } from "./gyeonggi-recipes";
 import { gangwonRecipes } from "./gangwon-recipes";
 import { chungnamRecipes } from "./chungnam-recipes";
 import { chungbukRecipes } from "./chungbuk-recipes";
+import { jeonbukRecipes } from "./jeonbuk-recipes";
 
 export type CountrySlug =
   | "korea"
@@ -310,6 +311,7 @@ export const countries: Country[] = [
     ],
     storySlugs: ["korean-banchan-culture", "korean-market-food"],
     recipeSlugs: [
+      ...jeonbukRecipes.map((recipe) => recipe.slug),
       ...chungbukRecipes.map((recipe) => recipe.slug),
       ...chungnamRecipes.map((recipe) => recipe.slug),
       ...gangwonRecipes.map((recipe) => recipe.slug),
@@ -320,7 +322,7 @@ export const countries: Country[] = [
       "club-suyuk-platter",
       "club-bean-sprout-egg-ramyeon",
     ],
-    updatedAt: "2026-09-21",
+    updatedAt: "2026-09-22",
     palette: {
       from: "#f1e4d6",
       mid: "#dfe8df",
@@ -2791,6 +2793,7 @@ export const stories: Story[] = [
 ];
 
 export const recipes: Recipe[] = [
+  ...jeonbukRecipes,
   ...chungbukRecipes,
   ...chungnamRecipes,
   ...gangwonRecipes,

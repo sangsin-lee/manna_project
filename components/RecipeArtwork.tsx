@@ -11,6 +11,31 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="132" stroke={ink} strokeOpacity=".18" />
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
+        {art === "berry-duck" && <g>
+          <path d="M214 189c-36 44 25 94 107 77s106-60 72-81c-43-27-84 42-130 16-28-16-37-27-49-12Z" fill="#8a415d" opacity=".9"/>
+          {[[238,155,-24],[270,167,-18],[303,179,-12],[336,191,-6],[367,203,0]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><ellipse rx="23" ry="47" fill="#b17b59" stroke="#85573e" strokeWidth="3"/><ellipse cy="-2" rx="16" ry="36" fill="#d7a48b"/><path d="M-12-27q15-10 25 0" stroke="#efd2aa" strokeWidth="5" strokeLinecap="round"/></g>)}
+          {[[224,242],[244,258],[260,238]].map(([x,y])=><g key={x} transform={`translate(${x} ${y})`}>{[[-5,-5],[5,-5],[0,5],[-7,4],[7,4],[0,-11]].map(([a,b])=><circle key={`${a}-${b}`} cx={a} cy={b} r="5" fill="#61354b" stroke="#a96b88"/>)}</g>)}
+          <path d="M337 112q18-38 46-11-15 30-46 11Zm26 17q34-15 40 16-34 12-40-16Z" fill="#81966a"/>
+        </g>}
+        {art === "cheese-jeon" && <g>
+          {[[252,143,-15],[341,142,12],[238,220,-22],[326,226,18]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><ellipse rx="43" ry="36" fill="#d8aa58" stroke="#ae7b40" strokeWidth="3"/><ellipse cy="-3" rx="34" ry="25" fill="#ecc97b"/><path d="m-22-11 12-5m18 5 14 7m-30 12 13 6" stroke="#ba884b" strokeWidth="5" strokeLinecap="round"/></g>)}
+          <path d="m314 208 30-10 12 54-33 5Z" fill="#f5de9d"/><path d="m319 213 24-8m-22 18 26-9m-23 22 25-10m-22 19 23-9" stroke="#fff3c8" strokeWidth="4" strokeLinecap="round"/>
+          <g transform="translate(388 247) rotate(-25)"><ellipse rx="22" ry="34" fill="#9e607b"/><ellipse rx="17" ry="28" fill="#edc97d"/></g>
+          <path d="m220 119 10-5m75 151 12-6m57-83 9-5" stroke="#87945b" strokeWidth="4" strokeLinecap="round"/>
+        </g>}
+        {art === "shiitake-japchae" && <g>
+          <ellipse cx="300" cy="192" rx="105" ry="86" fill="#b9976c"/>
+          {Array.from({length:17},(_,i)=><path key={i} d={`M${220+i*8} ${143+(i%4)*13}C${379-i*5} ${102+i*8} ${208+i*7} ${265-i*3} ${380-i*8} ${217+(i%3)*11}`} stroke={i%2?"#ddc49c":"#96734f"} strokeWidth="4" strokeLinecap="round"/>)}
+          {[[246,146,-30],[348,147,25],[299,213,-12],[361,227,30]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><path d="M-5 0v25h10V0" fill="#e6d9bb" stroke="#a28b6d" strokeWidth="2"/><path d="M-26 3Q0-38 26 3q-23 12-52 0Z" fill="#82624b" stroke="#644e3d" strokeWidth="2"/><path d="m-11-6 22-2M0-19l1 19" stroke="#d1b99b" strokeWidth="3" strokeLinecap="round"/></g>)}
+          <path d="m234 189 23 18m56-78 20 22m-18 103 21-11m-107-20 14 11" stroke="#d39b63" strokeWidth="6" strokeLinecap="round"/>
+          <path d="m262 252 25-13m-55-75 26 8m72 16 25-17m-68-24 12 23" stroke="#77835b" strokeWidth="7" strokeLinecap="round"/>
+        </g>}
+        {art === "apple-pork-rolls" && <g>
+          {[[247,150,-28],[319,139,14],[275,226,-15],[348,210,22]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><rect x="-25" y="-25" width="50" height="67" rx="20" fill="#b47b59" stroke="#86593e" strokeWidth="3"/><ellipse cy="-21" rx="25" ry="21" fill="#d6aa86" stroke="#86593e" strokeWidth="3"/><ellipse cy="-21" rx="17" ry="14" fill="#efd9a7"/><path d="m-9-26 17 3m-16 7 17-2" stroke="#bd735b" strokeWidth="4" strokeLinecap="round"/><path d="M-17 4q17 9 34 0m-31 14q14 7 28 0" stroke="#9c674a" strokeWidth="3"/></g>)}
+          <path d="M370 105q-3-15 8-22" stroke="#765941" strokeWidth="4" strokeLinecap="round"/><path d="M376 96q18-18 32-4-18 20-32 4Z" fill="#8c9c73"/>
+          <path d="M370 109c-38-20-43 42-11 56 17 4 40-32 32-47-6-12-13-15-21-9Z" fill="#b96859" stroke="#915247" strokeWidth="2"/><path d="M370 111q-27 6-10 47 24-20 10-47Z" fill="#f1dda7"/>
+          <path d="m229 248-13 18m85 10 17-8m73-70 13 5" stroke="#81926b" strokeWidth="5" strokeLinecap="round"/>
+        </g>}
         {art === "jujube-porridge" && <g>
           <circle cx="300" cy="188" r="109" fill="#ad7865"/><circle cx="300" cy="188" r="98" fill="#c9966e"/>
           <path d="M245 175c-5-33 97-44 105-7s-72 58-88 27 47-43 62-19-18 37-32 24" stroke="#dfb58d" strokeWidth="8" strokeLinecap="round"/>

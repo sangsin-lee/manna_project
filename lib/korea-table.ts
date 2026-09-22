@@ -6,6 +6,7 @@ import { chungnamSources } from "./chungnam-sources";
 import { chungbukSources } from "./chungbuk-sources";
 import { jeonbukSources } from "./jeonbuk-sources";
 import { jeonnamSources } from "./jeonnam-sources";
+import { gyeongnamSources } from "./gyeongnam-sources";
 
 export const seasons = [
   { id: "spring", label: "봄", months: "3–5월", mark: "✿" },
@@ -14,7 +15,7 @@ export const seasons = [
   { id: "winter", label: "겨울", months: "12–2월", mark: "❄" },
 ] as const;
 export type Season = (typeof seasons)[number]["id"];
-export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean" | "buckwheat" | "deodeok" | "corn" | "shrimp" | "ginger" | "jujube" | "garlic" | "cabbage" | "mushroom" | "fig" | "octopus" | "cockle";
+export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean" | "buckwheat" | "deodeok" | "corn" | "shrimp" | "ginger" | "jujube" | "garlic" | "cabbage" | "mushroom" | "fig" | "octopus" | "cockle" | "oyster" | "spinach";
 export type PantryRecipe = { title: string; meta: string; ingredients: string; steps: string[]; note?: string };
 export type Specialty = { name: string; art: SpecialtyArt; timing: string; seasons: Season[]; note: string };
 export type KoreanRegion = {
@@ -142,13 +143,23 @@ export const koreanRegions: KoreanRegion[] = [
     recipeSlugs: [], sources: [sources.apple],
   },
   {
-    id: "gyeongnam", name: "경남", english: "GYEONGNAM", area: "김해 진영의 단감", icon: "persimmon", pin: [128.12, 35.13],
-    headline: "아삭하게 베어 무는 주홍빛", description: "진영단감의 달고 아삭한 맛을 가벼운 무침으로 즐깁니다. 과수원의 주홍빛이 채소와 만나 한 접시가 됩니다.",
-    colors: ["#85502d", "#f2e1cf", "#d8a16c"], colorStory: "단감의 주홍과 잎의 차분한 초록",
-    specialties: [{ name: "진영 단감", art: "persimmon", timing: "가을 · 부유 10월 하순~11월 상순", seasons: ["autumn"], note: "단감은 품종별 수확 차이가 있습니다. 부유·차랑과 더 일찍 익는 품종을 구분하고, 겨울 유통은 저장 여부를 살펴보세요." }],
-    seasonNotes: { spring: "생단감의 수확기가 아닙니다. 저장 상품이 없으면 같은 단감이라고 표시하지 말고 사과 등 다른 아삭한 과일로 응용하세요.", summer: "단감은 가을을 기다리는 재료입니다. 아래 무침은 제철 단감이 나올 때 만들거나 다른 과일로 응용할 수 있습니다.", autumn: "주홍빛 단감이 익는 계절. 부유는 주로 10월 하순~11월 상순에 수확하며 품종마다 차이가 있습니다.", winter: "가을에 거둔 저장 단감을 아삭한 무침으로 즐깁니다. 구입할 때 단단함과 보관 상태를 확인하세요." },
+    id: "gyeongnam", name: "경남", english: "GYEONGNAM", area: "김해 진영 · 하동 · 통영 · 남해", icon: "persimmon", pin: [128.12, 35.13],
+    headline: "가을 과수원에서 겨울 바다와 밭까지", description: "진영 단감의 주홍빛과 하동 밤의 포근함, 통영 굴의 바다 향과 남해 시금치의 구수한 국 한 그릇. 지역의 수확과 일상을 네 가지 가정식으로 이어 봅니다.",
+    colors: ["#85502d", "#f2e1cf", "#d8a16c"], colorStory: "단감의 주홍과 밤의 갈색, 겨울 바다와 밭의 차분한 색",
+    specialties: [
+      { name: "진영 단감", art: "persimmon", timing: "가을 · 부유 10월 하순~11월 상순", seasons: ["autumn"], note: "농촌진흥청의 품종별 숙기를 참고합니다. 9월 하순의 서촌조생과 늦가을의 부유를 구분하며 모든 진영 단감이 9월 제철인 것은 아닙니다. 겨울 제품은 저장 여부를 확인합니다." },
+      { name: "하동 밤", art: "chestnut", timing: "가을 수확 · 품종과 농장에 따라 차이", seasons: ["autumn"], note: "하동의 생산자가 소개하는 가을 알밤과 지역의 밤 가공 문화에서 출발합니다. 생깐밤, 냉동밤, 당을 더한 가공품은 수분과 단맛이 다릅니다. 저장품의 판매 시기를 수확철로 보지 않습니다." },
+      { name: "통영 굴", art: "oyster", timing: "10월 말 출하부터 · 겨울 중심", seasons: ["autumn", "winter"], note: "한국관광공사는 본격 출하를 10월 말부터, 맛보기 좋은 때를 12~2월 초로 소개합니다. 해황과 제품에 따라 달라지며 냉동 굴은 햇굴과 구분합니다. 요리할 때는 중심까지 충분히 익힙니다." },
+      { name: "남해 시금치", art: "spinach", timing: "늦가을~겨울 · 노지 보물초", seasons: ["autumn", "winter"], note: "남해군의 겨울 노지 재배 소개와 신흥해바리마을의 11~2월 수확 체험을 참고합니다. 체험 일정이 모든 농장의 수확 기간을 뜻하지는 않습니다. 다른 산지의 연중 유통 시금치와 구분합니다." },
+    ],
+    seasonNotes: {
+      spring: "선정한 네 재료는 가을과 겨울 중심입니다. 봄의 판매 여부는 별도로 확인하고, 저장밤·냉동 굴·다른 산지의 시금치를 활용할 수 있습니다. 단감을 사과로 바꾸면 사과 카레로 구분합니다.",
+      summer: "햇단감과 햇밤, 겨울 노지 보물초를 기다리는 계절입니다. 밤은 저장·가공품, 굴은 냉동 제품을 활용하고 시금치는 실제 산지를 확인합니다. 판매 중이라는 이유만으로 경남의 여름 수확 재료라고 소개하지 않습니다.",
+      autumn: "가을 밤과 품종별로 익는 단감에서 시작해 늦가을의 굴·시금치로 이어집니다. 네 재료가 모두 9월에 절정인 것은 아닙니다. 단감 카레와 밤 율란을 먼저 즐기고 찬바람이 불면 굴전과 된장국을 더해 보세요.",
+      winter: "통영 굴과 남해의 겨울 노지 시금치가 중심입니다. 가을 단감과 밤은 저장·가공 상태를 확인해 이어갑니다. 굴은 생식용 표시와 관계없이 이 레시피의 충분한 가열 기준을 지킵니다.",
+    },
     pantry: { title: "단감 오이무침", meta: "2인분 · 15분", ingredients: "단감 1개(200g), 오이 1/2개(100g), 식초 2작은술, 소금 1/4작은술, 참깨 1작은술", steps: ["단감은 씻어 꼭지와 씨를 제거하고 얇게 썹니다. 오이도 같은 두께로 썹니다.", "오이에 소금 절반을 뿌려 5분 두었다가 생긴 물을 가볍게 뺍니다.", "단감과 오이에 식초, 남은 소금, 참깨를 넣어 살살 무치고 바로 먹습니다."], note: "제철 밖에는 단단한 사과로 바꾸면 사과 오이무침이 됩니다. 곶감을 그대로 대체하지 않습니다." },
-    recipeSlugs: [], sources: [sources.persimmon, sources.persimmonHarvest],
+    recipeSlugs: ["jinyeong-persimmon-chicken-curry", "hadong-chestnut-yullan", "tongyeong-oyster-jeon", "namhae-spinach-tofu-doenjang-soup"], sources: [gyeongnamSources.persimmon, gyeongnamSources.persimmonHarvest, gyeongnamSources.chestnut, gyeongnamSources.oyster, gyeongnamSources.spinach, gyeongnamSources.spinachSeason],
   },
   {
     id: "jeju", name: "제주", english: "JEJU", area: "바다 · 돌담 · 감귤 과수원", icon: "citrus", pin: [126.52, 33.38],

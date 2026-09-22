@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import type { CountrySlug, Recipe } from "./content";
 
 export type RecipePattern = "grain" | "tiles" | "waves" | "contours" | "linen";
-export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble" | "lentil-stew" | "jujube-porridge" | "garlic-chicken" | "perilla-kalguksu" | "grape-salad" | "berry-duck" | "cheese-jeon" | "shiitake-japchae" | "apple-pork-rolls" | "yuja-salmon" | "fig-toast" | "octopus-soup" | "cockle-rice";
+export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble" | "lentil-stew" | "jujube-porridge" | "garlic-chicken" | "perilla-kalguksu" | "grape-salad" | "berry-duck" | "cheese-jeon" | "shiitake-japchae" | "apple-pork-rolls" | "yuja-salmon" | "fig-toast" | "octopus-soup" | "cockle-rice" | "persimmon-curry" | "chestnut-yullan" | "oyster-jeon" | "spinach-soup";
 export type RecipeDesign = {
   paper: string; soft: string; from: string; mid: string; to: string;
   ink: string; muted: string; accent: string; dark: string; line: string;
@@ -20,6 +20,10 @@ const places: Record<CountrySlug, [string, RecipePattern]> = {
 
 // Visual interpretations of ingredients and places, not claims of traditional patterns.
 const details: Record<string, { art: RecipeArt; caption: string; place?: string; pattern?: RecipePattern; colors?: [string, string, string, string] }> = {
+  "jinyeong-persimmon-chicken-curry": { art: "persimmon-curry", caption: "진영 단감의 주홍과 카레의 황갈색, 흰 밥의 여백", pattern: "grain" },
+  "hadong-chestnut-yullan": { art: "chestnut-yullan", caption: "하동 밤 속살의 크림색과 지리산 자락을 떠올리는 선", pattern: "contours" },
+  "tongyeong-oyster-jeon": { art: "oyster-jeon", caption: "통영 바다의 회청색과 굴전에 입힌 달걀옷의 금빛", pattern: "waves" },
+  "namhae-spinach-tofu-doenjang-soup": { art: "spinach-soup", caption: "남해 겨울 밭의 차분한 올리브빛과 두부의 흰색", pattern: "linen" },
   "goheung-yuja-salmon": { art: "yuja-salmon", caption: "고흥 유자의 노란 향과 연어의 따뜻한 산호색", pattern: "grain" },
   "yeongam-fig-cream-cheese-toast": { art: "fig-toast", caption: "영암 무화과의 보라와 장밋빛 단면, 흰 크림치즈", pattern: "linen" },
   "muan-octopus-yeonpotang": { art: "octopus-soup", caption: "무안 갯벌의 회갈색과 맑은 국물, 미나리의 초록", pattern: "waves" },

@@ -11,6 +11,26 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="132" stroke={ink} strokeOpacity=".18" />
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
+        {art === "persimmon-curry" && <g>
+          <circle cx="300" cy="189" r="112" fill="#ddcba9"/><circle cx="300" cy="189" r="101" fill="#f4ebd5"/>
+          <path d="M315 92c103 16 118 145 19 192-29 13-61 4-57-17 5-29 36-35 20-68-19-38-15-79 18-107Z" fill="#ad7946"/>
+          {Array.from({length:18},(_,i)=><ellipse key={i} cx={218+(i*19)%68} cy={137+(i*29)%106} rx="5" ry="2" transform={`rotate(${i*19} ${218+(i*19)%68} ${137+(i*29)%106})`} fill="#dacaab"/>)}
+          {[[324,128,18],[371,178,-16],[318,239,30]].map(([x,y,r])=><rect key={x} x={x-16} y={y-14} width="32" height="28" rx="6" transform={`rotate(${r} ${x} ${y})`} fill="#dc954e" stroke="#f4bd76" strokeWidth="3"/>)}
+          {[[341,178],[351,227],[313,190]].map(([x,y])=><path key={x} d={`M${x-12} ${y-12}q13-8 26 6l-5 23-25-8Z`} fill="#dcc49c" stroke="#ba986f" strokeWidth="2"/>)}
+          <path d="m278 111 15-5m77 107 10 11m-72 52 13-4" stroke="#7d8256" strokeWidth="4" strokeLinecap="round"/>
+        </g>}
+        {art === "chestnut-yullan" && <g>
+          {[[260,132],[337,132],[228,210],[302,220],[376,210]].map(([x,y])=><g key={x} transform={`translate(${x} ${y})`}><path d="M0-37C-8-22-36-12-32 17q3 27 33 28c27 0 37-17 32-35C27-8 9-22 0-37Z" fill="#d3b58b" stroke="#a48763" strokeWidth="2"/><path d="M-31 20q30-12 62 0-1 26-31 25-27 0-31-25Z" fill="#eee0bb"/>{[[-20,27],[-6,23],[9,29],[21,24],[-11,35],[6,38]].map(([a,b])=><path key={`${a}-${b}`} d={`m${a} ${b} 3-2`} stroke="#c6ad79" strokeWidth="2" strokeLinecap="round"/>)}<path d="M-10-18q-10 9-10 20" stroke="#e4cea9" strokeWidth="4" strokeLinecap="round"/></g>)}
+        </g>}
+        {art === "oyster-jeon" && <g>
+          {[[251,129,-25],[324,128,18],[370,185,-16],[294,192,24],[224,205,-12],[265,262,10],[339,258,-25]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><path d="M-32 0c-4-29 26-39 48-28 31 8 27 42 5 54-27 15-55 3-53-26Z" fill="#e2bf6f" stroke="#b48a42" strokeWidth="3"/><path d="M-19-5c0-17 20-20 32-9 17 11 8 34-10 34-14 0-22-10-22-25Z" fill="#d6d1b9" stroke="#9b9d8d" strokeWidth="2"/><path d="m-20-15 11 3m14 17 12-7m-25 19 8 2" stroke="#7d8a5a" strokeWidth="3" strokeLinecap="round"/></g>)}
+        </g>}
+        {art === "spinach-soup" && <g>
+          <circle cx="300" cy="189" r="112" fill="#a0a881"/><circle cx="300" cy="189" r="101" fill="#b99b6c"/>
+          {[[249,153,-20],[331,130,15],[351,231,-12],[272,253,24]].map(([x,y,r])=><rect key={x} x={x-19} y={y-16} width="38" height="32" rx="5" fill="#f3e9cf" stroke="#d7c7a6" strokeWidth="2" transform={`rotate(${r} ${x} ${y})`}/>)}
+          {[[292,145,-25],[255,208,40],[335,193,-40],[300,252,65]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><path d="M0-36C-40-15-19 21 0 34 24 13 34-13 0-36Z" fill="#75855a" stroke="#566644" strokeWidth="2"/><path d="M0-24v53m0-24L-12-7M0 15 13 2" stroke="#a0ad76" strokeWidth="2"/></g>)}
+          <path d="m225 175 10-5m134 2 11 5m-43 87 10-4" stroke="#b6c18b" strokeWidth="5" strokeLinecap="round"/>
+        </g>}
         {art === "yuja-salmon" && <g>
           {[[269,145,-22],[326,218,18]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><path d="M-58-31q51-20 114 0l-6 60q-49 17-103-2Z" fill="#d78f72" stroke="#a76550" strokeWidth="3"/><path d="m-41-31 19 61m4-68 18 72m7-71 16 66m8-60 12 51" stroke="#f2c9ab" strokeWidth="4"/><path d="m-31-11 15-6m18 21 15-6m6-17 13 7" stroke="#d8b954" strokeWidth="5" strokeLinecap="round"/></g>)}
           <g transform="translate(215 229) rotate(-25)"><path d="M-29-6H29a29 29 0 0 1-58 0Z" fill="#ebd47a" stroke="#bfa44f" strokeWidth="3"/><path d="m0-4-19 15M0-4v24M0-4l20 15" stroke="#fff2ba" strokeWidth="3"/></g>
@@ -209,7 +229,7 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         {art === "dessert" && <g><path d="m206 165 91-51 106 54-9 80-94 31-90-40Z" fill="#cd9957" stroke={accent} strokeWidth="3"/><path d="m214 176 87 38 91-36-3 34-88 34-87-35Z" fill="#fbebcb"/><path d="m206 165 94 42 103-39-106-54Z" fill="#a46a42"/><path d="m238 158 65 27 63-23-66-28Z" fill="#e8bf77"/><path d="m246 160 11-4m49 6 12 6m13-22 10 4" stroke={accent} strokeWidth="6" strokeLinecap="round"/></g>}
         {art === "tart" && <g><path d="m218 160 13 91q69 51 139 0l13-91Z" fill="#b77c45"/><ellipse cx="300" cy="164" rx="91" ry="75" fill="#e0ab60" stroke="#a26a36" strokeWidth="6"/><ellipse cx="300" cy="164" rx="73" ry="58" fill="#f4d388"/>{[0,1,2,3,4,5,6].map(i=><ellipse key={i} cx={259+(i*29)%88} cy={130+(i*19)%61} rx={i%2 ? 11 : 7} ry="5" transform={`rotate(${i*31} ${259+(i*29)%88} ${130+(i*19)%61})`} fill="#855038"/>)}</g>}
         {art === "drink" && <g><path d="M226 140h136l-14 119q-55 35-108 0Z" fill="#fff1d9" stroke={accent} strokeWidth="4"/><path d="M364 155c74-17 65 87-11 69" stroke={accent} strokeWidth="12"/><ellipse cx="294" cy="142" rx="67" ry="24" fill="#a97240" stroke={accent} strokeWidth="4"/><path d="M268 104q-23-23 0-48m43 48q-23-23 0-48" stroke={ink} strokeOpacity=".4" strokeWidth="3" strokeLinecap="round"/></g>}
-        {art !== "corn-soup" && art !== "jujube-porridge" && (["octopus-soup", "cockle-rice", "rice", "bowl", "noodles", "sweet-potato-chicken", "pear-shrimp", "pine-noodles", "tofu-hotpot", "ongsimi", "cabbage-jeon", "deodeok-gui", "salt-shrimp", "ginger-pork", "perilla-kalguksu"].includes(art) ? <path d="M453 113 486 283M466 107 500 279" stroke={ink} strokeWidth="4" strokeLinecap="round" opacity=".6"/> : <path d="M458 132v152m-10-166v31q10 18 20 0v-31m-10 0v38m34-38v166m0-166q30 55 0 72" stroke={ink} strokeWidth="4" strokeLinecap="round" opacity=".6"/>)}
+        {art !== "corn-soup" && art !== "jujube-porridge" && (["oyster-jeon", "spinach-soup", "octopus-soup", "cockle-rice", "rice", "bowl", "noodles", "sweet-potato-chicken", "pear-shrimp", "pine-noodles", "tofu-hotpot", "ongsimi", "cabbage-jeon", "deodeok-gui", "salt-shrimp", "ginger-pork", "perilla-kalguksu"].includes(art) ? <path d="M453 113 486 283M466 107 500 279" stroke={ink} strokeWidth="4" strokeLinecap="round" opacity=".6"/> : <path d="M458 132v152m-10-166v31q10 18 20 0v-31m-10 0v38m34-38v166m0-166q30 55 0 72" stroke={ink} strokeWidth="4" strokeLinecap="round" opacity=".6"/>)}
       </svg>
       <div className="artwork-caption"><strong>{label}</strong><span>{design.caption}</span></div>
     </div>

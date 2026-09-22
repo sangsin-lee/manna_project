@@ -6,6 +6,7 @@ import { chungnamSources } from "./chungnam-sources";
 import { chungbukSources } from "./chungbuk-sources";
 import { jeonbukSources } from "./jeonbuk-sources";
 import { jeonnamSources } from "./jeonnam-sources";
+import { gyeongnamSources } from "./gyeongnam-sources";
 
 export type RecipeNarrativeChapter = {
   section: string;
@@ -47,6 +48,30 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "jinyeong-persimmon-chicken-curry": narrative(
+    ["진영 과수원의 가을", "디지털김해문화대전은 지역 단감을 알리고 농민의 판로를 넓히려 1985년 시작한 진영단감제를 기록합니다. 단감은 가을 과수원의 수확과 지역의 만남을 함께 보여 주는 재료입니다."],
+    ["과일을 저녁 식탁으로", "단감은 품종마다 익는 때가 달라집니다. 서촌조생의 9월 하순과 부유의 늦가을을 구분하고 단단한 과육을 고릅니다. 오늘의 카레는 지역 과일을 활용한 현대적인 집밥 응용입니다."],
+    ["주홍빛 한입과 부드러운 카레", "카레의 향신료 향 사이로 단감의 달큰함이 드러납니다. 충분히 익힌 닭고기와 부드러운 감자에 단감을 마지막에 넣어 식감의 차이를 남깁니다. 설탕을 더하기 전에 과일의 단맛을 살펴보세요."],
+    [gyeongnamSources.persimmon, gyeongnamSources.persimmonHarvest],
+  ),
+  "hadong-chestnut-yullan": narrative(
+    ["지리산 자락에서 만나는 밤", "하동군 농특산물 쇼핑몰의 생산자 소개는 지리산 자락과 섬진강이 만나는 하동의 밤 유통과 가공 이야기를 전합니다. 가을에 맺힌 밤은 삶아 먹기도 하고 여러 다과의 재료가 되기도 합니다."],
+    ["익힌 밤을 다시 빚는 다과", "한식진흥원이 소개하는 율란은 익힌 밤을 으깨 꿀과 섞고 작은 밤 모양으로 빚는 음식입니다. 여기서는 하동의 밤으로 가정용 분량을 구성합니다. 율란의 발상지가 하동이라고 단정하지 않습니다."],
+    ["포슬한 밤이 촉촉한 한입으로", "밤을 곱게 내리면 작은 덩어리가 줄고 꿀과 함께 부드럽게 뭉쳐집니다. 아랫부분에 묻힌 잣가루는 고소한 향과 가벼운 입자감을 더합니다. 꿀은 밤의 수분과 단맛을 보며 나눠 넣습니다."],
+    [gyeongnamSources.chestnut, gyeongnamSources.yullan],
+  ),
+  "tongyeong-oyster-jeon": narrative(
+    ["통영의 바다와 굴 식탁", "한국관광공사는 통영의 수하식 굴 양식과 다양한 굴 요리를 함께 소개합니다. 굴 유생을 붙인 껍데기를 바다에 내려 기르는 방식은 지역의 생산과 겨울 식탁을 연결합니다."],
+    ["찬바람 부는 계절의 전", "10월 말 무렵 본격 출하하는 굴은 겨울에 즐기기 좋은 재료입니다. 통영의 굴 요리 가운데 전을 골라 집에서 부칩니다. 이번 조리법은 먼저 충분히 삶아 익힘을 확인한 뒤 달걀옷을 입히는 응용입니다."],
+    ["바다 향에 입힌 노란 달걀옷", "굴의 감칠맛을 얇은 달걀옷이 감싸고 쪽파가 향을 더합니다. 표면의 노릇한 색만으로 속의 익힘을 판단하지 않습니다. 굴 자체의 짠맛을 먼저 맛보고 간장은 조금씩 곁들입니다."],
+    [gyeongnamSources.oyster],
+  ),
+  "namhae-spinach-tofu-doenjang-soup": narrative(
+    ["남해 겨울 밭의 보물초", "남해군은 지역의 노지 시금치를 보물초라는 이름으로 소개합니다. 차가운 계절의 밭에서 거두는 잎채소가 포장과 유통에서도 지역 이름을 전하는 재료가 됩니다."],
+    ["수확 체험에서 일상의 국으로", "남해 신흥해바리마을은 11~2월 시금치 수확 체험을 안내합니다. 한 마을의 체험 일정과 농장별 수확을 구분하며 제철을 읽습니다. 오늘은 그 채소를 두부와 된장국에 넣는 가정용 배합으로 즐깁니다."],
+    ["구수한 국물과 부드러운 잎", "된장의 구수함 사이로 시금치의 향이 이어지고 두부가 부드러운 한입을 만듭니다. 시금치는 조리 마지막에 넣어 잎이 지나치게 풀어지지 않게 합니다. 된장의 염도에 맞춰 간을 조금씩 더합니다."],
+    [gyeongnamSources.spinach, gyeongnamSources.spinachSeason],
+  ),
   "goheung-yuja-salmon": narrative(
     ["고흥 과수원의 노란 향", "한국관광공사는 11월 고흥의 유자밭과 수확 체험을 소개합니다. 유자 껍질의 향을 청에 담아 두면 생과가 없는 계절에도 차와 요리에 조금씩 사용할 수 있습니다."],
     ["유자청이 구이 소스가 되다", "차로 익숙한 유자청을 오늘은 생선 위에 얇게 바릅니다. 지역 재료를 새로운 집밥에 연결한 가정용 응용입니다. 연어는 고흥 특산물로 다루지 않고 실제 구매한 제품의 산지를 따릅니다."],

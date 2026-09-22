@@ -4,6 +4,19 @@ import type { SpecialtyArt } from "@/lib/korea-table";
 export default function SpecialtyIcon({ art, className = "" }: { art: SpecialtyArt; className?: string }) {
   return <svg className={className} viewBox="0 0 100 100" fill="none" aria-hidden="true">
     <ellipse cx="51" cy="85" rx="30" ry="5" fill="#45392c" opacity=".1" />
+    {art === "oyster" && <g>
+      <path d="M53 9c15-6 27 6 23 20 20 8 13 24 9 31 5 20-20 31-39 25-17 5-38-7-30-24-12-13-5-28 9-31C22 13 37 6 53 9Z" fill="#9daeb2" stroke="#687f88" strokeWidth="2"/>
+      <path d="M53 18c18-8 19 11 15 19 22 10 14 32-8 37-24 8-40-4-36-24 4-18 11-23 29-32Z" fill="#f4ecd6"/>
+      <path d="M53 32c-18-3-27 21-15 31 11 14 30 1 27-12-3-10-16-8-16-17" fill="#c1bba5" stroke="#929a8c" strokeWidth="3"/>
+      <path d="m18 65 11-2m39 14 8-3M65 15l-4 7M23 32l8 6" stroke="#dce3df" strokeWidth="3" strokeLinecap="round"/>
+    </g>}
+    {art === "spinach" && <g>
+      <path d="m45 81-7-28m9 27 11-29m-10 31 0-44" stroke="#af8176" strokeWidth="5" strokeLinecap="round"/>
+      <path d="M39 62C6 56 8 21 25 9c29 9 31 37 14 53Z" fill="#829361" stroke="#5f754b" strokeWidth="2"/>
+      <path d="M53 63c-10-30 4-47 26-45 14 21 6 47-26 45Z" fill="#70895a" stroke="#536d45" strokeWidth="2"/>
+      <path d="M48 49C27 29 36 7 51 4c21 12 16 34-3 45Z" fill="#93a571" stroke="#627d4b" strokeWidth="2"/>
+      <path d="M26 22 39 57m15-1 19-27M49 15v31m-17-4-10-4m39 8 14-1" stroke="#b3c192" strokeWidth="2" strokeLinecap="round"/>
+    </g>}
     {art === "fig" && <g>
       <path d="M47 12C43 33 11 40 16 68c4 29 62 29 68 0 6-27-27-37-31-56Z" fill="#927080" stroke="#654c61" strokeWidth="2"/>
       <path d="M50 25C41 43 24 48 28 68c4 17 40 17 44 0 4-20-15-25-22-43Z" fill="#d297a5"/>

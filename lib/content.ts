@@ -1329,8 +1329,8 @@ export const countries: Country[] = [
       },
     ],
     storySlugs: ["stuttgart-swabian-table", "german-abendbrot-culture"],
-    recipeSlugs: ["swabian-maultaschen", "swabian-potato-salad"],
-    updatedAt: "2026-09-11",
+    recipeSlugs: ["swabian-inspired-onion-tart", "swabian-maultaschen", "swabian-potato-salad"],
+    updatedAt: "2026-09-23",
     palette: {
       from: "#e7dfcf",
       mid: "#d7c7a8",

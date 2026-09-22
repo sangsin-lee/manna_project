@@ -1,4 +1,5 @@
 import type { Recipe, SourceLink } from "./content";
+import { onionTartSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -49,6 +50,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "swabian-inspired-onion-tart": narrative(
+    ["빵 굽는 날의 양파 한 판", "슈투트가르트관광청이 소개하는 슈바벤의 츠비벨쿠헨은 짭짤한 양파 타르트입니다. 지역 식문화 자료에는 빵 반죽이 부푸는 동안 양파 타르트를 구워 한 끼를 마련했다는 이야기가 나옵니다. 특정 연도나 한 사람을 발명자로 단정하지 않습니다."],
+    ["포도 수확기의 따뜻한 식탁", "독일와인협회는 가을 포도 수확기에 새 와인과 양파 타르트를 함께 즐기는 문화를 소개합니다. 양파 자체는 저장을 거쳐 연중 유통됩니다. 오늘은 국내 양파와 인스턴트 드라이이스트로 작은 한 판을 만들고 샐러드와 저녁으로 나눕니다."],
+    ["부드러운 양파, 노릇한 가장자리", "천천히 볶은 양파의 달큰함을 달걀과 크림이 부드럽게 감싸고, 베이컨이 짭짤한 맛을 보탭니다. 발효 반죽의 포근한 바닥과 노릇한 가장자리가 대조됩니다. 구운 뒤 잠시 식혀야 속이 안정되어 단면을 깔끔하게 자를 수 있습니다."],
+    [onionTartSources.region, onionTartSources.history, onionTartSources.culture, onionTartSources.season],
+  ),
   "cheongsong-apple-oat-pancakes": narrative(
     ["청송의 계곡과 과수원", "한국문화원연합회는 산과 계곡이 어우러진 청송의 풍경과 사과 산지를 함께 소개합니다. 오늘은 그 과일을 작게 썰어 귀리 반죽에 넣습니다. 지역의 전통 조리법이 아닌 가정용 아침 메뉴입니다."],
     ["품종에 따라 달라지는 가을", "농촌진흥청이 안내하는 홍로의 수확기는 9월입니다. 다른 품종은 익는 때가 달라 과일의 이름과 출하 정보를 함께 봅니다. 저장 사과가 식탁을 이어 주는 계절과 햇사과가 나오는 때를 구분합니다."],

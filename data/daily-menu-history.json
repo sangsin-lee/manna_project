@@ -604,6 +604,50 @@
         "불리기 없이",
         "냄비와 프라이팬"
       ]
+    },
+    {
+      "date": "2026-09-23",
+      "recipeSlug": "swabian-inspired-onion-tart",
+      "title": "슈바벤식 양파 타르트",
+      "canonicalDish": "zwiebelkuchen",
+      "aliases": [
+        "양파 타르트",
+        "츠비벨쿠헨",
+        "슈바벤 양파 케이크",
+        "독일 양파 타르트",
+        "zwiebelkuchen",
+        "swabian onion tart"
+      ],
+      "keyIngredients": [
+        "양파",
+        "밀가루",
+        "이스트",
+        "달걀",
+        "생크림",
+        "베이컨"
+      ],
+      "method": "이스트 반죽을 발효해 틀에 펴고, 부드럽게 볶아 식힌 양파를 달걀·크림·익힌 베이컨과 섞어 채운 뒤 오븐에서 중심까지 굽는다.",
+      "selectionReason": "독일 슈바벤의 가을 양파 타르트를 두 사람의 저녁으로 옮깁니다. 양파가 부드러워지는 과정과 노릇한 단면을 담기 좋고, 양파·달걀·밀가루 등 익숙한 재료로 새로운 지역 식탁을 만날 수 있습니다.",
+      "videoIdea": "양파를 얇게 썰기 → 팬에서 부피가 줄어드는 모습 → 부푼 반죽을 틀에 펴기 → 속을 채우기 → 노릇한 타르트의 단면. 제목 아이디어: “양파 세 개로 만나는 독일의 가을, 츠비벨쿠헨”.",
+      "duplicateReview": "전체 레시피 65개와 최초 추천 27개 및 3개 일일 기록의 제목·별칭·재료·조리 단계를 비교했다. steak-recipes, recipe-narratives, TonightPick과 관련 Git 이력도 확인했다. 기존 프렌치 어니언 수프는 갈색 양파를 육수에 끓여 빵·치즈를 올리며, 마카오 에그타르트는 단 커스터드를 페이스트리에 채우는 디저트다. 이번 음식은 발효 반죽과 볶은 양파·달걀·크림을 함께 굽는 짭짤한 타르트로 동일 음식의 이름이나 소스 변경이 아니다. 최근 국내 지역 추가와 프랑스 일일 메뉴 다음에 독일 슈바벤으로 순환한다.",
+      "research": {
+        "checkedAt": "2026-09-23",
+        "seasonalNote": "슈투트가르트 관광청의 지역 음식 소개, 바덴뷔르템베르크 MBW의 슈바벤 양파 타르트 조리법, 독일와인협회의 가을 포도 수확 식문화를 확인했다. BZfE의 8월~1월은 독일 양파의 공급이 많은 시기이며 연중 판매·저장과 구분한다. 국내 양파를 독일산으로 소개하거나 같은 수확 달력을 적용하지 않는다. 2026-09-19 tz의 양파 타르트 소개를 검색 색인에서 확인해 최근 계절성 음식 보도의 사례로만 참고했다. 이를 한국의 유행 또는 유튜브 조회 수 근거로 사용하지 않는다. 국내 재료와 인스턴트 드라이이스트를 쓰는 가정용 응용이다.",
+        "sources": [
+          "https://www.stuttgart-tourist.de/en/eat-and-drink/glossary-for-swabian-cuisine",
+          "https://www.schmeck-den-sueden.de/rezept/schwabischer-zwiebelkuchen/",
+          "https://www.schmeck-den-sueden.de/spezialitaet/zwiebelkuchen/",
+          "https://www.deutscheweine.de/weinerzeugnis/169/federwei%C3%9Fer",
+          "https://www.bzfe.de/presse/pressemeldungen-archiv/ein-gemuese-das-zu-traenen-ruehrt",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://www.fda.gov/consumers/consumer-updates/flour-raw-food-and-other-safety-facts",
+          "https://www.tz.de/leben/einfach-tasty/rheinischer-herbstgruss-der-kueche-federweisser-und-zwiebelkuchen-zr-94497362.html"
+        ]
+      },
+      "preparationLabels": [
+        "발효·식힘 포함",
+        "오븐 필요"
+      ]
     }
   ]
 }

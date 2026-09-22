@@ -12,6 +12,14 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "onion-tart" && <g>
+          <path d="M300 188 407 214A111 111 0 1 0 330 295Z" fill="#ba874a" stroke="#8f6439" strokeWidth="3"/>
+          <path d="M300 188 396 210A99 99 0 1 0 327 283Z" fill="#dfbd7b" stroke="#efd59c" strokeWidth="6"/>
+          {[[239,135,-22],[302,113,20],[354,139,-14],[231,196,30],[277,161,-20],[290,250,8],[235,243,-25]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><ellipse rx="22" ry="12" stroke="#b79257" strokeWidth="4"/><ellipse rx="12" ry="6" stroke="#f3dca5" strokeWidth="3"/></g>)}
+          {[[263,121],[337,170],[219,165],[264,219],[303,280],[372,178]].map(([x,y])=><rect key={x} x={x} y={y} width="14" height="10" rx="3" transform={`rotate(20 ${x} ${y})`} fill="#a96f51" stroke="#c4936c" strokeWidth="2"/>)}
+          <g transform="translate(28 23)"><path d="M306 198 408 224q-14 60-67 77l-35-91Z" fill="#bb8b52" stroke="#8f6439" strokeWidth="3"/><path d="M306 189 408 216q-14 58-67 76Z" fill="#dfbd7b" stroke="#eed49c" strokeWidth="5"/><path d="M341 222q36-12 37 13-9 26-27 9" stroke="#b79257" strokeWidth="4"/><path d="M339 241q14-9 22 4" stroke="#f3dca5" strokeWidth="3"/><rect x="360" y="256" width="13" height="9" rx="3" fill="#a96f51"/></g>
+          <path d="m254 181 8-3m79-61 8 4m-82 153 9-3m108-28 8 4" stroke="#7e835b" strokeWidth="3" strokeLinecap="round"/>
+        </g>}
         {art === "apple-pancakes" && <g>
           {[231,207,183].map((y,i)=><g key={y}><path d={`M217 ${y-4}v14c0 48 166 48 166 0v-14Z`} fill={i%2?"#c99560":"#ba804e"} stroke="#95643e" strokeWidth="2"/><ellipse cx="300" cy={y-4} rx="83" ry="35" fill="#e0b477" stroke="#a67446" strokeWidth="2"/><ellipse cx="300" cy={y-7} rx="66" ry="25" fill="#edcc92"/></g>)}
           {[[264,169,-28],[292,154,-7],[323,157,18],[347,176,38]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><path d="M-16-27Q-38 12-2 36 27 13 16-27Z" fill="#b55d4a" stroke="#914536" strokeWidth="2"/><path d="M-11-23Q-28 10-2 29 20 10 11-23Z" fill="#f5deae"/><path d="M-2-16V21" stroke="#deb98b" strokeWidth="2"/></g>)}

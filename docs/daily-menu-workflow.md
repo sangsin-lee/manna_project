@@ -31,3 +31,5 @@ Run targeted ESLint, `npm run check:daily-menu`, `npm run check:presentations`, 
 Commit only intended changes, confirm remote main has no unseen commits, then push without force. Confirm the public homepage's date and recipe slug, the recipe content, and its video link before reporting success. If deployment fails, retain today's selection and resume it next time.
 
 The full September 17 dinner remains at `/dinners/2026-09-17`; later dinners remain under `/recipes/<slug>` and in the homepage's previous-dinner list.
+
+September 23, 2026: resumed after the usage deferral and selected one Swabian-inspired onion tart for the current Korean date. September 22 was not backfilled. The history distinguishes this yeast-dough savory tart from the existing onion soup and sweet egg tart. Regional and seasonal sources are shared in `lib/daily-sources.ts`; domestic retail availability is separate from Germany's supply calendar. A dedicated golden onion-tart cover and linen theme flow through the shared recipe and video design.

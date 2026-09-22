@@ -6,6 +6,7 @@ import { chungnamSources } from "./chungnam-sources";
 import { chungbukSources } from "./chungbuk-sources";
 import { jeonbukSources } from "./jeonbuk-sources";
 import { jeonnamSources } from "./jeonnam-sources";
+import { gyeongbukSources } from "./gyeongbuk-sources";
 import { gyeongnamSources } from "./gyeongnam-sources";
 
 export const seasons = [
@@ -15,7 +16,7 @@ export const seasons = [
   { id: "winter", label: "겨울", months: "12–2월", mark: "❄" },
 ] as const;
 export type Season = (typeof seasons)[number]["id"];
-export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean" | "buckwheat" | "deodeok" | "corn" | "shrimp" | "ginger" | "jujube" | "garlic" | "cabbage" | "mushroom" | "fig" | "octopus" | "cockle" | "oyster" | "spinach";
+export type SpecialtyArt = "citrus" | "rice" | "potato" | "grape" | "chestnut" | "berry" | "apple" | "persimmon" | "fish" | "fern" | "pork" | "sweet-potato" | "pear" | "pine-nut" | "soybean" | "buckwheat" | "deodeok" | "corn" | "shrimp" | "ginger" | "jujube" | "garlic" | "cabbage" | "mushroom" | "fig" | "octopus" | "cockle" | "oyster" | "spinach" | "ginseng" | "chili" | "crab";
 export type PantryRecipe = { title: string; meta: string; ingredients: string; steps: string[]; note?: string };
 export type Specialty = { name: string; art: SpecialtyArt; timing: string; seasons: Season[]; note: string };
 export type KoreanRegion = {
@@ -134,13 +135,18 @@ export const koreanRegions: KoreanRegion[] = [
     recipeSlugs: ["goheung-yuja-salmon", "yeongam-fig-cream-cheese-toast", "muan-octopus-yeonpotang", "beolgyo-cockle-bibimbap"], sources: [jeonnamSources.yuja, jeonnamSources.fig, jeonnamSources.octopus, jeonnamSources.octopusSeason, jeonnamSources.cockle],
   },
   {
-    id: "gyeongbuk", name: "경북", english: "GYEONGBUK", area: "청송의 사과 과수원", icon: "apple", pin: [128.88, 36.23],
-    headline: "붉게 익은 과수원의 한 입", description: "청송의 대표 농산물인 사과에서 출발합니다. 아삭한 생과와 따뜻하게 익힌 과육의 서로 다른 표정을 즐겨 보세요.",
-    colors: ["#853f36", "#f2dfd5", "#d59983"], colorStory: "사과의 붉은 껍질과 크림빛 과육",
-    specialties: [{ name: "청송 사과", art: "apple", timing: "가을 중심 · 품종별 수확", seasons: ["autumn"], note: "청송은 산과 계곡이 있는 사과 산지입니다. 홍로·후지 등 품종에 따라 숙기가 달라 정확한 출하 시기는 상품 정보를 확인합니다." }],
-    seasonNotes: { spring: "저장 사과를 활용해 보세요. 부드럽게 졸인 사과는 토스트와 잘 어울립니다.", summer: "저장 사과와 조생종의 출하가 구분되는 때입니다. 청송 사과 전체를 여름 제철로 단정하지 않습니다.", autumn: "품종을 바꿔가며 사과의 단맛과 산미를 비교하는 계절입니다. 수확 시기는 품종과 농장마다 다릅니다.", winter: "저장 사과를 얇게 썰어 굽거나 졸여 따뜻한 디저트로 만납니다." },
+    id: "gyeongbuk", name: "경북", english: "GYEONGBUK", area: "청송 · 영주 풍기 · 영양 · 울진", icon: "apple", pin: [128.88, 36.23],
+    headline: "가을 과수원과 인삼밭, 동해의 한 그릇", description: "청송 사과의 달큰함과 풍기 수삼의 은은한 향, 영양 고춧가루의 붉은빛과 울진 붉은대게의 감칠맛. 산지의 재료로 아침부터 따뜻한 국과 반찬까지 네 가지 집밥을 만듭니다.",
+    colors: ["#853f36", "#f2dfd5", "#d59983"], colorStory: "사과와 고추의 붉은빛, 수삼의 크림색과 동해의 푸른 회색",
+    specialties: [
+      { name: "청송 사과", art: "apple", timing: "가을 중심 · 홍로 9월, 품종별 차이", seasons: ["autumn"], note: "산과 계곡이 있는 청송의 사과 산지에서 출발합니다. 농촌진흥청의 홍로 수확기 안내를 참고하되 모든 품종이 동시에 익는 것은 아닙니다. 저장 사과 판매와 햇사과 수확을 구분합니다." },
+      { name: "풍기 인삼", art: "ginseng", timing: "가을 중심 · 농장별 채굴 시기 차이", seasons: ["autumn"], note: "영주시 회의록은 축제용 인삼의 9월 말~10월 초 채굴 사례와 다른 계절의 수확도 함께 설명합니다. 가을에만 구할 수 있는 재료는 아닙니다. 조리에는 홍삼 농축액 대신 산지가 표시된 식용 수삼을 씁니다." },
+      { name: "영양 고추", art: "chili", timing: "홍고추 여름~가을 · 고춧가루는 저장 유통", seasons: ["summer", "autumn"], note: "농촌진흥청은 일반 홍고추 재배에서 7월 하순부터 나눠 수확하며 8~9월에 수확이 한창이라고 설명합니다. 농장별 차이가 있으며, 고춧가루는 건조·분쇄한 재료로 수확철 밖에도 유통됩니다." },
+      { name: "울진 붉은대게", art: "crab", timing: "겨울 별미 · 자숙·냉동품은 별도", seasons: ["winter"], note: "해양수산부는 붉은대게를 겨울 별미인 12월 수산물로 소개합니다. 울진군이 소개하는 손질 게살을 활용하되 계절 밖의 냉동품과 생물을 구분합니다. 대게·붉은대게(홍게)·게맛살은 서로 다른 재료입니다." },
+    ],
+    seasonNotes: { spring: "이번에 소개하는 재료는 가을과 겨울 중심입니다. 저장 사과나 고춧가루, 냉동 자숙 게살은 상품의 산지와 보관 안내를 확인해 활용합니다. 봄 수삼은 농장별 출하를 살펴보세요.", summer: "홍고추가 붉게 익어 나눠 수확되는 계절입니다. 농촌진흥청의 일반 재배 달력을 참고하되 영양 농장의 출하 시기는 따로 확인합니다. 고춧가루는 건조·분쇄한 제품입니다.", autumn: "품종별로 익는 청송 사과와 가을 채굴 수삼, 수확해 말린 영양 고추를 만납니다. 붉은대게는 겨울 별미로 소개하며 가을 조리에는 자숙·냉동품 여부를 구분합니다.", winter: "울진 붉은대게살을 부드러운 달걀찜에 넣습니다. 저장 사과와 고춧가루도 계속 활용할 수 있지만 판매 시기를 수확철로 보지는 않습니다." },
     pantry: { title: "따뜻한 사과 토스트", meta: "2인분 · 20분", ingredients: "사과 1개(250g), 식빵 2장, 버터 15g, 설탕 1작은술, 계피가루 약간(선택)", steps: ["사과를 씻어 씨를 제거하고 5mm 두께로 썹니다.", "팬에 버터 10g과 사과, 설탕을 넣어 중약불에서 7~8분 굽듯이 익힙니다.", "남은 버터로 빵을 굽고 사과를 올립니다. 취향에 따라 계피를 뿌립니다."], note: "과육이 무르거나 단단한 정도에 따라 굽는 시간을 조절합니다." },
-    recipeSlugs: [], sources: [sources.apple],
+    recipeSlugs: ["cheongsong-apple-oat-pancakes", "punggi-ginseng-chicken-gomtang", "yeongyang-chili-oil-tteokbokki", "uljin-red-snow-crab-egg-custard"], sources: [gyeongbukSources.apple, gyeongbukSources.appleSeason, gyeongbukSources.ginseng, gyeongbukSources.ginsengHarvest, gyeongbukSources.chili, gyeongbukSources.chiliHarvest, gyeongbukSources.crab, gyeongbukSources.crabSeason],
   },
   {
     id: "gyeongnam", name: "경남", english: "GYEONGNAM", area: "김해 진영 · 하동 · 통영 · 남해", icon: "persimmon", pin: [128.12, 35.13],

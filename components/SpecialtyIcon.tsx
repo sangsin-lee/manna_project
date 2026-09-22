@@ -4,6 +4,24 @@ import type { SpecialtyArt } from "@/lib/korea-table";
 export default function SpecialtyIcon({ art, className = "" }: { art: SpecialtyArt; className?: string }) {
   return <svg className={className} viewBox="0 0 100 100" fill="none" aria-hidden="true">
     <ellipse cx="51" cy="85" rx="30" ry="5" fill="#45392c" opacity=".1" />
+    {art === "ginseng" && <g>
+      <path d="M47 12v19c-17 6-17 22-6 34l-8 22m16-24 16 21m-27-43-19 13m36-15 21 13" stroke="#bda174" strokeWidth="9" strokeLinecap="round"/>
+      <path d="m38 37 18 0m-20 10 22 0m-18 10 13 1m-22 25-10 7m43-11 13 7m-31-70 11-3" stroke="#ead5a7" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M48 19Q23 1 21 20q11 13 27-1Zm1-2Q63-2 78 12 70 29 49 17Z" fill="#8d9a6b"/>
+    </g>}
+    {art === "chili" && <g transform="rotate(18 50 50)">
+      <path d="M49 25C77 35 75 72 20 86c18-17 21-35 16-51Z" fill="#bf5b43" stroke="#914430" strokeWidth="2"/>
+      <path d="M49 29q6-17 21-16" stroke="#728657" strokeWidth="5" strokeLinecap="round"/>
+      <path d="m49 24-16 11 14 7 14-10Z" fill="#889763"/>
+      <path d="M53 44q7 14-10 27" stroke="#e69367" strokeWidth="5" strokeLinecap="round"/>
+    </g>}
+    {art === "crab" && <g stroke="#a35e4b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+      <path d="m28 50-15-15-4-14m64 29 15-15 4-14M30 58 10 54 3 63m27 4L12 68l-3 12m27-5-16 7-2 10m54-34 20-4 7 9M70 67l18 1 3 12m-27-5 16 7 2 10"/>
+      <ellipse cx="50" cy="59" rx="27" ry="21" fill="#d48a70"/>
+      <path d="M13 32C1 30 0 17 8 12l5 12 7-12c8 10 5 18-7 20Zm74 0c12-2 13-15 5-20l-5 12-7-12c-8 10-5 18 7 20Z" fill="#dc9d7e"/>
+      <path d="m39 42-3-9m25 9 3-9"/><circle cx="36" cy="32" r="3" fill="#67463b" stroke="none"/><circle cx="64" cy="32" r="3" fill="#67463b" stroke="none"/>
+      <path d="M35 56q15-13 30 0" stroke="#edbc94" strokeWidth="4"/>
+    </g>}
     {art === "oyster" && <g>
       <path d="M53 9c15-6 27 6 23 20 20 8 13 24 9 31 5 20-20 31-39 25-17 5-38-7-30-24-12-13-5-28 9-31C22 13 37 6 53 9Z" fill="#9daeb2" stroke="#687f88" strokeWidth="2"/>
       <path d="M53 18c18-8 19 11 15 19 22 10 14 32-8 37-24 8-40-4-36-24 4-18 11-23 29-32Z" fill="#f4ecd6"/>

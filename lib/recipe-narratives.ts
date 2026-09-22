@@ -6,6 +6,7 @@ import { chungnamSources } from "./chungnam-sources";
 import { chungbukSources } from "./chungbuk-sources";
 import { jeonbukSources } from "./jeonbuk-sources";
 import { jeonnamSources } from "./jeonnam-sources";
+import { gyeongbukSources } from "./gyeongbuk-sources";
 import { gyeongnamSources } from "./gyeongnam-sources";
 
 export type RecipeNarrativeChapter = {
@@ -48,6 +49,30 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "cheongsong-apple-oat-pancakes": narrative(
+    ["청송의 계곡과 과수원", "한국문화원연합회는 산과 계곡이 어우러진 청송의 풍경과 사과 산지를 함께 소개합니다. 오늘은 그 과일을 작게 썰어 귀리 반죽에 넣습니다. 지역의 전통 조리법이 아닌 가정용 아침 메뉴입니다."],
+    ["품종에 따라 달라지는 가을", "농촌진흥청이 안내하는 홍로의 수확기는 9월입니다. 다른 품종은 익는 때가 달라 과일의 이름과 출하 정보를 함께 봅니다. 저장 사과가 식탁을 이어 주는 계절과 햇사과가 나오는 때를 구분합니다."],
+    ["포근한 귀리와 달큰한 과육", "작게 썬 사과가 익으면서 귀리 반죽 사이에 촉촉한 조각을 남깁니다. 가장자리는 노릇하게, 가운데는 충분히 익혀 부드럽게 만듭니다. 생사과를 곁들이면 아삭함과 포근함이 한 접시에 대비됩니다."],
+    [gyeongbukSources.apple, gyeongbukSources.appleSeason],
+  ),
+  "punggi-ginseng-chicken-gomtang": narrative(
+    ["풍기 인삼을 기록하는 공간", "한국관광공사가 소개하는 영주 풍기 인삼박물관은 2013년 문을 열어 지역 인삼의 역사와 생활 문화를 전합니다. 재배와 사람의 이야기가 담긴 재료를 오늘은 닭국물의 은은한 향으로 만납니다."],
+    ["수확의 계절에서 집밥으로", "영주시의회 회의록은 가을 축제용 인삼의 채굴과 농장 사정에 따른 다른 계절 수확을 함께 설명합니다. 수삼을 넣은 오늘의 닭곰탕은 손질 닭고기로 끓이는 가정용 응용입니다. 인삼은 효능 대신 음식의 향과 맛으로 즐깁니다."],
+    ["은은한 쌉싸름함과 담백한 국물", "수삼의 향과 가벼운 쌉싸름함에 무의 단맛, 닭고기의 담백함이 겹칩니다. 고기를 찢어 넣으면 국물과 함께 떠먹기 편합니다. 소금은 마지막에 맞춰 수삼 향이 지나친 간에 가려지지 않게 합니다."],
+    [gyeongbukSources.ginseng, gyeongbukSources.ginsengHarvest],
+  ),
+  "yeongyang-chili-oil-tteokbokki": narrative(
+    ["고추의 이야기를 담은 영양", "영양고추홍보전시관은 고추 재배가 변화해 온 과정과 생활 속 고추 문화를 소개합니다. 붉게 익은 열매를 수확하고 말려 쓰는 과정은 밭과 부엌을 이어 주는 지역의 한 장면입니다."],
+    ["수확한 고추를 양념으로", "여름과 가을에 수확한 홍고추는 건조·분쇄해 수확철 밖에도 사용할 수 있습니다. 오늘은 영양 고춧가루를 떡에 얇게 입힙니다. 떡볶이의 유래를 영양에 연결하는 것이 아니라 지역 양념을 활용한 집밥 응용입니다."],
+    ["쫀득한 떡에 얇게 입힌 붉은빛", "국물이 없는 떡 위에 고추 향과 간장의 짭짤함, 가벼운 단맛이 붙습니다. 양념을 약불에서 짧게 볶으면 검게 타는 것을 줄일 수 있습니다. 참기름과 깨는 마지막에 더해 고소함을 남깁니다."],
+    [gyeongbukSources.chili, gyeongbukSources.chiliHarvest],
+  ),
+  "uljin-red-snow-crab-egg-custard": narrative(
+    ["울진 바다에서 손질 게살까지", "울진군은 지역 붉은대게로 만드는 다리살과 몸통살 가공품을 소개합니다. 껍데기를 발라내는 작업을 거친 식재료가 집에서 쓰기 쉬운 형태로 이어집니다. 여기서는 완전히 익힌 자숙 게살을 사용합니다."],
+    ["겨울 별미를 작은 그릇에", "해양수산부는 붉은대게를 겨울 별미인 12월 수산물로 선정했습니다. 계절 밖의 냉동품은 생물과 구분합니다. 달걀찜은 이 지역 게살을 활용한 가정용 응용이며, 붉은대게와 어육으로 만든 게맛살도 구별합니다."],
+    ["부드러운 달걀 사이 게살의 결", "연노랑 달걀찜 사이로 산호빛 게살이 보이고, 숟가락을 뜨면 부드러운 달걀과 가는 살결이 함께 올라옵니다. 게살의 염도를 먼저 살펴 소금을 줄이고, 작은 그릇에 나눠 중심까지 충분히 찝니다."],
+    [gyeongbukSources.crab, gyeongbukSources.crabSeason],
+  ),
   "jinyeong-persimmon-chicken-curry": narrative(
     ["진영 과수원의 가을", "디지털김해문화대전은 지역 단감을 알리고 농민의 판로를 넓히려 1985년 시작한 진영단감제를 기록합니다. 단감은 가을 과수원의 수확과 지역의 만남을 함께 보여 주는 재료입니다."],
     ["과일을 저녁 식탁으로", "단감은 품종마다 익는 때가 달라집니다. 서촌조생의 9월 하순과 부유의 늦가을을 구분하고 단단한 과육을 고릅니다. 오늘의 카레는 지역 과일을 활용한 현대적인 집밥 응용입니다."],

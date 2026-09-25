@@ -1,5 +1,5 @@
 import type { Recipe, SourceLink } from "./content";
-import { onionTartSources } from "./daily-sources";
+import { barleySoupSources, onionTartSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -50,6 +50,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "graubunden-inspired-barley-soup": narrative(
+    ["그라우뷘덴의 곡물 한 그릇", "뷘트너 게르슈텐주페는 스위스 그라우뷘덴의 보리 수프입니다. 지역 관광청은 보리와 채소, 여러 육류를 오래 끓이는 배합을 소개합니다. 만드는 집에 따라 재료가 달라지는 음식으로, 하나의 발명 연도나 유일한 원조를 단정하지 않습니다."],
+    ["오늘도 이어지는 산지 농업", "생산자협동조합 Gran Alpin은 지금도 그라우뷘덴의 산지 곡물을 가공하고 보리를 판매합니다. 산지 경작은 농가의 소득과 자급, 다양한 경관을 이어 주는 일이라고 설명합니다. 이 식탁을 참고해 국내 쌀보리와 대파로 작은 한 냄비를 끓입니다."],
+    ["통통한 보리와 부드러운 국물", "오래 끓인 보리는 속까지 부드러우면서 알갱이의 씹는 맛을 남깁니다. 채소의 단맛과 베이컨의 짭짤한 향이 어우러지고, 마지막 크림이 국물을 둥글게 감쌉니다. 바삭하게 데운 빵을 번갈아 먹으면 식감의 차이가 살아납니다."],
+    [barleySoupSources.region, barleySoupSources.farming, barleySoupSources.barley, barleySoupSources.leek, barleySoupSources.celeriac],
+  ),
   "swabian-inspired-onion-tart": narrative(
     ["빵 굽는 날의 양파 한 판", "슈투트가르트관광청이 소개하는 슈바벤의 츠비벨쿠헨은 짭짤한 양파 타르트입니다. 지역 식문화 자료에는 빵 반죽이 부푸는 동안 양파 타르트를 구워 한 끼를 마련했다는 이야기가 나옵니다. 특정 연도나 한 사람을 발명자로 단정하지 않습니다."],
     ["포도 수확기의 따뜻한 식탁", "독일와인협회는 가을 포도 수확기에 새 와인과 양파 타르트를 함께 즐기는 문화를 소개합니다. 양파 자체는 저장을 거쳐 연중 유통됩니다. 오늘은 국내 양파와 인스턴트 드라이이스트로 작은 한 판을 만들고 샐러드와 저녁으로 나눕니다."],

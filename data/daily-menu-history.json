@@ -648,6 +648,52 @@
         "발효·식힘 포함",
         "오븐 필요"
       ]
+    },
+    {
+      "date": "2026-09-25",
+      "recipeSlug": "graubunden-inspired-barley-soup",
+      "title": "그라우뷘덴식 보리 수프",
+      "canonicalDish": "buendner-gerstensuppe",
+      "aliases": [
+        "뷘트너 게르슈텐주페",
+        "그라우뷘덴 보리 수프",
+        "스위스 보리 수프",
+        "Bündner Gerstensuppe",
+        "Grisons barley soup"
+      ],
+      "keyIngredients": [
+        "도정 쌀보리",
+        "베이컨",
+        "당근",
+        "양배추",
+        "대파",
+        "셀러리",
+        "생크림"
+      ],
+      "method": "불린 도정 보리를 볶은 향채·베이컨과 육수에서 푹 끓이고 생크림으로 마무리해 빵과 나눈다.",
+      "selectionReason": "스위스 그라우뷘덴의 보리 수프를 국내 쌀보리와 채소로 응용합니다. 보리가 통통하게 익는 모습과 크림이 국물에 퍼지는 장면을 담기 좋고, 빵을 곁들이면 두 사람의 든든한 저녁이 됩니다.",
+      "videoIdea": "작게 썬 채소 → 팬에서 볶는 소리 → 통통하게 익는 보리 → 크림을 부어 생기는 무늬 → 빵을 곁들인 한 그릇. 제목 아이디어: “보리 한 줌으로 만나는 스위스 산골의 저녁”.",
+      "duplicateReview": "기존 레시피 66개, 최초 추천 27개, 일일 추천 4개의 제목·별칭·핵심 재료·조리 순서와 steak-recipes, recipe-narratives, TonightPick 및 Git 기록을 비교했다. 기존 오베르뉴 렌틸콩 소시지 스튜는 통렌틸콩과 따로 구운 소시지가 중심이고 이번 음식은 보리 전분으로 걸쭉해지는 크림 수프다. 홍콩 마카로니 수프의 삶은 파스타·햄·달걀, 갈아 만드는 찰옥수수 수프와도 다르다. 이전 음식의 이름 또는 소스만 바꾼 메뉴가 아니며 독일 다음에 스위스 그라우뷘덴으로 순환한다.",
+      "research": {
+        "checkedAt": "2026-09-25",
+        "seasonalNote": "그라우뷘덴관광청의 보리 수프 PDF와 Gran Alpin의 지역 곡물 생산을 확인했다. 스위스 채소생산자협회는 줄기셀러리의 제철을 5~12월로, 리크를 연중 공급, 뿌리셀러리를 연중 공급하되 11~5월 저장품으로 설명한다. 이를 가을 한 끼의 배경으로 쓰며 보리나 채소가 가을에만 나는 것으로 소개하지 않는다. 한국에서는 국내 도정 보리, 대파, 줄기셀러리로 응용하고 현지 수확 달력을 국내에 적용하지 않는다. 2026-09-01 Panera의 가을 수프 신메뉴 발표는 최근 계절성 메뉴 운영의 사례로만 참고하며 이 요리의 한국 유행·유튜브 조회 수를 입증하지 않는다.",
+        "sources": [
+          "https://www.graubuenden.ch/sites/graubuenden/files/2024-01/rezept-buendner-gerstensuppe.pdf",
+          "https://www.granalpin.ch/home",
+          "https://www.granalpin.ch/produkte/produktpalette/koerner",
+          "https://www.gemuese.ch/gemuesearten/lauch",
+          "https://www.gemuese.ch/gemuesearten/knollensellerie",
+          "https://migusto.migros.ch/de/rezepte/buendner-gerstensuppe",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://www.panerabread.com/en-us/press/press-room/panera-season-is-here-with-fall-menu-drop-of-seasonal-soups-warm-sandwiches-and-nostalgic-bakery-treats.html",
+          "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety",
+          "https://www.gemuese.ch/gemuesearten/stangensellerie"
+        ]
+      },
+      "preparationLabels": [
+        "불림 30분 포함",
+        "빵을 곁들인 한 끼"
+      ]
     }
   ]
 }

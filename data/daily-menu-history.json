@@ -694,6 +694,49 @@
         "불림 30분 포함",
         "빵을 곁들인 한 끼"
       ]
+    },
+    {
+      "date": "2026-09-26",
+      "recipeSlug": "ishikari-inspired-salmon-chanchanyaki",
+      "title": "홋카이도식 연어 찬찬야키",
+      "canonicalDish": "sake-no-chanchanyaki",
+      "aliases": [
+        "연어 찬찬야키",
+        "찬찬야키",
+        "연어 미소 채소찜",
+        "鮭のチャンチャン焼き",
+        "salmon chan chan yaki"
+      ],
+      "keyIngredients": [
+        "무염 생연어",
+        "양배추",
+        "양파",
+        "당근",
+        "버섯",
+        "미소",
+        "버터"
+      ],
+      "method": "넓은 팬에서 채소를 살짝 볶고 연어·미소 양념·버터를 얹어 뚜껑을 덮고 쪄 익힌 뒤 살을 굵게 풀어 채소와 섞고 밥을 곁들인다.",
+      "selectionReason": "홋카이도 이시카리의 가을 연어 식탁을 국내에서 구하는 연어와 채소로 응용합니다. 뚜껑을 열 때의 김과 산호색 살결, 채소를 함께 섞는 장면을 담기 좋고 밥을 곁들이면 두 사람의 든든한 저녁이 됩니다.",
+      "videoIdea": "양배추와 버섯을 팬에 펼치기 → 미소 양념을 끼얹기 → 뚜껑을 열며 오르는 김 → 익힘 확인 → 연어를 굵게 풀어 채소와 섞기. 제목 아이디어: “팬 하나로 만나는 홋카이도의 가을, 연어 찬찬야키”.",
+      "duplicateReview": "전체 레시피 67개, 최초 추천 27개와 일일 메뉴 5개, steak-recipes·recipe-narratives·TonightPick 및 Git 이력을 비교했다. 기존 고흥 유자 연어구이는 연어와 브로콜리를 오븐에 굽고 유자 소스를 덧바른다. 이번 음식은 양배추·양파·버섯과 연어를 덮어 쪄 익혀 살을 풀어 나누는 공동 팬 요리로, 소스만 바꾼 구이가 아니다. 갈치조림의 무·붉은 국물 조리, 생선을 날로 양념하는 포케와도 다르다. 최근 유럽 네 지역 다음에 일본 홋카이도 이시카리로 순환한다.",
+      "research": {
+        "checkedAt": "2026-09-26",
+        "seasonalNote": "일본 농림수산성에서 이시카리의 전승 지역과 어부 음식의 유래에 관한 전언을 확인했다. 홋카이도청 자료의 이시카리 백연어 어획기는 9~11월이다. 국내에서 구매하는 대서양연어 등 양식·수입 제품은 현지 가을 백연어와 품종·산지·유통이 다르며 같은 제철로 표시하지 않는다. CGC의 2026년 9월호에 실린 가을 연어 찬찬야키는 최근 계절 메뉴 제안의 사례로만 참고했으며 한국에서의 유행이나 유튜브 조회 수를 입증하지 않는다. 국내 재료에 맞춘 2인용 가정 응용이다.",
+        "sources": [
+          "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sakenochanchanyaki_hokkaido.html",
+          "https://www.pref.hokkaido.lg.jp/sr/gid/fis019.html",
+          "https://www.gyoren.or.jp/cooking/howto/sake06.html",
+          "https://cgc-kitchen365.jp/search/detail/6a72f13b3ae008af26848061",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+          "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety"
+        ]
+      },
+      "preparationLabels": [
+        "뚜껑 있는 팬",
+        "밥을 곁들인 한 끼"
+      ]
     }
   ]
 }

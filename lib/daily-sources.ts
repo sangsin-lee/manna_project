@@ -1,5 +1,16 @@
 import type { SourceLink } from "./content";
 
+// Ishikari's salmon season and household cooking references reviewed September 26.
+export const chanchanyakiSources = {
+  culture: { label: "일본 농림수산성 — 이시카리의 연어 찬찬야키와 전승 이야기", url: "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sakenochanchanyaki_hokkaido.html" },
+  season: { label: "홋카이도청 — 백연어의 지역별 어획기", url: "https://www.pref.hokkaido.lg.jp/sr/gid/fis019.html" },
+  recipe: { label: "홋카이도 어업협동조합연합회 — 연어와 채소를 함께 익히는 방법", url: "https://www.gyoren.or.jp/cooking/howto/sake06.html" },
+  seasonalMenu: { label: "CGC 2026년 9월호 — 가을 연어 찬찬야키 메뉴 제안", url: "https://cgc-kitchen365.jp/search/detail/6a72f13b3ae008af26848061" },
+  safety: { label: "FoodSafety.gov — 생선의 안전 중심온도와 재가열", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+  handling: { label: "미국 FDA — 냉장 해동과 생선 취급", url: "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely" },
+  storage: { label: "미국 USDA — 남은 음식의 소분과 냉장 보관", url: "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety" },
+} satisfies Record<string, SourceLink>;
+
 // Primary references reviewed for the September 23 dinner.
 export const onionTartSources = {
   region: { label: "슈투트가르트관광청 — 슈바벤 음식 사전의 양파 타르트", url: "https://www.stuttgart-tourist.de/en/eat-and-drink/glossary-for-swabian-cuisine" },

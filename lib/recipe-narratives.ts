@@ -1,5 +1,5 @@
 import type { Recipe, SourceLink } from "./content";
-import { barleySoupSources, onionTartSources } from "./daily-sources";
+import { barleySoupSources, chanchanyakiSources, onionTartSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -50,6 +50,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "ishikari-inspired-salmon-chanchanyaki": narrative(
+    ["이시카리 어부들의 철판에서", "일본 농림수산성은 찬찬야키의 주요 전승 지역을 홋카이도 이시카리로 소개합니다. 쇼와 초기, 어부들이 배 위에서 드럼통으로 만든 철판에 연어를 구워 먹었다는 이야기가 전해집니다. 확정된 발명 기록으로 보지는 않으며, 이름의 유래에도 여러 설이 있습니다."],
+    ["큰 철판에서 집의 프라이팬으로", "큰 연어를 나눠 먹던 방식은 오늘날 토막 생선과 가정용 팬으로 이어집니다. 홋카이도청이 안내하는 이시카리 백연어의 어획기는 9~11월입니다. 오늘의 팬에는 한국에서 구한 연어를 쓰며, 수입·양식 연어를 현지 가을 백연어로 소개하지 않습니다."],
+    ["미소 향을 머금은 연어와 채소", "뚜껑 안에서 양배추와 양파가 부드러워지고, 연어의 감칠맛이 채소와 어우러집니다. 미소의 짭짤함을 버터가 감싸고 버섯은 씹는 맛을 보탭니다. 익힌 살을 너무 잘게 부수지 않고 굵게 풀면 한입마다 촉촉한 결이 살아납니다."],
+    [chanchanyakiSources.culture, chanchanyakiSources.season, chanchanyakiSources.recipe],
+  ),
   "graubunden-inspired-barley-soup": narrative(
     ["그라우뷘덴의 곡물 한 그릇", "뷘트너 게르슈텐주페는 스위스 그라우뷘덴의 보리 수프입니다. 지역 관광청은 보리와 채소, 여러 육류를 오래 끓이는 배합을 소개합니다. 만드는 집에 따라 재료가 달라지는 음식으로, 하나의 발명 연도나 유일한 원조를 단정하지 않습니다."],
     ["오늘도 이어지는 산지 농업", "생산자협동조합 Gran Alpin은 지금도 그라우뷘덴의 산지 곡물을 가공하고 보리를 판매합니다. 산지 경작은 농가의 소득과 자급, 다양한 경관을 이어 주는 일이라고 설명합니다. 이 식탁을 참고해 국내 쌀보리와 대파로 작은 한 냄비를 끓입니다."],

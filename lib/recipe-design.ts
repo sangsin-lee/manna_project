@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import type { CountrySlug, Recipe } from "./content";
 
 export type RecipePattern = "grain" | "tiles" | "waves" | "contours" | "linen";
-export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble" | "lentil-stew" | "jujube-porridge" | "garlic-chicken" | "perilla-kalguksu" | "grape-salad" | "berry-duck" | "cheese-jeon" | "shiitake-japchae" | "apple-pork-rolls" | "yuja-salmon" | "fig-toast" | "octopus-soup" | "cockle-rice" | "persimmon-curry" | "chestnut-yullan" | "oyster-jeon" | "spinach-soup" | "apple-pancakes" | "ginseng-soup" | "chili-tteok" | "crab-custard" | "onion-tart" | "barley-soup";
+export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble" | "lentil-stew" | "jujube-porridge" | "garlic-chicken" | "perilla-kalguksu" | "grape-salad" | "berry-duck" | "cheese-jeon" | "shiitake-japchae" | "apple-pork-rolls" | "yuja-salmon" | "fig-toast" | "octopus-soup" | "cockle-rice" | "persimmon-curry" | "chestnut-yullan" | "oyster-jeon" | "spinach-soup" | "apple-pancakes" | "ginseng-soup" | "chili-tteok" | "crab-custard" | "onion-tart" | "barley-soup" | "salmon-chanchan";
 export type RecipeDesign = {
   paper: string; soft: string; from: string; mid: string; to: string;
   ink: string; muted: string; accent: string; dark: string; line: string;
@@ -20,6 +20,7 @@ const places: Record<CountrySlug, [string, RecipePattern]> = {
 
 // Visual interpretations of ingredients and places, not claims of traditional patterns.
 const details: Record<string, { art: RecipeArt; caption: string; place?: string; pattern?: RecipePattern; colors?: [string, string, string, string] }> = {
+  "ishikari-inspired-salmon-chanchanyaki": { art: "salmon-chanchan", caption: "연어의 산호빛과 미소의 황갈색, 이시카리 바다를 떠올리는 물결 선", pattern: "waves" },
   "graubunden-inspired-barley-soup": { art: "barley-soup", caption: "보리의 크림빛과 당근의 주황, 알프스를 떠올리는 푸른 회색과 등고선", pattern: "contours" },
   "swabian-inspired-onion-tart": { art: "onion-tart", caption: "양파의 금빛과 구운 반죽의 갈색, 슈바벤의 소박한 식탁을 떠올리는 리넨 선", pattern: "linen" },
   "cheongsong-apple-oat-pancakes": { art: "apple-pancakes", caption: "청송 사과의 장밋빛과 귀리 팬케이크의 노릇한 갈색", pattern: "contours" },

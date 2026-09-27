@@ -1,5 +1,6 @@
 import type { Recipe, SourceLink } from "./content";
 import { usMexicanSources } from "./us-mexican-sources";
+import { usChickenSources } from "./us-chicken-sources";
 import { barleySoupSources, calabacitasSources, chanchanyakiSources, onionTartSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
@@ -51,6 +52,18 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "southern-style-fried-chicken": narrative(
+    ["남부의 식탁을 읽는 한 가지 기록", "미국 남부의 닭튀김 문화에는 아프리카계 미국인 상인과 요리사의 역사가 함께 있습니다. 1872년 고든스빌 철도역을 그린 목판화에도 닭튀김과 커피를 파는 흑인 남성과 여성이 등장합니다. 닭튀김 전체의 발명자를 뜻하는 기록은 아닙니다."],
+    ["기차 여행의 한 끼, 지역의 생업", "버지니아 오렌지카운티는 철도 승객에게 음식을 팔던 흑인 여성들의 이야기를 기억합니다. 이동하는 사람들의 식사가 지역의 생업과 만났습니다. 오늘의 순살·요거트 배합은 그 역사적 조리법을 복원한 것이 아니라 가정용 응용입니다."],
+    ["거친 금빛 껍질과 촉촉한 속", "양념 가루를 눌러 묻히면 표면에 작은 굴곡이 생깁니다. 그 결은 바삭하고 속의 닭다리살은 촉촉합니다. 튀긴 뒤 겹쳐 쌓지 않고 식힘망에 두세요. 차가운 콜슬로의 아삭함을 곁들이면 따뜻한 튀김과 대비됩니다."],
+    [usChickenSources.southernHistory, usChickenSources.southernCulture],
+  ),
+  "oven-buffalo-wings": narrative(
+    ["버팔로는 뉴욕주의 도시 이름", "버팔로 윙에는 뉴욕주 버팔로의 1964년 앵커 바 이야기가 널리 알려져 있습니다. 핫소스와 버터에 버무리는 구성이 특징입니다. 여기서는 튀김옷 없는 윙을 오븐에 굽는 방식으로 응용합니다."],
+    ["한 도시 안의 여러 윙 이야기", "버팔로의 존 영은 1960년대에 통날개와 튀김옷, 맘보 소스를 쓰는 다른 요리를 선보였습니다. 지역 관광청은 이 역사도 함께 소개합니다. 닭날개 요리 전체를 한 사람의 발명으로 단정하지 않고 서로 다른 방식을 구분해 읽습니다."],
+    ["매콤한 산미에 차가운 아삭함", "식초 기반 핫소스의 산미와 매운맛을 녹인 버터가 감쌉니다. 익힌 윙을 소스에 버무리는 순간 윤기가 생깁니다. 셀러리의 아삭함과 블루치즈 딥의 짭짤한 크림맛은 따뜻한 윙과 선명한 대비를 만듭니다."],
+    [usChickenSources.buffalo, usChickenSources.wingPioneer, usChickenSources.wingRecipe],
+  ),
   "tortilla-mushroom-cheese-quesadilla": narrative(
     ["멕시코의 토르티야에서 시작해", "옥수수 토르티야는 멕시코·메소아메리카의 오래된 식문화와 연결됩니다. 토르티야에 속을 넣는 퀘사디아 역시 멕시코 유래 음식입니다. 이 페이지는 미국에서 즐기는 멕시코계 식탁을 소개하며, 조리에는 시판 밀 토르티야를 씁니다."],
     ["부엌과 식료품점이 이어 온 음식", "스미스소니언은 미국으로 이주한 산체스 가족의 토르티야 제조와 시카고 Azteca의 유통 이야기를 기록합니다. 이주 공동체의 식사와 상업의 역사가 함께 흐릅니다. 오늘은 국내 버섯과 치즈로 작은 프라이팬 한 끼를 만듭니다."],

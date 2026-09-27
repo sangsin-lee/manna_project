@@ -12,6 +12,22 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "fried-chicken" && <g>
+          {[[250,136,-20],[324,172,24],[257,233,-35],[354,244,15]].map(([x,y,r])=><g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-45-18q-8-19 14-23 8-17 26-7 20-9 31 8 22 1 22 24 12 17-4 33-2 20-24 22-16 13-34 1-24 3-31-17-16-14 0-41Z" fill="#c18a43" stroke="#95632c" strokeWidth="3"/>
+            <path d="m-28-25 12-9 9 7 18-6 5 13 18 5-9 12 9 15-14 8-12-5-10 15-12-8-16 1 5-17-15-7 12-9Z" fill="#dca653"/>
+            {[[0,-20],[-23,-3],[22,3],[-7,17],[21,-23],[-28,19],[17,25]].map(([cx,cy])=><path key={`${cx}-${cy}`} d="m-4-1 5-4 5 6-7 4Z" transform={`translate(${cx} ${cy})`} fill="#edc578"/>)}
+            <path d="m-34-14 6 3m24-28 3 7m24 23 5-4m-28 29 6-1m-24-5 4-6" stroke="#a56d30" strokeWidth="3" strokeLinecap="round"/>
+          </g>)}
+          <g transform="translate(397 112)"><circle r="40" fill="#d6c1a0" stroke="#aa8c63" strokeWidth="3"/><circle r="33" fill="#f0e3c8"/><path d="m-20-9 30 5m-29 12 28-7m-20 17 26-7m-13-26 13 13m-34-3 15 21" stroke="#b2ba86" strokeWidth="5" strokeLinecap="round"/><path d="m-17 2 26 6m-13-24 12 10m-4 22 8-12" stroke="#d59662" strokeWidth="3" strokeLinecap="round"/></g>
+          <path d="m182 284 10 3m213-51 6 4m-202-52 7-4m119 111 9-2" stroke="#c69247" strokeWidth="5" strokeLinecap="round"/>
+        </g>}
+        {art === "buffalo-wings" && <g>
+          {[[246,125,-25],[290,163,25],[238,215,-35]].map(([x,y,r])=><g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}><path d="M-38-13Q-36-29-8-25L29-19Q47-16 41 4L29 19Q7 27-19 19L-36 11Q-44 1-38-13Z" fill="#c3653f" stroke="#974931" strokeWidth="3"/><path d="M-26-9Q0-16 29-8M-23 9Q2 16 23 7" stroke="#e49b65" strokeWidth="5" strokeLinecap="round"/><path d="M-22 0 23 1" stroke="#ac4e32" strokeWidth="3" strokeLinecap="round"/></g>)}
+          {[[318,119,-25],[332,229,40],[280,277,90]].map(([x,y,r])=><g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}><path d="M-10 9Q-38 6-35-19-31-43-7-39 18-42 24-19 27 1 9 11L8 36Q-2 48-13 37Z" fill="#bb5738" stroke="#8f402d" strokeWidth="3"/><path d="M-24-19q5-17 20-11M-4 5l1 27" stroke="#e19661" strokeWidth="6" strokeLinecap="round"/><path d="m9-21 3 13" stroke="#d37b4d" strokeWidth="4" strokeLinecap="round"/></g>)}
+          <g transform="translate(376 179) rotate(16)">{[-16,0,16].map((x)=><g key={x}><rect x={x-6} y="-43" width="12" height="86" rx="5" fill="#acbf7c" stroke="#809957" strokeWidth="2"/><path d={`M${x-1}-36v71`} stroke="#dce1aa" strokeWidth="3"/></g>)}</g>
+          <g transform="translate(401 267)"><circle r="40" fill="#d8c1a7" stroke="#a9896e" strokeWidth="3"/><circle r="33" fill="#f2e9d7"/><path d="m-15-13 6 4m15-11 4 6m8 10-6 3m-20 15 7-2m-21-9 4 6m20 7 5-3" stroke="#879a91" strokeWidth="4" strokeLinecap="round"/><path d="M-22 0q5-22 29-21" stroke="#fff8e9" strokeWidth="4" strokeLinecap="round"/></g>
+        </g>}
         {art === "quesadilla" && <g>
           {[[275,165,-15],[316,213,18],[252,239,-40]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><path d="M-68 24Q-62-38 5-67L64 34Q-1 53-68 24Z" fill="#c29054" stroke="#976a3b" strokeWidth="3"/><path d="M-66 19Q-59-42 6-72L67 28Q-2 47-66 19Z" fill="#e8c88b" stroke="#bd955b" strokeWidth="2"/><path d="M-59 25q63 26 117 6" stroke="#f5e1a2" strokeWidth="6"/><path d="m-34-8 11-5m15-28 7 3m17 33 12-3m-51 28 8 2m31 5 6-2" stroke="#b1854b" strokeWidth="5" strokeLinecap="round"/><path d="m-28 33 8 2m24 2 10-1m21-1 6-1" stroke="#897449" strokeWidth="3" strokeLinecap="round"/></g>)}
           <g transform="translate(383 116)"><circle r="39" fill="#edddbb" stroke="#ba996c" strokeWidth="3"/><circle r="31" fill="#bd624c"/>{[[-14,-9],[4,-17],[16,3],[-4,12],[-17,10]].map(([x,y])=><rect key={x} x={x-5} y={y-4} width="10" height="8" rx="2" fill="#e29870"/>)}<path d="m-6-4 10 6m-18 11 6-4m21-16-5 5" stroke="#718953" strokeWidth="3" strokeLinecap="round"/></g>

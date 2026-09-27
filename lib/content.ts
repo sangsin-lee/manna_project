@@ -2,6 +2,8 @@ import { steakRecipes } from "./steak-recipes";
 import { dailyRecipes } from "./daily-recipes";
 import { usMexicanRecipes } from "./us-mexican-recipes";
 import { usMexicanSources } from "./us-mexican-sources";
+import { usChickenRecipes } from "./us-chicken-recipes";
+import { usChickenSources } from "./us-chicken-sources";
 import { jejuRecipes } from "./jeju-recipes";
 import { gyeonggiRecipes } from "./gyeonggi-recipes";
 import { gangwonRecipes } from "./gangwon-recipes";
@@ -1008,7 +1010,7 @@ export const countries: Country[] = [
     summary:
       "미국의 음식은 하나의 대표 메뉴보다 지역의 농산물, 이주 공동체, 도시의 노동과 관광 문화가 만든 수많은 로컬 푸드로 보는 편이 정확합니다.",
     introduction: [
-      "미국은 지역 간 거리와 기후 차이가 매우 커 하나의 식문화로 설명하기 어렵습니다. 직접 다녀온 하와이·로스앤젤레스·라스베이거스의 기록에, 자료로 살펴본 뉴멕시코와 멕시코계 식문화를 더해 서로 다른 식사 장면을 비교합니다.",
+      "미국은 지역 간 거리와 기후 차이가 매우 커 하나의 식문화로 설명하기 어렵습니다. 직접 다녀온 하와이·로스앤젤레스·라스베이거스의 기록에, 자료로 살펴본 뉴멕시코·남부·버팔로와 멕시코계 식문화를 더해 서로 다른 식사 장면을 비교합니다.",
       "하와이의 로컬 푸드는 원주민 하와이 문화와 여러 이주 공동체의 음식이 섬의 역사 속에서 만나 발전했고, 로스앤젤레스는 다양한 커뮤니티와 푸드트럭, 라스베이거스는 뷔페와 스테이크하우스, 셰프 레스토랑 같은 관광형 다이닝이 강한 인상을 만듭니다.",
       "토르티야와 치폴레 고추의 뿌리는 멕시코 식문화에 있습니다. 미국에서 시작한 Chipotle Mexican Grill 브랜드와 구분하고, 이주 공동체와 미국의 외식 문화를 통해 이어진 음식을 이 페이지에서 함께 소개합니다.",
     ],
@@ -1024,7 +1026,7 @@ export const countries: Country[] = [
       "다이너와 푸드트럭",
       "뷔페와 엔터테인먼트형 식사",
     ],
-    representativeFoods: ["로코모코", "포케", "플레이트 런치", "프렌치 딥", "토르티야 퀘사디아 · 멕시코계 식탁", "치폴레풍 부리토볼"],
+    representativeFoods: ["로코모코", "포케", "플레이트 런치", "프렌치 딥", "토르티야 퀘사디아 · 멕시코계 식탁", "치폴레풍 부리토볼", "남부식 프라이드치킨", "버팔로 윙"],
     tableScenes: [
       {
         eyebrow: "HAWAIʻI LOCAL FOOD",
@@ -1062,6 +1064,16 @@ export const countries: Country[] = [
         name: "덴버 · 미국의 멕시코계 외식 문화",
         description: "Chipotle Mexican Grill은 샌프란시스코 미션 지구의 식당들에서 영감을 받아 1993년 덴버에서 시작했습니다. 토르티야와 치폴레 고추 자체가 미국에서 탄생했다는 의미는 아닙니다. 관련 설명은 방문 체험이 아닌 자료 조사에 바탕을 둡니다.",
         foods: ["부리토볼", "토르티야 퀘사디아"],
+      },
+      {
+        name: "미국 남부 · 버지니아의 기록",
+        description: "19세기 고든스빌에서는 흑인 상인들이 철도 승객에게 프라이드치킨을 팔았습니다. 남부 식문화와 지역 생업을 보여 주는 기록이며, 모든 닭튀김의 발상지를 뜻하지 않습니다. 관련 내용은 자료 조사에 바탕을 둡니다.",
+        foods: ["남부식 프라이드치킨"],
+      },
+      {
+        name: "뉴욕주 버팔로",
+        description: "핫소스와 버터에 버무리는 버팔로 윙에는 1964년 앵커 바의 이야기가 널리 알려져 있습니다. 지역의 윙 역사에는 튀김옷과 맘보 소스를 쓴 존 영의 다른 방식도 함께 있습니다.",
+        foods: ["버팔로 윙"],
       },
       {
         name: "라스베이거스",
@@ -1108,9 +1120,13 @@ export const countries: Country[] = [
       usMexicanSources.pepper,
       usMexicanSources.migration,
       usMexicanSources.brand,
+      usChickenSources.southernHistory,
+      usChickenSources.southernCulture,
+      usChickenSources.buffalo,
+      usChickenSources.wingPioneer,
     ],
-    storySlugs: ["tortilla-chipotle-mexican-american-table", "hawaii-local-food-migration", "hawaii-plate-lunch-culture"],
-    recipeSlugs: ["tortilla-mushroom-cheese-quesadilla", "chipotle-inspired-chicken-rice-bowl", "new-mexico-inspired-calabacitas", "hawaii-loco-moco", "hawaii-poke-bowl"],
+    storySlugs: ["fried-chicken-buffalo-wings-american-regions", "tortilla-chipotle-mexican-american-table", "hawaii-local-food-migration", "hawaii-plate-lunch-culture"],
+    recipeSlugs: ["southern-style-fried-chicken", "oven-buffalo-wings", "tortilla-mushroom-cheese-quesadilla", "chipotle-inspired-chicken-rice-bowl", "new-mexico-inspired-calabacitas", "hawaii-loco-moco", "hawaii-poke-bowl"],
     updatedAt: "2026-09-27",
     palette: {
       from: "#d8e7e4",
@@ -1597,6 +1613,24 @@ export const countries: Country[] = [
 ];
 
 export const stories: Story[] = [
+  {
+    slug: "fried-chicken-buffalo-wings-american-regions", title: "프라이드치킨과 버팔로 윙, 서로 다른 미국의 닭 요리",
+    country: "usa", category: "food-culture", experienceStatus: "researched",
+    summary: "남부의 철도역에서 팔던 닭튀김과 뉴욕주 버팔로의 윙. 같은 닭고기가 서로 다른 지역의 음식 이야기를 전합니다.",
+    lead: "금빛 튀김옷을 입힌 치킨과 붉은 핫소스를 두른 윙은 겉모습부터 다릅니다. 두 접시를 나란히 놓고 지역의 역사, 조리 방식, 맛의 대비를 읽어 봅니다.",
+    readTime: 4, visualLabel: "TWO CHICKEN TABLES", visualCaption: "SOUTHERN FRIED CHICKEN · BUFFALO WINGS",
+    keywords: ["프라이드치킨", "버팔로윙", "미국남부", "고든스빌", "뉴욕주버팔로"],
+    publishedAt: "2026-09-27", updatedAt: "2026-09-27",
+    sections: [
+      { heading: "철도역의 닭튀김과 생업의 역사", paragraphs: ["버지니아 고든스빌의 19세기 철도역에는 승객에게 프라이드치킨을 파는 흑인 상인들이 있었습니다. Virginia Humanities가 소개하는 1872년 목판화에도 닭튀김과 커피를 판매하는 남성과 여성이 등장합니다.", "오렌지카운티의 지역 기록은 특히 ‘웨이터 캐리어’로 불린 흑인 여성들의 역할을 기억합니다. 음식은 여행 중의 한 끼이자 지역 주민의 생업이었습니다. 이 기록은 미국 남부 식문화의 한 사례이며, 전 세계 닭튀김이 고든스빌에서 시작했다는 주장은 아닙니다."] },
+      { heading: "버팔로라는 도시가 붙은 윙", paragraphs: ["버팔로 윙의 버팔로는 뉴욕주의 도시 이름입니다. 지역 관광청은 오늘날 잘 알려진 스타일을 설명하며 1964년 앵커 바의 이야기를 소개합니다. 튀김옷 없는 윙에 핫소스와 버터를 더하는 구성이 핵심입니다.", "같은 도시의 존 영은 1960년대에 날개를 통째로 쓰고 튀김옷과 맘보 소스를 곁들이는 다른 윙 요리를 선보였습니다. 한 가게의 이야기만으로 닭날개 요리 전체의 발명자를 확정하기보다, 버팔로 안에도 서로 다른 방식이 있었다고 읽는 편이 정확합니다."] },
+      { heading: "금빛의 바삭함, 붉은 소스의 산미", paragraphs: ["이번 남부식 치킨은 양념 가루가 만든 울퉁불퉁한 튀김옷과 촉촉한 닭다리살이 대비됩니다. 막 튀긴 닭을 식힘망에 두면 아래에 수증기가 고여 눅눅해지는 것을 줄일 수 있습니다.", "버팔로 윙은 식초 기반 핫소스의 매운맛과 산미를 버터가 감쌉니다. 차갑고 아삭한 셀러리, 짭짤하고 크리미한 블루치즈 딥이 따뜻한 윙과 다른 식감을 만듭니다. 촬영에서는 금빛 껍질의 결, 붉은 소스가 묻는 순간을 각각 담아 보세요."] },
+      { heading: "오늘의 부엌에 맞춘 두 가지 응용", paragraphs: ["남부식 프라이드치킨은 국내에서 구하기 쉬운 순살 닭다리살과 무가당 요거트·우유로 구성했습니다. 버팔로 윙은 뜨거운 기름 대신 오븐에 구운 뒤 소스를 버무립니다. 두 메뉴 모두 가정용 응용이며 특정 식당의 공식 배합을 재현한 레시피는 아닙니다.", "닭고기는 부위와 조리 방식에 관계없이 중심온도 74°C 이상을 확인합니다. 튀김 기름의 온도와 고기의 중심온도는 별개입니다. 각 레시피에서 2인분 사용량, 장보기 단위, 대체 재료와 단계별 조리법을 확인하세요."] },
+    ],
+    sources: [usChickenSources.southernHistory, usChickenSources.southernCulture, usChickenSources.buffalo, usChickenSources.wingPioneer, usChickenSources.wingRecipe, usChickenSources.temperature],
+    relatedRecipeSlugs: ["southern-style-fried-chicken", "oven-buffalo-wings"],
+    palette: { from: "#f7e8cc", mid: "#dfa471", to: "#b95d3e", ink: "#583a23" },
+  },
   {
     slug: "tortilla-chipotle-mexican-american-table", title: "토르티야와 치폴레, 멕시코의 뿌리와 미국의 식탁",
     country: "usa", category: "food-culture", experienceStatus: "researched",
@@ -2833,6 +2867,7 @@ export const stories: Story[] = [
 ];
 
 export const recipes: Recipe[] = [
+  ...usChickenRecipes,
   ...usMexicanRecipes,
   ...gyeongbukRecipes,
   ...gyeongnamRecipes,

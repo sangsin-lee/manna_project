@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import type { CountrySlug, Recipe } from "./content";
 
 export type RecipePattern = "grain" | "tiles" | "waves" | "contours" | "linen";
-export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble" | "lentil-stew" | "jujube-porridge" | "garlic-chicken" | "perilla-kalguksu" | "grape-salad" | "berry-duck" | "cheese-jeon" | "shiitake-japchae" | "apple-pork-rolls" | "yuja-salmon" | "fig-toast" | "octopus-soup" | "cockle-rice" | "persimmon-curry" | "chestnut-yullan" | "oyster-jeon" | "spinach-soup" | "apple-pancakes" | "ginseng-soup" | "chili-tteok" | "crab-custard" | "onion-tart" | "barley-soup" | "salmon-chanchan" | "calabacitas" | "quesadilla" | "chipotle-bowl";
+export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble" | "lentil-stew" | "jujube-porridge" | "garlic-chicken" | "perilla-kalguksu" | "grape-salad" | "berry-duck" | "cheese-jeon" | "shiitake-japchae" | "apple-pork-rolls" | "yuja-salmon" | "fig-toast" | "octopus-soup" | "cockle-rice" | "persimmon-curry" | "chestnut-yullan" | "oyster-jeon" | "spinach-soup" | "apple-pancakes" | "ginseng-soup" | "chili-tteok" | "crab-custard" | "onion-tart" | "barley-soup" | "salmon-chanchan" | "calabacitas" | "quesadilla" | "chipotle-bowl" | "fried-chicken" | "buffalo-wings";
 export type RecipeDesign = {
   paper: string; soft: string; from: string; mid: string; to: string;
   ink: string; muted: string; accent: string; dark: string; line: string;
@@ -20,6 +20,8 @@ const places: Record<CountrySlug, [string, RecipePattern]> = {
 
 // Visual interpretations of ingredients and places, not claims of traditional patterns.
 const details: Record<string, { art: RecipeArt; caption: string; place?: string; pattern?: RecipePattern; colors?: [string, string, string, string] }> = {
+  "southern-style-fried-chicken": { art: "fried-chicken", caption: "튀김옷의 금빛과 따뜻한 식탁을 떠올리는 리넨 선", pattern: "linen" },
+  "oven-buffalo-wings": { art: "buffalo-wings", caption: "핫소스의 붉은 주황과 셀러리의 연두, 바의 테이블을 떠올리는 격자", pattern: "tiles" },
   "tortilla-mushroom-cheese-quesadilla": { art: "quesadilla", caption: "구운 토르티야의 금빛과 토마토 살사, 가정의 식탁을 떠올리는 리넨 선", pattern: "linen" },
   "chipotle-inspired-chicken-rice-bowl": { art: "chipotle-bowl", caption: "훈연 고추의 벽돌빛과 라임의 초록, 밥알을 떠올리는 작은 점", pattern: "grain" },
   "new-mexico-inspired-calabacitas": { art: "calabacitas", caption: "옥수수의 금빛과 뉴멕시코 사막의 흙빛을 떠올리는 등고선", pattern: "contours" },

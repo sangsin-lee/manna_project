@@ -737,6 +737,48 @@
         "뚜껑 있는 팬",
         "밥을 곁들인 한 끼"
       ]
+    },
+    {
+      "date": "2026-09-27",
+      "recipeSlug": "new-mexico-inspired-calabacitas",
+      "title": "뉴멕시코식 칼라바시타스",
+      "canonicalDish": "calabacitas",
+      "aliases": [
+        "칼라바시타스",
+        "calabacitas de milpa",
+        "뉴멕시코 호박 옥수수 볶음"
+      ],
+      "keyIngredients": [
+        "애호박",
+        "옥수수",
+        "풋고추·피망",
+        "양파",
+        "토마토",
+        "치즈",
+        "익힌 통조림 강낭콩",
+        "토르티야"
+      ],
+      "method": "호박과 피망·양파를 볶고 옥수수·토마토를 더해 짧게 익힌 뒤 치즈를 녹인다. 별도로 데운 완전 조리 통조림 콩과 토르티야를 곁들인다.",
+      "selectionReason": "뉴멕시코 남부의 9월 호박·옥수수·풋고추 식탁을 국내 애호박과 피망으로 응용한다. 옥수수의 금빛, 호박의 연두, 토마토의 붉은빛이 한 팬에서 대비되고 콩과 토르티야를 곁들여 든든한 저녁을 만든다.",
+      "videoIdea": "호박의 반달 단면 → 노릇해지는 채소 → 옥수수와 토마토의 색 → 녹는 치즈 → 콩을 곁들여 토르티야에 싸는 한입. 제목 아이디어: “호박 한 팬으로 떠나는 뉴멕시코의 수확 식탁”.",
+      "duplicateReview": "전체 레시피 68개, 최초 추천 기록 27개와 일일 메뉴 6개, steak-recipes·recipe-narratives·TonightPick 및 Git 이력을 비교했다. 기존 홍천 옥수수 수프는 곱게 갈아 끓이고 만토바 단호박 뇨키는 반죽을 빚어 삶는다. 이번 칼라바시타스는 여린 호박·옥수수·풋고추를 조각째 볶는 채소 요리이며 콩은 별도 곁들임이다. 렌틸콩 소시지 스튜의 장시간 끓이기와도 다르고 단순 소스 변경이 아니다. 전날 일본 이시카리 다음 미국 뉴멕시코로 지역을 순환한다.",
+      "research": {
+        "checkedAt": "2026-09-27",
+        "seasonalNote": "뉴멕시코 관광청의 칼라바시타스와 NMFMA의 밀파 관련 음식 설명을 확인했다. NMFMA 남부 지역 9월 목록에는 옥수수·풋고추·여름호박이 포함된다. 여름호박 항목의 설명문에는 다른 과일에 관한 편집 오류가 있어 품목 목록만 참고했다. 2026년 8월 3일 NMFMA의 칠리 로스팅 시즌 소식은 최근 지역 수확기 식문화의 사례이며 한국 유행이나 유튜브 조회 수의 근거가 아니다. 한국의 시설재배 애호박·피망과 통조림 옥수수·콩의 연중 유통을 현지 수확기와 구분한다. 건조·생강낭콩 대신 완전히 익힌 통조림 콩만 쓰며 Health Canada의 렉틴 안내와 FoodSafety.gov·USDA의 보관·재가열 기준을 확인했다.",
+        "sources": [
+          "https://www.newmexico.org/things-to-do/cuisine/recipes/calabacitas/",
+          "https://farmersmarketsnm.org/recipes/calabacitas-de-milpa/",
+          "https://farmersmarketsnm.org/resources/shopper-resources/whats-in-season/southern-nm/",
+          "https://farmersmarketsnm.org/chile-roasting-season-is-here/",
+          "https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/chemical-contaminants/natural-toxins/lectins-legumes.html",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety"
+        ]
+      },
+      "preparationLabels": [
+        "채소 한 팬",
+        "콩·토르티야 곁들임"
+      ]
     }
   ]
 }

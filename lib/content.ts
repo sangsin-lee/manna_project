@@ -1094,8 +1094,8 @@ export const countries: Country[] = [
       },
     ],
     storySlugs: ["hawaii-local-food-migration", "hawaii-plate-lunch-culture"],
-    recipeSlugs: ["hawaii-loco-moco", "hawaii-poke-bowl"],
-    updatedAt: "2026-09-09",
+    recipeSlugs: ["new-mexico-inspired-calabacitas", "hawaii-loco-moco", "hawaii-poke-bowl"],
+    updatedAt: "2026-09-27",
     palette: {
       from: "#d8e7e4",
       mid: "#b9d6d2",

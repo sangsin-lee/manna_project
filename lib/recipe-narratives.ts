@@ -1,5 +1,5 @@
 import type { Recipe, SourceLink } from "./content";
-import { barleySoupSources, chanchanyakiSources, onionTartSources } from "./daily-sources";
+import { barleySoupSources, calabacitasSources, chanchanyakiSources, onionTartSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -50,6 +50,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "new-mexico-inspired-calabacitas": narrative(
+    ["밭의 재료가 한 팬으로", "칼라바시타스는 뉴멕시코의 호박 채소 요리입니다. NMFMA는 멕시코 원주민 농업의 밀파와 연결해 소개합니다. 옥수수·콩·호박을 함께 기르는 밭의 관계가 그 배경이며, 오늘의 통조림 콩과 토르티야 한 상까지 오래된 전통 배합이라는 뜻은 아닙니다."],
+    ["수확철 시장에서 오늘의 부엌으로", "2026년 8월 NMFMA는 풋고추 수확과 시장의 로스팅 시즌 소식을 전했습니다. 가족들은 고추를 구워 보관하며 계절의 맛을 이어 갑니다. 집마다 다른 칼라바시타스도 이런 수확 식탁의 한 장면입니다. 여기서는 국내 애호박과 피망으로 그 구성을 응용합니다."],
+    ["달큰한 호박, 톡 터지는 옥수수", "살짝 노릇해진 호박은 속이 촉촉하고 옥수수는 씹을 때 단맛을 보탭니다. 피망의 풋향과 토마토의 산미를 치즈가 부드럽게 감쌉니다. 포근한 콩과 따뜻한 토르티야를 번갈아 먹으면 채소의 가벼운 식감에 든든함이 더해집니다."],
+    [calabacitasSources.recipe, calabacitasSources.culture, calabacitasSources.season, calabacitasSources.seasonalMenu],
+  ),
   "ishikari-inspired-salmon-chanchanyaki": narrative(
     ["이시카리 어부들의 철판에서", "일본 농림수산성은 찬찬야키의 주요 전승 지역을 홋카이도 이시카리로 소개합니다. 쇼와 초기, 어부들이 배 위에서 드럼통으로 만든 철판에 연어를 구워 먹었다는 이야기가 전해집니다. 확정된 발명 기록으로 보지는 않으며, 이름의 유래에도 여러 설이 있습니다."],
     ["큰 철판에서 집의 프라이팬으로", "큰 연어를 나눠 먹던 방식은 오늘날 토막 생선과 가정용 팬으로 이어집니다. 홋카이도청이 안내하는 이시카리 백연어의 어획기는 9~11월입니다. 오늘의 팬에는 한국에서 구한 연어를 쓰며, 수입·양식 연어를 현지 가을 백연어로 소개하지 않습니다."],

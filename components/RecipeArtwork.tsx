@@ -12,6 +12,18 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "calabacitas" && <g>
+          <path d="M191 151h-23q-16 0-16 18v25q0 18 16 18h23m218-61h23q16 0 16 18v25q0 18-16 18h-23" stroke="#835d43" strokeWidth="10" />
+          <circle cx="300" cy="181" r="117" fill="#936747" stroke="#b78b63" strokeWidth="5" />
+          <circle cx="300" cy="181" r="105" fill="#cf9e60" />
+          {[[250,122,-30],[316,112,25],[369,159,80],[337,229,-20],[251,219,35],[221,165,-75],[291,173,140]].map(([x,y,r])=><g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}><path d="M-25-4H25a25 25 0 0 1-50 0Z" fill="#cbd18b" stroke="#71824d" strokeWidth="5"/><path d="m-12 3 5 5m12-5 5 5" stroke="#f1e7af" strokeWidth="4" strokeLinecap="round"/></g>)}
+          {[[275,135],[351,130],[317,151],[244,182],[360,201],[278,229],[300,258],[229,149],[332,187],[268,196],[303,213],[326,265]].map(([x,y])=><g key={`${x}-${y}`} transform={`translate(${x} ${y})`}><ellipse rx="7" ry="5" fill="#f2ce62" stroke="#bb8d36" strokeWidth="1.5"/><ellipse cx="9" cy="10" rx="6" ry="4" fill="#f7d777"/></g>)}
+          {[[288,113,20],[361,231,-15],[222,207,25],[321,204,-20],[267,269,30]].map(([x,y,r])=><rect key={x} x={x-9} y={y-8} width="18" height="16" rx="4" fill="#bf654b" stroke="#a6533d" strokeWidth="2" transform={`rotate(${r} ${x} ${y})`}/>)}
+          <path d="m254 156 20 7m60 6 18-7m-62 28 19 5m-67 40 17 7m66 9 15-5" stroke="#f7e3a9" strokeWidth="6" strokeLinecap="round"/>
+          <path d="m233 127 5 14m112 15 13 5m-87 55 6 13m51 18 9-5" stroke="#617647" strokeWidth="5" strokeLinecap="round"/>
+          <g transform="translate(418 282) rotate(-18)"><ellipse rx="63" ry="34" fill="#d7b478" stroke="#aa8051" strokeWidth="2"/><path d="M-58-2Q0-53 58-2L43 21Q0 38-43 21Z" fill="#f0d6a0" stroke="#bb955d" strokeWidth="2"/><path d="m-30-7 7-3m22 19 9 1m15-13 7 3m-44 14 5 2" stroke="#c49858" strokeWidth="4" strokeLinecap="round"/></g>
+          <g transform="translate(167 277)"><ellipse rx="48" ry="34" fill="#f1ddba" stroke="#b89264" strokeWidth="3"/><ellipse rx="39" ry="25" fill="#a97050"/>{[[-23,-6,-30],[-6,-14,20],[14,-9,-15],[25,5,30],[5,11,-20],[-18,11,20]].map(([x,y,r])=><path key={x} d="M-7-3C-9-13 8-12 9-2S-5 12-7 3Q-3 0-7-3Z" transform={`translate(${x} ${y}) rotate(${r})`} fill="#7c4338" stroke="#bd7c5c" strokeWidth="2"/>)}</g>
+        </g>}
         {art === "salmon-chanchan" && <g>
           <path d="M190 153h-26q-17 0-17 18v28q0 18 17 18h26m220-64h26q17 0 17 18v28q0 18-17 18h-26" stroke="#58696d" strokeWidth="11" />
           <circle cx="300" cy="186" r="118" fill="#485c60" stroke="#71858a" strokeWidth="5" />

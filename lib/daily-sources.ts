@@ -1,5 +1,16 @@
 import type { SourceLink } from "./content";
 
+// New Mexico's September harvest and household adaptation, reviewed September 27.
+export const calabacitasSources = {
+  recipe: { label: "뉴멕시코관광청 — 호박·옥수수·풋고추의 칼라바시타스", url: "https://www.newmexico.org/things-to-do/cuisine/recipes/calabacitas/" },
+  culture: { label: "NMFMA 생산자시장협회 — 칼라바시타스와 밀파의 농업 문화", url: "https://farmersmarketsnm.org/recipes/calabacitas-de-milpa/" },
+  season: { label: "NMFMA — 뉴멕시코 남부의 월별 제철 목록", url: "https://farmersmarketsnm.org/resources/shopper-resources/whats-in-season/southern-nm/" },
+  seasonalMenu: { label: "NMFMA · 2026년 8월 — 풋고추 수확과 로스팅 시즌", url: "https://farmersmarketsnm.org/chile-roasting-season-is-here/" },
+  beans: { label: "캐나다 보건부 — 강낭콩의 렉틴과 완전 조리 통조림", url: "https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/chemical-contaminants/natural-toxins/lectins-legumes.html" },
+  safety: { label: "FoodSafety.gov — 남은 음식의 안전 재가열 온도", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+  storage: { label: "미국 USDA — 남은 음식의 소분과 냉장 보관", url: "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety" },
+} satisfies Record<string, SourceLink>;
+
 // Ishikari's salmon season and household cooking references reviewed September 26.
 export const chanchanyakiSources = {
   culture: { label: "일본 농림수산성 — 이시카리의 연어 찬찬야키와 전승 이야기", url: "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sakenochanchanyaki_hokkaido.html" },

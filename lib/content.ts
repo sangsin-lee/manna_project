@@ -1,5 +1,7 @@
 import { steakRecipes } from "./steak-recipes";
 import { dailyRecipes } from "./daily-recipes";
+import { usMexicanRecipes } from "./us-mexican-recipes";
+import { usMexicanSources } from "./us-mexican-sources";
 import { jejuRecipes } from "./jeju-recipes";
 import { gyeonggiRecipes } from "./gyeonggi-recipes";
 import { gangwonRecipes } from "./gangwon-recipes";
@@ -1006,8 +1008,9 @@ export const countries: Country[] = [
     summary:
       "미국의 음식은 하나의 대표 메뉴보다 지역의 농산물, 이주 공동체, 도시의 노동과 관광 문화가 만든 수많은 로컬 푸드로 보는 편이 정확합니다.",
     introduction: [
-      "미국은 지역 간 거리와 기후 차이가 매우 커 하나의 식문화로 설명하기 어렵습니다. 이번 페이지는 직접 다녀온 하와이, 로스앤젤레스와 라스베이거스를 중심으로 서로 다른 도시의 식사 장면을 비교합니다.",
+      "미국은 지역 간 거리와 기후 차이가 매우 커 하나의 식문화로 설명하기 어렵습니다. 직접 다녀온 하와이·로스앤젤레스·라스베이거스의 기록에, 자료로 살펴본 뉴멕시코와 멕시코계 식문화를 더해 서로 다른 식사 장면을 비교합니다.",
       "하와이의 로컬 푸드는 원주민 하와이 문화와 여러 이주 공동체의 음식이 섬의 역사 속에서 만나 발전했고, 로스앤젤레스는 다양한 커뮤니티와 푸드트럭, 라스베이거스는 뷔페와 스테이크하우스, 셰프 레스토랑 같은 관광형 다이닝이 강한 인상을 만듭니다.",
+      "토르티야와 치폴레 고추의 뿌리는 멕시코 식문화에 있습니다. 미국에서 시작한 Chipotle Mexican Grill 브랜드와 구분하고, 이주 공동체와 미국의 외식 문화를 통해 이어진 음식을 이 페이지에서 함께 소개합니다.",
     ],
     representativeFlavors: [
       "그릴과 로스팅의 고소한 향",
@@ -1021,7 +1024,7 @@ export const countries: Country[] = [
       "다이너와 푸드트럭",
       "뷔페와 엔터테인먼트형 식사",
     ],
-    representativeFoods: ["로코모코", "포케", "플레이트 런치", "프렌치 딥"],
+    representativeFoods: ["로코모코", "포케", "플레이트 런치", "프렌치 딥", "토르티야 퀘사디아 · 멕시코계 식탁", "치폴레풍 부리토볼"],
     tableScenes: [
       {
         eyebrow: "HAWAIʻI LOCAL FOOD",
@@ -1056,6 +1059,11 @@ export const countries: Country[] = [
         foods: ["타코", "프렌치 딥", "코리안 멕시칸 푸드"],
       },
       {
+        name: "덴버 · 미국의 멕시코계 외식 문화",
+        description: "Chipotle Mexican Grill은 샌프란시스코 미션 지구의 식당들에서 영감을 받아 1993년 덴버에서 시작했습니다. 토르티야와 치폴레 고추 자체가 미국에서 탄생했다는 의미는 아닙니다. 관련 설명은 방문 체험이 아닌 자료 조사에 바탕을 둡니다.",
+        foods: ["부리토볼", "토르티야 퀘사디아"],
+      },
+      {
         name: "라스베이거스",
         description:
           "호텔과 공연, 관광 동선에 맞춘 대형 뷔페와 스테이크하우스, 유명 셰프 레스토랑이 도시의 식사 경험을 구성합니다.",
@@ -1072,6 +1080,10 @@ export const countries: Country[] = [
         title: "하와이 전통 음식과 로컬 푸드를 구분하기",
         description:
           "원주민 하와이 음식과 여러 이주 공동체의 영향으로 형성된 오늘날의 로컬 푸드는 겹치는 부분이 있지만 동일한 범주로 다루지 않는 것이 중요합니다.",
+      },
+      {
+        title: "토르티야, 치폴레 고추, Chipotle 브랜드",
+        description: "토르티야는 속재료를 담거나 접어 먹는 얇은 빵이고, 치폴레는 훈연·건조한 할라페뇨입니다. Chipotle은 그 이름을 사용하는 미국 외식 브랜드입니다. 미국 탭에서는 멕시코 유래 음식이 미국의 식탁에 자리 잡은 맥락으로 읽어 주세요.",
       },
       {
         title: "양과 토핑, 서비스 방식의 차이를 예상하기",
@@ -1092,9 +1104,13 @@ export const countries: Country[] = [
         label: "Visit Las Vegas — Restaurants and Dining",
         url: "https://www.visitlasvegas.com/restaurants-and-nightlife/restaurants/",
       },
+      usMexicanSources.tortilla,
+      usMexicanSources.pepper,
+      usMexicanSources.migration,
+      usMexicanSources.brand,
     ],
-    storySlugs: ["hawaii-local-food-migration", "hawaii-plate-lunch-culture"],
-    recipeSlugs: ["new-mexico-inspired-calabacitas", "hawaii-loco-moco", "hawaii-poke-bowl"],
+    storySlugs: ["tortilla-chipotle-mexican-american-table", "hawaii-local-food-migration", "hawaii-plate-lunch-culture"],
+    recipeSlugs: ["tortilla-mushroom-cheese-quesadilla", "chipotle-inspired-chicken-rice-bowl", "new-mexico-inspired-calabacitas", "hawaii-loco-moco", "hawaii-poke-bowl"],
     updatedAt: "2026-09-27",
     palette: {
       from: "#d8e7e4",
@@ -1581,6 +1597,24 @@ export const countries: Country[] = [
 ];
 
 export const stories: Story[] = [
+  {
+    slug: "tortilla-chipotle-mexican-american-table", title: "토르티야와 치폴레, 멕시코의 뿌리와 미국의 식탁",
+    country: "usa", category: "food-culture", experienceStatus: "researched",
+    summary: "멕시코에 뿌리를 둔 토르티야와 훈연 고추, 그리고 미국에서 출발한 Chipotle 브랜드를 구분해 봅니다.",
+    lead: "‘미국에서 먹는 음식’과 ‘미국에서 처음 생긴 음식’은 범위가 다릅니다. 토르티야와 치폴레를 따라가면 오래된 재료의 문화, 이주 공동체의 부엌, 오늘날의 외식 방식이 이어집니다.",
+    readTime: 4, visualLabel: "ROOTS & ROUTES", visualCaption: "TORTILLA · CHIPOTLE · MEXICAN AMERICAN TABLE",
+    keywords: ["토르티야", "또띠아", "치폴레", "멕시코계미국음식", "부리토볼", "퀘사디아"],
+    publishedAt: "2026-09-27", updatedAt: "2026-09-27",
+    sections: [
+      { heading: "토르티야는 멕시코의 오랜 식문화에서", paragraphs: ["옥수수 토르티야는 멕시코·메소아메리카의 식문화에 뿌리를 둡니다. 멕시코 농업부가 소개하는 전통 방식은 옥수수를 식용 석회가 든 물로 처리한 뒤 갈아 반죽하는 니스타말화를 거칩니다. 옥수수가루라면 아무 제품이나 같은 반죽이 되는 것은 아닙니다.", "오늘날에는 옥수수 토르티야와 밀 토르티야를 모두 만납니다. 이번 퀘사디아는 접기 쉬운 시판 밀 토르티야로 만드는 가정용 버전입니다. 토르티야라는 재료와 그 안에 속을 넣어 굽는 퀘사디아라는 요리를 구분해 보면 메뉴가 더 쉽게 읽힙니다."] },
+      { heading: "이주 공동체의 부엌에서 미국의 일상으로", paragraphs: ["스미스소니언은 멕시코에서 미국으로 이주한 산체스 가족의 토르티야 제조 도구와 이야기를 기록합니다. 가족은 1912년 무렵 캘리포니아 필모어에 식료품점을 열었고, 옥수수를 갈고 눌러 굽는 일을 이어 갔습니다.", "같은 자료는 1969년 시카고에서 시작한 Azteca의 토르티야 유통도 소개합니다. 가정과 동네의 음식이 더 넓은 식탁으로 퍼지는 과정에는 사람의 이동과 생산·유통의 변화가 함께 있었습니다. 미국의 멕시코계 음식 문화를 한 외식 브랜드의 역사로만 설명할 수 없는 이유입니다."] },
+      { heading: "치폴레는 고추 이름이자 브랜드 이름", paragraphs: ["식재료 치폴레는 익은 할라페뇨를 훈연하고 말려 만드는 고추입니다. 멕시코 농식품정보기관은 치와와주 카마르고의 생산 사례와 붉은빛·훈연 향을 설명합니다. 매운맛뿐 아니라 연기의 향을 더하는 재료이며, 아도보 소스에 담긴 통조림 형태로도 만납니다.", "Chipotle Mexican Grill은 1993년 덴버에서 문을 연 미국 외식 브랜드입니다. 회사 자료는 창업자가 샌프란시스코 미션 지구의 타케리아에서 영감을 받았다고 설명합니다. 브랜드의 출발지가 미국이라는 사실과 고추의 멕시코 식문화 배경은 함께 기억할 수 있습니다."] },
+      { heading: "오늘은 퀘사디아와 치킨볼로", paragraphs: ["퀘사디아는 토르티야 속에 치즈와 볶은 버섯을 넣어 팬에서 굽습니다. 치폴레풍 치킨 라이스볼은 밥·콩·익힌 닭고기·살사를 그릇에 나눠 담아 먹습니다. 따뜻하고 부드러운 속, 바삭한 겉면, 훈연 향과 신선한 채소의 대비를 각각 즐겨 보세요.", "두 레시피는 국내에서 구하는 재료로 구성한 만나의 식탁의 가정용 응용입니다. 특정 브랜드의 공식 레시피나 멕시코 전역을 대표하는 단 하나의 배합으로 소개하지 않습니다. 음식별 조리법에서 사용량과 대체 재료를 확인할 수 있습니다."] },
+    ],
+    sources: [usMexicanSources.tortilla, usMexicanSources.migration, usMexicanSources.pepper, usMexicanSources.brand, usMexicanSources.quesadilla],
+    relatedRecipeSlugs: ["tortilla-mushroom-cheese-quesadilla", "chipotle-inspired-chicken-rice-bowl", "new-mexico-inspired-calabacitas"],
+    palette: { from: "#f5e7d3", mid: "#dcb287", to: "#b87154", ink: "#5b3728" },
+  },
   {
     slug: "hong-kong-cha-chaan-teng",
     experienceStatus: "visit-based",
@@ -2799,6 +2833,7 @@ export const stories: Story[] = [
 ];
 
 export const recipes: Recipe[] = [
+  ...usMexicanRecipes,
   ...gyeongbukRecipes,
   ...gyeongnamRecipes,
   ...jeonnamRecipes,

@@ -1,4 +1,5 @@
 import type { Recipe, SourceLink } from "./content";
+import { usMexicanSources } from "./us-mexican-sources";
 import { barleySoupSources, calabacitasSources, chanchanyakiSources, onionTartSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
@@ -50,6 +51,18 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "tortilla-mushroom-cheese-quesadilla": narrative(
+    ["멕시코의 토르티야에서 시작해", "옥수수 토르티야는 멕시코·메소아메리카의 오래된 식문화와 연결됩니다. 토르티야에 속을 넣는 퀘사디아 역시 멕시코 유래 음식입니다. 이 페이지는 미국에서 즐기는 멕시코계 식탁을 소개하며, 조리에는 시판 밀 토르티야를 씁니다."],
+    ["부엌과 식료품점이 이어 온 음식", "스미스소니언은 미국으로 이주한 산체스 가족의 토르티야 제조와 시카고 Azteca의 유통 이야기를 기록합니다. 이주 공동체의 식사와 상업의 역사가 함께 흐릅니다. 오늘은 국내 버섯과 치즈로 작은 프라이팬 한 끼를 만듭니다."],
+    ["바삭한 겉, 치즈를 머금은 속", "버섯의 수분을 먼저 날리면 고소한 향이 모이고 토르티야는 덜 눅눅해집니다. 얇게 넣은 치즈가 속을 붙잡고, 중약불에 구운 겉면은 바삭해집니다. 차가운 토마토 살사의 산미가 따뜻한 치즈와 대비됩니다."],
+    [usMexicanSources.tortilla, usMexicanSources.migration, usMexicanSources.quesadilla],
+  ),
+  "chipotle-inspired-chicken-rice-bowl": narrative(
+    ["치폴레, 훈연 고추의 이름", "치폴레는 멕시코 식문화에서 할라페뇨를 훈연·건조해 만드는 재료입니다. 붉은 고추의 매운맛에 연기의 향이 겹칩니다. 미국 외식 브랜드의 이름과 같지만, 고추 자체의 유래를 그 회사의 역사와 같게 보지는 않습니다."],
+    ["1993년 덴버에서 시작한 브랜드", "Chipotle Mexican Grill의 첫 매장은 1993년 덴버에서 문을 열었습니다. 회사는 샌프란시스코 미션 지구의 식당들에서 받은 영향을 설명합니다. 이 치킨볼은 그 외식 구성에서 영감을 받은 집밥이며 공식 레시피 재현은 아닙니다."],
+    ["훈연 향, 포근한 콩, 산뜻한 살사", "닭고기의 구운 향에 치폴레의 훈연 향과 라임의 산미가 겹칩니다. 포근한 콩과 따뜻한 밥, 아삭한 양상추를 한 숟가락에 조금씩 섞어 보세요. 재료를 전부 같은 소스에 잠기게 하지 않아야 각 식감이 남습니다."],
+    [usMexicanSources.pepper, usMexicanSources.brand, usMexicanSources.migration],
+  ),
   "new-mexico-inspired-calabacitas": narrative(
     ["밭의 재료가 한 팬으로", "칼라바시타스는 뉴멕시코의 호박 채소 요리입니다. NMFMA는 멕시코 원주민 농업의 밀파와 연결해 소개합니다. 옥수수·콩·호박을 함께 기르는 밭의 관계가 그 배경이며, 오늘의 통조림 콩과 토르티야 한 상까지 오래된 전통 배합이라는 뜻은 아닙니다."],
     ["수확철 시장에서 오늘의 부엌으로", "2026년 8월 NMFMA는 풋고추 수확과 시장의 로스팅 시즌 소식을 전했습니다. 가족들은 고추를 구워 보관하며 계절의 맛을 이어 갑니다. 집마다 다른 칼라바시타스도 이런 수확 식탁의 한 장면입니다. 여기서는 국내 애호박과 피망으로 그 구성을 응용합니다."],

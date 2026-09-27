@@ -12,6 +12,20 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "quesadilla" && <g>
+          {[[275,165,-15],[316,213,18],[252,239,-40]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}><path d="M-68 24Q-62-38 5-67L64 34Q-1 53-68 24Z" fill="#c29054" stroke="#976a3b" strokeWidth="3"/><path d="M-66 19Q-59-42 6-72L67 28Q-2 47-66 19Z" fill="#e8c88b" stroke="#bd955b" strokeWidth="2"/><path d="M-59 25q63 26 117 6" stroke="#f5e1a2" strokeWidth="6"/><path d="m-34-8 11-5m15-28 7 3m17 33 12-3m-51 28 8 2m31 5 6-2" stroke="#b1854b" strokeWidth="5" strokeLinecap="round"/><path d="m-28 33 8 2m24 2 10-1m21-1 6-1" stroke="#897449" strokeWidth="3" strokeLinecap="round"/></g>)}
+          <g transform="translate(383 116)"><circle r="39" fill="#edddbb" stroke="#ba996c" strokeWidth="3"/><circle r="31" fill="#bd624c"/>{[[-14,-9],[4,-17],[16,3],[-4,12],[-17,10]].map(([x,y])=><rect key={x} x={x-5} y={y-4} width="10" height="8" rx="2" fill="#e29870"/>)}<path d="m-6-4 10 6m-18 11 6-4m21-16-5 5" stroke="#718953" strokeWidth="3" strokeLinecap="round"/></g>
+          <path d="M198 118q-24-14-33 6 16 15 33-6Zm13 163q-28-6-29 16 21 8 29-16Z" fill="#85915b"/>
+        </g>}
+        {art === "chipotle-bowl" && <g>
+          <circle cx="300" cy="186" r="114" fill="#a45f4b" stroke="#7e4235" strokeWidth="3"/><circle cx="300" cy="186" r="102" fill="#f1e7ce"/>
+          {Array.from({length:21},(_,i)=><ellipse key={i} cx={233+(i*19)%73} cy={122+(i*23)%105} rx="5" ry="2" transform={`rotate(${i*29} ${233+(i*19)%73} ${122+(i*23)%105})`} fill="#d4c39f"/>)}
+          {[[244,233,-15],[266,245,30],[286,259,-20],[230,252,15],[256,266,-20],[289,232,10]].map(([x,y,r])=><path key={`${x}-${y}`} d="M-9-4C-12-16 10-14 11-3S-7 15-9 4Q-3 0-9-4Z" transform={`translate(${x} ${y}) rotate(${r})`} fill="#67473f" stroke="#9e7360" strokeWidth="2"/>)}
+          {[[324,124,-20],[355,145,15],[310,154,30],[340,182,-15],[370,180,10],[318,203,-25]].map(([x,y,r])=><g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}><rect x="-16" y="-13" width="32" height="26" rx="7" fill="#b87748" stroke="#8a5032" strokeWidth="2"/><path d="m-9-7 4 15m7-17 4 16" stroke="#d8a46b" strokeWidth="3"/><path d="m-11 5 21-3" stroke="#a35438" strokeWidth="3"/></g>)}
+          {[[325,240],[350,260],[375,225]].map(([x,y])=><g key={x} transform={`translate(${x} ${y})`}><path d="M0-20q-23 1-21 17-8 18 12 24 19 8 29-12 5-18-20-29Z" fill="#9aaa6b" stroke="#788b50" strokeWidth="2"/><path d="M-10 12 8-12m-5 10 11 4" stroke="#d3d8a0" strokeWidth="3"/></g>)}
+          {[[251,105],[274,115],[231,125],[273,140]].map(([x,y])=><rect key={`${x}-${y}`} x={x-8} y={y-7} width="16" height="14" rx="3" fill="#c16b54" stroke="#a64f3a" strokeWidth="2"/>)}
+          <g transform="translate(398 273) rotate(-35)"><path d="M-29 0H29a29 29 0 0 1-58 0Z" fill="#d8dca0" stroke="#879b55" strokeWidth="5"/><path d="M0 2v22M-2 2-19 16M2 2 19 16" stroke="#f3edc8" strokeWidth="3"/></g>
+        </g>}
         {art === "calabacitas" && <g>
           <path d="M191 151h-23q-16 0-16 18v25q0 18 16 18h23m218-61h23q16 0 16 18v25q0 18-16 18h-23" stroke="#835d43" strokeWidth="10" />
           <circle cx="300" cy="181" r="117" fill="#936747" stroke="#b78b63" strokeWidth="5" />

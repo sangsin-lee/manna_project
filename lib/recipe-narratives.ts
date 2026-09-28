@@ -1,7 +1,7 @@
 import type { Recipe, SourceLink } from "./content";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
-import { barleySoupSources, calabacitasSources, chanchanyakiSources, onionTartSources } from "./daily-sources";
+import { barleySoupSources, calabacitasSources, chanchanyakiSources, onionTartSources, ribollitaSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -52,6 +52,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "tuscan-inspired-ribollita": narrative(
+    ["다시 끓이는 토스카나의 한 그릇", "리볼리타는 다시 끓인다는 뜻을 지닌 토스카나의 빵 수프입니다. 농가에서는 남은 채소·콩 수프와 빵을 다음 끼니로 이어 갔습니다. 한 발명 연도를 정하기보다 남은 재료를 아껴 쓰던 생활 속 음식으로 소개합니다."],
+    ["가을의 냄비, 겨울의 잎채소", "토스카나관광청은 가을 메뉴에 리볼리타를 소개하고, 피렌체 안내에서는 겨울 서리 뒤 카볼로 네로의 맛을 강조합니다. 오늘은 국내 케일과 익힌 통조림 콩으로 당일 완성합니다. 현지 품종과 제철을 그대로 재현하는 배합은 아닙니다."],
+    ["콩은 포근하게, 빵은 국물 속으로", "콩 절반을 으깨면 국물이 부드러워지고 남은 통콩은 포근하게 씹힙니다. 빵이 채소 국물을 머금으며 수프 전체에 농도를 더합니다. 잎채소의 향, 당근의 단맛에 마지막 올리브유 한 줄이 고소한 향을 보탭니다."],
+    [ribollitaSources.recipe, ribollitaSources.autumn, ribollitaSources.florence, ribollitaSources.kale],
+  ),
   "southern-style-fried-chicken": narrative(
     ["남부의 식탁을 읽는 한 가지 기록", "미국 남부의 닭튀김 문화에는 아프리카계 미국인 상인과 요리사의 역사가 함께 있습니다. 1872년 고든스빌 철도역을 그린 목판화에도 닭튀김과 커피를 파는 흑인 남성과 여성이 등장합니다. 닭튀김 전체의 발명자를 뜻하는 기록은 아닙니다."],
     ["기차 여행의 한 끼, 지역의 생업", "버지니아 오렌지카운티는 철도 승객에게 음식을 팔던 흑인 여성들의 이야기를 기억합니다. 이동하는 사람들의 식사가 지역의 생업과 만났습니다. 오늘의 순살·요거트 배합은 그 역사적 조리법을 복원한 것이 아니라 가정용 응용입니다."],

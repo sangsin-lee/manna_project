@@ -1,5 +1,15 @@
 import type { SourceLink } from "./content";
 
+// Tuscany's autumn table and household adaptation, reviewed September 28.
+export const ribollitaSources = {
+  recipe: { label: "토스카나관광청 — 리볼리타의 구성과 농가의 음식 문화", url: "https://www.visittuscany.com/en/recipes/reboiled-soup-a.k.a.-ribollita-recipe/" },
+  autumn: { label: "토스카나관광청 — 가을 식탁의 리볼리타", url: "https://www.visittuscany.com/en/ideas/autumn-on-the-table-3-traditional-recipes/" },
+  florence: { label: "토스카나관광청 — 피렌체의 빵 수프와 계절", url: "https://www.visittuscany.com/en/ideas/florence-food-guide/" },
+  kale: { label: "토스카나관광청 — 겨울 카볼로 네로와 지역 요리", url: "https://www.visittuscany.com/en/ideas/3-tuscan-kale-recipes/" },
+  beans: { label: "캐나다 보건부 — 건조 콩과 완전 조리 통조림의 차이", url: "https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/chemical-contaminants/natural-toxins/lectins-legumes.html" },
+  storage: { label: "미국 USDA — 수프의 소분·냉장과 안전한 재가열", url: "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety" },
+} satisfies Record<string, SourceLink>;
+
 // New Mexico's September harvest and household adaptation, reviewed September 27.
 export const calabacitasSources = {
   recipe: { label: "뉴멕시코관광청 — 호박·옥수수·풋고추의 칼라바시타스", url: "https://www.newmexico.org/things-to-do/cuisine/recipes/calabacitas/" },

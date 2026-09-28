@@ -1597,12 +1597,13 @@ export const countries: Country[] = [
       "rome-vatican-food-route",
     ],
     recipeSlugs: [
+      "tuscan-inspired-ribollita",
       "mantua-inspired-pumpkin-gnocchi",
       "italian-tiramisu",
       "roman-cacio-e-pepe",
       "roman-carbonara",
     ],
-    updatedAt: "2026-09-20",
+    updatedAt: "2026-09-28",
     palette: {
       from: "#e8dec8",
       mid: "#dce1ce",

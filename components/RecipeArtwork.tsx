@@ -12,6 +12,17 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "ribollita" && <g>
+          <path d="M190 160h-25q-17 0-17 21t17 21h25m220-42h25q17 0 17 21t-17 21h-25" stroke="#aa7050" strokeWidth="11" />
+          <circle cx="300" cy="186" r="116" fill="#b77d5b" stroke="#8e5e42" strokeWidth="3"/><circle cx="300" cy="186" r="101" fill="#d6b989" stroke="#e9cda7" strokeWidth="5"/>
+          {[[246,139,-20],[303,113,30],[370,170,-30],[337,256,15],[243,238,-15],[294,204,35]].map(([x,y,r])=><g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}><path d="M-18-7q-12-14 1-20 8-10 16 1 16-3 20 10l-6 25-19 14-10-16q-16-1-8-14Z" fill="#788257" stroke="#596545" strokeWidth="2"/><path d="m-2-18 5 33m-4-19 11-6m-9 17-11-8" stroke="#a5ad79" strokeWidth="3" strokeLinecap="round"/></g>)}
+          {[[273,134,25],[332,140,-30],[231,190,40],[329,192,15],[275,238,-25],[351,223,45],[298,270,-15],[291,168,35]].map(([x,y,r])=><g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}><path d="M-10-4C-12-19 11-18 13-3S-8 20-10 5Q-4 0-10-4Z" fill="#f2e1b8" stroke="#b69c6c" strokeWidth="2"/><path d="m2-9 4 6" stroke="#fff1d1" strokeWidth="3" strokeLinecap="round"/></g>)}
+          {[[258,174,-12],[318,228,20],[361,142,-25]].map(([x,y,r])=><g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}><path d="M-16-12 12-17 19 8 2 18-17 10Z" fill="#dac394" stroke="#ad8d5a" strokeWidth="3"/><path d="m-7-4 6-3m3 13 5-2" stroke="#f0dbaf" strokeWidth="4" strokeLinecap="round"/></g>)}
+          {[[250,211],[318,164],[333,276],[219,162],[302,143]].map(([x,y])=><rect key={x} x={x-6} y={y-5} width="12" height="11" rx="3" transform={`rotate(20 ${x} ${y})`} fill="#d3915c"/>)}
+          <path d="M229 162q-6-28 27-43M339 247q28-11 35-37" stroke="#b69642" strokeWidth="4" strokeLinecap="round"/>
+          <g transform="translate(166 283) rotate(-22)"><path d="M-39-8q3-34 41-34t40 34v27h-81Z" fill="#b78652" stroke="#90653d" strokeWidth="3"/><path d="M-31-6q3-25 33-25t31 25v18h-64Z" fill="#e9d2a4"/>{[[-19,-5],[1,-19],[19,-4],[0,5]].map(([x,y])=><ellipse key={x} cx={x} cy={y} rx="4" ry="3" fill="#c7aa75"/>)}</g>
+          <path d="M266 63q-12-17 0-31m35 27q-12-17 0-31m35 38q-12-17 0-31" stroke="#fff7e9" strokeWidth="4" strokeLinecap="round" opacity=".8"/>
+        </g>}
         {art === "fried-chicken" && <g>
           {[[250,136,-20],[324,172,24],[257,233,-35],[354,244,15]].map(([x,y,r])=><g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}>
             <path d="M-45-18q-8-19 14-23 8-17 26-7 20-9 31 8 22 1 22 24 12 17-4 33-2 20-24 22-16 13-34 1-24 3-31-17-16-14 0-41Z" fill="#c18a43" stroke="#95632c" strokeWidth="3"/>

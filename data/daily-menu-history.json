@@ -779,6 +779,49 @@
         "채소 한 팬",
         "콩·토르티야 곁들임"
       ]
+    },
+    {
+      "date": "2026-09-28",
+      "recipeSlug": "tuscan-inspired-ribollita",
+      "title": "토스카나식 리볼리타",
+      "canonicalDish": "ribollita",
+      "aliases": [
+        "리볼리타",
+        "리볼리따",
+        "토스카나 콩 채소 빵 수프",
+        "Tuscan bread and bean soup"
+      ],
+      "keyIngredients": [
+        "완전 조리 흰콩 통조림",
+        "케일",
+        "양배추",
+        "감자",
+        "당근",
+        "셀러리",
+        "담백한 빵",
+        "올리브유"
+      ],
+      "method": "향채와 잎채소·감자를 끓이고 으깬 익힌 콩과 통콩을 넣은 뒤 빵을 국물에 풀어 걸쭉하게 만든다. 통조림 콩을 쓰고 당일 완성하는 가정 응용이다.",
+      "selectionReason": "토스카나의 가을 식탁을 케일·콩·빵으로 옮깁니다. 빵이 국물을 머금으며 걸쭉해지는 모습과 콩·잎채소의 식감이 영상에 잘 드러나고, 한 냄비로 두 사람의 든든한 저녁을 만듭니다.",
+      "videoIdea": "향채 썰기 → 케일과 양배추의 숨이 죽는 모습 → 콩 절반 으깨기 → 빵이 국물에 풀리는 순간 → 올리브유 한 줄. 제목 아이디어: “빵 한 조각도 아끼는 토스카나의 저녁, 리볼리타”.",
+      "duplicateReview": "기존 레시피 73개, 최초 추천 27개와 일일 기록 7개, steak-recipes·recipe-narratives·TonightPick 및 최근 Git 이력의 제목·별칭·재료·조리법을 비교했다. 렌틸콩 소시지 스튜는 통렌틸과 별도 구운 소시지를 끓이며 빵은 곁들임이다. 보리 수프는 보리·베이컨·크림이 중심이다. 프렌치 어니언 수프는 갈색 양파 국물 위에 치즈빵을 굽는다. 이번 음식은 으깬 흰콩과 잎채소 수프 안에 빵을 풀어 농도를 내며 고기·곡물 알갱이·크림을 쓰지 않는다. 칼라바시타스의 조각 채소 볶음과도 다르며 소스만 바꾼 음식이 아니다. 미국 다음 이탈리아 토스카나로 순환한다.",
+      "research": {
+        "checkedAt": "2026-09-28",
+        "seasonalNote": "Visit Tuscany의 가을 메뉴 소개·리볼리타 조리법·피렌체 음식 안내와 겨울 카볼로 네로 소개를 확인했다. 리볼리타는 가을부터 추운 계절의 식탁으로 소개하지만 카볼로 네로의 맛은 첫 겨울 서리 뒤와 연결되므로 9월을 수확 절정으로 쓰지 않는다. 국내 일반 케일·양배추와 통조림 콩은 현지 품종·제철과 구분한다. 2025-10-08 발표된 Whole Foods Market의 2026 트렌드 전망에서 식이섬유에 대한 관심을 확인했다. 이는 미국 유통업체의 전망이며 리볼리타의 실제 유행·한국 인기·유튜브 조회 수를 입증하지 않는다. USDA 냉장·재가열 안내와 캐나다 보건부의 통조림 콩 설명을 확인했다.",
+        "sources": [
+          "https://www.visittuscany.com/en/recipes/reboiled-soup-a.k.a.-ribollita-recipe/",
+          "https://www.visittuscany.com/en/ideas/autumn-on-the-table-3-traditional-recipes/",
+          "https://www.visittuscany.com/en/ideas/florence-food-guide/",
+          "https://www.visittuscany.com/en/ideas/3-tuscan-kale-recipes/",
+          "https://www.wholefoodsmarket.com/company-info/newsroom/news-releases/whole-foods-market-forecasts-the-top-food-and-beverage-trends-for-2026",
+          "https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/chemical-contaminants/natural-toxins/lectins-legumes.html",
+          "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety"
+        ]
+      },
+      "preparationLabels": [
+        "익힌 통조림 콩",
+        "당일 완성 응용"
+      ]
     }
   ]
 }

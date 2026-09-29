@@ -822,6 +822,33 @@
         "익힌 통조림 콩",
         "당일 완성 응용"
       ]
+    },
+    {
+      "date": "2026-09-30",
+      "recipeSlug": "normandy-inspired-apple-cream-chicken",
+      "title": "노르망디풍 사과 크림 치킨",
+      "canonicalDish": "Normandy-inspired chicken with apples and cream",
+      "aliases": ["노르망디 치킨", "사과 크림 닭고기 브레이즈", "chicken Normandy", "poulet Vallee d'Auge inspired"],
+      "keyIngredients": ["순살 닭다리살", "사과", "양송이", "양파", "무가당 생크림", "버터", "담백한 빵"],
+      "method": "사과를 먼저 구워 덜고 닭다리살과 양송이를 볶은 뒤 소량의 물에서 뚜껑을 덮어 익힌다. 닭 중심 74°C를 확인하고 크림을 졸인 뒤 사과를 돌려 넣어 빵과 먹는다. 시드르·칼바도스를 생략한 가정용 응용이다.",
+      "selectionReason": "노르망디의 가을 사과와 유제품 식탁을 국내 재료로 응용합니다. 사과를 굽는 장면과 크림 소스의 윤기가 영상에 잘 담기고, 닭고기·버섯에 빵을 곁들여 두 사람의 든든한 저녁을 만듭니다.",
+      "videoIdea": "붉은 사과 자르기 → 사과의 노릇한 면 → 닭과 버섯 익히기 → 크림을 붓고 사과를 돌려 넣기 → 빵으로 소스 떠먹기. 제목 아이디어: ‘사과가 저녁이 되는 곳, 노르망디의 식탁’.",
+      "duplicateReview": "기존 레시피 74개, 최초 추천 27개와 일일 기록 8개, steak-recipes·recipe-narratives·TonightPick 및 최근 Git 이력의 이름·별칭·주재료·조리법을 비교했다. 단양 통마늘 닭구이는 껍질과 통마늘을 굽는 음식이고, 진영 단감 카레는 감자·당근과 카레 전분을 끓여 밥에 낸다. 이번 메뉴는 따로 구운 사과의 형태를 살리고 양송이와 닭을 소량의 국물에서 익혀 생크림을 졸이는 브레이즈로 구성했다. 장수 사과 돼지고기말이의 얇은 고기 성형·간장 조림과도 다르며 기존 소스의 교체만으로 만든 메뉴가 아니다. 이탈리아 토스카나 다음 프랑스 노르망디로 순환한다. 한국 날짜 9월 30일 메뉴 한 개이며 누락 날짜는 소급 게시하지 않는다.",
+      "research": {
+        "checkedAt": "2026-09-30",
+        "seasonalNote": "노르망디관광청의 사과 문화와 통상 9~12월 숙기, 페이드오주 농장의 2026년 9~10월 사과 체험을 확인했다. 현지 식용 사과와 양조용 사과를 구분하고 국내 홍로의 통상 9월 상·중순 숙기는 농촌진흥청 자료로 확인했다. 실제 유통·저장·작황과 매장 재고는 별개다. AREA Normandie 자료의 닭·사과·크림 조합과 Milk Street의 2026-02-24 브레이즈 소개를 참고했으며 배합은 독자적인 순살·무주류 가정 응용이다. Whole Foods Market의 2026-09-24 발표에서 지역·가족 식문화의 배경을 지닌 제품에 대한 관심을 확인했다. 이는 해당 유통업체의 관찰로 한국에서 이 메뉴가 유행하거나 유튜브 조회 수가 높다는 증거는 아니다. FoodSafety.gov의 닭 74°C 및 USDA 보관 안내를 확인했다.",
+        "sources": [
+          "https://en.normandie-tourisme.fr/lifestyle-well-being/gastronomy/apple-speciality/",
+          "https://en.normandie-tourisme.fr/experience/making-organic-apple-juice-in-pays-dauge/",
+          "https://www.saveurs-de-normandie.fr/wp-content/uploads/2019/05/BROCHURE_GD_PUBLIC_ANGLAIS.pdf",
+          "https://www.177milkstreet.com/recipes/braised-chicken-apples-cream",
+          "https://www.rda.go.kr/webzine/2022/09/sub1-6.html",
+          "https://www.wholefoodsmarket.com/company-info/newsroom/news-releases/whole-foods-market-unveils-the-2026-local-and-emerging-accelerator-program-early-growth-cohort",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety"
+        ]
+      },
+      "preparationLabels": ["순살로 45분", "술 없이 만드는 응용"]
     }
   ]
 }

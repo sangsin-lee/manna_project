@@ -1,7 +1,7 @@
 import type { Recipe, SourceLink } from "./content";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
-import { barleySoupSources, calabacitasSources, chanchanyakiSources, onionTartSources, ribollitaSources } from "./daily-sources";
+import { barleySoupSources, calabacitasSources, chanchanyakiSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -52,6 +52,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "normandy-inspired-apple-cream-chicken": narrative(
+    ["과수원과 목장의 재료가 만날 때", "노르망디에서는 사과와 크림·버터가 지역의 식탁을 설명하는 재료입니다. 닭을 사과·시드르·칼바도스·크림과 익히는 푸레 발레 도주에서도 이 조합을 만납니다. 오늘은 술을 생략하고 순살과 국내 사과로 만든 가정용 응용입니다."],
+    ["중세의 정원에서 가을의 식탁으로", "노르망디관광청은 중세 수도원 정원의 사과 재배와 19세기에 넓어진 과수원을 소개합니다. 보통 9~12월에 사과가 익지만 식용과 양조용 품종은 다릅니다. 이는 사과 문화의 역사이며 이 닭 요리의 발명 시기를 뜻하지 않습니다."],
+    ["사과의 단맛, 크림의 부드러움", "먼저 구운 사과는 가장자리의 고소한 향과 과육의 단맛을 남깁니다. 양송이는 도톰하게 씹히고 닭고기에는 부드러운 크림 소스가 묻습니다. 소량의 식초가 맛을 정리하고 따뜻한 빵이 남은 소스를 받아 줍니다."],
+    [normandyChickenSources.apples, normandyChickenSources.regional, normandyChickenSources.recipe],
+  ),
   "tuscan-inspired-ribollita": narrative(
     ["다시 끓이는 토스카나의 한 그릇", "리볼리타는 다시 끓인다는 뜻을 지닌 토스카나의 빵 수프입니다. 농가에서는 남은 채소·콩 수프와 빵을 다음 끼니로 이어 갔습니다. 한 발명 연도를 정하기보다 남은 재료를 아껴 쓰던 생활 속 음식으로 소개합니다."],
     ["가을의 냄비, 겨울의 잎채소", "토스카나관광청은 가을 메뉴에 리볼리타를 소개하고, 피렌체 안내에서는 겨울 서리 뒤 카볼로 네로의 맛을 강조합니다. 오늘은 국내 케일과 익힌 통조림 콩으로 당일 완성합니다. 현지 품종과 제철을 그대로 재현하는 배합은 아닙니다."],

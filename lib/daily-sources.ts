@@ -1,5 +1,16 @@
 import type { SourceLink } from "./content";
 
+// Normandy's apple harvest and household adaptation, reviewed September 30.
+export const normandyChickenSources = {
+  apples: { label: "노르망디관광청 — 사과 재배의 역사, 식용·양조용 품종과 수확기", url: "https://en.normandie-tourisme.fr/lifestyle-well-being/gastronomy/apple-speciality/" },
+  harvest: { label: "노르망디관광청 — 페이드오주의 가을 사과 농장과 2026년 체험", url: "https://en.normandie-tourisme.fr/experience/making-organic-apple-juice-in-pays-dauge/" },
+  regional: { label: "AREA Normandie — 지역 유제품과 닭·사과·크림 요리 (PDF)", url: "https://www.saveurs-de-normandie.fr/wp-content/uploads/2019/05/BROCHURE_GD_PUBLIC_ANGLAIS.pdf" },
+  recipe: { label: "Milk Street · 2026.02.24 — 푸레 발레 도주의 구성과 브레이즈 소개", url: "https://www.177milkstreet.com/recipes/braised-chicken-apples-cream" },
+  korea: { label: "농촌진흥청 — 국내 홍로 사과의 통상 숙기와 고르는 법", url: "https://www.rda.go.kr/webzine/2022/09/sub1-6.html" },
+  safety: { label: "FoodSafety.gov — 닭고기의 안전 중심온도 74°C", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+  storage: { label: "미국 USDA — 남은 음식의 소분·냉장과 재가열", url: "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety" },
+} satisfies Record<string, SourceLink>;
+
 // Tuscany's autumn table and household adaptation, reviewed September 28.
 export const ribollitaSources = {
   recipe: { label: "토스카나관광청 — 리볼리타의 구성과 농가의 음식 문화", url: "https://www.visittuscany.com/en/recipes/reboiled-soup-a.k.a.-ribollita-recipe/" },

@@ -12,6 +12,32 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "lotus-rib-soup" && <g>
+          <circle cx="300" cy="186" r="119" fill="#8399a6" stroke="#596f7e" strokeWidth="3"/>
+          <circle cx="300" cy="186" r="106" fill="#d4b7a8" stroke="#ebd6c2" strokeWidth="5"/>
+          <path d="M209 172q-1-37 37-56m101 143q28-11 39-42" stroke="#f4e1c9" strokeWidth="5" strokeLinecap="round"/>
+          {[[285,130,-18],[352,191,25],[259,235,-22]].map(([x,y,r])=><g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-30-16q2-15 24-16l27 4q15 9 13 25l-5 22q-10 13-32 9l-25-10Z" fill="#ab8070" stroke="#835f52" strokeWidth="3"/>
+            <path d="M-23-9q20-11 44 1m-43 16q15 10 35 5" stroke="#c9a28d" strokeWidth="5" strokeLinecap="round"/>
+            <path d="m-5-20 12 2 1 37-12 2Z" fill="#f0dec9" stroke="#d1b69e" strokeWidth="2"/>
+            <ellipse cx="2" cy="19" rx="8" ry="5" fill="#f4e5ce" stroke="#d1b69e" strokeWidth="2"/>
+          </g>)}
+          {[[235,165,-22],[337,119,28],[304,205,15],[349,259,-30]].map(([x,y,r])=><g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <ellipse cy="6" rx="31" ry="26" fill="#caa99e" stroke="#aa8a83" strokeWidth="2"/>
+            <ellipse rx="31" ry="26" fill="#f0dccb" stroke="#bc9990" strokeWidth="2"/>
+            {[[0,-14],[15,-9],[17,7],[0,15],[-16,8],[-15,-9]].map(([hx,hy])=><ellipse key={`${hx}-${hy}`} cx={hx} cy={hy} rx="5" ry="7" transform={`rotate(${hx*2} ${hx} ${hy})`} fill="#bf9a8d"/>)}
+            <ellipse rx="4" ry="5" fill="#caa596"/>
+            <path d="M-21-15q5-6 11-7" stroke="#fff1df" strokeWidth="3" strokeLinecap="round"/>
+          </g>)}
+          <path d="m270 178 10-5m51-17 9 3m-24 80 10-3m-97-31 8 3" stroke="#778d75" strokeWidth="4" strokeLinecap="round"/>
+          <g transform="translate(431 274)">
+            <path d="M-47-5q3 46 47 48T47-5Z" fill="#a1b4bd" stroke="#657f8e" strokeWidth="3"/>
+            <ellipse cy="-5" rx="47" ry="22" fill="#e3d4bc" stroke="#657f8e" strokeWidth="3"/>
+            <path d="M-40-7q3-17 20-16 7-16 24-12 15-7 25 9 14 3 12 19-33 22-81 0Z" fill="#fff3dd"/>
+            <path d="m-22-12 7-3m17-9 7 2m13 9 6 3m-37 7 8 2m20-1 6-2" stroke="#d8c7aa" strokeWidth="3" strokeLinecap="round"/>
+          </g>
+          <path d="M268 69q-10-12 0-26m42 22q-8-12 2-27m34 37q-8-12 2-25" stroke="#fdf6e9" strokeWidth="4" strokeLinecap="round" opacity=".8"/>
+        </g>}
         {art === "apple-cream-chicken" && <g>
           <ellipse cx="300" cy="191" rx="112" ry="97" fill="#ecd5ae" stroke="#d4b78c" strokeWidth="3"/>
           <path d="M211 182q14-53 63-59m-42 129q58 45 118 2" stroke="#fff0d1" strokeWidth="8" strokeLinecap="round"/>

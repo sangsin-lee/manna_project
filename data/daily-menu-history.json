@@ -849,6 +849,31 @@
         ]
       },
       "preparationLabels": ["순살로 45분", "술 없이 만드는 응용"]
+    },
+    {
+      "date": "2026-10-03",
+      "recipeSlug": "hubei-inspired-lotus-root-pork-rib-soup",
+      "title": "후베이식 연근 돼지갈비탕",
+      "canonicalDish": "Hubei-inspired lotus root and pork rib soup",
+      "aliases": ["연근 돼지갈비탕", "우한 연근탕", "롄어우 파이구탕", "莲藕排骨汤", "排骨藕汤", "lotus root pork rib soup"],
+      "keyIngredients": ["뼈 있는 돼지갈비", "연근", "생강", "대파", "흰후추", "밥"],
+      "method": "돼지갈비를 짧게 데쳐 건진 뒤 새 물에서 생강과 끓인다. 두껍게 썬 연근을 넣어 70~80분 더 은근히 익히고 소금·후추로 간해 밥과 먹는다. 차이뎬의 연근과 오랜 탕 문화를 국내 연근·일반 냄비로 옮긴 가정용 응용이다.",
+      "selectionReason": "우한의 가을 연근 식탁을 돼지갈비와 따뜻한 밥으로 옮깁니다. 구멍이 보이는 연근 단면, 천천히 오르는 김과 촉촉한 갈비를 영상에 담기 좋은 두 사람의 저녁입니다.",
+      "videoIdea": "연근 단면 클로즈업 → 갈비와 연근을 냄비에 담기 → 뚜껑을 열어 김이 오르는 장면 → 국자로 한 그릇 떠 밥과 놓기. 제목 아이디어: ‘우한의 가을은 연근 한 냄비에서 시작된다’.",
+      "duplicateReview": "기존 레시피 75개, 최초 추천 27개와 일일 기록 9개의 이름·별칭·재료·조리법, steak-recipes·recipe-narratives·TonightPick과 최근 Git 이력을 확인했다. 마라샹궈의 연근은 여러 재료를 매운 소스에 볶는 구성이다. 수육과 제주 돔베국수는 통고기를 삶아 썰고 곁들임 또는 면에 내며, 이번 메뉴는 뼈 있는 갈비와 두꺼운 연근을 함께 끓여 국물과 먹는다. 보리·렌틸콩·빵 수프와도 주재료와 완성 질감이 달라 소스만 바꾼 반복이 아니다. 프랑스 노르망디 다음 중국 후베이로 순환한다. 한국 날짜 10월 3일 한 개만 추가하며 10월 1~2일은 소급 게시하지 않는다.",
+      "research": {
+        "checkedAt": "2026-10-03",
+        "seasonalNote": "우한시 상무국의 2025년 가을 연근 요리 안내와 우한시 농업농촌국이 게재한 차이뎬 생산자·조리사 취재를 확인했다. 가을 가족 식사와 지역 연근의 연결을 소개하되 송대 진상품·특정 기원 연대는 채택하지 않는다. 국내는 농사로 작형표의 시설 조기 수확, 노지 성출하기 11~2월, 봄까지의 수시 수확을 확인해 현지의 가을 식문화와 구분한다. 품종에 따라 연근 식감이 달라 구멍 수만으로 분질을 단정하지 않는다. 미국 외식업협회의 2026 전망에서 세계 가정식·편안한 음식에 대한 관심을 확인했지만 이는 이 탕의 한국 유행이나 유튜브 조회 수를 증명하지 않는다. FoodSafety.gov의 돼지고기 63°C와 3분 휴지, USDA의 소분·냉장·재가열 안내를 확인했다.",
+        "sources": [
+          "https://sw.wuhan.gov.cn/xwdt/mtbd/202509/t20250915_2647333.shtml",
+          "https://nyncj.wuhan.gov.cn/xwzx_25/whsn/202501/t20250123_2524798.html",
+          "https://www.nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?cntntsNo=30635&menuId=PS00087",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety"
+        ]
+      },
+      "preparationLabels": ["약 2시간 천천히", "국내 연근으로 응용"]
     }
   ]
 }

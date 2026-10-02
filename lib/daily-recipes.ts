@@ -1,8 +1,29 @@
 import type { Recipe } from "./content";
-import { barleySoupSources, calabacitasSources, chanchanyakiSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
+import { barleySoupSources, calabacitasSources, chanchanyakiSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "hubei-inspired-lotus-root-pork-rib-soup", title: "후베이식 연근 돼지갈비탕", country: "china", category: "main", experienceStatus: "researched",
+    summary: "연근과 돼지갈비를 생강 향의 국물에 천천히 끓여 밥과 먹는 두 사람의 저녁입니다. 우한·차이뎬의 연근 식탁에서 영감을 받아 국내 재료와 일반 냄비로 만듭니다.",
+    culturalNote: "후베이의 파이구 어우탕은 돼지갈비와 연근을 푹 끓이는 탕입니다. 우한의 가을 식사와 명절 가족 모임에서 만날 수 있습니다. 현지의 분질 연근과 오래 쓰던 탕 냄비 대신 국내 생연근·일반 냄비를 쓰고, 추가 뼈와 연씨를 생략한 가정용 응용입니다.",
+    localTable: { region: "중국 · 후베이 우한, 차이뎬의 연근 식탁", ingredient: "연근 · 돼지갈비 · 생강", season: "우한의 가을 연근 요리 · 국내 노지 성출하기는 11~2월", note: "우한시 상무국은 연근탕을 가을 음식으로 소개합니다. 국내 농사로 자료는 시설 조기 수확과 노지 성출하기 11~2월, 봄까지의 수시 수확을 구분합니다. 국내 유통 연근을 차이뎬산으로 소개하지 않으며 10월에만 구할 수 있는 재료도 아닙니다. 품종·재배 조건에 따라 익힌 질감은 달라집니다." },
+    cookingTime: 130, difficulty: "쉬움", servings: 2, visualLabel: "HUBEI LOTUS ROOT SOUP", visualCaption: "연근의 크림빛과 옅은 분홍, 호수를 떠올리는 회청색 물결", keywords: ["후베이", "우한", "차이뎬", "연근", "돼지갈비탕", "가을저녁", "이마트장보기"],
+    ingredientGroups: [
+      { title: "이마트 장보기 · 구매 단위 → 2인분 사용량", items: ["양념하지 않은 냉장 돼지갈비 찜용 1팩 → 뼈 포함 600g · 정육 코너에서 3~4cm 토막으로 손질", "생연근 1봉 → 씻고 껍질·마디를 제거한 무게 350g · 얇게 썬 조림용 제품 제외", "생강 작은 팩 → 15g, 대파 1봉 → 40g 사용", "즉석밥 200g 안팎 2개 또는 지은 밥 총 400g"] },
+      { title: "국물과 준비 도구", items: ["탕용 물 1.5L, 보충할 뜨거운 물 100~300ml · 갈비 데칠 물은 별도 약 1.5L", "소금 1/2작은술(약 3g)부터, 추가 간용 소금 3g 이내", "흰후추 1/4작은술 · 없으면 검은 후추 약간", "뚜껑 있는 3.5L 이상 냄비, 별도 데침 냄비, 집게, 계량컵, 식품용 중심온도계"] },
+    ],
+    steps: [
+      { title: "연근과 향채부터 손질", description: "연근의 흙을 씻고 껍질과 마디를 제거합니다. 구멍 안도 살펴 깨끗이 씻은 뒤 두께 2cm의 반달로 썹니다. 생강은 편으로, 대파 흰 부분 30g은 길게 자르고 나머지 10g은 고명으로 송송 썹니다." },
+      { title: "갈비를 짧게 데쳐 건지기", description: "손질된 갈비의 눈에 보이는 뼛가루는 젖은 종이타월로 닦습니다. 데침 냄비에 갈비와 찬물 약 1.5L를 넣어 끓이고, 끓기 시작하면 5분 더 가열합니다. 갈비만 건져 데친 물은 버리고 바로 다음 조리로 이어갑니다.", tip: "생고기를 만진 손과 도구는 씻고, 완성 음식용 집게·접시는 구분합니다. 뜨거운 물을 버릴 때 튀지 않게 주의합니다." },
+      { title: "새 물에 갈비 국물 내기", description: "탕 냄비에 물 1.5L와 갈비·생강·대파 흰 부분을 넣어 끓입니다. 떠오르는 거품을 걷고 뚜껑을 약간 열어 중약불에서 20분 끓입니다. 표면에 작은 기포가 계속 오르는 불을 유지합니다." },
+      { title: "연근 넣고 은근하게 익히기", description: "연근을 넣어 다시 끓으면 불을 낮추고 뚜껑을 살짝 열어 70~80분 더 익힙니다. 중간에 확인해 재료가 국물에 잠기도록 뜨거운 물을 조금씩 보충합니다. 연근에 젓가락이 들어가고 갈비가 부드러워질 때까지 필요하면 더 끓입니다.", tip: "연근은 품종에 따라 포슬해지거나 아삭함이 남습니다. 구멍 수만 보고 분질을 판단하거나 국물을 반드시 뽀얗게 만들려 하지 않아도 됩니다." },
+      { title: "익힘과 간을 확인해 밥과 차리기", description: "뼈를 피해 가장 두꺼운 고기 중심이 63°C 이상인지 확인합니다. 덜 익었으면 더 끓입니다. 생강과 긴 대파를 건지고 소금 3g·후추로 간한 뒤 필요하면 소금을 조금 더합니다. 불을 끄고 뚜껑을 덮어 3분 이상 둡니다. 데운 밥과 탕을 두 그릇에 나누고 고명 파를 올립니다.", tip: "63°C와 3분 휴지는 돼지고기의 안전 기준입니다. 이 탕은 그 기준만 맞춰 끝내지 않고 갈비가 부드러워지도록 충분히 끓입니다. 먹기 전 작은 뼈도 살핍니다." },
+    ],
+    substitutions: ["생연근은 통으로 된 세척·손질 제품을 써도 됩니다. 식초 절임이나 조림 반찬은 이 배합의 대체 재료가 아닙니다.", "찜용 갈비가 없으면 토막 낸 등갈비 600g으로 만듭니다. 살과 지방의 비율, 부드러워지는 시간은 달라집니다. 냉동 고기는 미리 냉장 해동하고 해동 시간은 별도로 잡습니다.", "흰후추 대신 검은 후추를 쓰면 향과 색이 달라집니다. 연근을 구하기 어렵다면 무를 넣은 다른 탕으로 응용할 수 있지만 연근의 맛과 질감은 재현되지 않습니다."],
+    tips: ["약 130분은 냉장 갈비와 준비된 밥 기준이며 대부분은 끓이는 시간입니다. 생쌀로 밥을 지으면 탕을 끓이는 동안 취사합니다. 매장별 포장량·재고는 확인하세요.", "촬영은 연근의 구멍이 보이는 단면, 뚜껑을 열 때 오르는 김, 국자로 갈비와 연근을 함께 뜨는 순서로 담아 보세요. 표지의 색과 물결은 재료·지역에서 영감 받은 그림입니다.", "남은 탕과 밥은 얕은 용기에 나눠 2시간 이내 냉장합니다. 기온 32°C 초과 시 1시간 이내 넣고 3~4일 내 먹거나 냉동합니다. 다시 먹을 때 국물을 저으며 끓이고 고기 중심 74°C 이상을 확인합니다."],
+    publishedAt: "2026-10-03", relatedStorySlugs: [], sources: Object.values(lotusRibSoupSources), palette: { from: "#f3e9df", mid: "#d8bcbb", to: "#94a7b2", ink: "#453b47" },
+  },
   {
     slug: "normandy-inspired-apple-cream-chicken", title: "노르망디풍 사과 크림 치킨", country: "france", category: "main", experienceStatus: "researched",
     summary: "노릇한 사과와 닭다리살, 양송이를 크림 소스에 담고 빵을 곁들이는 2인분 저녁입니다. 노르망디의 사과·유제품 조합에서 영감을 받아 국내 재료로 45분 안팎에 만듭니다.",

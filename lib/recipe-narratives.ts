@@ -1,7 +1,7 @@
 import type { Recipe, SourceLink } from "./content";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
-import { barleySoupSources, calabacitasSources, chanchanyakiSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
+import { barleySoupSources, calabacitasSources, chanchanyakiSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -52,6 +52,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "hubei-inspired-lotus-root-pork-rib-soup": narrative(
+    ["차이뎬의 연근이 국물에 담기면", "후베이 우한에서는 돼지갈비와 연근을 오래 끓이는 파이구 어우탕을 즐깁니다. 차이뎬의 연근은 지역의 대표 산물로 소개됩니다. 오늘은 현지 품종이나 가게의 배합을 재현하지 않고 국내 생연근과 작은 냄비로 옮긴 가정용 응용입니다."],
+    ["명절의 기억, 오늘의 식탁", "우한시 농업농촌국이 게재한 2025년 취재에는 어린 시절 명절의 연근탕을 기억하는 조리사와 귀향한 가족의 식사가 등장합니다. 오래 쓰던 탕 냄비에 천천히 끓이는 음식은 오늘도 가을 저녁과 가족 모임을 잇습니다. 정확한 발명 시기는 단정하지 않습니다."],
+    ["연근의 은은한 단맛, 갈비의 감칠맛", "연근을 두껍게 썰어 오래 끓이면 고기 국물을 머금고 은은한 단맛을 냅니다. 품종에 따라 포슬해지거나 아삭함이 남을 수 있습니다. 생강과 후추가 갈비 국물에 향을 더하고, 따뜻한 밥을 곁들이면 한 끼가 완성됩니다."],
+    [lotusRibSoupSources.autumn, lotusRibSoupSources.region, lotusRibSoupSources.korea],
+  ),
   "normandy-inspired-apple-cream-chicken": narrative(
     ["과수원과 목장의 재료가 만날 때", "노르망디에서는 사과와 크림·버터가 지역의 식탁을 설명하는 재료입니다. 닭을 사과·시드르·칼바도스·크림과 익히는 푸레 발레 도주에서도 이 조합을 만납니다. 오늘은 술을 생략하고 순살과 국내 사과로 만든 가정용 응용입니다."],
     ["중세의 정원에서 가을의 식탁으로", "노르망디관광청은 중세 수도원 정원의 사과 재배와 19세기에 넓어진 과수원을 소개합니다. 보통 9~12월에 사과가 익지만 식용과 양조용 품종은 다릅니다. 이는 사과 문화의 역사이며 이 닭 요리의 발명 시기를 뜻하지 않습니다."],

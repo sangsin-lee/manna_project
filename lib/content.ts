@@ -544,8 +544,8 @@ export const countries: Country[] = [
       },
     ],
     storySlugs: ["chinese-regional-spiciness"],
-    recipeSlugs: ["mala-xiang-guo"],
-    updatedAt: "2026-09-09",
+    recipeSlugs: ["hubei-inspired-lotus-root-pork-rib-soup", "mala-xiang-guo"],
+    updatedAt: "2026-10-03",
     palette: {
       from: "#efd6c0",
       mid: "#e2b596",

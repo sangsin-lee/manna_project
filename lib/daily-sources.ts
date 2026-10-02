@@ -1,5 +1,14 @@
 import type { SourceLink } from "./content";
 
+// Wuhan's autumn lotus-root table and household adaptation, reviewed October 3.
+export const lotusRibSoupSources = {
+  autumn: { label: "우한시 상무국 — 가을 연근 요리와 가족의 탕 문화", url: "https://sw.wuhan.gov.cn/xwdt/mtbd/202509/t20250915_2647333.shtml" },
+  region: { label: "우한시 농업농촌국 · 장강일보 취재 — 차이뎬 연근과 새해의 탕", url: "https://nyncj.wuhan.gov.cn/xwzx_25/whsn/202501/t20250123_2524798.html" },
+  korea: { label: "농촌진흥청 농사로 — 국내 연근의 작형별 출하와 수시 수확", url: "https://www.nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?cntntsNo=30635&menuId=PS00087" },
+  safety: { label: "FoodSafety.gov — 돼지고기 중심온도·휴지와 재가열", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+  storage: { label: "미국 USDA — 남은 국물 요리의 소분·냉장 보관", url: "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety" },
+} satisfies Record<string, SourceLink>;
+
 // Normandy's apple harvest and household adaptation, reviewed September 30.
 export const normandyChickenSources = {
   apples: { label: "노르망디관광청 — 사과 재배의 역사, 식용·양조용 품종과 수확기", url: "https://en.normandie-tourisme.fr/lifestyle-well-being/gastronomy/apple-speciality/" },

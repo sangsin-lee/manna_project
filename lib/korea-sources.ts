@@ -1,5 +1,7 @@
 // Cultural and harvest references. Household recipes below are our own adaptations.
 export const koreaSources = {
+  sundaeTown: { label: "관악구청 — 신림동 순대마을의 역사와 백순대·양념순대", url: "https://www.gwanak.go.kr/site/gwanak/08/10805070100002017011211.jsp" },
+  cookedFoodSafety: { label: "식품의약품안전처 — 육가공품 중심 75°C·1분 가열과 음식 보관", url: "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_grp=MENU_NEW01&menu_no=3120&ntctxt_no=1098051" },
   jejuFood: { label: "제주관광공사 — 제주를 대표하는 특산물과 향토음식", url: "https://www.visitjeju.net/kr/themtour/view?contentsid=CNTS_200000000013390&menuId=DOM_000002000000000221" },
   dombe: { label: "제주관광공사 — 도마에 담는 돔베고기", url: "https://www.visitjeju.net/kr/themtour/view?contentsid=CNTS_200000000013528&menuId=DOM_700000000010810" },
   noodle: { label: "서귀포농업기술센터 — 제주 향토음식, 국수의 이야기", url: "https://agri.jeju.go.kr/seogwipo/notice/photo.htm?act=view&page=31&seq=31378" },

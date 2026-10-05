@@ -12,6 +12,28 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "sundae-bokkeum" && <g>
+          <path d="M168 172h-28q-15 0-15 15t15 15h28m264-30h28q15 0 15 15t-15 15h-28" stroke="#51433e" strokeWidth="12"/>
+          <circle cx="300" cy="186" r="128" fill="#55423a" stroke="#352f2d" strokeWidth="7"/>
+          <circle cx="300" cy="186" r="115" fill="#b66549" stroke="#d19770" strokeWidth="3"/>
+          <path d="M214 197q-14-55 48-61t85 56-79 15 20 56 89-51m-156-52q36-44 82-17t10 67-65 13 24-29 60 20" stroke="#e6b47c" strokeWidth="6" strokeLinecap="round"/>
+          {[[221,147,-25],[356,135,30],[340,245,-15],[244,247,25]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-23-14 14-18 26 13-15 22Z" fill="#d9c78f" stroke="#f0dfaf" strokeWidth="3"/>
+            <path d="m-16-8 31 17m-30-2 14 8m-2-26 7 8" stroke="#b9af73" strokeWidth="2"/>
+          </g>)}
+          {[[254,119,-24],[327,145,18],[220,202,-20],[300,214,26],[375,198,-18],[297,275,-25]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <ellipse cy="7" rx="26" ry="22" fill="#463332"/>
+            <ellipse rx="26" ry="22" fill="#67504b" stroke="#392d2c" strokeWidth="4"/>
+            <path d="m-15-7 9-5m8-1 10 5m-24 7 8 6m7-2 9-5m-12 10 5 3" stroke="#bb9681" strokeWidth="3" strokeLinecap="round"/>
+            <path d="m-10-15 7-2m18 8 4 6" stroke="#a97c65" strokeWidth="2" strokeLinecap="round"/>
+          </g>)}
+          {[[287,103,-25],[248,220,30],[357,260,-18]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M0-29Q-30-12-21 8L0 27 21 8Q30-12 0-29Z" fill="#6e8151" stroke="#4b623c" strokeWidth="2"/>
+            <path d="M0-20v42m0-11-12-10M0-1l13-11m-13 4-10-8" stroke="#a6b17b" strokeWidth="2"/>
+          </g>)}
+          <path d="m273 166 6 2m64 35 5-3m-112 30 6 2m46 3 5-2m-17-87 6 3m57 92 6 2" stroke="#efcba1" strokeWidth="3" strokeLinecap="round"/>
+          <path d="M264 47q-9-11 1-23m31 20q-8-12 2-24m33 30q-8-11 1-22" stroke="#fff4dc" strokeWidth="4" strokeLinecap="round" opacity=".85"/>
+        </g>}
         {art === "bread-dumplings" && <g>
           <ellipse cx="300" cy="195" rx="116" ry="99" fill="#ccb28e" stroke="#b49a78" strokeWidth="2"/>
           <path d="M208 198q-5-40 32-60m98 128q32-9 47-44" stroke="#f0ddba" strokeWidth="6" strokeLinecap="round"/>

@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import type { CountrySlug, Recipe } from "./content";
 
 export type RecipePattern = "grain" | "tiles" | "waves" | "contours" | "linen";
-export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble" | "lentil-stew" | "jujube-porridge" | "garlic-chicken" | "perilla-kalguksu" | "grape-salad" | "berry-duck" | "cheese-jeon" | "shiitake-japchae" | "apple-pork-rolls" | "yuja-salmon" | "fig-toast" | "octopus-soup" | "cockle-rice" | "persimmon-curry" | "chestnut-yullan" | "oyster-jeon" | "spinach-soup" | "apple-pancakes" | "ginseng-soup" | "chili-tteok" | "crab-custard" | "onion-tart" | "barley-soup" | "salmon-chanchan" | "calabacitas" | "quesadilla" | "chipotle-bowl" | "fried-chicken" | "buffalo-wings" | "ribollita" | "apple-cream-chicken" | "lotus-rib-soup" | "bread-dumplings";
+export type RecipeArt = "gnocchi" | "rice" | "steak" | "bowl" | "noodles" | "bread" | "toast" | "potato" | "dessert" | "tart" | "drink" | "minchi" | "loco" | "pork-noodles" | "fish-stew" | "grilled-fish" | "citrus" | "sweet-potato-chicken" | "pear-shrimp" | "pine-noodles" | "tofu-hotpot" | "ongsimi" | "cabbage-jeon" | "deodeok-gui" | "corn-soup" | "chestnut-pasta" | "salt-shrimp" | "ginger-pork" | "apple-crumble" | "lentil-stew" | "jujube-porridge" | "garlic-chicken" | "perilla-kalguksu" | "grape-salad" | "berry-duck" | "cheese-jeon" | "shiitake-japchae" | "apple-pork-rolls" | "yuja-salmon" | "fig-toast" | "octopus-soup" | "cockle-rice" | "persimmon-curry" | "chestnut-yullan" | "oyster-jeon" | "spinach-soup" | "apple-pancakes" | "ginseng-soup" | "chili-tteok" | "crab-custard" | "onion-tart" | "barley-soup" | "salmon-chanchan" | "calabacitas" | "quesadilla" | "chipotle-bowl" | "fried-chicken" | "buffalo-wings" | "ribollita" | "apple-cream-chicken" | "lotus-rib-soup" | "bread-dumplings" | "sundae-bokkeum";
 export type RecipeDesign = {
   paper: string; soft: string; from: string; mid: string; to: string;
   ink: string; muted: string; accent: string; dark: string; line: string;
@@ -79,7 +79,7 @@ const details: Record<string, { art: RecipeArt; caption: string; place?: string;
   "osam-bulgogi": { art: "bowl", caption: "고추장빛 볶음과 깻잎의 초록" },
   "vietnamese-banh-mi": { art: "bread", caption: "바게트의 황금색과 채소의 산뜻함" },
   "italian-tiramisu": { art: "dessert", caption: "에스프레소, 코코아, 마스카르포네" },
-  "korean-sundae-bokkeum": { art: "bowl", caption: "시장의 따뜻한 볶음 한 접시" },
+  "korean-sundae-bokkeum": { art: "sundae-bokkeum", place: "한국 · 서울 신림동", pattern: "tiles", caption: "붉은 양념, 짙은 순대 단면과 깻잎의 초록, 시장 식탁을 떠올리는 격자" },
   "hong-kong-milk-tea": { art: "drink", caption: "홍차의 호박색과 부드러운 우유빛" },
   "macau-minchi": { art: "minchi", caption: "감자와 간장의 황토색, 마카오의 푸른빛" },
   "macau-portuguese-egg-tart": { art: "tart", caption: "황금빛 커스터드와 푸른 타일의 대비", colors: ["#f3ebce", "#d7dcd6", "#739ca5", "#284952"] },

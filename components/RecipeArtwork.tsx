@@ -12,6 +12,30 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "bread-dumplings" && <g>
+          <ellipse cx="300" cy="195" rx="116" ry="99" fill="#ccb28e" stroke="#b49a78" strokeWidth="2"/>
+          <path d="M208 198q-5-40 32-60m98 128q32-9 47-44" stroke="#f0ddba" strokeWidth="6" strokeLinecap="round"/>
+          {[[248,144,41],[338,163,40],[290,234,43]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y})`}>
+            <ellipse cy="6" rx={r+2} ry={r-1} fill="#a8885f" opacity=".25"/>
+            <circle r={r} fill="#dfc795" stroke="#b89662" strokeWidth="3"/>
+            <path d={`M${-r+11} 1q-1-${r-13} ${r-3}-${r-13}`} stroke="#f4e3b8" strokeWidth="6" strokeLinecap="round"/>
+            <path d="m-16-8 8-4m16-7 7 4m-27 30 8 4m18-12 7-4" stroke="#b39763" strokeWidth="4" strokeLinecap="round"/>
+            <path d="m-4-21 5 4m-17 22 5-2m21 15 5-3" stroke="#7c8860" strokeWidth="3" strokeLinecap="round"/>
+          </g>)}
+          {[[212,208,-22],[305,105,24],[377,214,28],[237,264,-32],[359,265,22]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-6-1h12l5 24h-22Z" fill="#e0c9a2" stroke="#a88a67" strokeWidth="2"/>
+            <path d="M-23 1q-3-27 23-27t23 27Z" fill="#a98766" stroke="#87694f" strokeWidth="2"/>
+            <path d="M-15-8q5-12 18-10" stroke="#cfb28b" strokeWidth="4" strokeLinecap="round"/>
+            <path d="m-15 1 9 8m5-8 1 11m7-11 9 5" stroke="#b79a78" strokeWidth="2"/>
+          </g>)}
+          <g transform="translate(406 290) rotate(18)">
+            <path d="M-28-12q-8-37 27-40 32 3 28 36l-8 29-43-1Z" fill="#d4b77f" stroke="#ad8c57" strokeWidth="3"/>
+            <ellipse rx="28" ry="25" fill="#f0dfb3" stroke="#b79b69" strokeWidth="3"/>
+            <path d="m-14-9 7-5m12-1 9 5m-20 18 8 4m11-5 5-6" stroke="#c3a472" strokeWidth="5" strokeLinecap="round"/>
+            <path d="m-5-3 4 2m-15 13 5-3m17-18 3 4" stroke="#829066" strokeWidth="3" strokeLinecap="round"/>
+          </g>
+          <path d="m314 198 8-3m-92-26 6 3m88 73 7 3m43-65 6-4" stroke="#78865b" strokeWidth="3" strokeLinecap="round"/>
+        </g>}
         {art === "lotus-rib-soup" && <g>
           <circle cx="300" cy="186" r="119" fill="#8399a6" stroke="#596f7e" strokeWidth="3"/>
           <circle cx="300" cy="186" r="106" fill="#d4b7a8" stroke="#ebd6c2" strokeWidth="5"/>

@@ -874,6 +874,34 @@
         ]
       },
       "preparationLabels": ["약 2시간 천천히", "국내 연근으로 응용"]
+    },
+    {
+      "date": "2026-10-05",
+      "recipeSlug": "bavarian-inspired-mushroom-bread-dumplings",
+      "title": "바이에른식 빵 경단과 버섯 크림소스",
+      "canonicalDish": "Bavarian-inspired Semmelknoedel with Rahmschwammerl",
+      "aliases": ["제멜크뇌델", "제멜크뇌델과 람슈바멀", "세멜크뇌델", "Semmelknödel mit Rahmschwammerl", "Bavarian mushroom bread dumplings"],
+      "keyIngredients": ["담백한 밀빵", "우유", "달걀", "양송이", "느타리", "양파", "생크림"],
+      "method": "가볍게 말린 빵을 우유에 불리고 달걀·볶은 양파로 묶어 동그랗게 빚는다. 팔팔 끓이지 않는 물에서 중심까지 익힌 빵 경단에 따로 볶아 졸인 버섯 크림소스를 곁들인다.",
+      "selectionReason": "바이에른의 빵 경단과 가을 버섯 식탁을 국내 재배 버섯으로 옮깁니다. 부드러운 경단과 도톰한 버섯을 한 접시에 담아, 고기 없이도 든든한 두 사람의 저녁을 만듭니다.",
+      "videoIdea": "빵 조각에 우유 붓기 → 손으로 동그랗게 빚기 → 은근한 물에서 건지기 → 버섯 소스 끼얹기 → 경단 단면 클로즈업. 제목 아이디어: ‘빵이 저녁 경단이 되는 곳, 바이에른’.",
+      "duplicateReview": "전체 76개 레시피와 최초 추천 27개, 일일 기록 10개, steak-recipes·recipe-narratives·TonightPick 및 최근 Git 이력을 확인했다. 단호박 뇨키는 구운 호박과 생밀가루 반죽, 마울타셴은 얇은 면피에 육류·시금치 속을 넣은 만두다. 이번 메뉴는 구워진 빵 조각을 우유와 달걀로 묶어 삶는 속 없는 경단이다. 리볼리타처럼 빵을 국물에 풀지도 않는다. 알밤 크림 파스타나 사과 크림 치킨과 일부 재료가 겹치지만 주재료 구성·성형·익히는 방법이 달라 소스만 바꾼 반복이 아니다. 중국 후베이 다음 독일 바이에른으로 순환하며 기존 독일 슈바벤 메뉴와 지역도 구분한다. 한국 날짜 10월 5일 한 메뉴만 추가하고 10월 4일은 소급하지 않는다.",
+      "research": {
+        "checkedAt": "2026-10-05",
+        "seasonalNote": "동바이에른관광협회의 빵 경단과 바이에른 산림소유자협회의 버섯 크림 조합을 확인했다. BZfE는 야생버섯의 주 계절을 가을, 재배 버섯은 연중 공급으로 구분한다. 국내 느타리의 연중 환경 관리 재배는 농촌진흥청 자료를 확인했다. 현지 야생버섯의 채집 철을 국내 양송이·느타리의 한정 제철로 쓰지 않는다. 바이에른 식문화 유산 자료의 19세기 초 뮌헨 밀빵 이야기는 빵 문화의 배경이며 경단의 발명 시기가 아니다. 미국 외식업협회의 2026 전망에서 편안한 세계 가정식에 대한 관심을 참고했으나 이 메뉴의 한국 유행·유튜브 조회 수는 확인하지 않았으며 단정하지 않는다. 달걀 요리 71°C, 재가열 74°C와 신속 냉장을 확인하고 BZfE의 버섯 요리 안내에 맞춰 남은 음식은 다음 날까지 먹도록 안내한다.",
+        "sources": [
+          "https://www.bayerischer-wald.de/aktivitaeten/essen-trinken/bayerische-rezepte/bayerische-semmelknoedel",
+          "https://www.bayer-waldbesitzerverband.de/wald-genuss/rahmschwammerl-mit-semmelknoedel.html",
+          "https://www.genusserbe.bayern.de/352492/index.php",
+          "https://www.genusserbe.bayern.de/350502/index.php",
+          "https://www.bzfe.de/kueche-und-alltag/kochen/how-to-obst-und-gemuese/how-to-pilze",
+          "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1729",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/steps-keep-food-safe"
+        ]
+      },
+      "preparationLabels": ["빵으로 빚는 경단", "재배 버섯으로 응용"]
     }
   ]
 }

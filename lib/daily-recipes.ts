@@ -1,8 +1,30 @@
 import type { Recipe } from "./content";
-import { barleySoupSources, calabacitasSources, chanchanyakiSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
+import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "bavarian-inspired-mushroom-bread-dumplings", title: "바이에른식 빵 경단과 버섯 크림소스", country: "germany", category: "main", experienceStatus: "researched",
+    summary: "우유와 달걀에 불린 빵을 동그랗게 빚어 삶고, 볶은 버섯의 크림소스를 곁들입니다. 바이에른의 제멜크뇌델과 람슈바멀을 국내 재배 버섯으로 옮긴 두 사람의 저녁입니다.",
+    culturalNote: "제멜크뇌델은 밀빵·우유·달걀·양파로 만드는 바이에른의 빵 경단입니다. 고기나 버섯 요리에 곁들이며 남은 경단을 썰어 구워 먹기도 합니다. 여기서는 바게트와 양송이·느타리를 사용하고 술을 넣지 않는 가정용 응용으로 소개합니다.",
+    localTable: { region: "독일 · 바이에른의 빵과 버섯 식탁", ingredient: "밀빵 · 버섯 · 우유와 크림", season: "현지 야생버섯은 가을 · 재배 버섯은 연중 활용", note: "독일 BZfE는 야생버섯의 주 계절을 가을로, 재배 버섯은 연중 공급으로 구분합니다. 국내 느타리도 시설 환경을 관리해 연중 재배할 수 있습니다. 이번에는 판매용 양송이·느타리를 쓰며 현지 야생버섯의 향이나 제철을 그대로 재현하지 않습니다." },
+    cookingTime: 65, difficulty: "보통", servings: 2, visualLabel: "BAVARIAN MUSHROOM TABLE", visualCaption: "빵의 금빛과 버섯의 갈색, 바이에른의 식탁을 떠올리는 푸른 리넨 선", keywords: ["바이에른", "제멜크뇌델", "빵경단", "버섯크림", "양송이", "느타리", "가을저녁", "이마트장보기"],
+    ingredientGroups: [
+      { title: "이마트 장보기 · 구매 단위 → 2인분 사용량", items: ["담백한 바게트 또는 무가당 밀빵 1봉 → 180g 사용 · 크림·마늘버터 토핑 제외", "우유 1팩 → 120ml와 보정용 20~40ml, 달걀 1팩 → 1개(껍질 제외 약 50g)", "양송이 1팩 → 200g, 느타리 1팩 → 밑동 제거 후 150g", "양파 1개 → 100g · 경단용 40g + 소스용 60g", "무가당 생크림 작은 팩 → 120ml, 무염버터 1팩 → 20g", "마른 빵가루 1봉 → 반죽이 질 때만 10~20g 사용", "샐러드 잎채소 소포장 → 80g, 레몬 1개 → 즙 10ml 사용"] },
+      { title: "집에서 준비할 양념과 도구", items: ["식용유 5ml, 소스용 물 100ml와 보충용 30~60ml", "건조 파슬리 1/2작은술, 후추 약간 · 넛맥 한 꼬집(선택)", "소금 경단용 1g 이내 + 소스용 1~2g, 삶을 물 2L와 소금 10g", "큰 볼, 넓은 팬, 냄비, 구멍 국자, 저울, 가는 탐침의 식품용 중심온도계"] },
+    ],
+    steps: [
+      { title: "빵을 말려 우유에 불리기", description: "빵을 약 1cm 조각으로 잘라 마른 팬의 약불에서 5~7분 뒤적여 겉 수분을 날립니다. 갈색으로 바싹 굽지는 않습니다. 볼에 담아 미지근한 우유 120ml를 고루 붓고 15분 불립니다.", tip: "이미 약간 마른 빵은 팬 건조를 생략합니다. 곰팡이가 있거나 상한 빵을 재활용하는 조리법은 아닙니다." },
+      { title: "양파를 볶고 경단 반죽하기", description: "양파 100g을 다집니다. 팬에 버터 5g으로 경단용 양파 40g을 3분 볶아 미지근하게 식힙니다. 불린 빵에 양파·달걀·파슬리 절반·소금 1g 이내·후추·선택한 넛맥을 넣고 가볍게 뭉쳐 5분 둡니다.", tip: "마른 빵 조각이 남으면 우유를 10ml씩 더해 흡수시킵니다. 손에서 퍼질 만큼 질면 빵가루를 5g씩 넣고 5분 기다립니다. 생달걀이 든 반죽은 맛보지 않습니다." },
+      { title: "작게 시험한 뒤 여섯 알 빚기", description: "소금물 2L를 끓인 뒤 불을 낮춥니다. 반죽 조금을 2cm 공으로 빚어 3분 담가 모양이 유지되는지만 확인합니다. 풀어지면 남은 반죽에 빵가루를 조금 더 넣습니다. 젖은 손으로 남은 반죽을 지름 약 5cm, 여섯 알로 매끈하게 빚습니다." },
+      { title: "팔팔 끓이지 않고 속까지 익히기", description: "시험용 경단도 함께 넣고 물이 잔잔히 움직이는 중약불에서 18~22분 익힙니다. 가장 큰 경단의 중심이 71°C 이상인지 온도계로 확인하고 부족하면 더 익힙니다. 떠오르는 것만으로 익힘을 판단하지 말고, 구멍 국자로 건져 물기를 뺍니다." },
+      { title: "그동안 버섯 소스 만들기", description: "버섯을 손질해 양송이는 5mm로 썰고 느타리는 찢습니다. 넓은 팬에 식용유와 남은 버터 15g을 넣고 버섯을 두 번에 나눠 총 7~9분 볶습니다. 소스용 양파 60g을 넣어 3분 더 볶고 물 100ml·크림 120ml를 부어 약불로 4~5분 졸입니다.", tip: "소금 1~2g과 후추로 간하고 레몬즙 5ml를 넣습니다. 너무 되면 물을 조금씩 더합니다. 버섯은 짧게 씻은 뒤 물기를 닦고 충분히 익힙니다." },
+      { title: "소스를 끼얹어 두 접시로", description: "잎채소를 씻어 물기를 빼고 남은 레몬즙 5ml로 가볍게 버무립니다. 경단 세 알씩에 버섯 소스를 나눠 담고 남은 파슬리를 뿌립니다. 채소는 옆에 곁들여 빵의 부드러움과 아삭함을 함께 즐깁니다." },
+    ],
+    substitutions: ["바게트 대신 단맛이 적은 흰 밀빵을 같은 무게로 씁니다. 부드러운 식빵은 우유 100ml부터 넣어 조절하세요. 현지 제멜과 수분 흡수가 다를 수 있습니다.", "버섯은 양송이만 350g으로 써도 됩니다. 직접 채집한 버섯으로 바꾸지 않습니다. 생크림 대신 가당 휘핑크림은 쓰지 않으며, 우유만 쓰면 소스가 묽어집니다.", "레몬즙은 일반 식초 총 5ml로 바꿔 소스와 샐러드에 나눠 넣습니다. 넛맥은 생략할 수 있습니다. 밀·달걀·우유 알레르기와 빵 제품 표시를 확인합니다."],
+    tips: ["약 65분은 경단을 익히는 동안 소스를 만드는 병행 조리 기준입니다. 반죽 보정이나 작은 팬을 쓰면 더 걸립니다. 재료의 실제 포장량과 매장 재고는 다릅니다.", "촬영은 빵이 우유를 머금는 모습, 손으로 빚는 장면, 경단 단면에 소스가 스미는 순간을 이어 보세요. 표지의 리넨 선은 식탁에서 영감 받은 시각적 표현입니다.", "남은 경단과 버섯 소스는 얕은 용기에 나눠 2시간 이내 냉장합니다. 기온 32°C 초과 시 1시간 이내 넣고 다음 날까지 먹습니다. 재가열할 때 소스를 저으며 데우고 경단 중심도 74°C 이상 확인합니다."],
+    publishedAt: "2026-10-05", relatedStorySlugs: [], sources: Object.values(bavarianDumplingSources), palette: { from: "#f2e7d5", mid: "#d3b88e", to: "#9bacb7", ink: "#483d33" },
+  },
   {
     slug: "hubei-inspired-lotus-root-pork-rib-soup", title: "후베이식 연근 돼지갈비탕", country: "china", category: "main", experienceStatus: "researched",
     summary: "연근과 돼지갈비를 생강 향의 국물에 천천히 끓여 밥과 먹는 두 사람의 저녁입니다. 우한·차이뎬의 연근 식탁에서 영감을 받아 국내 재료와 일반 냄비로 만듭니다.",

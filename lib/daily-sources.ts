@@ -1,5 +1,17 @@
 import type { SourceLink } from "./content";
 
+// Bavarian bread dumplings and the autumn mushroom table, reviewed October 5.
+export const bavarianDumplingSources = {
+  recipe: { label: "동바이에른관광협회 — 제멜크뇌델의 재료와 삶는 방법", url: "https://www.bayerischer-wald.de/aktivitaeten/essen-trinken/bayerische-rezepte/bayerische-semmelknoedel" },
+  mushrooms: { label: "바이에른 산림소유자협회 — 버섯 크림과 빵 경단", url: "https://www.bayer-waldbesitzerverband.de/wald-genuss/rahmschwammerl-mit-semmelknoedel.html" },
+  culture: { label: "바이에른 식문화 유산 — 빵 경단과 지역의 식탁", url: "https://www.genusserbe.bayern.de/352492/index.php" },
+  bread: { label: "바이에른 식문화 유산 — 19세기 뮌헨의 문트제멜", url: "https://www.genusserbe.bayern.de/350502/index.php" },
+  season: { label: "독일 연방영양센터 BZfE — 버섯의 계절·손질·보관", url: "https://www.bzfe.de/kueche-und-alltag/kochen/how-to-obst-und-gemuese/how-to-pilze" },
+  korea: { label: "농촌진흥청 — 느타리버섯의 연중 환경 관리 재배", url: "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1729" },
+  safety: { label: "FoodSafety.gov — 달걀 요리 71°C와 재가열 74°C", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+  storage: { label: "미국 USDA — 신속 냉장과 안전한 재가열", url: "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/steps-keep-food-safe" },
+} satisfies Record<string, SourceLink>;
+
 // Wuhan's autumn lotus-root table and household adaptation, reviewed October 3.
 export const lotusRibSoupSources = {
   autumn: { label: "우한시 상무국 — 가을 연근 요리와 가족의 탕 문화", url: "https://sw.wuhan.gov.cn/xwdt/mtbd/202509/t20250915_2647333.shtml" },

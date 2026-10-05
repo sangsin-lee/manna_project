@@ -1,7 +1,7 @@
 import type { Recipe, SourceLink } from "./content";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
-import { barleySoupSources, calabacitasSources, chanchanyakiSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
+import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -52,6 +52,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "bavarian-inspired-mushroom-bread-dumplings": narrative(
+    ["밀빵이 동그란 한 끼가 되는 곳", "바이에른의 제멜크뇌델은 빵 조각에 우유·달걀·양파를 더해 빚고 물에서 익히는 경단입니다. 버섯을 크림에 담은 람슈바멀과 함께 먹기도 합니다. 오늘은 국내 바게트와 재배 버섯에 맞춘 가정용 배합입니다."],
+    ["19세기 뮌헨의 빵집을 떠올리며", "바이에른 식문화 유산 자료는 19세기 초 뮌헨에서 더 좋은 밀가루로 만든 문트제멜이 궁정에서 다른 빵집으로 퍼진 이야기를 소개합니다. 이는 지역 밀빵 문화의 배경이며 경단의 발명 시기를 뜻하지 않습니다. 조금 마른 빵도 다시 식탁에 오릅니다."],
+    ["폭신한 빵결, 도톰한 버섯", "경단은 빵결을 남겨 뭉치면 촉촉하고 부드럽게 잘립니다. 먼저 볶은 버섯은 고소한 향과 씹는 맛을 내고, 크림소스가 경단의 단면에 스며듭니다. 레몬의 가벼운 산미와 곁들인 잎채소가 접시에 산뜻함을 더합니다."],
+    [bavarianDumplingSources.culture, bavarianDumplingSources.bread, bavarianDumplingSources.mushrooms],
+  ),
   "hubei-inspired-lotus-root-pork-rib-soup": narrative(
     ["차이뎬의 연근이 국물에 담기면", "후베이 우한에서는 돼지갈비와 연근을 오래 끓이는 파이구 어우탕을 즐깁니다. 차이뎬의 연근은 지역의 대표 산물로 소개됩니다. 오늘은 현지 품종이나 가게의 배합을 재현하지 않고 국내 생연근과 작은 냄비로 옮긴 가정용 응용입니다."],
     ["명절의 기억, 오늘의 식탁", "우한시 농업농촌국이 게재한 2025년 취재에는 어린 시절 명절의 연근탕을 기억하는 조리사와 귀향한 가족의 식사가 등장합니다. 오래 쓰던 탕 냄비에 천천히 끓이는 음식은 오늘도 가을 저녁과 가족 모임을 잇습니다. 정확한 발명 시기는 단정하지 않습니다."],

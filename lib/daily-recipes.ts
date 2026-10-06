@@ -1,8 +1,30 @@
 import type { Recipe } from "./content";
-import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
+import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "yamagata-inspired-taro-beef-imoni", title: "야마가타식 토란 소고기 이모니", country: "japan", category: "main", experienceStatus: "researched",
+    summary: "부드럽게 익힌 토란과 탄력 있는 곤약에 소고기·대파를 더한 간장 국물 요리입니다. 야마가타 내륙의 가을 냄비를 국내 재료로 끓여 밥과 함께 먹습니다.",
+    culturalNote: "야마가타에서는 가을에 강가로 냄비를 가져가 함께 이모니를 끓입니다. 내륙의 소고기·간장 맛과 쇼나이의 돼지고기·된장 맛은 서로 다릅니다. 이번에는 내륙 방식을 바탕으로 국내 토란·대파를 쓰고 청주를 생략한 2인분 가정용 응용입니다.",
+    localTable: { region: "일본 · 야마가타 내륙의 가을 식탁", ingredient: "토란 · 소고기 · 곤약 · 대파", season: "현지 가을~겨울 토란 요리 · 국내 일반 수확은 가을", note: "야마가타시는 이모니를 즐기는 시기로 9월 초~10월 말을 소개합니다. 국내 토란은 보통 가을에 수확하지만 터널 조숙 재배는 6월 이후 수확할 수도 있습니다. 손질·저장·냉동 제품의 판매 시기는 생토란 수확기와 다릅니다. 국내 구입 토란을 야마가타산으로 소개하지 않습니다." },
+    cookingTime: 50, difficulty: "쉬움", servings: 2, visualLabel: "YAMAGATA AUTUMN IMONI", visualCaption: "토란의 크림빛과 간장 국물의 갈색, 강가의 모임을 떠올리는 회청색 물결", keywords: ["야마가타", "이모니", "토란", "소고기", "곤약", "가을저녁", "이마트장보기"],
+    ingredientGroups: [
+      { title: "이마트 장보기 · 구매 단위 → 2인분 사용량", items: ["손질 토란 1봉 → 껍질 제거 후 300g · 흙토란이면 약 400g부터 준비", "양념하지 않은 냉장 소고기 불고기용 1팩 → 200g · 2~3mm 두께", "요리용 판곤약 1봉 → 포장물을 뺀 무게 150g · 간식용 곤약 젤리 제외", "대파 1봉 → 80g · 흰 부분과 연한 초록 부분", "즉석밥 200g 안팎 2개 또는 지은 밥 총 400g"] },
+      { title: "국물 양념과 준비 도구", items: ["국물용 물 700ml, 보충할 뜨거운 물 100~200ml", "양조간장 또는 진간장 30ml + 마지막 간 조절용 5~10ml", "설탕 2작은술(약 8g), 후추 약간(선택)", "토란 데칠 물 1L와 소금 5g · 곤약 데칠 물은 제품 표시대로 별도 준비", "뚜껑 있는 2.5L 이상 냄비, 체, 식품용 장갑, 가는 탐침의 식품용 중심온도계"] },
+    ],
+    steps: [
+      { title: "토란을 손질해 따로 데치기", description: "장갑을 끼고 토란을 씻어 껍질을 벗긴 뒤 3cm 정도로 자릅니다. 손질 제품도 표시대로 씻습니다. 소금물 1L가 끓으면 토란을 넣어 5분 데치고 물은 버립니다. 체에 담아 흐르는 물로 가볍게 헹굽니다.", tip: "생토란은 가려움과 아린 맛을 일으킬 수 있어 생으로 맛보지 않습니다. 이 데침으로 조리를 끝내지 않고 다음 단계에서 속까지 부드럽게 익힙니다." },
+      { title: "곤약과 대파, 고기 준비하기", description: "곤약은 숟가락으로 2cm 안팎의 얇은 한입 크기로 뜯습니다. 데침이 필요한 제품은 표시된 시간대로 데쳐 물을 버립니다. 대파는 2cm 사선으로 썰고 소고기는 별도 도마에서 4cm 길이로 자릅니다.", tip: "생고기를 만진 손·칼·도마는 씻고 완성 음식용 도구와 구분합니다. 곤약은 크게 삼키지 않도록 작게 준비합니다." },
+      { title: "토란과 곤약을 먼저 끓이기", description: "냄비에 새 물 700ml·토란·곤약·간장 10ml를 넣습니다. 끓으면 중약불로 낮춰 뚜껑을 조금 열고 15~20분 끓입니다. 젓가락이 토란 중심까지 쉽게 들어가도록 필요하면 더 익힙니다. 국물이 많이 줄면 뜨거운 물을 보충합니다." },
+      { title: "소고기와 간장 맛 더하기", description: "간장 20ml와 설탕 8g을 넣고 소고기를 한 장씩 풀어 넣습니다. 다시 끓기 시작하면 떠오르는 거품을 걷고 중약불에서 3~4분 끓입니다. 토란이 부서지지 않게 국자를 바닥으로 크게 한 번씩 움직입니다." },
+      { title: "대파를 넣고 익힘 확인하기", description: "대파를 넣어 4~5분 더 끓입니다. 가는 탐침으로 가장 두꺼운 고기 조각 중심이 최소 63°C 이상인지 확인하고 부족하면 더 가열합니다. 간을 보고 간장 5ml씩 추가한 뒤 불을 끄고 뚜껑을 덮어 3분 이상 둡니다.", tip: "색만으로 고기의 익힘을 판단하지 않습니다. 63°C와 3분 휴지는 소고기의 최소 안전 기준이며, 토란도 중심이 단단하지 않게 충분히 익혀야 합니다." },
+      { title: "따뜻한 밥과 두 사람의 식탁으로", description: "즉석밥은 제품 표시대로 데웁니다. 토란·곤약·소고기를 두 그릇에 고루 담고 국물을 나눠 붓습니다. 원하면 후추를 조금 뿌려 밥과 함께 차립니다. 밥 위에 토란을 조금 으깨 국물과 곁들여도 좋습니다." },
+    ],
+    substitutions: ["손질 냉동 토란은 제품의 해동·가열 안내를 먼저 따르고 부드러워지는 시간을 조절합니다. 토란이 없으면 감자 300g으로 응용할 수 있지만 토란의 매끄러운 식감과 이모니의 특징은 달라집니다.", "판곤약이 없으면 물기를 뺀 실곤약 150g을 짧게 잘라 사용합니다. 대파는 리크의 흰 부분으로 바꿀 수 있지만 익는 시간과 향이 다릅니다.", "간장은 제품마다 염도가 달라 마지막에 조금씩 더합니다. 쯔유나 이미 양념된 불고기로 같은 양을 대체하지 않습니다. 간장의 대두·밀 알레르기 표시도 확인합니다."],
+    tips: ["약 50분은 손질 토란·냉장 고기·준비된 밥 기준입니다. 흙토란 손질이나 냉동 고기 냉장 해동 시간은 더 잡습니다. 실제 포장량과 매장별 토란 재고는 확인하세요.", "촬영은 곤약을 뜯는 표면, 토란의 부드러운 단면, 냄비에서 오르는 김을 담아 보세요. 표지의 물결과 색은 강가의 모임과 재료에서 영감 받은 그림입니다.", "남은 음식은 얕은 용기에 소분해 2시간 이내 냉장합니다. 기온 32°C 초과 시 1시간 이내 넣습니다. 다시 먹을 때 고루 저어 데우고 고기와 토란 중심도 74°C 이상을 확인합니다."],
+    publishedAt: "2026-10-06", relatedStorySlugs: [], sources: Object.values(imoniSources), palette: { from: "#f1e7d7", mid: "#c7a077", to: "#94a9b4", ink: "#483a32" },
+  },
   {
     slug: "bavarian-inspired-mushroom-bread-dumplings", title: "바이에른식 빵 경단과 버섯 크림소스", country: "germany", category: "main", experienceStatus: "researched",
     summary: "우유와 달걀에 불린 빵을 동그랗게 빚어 삶고, 볶은 버섯의 크림소스를 곁들입니다. 바이에른의 제멜크뇌델과 람슈바멀을 국내 재배 버섯으로 옮긴 두 사람의 저녁입니다.",

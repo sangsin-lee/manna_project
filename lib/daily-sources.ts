@@ -1,5 +1,14 @@
 import type { SourceLink } from "./content";
 
+// Yamagata's inland imoni and the Korean taro harvest, reviewed October 6.
+export const imoniSources = {
+  culture: { label: "일본 농림수산성 — 야마가타 이모니의 지역 차이·유래·조리", url: "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imoni_yamagata.html" },
+  season: { label: "야마가타시 — 가을에 즐기는 이모니와 지역 행사", url: "https://www.yamagatakara.jp/takara/specialties/imoni.html" },
+  korea: { label: "농촌진흥청 — 토란의 가을 수확·조숙 재배·손질", url: "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1702" },
+  safety: { label: "FoodSafety.gov — 소고기 중심온도와 휴지·재가열", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+  storage: { label: "FoodSafety.gov — 교차오염 예방과 신속 냉장", url: "https://www.foodsafety.gov/keep-food-safe/4-steps-to-food-safety" },
+} satisfies Record<string, SourceLink>;
+
 // Bavarian bread dumplings and the autumn mushroom table, reviewed October 5.
 export const bavarianDumplingSources = {
   recipe: { label: "동바이에른관광협회 — 제멜크뇌델의 재료와 삶는 방법", url: "https://www.bayerischer-wald.de/aktivitaeten/essen-trinken/bayerische-rezepte/bayerische-semmelknoedel" },

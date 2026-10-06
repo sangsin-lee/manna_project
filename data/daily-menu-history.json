@@ -902,6 +902,31 @@
         ]
       },
       "preparationLabels": ["빵으로 빚는 경단", "재배 버섯으로 응용"]
+    },
+    {
+      "date": "2026-10-06",
+      "recipeSlug": "yamagata-inspired-taro-beef-imoni",
+      "title": "야마가타식 토란 소고기 이모니",
+      "canonicalDish": "Yamagata inland-style taro and beef imoni",
+      "aliases": ["이모니", "芋煮", "Yamagata imoni", "토란 소고기 간장국"],
+      "keyIngredients": ["토란", "얇게 썬 소고기", "판곤약", "대파", "간장", "밥"],
+      "method": "토란을 따로 데쳐 물을 버린 뒤 새 물에서 곤약과 부드럽게 익힌다. 얇은 소고기와 간장 양념, 대파를 더해 끓이고 밥과 함께 먹는다.",
+      "selectionReason": "야마가타의 가을 이모니 모임을 국내 토란으로 식탁에 옮깁니다. 부드러운 토란, 탄력 있는 곤약과 소고기 국물을 밥에 곁들이는 두 사람의 저녁입니다.",
+      "videoIdea": "토란의 크림빛 단면 → 숟가락으로 곤약 뜯기 → 국물에 소고기 풀기 → 대파 올리기 → 김이 오르는 냄비에서 한 국자. 제목 아이디어: ‘가을이면 강가에 냄비가 모이는 이유, 야마가타 이모니’.",
+      "duplicateReview": "전체 77개 레시피와 최초 추천 27개, 일일 기록 11개, steak-recipes·recipe-narratives·TonightPick 및 최근 Git 이력을 검토했다. 토란·곤약 중심의 이모니는 기존에 없다. 후베이 연근 돼지갈비탕은 뼈 있는 돼지갈비와 연근을 오래 우려내는 탕이며, 이번 음식은 토란·곤약을 먼저 익힌 뒤 얇은 소고기를 넣는 별개의 지역 음식이다. 파주 두부 버섯전골과도 주재료·질감·조리 순서가 다르며 소스만 바꾼 반복이 아니다. 독일 바이에른 다음 일본 야마가타 내륙으로 순환하며 기존 홋카이도 연어·버섯 솥밥과 구분한다. 순대볶음은 기존 레시피 수정으로 유지하고 한국 날짜 10월 6일 새 저녁은 이 메뉴 한 개만 기록한다.",
+      "research": {
+        "checkedAt": "2026-10-06",
+        "seasonalNote": "일본 농림수산성은 토란 수확기인 가을부터 겨울의 이모니와 내륙 소고기·간장, 쇼나이 돼지고기·된장의 차이를 설명한다. 야마가타시 소개는 9월 초~10월 말을 즐기는 시기로 표시한다. 국내 농촌진흥청은 일반 가을 수확과 터널 조숙 재배의 6월 이후 수확을 구분하므로 토란을 가을에만 판매하는 재료로 쓰지 않는다. 생토란 손질 장갑과 삶아 헹구기는 농촌진흥청 자료를 참고한다. 모가미강 뱃사람 관련 기원은 전승으로만 소개한다. 미국 외식업협회의 2026 전망에서 세계 가정식·편안한 음식에 대한 관심을 참고했으며 이모니의 한국 유행이나 조회 수는 단정하지 않는다. 소고기 최소 중심온도 63°C와 3분 휴지, 재가열 74°C 및 신속 냉장은 FoodSafety.gov에서 확인했다.",
+        "sources": [
+          "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imoni_yamagata.html",
+          "https://www.yamagatakara.jp/takara/specialties/imoni.html",
+          "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1702",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://www.foodsafety.gov/keep-food-safe/4-steps-to-food-safety"
+        ]
+      },
+      "preparationLabels": ["가을 토란 한 냄비", "내륙의 간장·소고기 맛"]
     }
   ]
 }

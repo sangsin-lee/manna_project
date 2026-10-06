@@ -12,6 +12,31 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "imoni" && <g>
+          <path d="M177 174h-35q-17 0-17 16t17 16h35m246-32h35q17 0 17 16t-17 16h-35" stroke="#586d78" strokeWidth="12"/>
+          <circle cx="300" cy="186" r="128" fill="#718c9a" stroke="#495f6c" strokeWidth="6"/>
+          <circle cx="300" cy="186" r="113" fill="#ab7954" stroke="#d4b083" strokeWidth="5"/>
+          <path d="M203 168q5-37 34-51m108 151q26-13 38-43" stroke="#e6c393" strokeWidth="5" strokeLinecap="round"/>
+          {[[253,115,-15],[355,174,25],[262,245,-25],[357,245,20]].map(([x,y,r])=><g key={x+":"+y} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-25-13q4-14 18-12l29 10q13 9 7 20l-22 10q-13 3-22-7Z" fill="#8a6253" stroke="#62483c" strokeWidth="2"/>
+            <path d="M-18-8q10 4 22 1t18 9m-27 9 9-5" stroke="#c59a7e" strokeWidth="4" strokeLinecap="round"/>
+          </g>)}
+          {[[211,191,-15],[322,111,18],[331,256,-20]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-17-13 12-17 24-2 14 20-14 14-23 0Z" fill="#b4aaa1" stroke="#8c8078" strokeWidth="3"/>
+            <path d="m-9-5 1 1m12-4 1 1m6 10 1 1m-14 3 1 1m-9-2 1 1" stroke="#72675f" strokeWidth="3" strokeLinecap="round"/>
+          </g>)}
+          {[[263,159,-18],[345,209,22],[264,265,-12],[372,137,15]].map(([x,y,r])=><g key={x+":"+y} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-25-8q0-23 22-24 27-2 30 21l-3 24q-8 18-27 17-24-2-24-24Z" fill="#e9d9bc" stroke="#c3a77f" strokeWidth="3"/>
+            <path d="M-17-6q-1-17 17-19" stroke="#fff1d7" strokeWidth="6" strokeLinecap="round"/>
+            <path d="m-12 11 3 5m19-2 3-5" stroke="#cbb08b" strokeWidth="2" strokeLinecap="round"/>
+          </g>)}
+          {[[224,138,-35],[312,181,30],[312,281,-30],[384,221,35]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-8-18h16v34q-8 7-16 0Z" fill="#d5d8b0" stroke="#8b9d74" strokeWidth="2"/>
+            <ellipse cy="-18" rx="8" ry="5" fill="#f1eaca" stroke="#8b9d74" strokeWidth="2"/>
+            <path d="M-3-9v22m6-24v20" stroke="#b0bc8f" strokeWidth="2"/>
+          </g>)}
+          <path d="M265 42q-10-12 0-26m35 27q-10-12 0-26m35 32q-10-12 0-26" stroke="#f9edda" strokeWidth="4" strokeLinecap="round" opacity=".9"/>
+        </g>}
         {art === "sundae-bokkeum" && <g>
           <path d="M168 172h-28q-15 0-15 15t15 15h28m264-30h28q15 0 15 15t-15 15h-28" stroke="#51433e" strokeWidth="12"/>
           <circle cx="300" cy="186" r="128" fill="#55423a" stroke="#352f2d" strokeWidth="7"/>

@@ -1,7 +1,7 @@
 import type { Recipe, SourceLink } from "./content";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
-import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
+import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -52,6 +52,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "yamagata-inspired-taro-beef-imoni": narrative(
+    ["강가의 냄비에서 전해진 이야기", "이모니에는 모가미강에서 짐을 기다리던 뱃사람들이 토란을 끓여 나눴다는 이야기가 전해집니다. 일본 농림수산성도 이를 기원 전승으로 소개하며, 오늘의 소고기 배합이 처음부터 같았다고 보지는 않습니다. 이번에는 야마가타 내륙의 간장 맛을 집 냄비로 옮깁니다."],
+    ["가을에 함께 끓이는 한 끼", "토란 철이면 가족과 친구가 강가에 모여 이모니를 끓입니다. 야마가타시가 소개하는 시기는 9월 초부터 10월 말입니다. 같은 현 안에서도 내륙은 소고기·간장, 바닷가 쇼나이는 돼지고기·된장이 대표적이라 한 냄비에서 지역의 차이를 읽을 수 있습니다."],
+    ["매끄러운 토란, 탄력 있는 곤약", "충분히 익힌 토란은 매끄러운 겉과 부드러운 속을 지니고, 곤약은 그 사이에 탄력을 보탭니다. 소고기의 감칠맛에 간장의 짭짤함과 대파의 단맛이 겹칩니다. 국물에 밥을 조금 곁들이며 재료마다 다른 한입을 천천히 즐깁니다."],
+    [imoniSources.culture, imoniSources.season, imoniSources.korea],
+  ),
   "bavarian-inspired-mushroom-bread-dumplings": narrative(
     ["밀빵이 동그란 한 끼가 되는 곳", "바이에른의 제멜크뇌델은 빵 조각에 우유·달걀·양파를 더해 빚고 물에서 익히는 경단입니다. 버섯을 크림에 담은 람슈바멀과 함께 먹기도 합니다. 오늘은 국내 바게트와 재배 버섯에 맞춘 가정용 배합입니다."],
     ["19세기 뮌헨의 빵집을 떠올리며", "바이에른 식문화 유산 자료는 19세기 초 뮌헨에서 더 좋은 밀가루로 만든 문트제멜이 궁정에서 다른 빵집으로 퍼진 이야기를 소개합니다. 이는 지역 밀빵 문화의 배경이며 경단의 발명 시기를 뜻하지 않습니다. 조금 마른 빵도 다시 식탁에 오릅니다."],

@@ -986,8 +986,8 @@ export const countries: Country[] = [
       },
     ],
     storySlugs: ["thai-street-food-daily-life", "thai-flavor-balance"],
-    recipeSlugs: ["thai-pad-thai", "thai-som-tam"],
-    updatedAt: "2026-09-09",
+    recipeSlugs: ["bangkok-inspired-crab-curry-egg", "thai-pad-thai", "thai-som-tam"],
+    updatedAt: "2026-10-07",
     palette: {
       from: "#e8dfb9",
       mid: "#cfd99f",

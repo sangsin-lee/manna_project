@@ -12,6 +12,27 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "crab-curry" && <g>
+          <ellipse cx="300" cy="189" rx="118" ry="108" fill="#d3a243" stroke="#e8c875" strokeWidth="5"/>
+          <path d="M219 204q-28-26-5-49t58-18 46-25 58 38-8 47 11 45-61 31-54-10-45-59Z" fill="#e7bd60"/>
+          <path d="M235 210q-22-21-14-41m56-35q23-13 40-9m47 96q-8 26-32 28m-61 0-19-8" stroke="#f6d990" strokeWidth="7" strokeLinecap="round"/>
+          {[[258,157,-25],[330,224,30]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="m-31-4-27-17-14 8m38 23-30-3-14 21m48-2-27 9-2 22m83-43 26-17 15 8m-39 21 30-3 14 21m-48-2 27 9 2 22" stroke="#b75a3b" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M-41 12q-3-40 14-49 31-14 52 0 22 16 16 49Z" fill="#d87a48" stroke="#a74c31" strokeWidth="3"/>
+            <path d="M-30 2q0-25 22-31m16-3q12 2 19 15" stroke="#efaa6e" strokeWidth="5" strokeLinecap="round"/>
+            <path d="M-40 12h81l-7 16-60 3Z" fill="#f2dcc1" stroke="#b6754f" strokeWidth="3"/>
+            <path d="m-21 18 1 10m12-12 2 14m12-14 2 12m11-13 3 11" stroke="#d2b393" strokeWidth="3"/>
+          </g>)}
+          {[[376,140,30],[216,255,-28]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-9 32-15 9q-18-17-8-34l13 14 3-25q22 10 25 29L8 18 9 33Z" fill="#da8051" stroke="#a95136" strokeWidth="3" strokeLinejoin="round"/>
+            <path d="M-10 2q8 8 15 3m-2 16 1 8" stroke="#f1b079" strokeWidth="4" strokeLinecap="round"/>
+          </g>)}
+          {[[288,103,-18],[201,184,30],[389,226,25],[273,274,-20]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M0 16V-17m0 10q-22-21-22-3 1 15 22 13m0-4q22-20 22-3-1 16-22 13" stroke="#6d8549" strokeWidth="3" fill="#819b56" strokeLinecap="round"/>
+          </g>)}
+          <path d="M319 114q15 3 24 15m-103 85q12 13 28 12m84 48q16-4 22-15" stroke="#bd4d32" strokeWidth="7" strokeLinecap="round"/>
+          <path d="m287 189 10 5m-7 35 10-4m19-48 8 2m-94 54 9 1" stroke="#f7e1a1" strokeWidth="5" strokeLinecap="round"/>
+        </g>}
         {art === "imoni" && <g>
           <path d="M177 174h-35q-17 0-17 16t17 16h35m246-32h35q17 0 17 16t-17 16h-35" stroke="#586d78" strokeWidth="12"/>
           <circle cx="300" cy="186" r="128" fill="#718c9a" stroke="#495f6c" strokeWidth="6"/>

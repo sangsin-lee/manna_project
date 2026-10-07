@@ -1,8 +1,29 @@
 import type { Recipe } from "./content";
-import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
+import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "bangkok-inspired-crab-curry-egg", title: "방콕풍 꽃게 커리 달걀볶음", country: "thailand", category: "main", experienceStatus: "researched",
+    summary: "가을 꽃게를 커리 향에 익히고 달걀·우유 소스로 촉촉하게 감쌉니다. 방콕의 뿌팟퐁커리에서 영감을 받아 따뜻한 밥과 나누는 두 사람의 저녁입니다.",
+    culturalNote: "방콕의 Somboon Seafood는 1969년 삼얀에서 시작한 커리 게 요리의 역사를 소개합니다. 이번 배합은 그 식당의 공식 재현이 아니라 국내 꽃게·일반 우유를 쓰고 태국 볶은 고추 페이스트인 남프릭파오를 생략한 가정용 응용입니다.",
+    localTable: { region: "태국 · 방콕 삼얀과 반탓통의 해산물 식탁", ingredient: "커리 가루 · 게 · 달걀, 국내 꽃게로 응용", season: "국내 꽃게의 가을 제철을 활용", note: "해양수산부 자료는 꽃게를 10월 제철 수산물로 소개합니다. 이는 한국 꽃게의 계절이며 태국산 게의 어기와 같다는 뜻은 아닙니다. 냉동 손질 제품은 어획일·원산지·보관 표시를 확인하고, 판매 시기만으로 갓 잡은 제철 생물이라고 판단하지 않습니다." },
+    cookingTime: 45, difficulty: "보통", servings: 2, visualLabel: "BANGKOK CRAB CURRY", visualCaption: "커리와 달걀의 금빛, 꽃게의 산호색과 방콕 식당의 테이블을 떠올리는 격자", keywords: ["방콕", "삼얀", "뿌팟퐁커리", "푸팟퐁커리", "꽃게", "달걀", "가을저녁", "이마트장보기"],
+    ingredientGroups: [
+      { title: "이마트 장보기 · 구매 단위 → 2인분 사용량", items: ["손질 꽃게 1팩 → 아가미·내장·등딱지 제거 후 껍질 포함 700g · 몸통을 2~4등분한 제품", "달걀 1팩 → 2개(껍질 제외 약 100g), 일반 우유 1팩 → 120ml", "양파 1개 → 150g, 마늘 소포장 → 2쪽(10g)", "셀러리 소포장 → 줄기와 잎 40g, 빨간 파프리카 1개 → 50g, 쪽파 1봉 → 30g", "커리 파우더 1통 → 무염 향신료 혼합분 2작은술(약 4g) · 고형 카레와 구분", "즉석밥 200g 안팎 2개 또는 지은 밥 총 400g"] },
+      { title: "양념과 도구", items: ["굴소스 10ml, 피시소스 5ml, 설탕 1작은술(4g)", "식용유 1큰술(15ml), 후추 약간, 고운 고춧가루 1/2작은술(약 1g·선택)", "물 120ml와 농도 조절용 뜨거운 물 30~60ml", "뚜껑 있는 넓고 깊은 팬, 집게, 식품용 중심온도계, 게살 포크 또는 작은 숟가락"] },
+    ],
+    steps: [
+      { title: "채소부터, 꽃게는 따로 준비", description: "양파는 1cm 폭, 파프리카는 가늘게, 셀러리 줄기는 얇게 썰고 잎·쪽파는 3cm 길이로 자릅니다. 마늘은 다집니다. 손질 꽃게는 제품 안내대로 준비하고 남은 아가미와 작은 껍질 조각을 살펴 제거합니다.", tip: "냉동 꽃게는 미리 냉장 해동합니다. 큰 집게는 구입할 때 금을 내달라고 요청하면 편합니다. 생게용 도구와 익힌 음식용 도구를 구분하고 손질 후 손·싱크대를 씻습니다." },
+      { title: "달걀 소스를 미리 풀어 두기", description: "볼에 달걀 2개·우유 120ml·굴소스 10ml·피시소스 5ml·설탕 4g·후추를 고르게 섞습니다. 원하면 고춧가루 1g을 더합니다. 커리 가루는 아직 넣지 않고 따로 둡니다. 생달걀이 든 소스는 맛보지 않습니다." },
+      { title: "커리 향을 내고 꽃게부터 익히기", description: "팬에 기름을 두르고 중불에서 양파와 마늘을 3분 볶습니다. 커리 가루를 넣어 약 5초 섞고 바로 꽃게와 물 120ml를 넣습니다. 끓으면 뚜껑을 덮어 중불에서 10~12분 익히며 중간에 한 번 뒤집습니다. 마르면 뜨거운 물을 조금 보충합니다. 가장 두꺼운 몸통살 중심이 63°C 이상이고 살이 불투명하고 단단해졌는지 확인해 부족하면 더 익힙니다.", tip: "커리 가루를 태우지 않습니다. 붉은 껍질만 보고 익었다고 판단하지 않습니다." },
+      { title: "향채와 달걀로 촉촉하게 마무리", description: "셀러리·파프리카·쪽파를 넣어 1분 볶습니다. 달걀 소스를 붓고 중약불로 낮춰 바닥부터 저으며 3~5분 익힙니다. 달걀 소스의 여러 지점이 71°C 이상인지 확인해 부족하면 더 익힙니다. 소스가 너무 되면 뜨거운 물을 한 큰술씩 더합니다.", tip: "달걀을 반숙으로 남겨 부드러움을 만들지 않습니다. 낮춘 불에서 고르게 저어 충분히 익히되 수분을 조금 남깁니다. 맛을 본 뒤 필요할 때만 피시소스를 몇 방울 더합니다." },
+      { title: "게살과 노란 소스를 밥에", description: "밥은 제품 안내대로 데웁니다. 꽃게와 소스를 큰 접시에 담아 두 사람이 밥과 나눠 먹습니다. 게살을 발라낼 때 작은 껍질이 섞이지 않게 살피고, 단단한 집게는 도구로 엽니다. 남은 소스를 밥 위에 조금씩 올립니다." },
+    ],
+    substitutions: ["껍질 있는 꽃게 대신 완전히 익힌 자숙 게살 200g을 쓰면 먹기 편합니다. 뼛조각처럼 단단한 껍질을 골라내고 3단계의 물은 60ml부터, 게살 중심 74°C 이상으로 재가열한 뒤 달걀 소스를 넣습니다. 게맛살은 다른 재료입니다.", "무염 커리 파우더 대신 일반 조미 카레가루를 쓰면 10g부터 넣고 굴소스·피시소스는 각각 절반으로 줄입니다. 전분 때문에 빨리 되직해지므로 물을 30ml씩 더하며 간을 조절합니다. 현지 커리 가루의 향과는 다릅니다.", "셀러리는 줄기만 써도 됩니다. 피시소스는 양조간장 5ml로 바꾸면 향이 달라집니다. 우유 대신 무가당 코코넛밀크를 같은 양 사용하면 코코넛 향이 더해집니다."],
+    tips: ["45분은 손질해 냉장 상태로 준비한 꽃게와 익힌 밥 기준입니다. 해동 시간은 별도이며 통꽃게 손질은 추가 시간이 듭니다. 매장마다 포장량·취급 품목이 다릅니다.", "게·달걀·우유와 굴소스·피시소스의 알레르기 표시를 확인합니다. 짠맛이 제품마다 달라 마지막 간은 소량만 더합니다.", "촬영은 붉은 꽃게 사이로 달걀 소스가 몽글해지는 모습과 게살을 밥에 얹는 순간을 연결하세요. 표지의 격자는 식당 테이블에서 영감 받은 그림이며 전통 문양 재현은 아닙니다.", "남은 음식은 얕은 용기에 소분해 2시간 이내 냉장하고, 기온 32°C 초과 시 1시간 이내 넣습니다. 다시 먹을 때 소스를 고르게 저으며 게살과 소스 중심이 모두 74°C 이상이 되게 데웁니다."],
+    publishedAt: "2026-10-07", relatedStorySlugs: [], sources: Object.values(crabCurrySources), palette: { from: "#f7e9c7", mid: "#e2bc68", to: "#d48b70", ink: "#493322" },
+  },
   {
     slug: "yamagata-inspired-taro-beef-imoni", title: "야마가타식 토란 소고기 이모니", country: "japan", category: "main", experienceStatus: "researched",
     summary: "부드럽게 익힌 토란과 탄력 있는 곤약에 소고기·대파를 더한 간장 국물 요리입니다. 야마가타 내륙의 가을 냄비를 국내 재료로 끓여 밥과 함께 먹습니다.",

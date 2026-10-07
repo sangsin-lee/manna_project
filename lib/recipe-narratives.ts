@@ -1,7 +1,7 @@
 import type { Recipe, SourceLink } from "./content";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
-import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
+import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -52,6 +52,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "bangkok-inspired-crab-curry-egg": narrative(
+    ["방콕 삼얀의 작은 식당에서", "Somboon Seafood의 자체 연혁은 1969년 방콕 삼얀의 작은 상가에서 시작해 커리 게 요리로 알려진 과정을 소개합니다. 한 식당의 기록을 음식 전체의 유일한 기원으로 단정하지 않고, 오늘은 그 도시의 한 접시에서 출발합니다."],
+    ["동네의 맛이 여행자의 한 끼로", "이 식당은 1990년 수라웡 분점, 1991년 반탓통으로의 본점 이전을 기록합니다. 동네 손님과 여행자가 만나는 방콕의 식탁을 떠올리며, 한국에서는 가을 꽃게를 골라 만듭니다. 국내 꽃게의 제철을 태국산 게의 어기와 혼동하지 않습니다."],
+    ["금빛 달걀 사이로 달큰한 게살", "커리 가루를 기름에 짧게 볶으면 향이 퍼지고, 달걀과 우유가 소스를 촉촉하게 만듭니다. 게살의 단맛에 셀러리의 향과 파프리카의 씹는 맛이 더해집니다. 충분히 익힌 노란 소스를 밥에 얹으면 향긋한 한입이 됩니다."],
+    [crabCurrySources.history, crabCurrySources.recipe, crabCurrySources.season],
+  ),
   "yamagata-inspired-taro-beef-imoni": narrative(
     ["강가의 냄비에서 전해진 이야기", "이모니에는 모가미강에서 짐을 기다리던 뱃사람들이 토란을 끓여 나눴다는 이야기가 전해집니다. 일본 농림수산성도 이를 기원 전승으로 소개하며, 오늘의 소고기 배합이 처음부터 같았다고 보지는 않습니다. 이번에는 야마가타 내륙의 간장 맛을 집 냄비로 옮깁니다."],
     ["가을에 함께 끓이는 한 끼", "토란 철이면 가족과 친구가 강가에 모여 이모니를 끓입니다. 야마가타시가 소개하는 시기는 9월 초부터 10월 말입니다. 같은 현 안에서도 내륙은 소고기·간장, 바닷가 쇼나이는 돼지고기·된장이 대표적이라 한 냄비에서 지역의 차이를 읽을 수 있습니다."],

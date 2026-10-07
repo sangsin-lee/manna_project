@@ -1,5 +1,14 @@
 import type { SourceLink } from "./content";
 
+// Bangkok crab curry adapted to Korean autumn crab, reviewed October 7.
+export const crabCurrySources = {
+  history: { label: "Somboon Seafood — 방콕 삼얀·반탓통 식당의 자체 연혁", url: "https://www.somboonseafood.com/en/about" },
+  recipe: { label: "Thai SELECT — 커리 가루·게·달걀로 만드는 뿌팟퐁커리", url: "https://www.thaiselect.com/th/thai-cuisine/recipes/detail/25" },
+  season: { label: "정책브리핑 · 해양수산부 자료 — 10월 제철 꽃게", url: "https://www.korea.kr/news/healthView.do?newsId=148906649" },
+  seafood: { label: "미국 FDA — 해산물 해동·익힘·보관", url: "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely" },
+  temperature: { label: "FoodSafety.gov — 달걀 요리 71°C와 재가열 74°C", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+} satisfies Record<string, SourceLink>;
+
 // Yamagata's inland imoni and the Korean taro harvest, reviewed October 6.
 export const imoniSources = {
   culture: { label: "일본 농림수산성 — 야마가타 이모니의 지역 차이·유래·조리", url: "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imoni_yamagata.html" },

@@ -1,5 +1,15 @@
 import type { SourceLink } from "./content";
 
+// Verona's rice country, adapted with Korean short-grain rice, reviewed October 8.
+export const pumpkinRisottoSources = {
+  table: { label: "Visit Verona — 지역 쌀과 호박·살시차 리소토", url: "https://www.visitverona.it/it/esplora/degustare-verona" },
+  rice: { label: "비알로네 나노 베로네세 보호협회 — 생산 지역과 초가을 수확", url: "https://www.risovialonenanoveronese.it/" },
+  history: { label: "유럽연합 집행위 농업 — 비알로네 나노의 역사와 지역성", url: "https://agriculture.ec.europa.eu/farming/geographical-indications-and-quality-schemes/geographical-indications-food-and-drink/riso-nano-vialone-veronese-pgi_en" },
+  korea: { label: "농촌진흥청 — 재배 방식별 국내 단호박 수확기", url: "https://rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=2042" },
+  temperature: { label: "FoodSafety.gov — 다진 돼지고기 71°C와 재가열 74°C", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+  storage: { label: "FoodSafety.gov — 교차오염 예방과 신속한 소분 냉장", url: "https://www.foodsafety.gov/keep-food-safe/4-steps-to-food-safety" },
+} satisfies Record<string, SourceLink>;
+
 // Bangkok crab curry adapted to Korean autumn crab, reviewed October 7.
 export const crabCurrySources = {
   history: { label: "Somboon Seafood — 방콕 삼얀·반탓통 식당의 자체 연혁", url: "https://www.somboonseafood.com/en/about" },

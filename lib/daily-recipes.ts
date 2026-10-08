@@ -1,8 +1,30 @@
 import type { Recipe } from "./content";
-import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
+import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "verona-inspired-pumpkin-pork-risotto", title: "베로나풍 단호박 돼지고기 리소토", country: "italy", category: "main", experienceStatus: "researched",
+    summary: "단호박의 단맛과 볶은 돼지고기의 고소함을 쌀알마다 입힙니다. 뜨거운 육수를 조금씩 더하며 만드는, 베로나의 쌀 요리에서 영감 받은 두 사람의 저녁입니다.",
+    culturalNote: "베로나 관광청은 지역 쌀로 만드는 호박·살시차 리소토를 소개합니다. 이 레시피는 현지 비알로네 나노 쌀과 생소시지 대신 국내 멥쌀·다진 돼지고기를 쓰고 와인을 생략한 가정용 응용입니다. 리소토 알리솔라나의 공식 배합을 재현한 것은 아닙니다.",
+    localTable: { region: "이탈리아 · 베네토 베로나 평야", ingredient: "지역의 비알로네 나노 쌀 · 호박 · 돼지고기", season: "현지 쌀의 초가을 수확에서 영감", note: "생산자 보호협회는 기후가 좋으면 쌀이 9월 말에 성숙해 초가을에 수확된다고 설명합니다. 국내 단호박은 노지 7~8월, 난지 억제 재배 11~12월 등 작형별 수확기가 다릅니다. 10월 매장의 저장·수입·냉동 제품을 갓 수확한 국내산으로 단정하지 않고 원산지와 제품 표시를 확인합니다. 국내 쌀은 현지 인증 쌀과 다른 재료입니다." },
+    cookingTime: 50, difficulty: "보통", servings: 2, visualLabel: "VERONA PUMPKIN RISOTTO", visualCaption: "단호박과 쌀의 금빛, 베로나 건축을 떠올리는 테라코타색과 논의 물결", keywords: ["베로나", "베네토", "리소토", "단호박", "돼지고기", "가을저녁", "이마트장보기"],
+    ingredientGroups: [
+      { title: "이마트 장보기 · 구매 단위 → 2인분 사용량", items: ["멥쌀 백미 1봉 또는 집에 있는 쌀 → 씻기 전 180g · 찹쌀과 즉석밥 제외", "단호박 1통 또는 손질 팩 → 껍질·씨 제거한 생과육 300g", "양념하지 않은 냉장 다진 돼지고기 1팩 → 180g", "양파 1개 → 80g, 마늘 소포장 → 1쪽(5g)", "파르메산 또는 그라나 파다노 치즈 소포장 → 곱게 갈아 30g", "무염버터 1팩 → 15g · 마무리까지 냉장 보관"] },
+      { title: "육수·양념과 도구", items: ["저염 채소육수 750ml · 농축액은 제품 희석 비율로 준비, 뜨거운 물 200ml 별도", "올리브유 또는 식용유 2작은술(10ml), 후추 1/4작은술", "소금 한 꼬집부터 마지막 간 조절 · 육수와 치즈 염도에 따라 생략", "건조 파슬리 1/2작은술(선택)", "지름 24cm 안팎의 깊은 팬, 육수 데울 작은 냄비, 체, 주걱, 가는 탐침의 식품용 중심온도계"] },
+    ],
+    steps: [
+      { title: "쌀과 단호박부터 준비하기", description: "쌀은 가볍게 씻어 체에서 10분 물기를 빼고 불리지는 않습니다. 그동안 단호박은 씻어 씨와 껍질을 제거하고 1.5cm 주사위 모양으로 자릅니다. 양파와 마늘은 잘게 다집니다. 고기를 만진 손과 도구는 씻고 채소·완성 음식용과 구분합니다.", tip: "껍질이 단단하면 손질 단호박을 고릅니다. 칼이 미끄러지지 않게 평평한 면을 도마에 대고 자릅니다. 쌀알이 부서질 정도로 오래 문질러 씻지 않습니다." },
+      { title: "육수는 뜨겁게, 고기는 고소하게", description: "작은 냄비에 육수 750ml를 데워 약불로 따뜻하게 유지합니다. 팬에 기름을 두르고 중불에서 양파와 마늘을 3분 볶습니다. 돼지고기를 넣어 큰 덩어리는 1~1.5cm로 풀며 4~5분 볶습니다. 이 단계의 겉색만으로 익힘을 판단하지 않습니다." },
+      { title: "단호박과 생쌀을 팬에", description: "단호박을 넣고 2분 볶은 뒤 물기 뺀 쌀을 더합니다. 바닥에 눌어붙지 않게 1~2분 섞어 쌀에 기름을 입힙니다. 뜨거운 육수 200ml를 부어 바닥의 맛을 긁어 풀고, 보글보글 끓으면 중약불로 낮춥니다." },
+      { title: "육수를 나누어 넣으며 익히기", description: "뚜껑을 열고 바닥이 붙지 않게 자주 저어 줍니다. 국물이 줄면 육수를 80~100ml씩 더해 약 20~25분 익힙니다. 호박 일부를 주걱으로 눌러 풀고 나머지는 조각을 남깁니다. 쌀 중심에 딱딱한 생쌀 심이 남으면 뜨거운 물을 더하고 3~5분씩 연장합니다.", tip: "육수를 한꺼번에 다 붓거나 쌀을 세게 으깨지 않습니다. 팬 너비·화력·쌀에 따라 필요한 수분이 달라 육수는 남을 수도, 뜨거운 물이 추가로 필요할 수도 있습니다." },
+      { title: "익힘을 확인하고 버터·치즈 섞기", description: "가는 탐침으로 가장 두꺼운 돼지고기 조각 중심이 71°C 이상인지 확인해 부족하면 더 익힙니다. 쌀과 호박도 부드러워지면 불을 끄고 차가운 버터 15g·치즈 30g을 넣어 고르게 섞습니다. 후추를 넣고 맛을 본 뒤 필요할 때만 소금을 조금 더합니다.", tip: "너무 되면 남겨 둔 뜨거운 육수나 물을 1~2큰술씩 더합니다. 크림을 붓지 않아도 쌀의 전분과 으깬 호박, 버터와 치즈가 촉촉한 농도를 만듭니다." },
+      { title: "접시에 퍼지는 금빛 한 끼", description: "팬을 기울이면 천천히 흐르는 정도로 농도를 맞춥니다. 두 접시에 나눠 담고 바닥을 가볍게 두드려 펼칩니다. 원하면 파슬리를 뿌려 바로 먹습니다. 오래 두면 쌀이 국물을 더 흡수하므로 뜨거울 때 차립니다." },
+    ],
+    substitutions: ["비알로네 나노·아르보리오·카르나롤리 같은 리소토용 쌀을 구했다면 180g으로 바꾸고 포장의 세척·조리 시간 안내를 따릅니다. 국내 멥쌀은 더 찰지고 부드러워져 현지 쌀의 식감과 같지는 않습니다.", "다진 돼지고기 대신 양념하지 않은 다진 소고기 180g을 써도 중심 71°C 이상 익힙니다. 닭고기로 바꾼다면 74°C 이상이 필요합니다. 익힌 훈제 소시지는 생 살시차와 향·염도가 다릅니다.", "냉동 손질 단호박은 300g을 제품 안내대로 준비합니다. 찐 단호박을 쓰면 4단계 후반에 넣어 과하게 풀어지지 않게 합니다. 가공 치즈가루는 짠맛이 달라 20g부터 조절합니다."],
+    tips: ["약 50분은 손질할 단호박과 냉장 다짐육 기준이며 냉장 해동 시간은 별도입니다. 재료의 포장량과 매장별 취급 품목은 다릅니다.", "육수·치즈의 우유, 밀, 대두 등 알레르기 표시를 확인합니다. 차가운 육수를 계속 부으면 끓는 흐름이 끊기므로 육수를 따뜻하게 유지합니다.", "촬영은 치즈를 섞은 뒤 팬에서 물결처럼 움직이는 질감과 접시에 퍼지는 모습을 짧게 담으세요. 금빛과 테라코타색 표지는 음식·지역에서 영감 받은 그림이며 실제 음식 사진이나 전통 문양의 재현은 아닙니다.", "남은 음식은 얕은 용기에 소분해 2시간 이내 냉장하고 기온 32°C 초과 시 1시간 이내 넣습니다. 실온에 오래 둔 밥은 재가열로 해결하려 하지 않습니다. 다시 먹을 때 물을 조금 더해 고르게 저으며 중심 74°C 이상으로 데웁니다."],
+    publishedAt: "2026-10-08", relatedStorySlugs: [], sources: Object.values(pumpkinRisottoSources), palette: { from: "#f6ead6", mid: "#e6b461", to: "#bd7c63", ink: "#49372c" },
+  },
   {
     slug: "bangkok-inspired-crab-curry-egg", title: "방콕풍 꽃게 커리 달걀볶음", country: "thailand", category: "main", experienceStatus: "researched",
     summary: "가을 꽃게를 커리 향에 익히고 달걀·우유 소스로 촉촉하게 감쌉니다. 방콕의 뿌팟퐁커리에서 영감을 받아 따뜻한 밥과 나누는 두 사람의 저녁입니다.",

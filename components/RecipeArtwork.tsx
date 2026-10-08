@@ -12,6 +12,31 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "pumpkin-risotto" && <g>
+          <path d="M191 184q-4-72 73-96 70-20 125 47 48 63-13 126-66 57-137 14-48-29-48-91Z" fill="#dca248" stroke="#f0c870" strokeWidth="6"/>
+          <path d="M211 173q-4-41 42-62m111 19q26 27 28 55m-33 76q-36 22-69 14m-54-23-17-28" stroke="#efc56c" strokeWidth="8" strokeLinecap="round"/>
+          {Array.from({ length: 68 }, (_, i) => {
+            const angle = i * 2.39996;
+            const radius = 102 * Math.sqrt((i + 1) / 69);
+            const x = 300 + Math.cos(angle) * radius;
+            const y = 185 + Math.sin(angle) * radius * .88;
+            return <ellipse key={i} cx={x} cy={y} rx="6.5" ry="2.8" transform={`rotate(${i * 37} ${x} ${y})`} fill={i % 3 ? "#f7d992" : "#bb7e35"} opacity={i % 3 ? ".92" : ".55"}/>;
+          })}
+          {[[241,139,-18],[335,117,20],[368,217,-12],[282,251,12],[218,211,-25]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="m-15-13 23-4 12 20-26 10-15-14Z" fill="#de8536" stroke="#b9742f" strokeWidth="2"/>
+            <path d="m-15-13 21-2 8 10-25 5Z" fill="#f2b856"/>
+            <path d="m-11 0 4 13 27-10-6-8Z" fill="#e99c40"/>
+          </g>)}
+          {[[286,120],[228,178],[313,209],[351,170],[334,262],[266,217]].map(([x,y])=><g key={x} transform={`translate(${x} ${y})`}>
+            <path d="M-10-7q5-8 13-3l9 6-3 10-13 4-9-9Z" fill="#8d593a" stroke="#724b33" strokeWidth="2"/>
+            <path d="m-6-4 6-1m3 5 3 2m-9 2 1 2" stroke="#bd8a55" strokeWidth="3" strokeLinecap="round"/>
+          </g>)}
+          <path d="m274 162 18-8 11 9-20 8Zm51 72 17-4 9 7-19 5Zm-64-34 12-9 9 4-12 9Z" fill="#fff0ca"/>
+          <path d="m282 149 8-5m-25 92 8-4m85-88 7 4m-45 122 7 3m-53-86 7 2m59 15 8-3" stroke="#788052" strokeWidth="4" strokeLinecap="round"/>
+          <path d="M444 249q13 10 0 24L402 321" stroke="#6e6660" strokeWidth="9" strokeLinecap="round"/>
+          <ellipse cx="452" cy="240" rx="15" ry="24" transform="rotate(38 452 240)" fill="#b7aea0" stroke="#7e756b" strokeWidth="3"/>
+          <path d="m445 228 8-7" stroke="#e6dfd0" strokeWidth="4" strokeLinecap="round"/>
+        </g>}
         {art === "crab-curry" && <g>
           <ellipse cx="300" cy="189" rx="118" ry="108" fill="#d3a243" stroke="#e8c875" strokeWidth="5"/>
           <path d="M219 204q-28-26-5-49t58-18 46-25 58 38-8 47 11 45-61 31-54-10-45-59Z" fill="#e7bd60"/>

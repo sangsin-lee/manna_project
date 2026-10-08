@@ -1,7 +1,7 @@
 import type { Recipe, SourceLink } from "./content";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
-import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, ribollitaSources } from "./daily-sources";
+import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -52,6 +52,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "verona-inspired-pumpkin-pork-risotto": narrative(
+    ["파스타 너머, 베로나 평야의 쌀", "베로나 남부 평야는 비알로네 나노 쌀의 산지입니다. 베로나 관광청은 이 쌀을 호박과 살시차 등 다양한 재료와 리소토로 즐긴다고 소개합니다. 이번에는 국내 멥쌀과 단호박·다진 돼지고기로 그 조합을 집 식탁에 옮깁니다."],
+    ["1945년 들어온 품종, 가을의 수확", "유럽연합 집행위에 따르면 비알로네 나노 품종은 1945년 베로나 지역에 도입됐습니다. 생산자 협회는 초가을 수확을 설명합니다. 이 연도는 품종의 지역 도입 기록이며 호박 리소토가 탄생한 해라는 뜻은 아닙니다. 오늘의 가정용 배합에도 별도의 발명 이야기를 붙이지 않습니다."],
+    ["호박의 단맛을 감싸는 쌀알", "볶은 돼지고기의 고소한 맛 위로 호박의 단맛이 번집니다. 육수를 조금씩 흡수한 쌀에 버터와 숙성 치즈를 섞으면 윤기가 돌고, 남겨 둔 호박 조각이 부드럽게 씹힙니다. 팬을 기울일 때 천천히 흐르는 농도로 마무리합니다."],
+    [pumpkinRisottoSources.table, pumpkinRisottoSources.history, pumpkinRisottoSources.rice, pumpkinRisottoSources.korea],
+  ),
   "bangkok-inspired-crab-curry-egg": narrative(
     ["방콕 삼얀의 작은 식당에서", "Somboon Seafood의 자체 연혁은 1969년 방콕 삼얀의 작은 상가에서 시작해 커리 게 요리로 알려진 과정을 소개합니다. 한 식당의 기록을 음식 전체의 유일한 기원으로 단정하지 않고, 오늘은 그 도시의 한 접시에서 출발합니다."],
     ["동네의 맛이 여행자의 한 끼로", "이 식당은 1990년 수라웡 분점, 1991년 반탓통으로의 본점 이전을 기록합니다. 동네 손님과 여행자가 만나는 방콕의 식탁을 떠올리며, 한국에서는 가을 꽃게를 골라 만듭니다. 국내 꽃게의 제철을 태국산 게의 어기와 혼동하지 않습니다."],

@@ -952,6 +952,33 @@
         ]
       },
       "preparationLabels": ["가을 꽃게로 응용", "노란 달걀 커리 소스"]
+    },
+    {
+      "date": "2026-10-08",
+      "recipeSlug": "verona-inspired-pumpkin-pork-risotto",
+      "title": "베로나풍 단호박 돼지고기 리소토",
+      "canonicalDish": "Verona-inspired pumpkin and pork risotto",
+      "aliases": ["단호박 돼지고기 리소토", "호박 살시차 리소토 응용", "Risotto zucca e salsiccia inspired", "Pumpkin pork risotto"],
+      "keyIngredients": ["멥쌀", "단호박", "다진 돼지고기", "양파", "파르메산 치즈", "버터"],
+      "method": "향채와 돼지고기를 볶고 단호박·생쌀을 더한 뒤 뜨거운 육수를 나누어 넣어 익힌다. 호박 일부를 으깨고 불을 끈 뒤 버터와 치즈를 섞어 흐르는 농도를 만든다.",
+      "selectionReason": "베로나 평야의 가을 쌀 수확과 호박·돼지고기 리소토에서 영감을 받았습니다. 집에 있는 멥쌀과 단호박으로 노란 윤기가 흐르는 든든한 한 접시를 만듭니다.",
+      "videoIdea": "주황빛 단호박 썰기 → 쌀에 뜨거운 육수 붓기 → 호박이 풀어지며 금빛으로 변하는 팬 → 불을 끄고 치즈 섞기 → 접시를 가볍게 두드려 리소토가 퍼지는 모습. 제목 아이디어: ‘파스타만 있는 줄 알았던 이탈리아, 베로나의 가을 쌀 한 접시’.",
+      "duplicateReview": "전체 79개 레시피와 최초 추천 27개·일일 기록 13개, steak-recipes·recipe-narratives·TonightPick 및 최근 Git 이력을 확인했다. 기존 단호박 버터 뇨키는 호박·밀가루·달걀로 반죽을 빚어 삶는 음식이며, 이번 메뉴는 생쌀에 육수를 나누어 흡수시키는 리소토로 조리 구조가 다르다. 닭고기 버섯 솥밥은 정량 밥물을 넣고 덮어 뜸 들이는 요리, 대추 찹쌀죽은 대추를 우려 찹쌀가루로 농도를 내는 요리여서 모두 구분된다. 다진 고기 덮밥인 마카오 민치·로코모코와도 다르며 소스만 바꾼 재사용이 아니다. 태국 방콕 다음 이탈리아 베네토의 베로나 평야로 순환하고 10월 8일 한 메뉴만 추가한다.",
+      "research": {
+        "checkedAt": "2026-10-08",
+        "seasonalNote": "Visit Verona는 지역 쌀과 호박·살시차 리소토 조합을 소개한다. EU 농업 집행위는 비알로네 나노의 베로나 도입을 1945년으로 소개하고, 생산자 보호협회는 좋은 기후에서 9월 말 성숙·초가을 수확을 설명한다. 2026 가을 쌀 축제도 관광청 자료로 확인했으나 이 가정용 배합을 축제의 공식 리소토 알리솔라나라고 부르지 않는다. 국내 단호박은 농촌진흥청 기준 노지 7~8월, 난지 억제 재배 11~12월 등으로 재배형태마다 수확기가 다르므로 10월 구매를 갓 수확한 국내산으로 단정하지 않는다. 저장·수입·냉동 유통과 현지 쌀 수확기를 구분한다. 미국 외식업협회의 2026 전망에 나온 지역 재료·세계 가정식 관심을 참고했으나 이 메뉴의 한국 유행이나 유튜브 조회 수를 보증하는 자료는 아니다. FoodSafety.gov에서 다진 돼지고기 71°C, 재가열 74°C와 신속 냉장을 확인했다.",
+        "sources": [
+          "https://www.visitverona.it/it/esplora/degustare-verona",
+          "https://www.risovialonenanoveronese.it/",
+          "https://agriculture.ec.europa.eu/farming/geographical-indications-and-quality-schemes/geographical-indications-food-and-drink/riso-nano-vialone-veronese-pgi_it",
+          "https://www.visitverona.it/it/eventi/fiera-del-riso-112",
+          "https://rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=2042",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://www.foodsafety.gov/keep-food-safe/4-steps-to-food-safety"
+        ]
+      },
+      "preparationLabels": ["국내 멥쌀로 응용", "호박과 쌀의 금빛 윤기"]
     }
   ]
 }

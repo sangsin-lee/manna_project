@@ -1,8 +1,30 @@
 import type { Recipe } from "./content";
-import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources } from "./daily-sources";
+import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "hanoi-inspired-turmeric-mackerel-noodles", title: "하노이풍 강황 고등어 쌀국수", country: "vietnam", category: "main", experienceStatus: "researched",
+    summary: "강황에 재운 고등어를 딜·쪽파와 향긋하게 익혀 쌀국수에 담습니다. 하노이 짜까에서 영감을 받아 가을 고등어, 아삭한 채소와 땅콩을 곁들이는 두 사람의 저녁입니다.",
+    culturalNote: "강황 생선에 딜·쌀국수·땅콩을 곁들이는 하노이 짜까의 가정용 응용입니다. 현지 민물생선을 국내 무염 고등어로 바꾸고 발효쌀·갈랑갈·맘똠을 생략해 팬에서 익힙니다. 특정 식당의 원조 배합은 아닙니다.",
+    localTable: { region: "베트남 · 하노이 구시가지", ingredient: "강황 · 딜 · 생선, 국내 고등어로 응용", season: "국내 고등어의 가을 제철을 활용", note: "해양수산부가 소개한 국내 고등어의 가을 제철을 활용합니다. 하노이 민물생선의 어기와는 구분합니다. 수입·냉동 고등어는 원산지·제품 표시를 확인하며, 판매 월이 어획 시기를 뜻하지 않습니다. 재배·건조 딜도 수확기와 판매 시기가 다릅니다." },
+    cookingTime: 40, difficulty: "보통", servings: 2, visualLabel: "HANOI TURMERIC FISH", visualCaption: "강황의 노랑과 고등어의 은빛, 하노이 골목 식탁을 떠올리는 회청색 격자", keywords: ["하노이", "짜까", "차까", "고등어", "강황", "딜", "쌀국수", "가을저녁", "이마트장보기"],
+    ingredientGroups: [
+      { title: "이마트 장보기 · 구매 단위 → 2인분 사용량", items: ["무염 고등어 순살 1팩 또는 2쪽 → 손질 후 400g · 자반·훈제·양념 제품 제외", "가는 쌀국수 1봉 → 마른 상태 180g · 분 또는 1~2mm 쌀국수", "생딜 허브 1팩 → 15g, 쪽파 1봉 → 60g", "양파 1개 → 80g, 오이 1개 → 100g, 상추 1봉 → 80g", "볶은 무염 땅콩 소포장 → 20g, 레몬 또는 라임 1개 → 즙 20ml", "강황가루 1통 → 1작은술(약 2g) · 조미 카레가루와 구분", "생강 소포장 → 10g, 마늘 소포장 → 2쪽(10g)"] },
+      { title: "생선 밑간과 곁들임 소스", items: ["생선 밑간: 피시소스 10ml, 설탕 1작은술(4g), 식용유 5ml, 후추 약간", "곁들임 소스: 피시소스 15ml, 레몬·라임즙 20ml, 설탕 2작은술(8g), 마실 물 45ml", "팬에 쓸 식용유 10ml, 생선 익힐 물 30~60ml · 면 삶을 물 별도", "청양고추 1/2개(선택), 딜을 못 구하면 건조 딜 1작은술(약 1g)", "뚜껑 있는 넓은 팬, 면 냄비와 체, 생선 뒤집개, 가는 탐침의 식품용 중심온도계"] },
+    ],
+    steps: [
+      { title: "생선을 강황 양념에 냉장 재우기", description: "생강 10g과 마늘 5g을 갈아 강황 2g·피시소스 10ml·설탕 4g·기름 5ml·후추와 섞습니다. 고등어는 잔가시를 확인해 빼고 물기를 닦아 4cm 길이로 자릅니다. 양념을 얇게 바른 뒤 덮어 4°C 이하 냉장고에서 15분 재웁니다.", tip: "냉동 생선은 포장의 개봉·해동 지침을 따라 미리 냉장 해동합니다. 생선에 닿은 양념은 곁들임 소스로 쓰지 않고 남으면 버립니다. 손·칼·도마를 씻고 완성 음식용 도구와 구분합니다." },
+      { title: "재우는 동안 채소와 소스 준비", description: "딜과 쪽파는 씻어 물기를 빼고 4cm로 자릅니다. 양파는 가늘게 썰고 오이는 반달 모양으로, 상추는 한입 크기로 준비합니다. 깨끗한 볼에 소스용 물 45ml·설탕 8g·피시소스 15ml·레몬즙 20ml와 남은 다진 마늘 5g을 섞습니다. 고추는 원할 때만 더합니다." },
+      { title: "쌀국수는 따로 완전히 삶기", description: "면은 제품의 불림·삶기 안내대로 중심까지 완전히 익힙니다. 찬물 헹굼을 안내하는 제품은 헹군 뒤 물기를 충분히 빼고 두 그릇에 나눕니다. 이 면은 생선 팬에 넣어 볶지 않으므로 불리기만 한 상태로 사용하지 않습니다.", tip: "제품마다 조리 시간이 다릅니다. 생선을 굽는 동안 면이 마르지 않게 덮어 두고 완성 즉시 먹습니다." },
+      { title: "고등어를 굽고 중심까지 익히기", description: "팬에 기름 10ml를 두르고 중불에서 고등어를 껍질 쪽부터 3~4분 굽습니다. 조심스럽게 뒤집어 3분 더 굽고 물 30ml를 가장자리에 붓습니다. 뚜껑을 덮어 중약불로 2~4분 익힙니다. 두꺼운 살 중심이 63°C 이상인지 확인하고 부족하면 더 가열합니다.", tip: "강황 양념이 짙게 타면 불을 낮추고 물을 조금 보충합니다. 시간이나 노란 겉색으로 익힘을 판단하지 말고, 생선을 자주 뒤집어 부수지 않습니다." },
+      { title: "딜과 쪽파의 향 더하기", description: "익힌 생선을 팬 한쪽으로 옮기고 양파와 쪽파를 넣어 1~2분 볶습니다. 딜을 더해 약 30초 섞고 불을 끕니다. 생선 살을 으깨지 않도록 채소만 가볍게 움직입니다. 건조 딜을 쓴다면 이 단계에서 1g을 넣습니다." },
+      { title: "각자 섞어 먹는 한 그릇", description: "면 위에 고등어와 익힌 향채, 오이·상추를 나눠 담습니다. 잘게 부순 땅콩을 뿌리고 소스는 따로 곁들입니다. 1인당 소스 1큰술부터 섞어 맛을 보고 조금씩 더합니다. 먹기 전 남은 잔가시를 살핍니다." },
+    ],
+    substitutions: ["고등어 대신 가시 없는 대구 등 흰살생선 400g으로 응용할 수 있습니다. 수분을 잘 닦고 같은 63°C 중심온도 기준으로 익히되 두께에 맞춰 시간을 조절합니다. 고등어 특유의 지방 맛과 가을 재료라는 설명은 달라집니다.", "생딜이 없으면 건조 딜 1작은술과 쪽파로 만듭니다. 딜을 모두 생략하면 짜까를 떠올리게 하는 허브 향은 약해집니다. 강황가루를 조미 카레가루로 바꾸면 향과 염도가 달라집니다.", "땅콩 알레르기가 있으면 땅콩을 생략합니다. 피시소스 대신 양조간장을 같은 양부터 쓰면 해산물 향이 달라지므로 소스 간은 조금씩 조절합니다. 간장 대두·밀 성분도 확인합니다."],
+    tips: ["40분은 냉장 생선과 짧게 삶는 쌀국수 기준이며 냉장 해동·제품별 긴 불림 시간은 별도입니다. 매장마다 무염 생선과 생허브 취급 여부, 포장 크기가 다릅니다.", "고등어는 장보기 후 보냉해 곧바로 4°C 이하에 두고 조리 직전 꺼냅니다. 부적절한 보관으로 생긴 히스타민은 가열로 제거되지 않으므로 상온에 오래 둔 생선을 향신료나 추가 가열로 해결하려 하지 않습니다.", "촬영은 강황색 생선을 한 번 뒤집는 순간과 초록 향채를 더하는 장면을 담으세요. 회청색 격자 표지는 재료와 골목 식탁에서 영감 받은 그림이며 실제 전통 문양이나 음식 사진의 재현은 아닙니다.", "생선·피시소스·땅콩의 알레르기 표시를 확인합니다. 남은 음식은 얕은 용기에 나눠 2시간 이내 냉장하고 기온 32°C 초과 시 1시간 이내 넣습니다. 다시 먹을 때 생선과 면 중심이 74°C 이상이 되게 데웁니다."],
+    publishedAt: "2026-10-09", relatedStorySlugs: [], sources: Object.values(chaCaSources), palette: { from: "#e8edf0", mid: "#acbec7", to: "#d6b35d", ink: "#2d424d" },
+  },
   {
     slug: "verona-inspired-pumpkin-pork-risotto", title: "베로나풍 단호박 돼지고기 리소토", country: "italy", category: "main", experienceStatus: "researched",
     summary: "단호박의 단맛과 볶은 돼지고기의 고소함을 쌀알마다 입힙니다. 뜨거운 육수를 조금씩 더하며 만드는, 베로나의 쌀 요리에서 영감 받은 두 사람의 저녁입니다.",

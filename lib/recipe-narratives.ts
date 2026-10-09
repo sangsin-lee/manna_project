@@ -1,7 +1,7 @@
 import type { Recipe, SourceLink } from "./content";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
-import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources } from "./daily-sources";
+import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -52,6 +52,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "hanoi-inspired-turmeric-mackerel-noodles": narrative(
+    ["음식 이름이 남은 하노이의 거리", "하노이 구시가지에는 짜까의 이름을 딴 거리가 있습니다. 베트남 국가관광 포털은 도안 가문이 1871년부터 이곳에서 생선 요리를 팔았다고 소개합니다. 판매 기록을 모든 짜까의 유일한 발명 시점으로 단정하지 않습니다."],
+    ["골목의 생선 팬에서 우리 집으로", "강황 생선에 딜·쌀국수·땅콩을 곁들이는 하노이의 식탁. 현지의 민물생선과 발효 새우 양념 맘똠 대신, 오늘은 국내 가을 고등어와 새콤한 피시소스 양념을 면에 섞어 먹습니다."],
+    ["노란 생선, 향긋한 잎, 고소한 한입", "고등어의 고소함에 강황·생강과 딜·쪽파의 향이 겹칩니다. 부드러운 면과 아삭한 오이, 바삭한 땅콩이 대비되고 레몬의 산미가 생선의 지방 맛을 정리합니다."],
+    [chaCaSources.history, chaCaSources.table, chaCaSources.season],
+  ),
   "verona-inspired-pumpkin-pork-risotto": narrative(
     ["파스타 너머, 베로나 평야의 쌀", "베로나 남부 평야는 비알로네 나노 쌀의 산지입니다. 베로나 관광청은 이 쌀을 호박과 살시차 등 다양한 재료와 리소토로 즐긴다고 소개합니다. 이번에는 국내 멥쌀과 단호박·다진 돼지고기로 그 조합을 집 식탁에 옮깁니다."],
     ["1945년 들어온 품종, 가을의 수확", "유럽연합 집행위에 따르면 비알로네 나노 품종은 1945년 베로나 지역에 도입됐습니다. 생산자 협회는 초가을 수확을 설명합니다. 이 연도는 품종의 지역 도입 기록이며 호박 리소토가 탄생한 해라는 뜻은 아닙니다. 오늘의 가정용 배합에도 별도의 발명 이야기를 붙이지 않습니다."],

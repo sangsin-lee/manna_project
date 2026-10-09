@@ -12,6 +12,31 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "cha-ca" && <g>
+          <ellipse cx="300" cy="187" rx="119" ry="112" fill="#8daab4" stroke="#597c8d" strokeWidth="4"/>
+          <path d="M300 100q51-24 82 22 39 46 13 102-30 58-71 44-29-10-30-54-6-65 6-114Z" fill="#eee2bd"/>
+          {Array.from({ length: 12 }, (_, i) => <path key={i} d={`M${310+i*4} ${105+i*3}q${38-i*2} 5 ${42-i*2} 35t-${22+i} 31 ${8+i} 38q25 19 4 39`} stroke={i%3 ? "#fff6d8" : "#d9c99c"} strokeWidth="3" strokeLinecap="round"/>)}
+          {[[233,128,-18],[273,191,16],[241,253,-14]].map(([x,y,r])=><g key={x+":"+y} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-39-21q36-17 77-2l-3 39q-32 20-70 2Z" fill="#d6a740" stroke="#9a732f" strokeWidth="3"/>
+            <path d="M-34-17q32-10 63-2l-2 21q-31 13-60 1Z" fill="#edc25b"/>
+            <path d="M-35 12q34 13 70-2l-1 8q-30 18-65 2Z" fill="#778e94"/>
+            <path d="m-19-15-6 25m23-29-4 32m23-31-4 28" stroke="#bc8a32" strokeWidth="3" strokeLinecap="round"/>
+            <path d="m-28-10 12-3m15-1 13 2" stroke="#ffe08b" strokeWidth="4" strokeLinecap="round"/>
+          </g>)}
+          {[[217,173,-28],[280,113,20],[294,248,-20],[342,269,24]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M0 23V-23m0 8-16-8m16 13 16-9M0 1l-21-8m21 17 20-9M0 18l-16-6" stroke="#4b704d" strokeWidth="3" strokeLinecap="round"/>
+            <path d="m-16-23-3-6m5 7 3-8m27 11 4-6m-7 8-1-6m-21 27-7-4m7 6-1 5m37-14 6-3m-6 5 3 6" stroke="#719657" strokeWidth="2" strokeLinecap="round"/>
+          </g>)}
+          <path d="m206 208 12-27m82-24 13-20m-41 147 20-17m71-42 20-3" stroke="#d6dc9d" strokeWidth="7" strokeLinecap="round"/>
+          {[[351,129,-20],[373,165,25],[324,225,15],[351,246,-20],[276,145,35],[312,283,-10]].map(([x,y,r])=><g key={x+":"+y} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <ellipse rx="7" ry="4" fill="#c48a44" stroke="#a16b33" strokeWidth="1.5"/>
+            <path d="M-4 0h8" stroke="#edbd79" strokeWidth="2" strokeLinecap="round"/>
+          </g>)}
+          <path d="m357 188 16 9m-50-83 8 6m-95 118 11-3" stroke="#b3573f" strokeWidth="4" strokeLinecap="round"/>
+          <circle cx="177" cy="282" r="28" fill="#f6edd7" stroke="#597c8d" strokeWidth="3"/>
+          <circle cx="177" cy="282" r="21" fill="#bb8152"/>
+          <path d="m170 276 5 3m8 6 5-3" stroke="#d76744" strokeWidth="4" strokeLinecap="round"/>
+        </g>}
         {art === "pumpkin-risotto" && <g>
           <path d="M191 184q-4-72 73-96 70-20 125 47 48 63-13 126-66 57-137 14-48-29-48-91Z" fill="#dca248" stroke="#f0c870" strokeWidth="6"/>
           <path d="M211 173q-4-41 42-62m111 19q26 27 28 55m-33 76q-36 22-69 14m-54-23-17-28" stroke="#efc56c" strokeWidth="8" strokeLinecap="round"/>

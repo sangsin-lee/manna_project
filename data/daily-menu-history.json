@@ -979,6 +979,33 @@
         ]
       },
       "preparationLabels": ["국내 멥쌀로 응용", "호박과 쌀의 금빛 윤기"]
+    },
+    {
+      "date": "2026-10-09",
+      "recipeSlug": "hanoi-inspired-turmeric-mackerel-noodles",
+      "title": "하노이풍 강황 고등어 쌀국수",
+      "canonicalDish": "Hanoi-inspired cha ca with mackerel and rice vermicelli",
+      "aliases": ["고등어 짜까", "짜까 쌀국수 응용", "Cha ca inspired mackerel", "Turmeric dill mackerel noodles"],
+      "keyIngredients": ["무염 고등어 순살", "가는 쌀국수", "강황", "딜", "쪽파", "볶은 땅콩", "피시소스"],
+      "method": "고등어를 강황 양념에 냉장 재운 뒤 팬에서 중심까지 익히고 딜·쪽파를 더한다. 별도로 완전히 삶은 쌀국수에 생선과 채소, 땅콩을 담고 새콤한 피시소스 양념을 곁들인다.",
+      "selectionReason": "하노이의 짜까에서 영감을 받아 국내 가을 고등어를 향긋한 한 그릇으로 만듭니다. 강황의 노랑과 딜·쪽파의 초록, 쌀국수의 흰색이 조리 장면을 또렷하게 보여줍니다.",
+      "videoIdea": "고등어에 강황 양념 입히기 → 팬에서 한 번 뒤집기 → 딜과 쪽파를 넣어 향 내기 → 흰 쌀국수 위에 생선과 땅콩 담기 → 새콤한 소스를 조금씩 붓기. 제목 아이디어: ‘가을 고등어로 하노이 골목의 짜까 한 그릇’.",
+      "duplicateReview": "전체 80개 레시피와 최초 추천 27개·일일 기록 14개, steak-recipes·recipe-narratives·TonightPick 및 최신 Git 이력을 확인했다. 제주 생선 모둠구이는 여러 생선을 오븐에서 소금구이로 내는 요리이고 이번 메뉴는 작은 생선 조각을 강황에 재워 팬 조리 후 허브·별도로 삶은 쌀국수·곁들임 소스로 구성하는 하노이 짜까의 응용이다. 팟타이는 달걀·두부·타마린드 소스와 면을 함께 볶아 마무리하는 요리로 조리 구조가 다르다. 유자 연어구이·미소 연어 찬찬야키의 이름이나 소스만 바꾼 반복이 아니다. 이탈리아 베로나 다음 베트남 하노이로 순환하며 한국 날짜 10월 9일 새 메뉴는 한 개만 추가한다.",
+      "research": {
+        "checkedAt": "2026-10-09",
+        "seasonalNote": "베트남 국가관광 포털에서 하노이 구시가지의 짜까와 강황·딜·쌀국수·땅콩 조합, 도안 가문의 1871년 판매 기록 소개를 확인했다. 이를 모든 생선 요리의 유일한 발명 시점으로 단정하지 않는다. 현지 민물생선을 국내 무염 고등어로 바꾸고 발효쌀·갈랑갈·맘똠을 생략하는 가정용 응용이다. 해양수산부의 가을 수산물 자료와 해양경찰청의 10월 고등어 소개를 참고했다. 국내산 가을 고등어의 계절을 베트남 민물생선 어기나 수입·냉동 고등어의 어획 시기로 확장하지 않는다. 딜은 특정 달에만 구할 수 있다고 쓰지 않는다. 미국 외식업협회의 2026 전망에 나온 지역 재료·세계 가정식 관심을 참고하되 이 음식의 한국 유행이나 조회 수를 보증하지 않는다. FDA·FoodSafety.gov에서 냉장 해동, 생선 63°C, 재가열 74°C를 확인했고 NSW 식품당국 자료로 고등어의 히스타민은 가열로 제거되지 않아 냉장 유지가 필요함을 확인했다.",
+        "sources": [
+          "https://vietnam.travel/things-to-do/explore-old-quarter-your-way",
+          "https://vietnam.travel/things-to-do/famous-hanoi-food-and-international-fine-dining",
+          "https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=17729&menuSeq=971",
+          "https://www.korea.kr/multi/visualNewsView.do?newsId=148894215",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/",
+          "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://www.foodauthority.nsw.gov.au/consumer/food-poisoning/fish-histamine-poisoning"
+        ]
+      },
+      "preparationLabels": ["가을 고등어로 응용", "강황·딜과 쌀국수"]
     }
   ]
 }

@@ -877,8 +877,8 @@ export const countries: Country[] = [
       },
     ],
     storySlugs: ["vietnamese-breakfast-culture"],
-    recipeSlugs: ["vietnamese-banh-mi"],
-    updatedAt: "2026-09-09",
+    recipeSlugs: ["hanoi-inspired-turmeric-mackerel-noodles", "vietnamese-banh-mi"],
+    updatedAt: "2026-10-09",
     palette: {
       from: "#deead0",
       mid: "#cbdcb8",

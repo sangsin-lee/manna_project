@@ -1,5 +1,16 @@
 import type { SourceLink } from "./content";
 
+// Hanoi cha ca adapted with Korean autumn mackerel, reviewed October 9.
+export const chaCaSources = {
+  table: { label: "베트남 국가관광 포털 — 하노이 구시가지와 짜까의 구성", url: "https://vietnam.travel/things-to-do/explore-old-quarter-your-way" },
+  history: { label: "베트남 국가관광 포털 — 도안 가문의 짜까와 1871년 판매 기록 소개", url: "https://vietnam.travel/things-to-do/famous-hanoi-food-and-international-fine-dining" },
+  season: { label: "해양수산부 — 가을의 제철 수산물과 고등어", url: "https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=17729&menuSeq=971" },
+  korea: { label: "정책브리핑 · 해양경찰청 — 10월 수산물 고등어", url: "https://www.korea.kr/multi/visualNewsView.do?newsId=148894215" },
+  seafood: { label: "미국 FDA — 해산물 냉장 보관·해동·익힘", url: "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely" },
+  temperature: { label: "FoodSafety.gov — 생선 63°C와 재가열 74°C", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+  coldChain: { label: "호주 NSW 식품당국 — 고등어의 히스타민과 냉장 유지", url: "https://www.foodauthority.nsw.gov.au/consumer/food-poisoning/fish-histamine-poisoning" },
+} satisfies Record<string, SourceLink>;
+
 // Verona's rice country, adapted with Korean short-grain rice, reviewed October 8.
 export const pumpkinRisottoSources = {
   table: { label: "Visit Verona — 지역 쌀과 호박·살시차 리소토", url: "https://www.visitverona.it/it/esplora/degustare-verona" },

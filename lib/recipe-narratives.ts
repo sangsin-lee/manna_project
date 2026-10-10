@@ -1,7 +1,7 @@
 import type { Recipe, SourceLink } from "./content";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
-import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources } from "./daily-sources";
+import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -52,6 +52,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "lucerne-inspired-alpine-macaroni": narrative(
+    ["치즈 냄비에 감자와 마카로니를", "엘플러마그로넨은 감자·마카로니·치즈·크림을 한데 담는 스위스 알프스 음식입니다. 루체른 지역의 생산자도 현지 우유로 만든 치즈와 이 요리를 소개합니다. 오늘은 국내에서 구하기 쉬운 치즈로 그 식탁을 응용합니다."],
+    ["산지의 음식에서 오늘의 상품으로", "오브발덴관광청 소식지에서 파스타 생산자 케른서는 1965년부터 ‘오리지널 엘플러마그로넨’ 제품을 생산했다고 기록합니다. 이는 상품의 이력이며 요리의 발명 연도가 아닙니다. 지역 낙농 음식은 오늘날 가정과 산장 식탁에서도 이어집니다."],
+    ["짭짤함 곁에 놓는 사과의 산미", "면의 탄력과 감자의 포슬함을 녹은 치즈가 감쌉니다. 양파의 구운 단맛 뒤에 사과소스 한입을 곁들이면 산뜻한 산미가 이어집니다. 사과를 모두 섞기보다 따로 내어 한입마다 맛의 균형을 고릅니다."],
+    [alpineMacaroniSources.region, alpineMacaroniSources.dairy, alpineMacaroniSources.history, alpineMacaroniSources.recipe],
+  ),
   "hanoi-inspired-turmeric-mackerel-noodles": narrative(
     ["음식 이름이 남은 하노이의 거리", "하노이 구시가지에는 짜까의 이름을 딴 거리가 있습니다. 베트남 국가관광 포털은 도안 가문이 1871년부터 이곳에서 생선 요리를 팔았다고 소개합니다. 판매 기록을 모든 짜까의 유일한 발명 시점으로 단정하지 않습니다."],
     ["골목의 생선 팬에서 우리 집으로", "강황 생선에 딜·쌀국수·땅콩을 곁들이는 하노이의 식탁. 현지의 민물생선과 발효 새우 양념 맘똠 대신, 오늘은 국내 가을 고등어와 새콤한 피시소스 양념을 면에 섞어 먹습니다."],

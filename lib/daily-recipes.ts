@@ -1,8 +1,30 @@
 import type { Recipe } from "./content";
-import { barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources } from "./daily-sources";
+import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "lucerne-inspired-alpine-macaroni", title: "루체른풍 감자 치즈 마카로니", country: "switzerland", category: "main", experienceStatus: "researched",
+    summary: "포슬한 감자와 마카로니를 치즈로 감싸고 노릇한 양파를 올립니다. 루체른을 포함한 스위스 중부의 엘플러마그로넨에서 영감 받은, 가을 사과소스를 곁들이는 두 사람의 저녁입니다.",
+    culturalNote: "감자·마카로니·치즈에 볶은 양파와 사과소스를 곁들이는 스위스 산지 음식의 가정용 응용입니다. 지역 치즈 대신 구하기 쉬운 고다·체더를 쓰고 오븐 없이 냄비에서 마무리합니다. 특정 식당의 원조 배합은 아닙니다.",
+    localTable: { region: "스위스 · 중부 루체른 호수 권역", ingredient: "지역 치즈 문화 · 감자 · 사과", season: "가을 사과 수확기에서 얻은 영감", note: "스위스과일협회의 2024 자료는 사과·배 수확이 9월 중순 정점을 지나 10월 말까지 이어졌다고 설명합니다. 한국 사과는 품종별로 8~11월에 수확하며 저장 출하도 합니다. 오늘은 국내 사과를 사용하고, 감자·치즈의 판매 시기를 가을 수확으로 단정하지 않습니다." },
+    cookingTime: 40, difficulty: "쉬움", servings: 2, visualLabel: "LUCERNE ALPINE MACARONI", visualCaption: "치즈의 크림색과 사과의 붉은빛, 알프스 산선을 떠올리는 부드러운 선", keywords: ["루체른", "엘플러마그로넨", "Älplermagronen", "감자", "치즈", "마카로니", "사과소스", "가을저녁", "이마트장보기"],
+    ingredientGroups: [
+      { title: "이마트 장보기 · 구매 단위 → 2인분 사용량", items: ["마카로니 또는 짧은 파스타 1봉 → 마른 상태 160g · 삶는 시간 8~10분 제품 기준", "감자 1봉 또는 중간 크기 2개 → 껍질 제거 후 300g", "사과 1~2개 → 껍질·심·씨 제거 후 250g, 양파 1개 → 150g", "고다 또는 체더 자연치즈 1팩 → 100g · 곱게 갈거나 잘게 썰기", "우유 1팩 → 100ml, 무가당 동물성 생크림 소포장 → 50ml", "무염버터 1팩 → 15g, 레몬 1개 → 즙 10ml"] },
+      { title: "기본 양념과 도구", items: ["식용유 1작은술(5ml), 후추 약간, 넛맥 한 꼬집(선택)", "사과소스용 물 60ml, 설탕 0~1작은술(4g) · 사과 맛을 보고 선택", "면·감자 삶을 물 1.5L와 소금 5g, 추가 간은 소금 0~1g", "작은 냄비, 면 냄비와 체, 양파용 팬, 뚜껑, 주걱 · 재가열 시 식품용 온도계"] },
+    ],
+    steps: [
+      { title: "사과와 감자를 작게 준비", description: "사과와 감자를 씻고 껍질을 벗깁니다. 사과는 심·씨를 빼고 1.5cm로, 감자는 1cm 크기로 깍둑썰기합니다. 양파는 3mm 반달 모양으로 썰고 치즈는 곱게 갈거나 잘게 썹니다. 우유·크림·치즈는 쓸 때까지 4°C 이하에 둡니다." },
+      { title: "작은 냄비에 사과소스 만들기", description: "사과 250g에 물 60ml와 레몬즙 10ml를 넣어 끓입니다. 뚜껑을 덮어 약불로 12~15분 익히고 중간에 저어 줍니다. 포크로 쉽게 으깨지면 굵게 으깨고 맛을 봅니다. 신맛이 강할 때만 설탕 4g 이내를 더합니다.", tip: "바닥이 마르면 물을 한 큰술씩 보충합니다. 사과소스는 치즈 냄비에 붓지 않고 작은 그릇에 따로 담습니다." },
+      { title: "양파에 노릇한 가장자리 만들기", description: "사과가 익는 동안 팬에 버터 15g과 기름 5ml를 두릅니다. 양파를 펼쳐 중약불로 12~15분, 가끔 뒤집으며 노릇하게 볶아 덜어 둡니다. 검게 타기 전에 불을 낮춥니다.", tip: "이 버전은 밀가루 튀김옷 없이 볶아 고소한 가장자리와 부드러운 단맛을 냅니다." },
+      { title: "감자와 마카로니 함께 삶기", description: "물 1.5L에 소금 5g을 넣고 끓입니다. 감자를 먼저 3분 삶고 마카로니를 넣어 제품 안내 시간만큼 삶습니다. 감자는 포크가 쉽게 들어가고 면은 단단한 심이 없어야 합니다. 익은 면·감자를 체에 밭치고 면수 100ml는 남깁니다.", tip: "면의 삶는 시간이 짧으면 감자를 더 먼저 넣습니다. 한쪽만 익으면 먼저 건져 두고 나머지를 더 익힙니다. 헹구지 않습니다." },
+      { title: "뜨거운 유제품에 치즈 녹이기", description: "빈 면 냄비에 우유 100ml·크림 50ml를 넣어 가장자리가 보글거릴 때까지 데웁니다. 불을 아주 약하게 줄여 면·감자와 치즈를 넣고 부드럽게 섞습니다. 뚜껑을 덮어 1~2분 녹인 뒤 불을 끄고 후추·선택한 넛맥으로 향을 냅니다.", tip: "치즈를 넣고 팔팔 끓이면 기름이 분리될 수 있습니다. 뻑뻑하면 남긴 면수를 한 큰술씩 넣고, 소금은 맛본 뒤 1g 이내로 조절합니다." },
+      { title: "짭짤한 한 접시에 사과 곁들이기", description: "마카로니를 두 접시에 나누고 볶은 양파를 올립니다. 사과소스를 별도 그릇에 곁들여 한입씩 번갈아 먹습니다. 남은 음식은 2시간 이내, 기온 32°C 초과 시 1시간 이내 냉장합니다. 다시 먹을 마카로니는 중심까지 74°C 이상으로 데웁니다." },
+    ],
+    substitutions: ["그뤼예르·에멘탈을 구하면 같은 100g으로 바꿀 수 있습니다. 루체른산 치즈와 동일한 제품이라는 뜻은 아니며 숙성도·염도에 따라 마지막 간을 줄입니다.", "생크림 50ml 대신 우유 50ml를 더 쓰면 가벼운 소스가 됩니다. 달게 가미한 휘핑크림은 피합니다. 마카로니 대신 펜네를 쓰면 포장 시간에 맞춰 감자 투입 시점을 조절합니다.", "사과는 구할 수 있는 국내 품종을 씁니다. 무가당 시판 사과소스 약 200g으로 대체하면 조리 시간이 줄지만 가을 생사과를 익히는 장면은 달라집니다."],
+    tips: ["40분은 사과·양파·면을 나란히 조리하는 기준입니다. 화구 하나로 차례로 만들면 15~20분 더 잡으세요. 구매 포장과 취급 치즈는 매장마다 다릅니다.", "밀·우유 알레르기가 있으면 제품 성분을 확인합니다. 달걀이 든 파스타도 있습니다. 냉장 재료는 제품 표시를 따라 보관하고, 남은 음식은 작은 용기에 나눠 신속히 4°C 이하로 냉장합니다.", "촬영은 녹는 치즈와 포슬한 감자, 노릇한 양파와 사과소스의 대비를 담으세요. 표지의 산선과 색은 지역·재료에서 영감 받은 그림이며 실제 전통 문양이나 음식 사진이 아닙니다."],
+    publishedAt: "2026-10-10", relatedStorySlugs: [], sources: Object.values(alpineMacaroniSources), palette: { from: "#f5ece0", mid: "#d8b4ac", to: "#c99a52", ink: "#573739" },
+  },
   {
     slug: "hanoi-inspired-turmeric-mackerel-noodles", title: "하노이풍 강황 고등어 쌀국수", country: "vietnam", category: "main", experienceStatus: "researched",
     summary: "강황에 재운 고등어를 딜·쪽파와 향긋하게 익혀 쌀국수에 담습니다. 하노이 짜까에서 영감을 받아 가을 고등어, 아삭한 채소와 땅콩을 곁들이는 두 사람의 저녁입니다.",

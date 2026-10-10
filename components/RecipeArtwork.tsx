@@ -12,6 +12,36 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "alpine-macaroni" && <g>
+          <ellipse cx="300" cy="189" rx="121" ry="107" fill="#ead8a9" stroke="#d2b886" strokeWidth="4"/>
+          {Array.from({ length: 26 }, (_, i) => {
+            const angle = i * 2.39996;
+            const radius = 94 * Math.sqrt((i + 1) / 27);
+            const x = 300 + Math.cos(angle) * radius;
+            const y = 183 + Math.sin(angle) * radius * .85;
+            return <g key={i} transform={`translate(${x} ${y}) rotate(${i * 47})`}>
+              <path d="M-11-10q-16 17 7 27" stroke="#bd9554" strokeWidth="13" strokeLinecap="round"/>
+              <path d="M-11-11q-16 17 7 27" stroke="#f5df9d" strokeWidth="10" strokeLinecap="round"/>
+              <ellipse cx="-11" cy="-11" rx="5" ry="3" fill="#b9965b"/>
+              <ellipse cx="-4" cy="16" rx="5" ry="3" fill="#c5a364"/>
+            </g>;
+          })}
+          {[[232,146,-10],[328,122,20],[365,209,-10],[271,247,12],[216,204,-18]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="m-15-13 24-2 9 21-25 8-12-15Z" fill="#e7ce97" stroke="#bf9f69" strokeWidth="2"/>
+            <path d="m-15-13 24-2 4 10-29 4Z" fill="#fff0c5"/>
+          </g>)}
+          {[[277,144,-20],[321,185,25],[256,214,15],[344,236,-15],[301,260,10],[365,156,35]].map(([x,y,r])=><g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-21-9q-6 22 17 25t26-16" stroke="#925328" strokeWidth="6" strokeLinecap="round"/>
+            <path d="M-20-9q-4 17 16 21t22-13" stroke="#c68d42" strokeWidth="3" strokeLinecap="round"/>
+          </g>)}
+          <circle cx="174" cy="275" r="38" fill="#f8eee0" stroke="#a87571" strokeWidth="3"/>
+          <circle cx="174" cy="275" r="30" fill="#e4ba70"/>
+          <path d="M157 269q9-8 25-2m-29 12q12 10 31 1m-10-20 13 3" stroke="#f3d69b" strokeWidth="4" strokeLinecap="round"/>
+          <path d="M414 247q-19-15-27 2-9 21 7 39 10 10 20 1 9 9 20-2 15-18 5-37-9-15-25-3Z" fill="#b55751" stroke="#8e4743" strokeWidth="2"/>
+          <path d="m414 247 3-17" stroke="#71503b" strokeWidth="4" strokeLinecap="round"/>
+          <path d="M418 235q10-12 24-7-9 14-24 7Z" fill="#89946c"/>
+          <path d="M397 252q-7 8-2 20" stroke="#da8b74" strokeWidth="4" strokeLinecap="round"/>
+        </g>}
         {art === "cha-ca" && <g>
           <ellipse cx="300" cy="187" rx="119" ry="112" fill="#8daab4" stroke="#597c8d" strokeWidth="4"/>
           <path d="M300 100q51-24 82 22 39 46 13 102-30 58-71 44-29-10-30-54-6-65 6-114Z" fill="#eee2bd"/>

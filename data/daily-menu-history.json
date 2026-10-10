@@ -1006,6 +1006,49 @@
         ]
       },
       "preparationLabels": ["가을 고등어로 응용", "강황·딜과 쌀국수"]
+    },
+    {
+      "date": "2026-10-10",
+      "recipeSlug": "lucerne-inspired-alpine-macaroni",
+      "title": "루체른풍 감자 치즈 마카로니",
+      "canonicalDish": "Central Swiss Alplermagronen with potato and apple sauce",
+      "aliases": [
+        "엘플러마그로넨",
+        "알플러마그로넨",
+        "Älplermagronen",
+        "Alpine macaroni and potatoes"
+      ],
+      "keyIngredients": [
+        "마카로니",
+        "감자",
+        "숙성 치즈",
+        "우유",
+        "양파",
+        "사과"
+      ],
+      "method": "감자와 짧은 파스타를 함께 삶아 물기를 뺀 뒤 뜨거운 우유·크림과 치즈를 입힌다. 따로 볶은 양파를 올리고 사과를 푹 익혀 으깬 소스를 곁들인다.",
+      "selectionReason": "루체른을 포함한 스위스 중부의 치즈 식탁에 국내 가을 사과를 곁들입니다. 포슬한 감자와 탄력 있는 마카로니, 짭짤한 치즈와 새콤한 사과가 한 끼 안에서 대비를 이룹니다.",
+      "videoIdea": "사과가 부드럽게 으깨지는 장면 → 양파의 노릇한 가장자리 → 감자와 마카로니에 치즈가 녹는 순간 → 작은 사과소스 그릇을 곁들여 완성. 제목 아이디어: ‘치즈 마카로니에 사과소스? 스위스 산지의 한 끼’.",
+      "duplicateReview": "전체 81개 레시피의 이름·주재료·조리 단계와 기존 27개 기준 기록·15개 일일 기록의 별칭, steak-recipes·recipe-narratives·TonightPick 및 최신 Git 이력을 비교했다. 홍콩 마카로니 수프는 햄·육수에 담는 국물 요리, 카초 에 페페는 감자·우유 없이 면수와 치즈를 유화하는 파스타다. 이번 메뉴는 감자와 짧은 파스타를 함께 삶아 유제품·치즈와 합치고 양파와 별도 사과소스를 곁들이는 알프스식 한 끼다. 공주 밤 크림 파스타, 감자를 갈아 굽는 뢰스티, 빵을 찍는 퐁뒤, 사과 크림 치킨의 이름·소스 변경이 아니다. 베트남 하노이 다음 스위스 중부 루체른으로 순환하고 10월 10일 신규 메뉴는 하나만 기록한다.",
+      "research": {
+        "checkedAt": "2026-10-10",
+        "seasonalNote": "스위스관광청과 루체른 우유를 쓰는 생산자 Emmi에서 지역 치즈와 엘플러마그로넨을 확인했다. Swissmilk 조합을 참고하되 분량·조리와 국내 치즈 대체는 자체 가정용 응용이다. 오브발덴관광청의 2021 소식지에 실린 Kernser의 1965년 상품 생산 기록은 요리 발명일과 구분한다. 스위스과일협회의 2024 수확 자료는 9월 중순 정점·10월 말까지의 당시 수확기를 설명하며 2026년 특정 과원의 수확을 보증하지 않는다. 농식품부 자료에서 한국 사과 조중생종 8~10월 상순, 만생종 10월 중순~11월 및 저장 출하를 구분했다. 오늘은 국내 사과를 사용하며 감자·치즈를 가을에만 구할 수 있다고 쓰지 않는다. 미국 외식업협회 2026 전망의 세계 가정식·지역 재료 관심을 참고했지만 한국 유행이나 조회 수를 단정하지 않는다. FDA 보관 지침과 FoodSafety.gov 재가열 74°C를 확인했다.",
+        "sources": [
+          "https://www.myswitzerland.com/en-ch/planning/about-switzerland/custom-and-tradition/typical-food/",
+          "https://www.emmi-luzerner.ch/che/de/rezepte",
+          "https://www.swissmilk.ch/de/rezepte-kochideen/rezepte/LM200309_57_A/aelplermagronen/",
+          "https://www.obwalden-tourismus.ch/fileadmin/user_upload_obwalden/PDF/G%C3%A4stezeitung/gaestezeitung-sommer-2021-obwalden.pdf",
+          "https://www.swissfruit.ch/de/ueberdurchschnittliche-zwetschgenernte-erwartet-2/?association=true",
+          "https://www.korea.kr/news/policyNewsView.do?newsId=148957919",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/",
+          "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+        ]
+      },
+      "preparationLabels": [
+        "가을 사과소스 곁들임",
+        "오븐 없이 냄비로"
+      ]
     }
   ]
 }

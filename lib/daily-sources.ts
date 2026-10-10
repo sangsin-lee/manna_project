@@ -1,5 +1,17 @@
 import type { SourceLink } from "./content";
 
+// Central Swiss macaroni and Korean autumn apples, reviewed October 10.
+export const alpineMacaroniSources = {
+  region: { label: "스위스관광청 — 알프스식 마카로니와 루체른 지역 치즈", url: "https://www.myswitzerland.com/en-ch/planning/about-switzerland/custom-and-tradition/typical-food/" },
+  dairy: { label: "Emmi LUZERNER — 루체른 우유·크림으로 만든 치즈와 지역 요리", url: "https://www.emmi-luzerner.ch/che/de/rezepte" },
+  recipe: { label: "Swissmilk — 감자·마카로니·치즈와 사과소스의 조합", url: "https://www.swissmilk.ch/de/rezepte-kochideen/rezepte/LM200309_57_A/aelplermagronen/" },
+  history: { label: "오브발덴관광청 2021 소식지 — Kernser의 1965년 파스타 상품 생산 기록", url: "https://www.obwalden-tourismus.ch/fileadmin/user_upload_obwalden/PDF/G%C3%A4stezeitung/gaestezeitung-sommer-2021-obwalden.pdf" },
+  season: { label: "스위스과일협회 — 2024년 사과·배 수확기의 설명", url: "https://www.swissfruit.ch/de/ueberdurchschnittliche-zwetschgenernte-erwartet-2/?association=true" },
+  korea: { label: "농림축산식품부 — 국내 사과의 품종별 수확기와 저장 출하", url: "https://www.korea.kr/news/policyNewsView.do?newsId=148957919" },
+  storage: { label: "미국 FDA — 냉장 온도와 남은 음식의 보관", url: "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely" },
+  safety: { label: "FoodSafety.gov — 남은 음식 재가열 중심온도 74°C", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+} satisfies Record<string, SourceLink>;
+
 // Hanoi cha ca adapted with Korean autumn mackerel, reviewed October 9.
 export const chaCaSources = {
   table: { label: "베트남 국가관광 포털 — 하노이 구시가지와 짜까의 구성", url: "https://vietnam.travel/things-to-do/explore-old-quarter-your-way" },

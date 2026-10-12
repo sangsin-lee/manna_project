@@ -1,7 +1,7 @@
 import type { Recipe, SourceLink } from "./content";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
-import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources } from "./daily-sources";
+import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -52,6 +52,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "louisiana-inspired-shrimp-etouffee": narrative(
+    ["소스로 감싸는 루이지애나의 식탁", "에투페는 프랑스어로 재료를 덮어 익히는 뜻과 연결됩니다. 루이지애나 남부에서는 가재나 새우를 진한 소스와 함께 즐깁니다. 오늘은 관광청의 가재 요리 구성을 참고해, 국내에서 구하기 쉬운 생새우와 밥으로 응용합니다."],
+    ["브로브리지에 전해지는 식당 이야기", "라파예트관광청은 1940년대 브로브리지 인근 식당의 가재 요리를 손님이 맛보고 동료들을 데려왔다는 구전을 소개합니다. 이야기의 세부는 전하는 사람마다 달라 유일한 발명 시점으로 확정하지 않습니다. 에투페의 재료와 농도도 가정과 식당마다 다르게 이어집니다."],
+    ["고소한 소스, 탄력 있는 새우", "연한 갈색 루의 구운 향 위에 양파의 단맛과 셀러리·피망의 향이 포개집니다. 새우는 소스가 완성된 뒤 넣어 익히고, 레몬으로 끝맛을 밝힙니다. 밥이 소스를 받아 부드러워지는 한입과 통통한 새우의 식감이 대비됩니다."],
+    [shrimpEtouffeeSources.history, shrimpEtouffeeSources.recipe, shrimpEtouffeeSources.season],
+  ),
   "lucerne-inspired-alpine-macaroni": narrative(
     ["치즈 냄비에 감자와 마카로니를", "엘플러마그로넨은 감자·마카로니·치즈·크림을 한데 담는 스위스 알프스 음식입니다. 루체른 지역의 생산자도 현지 우유로 만든 치즈와 이 요리를 소개합니다. 오늘은 국내에서 구하기 쉬운 치즈로 그 식탁을 응용합니다."],
     ["산지의 음식에서 오늘의 상품으로", "오브발덴관광청 소식지에서 파스타 생산자 케른서는 1965년부터 ‘오리지널 엘플러마그로넨’ 제품을 생산했다고 기록합니다. 이는 상품의 이력이며 요리의 발명 연도가 아닙니다. 지역 낙농 음식은 오늘날 가정과 산장 식탁에서도 이어집니다."],

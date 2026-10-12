@@ -12,6 +12,33 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "shrimp-etouffee" && <g>
+          <ellipse cx="300" cy="188" rx="120" ry="109" fill="#e7dbc0" stroke="#829da5" strokeWidth="4"/>
+          <path d="M274 84q80-7 121 68 34 63-22 112-45 42-113 15-42-18-47-74-7-81 61-121Z" fill="#a96738"/>
+          <path d="M316 103q57 7 73 64 14 49-21 82-24 23-64 21" stroke="#c58748" strokeWidth="10" strokeLinecap="round"/>
+          <path d="M221 111q-43 33-38 92 5 57 50 71 34 9 55-20 14-23 5-63-6-30-2-62-5-35-36-33Z" fill="#fff1d3" stroke="#d8c497" strokeWidth="2"/>
+          {Array.from({ length: 33 }, (_, i) => {
+            const angle = i * 2.39996;
+            const radius = 42 * Math.sqrt((i + 1) / 34);
+            const x = 240 + Math.cos(angle) * radius;
+            const y = 187 + Math.sin(angle) * radius * 1.7;
+            return <path key={i} d="M-3 0h6" transform={`translate(${x} ${y}) rotate(${i * 29})`} stroke={i % 3 ? "#e6d5ac" : "#fffaf0"} strokeWidth="3" strokeLinecap="round"/>;
+          })}
+          {[[318,127,-30],[365,167,34],[318,199,-5],[360,239,60],[291,263,18]].map(([x,y,r])=><g key={x+":"+y} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M12-18C-12-30-31-3-18 14-9 26 10 22 14 9" stroke="#914c35" strokeWidth="16" strokeLinecap="round"/>
+            <path d="M12-18C-12-30-31-3-18 14-9 26 10 22 14 9" stroke="#edaa7f" strokeWidth="12" strokeLinecap="round"/>
+            <path d="m7-19-4 8m-15-7 6 8m-15 4 9 2m-8 10 8-3m2 13 3-8" stroke="#c77652" strokeWidth="2" strokeLinecap="round"/>
+            <path d="m14 7 5 7 11-1-7-10-7-2Z" fill="#cb7955"/>
+            <path d="M-12-15q-9 5-9 14" stroke="#ffe0b4" strokeWidth="3" strokeLinecap="round"/>
+          </g>)}
+          {[[292,103],[389,208],[323,236],[345,285],[280,229],[346,150],[292,160]].map(([x,y])=><g key={x+":"+y} transform={`translate(${x} ${y})`}>
+            <path d="m-6-4 11 1-2 9-10-2Z" fill="#718755"/>
+            <path d="m10 8 8-2 1 7-7 1Z" fill="#dcb377"/>
+          </g>)}
+          <path d="m310 164 8 4m39 41 7-6m-50 83 8-4m64-156 4 6" stroke="#54794f" strokeWidth="4" strokeLinecap="round"/>
+          <path d="M161 251a36 36 0 0 0 43 48Z" fill="#f5d16d" stroke="#e0b853" strokeWidth="3"/>
+          <path d="m167 256 30 35m-27-27 5 20m4-13 13 14" stroke="#fff2b3" strokeWidth="3" strokeLinecap="round"/>
+        </g>}
         {art === "alpine-macaroni" && <g>
           <ellipse cx="300" cy="189" rx="121" ry="107" fill="#ead8a9" stroke="#d2b886" strokeWidth="4"/>
           {Array.from({ length: 26 }, (_, i) => {

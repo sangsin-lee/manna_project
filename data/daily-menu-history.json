@@ -1049,6 +1049,48 @@
         "가을 사과소스 곁들임",
         "오븐 없이 냄비로"
       ]
+    },
+    {
+      "date": "2026-10-12",
+      "recipeSlug": "louisiana-inspired-shrimp-etouffee",
+      "title": "루이지애나풍 새우 에투페",
+      "canonicalDish": "Louisiana shrimp etouffee with roux and rice",
+      "aliases": [
+        "Shrimp étouffée",
+        "쉬림프 에투페",
+        "새우 에투페",
+        "새우 에투페이"
+      ],
+      "keyIngredients": [
+        "생새우",
+        "양파",
+        "셀러리",
+        "초록 피망",
+        "버터",
+        "밀가루",
+        "밥"
+      ],
+      "method": "버터와 밀가루를 연한 갈색으로 볶아 루를 만들고 양파·셀러리·피망을 익힌다. 육수를 나누어 넣고 뭉근히 끓인 소스에 생새우를 완전히 익혀 따로 지은 밥에 곁들인다.",
+      "selectionReason": "루이지애나 남부의 해산물 식탁을 가을 새우 장보기와 연결합니다. 고소한 루와 채소의 단맛, 통통한 새우를 밥에 곁들이는 든든한 저녁입니다.",
+      "videoIdea": "버터·밀가루의 색 변화 → 잘게 썬 세 채소 넣기 → 육수를 부어 매끈해지는 소스 → 새우가 익는 장면 → 흰 밥 옆에 소스 붓기. 제목 아이디어: ‘새우와 밥으로 떠나는 루이지애나의 저녁’.",
+      "duplicateReview": "기존 82개 레시피의 이름·핵심 재료·조리 흐름과 기준 기록 27개·일일 기록 16개, steak-recipes·recipe-narratives·TonightPick 및 최근 Git 이력을 비교했다. 태안 대하 소금구이는 껍질째 소금 위에서 찌듯 굽고, 안성 배 새우 냉채는 익힌 새우를 식혀 겨자 소스로 무치며, 팟타이는 면과 달걀을 함께 볶는다. 이번 요리는 루·향채·육수를 먼저 끓이고 새우를 넣어 익혀 밥과 내는 에투페로 조리 구조가 다르다. 로코모코의 소고기 패티·달걀·그레이비나 꽃게 커리 달걀볶음의 이름·소스 변경이 아니다. 최근 스위스 루체른 다음 미국 루이지애나로 순환한다. 10월 11일을 소급 게시하지 않으며 10월 12일 신규 메뉴는 하나만 기록한다.",
+      "research": {
+        "checkedAt": "2026-10-12",
+        "seasonalNote": "루이지애나 관광청의 가재 에투페에서 루·양파·셀러리·피망·육수와 밥의 조합을 확인하고, 가재 대신 생새우와 국내 양념으로 만드는 자체 가정용 응용으로 작성한다. Lafayette Travel의 브로브리지 이야기는 1940년대 식당 일화 등 구전에 기반하며 유일한 발명자·발명일로 확정하지 않는다. LSU 계열 Louisiana Direct Seafood는 현지 white shrimp가 주로 여름~가을에 나타난다고 설명한다. 이를 국내 대하 또는 수입 흰다리새우의 어기로 일반화하지 않는다. 해수부 2018년 10월 소개의 가을 대하를 참고하되 당시 할인·재고 정보는 사용하지 않는다. 국내 생대하를 쓰면 껍질 제거 후 중량을 맞추고 연중 유통 냉동 생새우도 선택 가능하다. 미국 외식업협회의 2026 세계 가정식·지역 재료 전망을 검토했으나 에투페의 한국 유행이나 조회 수는 단정하지 않는다. FDA의 냉장 해동·해산물 63°C·새우 살의 불투명한 익힘과 FoodSafety.gov 재가열 74°C를 확인했다.",
+        "sources": [
+          "https://www.explorelouisiana.com/culinary/recipes/crawfish-etouffee-recipe-and-instructional-video",
+          "https://www.lafayettetravel.com/blog/stories/post/the-origin-of-crawfish-etouffe/",
+          "https://louisianadirectseafood.com/shrimp/",
+          "https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=23535&menuSeq=971",
+          "https://www.restaurant.org/research-and-media/media/press-releases/national-restaurant-association-unveils-2026-culinary-forecast-smash-burgers-global-comfort/",
+          "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+        ]
+      },
+      "preparationLabels": [
+        "가을 새우로 응용",
+        "루 소스와 따뜻한 밥"
+      ]
     }
   ]
 }

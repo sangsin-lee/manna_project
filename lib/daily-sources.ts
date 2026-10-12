@@ -1,5 +1,15 @@
 import type { SourceLink } from "./content";
 
+// Louisiana's shrimp table, adapted for Korean autumn shopping, reviewed October 12.
+export const shrimpEtouffeeSources = {
+  recipe: { label: "루이지애나관광청 — 가재 에투페의 루·향채·밥 구성", url: "https://www.explorelouisiana.com/culinary/recipes/crawfish-etouffee-recipe-and-instructional-video" },
+  history: { label: "라파예트관광청 — 브로브리지 에투페의 구전과 식당 이야기", url: "https://www.lafayettetravel.com/blog/stories/post/the-origin-of-crawfish-etouffe/" },
+  season: { label: "Louisiana Direct Seafood · LSU — 현지 새우 종류와 계절", url: "https://louisianadirectseafood.com/shrimp/" },
+  korea: { label: "해양수산부 — 2018년 10월 수산물로 소개한 가을 대하", url: "https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=23535&menuSeq=971" },
+  seafood: { label: "미국 FDA — 해산물의 냉장 해동·익힘·보관", url: "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely" },
+  temperature: { label: "FoodSafety.gov — 새우의 익힘과 남은 음식 재가열 74°C", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+} satisfies Record<string, SourceLink>;
+
 // Central Swiss macaroni and Korean autumn apples, reviewed October 10.
 export const alpineMacaroniSources = {
   region: { label: "스위스관광청 — 알프스식 마카로니와 루체른 지역 치즈", url: "https://www.myswitzerland.com/en-ch/planning/about-switzerland/custom-and-tradition/typical-food/" },

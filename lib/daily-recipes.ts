@@ -1,8 +1,30 @@
 import type { Recipe } from "./content";
-import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources } from "./daily-sources";
+import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "louisiana-inspired-shrimp-etouffee", title: "루이지애나풍 새우 에투페", country: "usa", category: "main", experienceStatus: "researched",
+    summary: "버터와 밀가루를 볶은 고소한 루에 양파·셀러리·피망의 단맛을 더합니다. 통통한 새우와 걸쭉한 소스를 따뜻한 밥에 곁들이는, 루이지애나 남부에서 영감 받은 두 사람의 저녁입니다.",
+    culturalNote: "루이지애나의 에투페를 국내 장보기로 풀어낸 가정용 응용입니다. 관광청의 가재 에투페 조리 구성을 참고하되 생새우와 파프리카 가루로 바꾸고 분량을 조절했습니다. 지역마다 루와 양념의 사용이 달라 특정 식당의 원조 배합으로 소개하지 않습니다.",
+    localTable: { region: "미국 · 루이지애나 남부, 브로브리지와 연안", ingredient: "지역 새우 문화 · 양파 · 셀러리 · 초록 피망", season: "현지 여름~가을 새우와 국내 가을 대하", note: "Louisiana Direct Seafood는 현지 white shrimp가 주로 여름~가을에 나타난다고 설명합니다. 한국에서는 해수부가 가을 수산물로 소개한 대하를 활용할 수 있습니다. 서로 다른 새우의 어기를 동일하게 보지 않습니다. 냉동 흰다리새우도 대체 가능하며 판매 월이 어획 월을 뜻하지 않습니다." },
+    cookingTime: 45, difficulty: "보통", servings: 2, visualLabel: "LOUISIANA SHRIMP ÉTOUFFÉE", visualCaption: "새우의 산호빛과 루의 갈색, 루이지애나 물가를 떠올리는 회청색 물결", keywords: ["루이지애나", "에투페", "étouffée", "새우", "대하", "루", "가을저녁", "이마트장보기"],
+    ingredientGroups: [
+      { title: "이마트 장보기 · 구매 단위 → 2인분 사용량", items: ["냉동 생새우살 1봉 → 해동·물기 제거 후 350g · 자숙·양념 제품 제외", "양파 1개 → 120g, 셀러리 1봉 → 줄기 60g, 초록 피망 1개 → 씨 제거 후 80g", "마늘 소포장 → 2쪽(10g), 쪽파 1봉 → 15g, 레몬 1개 → 즙 10ml", "무염버터 1팩 → 30g, 중력분 1봉 → 25g", "무가당 파프리카 가루 1통 → 1작은술(2g), 치킨스톡 소포장 → 묽은 육수 450ml 분량", "즉석밥 200~210g 2개 또는 갓 지은 밥 400g"] },
+      { title: "양념과 도구", items: ["육수: 물 450ml에 치킨스톡을 제품 권장량의 절반부터 풀기 · 소금은 완성 후 0~1g", "후추 약간, 고운 고춧가루 1/4작은술(약 0.5g, 선택)", "뚜껑 있는 깊은 팬, 주걱, 계량컵, 가는 탐침의 식품용 중심온도계"] },
+    ],
+    steps: [
+      { title: "새우와 향채 준비", description: "새우는 제품 지침에 따라 미리 4°C 이하 냉장고에서 해동합니다. 남은 껍질·꼬리와 등 내장을 제거하고 물기를 닦아 냉장 보관합니다. 씻은 양파·셀러리·피망은 5mm 크기로, 마늘은 잘게 썹니다. 쪽파는 송송 썰어 흰 부분과 초록 부분을 나눕니다.", tip: "생새우에 닿은 손·칼·도마를 씻고 완성 음식용 도구와 구분합니다. 찬물 급속 해동은 새지 않는 봉지에 넣어 하고 해동 즉시 조리합니다." },
+      { title: "버터와 밀가루로 연한 갈색 루", description: "깊은 팬에 버터 30g을 약불로 녹이고 밀가루 25g을 넣습니다. 중약불에서 바닥을 긁으며 5~8분 계속 저어 연한 캐러멜색을 만듭니다. 색이 빠르게 짙어지면 불을 낮춥니다.", tip: "검은 점이나 탄 냄새가 나면 새로 만듭니다. 뜨거운 루에 얼굴을 가까이 대지 않고 긴 주걱을 사용합니다." },
+      { title: "세 가지 채소의 단맛 더하기", description: "양파·셀러리·피망을 루에 넣고 중약불로 5~6분 볶습니다. 채소가 숨이 죽으면 마늘과 쪽파 흰 부분을 넣어 1분 더 볶습니다. 바닥을 긁어 밀가루가 눌어붙지 않게 합니다." },
+      { title: "육수를 나누어 넣고 뭉근히 끓이기", description: "물과 치킨스톡으로 준비한 육수 450ml를 세 번에 나눠 붓고 매번 덩어리 없이 저어 줍니다. 파프리카 가루 2g·후추와 선택한 고춧가루를 넣고 끓입니다. 약불로 낮춰 뚜껑을 비스듬히 덮고 12~15분 끓이며 중간에 젓습니다.", tip: "국물보다 걸쭉하되 주걱에서 흐르는 농도가 좋습니다. 너무 되면 물을 1~2큰술씩 보충합니다." },
+      { title: "새우를 넣어 중심까지 익히기", description: "소스를 다시 보글보글 끓이고 생새우를 펼쳐 넣습니다. 중약불에서 4~6분, 크기에 따라 더 익힙니다. 두꺼운 살 중심이 63°C 이상이고 속까지 진주빛·불투명한지 확인합니다. 부족하면 더 가열하고 껍질 색이나 시간만으로 판단하지 않습니다." },
+      { title: "따뜻한 밥 옆에 소스 담기", description: "밥은 제품 안내대로 데우거나 갓 지어 두 그릇에 나눕니다. 새우가 익으면 소스에 쪽파 초록 부분과 레몬즙 10ml를 섞고 맛을 봐 소금 0~1g으로 간합니다. 밥 옆에 에투페를 넉넉히 담아 곧바로 먹습니다." },
+    ],
+    substitutions: ["생대하를 쓰면 머리·껍질·꼬리 제거 후 살 350g을 맞춥니다. 통새우는 약 700g부터 준비하되 크기별 수율이 달라 손질 후 계량합니다.", "파프리카 가루가 없으면 고운 고춧가루 총 1/2작은술(약 1g)로 대체합니다. 매운맛은 달라지며 선택 양념을 중복해서 넣지 않습니다.", "셀러리가 없으면 대파 흰 부분 40g으로 바꿀 수 있습니다. 현지 향채 조합과 향은 달라집니다. 치킨스톡 대신 저염 채소 육수 450ml도 좋습니다."],
+    tips: ["45분은 해동된 새우와 준비된 밥 기준입니다. 냉장 해동·생쌀 취사 시간은 별도이며 취사는 소스를 만들기 전에 시작합니다. 매장별 재고와 가격은 확인이 필요합니다.", "남은 소스와 밥은 따로 얕은 용기에 나눠 2시간 안에 4°C 이하로 냉장합니다. 기온이 32°C를 넘으면 1시간 안에 넣습니다. 재가열은 중심 74°C까지 하고 소스는 저어 고르게 데웁니다.", "촬영은 루의 색 변화, 육수를 부어 매끈해지는 순간, 흰 밥 곁에 담기는 산호빛 새우 순서로 담아 보세요. 표지와 물결은 음식·지역에서 영감 받은 그림이며 실제 음식 사진이나 전통 문양이 아닙니다."],
+    publishedAt: "2026-10-12", relatedStorySlugs: [], sources: Object.values(shrimpEtouffeeSources), palette: { from: "#f4e7d5", mid: "#da9a83", to: "#91acb2", ink: "#543b31" },
+  },
   {
     slug: "lucerne-inspired-alpine-macaroni", title: "루체른풍 감자 치즈 마카로니", country: "switzerland", category: "main", experienceStatus: "researched",
     summary: "포슬한 감자와 마카로니를 치즈로 감싸고 노릇한 양파를 올립니다. 루체른을 포함한 스위스 중부의 엘플러마그로넨에서 영감 받은, 가을 사과소스를 곁들이는 두 사람의 저녁입니다.",

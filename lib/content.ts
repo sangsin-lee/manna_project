@@ -1127,8 +1127,8 @@ export const countries: Country[] = [
       usChickenSources.wingPioneer,
     ],
     storySlugs: ["fried-chicken-buffalo-wings-american-regions", "tortilla-chipotle-mexican-american-table", "hawaii-local-food-migration", "hawaii-plate-lunch-culture"],
-    recipeSlugs: ["southern-style-fried-chicken", "oven-buffalo-wings", "tortilla-mushroom-cheese-quesadilla", "chipotle-inspired-chicken-rice-bowl", "new-mexico-inspired-calabacitas", "hawaii-loco-moco", "hawaii-poke-bowl"],
-    updatedAt: "2026-09-27",
+    recipeSlugs: ["louisiana-inspired-shrimp-etouffee", "southern-style-fried-chicken", "oven-buffalo-wings", "tortilla-mushroom-cheese-quesadilla", "chipotle-inspired-chicken-rice-bowl", "new-mexico-inspired-calabacitas", "hawaii-loco-moco", "hawaii-poke-bowl"],
+    updatedAt: "2026-10-12",
     palette: {
       from: "#d8e7e4",
       mid: "#b9d6d2",

@@ -1091,6 +1091,45 @@
         "가을 새우로 응용",
         "루 소스와 따뜻한 밥"
       ]
+    },
+    {
+      "date": "2026-10-13",
+      "recipeSlug": "akita-inspired-kiritanpo-chicken-hotpot",
+      "title": "아키타풍 키리탄포 닭전골",
+      "canonicalDish": "Akita kiritanpo nabe with grilled rice cylinders and chicken",
+      "aliases": [
+        "키리탄포 나베",
+        "きりたんぽ鍋",
+        "Kiritanpo nabe",
+        "구운 밥 닭전골"
+      ],
+      "keyIngredients": [
+        "멥쌀밥",
+        "닭다리살",
+        "우엉",
+        "버섯",
+        "미나리",
+        "대파"
+      ],
+      "method": "익힌 멥쌀밥을 일부 으깨 막대 모양으로 빚고 팬에서 노릇하게 굽는다. 닭고기·우엉·버섯을 간장 국물에 끓인 뒤 잘라 둔 구운 밥과 미나리를 마지막에 넣는다.",
+      "selectionReason": "아키타 북부의 햅쌀 수확 뒤 함께 나누는 전골 문화에서 영감을 받았습니다. 국내 쌀과 닭다리살·우엉으로 구운 밥의 고소함과 따뜻한 국물을 한 냄비에 담습니다.",
+      "videoIdea": "따뜻한 밥을 으깨 빚기 → 팬에서 노릇해지는 표면 → 구운 밥의 쌀알 단면 → 닭고기와 우엉 국물에 넣기. 제목 아이디어: 밥을 구워 전골에? 아키타 가을의 한 냄비.",
+      "duplicateReview": "기존 83개 레시피의 이름·핵심 재료·조리 단계와 기준 기록 27개·일일 기록 17개의 별칭, steak-recipes·recipe-narratives·TonightPick 및 최근 Git 이력을 비교했다. 닭고기 버섯 솥밥은 생쌀이 육수를 흡수하도록 함께 취사하고, 풍기 인삼 닭곰탕은 닭을 삶아 찢고 별도 밥을 곁들인다. 이번 메뉴는 익힌 쌀밥을 으깨 성형·굽기 후 닭고기와 우엉 국물에 짧게 넣는 키리탄포 전골로 조리 구조가 다르다. 생감자를 갈아 만든 옹심이, 빵·달걀 경단과 크림 소스, 토란·소고기 이모니의 단순한 이름·소스 변경이 아니다. 미국 루이지애나 다음 일본 아키타 북부로 순환하며 10월 13일 신규 메뉴는 하나만 기록한다.",
+      "research": {
+        "checkedAt": "2026-10-13",
+        "seasonalNote": "일본 농림수산성에서 오다테·가즈노의 키리탄포, 쌀·닭고기·우엉·세리의 조합과 햅쌀 수확 뒤 가족이 모이는 문화를 확인했다. 산림 노동자의 구운 밥에서 유래했다는 설명은 전승으로 다루며 발명 연도를 단정하지 않는다. 히나이 닭·잎새버섯·삼나무 꼬치 대신 국내 닭다리살·느타리버섯·미나리와 프라이팬으로 만드는 자체 가정용 응용이다. 농촌진흥청 자료에 따라 국내 벼 수확기는 품종과 출수 시기에 따라 달라짐을 명시하며 저장 쌀·즉석밥과 연중 유통되는 닭고기·재배 버섯을 가을 한정 식재료로 소개하지 않는다. 미국 외식업협회 2026 전망의 세계 가정식·지역 재료 관심을 참고했으나 키리탄포의 한국 유행이나 유튜브 조회 수는 단정하지 않는다. FoodSafety.gov의 닭고기·남은 음식 중심 74°C와 영국 FSA의 밥 신속 냉각·냉장 24시간·재가열 한 번 지침을 확인했다.",
+        "sources": [
+          "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_6_akita.html",
+          "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1331",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://www.gov.uk/government/publications/home-food-fact-checker/home-food-fact-checker",
+          "https://www.restaurant.org/research-and-media/media/press-releases/national-restaurant-association-unveils-2026-culinary-forecast-smash-burgers-global-comfort/"
+        ]
+      },
+      "preparationLabels": [
+        "구운 밥으로 든든하게",
+        "꼬치 없이 프라이팬으로"
+      ]
     }
   ]
 }

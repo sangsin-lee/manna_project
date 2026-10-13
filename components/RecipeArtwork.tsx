@@ -12,6 +12,39 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "kiritanpo" && <g>
+          <path d="M179 163h-21q-10 0-10 11v28q0 11 10 11h21m242-50h21q10 0 10 11v28q0 11-10 11h-21" stroke="#584237" strokeWidth="13" strokeLinejoin="round"/>
+          <ellipse cx="300" cy="190" rx="130" ry="118" fill="#645043" stroke="#42352d" strokeWidth="3"/>
+          <ellipse cx="300" cy="188" rx="119" ry="108" fill="#b78348" stroke="#e3caa0" strokeWidth="4"/>
+          <path d="M205 214q28 56 99 64 64 2 96-62" stroke="#d7a965" strokeWidth="5" strokeLinecap="round"/>
+          {[[270,113,16],[322,256,-20],[374,196,40],[280,205,-38]].map(([x,y,r])=><g key={x+":"+y} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="m-20-13 14-7 27 11 5 16-18 14-29-8Z" fill="#e9d6ad" stroke="#a47745" strokeWidth="2"/>
+            <path d="m-13-7 20 6m-21 3 24 6" stroke="#f8e9c6" strokeWidth="3" strokeLinecap="round"/>
+          </g>)}
+          {[[224,219,-24],[278,256,30],[330,193,-15]].map(([x,y,r])=><g key={x+":"+y} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="m-14-14 29 25m-24-30 29 25m-38-9 29 25" stroke="#ead2a1" strokeWidth="5" strokeLinecap="round"/>
+            <path d="m-14-14 29 25m-24-30 29 25" stroke="#9b693d" strokeWidth="1.3" strokeLinecap="round"/>
+          </g>)}
+          {[[228,137,-24],[296,153,24],[241,194,-14],[317,231,35]].map(([x,y,r])=><g key={x+":"+y} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <rect x="-28" y="-16" width="56" height="32" rx="12" fill="#f9ebc9" stroke="#b98236" strokeWidth="2"/>
+            <path d="M-16-10h28m-28 20h28" stroke="#ce984c" strokeWidth="4" strokeLinecap="round"/>
+            <ellipse cx="21" rx="6" ry="13" fill="#fff5d9" stroke="#dfc395" strokeWidth="1.5"/>
+            <path d="m-14-4 4 2m4-3 3 2m-13 6 3 1m10-2 4 2m-1-10 4 1m-6 7 3 1m-21-2 3 1m30-5 2 1m-1 7 2 1" stroke="#d8c5a1" strokeWidth="2" strokeLinecap="round"/>
+          </g>)}
+          {[[341,121,-25],[378,167,26],[354,267,-10]].map(([x,y,r])=><g key={x+":"+y} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-4 0q2 17-5 25h13q5-13 3-25" fill="#e9d7b6" stroke="#a0805f" strokeWidth="1.5"/>
+            <path d="M-23 2q3-28 25-25 17 2 21 25Z" fill="#93704e" stroke="#654d36" strokeWidth="2"/>
+            <path d="M-15 0h31m-23-14 12 8" stroke="#c1a079" strokeWidth="2" strokeLinecap="round"/>
+          </g>)}
+          <g transform="translate(373 219) rotate(24)">
+            <path d="M-9 25-13-30M0 28 2-38M9 26 17-25" stroke="#b8cb81" strokeWidth="4" strokeLinecap="round"/>
+            <path d="m-13-13-10-9m11 3 10-8M2-20l-11-9m11 3 11-8m1 25 12-9m-10 3-9-9" stroke="#567143" strokeWidth="4" strokeLinecap="round"/>
+            <path d="m-22-22-7-2m7 2-2-7m28-3 7-4m-3 5 6 1m9 10 6-4m-5 4 6 3" stroke="#75914f" strokeWidth="4" strokeLinecap="round"/>
+          </g>
+          <path d="m203 169 8-10m88 130 10-2m34-80 10-8m-67-93 8-5" stroke="#dce0a6" strokeWidth="7" strokeLinecap="round"/>
+          <path d="M252 61q-8-9 0-19m48 17q-8-9 0-19m48 21q-8-9 0-19" stroke="#fff8e7" strokeWidth="4" strokeLinecap="round" opacity=".75"/>
+        </g>}
+
         {art === "shrimp-etouffee" && <g>
           <ellipse cx="300" cy="188" rx="120" ry="109" fill="#e7dbc0" stroke="#829da5" strokeWidth="4"/>
           <path d="M274 84q80-7 121 68 34 63-22 112-45 42-113 15-42-18-47-74-7-81 61-121Z" fill="#a96738"/>

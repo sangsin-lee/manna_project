@@ -1,8 +1,30 @@
 import type { Recipe } from "./content";
-import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
+import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "akita-inspired-kiritanpo-chicken-hotpot", title: "아키타풍 키리탄포 닭전골", country: "japan", category: "main", experienceStatus: "researched",
+    summary: "따뜻한 밥을 으깨 빚고 노릇하게 구워, 닭고기와 우엉 국물에 담급니다. 구운 쌀의 고소함과 향긋한 미나리를 한 냄비에 담는 아키타풍 두 사람의 저녁입니다.",
+    culturalNote: "아키타 북부 오다테·가즈노의 키리탄포 전골을 국내 재료로 풀어낸 가정용 응용입니다. 히나이 닭과 잎새버섯 대신 보통 닭다리살과 느타리를 쓰고, 꼬치·숯불 대신 프라이팬에 납작하게 구워 만듭니다.",
+    localTable: { region: "일본 · 아키타 북부 오다테·가즈노", ingredient: "쌀 · 지역 닭고기 문화 · 우엉 · 버섯", season: "가을 햅쌀 수확 뒤 나누는 전골", note: "아키타에서는 햅쌀 수확 뒤 함께 나누는 음식으로 소개됩니다. 한국의 벼 수확기는 품종·출수 시기에 따라 다릅니다. 국내 햅쌀은 생산연도와 도정일을 확인하고 저장 쌀·즉석밥도 사용할 수 있습니다. 닭고기·재배 버섯·미나리를 가을에만 구할 수 있다는 뜻은 아닙니다." },
+    cookingTime: 45, difficulty: "보통", servings: 2, visualLabel: "AKITA KIRITANPO NABE", visualCaption: "구운 밥의 금빛과 우엉의 갈색, 아키타 가을 들판을 떠올리는 쌀알 무늬", keywords: ["아키타", "키리탄포", "きりたんぽ鍋", "햅쌀", "닭전골", "우엉", "미나리", "가을저녁", "이마트장보기"],
+    ingredientGroups: [
+      { title: "이마트 장보기 · 구매 단위 → 2인분 사용량", items: ["멥쌀 1봉 → 갓 지은 밥 400g 또는 흰 즉석밥 200~210g 2개 · 생쌀 무게가 아님", "뼈 없는 닭다리살 1팩 → 300g · 냉동 제품은 미리 냉장 해동", "생우엉 소포장 → 손질 후 60g · 조림용 양념 제품 제외", "느타리버섯 1팩 → 150g, 대파 1봉 → 80g", "재배 미나리 1봉 → 뿌리·시든 잎 제거 후 60g, 마른 다시마 1봉 → 5g"] },
+      { title: "국물 양념과 도구", items: ["물 800ml, 양조간장 20ml와 추가 간용 5ml, 맛술 15ml, 후추 약간", "팬에 바를 식용유 1작은술(5ml) · 밥에는 별도 소금 없이", "코팅 팬, 2L 이상 냄비, 밥 으깰 주걱, 계량컵, 가는 탐침의 식품용 중심온도계"] },
+    ],
+    steps: [
+      { title: "채소와 닭고기 따로 준비", description: "냄비에 물 800ml와 다시마 5g을 담가 둡니다. 씻은 우엉은 얇게 어슷 썰고, 느타리는 밑동을 잘라 찢습니다. 대파·미나리는 충분히 씻어 4cm로 썹니다. 닭고기는 별도 도마에서 3cm로 썰어 냉장 보관합니다.", tip: "생닭을 물에 씻어 주변에 튀기지 않습니다. 닭에 닿은 손·칼·도마를 씻고 밥을 빚는 도구와 구분합니다." },
+      { title: "밥알을 남겨 으깨고 빚기", description: "갓 지은 밥이나 제품 안내대로 막 데운 즉석밥 400g을 볼에 넣습니다. 주걱으로 2~3분 눌러 절반쯤 으깹니다. 손에 닿아도 뜨겁지 않을 정도가 되면 깨끗한 손에 물을 묻혀 4등분하고 길이 10cm·두께 2cm 안팎의 납작한 막대로 단단히 빚습니다.", tip: "쌀가루 반죽처럼 매끈하게 갈지 않습니다. 밥알이 조금 남으면서 서로 붙어야 하며, 물은 손에만 가볍게 묻힙니다." },
+      { title: "밥을 굽는 동안 국물 시작", description: "팬에 기름 5ml를 얇게 바르고 밥 막대를 중약불로 8~10분, 양면과 옆면을 돌려 노릇하게 굽습니다. 동시에 다시마 물을 데워 끓기 직전 다시마를 건지고, 끓으면 닭고기와 우엉을 넣습니다. 다시 끓어오르면 거품을 걷고 중약불로 10분 끓입니다.", tip: "밥은 껍질이 생긴 뒤 뒤집습니다. 두 화구를 쓰기 어렵다면 국물 조리 중 밥을 빚고 순차로 구우며 10분가량 여유를 둡니다." },
+      { title: "버섯을 더하고 닭 익힘 확인", description: "국물에 느타리·대파·간장 20ml·맛술 15ml를 넣어 5~7분 더 끓입니다. 가장 두꺼운 닭고기 중심이 74°C 이상인지 온도계로 확인하고 부족하면 더 익힙니다. 국물이 너무 줄면 뜨거운 물을 조금 보충하고, 간을 본 뒤 간장 5ml 이내로 조절합니다." },
+      { title: "구운 밥과 미나리는 마지막에", description: "구운 밥을 깨끗한 칼로 3등분해 냄비에 넣고 미나리를 올립니다. 다시 끓으면 중약불에서 2~3분 더 익힙니다. 국물을 위로 끼얹으며 미나리를 익히고 밥이 풀어지지 않도록 세게 젓지 않습니다." },
+      { title: "향과 식감이 남을 때 나누기", description: "두 그릇에 구운 밥·닭고기·채소를 고르게 나눠 국물을 붓습니다. 후추를 조금 뿌려 곧바로 먹습니다. 밥이 이미 한 끼 분량 들어 있어 별도 공깃밥 없이 차려도 든든합니다." },
+    ],
+    substitutions: ["느타리 대신 잎새버섯이나 생표고 150g을 씁니다. 미나리가 없으면 씻은 시금치 60g을 마지막에 충분히 익혀 넣되 향은 달라집니다.", "우엉이 없으면 무 80g을 얇게 썰어 사용합니다. 우엉 특유의 흙내음 같은 향과 씹는 맛은 줄어듭니다.", "맛술 대신 물 15ml와 설탕 2g을 섞어 사용합니다. 양념된 닭갈비나 조린 우엉은 이 분량의 대체품이 아닙니다."],
+    tips: ["45분은 준비된 밥·냉장 닭고기와 두 화구 기준입니다. 생쌀 취사·냉동 닭 해동 시간은 별도입니다. 햅쌀이 없어도 일반 멥쌀밥으로 만들 수 있으며 매장별 재고·포장량은 확인하세요.", "남으면 밥과 국물을 가능하면 나누어 얕게 소분합니다. 밥은 조리 뒤 1시간 안에 신속히 식혀 냉장하고 24시간 안에 먹습니다. 재가열은 한 번만, 중심까지 74°C 이상으로 합니다. 실온에 오래 둔 밥은 사용하지 않습니다.", "촬영은 밥을 빚는 손, 팬의 금빛 표면, 국물이 스미는 단면을 담아 보세요. 표지와 쌀알 무늬는 음식·지역에서 영감 받은 그림이며 실제 음식 사진이나 전통 문양이 아닙니다."],
+    publishedAt: "2026-10-13", relatedStorySlugs: [], sources: Object.values(kiritanpoSources), palette: { from: "#f3e8d0", mid: "#d7b56d", to: "#a6684e", ink: "#493d32" },
+  },
   {
     slug: "louisiana-inspired-shrimp-etouffee", title: "루이지애나풍 새우 에투페", country: "usa", category: "main", experienceStatus: "researched",
     summary: "버터와 밀가루를 볶은 고소한 루에 양파·셀러리·피망의 단맛을 더합니다. 통통한 새우와 걸쭉한 소스를 따뜻한 밥에 곁들이는, 루이지애나 남부에서 영감 받은 두 사람의 저녁입니다.",

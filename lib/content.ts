@@ -436,8 +436,8 @@ export const countries: Country[] = [
       },
     ],
     storySlugs: ["japanese-izakaya-culture"],
-    recipeSlugs: ["yamagata-inspired-taro-beef-imoni", "ishikari-inspired-salmon-chanchanyaki", "chicken-mushroom-takikomi-gohan", "japanese-beef-bean-sprout-stir-fry"],
-    updatedAt: "2026-10-06",
+    recipeSlugs: ["akita-inspired-kiritanpo-chicken-hotpot", "yamagata-inspired-taro-beef-imoni", "ishikari-inspired-salmon-chanchanyaki", "chicken-mushroom-takikomi-gohan", "japanese-beef-bean-sprout-stir-fry"],
+    updatedAt: "2026-10-13",
     palette: {
       from: "#f2ded9",
       mid: "#ead0ca",

@@ -1,5 +1,13 @@
 import type { SourceLink } from "./content";
 
+// Akita's new-rice hotpot, adapted to a Korean home kitchen, reviewed October 13.
+export const kiritanpoSources = {
+  region: { label: "일본 농림수산성 — 오다테·가즈노의 키리탄포와 수확 뒤의 식탁", url: "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_6_akita.html" },
+  korea: { label: "농촌진흥청 — 품종·출수 시기에 따른 벼 적기 수확과 저장", url: "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1331" },
+  temperature: { label: "FoodSafety.gov — 닭고기·남은 음식의 중심온도 74°C", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+  rice: { label: "영국 식품기준청 — 밥의 신속 냉각·냉장 보관·재가열", url: "https://www.gov.uk/government/publications/home-food-fact-checker/home-food-fact-checker" },
+} satisfies Record<string, SourceLink>;
+
 // Louisiana's shrimp table, adapted for Korean autumn shopping, reviewed October 12.
 export const shrimpEtouffeeSources = {
   recipe: { label: "루이지애나관광청 — 가재 에투페의 루·향채·밥 구성", url: "https://www.explorelouisiana.com/culinary/recipes/crawfish-etouffee-recipe-and-instructional-video" },

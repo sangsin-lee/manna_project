@@ -1,7 +1,7 @@
 import type { Recipe, SourceLink } from "./content";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
-import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
+import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -52,6 +52,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "akita-inspired-kiritanpo-chicken-hotpot": narrative(
+    ["산에서 구워 먹던 밥의 이야기", "일본 농림수산성은 아키타 북부 오다테·가즈노의 음식으로 키리탄포를 소개합니다. 숯을 굽거나 벌목하던 사람들이 남은 밥을 으깨 꼬치에 구워 먹고 새고기 전골에 넣었다는 이야기가 전해집니다. 이는 전승이며 한 사람의 발명이나 정확한 시작 연도로 확정하지 않습니다."],
+    ["햅쌀 수확 뒤 함께 둘러앉아", "아키타 북부에서는 쌀 수확을 마친 가족이 모여 노고를 나누는 식탁에 키리탄포를 올립니다. 손님을 대접할 때도 즐기는 음식입니다. 오늘은 히나이 닭·잎새버섯 대신 국내 닭다리살·느타리를 쓰고, 꼬치 없이 팬에 구워 그 식탁을 응용합니다."],
+    ["구운 밥에 맑은 국물이 스미면", "바깥은 노릇하고 속에는 밥알의 탄력이 남습니다. 닭고기의 감칠맛에 우엉과 버섯 향이 겹치고 미나리가 끝맛을 밝힙니다. 구운 밥을 마지막에 짧게 끓여 겉의 고소함과 국물을 머금은 부드러움을 함께 즐깁니다."],
+    [kiritanpoSources.region, kiritanpoSources.korea],
+  ),
   "louisiana-inspired-shrimp-etouffee": narrative(
     ["소스로 감싸는 루이지애나의 식탁", "에투페는 프랑스어로 재료를 덮어 익히는 뜻과 연결됩니다. 루이지애나 남부에서는 가재나 새우를 진한 소스와 함께 즐깁니다. 오늘은 관광청의 가재 요리 구성을 참고해, 국내에서 구하기 쉬운 생새우와 밥으로 응용합니다."],
     ["브로브리지에 전해지는 식당 이야기", "라파예트관광청은 1940년대 브로브리지 인근 식당의 가재 요리를 손님이 맛보고 동료들을 데려왔다는 구전을 소개합니다. 이야기의 세부는 전하는 사람마다 달라 유일한 발명 시점으로 확정하지 않습니다. 에투페의 재료와 농도도 가정과 식당마다 다르게 이어집니다."],

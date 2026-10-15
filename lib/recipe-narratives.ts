@@ -1,7 +1,7 @@
 import type { Recipe, SourceLink } from "./content";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
-import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
+import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -52,6 +52,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "dithmarschen-inspired-cabbage-rolls": narrative(
+    ["북해의 양배추밭에서 만나는 한 접시", "디트마르셴은 독일 북해 연안의 양배추 산지입니다. 지역 관광청은 양배추 잎에 다진 고기를 싸서 익히는 콜루라덴을 대표 음식 중 하나로 소개합니다. 이 지역이 모든 양배추말이의 유일한 발상지라는 뜻은 아닙니다."],
+    ["수확이 지역의 축제가 되다", "1986년부터 이어진 디트마르셴 양배추 축제에서는 지역 농산물과 다양한 양배추 요리를 만납니다. 북해 바람이 드는 밭에서 거둔 채소가 가정과 식당의 식탁으로 이어집니다. 축제의 시작 연도를 요리의 탄생 연도로 보지는 않습니다."],
+    ["달큼한 잎 안에 촉촉한 고기소", "먼저 구운 잎의 고소함 뒤로 오래 익혀 부드러워진 양배추의 단맛이 이어집니다. 빵가루와 달걀을 섞은 고기소는 촉촉하게 뭉쳐지고, 포슬한 감자가 구운 향이 밴 소스를 받아 줍니다. 칼로 가르면 잎과 속의 결이 나란히 드러납니다."],
+    [cabbageRollSources.region, cabbageRollSources.culture, cabbageRollSources.recipe, cabbageRollSources.season],
+  ),
   "akita-inspired-kiritanpo-chicken-hotpot": narrative(
     ["산에서 구워 먹던 밥의 이야기", "일본 농림수산성은 아키타 북부 오다테·가즈노의 음식으로 키리탄포를 소개합니다. 숯을 굽거나 벌목하던 사람들이 남은 밥을 으깨 꼬치에 구워 먹고 새고기 전골에 넣었다는 이야기가 전해집니다. 이는 전승이며 한 사람의 발명이나 정확한 시작 연도로 확정하지 않습니다."],
     ["햅쌀 수확 뒤 함께 둘러앉아", "아키타 북부에서는 쌀 수확을 마친 가족이 모여 노고를 나누는 식탁에 키리탄포를 올립니다. 손님을 대접할 때도 즐기는 음식입니다. 오늘은 히나이 닭·잎새버섯 대신 국내 닭다리살·느타리를 쓰고, 꼬치 없이 팬에 구워 그 식탁을 응용합니다."],

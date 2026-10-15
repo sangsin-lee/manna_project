@@ -12,6 +12,33 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "cabbage-rolls" && <g>
+          <ellipse cx="300" cy="190" rx="125" ry="113" fill="#fcf0d9" stroke="#7797a4" strokeWidth="4"/>
+          <path d="M206 139q31-46 95-41 88 7 106 67 17 56-47 96-65 37-122 1-57-38-32-123Z" fill="#ad784b"/>
+          <path d="M218 147q18-33 53-37m71 153q29-10 46-36" stroke="#cf9f66" strokeWidth="5" strokeLinecap="round"/>
+          {[[268,155,-28],[316,220,-25]].map(([x,y,r])=><g key={x+":"+y} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <rect x="-54" y="-29" width="108" height="58" rx="26" fill="#e6dfab" stroke="#9d985f" strokeWidth="2.5"/>
+            <path d="M-38-21q29 4 64 37M-38 16q16-24 49-38m-18 24 43-7m-38 10 22 17m-34-5-15 3" stroke="#b5b276" strokeWidth="2" strokeLinecap="round"/>
+            <path d="M-18-26q-1 29 16 54m13-55q0 21 21 46" stroke="#f4edc9" strokeWidth="5" strokeLinecap="round"/>
+            <path d="m-38-9 16 5m24-16 10 4m13 31 13-4m-55 13 12 2" stroke="#b58a42" strokeWidth="6" strokeLinecap="round"/>
+            <path d="M-45-5q-8 9 1 17m85-22q7 10-1 18" stroke="#d0c68a" strokeWidth="3" strokeLinecap="round"/>
+          </g>)}
+          <g transform="translate(355 135) rotate(25)">
+            <path d="M-23-17 11-24q18 7 17 28L-6 22Z" fill="#e5dca5" stroke="#aaa36c" strokeWidth="2"/>
+            <ellipse cx="-9" cy="3" rx="23" ry="25" fill="#eee5be" stroke="#b8b078" strokeWidth="3"/>
+            <ellipse cx="-9" cy="3" rx="17" ry="19" fill="#a98460"/>
+            <path d="m-16-7 5 2m6-5 4 3m-23 10 5 3m14 1 4 2m-15 6 6 3m-7-7 4-1" stroke="#d8bd92" strokeWidth="4" strokeLinecap="round"/>
+            <path d="m6-18 10 8m-4-1 10 6" stroke="#f7efd0" strokeWidth="3"/>
+          </g>
+          {[[211,232,-10],[241,273,17],[376,247,-20]].map(([x,y,r])=><g key={x+":"+y} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-21-10q8-17 26-13 23 5 19 25-5 24-25 24-24-2-20-36Z" fill="#ead093" stroke="#ba985b" strokeWidth="2"/>
+            <path d="m-14-9 11-7 14 9-3 15-20 3Z" fill="#f7e4b5"/>
+            <path d="m-8-9 7-2m7 19 5-2" stroke="#fff0cb" strokeWidth="3" strokeLinecap="round"/>
+          </g>)}
+          <path d="m269 258 9-7m53-144 8 4m-123 83 9 4m133 4 9-5m-20 80 9-2" stroke="#688355" strokeWidth="4" strokeLinecap="round"/>
+          <path d="m282 103 7 2m-26 168 6 3m116-83 8 4" stroke="#e2be83" strokeWidth="4" strokeLinecap="round"/>
+        </g>}
+
         {art === "kiritanpo" && <g>
           <path d="M179 163h-21q-10 0-10 11v28q0 11 10 11h21m242-50h21q10 0 10 11v28q0 11-10 11h-21" stroke="#584237" strokeWidth="13" strokeLinejoin="round"/>
           <ellipse cx="300" cy="190" rx="130" ry="118" fill="#645043" stroke="#42352d" strokeWidth="3"/>

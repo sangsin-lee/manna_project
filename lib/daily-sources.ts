@@ -1,5 +1,16 @@
 import type { SourceLink } from "./content";
 
+// Northern German cabbage rolls and the separate Korean supply calendar, October 16.
+export const cabbageRollSources = {
+  region: { label: "디트마르셴관광청 — 지역 음식으로 소개한 콜루라덴", url: "https://www.echt-dithmarschen.de/typisch/regionale-kueche/All" },
+  recipe: { label: "독일 북해관광청 — 고기소 양배추말이와 감자", url: "https://www.nordseetourismus.de/kohlroulade-rezept" },
+  season: { label: "Kohl Direkt 지역 생산자 — 저장용 양배추 수확기", url: "https://kohl-direkt.de/" },
+  culture: { label: "디트마르셴관광청 — 양배추 축제와 지역 농업 문화", url: "https://www.echt-dithmarschen.de/en/typically-dithmarschen/dithmarscher-kohltage" },
+  korea: { label: "한국농촌경제연구원 농업전망 2025 — 양배추 작형별 출하, 408~409쪽", url: "https://aglook.krei.re.kr/upload/event/pdf/2025/report/out25_chapter08.pdf" },
+  temperature: { label: "FoodSafety.gov — 다짐육·달걀 요리와 재가열 온도", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+  storage: { label: "미국 FDA — 냉장 온도와 남은 음식의 신속 보관", url: "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely" },
+} satisfies Record<string, SourceLink>;
+
 // Akita's new-rice hotpot, adapted to a Korean home kitchen, reviewed October 13.
 export const kiritanpoSources = {
   region: { label: "일본 농림수산성 — 오다테·가즈노의 키리탄포와 수확 뒤의 식탁", url: "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_6_akita.html" },

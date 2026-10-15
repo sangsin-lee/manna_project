@@ -1,8 +1,30 @@
 import type { Recipe } from "./content";
-import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
+import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "dithmarschen-inspired-cabbage-rolls", title: "디트마르셴풍 고기소 양배추말이", country: "germany", category: "main", experienceStatus: "researched",
+    summary: "부드럽게 데친 양배추 잎에 촉촉한 고기소를 감싸 노릇하게 굽습니다. 육수에 뭉근히 익힌 롤과 포슬한 감자를 담아 독일 북해 지역의 가정식에서 영감 받은 저녁을 차립니다.",
+    culturalNote: "디트마르셴의 양배추 음식 콜루라덴을 국내 재료로 만드는 가정용 응용입니다. 북해관광청의 조리 구성을 참고하되 돼지고기 다짐육만 쓰고 훈제 베이컨을 생략했습니다. 오븐 대신 뚜껑 팬, 밀가루 소스 대신 전분으로 마무리합니다.",
+    localTable: { region: "독일 · 슐레스비히홀슈타인 북해 연안 디트마르셴", ingredient: "지역 양배추 · 고기소 · 감자", season: "현지 저장용 양배추의 가을 수확", note: "지역 생산자 Kohl Direkt는 저장용 양배추를 9월 말~11월 초 수확한다고 설명합니다. 한국농촌경제연구원은 국내 여름양배추를 8~10월, 가을양배추를 11~12월 출하로 구분합니다. 국내 판매 양배추를 사용하며 독일 수확기를 그대로 적용하지 않습니다. 봄·겨울 작형도 있어 가을 한정 재료는 아닙니다." },
+    cookingTime: 75, difficulty: "보통", servings: 2, visualLabel: "DITHMARSCHEN KOHLROULADEN", visualCaption: "양배추의 크림빛과 구운 소스의 갈색, 북해의 회청색과 식탁의 리넨 선", keywords: ["디트마르셴", "콜루라덴", "Kohlrouladen", "양배추말이", "고기소", "감자", "가을저녁", "이마트장보기"],
+    ingredientGroups: [
+      { title: "이마트 장보기 · 구매 단위 → 2인분 사용량", items: ["통양배추 1개(약 1~1.5kg) → 큰 잎 8장, 약 350~400g 사용 · 나머지는 보관", "양념하지 않은 돼지고기 다짐육 1팩 → 300g", "양파 1개 → 160g(고기소 80g·소스 80g), 감자 2~3개 → 껍질 제거 후 400g", "달걀 1개(껍질 제외 약 50g), 건식 빵가루 1봉 → 25g, 우유 1팩 → 40ml", "무가당 디종 또는 홀그레인 머스터드 1병 → 5g, 무염버터 1팩 → 10g"] },
+      { title: "육수·양념·도구", items: ["물 400ml와 치킨스톡 제품 권장량의 절반 · 또는 저염 채소 육수 400ml", "식용유 15ml, 소금 2g(고기소)과 3g(감자 삶기), 후추 약간", "감자전분 5g + 찬물 15ml, 월계수 잎 1장(선택)", "양배추 데칠 물 약 2L, 감자 삶을 물 약 1L · 재료가 잠기도록 조절", "4L 이상 냄비·집게, 뚜껑 있는 깊은 팬, 요리용 면실 또는 나무꼬치 4개, 식품용 중심온도계"] },
+    ],
+    steps: [
+      { title: "양배추 잎을 부드럽게 떼기", description: "양배추의 상한 겉잎을 제거하고 씻어 심을 도려냅니다. 큰 냄비의 끓는 물에 넣어 약 5~8분 데친 뒤 집게로 안전하게 꺼냅니다. 부드러워진 바깥 잎부터 떼고 단단하면 다시 잠깐 데쳐 큰 잎 8장을 준비합니다.", tip: "뜨거운 통을 손으로 잡지 않습니다. 잎의 두꺼운 줄기를 칼로 얇게 저며 펴고, 물기를 닦아 한김 식힙니다. 남은 양배추는 식혀 냉장해 다른 요리에 사용합니다." },
+      { title: "부드러운 고기소 만들기", description: "빵가루 25g에 우유 40ml를 부어 5분 불립니다. 양파 160g은 잘게 썰어 반으로 나눕니다. 다짐육 300g·양파 80g·달걀·불린 빵가루·머스터드 5g·소금 2g·후추를 섞고 4등분합니다.", tip: "생고기와 달걀을 섞은 속은 맛보지 않습니다. 준비 중에는 냉장하고, 손과 도구를 씻어 익힌 음식과 구분합니다." },
+      { title: "봉투처럼 접어 네 개 말기", description: "큰 잎 한 장에 작은 잎을 겹쳐 놓고 고기소 한 덩이를 아래쪽에 올립니다. 양옆을 접은 뒤 아래에서 위로 단단히 말아 길이 10cm 안팎의 롤 4개를 만듭니다. 요리용 면실로 묶거나 꼬치로 이음매를 고정합니다.", tip: "잎이 찢어지면 작은 잎으로 덧댑니다. 속을 너무 두껍게 뭉치지 말고 롤마다 크기를 비슷하게 맞춥니다." },
+      { title: "겉면에 구운 향 입히기", description: "깊은 팬에 기름 15ml를 두르고 중불에서 이음매부터 3분, 뒤집어 3분가량 노릇하게 굽습니다. 남은 양파 80g을 빈 공간에 넣어 2분 볶습니다. 육수 400ml와 선택한 월계수 잎을 넣고 끓입니다." },
+      { title: "덮어 익히며 감자 삶기", description: "팬 뚜껑을 덮고 약불로 30~35분 뭉근히 익히며 중간에 한 번 조심스럽게 뒤집습니다. 그동안 껍질 벗긴 감자를 3~4cm로 썰어 물 약 1L·소금 3g에 넣고 끓기 시작한 뒤 15~20분, 포크가 쉽게 들어갈 때까지 삶아 건집니다.", tip: "팬이 마르면 뜨거운 물을 조금 보충합니다. 두꺼운 롤의 고기소 중심이 74°C 이상인지 온도계로 확인하고 부족하면 더 익힙니다. 겉잎 색이나 시간만으로 판단하지 않습니다." },
+      { title: "소스를 끼얹어 두 접시로", description: "익힌 롤을 깨끗한 접시에 옮겨 덮어 두고 면실·꼬치와 월계수 잎을 모두 제거합니다. 팬 국물에 전분 5g과 찬물 15ml를 섞어 조금씩 넣고 저으며 1분 끓입니다. 불을 끄고 버터 10g을 녹인 뒤 롤 두 개씩과 감자에 소스를 나눠 곁들입니다." },
+    ],
+    substitutions: ["돼지 다짐육 300g 대신 소·돼지 다짐육을 150g씩 섞어도 좋습니다. 속 중심 74°C 확인은 동일하게 합니다. 양념된 떡갈비 반죽은 간이 달라 그대로 대체하지 않습니다.", "디종·홀그레인 대신 일반 머스터드 5g을 사용하되 허니머스터드는 단맛이 달라집니다. 우유 대신 물 40ml로 빵가루를 불려도 됩니다.", "통양배추를 구하기 어렵다면 찢어지지 않은 큰 잎을 충분히 확보하세요. 1/4통 조각이나 채 썬 제품은 큰 롤을 만들기 어렵습니다. 감자전분 대신 옥수수전분 5g을 쓸 수 있습니다."],
+    tips: ["75분은 냉장 다짐육·두 화구 기준이며 냉동 고기의 냉장 해동 시간은 별도입니다. 잎을 떼는 속도와 롤 두께에 따라 시간이 더 필요할 수 있습니다. 매장별 재고·포장량은 확인하세요.", "남은 롤·소스·감자는 얕은 용기에 소분해 2시간 안에 4°C 이하로 냉장합니다. 기온이 32°C를 넘으면 1시간 안에 넣습니다. 다시 먹을 때는 롤 속까지 74°C 이상으로 고르게 데웁니다.", "촬영은 잎 접기, 팬에서 노릇해지는 표면, 고기소가 드러나는 단면 순서로 담아 보세요. 표지와 리넨 선은 음식·지역에서 영감 받은 그림이며 실제 음식 사진이나 전통 문양이 아닙니다."],
+    publishedAt: "2026-10-16", relatedStorySlugs: [], sources: Object.values(cabbageRollSources), palette: { from: "#f4eddf", mid: "#d8c598", to: "#8ca6b0", ink: "#413c35" },
+  },
   {
     slug: "akita-inspired-kiritanpo-chicken-hotpot", title: "아키타풍 키리탄포 닭전골", country: "japan", category: "main", experienceStatus: "researched",
     summary: "따뜻한 밥을 으깨 빚고 노릇하게 구워, 닭고기와 우엉 국물에 담급니다. 구운 쌀의 고소함과 향긋한 미나리를 한 냄비에 담는 아키타풍 두 사람의 저녁입니다.",

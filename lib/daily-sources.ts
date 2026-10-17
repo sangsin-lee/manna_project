@@ -1,5 +1,15 @@
 import type { SourceLink } from "./content";
 
+// Brittany's buckwheat harvest and a household galette complète, October 17.
+export const buckwheatGaletteSources = {
+  region: { label: "모르비앙관광청 — 메밀 갈레트와 햄·달걀·치즈 조합, 지역 생산의 재활성화", url: "https://morbihan.com/decouvrir/gastronomie-bretonne/carnet-des-recettes/recette-de-la-galette-bretonne/" },
+  recipe: { label: "코트 드 그라니 로즈 관광청 — 달걀을 넣는 메밀 반죽과 팬 조리", url: "https://www.bretagne-cotedegranitrose.com/mes-envies/escapade-gourmande/recettes-de-plats-bretons/les-galettes-de-sarrasin/" },
+  season: { label: "Blé Noir Tradition Bretagne — 현지 메밀의 9~10월 수확과 산지 인증", url: "https://www.blenoir-bretagne.com/farine-de-ble-noir-de-bretagne-igp/" },
+  korea: { label: "농촌진흥청 — 국내 메밀의 봄·가을 재배와 지역별 파종 시기", url: "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1816" },
+  eggs: { label: "미국 FDA — 달걀 완전 가열과 신속 냉장·재가열", url: "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-egg-safety" },
+  batter: { label: "미국 FDA — 생달걀·생가루 반죽을 맛보지 않기", url: "https://www.fda.gov/media/114863/download" },
+} satisfies Record<string, SourceLink>;
+
 // Northern German cabbage rolls and the separate Korean supply calendar, October 16.
 export const cabbageRollSources = {
   region: { label: "디트마르셴관광청 — 지역 음식으로 소개한 콜루라덴", url: "https://www.echt-dithmarschen.de/typisch/regionale-kueche/All" },

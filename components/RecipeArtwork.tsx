@@ -12,6 +12,34 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "buckwheat-galette" && <g>
+          <circle cx="300" cy="186" r="139" fill="#f5efdf" stroke="#708e9a" strokeWidth="4"/>
+          <g transform="rotate(-9 300 190)">
+            <rect x="186" y="82" width="228" height="216" rx="9" fill="#a7825e" stroke="#785b44" strokeWidth="2.5"/>
+            <rect x="211" y="107" width="178" height="166" rx="10" fill="#e9ce87"/>
+            <path d="m223 125 62-12 12 67-69 18Zm84-4 65 13-14 65-59-14Zm-71 78 73-9 9 63-68 8Zm87-7 50 13-8 47-49 3Z" fill="#c98e7c" stroke="#ac7164" strokeWidth="2"/>
+            <path d="m231 136 39-9m51 11 35 7m-104 64 40-5m43 17 16 5" stroke="#e4b6a1" strokeWidth="4" strokeLinecap="round"/>
+            <path d="m186 82 228 0-31 38-166-2Z" fill="#b79772" stroke="#80654c" strokeWidth="2"/>
+            <path d="m186 82 34 35 0 147-34 34Z" fill="#c1a27a" stroke="#80654c" strokeWidth="2"/>
+            <path d="m414 82-33 38-1 145 34 33Z" fill="#ad8b66" stroke="#80654c" strokeWidth="2"/>
+            <path d="m186 298 34-36 160 0 34 36Z" fill="#b4936c" stroke="#80654c" strokeWidth="2"/>
+            {Array.from({ length: 24 }, (_, i) => {
+              const side = i % 4;
+              const along = 229 + Math.floor(i / 4) * 27;
+              const x = side === 0 || side === 2 ? along : side === 1 ? 201 : 399;
+              const y = side === 1 || side === 3 ? along - 108 : side === 0 ? 99 : 281;
+              return <circle key={i} cx={x} cy={y} r={i % 3 + 1.6} fill="#715a46" opacity=".65"/>;
+            })}
+            <path d="M247 158q-5-30 25-27 20-21 42-4 34-8 38 21 30 13 14 38 14 28-13 39-5 30-35 24-26 17-44-4-35 6-34-27-24-22-2-42Z" fill="#fff7de" stroke="#e6d9b5" strokeWidth="2"/>
+            <circle cx="303" cy="184" r="31" fill="#e7b843" stroke="#c99931" strokeWidth="2"/>
+            <path d="M281 180q3-17 20-19" stroke="#f3d477" strokeWidth="5" strokeLinecap="round"/>
+            <path d="m265 213 5 2m72-53 4-2m-47 57 3 2m23-75 4 1m-48 62 3-1" stroke="#5c5348" strokeWidth="2.5" strokeLinecap="round"/>
+            <path d="m237 246 9-5m110 0 9 4m-33 13 6-4" stroke="#6d8656" strokeWidth="3" strokeLinecap="round"/>
+          </g>
+          <path d="m410 264 15-15 8 17 15-6-1 20 11 6-16 9 1 12-20-5-8 11-10-17Z" fill="#82966a" stroke="#5b7351" strokeWidth="2"/>
+          <path d="m415 298 14-31m-8 17 17-5m-15 2-5-10" stroke="#bdc69b" strokeWidth="2"/>
+        </g>}
+
         {art === "cabbage-rolls" && <g>
           <ellipse cx="300" cy="190" rx="125" ry="113" fill="#fcf0d9" stroke="#7797a4" strokeWidth="4"/>
           <path d="M206 139q31-46 95-41 88 7 106 67 17 56-47 96-65 37-122 1-57-38-32-123Z" fill="#ad784b"/>

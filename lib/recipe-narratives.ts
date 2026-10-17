@@ -1,7 +1,7 @@
 import type { Recipe, SourceLink } from "./content";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
-import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
+import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buckwheatGaletteSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
 import { koreaSources } from "./korea-sources";
 import { gyeonggiSources } from "./gyeonggi-sources";
 import { gangwonSources } from "./gangwon-sources";
@@ -52,6 +52,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "brittany-inspired-buckwheat-galette": narrative(
+    ["메밀 한 장에 담은 브르타뉴", "프랑스 북서부 브르타뉴에서는 메밀을 갈아 짭짤한 갈레트를 굽습니다. 모르비앙관광청은 햄·달걀·치즈를 채운 조합을 갈레트 콩플레트로 소개합니다. 지역마다 반죽과 이름의 관습이 달라 하나의 배합만을 정답으로 보지는 않습니다."],
+    ["다시 이어진 밭과 제분소", "브르타뉴의 메밀 생산은 1980년대부터 다시 활기를 얻었고, 지역 메밀가루는 2010년 IGP 인증을 받았습니다. 현지의 9~10월 수확은 농가와 제분소, 크레프 식당을 잇습니다. 인증은 해당 산지 가루에 관한 것이며 국내 가루로 만든 이 접시의 인증을 뜻하지 않습니다."],
+    ["바삭한 네 귀, 따뜻한 가운데", "팬에 얇게 편 메밀 반죽은 구수하고 가장자리는 바삭해집니다. 안쪽에는 녹은 치즈와 햄의 짭짤함, 완전히 익힌 달걀의 부드러움이 모입니다. 산뜻한 샐러드를 곁들여 한 장씩 따뜻할 때 먹는 맛을 살렸습니다."],
+    [buckwheatGaletteSources.region, buckwheatGaletteSources.recipe, buckwheatGaletteSources.season, buckwheatGaletteSources.korea],
+  ),
   "dithmarschen-inspired-cabbage-rolls": narrative(
     ["북해의 양배추밭에서 만나는 한 접시", "디트마르셴은 독일 북해 연안의 양배추 산지입니다. 지역 관광청은 양배추 잎에 다진 고기를 싸서 익히는 콜루라덴을 대표 음식 중 하나로 소개합니다. 이 지역이 모든 양배추말이의 유일한 발상지라는 뜻은 아닙니다."],
     ["수확이 지역의 축제가 되다", "1986년부터 이어진 디트마르셴 양배추 축제에서는 지역 농산물과 다양한 양배추 요리를 만납니다. 북해 바람이 드는 밭에서 거둔 채소가 가정과 식당의 식탁으로 이어집니다. 축제의 시작 연도를 요리의 탄생 연도로 보지는 않습니다."],

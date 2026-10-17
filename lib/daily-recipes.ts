@@ -1,8 +1,30 @@
 import type { Recipe } from "./content";
-import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
+import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buckwheatGaletteSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "brittany-inspired-buckwheat-galette", title: "브르타뉴풍 햄·달걀 메밀 갈레트", country: "france", category: "main", experienceStatus: "researched",
+    summary: "구수한 메밀 반죽을 얇게 굽고 햄·치즈·달걀을 담아 네 귀를 접습니다. 바삭한 가장자리와 따뜻한 속을 즐기는 브르타뉴풍 한 끼로, 두 사람 앞에 두 장씩 나눕니다.",
+    culturalNote: "브르타뉴의 갈레트 콩플레트에서 영감 받은 가정용 응용입니다. 지역 관광청의 메밀 반죽과 햄·달걀·치즈 조합을 참고하되 국내 가루·프라이팬에 맞춰 배합했습니다. 달걀은 별도 팬에서 노른자까지 익혀 얹으며, 브르타뉴산 인증 재료로 만들었다는 뜻은 아닙니다.",
+    localTable: { region: "프랑스 · 브르타뉴, 모르비앙의 식탁에서 얻은 영감", ingredient: "지역 메밀 · 햄 · 달걀 · 치즈", season: "브르타뉴 메밀의 가을 수확", note: "현지 생산자 단체는 브르타뉴 메밀을 9~10월에 수확한다고 설명합니다. 국내 메밀은 봄·가을 재배가 가능하며 지역·품종에 따라 일정이 다릅니다. 여기서는 국내에서 판매하는 저장·제분된 가루를 사용하므로 햇메밀 여부는 포장 표시로 확인합니다. 메밀가루와 햄·달걀·치즈를 가을에만 살 수 있는 재료로 보지는 않습니다." },
+    cookingTime: 90, difficulty: "보통", servings: 2, visualLabel: "BRETAGNE GALETTE", visualCaption: "메밀의 회갈색과 달걀의 노랑, 브르타뉴 해안을 떠올리는 푸른 회색 물결", keywords: ["브르타뉴", "모르비앙", "갈레트콩플레트", "메밀갈레트", "햄달걀치즈", "가을수확", "이마트장보기"],
+    ingredientGroups: [
+      { title: "이마트 장보기 · 구매 단위 → 2인분, 갈레트 4장", items: ["무가당 메밀가루 1봉 → 100g · 메밀 100% 가루 기준, 면·가당 믹스 제외", "달걀 1팩 → 총 5개(반죽 1개 약 50g + 속재료 4개)", "완전히 익힌 슬라이스 햄 1팩 → 120g · 생햄·생고기 제외", "에멘탈 또는 슈레드 모차렐라 치즈 1팩 → 80g", "무염버터 1팩 → 20g, 씻어 먹는 샐러드 채소 1봉 → 100g"] },
+      { title: "반죽·양념·도구", items: ["찬물 230ml + 반죽 농도 조절용 10~30ml, 소금 1g", "식용유 10ml · 달걀과 햄 조리용, 후추 약간", "올리브유 10ml와 레몬즙 또는 식초 5ml · 샐러드용", "지름 26cm 안팎의 코팅 팬, 넓은 뒤집개, 달걀용 팬과 뚜껑, 거품기"] },
+    ],
+    steps: [
+      { title: "메밀 반죽을 섞어 한 시간 쉬게", description: "메밀가루 100g과 소금 1g에 찬물 230ml를 조금씩 부으며 풉니다. 달걀 1개를 넣고 덩어리 없이 섞어 덮은 뒤 냉장고에서 60분 휴지합니다.", tip: "생가루와 생달걀이 든 반죽은 맛보지 않습니다. 휴지 뒤 다시 저어 국자에서 가늘게 흐르는지 보고, 되직하면 물을 10ml씩 최대 30ml 보충합니다." },
+      { title: "속재료와 샐러드 준비", description: "햄은 먹기 좋게 나누고 치즈와 함께 각각 4등분합니다. 채소는 포장 안내대로 세척하고 물기를 뺍니다. 올리브유 10ml와 레몬즙 5ml를 섞되 채소에는 먹기 직전에 넣습니다.", tip: "반죽을 쉬게 하는 동안 준비하고, 햄·치즈·달걀은 조리 직전까지 냉장합니다. 햄과 치즈가 짭짤하므로 속재료에 소금을 더하지 않습니다." },
+      { title: "얇게 펴서 네 장 굽기", description: "팬을 중불로 데우고 버터 20g을 네 번에 나누어 씁니다. 반죽의 1/4을 붓고 즉시 팬을 기울여 얇게 폅니다. 표면이 마르고 가장자리가 들릴 때까지 약 2분, 뒤집어 1분 더 익힙니다. 같은 방식으로 4장을 굽습니다.", tip: "익힌 갈레트는 깨끗한 접시에 겹쳐 덮어 두면 접기 쉽습니다. 갈라지면 다음 장은 물을 조금 보충하고, 팬이 차가워 붙으면 충분히 예열합니다. 속에 젖은 반죽이 남지 않게 굽습니다." },
+      { title: "달걀과 햄을 따로 익히기", description: "별도 팬에 식용유 10ml를 나누어 두르고 달걀 4개를 두 개씩 부칩니다. 중약불에서 뚜껑을 덮고 필요하면 뒤집어 흰자와 노른자 모두 단단히 익힙니다. 햄도 팬에서 따뜻하게 데우되 제품의 가열 안내를 따릅니다.", tip: "달걀을 갈레트 위에서 서둘러 익히면 바닥만 탈 수 있어 따로 조리합니다. 반숙을 익힘 기준으로 삼지 않으며 생달걀에 닿은 손과 도구를 씻습니다." },
+      { title: "치즈를 녹이고 네 귀 접기", description: "갈레트 한 장을 약불 팬에 놓고 치즈 20g과 햄 30g을 중앙에 펼칩니다. 치즈가 녹으면 익힌 달걀 하나를 올리고 네 가장자리를 안으로 접어 가운데 달걀이 보이는 사각형으로 만듭니다. 약 1분 더 데워 바로 옮기고 나머지도 완성합니다.", tip: "가장자리를 바삭하게 하려면 마지막 20~30초만 불을 조금 올립니다. 탄 냄새가 나기 전에 내려 주세요." },
+      { title: "두 장씩 따뜻한 저녁으로", description: "샐러드에 준비한 드레싱을 버무립니다. 갈레트는 한 사람당 두 장씩, 후추와 샐러드를 곁들입니다. 먼저 완성한 장부터 먹거나, 순서대로 구워 따뜻하게 나누세요." },
+    ],
+    substitutions: ["메밀가루 100%가 없으면 성분이 메밀·밀가루인 무가당 혼합 가루 100g을 쓰고 물은 200ml부터 조절합니다. 메밀 향과 접히는 정도는 달라집니다.", "에멘탈 대신 모차렐라나 잘 녹는 슬라이스 치즈 80g을 쓸 수 있습니다. 햄·치즈의 염도를 먼저 확인하세요.", "햄 대신 양송이 200g을 잘게 썰어 기름 5ml에 수분이 사라질 때까지 볶아 넣어도 좋습니다. 생버섯을 그대로 넣지 않습니다.", "매장별 상품과 재고는 다릅니다. 메밀가루의 함량·원산지와 햄의 가열 여부를 포장에서 확인합니다."],
+    tips: ["총 90분은 반죽 냉장 휴지 60분과 준비·팬 조리 약 30분을 포함합니다. 첫 장의 두께와 팬 온도를 보며 시간을 조절합니다.", "메밀 알레르기가 있으면 먹지 않습니다. 혼합 가루와 햄·치즈의 알레르기 표기도 확인하며, 이 레시피를 글루텐 프리로 표시하지 않습니다.", "완성 음식은 바로 먹고 남으면 2시간 이내에 얕은 용기로 나누어 4°C 이하에 냉장합니다. 실내가 32°C보다 더우면 1시간 이내, 다시 먹을 때는 중심 74°C까지 재가열합니다."],
+    publishedAt: "2026-10-17", relatedStorySlugs: [], sources: Object.values(buckwheatGaletteSources), palette: { from: "#eee4d5", mid: "#c8b49b", to: "#7595a2", ink: "#303d46" },
+  },
   {
     slug: "dithmarschen-inspired-cabbage-rolls", title: "디트마르셴풍 고기소 양배추말이", country: "germany", category: "main", experienceStatus: "researched",
     summary: "부드럽게 데친 양배추 잎에 촉촉한 고기소를 감싸 노릇하게 굽습니다. 육수에 뭉근히 익힌 롤과 포슬한 감자를 담아 독일 북해 지역의 가정식에서 영감 받은 저녁을 차립니다.",

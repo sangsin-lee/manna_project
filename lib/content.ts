@@ -1242,8 +1242,8 @@ export const countries: Country[] = [
       "paris-boulangerie-cafe-daily-life",
       "french-regional-gastronomy",
     ],
-    recipeSlugs: ["normandy-inspired-apple-cream-chicken", "auvergne-inspired-lentil-sausage-stew", "french-croque-monsieur", "french-onion-soup"],
-    updatedAt: "2026-09-30",
+    recipeSlugs: ["brittany-inspired-buckwheat-galette", "normandy-inspired-apple-cream-chicken", "auvergne-inspired-lentil-sausage-stew", "french-croque-monsieur", "french-onion-soup"],
+    updatedAt: "2026-10-17",
     palette: {
       from: "#ece4d5",
       mid: "#d8d9c9",

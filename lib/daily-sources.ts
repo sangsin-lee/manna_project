@@ -1,5 +1,15 @@
 import type { SourceLink } from "./content";
 
+// Nanchang's rice-coated pork, adapted with autumn sweet potatoes, October 19.
+export const riceSteamedPorkSources = {
+  region: { label: "난창시 정부 — 무형문화유산 77번, 쑹후 쌀가루 돼지고기찜과 입하 풍습", url: "https://www.nc.gov.cn/ncszf/whtya/201911/aa1f950471794a6bb6f4d83962001fe6.shtml" },
+  season: { label: "징더전시 정부·장시성 과학기술협회 — 고구마의 현지 수확 시기", url: "https://jdz.gov.cn/zwzx/ztbd/kpxj/nckp/t287109.shtml" },
+  korea: { label: "농촌진흥청 — 국내 고구마 수확 시기와 저장 관리", url: "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1226" },
+  recipe: { label: "TravelChinaGuide 조리 안내 — 볶은 쌀을 갈아 입히는 펀정러우", url: "https://www.travelchinaguide.com/tour/food/chinese-cooking/steamed-pork.htm" },
+  temperature: { label: "FoodSafety.gov — 육류·혼합 요리와 재가열의 중심온도", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+  storage: { label: "미국 FDA — 남은 음식의 신속 냉장과 냉장 온도", url: "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely" },
+} satisfies Record<string, SourceLink>;
+
 // Brittany's buckwheat harvest and a household galette complète, October 17.
 export const buckwheatGaletteSources = {
   region: { label: "모르비앙관광청 — 메밀 갈레트와 햄·달걀·치즈 조합, 지역 생산의 재활성화", url: "https://morbihan.com/decouvrir/gastronomie-bretonne/carnet-des-recettes/recette-de-la-galette-bretonne/" },

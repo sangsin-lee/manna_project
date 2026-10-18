@@ -1,8 +1,31 @@
 import type { Recipe } from "./content";
+import { riceSteamedPorkSources } from "./daily-sources";
 import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buckwheatGaletteSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "nanchang-inspired-rice-powder-steamed-pork", title: "난창풍 고구마 쌀가루 돼지고기찜", country: "china", category: "main", experienceStatus: "researched",
+    summary: "노릇하게 볶아 굵게 간 쌀을 삼겹살에 입히고 고구마 위에 얹어 찝니다. 구수한 쌀옷이 육즙을 머금고, 아래의 고구마는 달큼하게 익는 두 사람의 가을 저녁입니다.",
+    culturalNote: "중국 장시성 난창의 쑹후 미펀러우와 펀정러우에서 영감 받은 가정용 응용입니다. 국내 멥쌀과 간장으로 배합하고 고구마를 바닥에 깔았습니다. 현지의 입하 풍습과는 별도로 고구마 수확기를 활용한 구성이며, 특정 전승자의 배합을 그대로 재현한 것은 아닙니다.",
+    localTable: { region: "중국 · 장시성 난창, 쑹후의 찜 문화", ingredient: "쌀을 입힌 돼지고기 · 장시성의 가을 고구마", season: "가을 고구마 수확을 활용한 응용", note: "장시성 재배 안내는 고구마 수확 시작을 10월 상·중순으로 설명합니다. 국내 보통재배 고구마는 농촌진흥청 기준 9월 하순~10월 중순 수확하며 지역·재배 방식에 따라 달라집니다. 이 레시피는 국내 판매 고구마를 쓰고, 저장 고구마·쌀·돼지고기를 가을에만 구할 수 있는 재료로 보지는 않습니다." },
+    cookingTime: 120, difficulty: "보통", servings: 2, visualLabel: "NANCHANG FEN ZHENG ROU", visualCaption: "볶은 쌀의 금빛과 고구마 껍질의 자주색, 곡물과 찜 식탁에서 영감 받은 쌀알 무늬", keywords: ["난창", "장시성", "쑹후", "펀정러우", "분증육", "粉蒸肉", "고구마", "쌀가루찜", "가을저녁", "이마트장보기"],
+    ingredientGroups: [
+      { title: "이마트 장보기 · 구매 단위 → 2인분 사용량", items: ["껍질 없는 냉장 삼겹살 구이용 1팩 → 300g · 두께 5~7mm, 대패·양념육 제외", "고구마 1봉 또는 중간 크기 2개 → 손질 후 300g", "멥쌀 1봉 또는 집에 있는 백미 → 마른 쌀 60g · 즉석밥·찹쌀가루 제외", "생강 작은 팩 → 8g, 대파 1봉 → 30g, 마늘 1통 → 2쪽(10g)", "브로콜리 1송이 → 손질 후 150g, 즉석밥 200g 1개 → 두 사람에게 반씩"] },
+      { title: "양념·찜 도구", items: ["양조간장 20ml, 맛술 15ml, 설탕 4g, 고춧가루 2g, 참기름 5ml, 후추 약간", "물 60ml + 쌀옷 보정용 10~20ml, 찜기 바닥용 물과 보충용 뜨거운 물", "팔각 1/2개(선택) · 쌀을 볶을 때만 쓰고 분쇄 전 제거", "마른 곡물 분쇄 가능한 믹서 또는 절구, 뚜껑 있는 찜기, 지름 20~22cm의 찜용 내열 접시, 집게와 식품용 중심온도계"] },
+    ],
+    steps: [
+      { title: "양념해 냉장하는 동안 준비", description: "생강과 마늘은 다지고 대파는 잘게 썹니다. 별도 도마에서 삼겹살을 길이 5cm로 잘라 간장·맛술·설탕·고춧가루·참기름·후추, 생강·마늘, 대파 20g과 버무려 20분 냉장합니다.", tip: "남은 대파 10g은 고명입니다. 생고기에 닿은 손·도마·칼을 씻고 채소와 익힌 음식에 닿지 않게 합니다." },
+      { title: "쌀을 볶아 굵은 모래처럼", description: "쌀 60g을 빠르게 헹궈 체에서 물기를 빼고 마른 팬에 넣습니다. 약불로 계속 저어 물기를 날린 뒤 연한 금빛과 구수한 향이 날 때까지 약 12~15분 볶습니다. 선택한 팔각은 마지막 3분만 넣었다가 건져 버립니다. 쌀을 식혀 0.5~1mm 안팎의 굵은 모래처럼 갑니다.", tip: "온전한 쌀알은 남기지 말고, 떡용 가루처럼 곱게 갈지도 않습니다. 분쇄기 사용 안내를 확인하고 뜨거운 쌀을 밀폐해 갈지 않습니다." },
+      { title: "쌀옷을 촉촉하게, 고구마는 바닥에", description: "고구마를 씻어 상한 부분을 제거하고 껍질째 1cm 두께의 반달로 썹니다. 내열 접시 바닥에 깔고 물 20ml를 붓습니다. 고기에 간 쌀과 나머지 물 40ml를 섞어 5분 두었다가 마른 가루가 남으면 물 10~20ml를 더합니다. 고구마 위에 고기를 느슨하게 겹쳐 담습니다.", tip: "두꺼운 덩어리로 쌓지 말고 전체 높이를 4cm 이내로 합니다. 접시는 찜기 벽과 간격이 있어야 증기가 돌며, 음식에 물이 직접 닿지 않도록 받침 위에 올립니다." },
+      { title: "증기로 천천히 부드럽게", description: "찜기 물을 먼저 끓인 뒤 접시를 넣고 뚜껑을 덮습니다. 증기가 꾸준히 오르는 중불에서 80~90분 찝니다. 20~30분마다 바닥 물을 살펴 부족하면 뜨거운 물을 옆으로 보충합니다.", tip: "냄비를 마른 채 가열하지 않습니다. 뚜껑은 얼굴 반대 방향으로 열고 장갑·집게를 사용합니다. 재료가 너무 건조해 보이면 표면에 뜨거운 물을 조금 뿌립니다." },
+      { title: "중심과 쌀옷의 익힘 확인", description: "가장 두꺼운 고기와 접시 가운데가 74°C 이상인지 온도계로 확인합니다. 쌀옷에 딱딱한 알갱이가 없고 고기와 고구마가 젓가락으로 쉽게 갈라져야 합니다. 온도나 질감이 부족하면 물을 확인하고 10분씩 더 찝니다.", tip: "74°C는 이 혼합 찜 요리에 적용한 충분한 가열 기준입니다. 시간·겉색만으로 판단하지 않습니다. 마지막 8~10분 동안 씻은 브로콜리를 별도 냄비에서 쪄 곁들입니다." },
+      { title: "고구마까지 떠서 두 사람의 접시로", description: "즉석밥을 제품 안내대로 데워 반씩 나눕니다. 깨끗한 도구로 고기와 고구마를 바닥부터 함께 떠서 담고 브로콜리·남은 대파를 곁들입니다. 고구마와 쌀옷에도 간이 배므로 추가 소스 없이 먼저 맛봅니다." },
+    ],
+    substitutions: ["삼겹살 대신 5~7mm 두께의 목살 300g을 사용할 수 있습니다. 지방이 적어 식감은 달라지며 쌀옷이 마르면 물을 조금 더합니다. 중심온도와 부드러움을 함께 확인합니다.", "팔각이 없으면 생략해도 됩니다. 맛술 대신 물 15ml를 사용하고, 매운맛이 부담스러우면 고춧가루를 빼세요.", "고구마 대신 감자 300g을 같은 두께로 써도 됩니다. 가을 고구마의 단맛은 사라집니다. 시판 찜용 쌀가루를 쓴다면 간이 없는 굵은 제품을 고르고 제품별 불림·가열 지시를 따릅니다."],
+    tips: ["총 120분은 재우기와 쌀 볶기를 동시에 진행한 준비 약 25분, 찜 80~90분, 마무리를 포함합니다. 고기 두께와 찜기 성능에 따라 시간이 더 필요할 수 있습니다.", "생고기와 쌀옷 혼합물은 맛보지 않습니다. 남은 음식은 얕은 용기에 나눠 2시간 이내 4°C 이하에 냉장하고, 기온이 32°C를 넘으면 1시간 이내에 넣습니다. 다시 먹을 때 중심 74°C까지 고르게 데웁니다.", "매장별 재고·포장량은 다릅니다. 그림의 금빛·자주색과 쌀알 패턴은 재료·식문화에서 영감 받은 표현이며 실제 음식 사진이나 인증된 전통 문양이 아닙니다."],
+    publishedAt: "2026-10-19", relatedStorySlugs: [], sources: Object.values(riceSteamedPorkSources), palette: { from: "#f7ead7", mid: "#d8b278", to: "#a16a7e", ink: "#48353a" },
+  },
   {
     slug: "brittany-inspired-buckwheat-galette", title: "브르타뉴풍 햄·달걀 메밀 갈레트", country: "france", category: "main", experienceStatus: "researched",
     summary: "구수한 메밀 반죽을 얇게 굽고 햄·치즈·달걀을 담아 네 귀를 접습니다. 바삭한 가장자리와 따뜻한 속을 즐기는 브르타뉴풍 한 끼로, 두 사람 앞에 두 장씩 나눕니다.",

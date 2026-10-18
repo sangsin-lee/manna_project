@@ -1,4 +1,5 @@
 import type { Recipe, SourceLink } from "./content";
+import { riceSteamedPorkSources } from "./daily-sources";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
 import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buckwheatGaletteSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
@@ -52,6 +53,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "nanchang-inspired-rice-powder-steamed-pork": narrative(
+    ["쌀옷을 입혀 찌는 난창의 맛", "장시성 난창의 쑹후에서는 양념한 돼지고기에 쌀가루를 입혀 부드럽게 찌는 미펀러우를 만납니다. 난창시 정부는 이 조리 기술을 지역 무형문화유산 소개에 담고 있습니다. 오늘은 그 방식에 국내 고구마와 멥쌀을 더한 가정용 응용입니다."],
+    ["입하의 풍습에서 가을 식탁으로", "난창에는 여름이 시작되는 절기인 입하 무렵 쌀가루 돼지고기찜을 먹는 풍습이 전해집니다. 2019년 시 정부 자료에도 이 풍습이 소개되지만, 그해 요리가 시작되었다는 뜻은 아닙니다. 이번에는 장시성과 한국의 가을 고구마 수확을 참고해 계절을 달리한 식탁을 차립니다."],
+    ["구수한 쌀옷 아래 달큼한 고구마", "볶은 쌀의 작은 알갱이가 증기와 육즙을 받아 부드러워집니다. 고기에는 생강과 간장의 향이 배고, 바닥의 고구마는 짭짤한 맛을 머금어 달콤함과 균형을 이룹니다. 튀김처럼 바삭한 껍질이 아니라 촉촉하고 알갱이감 있는 쌀옷을 즐기는 요리입니다."],
+    [riceSteamedPorkSources.region, riceSteamedPorkSources.season, riceSteamedPorkSources.korea, riceSteamedPorkSources.recipe],
+  ),
   "brittany-inspired-buckwheat-galette": narrative(
     ["메밀 한 장에 담은 브르타뉴", "프랑스 북서부 브르타뉴에서는 메밀을 갈아 짭짤한 갈레트를 굽습니다. 모르비앙관광청은 햄·달걀·치즈를 채운 조합을 갈레트 콩플레트로 소개합니다. 지역마다 반죽과 이름의 관습이 달라 하나의 배합만을 정답으로 보지는 않습니다."],
     ["다시 이어진 밭과 제분소", "브르타뉴의 메밀 생산은 1980년대부터 다시 활기를 얻었고, 지역 메밀가루는 2010년 IGP 인증을 받았습니다. 현지의 9~10월 수확은 농가와 제분소, 크레프 식당을 잇습니다. 인증은 해당 산지 가루에 관한 것이며 국내 가루로 만든 이 접시의 인증을 뜻하지 않습니다."],

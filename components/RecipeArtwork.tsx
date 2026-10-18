@@ -12,6 +12,28 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "rice-steamed-pork" && <g>
+          <ellipse cx="300" cy="208" rx="147" ry="111" fill="#ba8c58" stroke="#805c3b" strokeWidth="3"/>
+          <path d="M157 197v36c0 63 286 63 286 0v-36" fill="#d3aa70" stroke="#805c3b" strokeWidth="3"/>
+          {Array.from({ length: 15 }, (_, i) => <path key={i} d={`M${168 + i * 19} 232v24`} stroke="#b28450" strokeWidth="3"/>)}
+          <ellipse cx="300" cy="188" rx="147" ry="110" fill="#e3c38f" stroke="#9c7149" strokeWidth="4"/>
+          <ellipse cx="300" cy="187" rx="126" ry="92" fill="#fff3dd" stroke="#be9665" strokeWidth="3"/>
+          {[[211,189,-28],[235,243,-12],[300,260,4],[368,241,28],[393,186,60]].map(([x,y,r]) => <g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-26-16q28-12 50 1v15q-25 37-50-1Z" fill="#9b5c73" stroke="#774356" strokeWidth="2"/>
+            <path d="M-22-13q24-9 42 1v12q-20 26-42-1Z" fill="#edbf65"/>
+            <path d="m-13-4 17-3m-8 15 10-3" stroke="#f8d88e" strokeWidth="4" strokeLinecap="round"/>
+          </g>)}
+          {[[239,148,-25],[291,135,-10],[344,150,15],[258,197,-17],[313,200,10],[356,205,22]].map(([x,y,r],index) => <g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-23-24q22-9 46 0l3 40q-19 18-51 3Z" fill="#b47a51" stroke="#8a5a3b" strokeWidth="2"/>
+            <path d="M-19-9q18 8 38 0m-38 18q16 9 39 0" stroke="#ead1a2" strokeWidth="7"/>
+            <path d="M-23-24q22-9 46 0l3 40q-19 18-51 3Z" fill="#d6ac73" fillOpacity=".45"/>
+            {Array.from({ length: 15 }, (_, i) => <ellipse key={i} cx={-18 + (i % 5) * 8} cy={-18 + Math.floor(i / 5) * 14 + (i % 2) * 3} rx="2.2" ry="3.3" transform={`rotate(${index * 12} ${-18 + (i % 5) * 8} ${-18 + Math.floor(i / 5) * 14 + (i % 2) * 3})`} fill={i % 3 === 0 ? "#f0d49e" : "#b98b50"}/>)}
+          </g>)}
+          <path d="m249 119 9-4m45 53 8 3m28 52 8-4m-62 13 8 2m83-57 6 4" stroke="#63764a" strokeWidth="5" strokeLinecap="round"/>
+          <path d="M249 76c-18-19 13-23-2-43m52 34c-18-19 13-23-2-43m54 52c-18-19 13-23-2-43" stroke="#9c7f6a" strokeWidth="3" opacity=".6" strokeLinecap="round"/>
+          <path d="M179 284q121 52 242 0" stroke="#e6c48d" strokeWidth="5"/>
+        </g>}
+
         {art === "buckwheat-galette" && <g>
           <circle cx="300" cy="186" r="139" fill="#f5efdf" stroke="#708e9a" strokeWidth="4"/>
           <g transform="rotate(-9 300 190)">

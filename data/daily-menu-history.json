@@ -1213,6 +1213,48 @@
         "메밀 반죽부터 직접",
         "냉장 휴지 1시간 포함"
       ]
+    },
+    {
+      "date": "2026-10-19",
+      "recipeSlug": "nanchang-inspired-rice-powder-steamed-pork",
+      "title": "난창풍 고구마 쌀가루 돼지고기찜",
+      "canonicalDish": "Nanchang inspired fen zheng rou with toasted rice coating and sweet potato",
+      "aliases": [
+        "펀정러우",
+        "분증육",
+        "粉蒸肉",
+        "米粉肉",
+        "Fen zheng rou",
+        "쌀가루 돼지고기찜"
+      ],
+      "keyIngredients": [
+        "삼겹살",
+        "볶아 굵게 간 멥쌀",
+        "고구마",
+        "생강",
+        "간장"
+      ],
+      "method": "멥쌀을 볶아 굵게 갈고 물·양념과 함께 돼지고기 조각에 입힌다. 고구마 위에 느슨하게 올려 증기로 오래 익혀 쌀옷과 고기를 부드럽게 만든다.",
+      "selectionReason": "장시성 난창의 쌀가루 찜 문화에 가을 고구마를 더했습니다. 국내 멥쌀·삼겹살·고구마로 구수한 쌀옷과 달큼한 바닥 재료를 함께 즐기는 두 사람의 저녁입니다.",
+      "videoIdea": "쌀이 노릇해지는 팬 → 굵게 간 쌀을 고기에 입히기 → 고구마 위에 겹쳐 담기 → 찜기 뚜껑을 열고 쌀옷과 고구마 단면 보여주기. 제목 아이디어: 삼겹살에 쌀옷을 입히면, 난창풍 가을 찜.",
+      "duplicateReview": "기존 86개 레시피의 제목·핵심 재료·조리 단계, 기준 기록 27개·일일 기록 20개의 별칭과 최근 Git 이력을 비교했다. 수육·제주 돔베국수는 고기를 물에 삶고, 고구마 닭조림은 닭과 고구마를 국물에 조린다. 이번 요리는 볶아 굵게 간 쌀을 돼지고기에 입혀 고구마 위에서 찌는 펀정러우로 핵심 조리법이 다르다. 쌀을 통째로 짓는 솥밥·리소토, 고기를 속으로 싸는 양배추말이와도 구별된다. 최근 독일·프랑스 다음 중국 장시성 난창으로 순환한다. 한국 날짜 10월 19일 메뉴 하나만 기록하고 빈 날짜는 소급하지 않는다.",
+      "research": {
+        "checkedAt": "2026-10-19",
+        "seasonalNote": "난창시 정부의 시급 무형문화유산 소개 77번에서 쑹후 미펀러우, 쌀가루를 입힌 돼지고기의 찜 조리와 입하 무렵 먹는 풍습을 확인했다. 2019년 자료 등재를 요리 탄생 연도로 삼지 않으며 민간 건강 속설은 옮기지 않는다. 징더전시 정부가 게재한 장시성 과학기술협회 자료는 고구마 수확 시작을 10월 상·중순으로 설명한다. 농촌진흥청은 국내 보통재배 수확을 9월 하순~10월 중순으로 설명하며 저장 유통은 별개다. 이번 고구마 바닥·국내 멥쌀·양념 배합은 가정용 응용으로 입하 풍습을 가을 전통이라고 바꾸지 않는다. 현지 여행사의 직접 조리 안내에서 볶은 쌀 분쇄와 장시간 찜 구성을 참고했다. FoodSafety.gov 가열 온도와 FDA 신속 냉장을 확인했다. 미국 외식업협회 2026 전망의 지역 식재료·세계 가정식 경향은 편집 참고이며 한국 내 인기·유튜브 조회 수를 입증하지 않는다.",
+        "sources": [
+          "https://www.nc.gov.cn/ncszf/whtya/201911/aa1f950471794a6bb6f4d83962001fe6.shtml",
+          "https://jdz.gov.cn/zwzx/ztbd/kpxj/nckp/t287109.shtml",
+          "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1226",
+          "https://www.travelchinaguide.com/tour/food/chinese-cooking/steamed-pork.htm",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "볶은 쌀옷을 입힌 찜",
+        "찜 시간 80~90분 포함"
+      ]
     }
   ]
 }

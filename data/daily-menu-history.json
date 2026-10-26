@@ -1255,6 +1255,46 @@
         "볶은 쌀옷을 입힌 찜",
         "찜 시간 80~90분 포함"
       ]
+    },
+    {
+      "date": "2026-10-26",
+      "recipeSlug": "puglia-inspired-broccoli-anchovy-pasta",
+      "title": "풀리아풍 브로콜리 앤초비 파스타",
+      "canonicalDish": "Puglia inspired broccoli anchovy pasta with toasted breadcrumbs",
+      "aliases": [
+        "브로콜리 앤초비 파스타",
+        "치메 디 라파 파스타 응용",
+        "Orecchiette con le cime di rapa inspired pasta",
+        "Broccoli anchovy pasta"
+      ],
+      "keyIngredients": [
+        "브로콜리",
+        "짧은 건조 파스타",
+        "오일 절임 앤초비",
+        "마늘",
+        "빵가루"
+      ],
+      "method": "브로콜리와 파스타를 같은 물에 삶고, 앤초비를 풀어 넣은 마늘 오일에 버무린다. 브로콜리 일부를 으깨 면에 붙이고 따로 볶은 빵가루로 마무리한다.",
+      "selectionReason": "풀리아의 가을·겨울 채소 파스타를 국내 가을 브로콜리로 응용했습니다. 부드러운 채소와 짭짤한 앤초비, 바삭한 빵가루가 어우러지는 30분 저녁입니다.",
+      "videoIdea": "빵가루가 노릇해지는 팬 → 파스타 냄비에 브로콜리 넣기 → 앤초비가 오일에 풀리는 장면 → 채소를 으깨 버무리기 → 빵가루를 뿌리는 클로즈업. 제목 아이디어: 브로콜리가 소스가 되는 풀리아풍 한 접시.",
+      "duplicateReview": "기존 레시피 87개의 제목·주재료·조리 단계, 기준 기록 27개·일일 기록 21개의 별칭 및 최근 Git 이력을 비교했다. 로마의 치즈·후추 파스타와 달걀·고기 파스타, 공주 밤 크림 파스타, 루체른 감자·치즈 마카로니와 달리 채소를 면과 함께 삶아 으깨고 앤초비 오일과 빵가루를 쓰는 요리다. 호박 뇨키처럼 반죽을 빚거나 리볼리타처럼 빵·콩을 국물에 끓이는 요리도 아니다. 최근 독일·프랑스·중국 다음 이탈리아 풀리아로 순환한다. 10월 24일 중단된 조사 후보를 이어 10월 26일 메뉴 하나만 저장하며 빈 날짜는 소급하지 않는다.",
+      "research": {
+        "checkedAt": "2026-10-26",
+        "seasonalNote": "풀리아 지역 지원 PAT 아틀라스의 채소·파스타·앤초비 조합과 1967·1987년 문헌 기록을 확인했다. 기록 연도는 기원 연도가 아니다. 현지 치메 디 라파는 일반적으로 9월 말~5월 유통, 11~3월 물량이 많으며 품종·지역에 따라 차이가 있다. 농촌진흥청 표의 국내 브로콜리 가을재배 수확은 9~11월이며 다른 재배 작형도 있다. 현지 채소를 브로콜리와 동일시하지 않고, 국내 짧은 건조 파스타를 쓰는 가정용 응용으로 설명한다. FDA 채소 세척·보관 및 FoodSafety.gov 재가열 기준을 확인했다. 미국 외식업협회의 2026 지역 식재료·세계 가정식 전망은 편집 참고이며 국내 인기나 유튜브 조회 수의 증거가 아니다.",
+        "sources": [
+          "https://www.patpuglia.it/it/12/Orecchiette_con_le_cime_di_rapa/1_286_N",
+          "https://pugliavegetablesworld.it/prodotti_senza_march/cima-di-rapa-in-puglia/",
+          "https://www.nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?cntntsNo=30622&menuId=PS00087&sKidofcomdtySeCode=VC",
+          "https://www.fda.gov/consumers/consumer-updates/7-tips-cleaning-fruits-vegetables",
+          "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "채소와 면을 한 냄비에",
+        "30분 · 2인분"
+      ]
     }
   ]
 }

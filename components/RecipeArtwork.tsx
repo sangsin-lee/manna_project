@@ -12,6 +12,30 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "broccoli-pasta" && <g>
+          <circle cx="300" cy="186" r="141" fill="#faf3e3" stroke="#769da9" strokeWidth="5"/>
+          <circle cx="300" cy="186" r="124" stroke="#a4bec3" strokeWidth="2"/>
+          {Array.from({ length: 20 }, (_, i) => <path key={i} d="m296 53 4-3 4 3-4 3Z" fill="#648f9d" transform={`rotate(${i * 18} 300 186)`}/>)}
+          <ellipse cx="300" cy="194" rx="111" ry="93" fill="#d7c98c" opacity=".4"/>
+          {[[231,129,-25],[284,119,12],[345,130,35],[380,169,70],[360,217,-15],[329,262,18],[264,263,-25],[218,220,30],[221,173,-40],[280,177,25],[318,217,-30],[286,220,50],[331,162,-15]].map(([x,y,r]) => <g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-24 5q-10-31 17-34 34-7 37 24Q25 16 2 22-15 21-24 5Z" fill="#e6c785" stroke="#bfa16b" strokeWidth="2"/>
+            <path d="M-17 4q21 13 40-7Q21 14 2 17-12 17-17 4Z" fill="#b79a62"/>
+            <path d="M-16-7q-4-15 9-17m0 14q-1-13 8-14m-1 16q4-12 10-11m-3 15 11-8" stroke="#f6dfa6" strokeWidth="3" strokeLinecap="round"/>
+          </g>)}
+          {[[249,151,-25],[336,118,20],[374,205,60],[294,251,-15],[225,249,-35],[242,195,-60],[316,187,15]].map(([x,y,r]) => <g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="m-5 27 1-29 10-3 5 30Z" fill="#a6b77b" stroke="#6c8854" strokeWidth="2"/>
+            <path d="m0 12-13-16m18 15 12-17" stroke="#a6b77b" strokeWidth="5"/>
+            <path d="M-25-6q-10-17 5-21 0-15 15-13 13-12 23 2 17-4 19 11 15 12 0 24-8 10-21 2-14 12-24-5Z" fill="#65814d" stroke="#4a693c" strokeWidth="2"/>
+            <path d="M-21-17q4-9 10-4m7-10q7-7 12 1m10 7q8-2 10 5m-26 8q7-6 13 0" stroke="#90a866" strokeWidth="4" strokeLinecap="round"/>
+          </g>)}
+          {[[260,124],[304,144],[353,180],[270,203],[341,237],[244,240],[304,282],[209,185],[356,148],[290,165],[316,232],[236,112],[386,228],[270,277],[202,213],[331,143]].map(([x,y],i) => <g key={`${x}-${y}`} fill={i % 2 ? "#b88b47" : "#c99e54"}>
+            <path d={`m${x} ${y} 6-2 3 5-5 3Z`}/><circle cx={x + 10} cy={y + 6} r="2"/>
+          </g>)}
+          <path d="m268 143 4 2m77 63 5-2m-41 44 4 2m-75-35 3-3" stroke="#b35e43" strokeWidth="3" strokeLinecap="round"/>
+          <path d="M395 269a26 26 0 0 1 43-11l-29 32Z" fill="#f0d46e" stroke="#c4a54c" strokeWidth="2"/>
+          <path d="m410 283 20-24m-22 17 9-22" stroke="#fff0b4" strokeWidth="2"/>
+        </g>}
+
         {art === "rice-steamed-pork" && <g>
           <ellipse cx="300" cy="208" rx="147" ry="111" fill="#ba8c58" stroke="#805c3b" strokeWidth="3"/>
           <path d="M157 197v36c0 63 286 63 286 0v-36" fill="#d3aa70" stroke="#805c3b" strokeWidth="3"/>

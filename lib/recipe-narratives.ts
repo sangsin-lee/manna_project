@@ -1,5 +1,5 @@
 import type { Recipe, SourceLink } from "./content";
-import { riceSteamedPorkSources } from "./daily-sources";
+import { broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
 import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buckwheatGaletteSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
@@ -53,6 +53,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "puglia-inspired-broccoli-anchovy-pasta": narrative(
+    ["풀리아의 밭에서 파스타 냄비로", "풀리아에서는 치메 디 라파라는 채소를 오레키에테와 함께 삶아 마늘·앤초비 오일에 버무립니다. 오늘은 서로 다른 채소인 국내 브로콜리와 짧은 건조 파스타로 응용합니다. 지역의 조리법을 우리 장보기로 옮긴 한 접시입니다."],
+    ["오래된 기록 속 바리의 식탁", "풀리아 PAT 아틀라스는 1967년 요리책과 1987년 농업 간행물에 이 조합이 등장한다고 소개합니다. 후자는 앤초비와 빵 부스러기를 곁들이는 바리의 요리를 설명합니다. 이 연도들은 탄생 시점이 아닌 문헌으로 확인되는 흔적입니다."],
+    ["부드러운 채소, 마지막 한 숟갈의 바삭함", "충분히 익힌 브로콜리는 달큰하고 면의 홈 사이로 스며듭니다. 앤초비는 작은 조각으로 풀려 짭짤한 감칠맛을, 마늘 오일은 향과 윤기를 더합니다. 따로 볶은 빵가루를 마지막에 뿌려 부드러운 면과 바삭한 표면이 함께 느껴지도록 했습니다."],
+    [broccoliPastaSources.region, broccoliPastaSources.season, broccoliPastaSources.korea],
+  ),
   "nanchang-inspired-rice-powder-steamed-pork": narrative(
     ["쌀옷을 입혀 찌는 난창의 맛", "장시성 난창의 쑹후에서는 양념한 돼지고기에 쌀가루를 입혀 부드럽게 찌는 미펀러우를 만납니다. 난창시 정부는 이 조리 기술을 지역 무형문화유산 소개에 담고 있습니다. 오늘은 그 방식에 국내 고구마와 멥쌀을 더한 가정용 응용입니다."],
     ["입하의 풍습에서 가을 식탁으로", "난창에는 여름이 시작되는 절기인 입하 무렵 쌀가루 돼지고기찜을 먹는 풍습이 전해집니다. 2019년 시 정부 자료에도 이 풍습이 소개되지만, 그해 요리가 시작되었다는 뜻은 아닙니다. 이번에는 장시성과 한국의 가을 고구마 수확을 참고해 계절을 달리한 식탁을 차립니다."],

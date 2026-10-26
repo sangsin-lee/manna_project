@@ -1,9 +1,31 @@
 import type { Recipe } from "./content";
-import { riceSteamedPorkSources } from "./daily-sources";
+import { broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
 import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buckwheatGaletteSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "puglia-inspired-broccoli-anchovy-pasta", title: "풀리아풍 브로콜리 앤초비 파스타", country: "italy", category: "main", experienceStatus: "researched",
+    summary: "브로콜리와 짧은 파스타를 함께 삶아 마늘·앤초비 오일에 버무립니다. 부드럽게 으깬 채소가 면에 붙고, 마지막에 뿌린 노릇한 빵가루가 바삭함을 더하는 두 사람의 저녁입니다.",
+    culturalNote: "풀리아의 오레키에테 콘 레 치메 디 라파에서 영감 받은 가정용 응용입니다. 현지의 치메 디 라파와 브로콜리는 서로 다른 채소입니다. 여기서는 국내 브로콜리와 짧은 건조 파스타를 쓰므로 현지 채소의 쌉싸름함이나 생면의 식감을 그대로 재현하지는 않습니다.",
+    localTable: { region: "이탈리아 · 풀리아, 바리의 채소 파스타에서 얻은 영감", ingredient: "현지 치메 디 라파 → 국내 브로콜리로 응용", season: "현지 가을·겨울 채소와 국내 가을 브로콜리", note: "풀리아의 치메 디 라파는 일반적으로 9월 말~5월 유통되고 11~3월 물량이 많습니다. 품종과 지역에 따라 시기는 달라집니다. 국내 브로콜리는 농촌진흥청 작형표에서 가을재배 수확을 9~11월로 안내하며 봄·여름·겨울 재배도 구분합니다. 국내 구매 시 원산지와 신선도를 확인하고, 브로콜리를 가을에만 구할 수 있는 채소로 보지는 않습니다." },
+    cookingTime: 30, difficulty: "쉬움", servings: 2, visualLabel: "PUGLIA BROCCOLI PASTA", visualCaption: "파스타의 크림색과 빵가루의 금빛, 풀리아 해안의 푸른색을 떠올리는 격자", keywords: ["풀리아", "바리", "브로콜리", "앤초비", "치메디라파응용", "빵가루파스타", "가을채소", "이마트장보기"],
+    ingredientGroups: [
+      { title: "이마트 장보기 · 구매 단위 → 2인분 사용량", items: ["푸실리 또는 콘킬리에 건조 파스타 1봉 → 200g · 포장 권장 조리 시간 9~12분 제품 기준", "브로콜리 1~2송이 → 굵은 껍질을 제거한 줄기와 꽃봉오리 합계 350g", "바로 먹을 수 있는 오일 절임 앤초비 필레 1캔 또는 1병 → 기름 뺀 살 25g · 생멸치·마른 멸치·액젓 제외", "마늘 1통 → 3쪽(15g), 무가당 마른 빵가루 1봉 → 25g", "레몬 1개 → 즙 5ml(선택) · 산뜻하게 마무리하는 가정용 추가 재료"] },
+      { title: "양념·삶는 물·도구", items: ["올리브유 30ml · 빵가루용 5ml + 소스용 25ml", "고추 플레이크 0.5g(선택), 물 1.5L와 소금 6g · 면 삶기용", "삶은 물 150ml를 덜어 두고 소스에 필요한 만큼 사용", "큰 냄비, 넓은 팬, 체와 계량컵, 나무주걱"] },
+    ],
+    steps: [
+      { title: "물을 올리고 브로콜리 손질", description: "냄비에 물 1.5L를 올립니다. 브로콜리를 흐르는 물로 씻고 손상된 부분을 제거합니다. 꽃봉오리는 2cm 크기로 나누고 줄기는 질긴 겉껍질을 벗겨 3~4mm 두께로 썹니다. 마늘은 얇게 썰고 앤초비는 잘게 자릅니다.", tip: "채소에 비누나 세제를 쓰지 않습니다. 앤초비는 바로 먹을 수 있는 오일 절임 제품의 보관·사용 기한을 확인하세요." },
+      { title: "빵가루부터 노릇하게", description: "팬에 올리브유 5ml와 빵가루 25g을 넣고 중약불에서 2~3분 저어 연한 금빛으로 볶습니다. 바로 별도 그릇으로 옮겨 식힙니다.", tip: "팬에 두면 잔열로 탈 수 있습니다. 빵가루는 먹기 직전 올려 바삭함을 남깁니다." },
+      { title: "면과 채소를 같은 냄비에", description: "끓는 물에 소금 6g과 파스타 200g을 넣습니다. 포장 권장 시간보다 1분 먼저 건질 예정으로 타이머를 맞추고, 건지기 5분 전에 브로콜리를 넣습니다. 예를 들어 10분 제품은 면을 4분 삶은 뒤 채소를 넣어 5분 더 삶습니다. 건지기 전에 삶은 물 150ml를 덜어 둡니다.", tip: "마지막 팬 조리까지 합쳐 면을 익힙니다. 브로콜리는 줄기에 포크가 쉽게 들어갈 정도가 좋습니다. 단단하면 채소만 조금 더 삶고 면은 먼저 건집니다." },
+      { title: "약불에 앤초비를 풀어", description: "면이 삶아지는 동안 같은 팬에 나머지 올리브유 25ml와 마늘을 넣고 약불에서 약 2분 향을 냅니다. 앤초비와 선택한 고추 플레이크를 넣어 주걱으로 부수며 1분 볶습니다. 면이 준비될 때까지 불을 끕니다.", tip: "마늘을 진한 갈색으로 태우지 않습니다. 앤초비가 짭짤하므로 소스에 소금을 미리 더하지 않습니다." },
+      { title: "브로콜리 일부를 으깨 버무리기", description: "건진 면과 브로콜리, 삶은 물 60ml를 팬에 넣고 중불에서 1~2분 버무립니다. 브로콜리의 1/3 정도를 주걱으로 으깨 면에 붙입니다. 너무 뻑뻑하면 남겨 둔 물을 20ml씩 보충하고 면에 딱딱한 심이 남지 않게 마무리합니다.", tip: "오일과 삶은 물이 섞여 면을 얇게 감싸는 정도면 됩니다. 국물이 많이 남으면 조금 더 졸이고, 간은 완성 직전에 확인합니다." },
+      { title: "두 접시에 담아 바삭하게", description: "불을 끄고 선택한 레몬즙 5ml를 섞습니다. 두 접시에 나누어 담고 볶은 빵가루를 반씩 뿌려 바로 먹습니다. 채소 조각과 면, 빵가루를 한입에 함께 담아 보세요." },
+    ],
+    substitutions: ["푸실리·콘킬리에 대신 건조 오레키에테 200g을 쓸 수 있습니다. 어떤 면이든 포장 시간을 기준으로 채소 투입 시점을 조절합니다. 생면은 삶는 시간이 달라 채소를 먼저 익혀야 합니다.", "앤초비가 없으면 기름 뺀 캔 참치 80g을 마늘 오일에 넣고 완성 직전 소금으로 간합니다. 앤초비 특유의 감칠맛과 염도는 달라지는 응용입니다.", "냉동 브로콜리 350g도 가능합니다. 제품의 가열 안내를 우선하여 별도로 익힌 뒤 마지막 팬 단계에 넣습니다. 생채소보다 쉽게 부서질 수 있습니다.", "고추 플레이크와 레몬즙은 생략할 수 있습니다. 앤초비와 빵가루 등 상품의 취급 여부·포장량은 매장마다 다르므로 확인하고 구매하세요."],
+    tips: ["총 30분은 물을 끓이는 동안 손질하고 면을 삶는 동안 소스를 준비하는 기준입니다. 앤초비는 생선, 일반 파스타와 빵가루는 밀을 포함하므로 알레르기 성분을 확인합니다.", "남은 음식은 얕은 용기에 나누어 2시간 이내 4°C 이하에 냉장합니다. 기온이 32°C를 넘으면 1시간 이내에 넣고, 다시 먹을 때는 물을 조금 더해 중심 74°C까지 고르게 데웁니다. 개봉한 앤초비는 제품의 냉장·보관 기한 지시를 따릅니다.", "표지의 그림과 푸른 격자는 재료·지역 풍경에서 영감 받은 시각적 해석입니다. 실제 음식 사진이나 인증된 전통 문양을 뜻하지 않습니다."],
+    publishedAt: "2026-10-26", relatedStorySlugs: [], sources: Object.values(broccoliPastaSources), palette: { from: "#f5eddd", mid: "#dfc486", to: "#7aa5b1", ink: "#34444b" },
+  },
   {
     slug: "nanchang-inspired-rice-powder-steamed-pork", title: "난창풍 고구마 쌀가루 돼지고기찜", country: "china", category: "main", experienceStatus: "researched",
     summary: "노릇하게 볶아 굵게 간 쌀을 삼겹살에 입히고 고구마 위에 얹어 찝니다. 구수한 쌀옷이 육즙을 머금고, 아래의 고구마는 달큼하게 익는 두 사람의 가을 저녁입니다.",

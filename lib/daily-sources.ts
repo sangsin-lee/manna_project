@@ -1,5 +1,15 @@
 import type { SourceLink } from "./content";
 
+// Puglia's greens pasta adapted with Korean broccoli, reviewed October 26.
+export const broccoliPastaSources = {
+  region: { label: "풀리아 지역 지원 PAT 아틀라스 · 바리대학교 — 채소 파스타의 조리와 1967·1987년 문헌", url: "https://www.patpuglia.it/it/12/Orecchiette_con_le_cime_di_rapa/1_286_N" },
+  season: { label: "Puglia Vegetables World — 치메 디 라파의 지역 재배·계절별 유통", url: "https://pugliavegetablesworld.it/prodotti_senza_march/cima-di-rapa-in-puglia/" },
+  korea: { label: "농촌진흥청 농사로 — 브로콜리의 작형별 수확기", url: "https://www.nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?cntntsNo=30622&menuId=PS00087&sKidofcomdtySeCode=VC" },
+  washing: { label: "미국 FDA — 흐르는 물로 채소 세척하기", url: "https://www.fda.gov/consumers/consumer-updates/7-tips-cleaning-fruits-vegetables" },
+  storage: { label: "미국 FDA — 신속 냉장과 포장 보관 지시 확인", url: "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely" },
+  temperature: { label: "FoodSafety.gov — 남은 음식 재가열 74°C", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+} satisfies Record<string, SourceLink>;
+
 // Nanchang's rice-coated pork, adapted with autumn sweet potatoes, October 19.
 export const riceSteamedPorkSources = {
   region: { label: "난창시 정부 — 무형문화유산 77번, 쑹후 쌀가루 돼지고기찜과 입하 풍습", url: "https://www.nc.gov.cn/ncszf/whtya/201911/aa1f950471794a6bb6f4d83962001fe6.shtml" },

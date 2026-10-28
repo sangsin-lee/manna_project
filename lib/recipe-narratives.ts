@@ -1,5 +1,5 @@
 import type { Recipe, SourceLink } from "./content";
-import { broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
+import { papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
 import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buckwheatGaletteSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
@@ -53,6 +53,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "vaud-inspired-leek-potato-sausage": narrative(
+    ["레만호 곁, 감자와 리크의 한 접시", "파페 보두아는 스위스 보주에서 감자와 리크를 부드럽게 익혀 양배추 소시지와 곁들이는 음식입니다. 오늘은 국내 대파와 완전히 익힌 소시지로 응용합니다. 현지 특산 소시지의 재료와 맛을 그대로 옮긴 것은 아닙니다."],
+    ["오랜 설화와 확인 가능한 역사를 나누어", "로잔대학교가 소개한 연구자는 파페가 19세기 후반에 널리 퍼졌다고 설명하면서, 소시지와 언제 짝을 이루었는지는 확정하지 않습니다. 보주에서는 2009년부터 10월에 파페의 날을 열어 지역의 식탁을 나눕니다."],
+    ["달큼한 파, 포슬한 감자, 짭짤한 한입", "천천히 익힌 대파는 매운 향이 누그러지고 감자 일부가 풀려 부드러운 바탕이 됩니다. 남겨 둔 감자 덩어리와 소시지의 탄력이 한입에서 대비됩니다. 마지막 식초의 작은 산미가 크림과 버터의 고소한 맛을 산뜻하게 마무리합니다."],
+    [papetSources.region, papetSources.history, papetSources.recipe, papetSources.season, papetSources.korea],
+  ),
   "puglia-inspired-broccoli-anchovy-pasta": narrative(
     ["풀리아의 밭에서 파스타 냄비로", "풀리아에서는 치메 디 라파라는 채소를 오레키에테와 함께 삶아 마늘·앤초비 오일에 버무립니다. 오늘은 서로 다른 채소인 국내 브로콜리와 짧은 건조 파스타로 응용합니다. 지역의 조리법을 우리 장보기로 옮긴 한 접시입니다."],
     ["오래된 기록 속 바리의 식탁", "풀리아 PAT 아틀라스는 1967년 요리책과 1987년 농업 간행물에 이 조합이 등장한다고 소개합니다. 후자는 앤초비와 빵 부스러기를 곁들이는 바리의 요리를 설명합니다. 이 연도들은 탄생 시점이 아닌 문헌으로 확인되는 흔적입니다."],

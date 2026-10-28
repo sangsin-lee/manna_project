@@ -12,6 +12,35 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "papet-vaudois" && <g>
+          <circle cx="300" cy="186" r="142" fill="#fbf3e4" stroke="#668b9e" strokeWidth="5"/>
+          <circle cx="300" cy="186" r="126" stroke="#a0bcc6" strokeWidth="2"/>
+          <path d="M205 97q23-13 45-3m109 198q22-12 40-3M177 204q3 22 17 36m215-126q12 12 17 28" stroke="#759bab" strokeWidth="4" strokeLinecap="round"/>
+          <path d="M198 162q10-39 50-44 34-21 71-6 43-9 68 24 34 22 25 60 5 40-35 62-39 28-80 18-51 11-78-19-32-27-21-60Z" fill="#dbd4aa" stroke="#b8af82" strokeWidth="2"/>
+          {[[229,160,-15],[275,136,20],[347,138,-10],[380,184,15],[349,244,30],[274,251,-20],[222,221,15],[286,191,-12],[322,211,35]].map(([x,y,r]) => <g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="m-18-14 29-6 14 20-9 22-29-3-12-17Z" fill="#eee1b6" stroke="#c8b887" strokeWidth="2"/>
+            <path d="m-18-14 7 16 27-3-5-19m-22 22-2 17" stroke="#d8c89a" strokeWidth="2"/>
+            <path d="m-12-11 19-4" stroke="#fff1d0" strokeWidth="4" strokeLinecap="round"/>
+          </g>)}
+          {[[220,185,-22],[258,153,35],[321,133,5],[372,215,-30],[310,257,12],[246,238,-25],[282,213,30],[341,174,55]].map(([x,y,r]) => <g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-19-4q16-15 36 0v13q-19-9-36 1Z" fill="#91a475" stroke="#6c835b" strokeWidth="1.5"/>
+            <path d="M-15 0q13-8 28 1m-25 5q12-5 24 0" stroke="#c5cd9c" strokeWidth="2" strokeLinecap="round"/>
+          </g>)}
+          <g transform="rotate(-24 302 187)">
+            <path d="M235 168q58-40 123-1c15 10 12 36-8 41q-45-28-96-1c-25 9-43-22-19-39Z" fill="#a7644e" stroke="#754b3e" strokeWidth="3"/>
+            <path d="M244 174q46-27 100-1" stroke="#d39570" strokeWidth="7" strokeLinecap="round"/>
+            <path d="m261 168-4 20m28-26-3 19m27-18 2 18m22-11 3 17" stroke="#80513e" strokeWidth="3" strokeLinecap="round"/>
+            <ellipse cx="352" cy="190" rx="17" ry="21" transform="rotate(-20 352 190)" fill="#cc9a7f" stroke="#845443" strokeWidth="3"/>
+            <path d="m346 181 4 3m9 5-4 3m-7 8 4 2m1-24 5 2" stroke="#eed2ad" strokeWidth="4" strokeLinecap="round"/>
+          </g>
+          <g transform="translate(320 232) rotate(-24)">
+            <path d="M-24-10v18c2 22 44 24 48 0v-18" fill="#a6634d" stroke="#754b3e" strokeWidth="2"/>
+            <ellipse cy="-10" rx="24" ry="18" fill="#d2a083" stroke="#845443" strokeWidth="3"/>
+            <path d="m-14-13 5 3m9-10 4 3m9 6-4 4m-15 5 5 2" stroke="#f1d9b4" strokeWidth="4" strokeLinecap="round"/>
+          </g>
+          <path d="M243 66c-12-14 10-20-1-34m51 26c-12-14 10-20-1-34m51 42c-12-14 10-20-1-34" stroke="#7395a4" strokeWidth="3" strokeLinecap="round" opacity=".65"/>
+        </g>}
+
         {art === "broccoli-pasta" && <g>
           <circle cx="300" cy="186" r="141" fill="#faf3e3" stroke="#769da9" strokeWidth="5"/>
           <circle cx="300" cy="186" r="124" stroke="#a4bec3" strokeWidth="2"/>

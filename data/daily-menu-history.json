@@ -1295,6 +1295,48 @@
         "채소와 면을 한 냄비에",
         "30분 · 2인분"
       ]
+    },
+    {
+      "date": "2026-10-28",
+      "recipeSlug": "vaud-inspired-leek-potato-sausage",
+      "title": "보주풍 대파 감자 스튜와 소시지",
+      "canonicalDish": "Vaud inspired papet vaudois with Korean green onion potatoes and cooked sausage",
+      "aliases": [
+        "파페 보두아",
+        "파페 보두아 응용",
+        "Papet vaudois",
+        "대파 감자 스튜와 소시지"
+      ],
+      "keyIngredients": [
+        "대파 흰 부분·연녹색 부분",
+        "감자",
+        "완전히 익힌 돼지고기 소시지",
+        "양파",
+        "생크림"
+      ],
+      "method": "대파와 양파를 버터에 부드럽게 볶고 감자를 넣어 뚜껑을 덮고 익힌다. 감자 일부만 으깨 되직하게 만들고 따로 데운 소시지를 올린다.",
+      "selectionReason": "보주 지역의 추운 계절 식탁을 대파·감자·소시지로 응용했습니다. 국내 봄 재배 대파의 수확 시기를 참고해, 파의 달큼함과 감자의 포슬함을 한 접시에 담은 든든한 저녁입니다.",
+      "videoIdea": "대파가 버터에 부드러워지는 장면 → 포크로 감자 일부 으깨기 → 주걱 자국이 남는 스튜 → 소시지를 잘라 올리는 장면. 제목 아이디어: 대파 한 봉으로 떠나는 스위스 보주의 저녁.",
+      "duplicateReview": "기존 레시피 88개의 제목·주재료·조리 단계, 기준 기록 27개·일일 기록 22개의 별칭과 최근 Git 이력을 비교했다. 루체른 감자·치즈 마카로니는 면과 치즈를 섞지만 이번 메뉴는 대파를 감자와 푹 익혀 일부 으깨는 채소 스튜에 소시지를 곁들인다. 뢰스티의 감자채 팬 구이, 슈바벤 감자 샐러드의 식초 드레싱, 오베르뉴 렌틸 소시지 스튜의 콩 중심 조리와도 구별된다. 최근 중국·이탈리아 다음 스위스 보주로 순환한다. 10월 28일 메뉴 하나만 추가하며 빈 날짜는 소급하지 않는다.",
+      "research": {
+        "checkedAt": "2026-10-28",
+        "seasonalNote": "보주 주정부는 파페를 감자·리크·양배추 소시지의 지역 음식으로 소개하며 주로 먹는 시기를 9월 중순~4월로 설명한다. 이는 리크의 유일한 수확기가 아니며 스위스 채소생산자협회는 현지 리크를 연중 공급하는 채소로 안내한다. 농촌진흥청의 외대파 봄 재배 자료는 작형에 따른 수확을 10월~이듬해 4월로 설명한다. 국내 대파의 다른 작형과 저장·유통은 별개다. 로잔대학교의 연구자 인터뷰에서 19세기 후반 대중화와 불확실한 기원을 확인했고 중세 설화는 사실로 옮기지 않는다. V-ZUG의 2026년 직접 조리법을 참고하되 대파·완전 가열 소시지·물·생크림과 감자 일부 으깨기를 가정용 응용으로 제시한다. FDA 세척·냉장, FoodSafety.gov 재가열 온도를 확인했다. 미국 외식업협회 2026 전망의 지역 식재료·세계 가정식 경향은 편집 참고이며 국내 유행이나 조회 수의 증거가 아니다.",
+        "sources": [
+          "https://www.vd.ch/culture/patrimoine-mobilier-non-cantonal-et-immateriel-1/inventaire-cantonal-du-patrimoine-immateriel/pratiques-sociales/toute-lannee/papet-vaudois",
+          "https://wp.unil.ch/allezsavoir/les-origines-mysterieures-du-papet-vaudois/",
+          "https://www.gemuese.ch/gemuesearten/lauch",
+          "https://www.nongsaro.go.kr/portal/ps/psb/psby/vodPlay.ps?mvpNo=1712",
+          "https://www.vzug.com/ch/en/recipe/papet-vaudois--rvzug.recipe.2026.papet_vaudois",
+          "https://www.fda.gov/consumers/consumer-updates/7-tips-cleaning-fruits-vegetables",
+          "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "대파의 달큼함을 살린 스튜",
+        "완전히 익힌 소시지 사용"
+      ]
     }
   ]
 }

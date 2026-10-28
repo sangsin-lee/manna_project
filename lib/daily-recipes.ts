@@ -1,9 +1,31 @@
 import type { Recipe } from "./content";
-import { broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
+import { papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
 import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buckwheatGaletteSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "vaud-inspired-leek-potato-sausage", title: "보주풍 대파 감자 스튜와 소시지", country: "switzerland", category: "main", experienceStatus: "researched",
+    summary: "버터에 부드럽게 볶은 대파와 감자를 푹 익혀 되직하게 만듭니다. 달큼한 파와 포슬한 감자 위에 따뜻한 소시지를 얹어, 빵이나 밥 없이도 든든한 두 사람의 저녁을 차립니다.",
+    culturalNote: "스위스 보주 지역의 파페 보두아에서 영감 받은 가정용 응용입니다. 현지 리크와 양배추가 들어간 특산 소시지 대신 국내 대파와 완전히 익힌 돼지고기 소시지를 씁니다. 화이트와인·육수 대신 물, 크렘 프레슈 대신 생크림을 사용하므로 현지 맛이나 산지 인증을 그대로 재현한 요리는 아닙니다.",
+    localTable: { region: "스위스 · 보주, 레만호 주변의 식탁", ingredient: "현지 리크·감자·양배추 소시지 → 국내 대파·감자·가열 소시지", season: "현지 가을~봄 식탁 · 국내 가을 대파로 응용", note: "보주 주정부는 파페를 주로 9월 중순~4월에 먹는다고 안내합니다. 스위스 리크 자체는 생산자협회 기준 연중 공급됩니다. 국내 농촌진흥청의 외대파 봄 재배 자료는 작형에 따른 수확을 10월~이듬해 4월로 설명합니다. 이는 모든 대파의 유일한 수확기가 아니며, 국내 대파·감자의 구매 시기와 현지 음식의 계절은 구분합니다." },
+    cookingTime: 45, difficulty: "쉬움", servings: 2, visualLabel: "VAUD PAPET TABLE", visualCaption: "감자의 크림색과 소시지의 적갈색, 레만호에서 영감 받은 푸른 물결", keywords: ["스위스", "보주", "파페보두아", "Papet vaudois", "대파", "감자스튜", "소시지", "가을저녁", "이마트장보기"],
+    ingredientGroups: [
+      { title: "이마트 장보기 · 구매 단위 → 2인분 사용량", items: ["감자 1봉 또는 중간 크기 3~4개 → 껍질 제거 후 500g", "대파 1봉 → 뿌리·질긴 겉잎을 뺀 흰 부분과 연녹색 부분 250g", "완전히 익힌 돼지고기 소시지 1팩 → 240g · 가열제품 표시 확인, 생소시지 제외", "양파 1개 → 80g, 무염버터 1팩 → 10g", "무가당 동물성 생크림 소포장 → 40ml · 휘핑해 단맛을 넣은 제품 제외"] },
+      { title: "양념·물·도구", items: ["사과식초 1병 또는 집에 있는 식초 → 5ml, 후추 약간, 소금 0~1g · 마지막에 간을 보고 조절", "스튜용 물 300ml + 농도 조절용 최대 100ml, 소시지 팬용 물 30ml", "디종 머스터드 10g(선택) · 소시지 옆에 따로 곁들이기", "뚜껑 있는 지름 20~22cm 냄비, 작은 팬과 뚜껑, 포크·주걱 · 재가열 시 식품용 온도계"] },
+    ],
+    steps: [
+      { title: "대파의 겹 사이까지 깨끗하게", description: "감자와 대파를 흐르는 물로 씻습니다. 대파는 길게 반 갈라 겹 사이 흙을 씻어 내고 1cm 폭으로 썹니다. 감자는 껍질을 벗겨 2cm 크기로, 양파는 잘게 썹니다. 소시지와 크림은 사용할 때까지 냉장합니다.", tip: "채소에 세제를 쓰지 않습니다. 대파의 진녹색 질긴 잎은 따로 보관해 다른 요리에 쓰고, 이 스튜에는 흰 부분과 연녹색 부분을 계량합니다." },
+      { title: "태우지 않고 파의 단맛 끌어내기", description: "냄비에 버터 10g을 녹이고 양파와 대파를 넣습니다. 중약불에서 6~7분 저으며 부드럽게 볶습니다. 갈색이 나기 시작하면 불을 낮추고 계량한 물에서 한 큰술을 덜어 넣습니다.", tip: "불맛을 내는 볶음이 아니라 파가 부드럽고 달큼해지도록 익히는 단계입니다." },
+      { title: "감자와 함께 뚜껑 덮어 익히기", description: "감자와 남은 스튜용 물을 넣고 끓입니다. 뚜껑을 덮어 중약불에서 20~25분 익힙니다. 중간에 한두 번 바닥을 저어 주고, 물이 말라붙으면 보충용 물을 30ml씩 더합니다. 감자에 포크가 쉽게 들어갈 때까지 익힙니다." },
+      { title: "완전히 익힌 소시지는 별도 팬에", description: "감자가 익는 동안 소시지를 2cm 두께로 썰어 작은 팬에 물 30ml와 넣습니다. 뚜껑을 덮고 중약불에서 5~7분 뒤집어 가며 가운데까지 뜨겁게 데웁니다. 뚜껑을 열어 남은 물을 날리고 약 1분 가볍게 굽습니다. 제품에 별도 가열 지시가 있으면 그 방법과 시간을 우선합니다.", tip: "이 단계는 완전히 익힌 가열제품용입니다. 생소시지에 같은 시간을 적용하지 않습니다. 포장이 비가식성인지도 확인해 제거합니다." },
+      { title: "감자 일부만 으깨 되직하게", description: "감자가 무르게 익으면 뚜껑을 열고 약 1/3을 포크로 으깹니다. 생크림 40ml를 넣고 약불에서 2~3분 저어, 주걱으로 그은 자국이 잠시 남는 농도로 맞춥니다. 묽으면 조금 더 졸이고 뻑뻑하면 보충용 물을 조금 넣습니다.", tip: "전부 갈지 않아야 감자 덩어리와 부드러운 대파의 식감이 함께 남습니다. 팬 크기와 화력에 따라 수분량을 조절하세요." },
+      { title: "산미를 더하고 따뜻한 두 접시로", description: "불을 끈 뒤 사과식초 5ml와 후추를 넣습니다. 소시지가 짭짤하므로 함께 맛보고 소금은 1g 이내로 조절합니다. 스튜를 두 접시에 나누고 소시지를 반씩 올립니다. 선택한 머스터드는 옆에 따로 내어 조금씩 곁들입니다." },
+    ],
+    substitutions: ["리크를 구할 수 있다면 대파 대신 손질한 리크 300g을 쓸 수 있습니다. 질긴 진녹색 잎을 빼고 부드러워질 때까지 익히며, 대파와 향·섬유질이 같지는 않습니다.", "무가당 생크림 40ml 대신 우유 60ml를 넣어 약불에서 조금 더 졸일 수 있습니다. 질감은 가벼워집니다. 사과식초 대신 일반 양조식초 3ml부터 넣어 맛을 조절하세요.", "돼지고기 소시지 대신 완전히 익힌 닭고기 소시지 240g을 같은 제품 안내에 맞춰 데울 수 있습니다. 생소시지와 현지 양배추 소시지는 별도의 조리법이 필요하므로 그대로 바꾸지 않습니다.", "머스터드는 생략할 수 있습니다. 재료는 일반적인 마트 상품을 기준으로 하며 특정 이마트 지점의 취급·재고·포장량은 구매 전에 확인하세요."],
+    tips: ["총 45분은 감자를 익히는 동안 소시지를 데우는 기준입니다. 버터·크림에는 우유가 포함되며 소시지와 머스터드의 알레르기 성분도 포장에서 확인합니다.", "남은 음식은 얕은 용기에 나누어 2시간 이내 4°C 이하에 냉장합니다. 기온이 32°C를 넘으면 1시간 이내에 넣고, 다시 먹을 때는 물을 조금 더해 중심 74°C까지 고르게 데웁니다. 개봉한 소시지·크림은 제품의 냉장 및 사용 기한 지시를 따릅니다.", "표지의 일러스트와 푸른 물결은 음식과 레만호에서 영감 받은 시각적 해석입니다. 실제 음식 사진이나 전통 문양의 재현을 뜻하지 않습니다."],
+    publishedAt: "2026-10-28", relatedStorySlugs: [], sources: Object.values(papetSources), palette: { from: "#f6efdf", mid: "#d8b6a0", to: "#9dbbc8", ink: "#344a57" },
+  },
   {
     slug: "puglia-inspired-broccoli-anchovy-pasta", title: "풀리아풍 브로콜리 앤초비 파스타", country: "italy", category: "main", experienceStatus: "researched",
     summary: "브로콜리와 짧은 파스타를 함께 삶아 마늘·앤초비 오일에 버무립니다. 부드럽게 으깬 채소가 면에 붙고, 마지막에 뿌린 노릇한 빵가루가 바삭함을 더하는 두 사람의 저녁입니다.",

@@ -1,5 +1,17 @@
 import type { SourceLink } from "./content";
 
+// Vaud's papet adapted with Korean green onion and cooked sausage, October 28.
+export const papetSources = {
+  region: { label: "보주 주정부 — 파페 보두아의 지역 식문화와 먹는 계절", url: "https://www.vd.ch/culture/patrimoine-mobilier-non-cantonal-et-immateriel-1/inventaire-cantonal-du-patrimoine-immateriel/pratiques-sociales/toute-lannee/papet-vaudois" },
+  history: { label: "로잔대학교 Allez savoir! — 파페의 불확실한 기원과 19세기 후반 대중화", url: "https://wp.unil.ch/allezsavoir/les-origines-mysterieures-du-papet-vaudois/" },
+  season: { label: "스위스 채소생산자협회 — 리크의 연중 공급", url: "https://www.gemuese.ch/gemuesearten/lauch" },
+  korea: { label: "농촌진흥청 농사로 — 외대파 봄 재배와 작형별 수확", url: "https://www.nongsaro.go.kr/portal/ps/psb/psby/vodPlay.ps?mvpNo=1712" },
+  recipe: { label: "V-ZUG 스위스 — 리크·감자·소시지로 만드는 파페 조리법", url: "https://www.vzug.com/ch/en/recipe/papet-vaudois--rvzug.recipe.2026.papet_vaudois" },
+  washing: { label: "미국 FDA — 흐르는 물로 채소 세척하기", url: "https://www.fda.gov/consumers/consumer-updates/7-tips-cleaning-fruits-vegetables" },
+  storage: { label: "미국 FDA — 신속 냉장과 포장 보관 지시 확인", url: "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely" },
+  temperature: { label: "FoodSafety.gov — 남은 음식 재가열 74°C", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+} satisfies Record<string, SourceLink>;
+
 // Puglia's greens pasta adapted with Korean broccoli, reviewed October 26.
 export const broccoliPastaSources = {
   region: { label: "풀리아 지역 지원 PAT 아틀라스 · 바리대학교 — 채소 파스타의 조리와 1967·1987년 문헌", url: "https://www.patpuglia.it/it/12/Orecchiette_con_le_cime_di_rapa/1_286_N" },

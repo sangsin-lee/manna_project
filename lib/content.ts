@@ -1477,8 +1477,8 @@ export const countries: Country[] = [
       },
     ],
     storySlugs: ["jungfrau-alpine-cuisine", "swiss-fondue-shared-table"],
-    recipeSlugs: ["lucerne-inspired-alpine-macaroni", "graubunden-inspired-barley-soup", "swiss-rosti", "swiss-cheese-fondue"],
-    updatedAt: "2026-10-10",
+    recipeSlugs: ["vaud-inspired-leek-potato-sausage", "lucerne-inspired-alpine-macaroni", "graubunden-inspired-barley-soup", "swiss-rosti", "swiss-cheese-fondue"],
+    updatedAt: "2026-10-28",
     palette: {
       from: "#e8ede9",
       mid: "#d2dfd8",

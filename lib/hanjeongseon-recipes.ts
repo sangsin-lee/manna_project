@@ -8,7 +8,7 @@ export const hanjeongseonRecipes: Recipe[] = [
     slug: "hanjeongseon-inspired-fruit-mochi", title: "한정선에서 영감 받은 생과일 찹쌀떡", country: "korea", category: "dessert", experienceStatus: "researched",
     summary: "얇은 찹쌀 반죽 안에 팥앙금과 작은 딸기를 넣는 8개 분량의 디저트입니다. 한정선의 생과일 찹쌀떡에서 아이디어를 얻은 가정용 응용으로, 매장의 공식 배합이나 특정 상품의 재현은 아닙니다.",
     culturalNote: "서울관광재단은 성수동 한정선을 생과일과 다양한 속재료를 담는 찹쌀떡 가게로 소개합니다. 과일을 떡으로 감싸는 방식은 일본의 과일 다이후쿠에서도 볼 수 있습니다. 이 레시피는 한정선이 과일 찹쌀떡 전체를 발명했다고 주장하지 않으며, 딸기·팥 조합과 분량은 만나의 식탁이 구성했습니다.",
-    localTable: { region: "한국 · 서울 성수동에서 영감", ingredient: "찹쌀가루 · 생과일 · 팥앙금", season: "과일의 제철과 수급에 따라 바꾸는 디저트", note: "서울은 브랜드의 지역 배경이며 딸기의 산지를 뜻하지 않습니다. 아래 기본 배합은 작은 딸기 기준입니다. 가을에는 작은 귤이나 씨 없는 포도로 응용할 수 있고, 시설 재배·저장·수입에 따른 판매 시기는 노지 수확기와 다릅니다. 특정 매장 재고는 확인하지 않았습니다." },
+    localTable: { region: "한국 · 서울 성수동에서 영감", ingredient: "찹쌀가루 · 생과일 · 팥앙금", season: "과일에 따라 달라지는 색과 맛", note: "딸기를 넣으면 붉은 단면과 산뜻한 맛을, 귤을 넣으면 주황빛과 상큼한 과즙을 즐길 수 있습니다. 이 레시피는 작은 딸기 기준이며, 제철에 구하기 좋은 귤이나 씨 없는 포도로 바꿔도 좋습니다." },
     cookingTime: 40, difficulty: "보통", servings: 4,
     visualLabel: "FRUIT MOCHI", visualCaption: "떡의 크림빛과 딸기 단면의 장밋빛, 선물 보자기를 떠올리는 리넨 선",
     keywords: ["한정선", "생과일찹쌀떡", "과일모찌", "딸기모찌", "성수디저트"],

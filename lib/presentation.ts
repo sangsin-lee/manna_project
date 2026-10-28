@@ -1,6 +1,7 @@
 import type { Recipe, SourceLink, Story } from "./content";
 import { getRecipeNarrative, getRecipeSources } from "./recipe-narratives";
 import { getRecipeDesign, type RecipeDesign } from "./recipe-design";
+import { splitScreenText } from "./screen-text";
 
 export type PresentationFrame = {
   design?: RecipeDesign;
@@ -14,20 +15,7 @@ export type PresentationFrame = {
   kicker?: string;
 };
 
-// Preserve all text, including decimal temperatures and safety instructions.
-export function splitForScreen(text: string, limit = 145): string[] {
-  const pieces: string[] = [];
-  let current = "";
-  for (const word of text.trim().split(/\s+/)) {
-    if (current && `${current} ${word}`.length > limit) {
-      pieces.push(current);
-      current = "";
-    }
-    current = current ? `${current} ${word}` : word;
-  }
-  if (current) pieces.push(current);
-  return pieces;
-}
+export const splitForScreen = splitScreenText;
 
 function textFrames(section: string, title: string, text: string, kind: PresentationFrame["kind"], number?: string): PresentationFrame[] {
   return splitForScreen(text).map((body) => ({ section, title, body, kind, number }));

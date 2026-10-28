@@ -1,5 +1,6 @@
 import type { PresentationFrame } from "./presentation";
 import type { SourceLink } from "./content";
+import { splitScreenText } from "./screen-text";
 
 export type DraftScene = {
   design?: PresentationFrame["design"];
@@ -45,20 +46,7 @@ export function draftFromFrames(frames: PresentationFrame[], storyOnly: boolean)
   }));
 }
 
-// Split without rewriting temperatures, names, or long words without spaces.
-export function splitSceneText(text: string, limit = 145): string[] {
-  const result: string[] = [];
-  let rest = text.trim();
-  while (rest.length > limit) {
-    const boundary = rest.slice(0, limit + 1).search(/\s+\S*$/);
-    let cut = boundary > limit / 2 ? boundary : limit;
-    if (/[\uD800-\uDBFF]/.test(rest[cut - 1])) cut--;
-    result.push(rest.slice(0, cut).trim());
-    rest = rest.slice(cut).trim();
-  }
-  if (rest) result.push(rest);
-  return result;
-}
+export const splitSceneText = splitScreenText;
 
 export function buildScenes(drafts: DraftScene[]): VideoScene[] {
   return drafts.flatMap((draft) => {

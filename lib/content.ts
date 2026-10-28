@@ -1,4 +1,5 @@
 import { steakRecipes } from "./steak-recipes";
+import { hanjeongseonRecipes, hanjeongseonStory } from "./hanjeongseon-recipes";
 import { dailyRecipes } from "./daily-recipes";
 import { usMexicanRecipes } from "./us-mexican-recipes";
 import { usMexicanSources } from "./us-mexican-sources";
@@ -317,8 +318,9 @@ export const countries: Country[] = [
         url: "https://ich.unesco.org/en/RL/kimjang-making-and-sharing-kimchi-in-the-republic-of-korea-00881",
       },
     ],
-    storySlugs: ["korean-banchan-culture", "korean-market-food"],
+    storySlugs: [hanjeongseonStory.slug, "korean-banchan-culture", "korean-market-food"],
     recipeSlugs: [
+      ...hanjeongseonRecipes.map((recipe) => recipe.slug),
       ...gyeongbukRecipes.map((recipe) => recipe.slug),
       ...gyeongnamRecipes.map((recipe) => recipe.slug),
       ...jeonnamRecipes.map((recipe) => recipe.slug),
@@ -333,7 +335,7 @@ export const countries: Country[] = [
       "club-suyuk-platter",
       "club-bean-sprout-egg-ramyeon",
     ],
-    updatedAt: "2026-09-22",
+    updatedAt: "2026-10-28",
     palette: {
       from: "#f1e4d6",
       mid: "#dfe8df",
@@ -1617,6 +1619,7 @@ export const countries: Country[] = [
 ];
 
 export const stories: Story[] = [
+  hanjeongseonStory,
   {
     slug: "fried-chicken-buffalo-wings-american-regions", title: "프라이드치킨과 버팔로 윙, 서로 다른 미국의 닭 요리",
     country: "usa", category: "food-culture", experienceStatus: "researched",
@@ -2871,6 +2874,7 @@ export const stories: Story[] = [
 ];
 
 export const recipes: Recipe[] = [
+  ...hanjeongseonRecipes,
   ...usChickenRecipes,
   ...usMexicanRecipes,
   ...gyeongbukRecipes,

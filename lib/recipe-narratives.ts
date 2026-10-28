@@ -1,4 +1,5 @@
 import type { Recipe, SourceLink } from "./content";
+import { hanjeongseonSources } from "./hanjeongseon-sources";
 import { papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
@@ -53,6 +54,18 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "hanjeongseon-inspired-fruit-mochi": narrative(
+    ["성수동의 작은 과일 디저트", "서울관광재단은 한정선을 생과일과 다양한 속재료를 담는 찹쌀떡 가게로 소개합니다. 오늘은 작은 딸기와 팥앙금으로 응용합니다. 매장의 공식 배합이 아닌 만나의 식탁이 구성한 가정용 레시피입니다."],
+    ["과일 다이후쿠와 오늘의 선물 문화", "일본의 나미사토는 딸기 다이후쿠가 1985년 무렵 알려졌고 여러 기원설이 있다고 설명합니다. 과일 떡 전체의 발명자를 단정하지 않습니다. 서울의 오늘날 디저트 문화에서는 개별 포장과 선물이라는 즐거움도 함께 만납니다."],
+    ["산뜻한 과일, 달콤한 앙금, 쫀득한 떡", "딸기의 과즙과 팥앙금의 단맛을 얇은 찹쌀피가 감쌉니다. 떡을 세로로 자르면 세 겹의 색이 드러납니다. 과일의 물기를 잘 닦고 반죽을 완전히 익혀 감싼 뒤, 만든 날 차갑게 보관하며 즐겨 보세요."],
+    [hanjeongseonSources.shop, hanjeongseonSources.fruitHistory, hanjeongseonSources.dough],
+  ),
+  "hanjeongseon-inspired-dubai-chocolate-mochi": narrative(
+    ["두바이의 맛 조합, 서울의 찹쌀떡", "한정선의 두바이 스타일 찹쌀떡은 서울관광재단의 안내에서 확인할 수 있습니다. 이번에는 피스타치오와 구운 카다이프를 코코아 떡에 담습니다. 매장의 공식 배합이나 두바이의 전통 찹쌀떡을 재현한 것은 아닙니다."],
+    ["초콜릿에서 다른 디저트로", "게티 미술관은 2025년 피스타치오와 카다이프를 활용한 초콜릿과 치즈케이크를 소개했습니다. 현대의 두바이 초콜릿 조합이 여러 형태로 응용된 사례입니다. 중동의 전통 디저트와 오늘의 응용 메뉴를 구분해 읽어 봅니다."],
+    ["부드러운 겉과 바삭한 속의 대비", "코코아 반죽의 쌉싸름한 맛 안에 피스타치오 크림의 고소함과 카다이프의 바삭한 결이 들어갑니다. 갈색 떡을 자르면 연두빛 속이 드러납니다. 시간이 지나면 바삭함이 줄어들므로 만든 날의 식감 대비를 담아 보세요."],
+    [hanjeongseonSources.shop, hanjeongseonSources.dubaiCulture, hanjeongseonSources.filling],
+  ),
   "vaud-inspired-leek-potato-sausage": narrative(
     ["레만호 곁, 감자와 리크의 한 접시", "파페 보두아는 스위스 보주에서 감자와 리크를 부드럽게 익혀 양배추 소시지와 곁들이는 음식입니다. 오늘은 국내 대파와 완전히 익힌 소시지로 응용합니다. 현지 특산 소시지의 재료와 맛을 그대로 옮긴 것은 아닙니다."],
     ["오랜 설화와 확인 가능한 역사를 나누어", "로잔대학교가 소개한 연구자는 파페가 19세기 후반에 널리 퍼졌다고 설명하면서, 소시지와 언제 짝을 이루었는지는 확정하지 않습니다. 보주에서는 2009년부터 10월에 파페의 날을 열어 지역의 식탁을 나눕니다."],

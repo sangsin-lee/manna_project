@@ -12,6 +12,54 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "fruit-mochi" && <g>
+          <circle cx="300" cy="186" r="142" fill="#fff7ed" stroke="#c78d98" strokeWidth="4"/>
+          <circle cx="300" cy="186" r="125" stroke="#e1b5ba" strokeWidth="2"/>
+          <path d="M181 253q115 29 238-2l-14 26q-111 29-212-1Z" fill="#e8ccd1" opacity=".7"/>
+          <ellipse cx="252" cy="146" rx="56" ry="15" fill="#c99896" opacity=".2"/>
+          <path d="M198 144c-9-28 8-62 47-64 35-3 66 24 63 55-2 31-99 39-110 9Z" fill="#fffaf2" stroke="#d8b6ac" strokeWidth="2.5"/>
+          <path d="M216 115q10-22 34-22" stroke="#ffffff" strokeWidth="7" strokeLinecap="round"/>
+          <path d="M210 150q43 10 85-4" stroke="#efdfd3" strokeWidth="4" strokeLinecap="round"/>
+          <g transform="translate(346 169) rotate(12)">
+            <path d="M-61 29q-9-76 59-81 65-1 63 81c-22 19-97 19-122 0Z" fill="#fffaf2" stroke="#d5ada7" strokeWidth="3"/>
+            <path d="M-47 25q-5-61 45-65 48-2 48 65c-25 12-67 12-93 0Z" fill="#875453"/>
+            <path d="M-34 17q-9-22 2-39 15-18 31-3 17-16 31 1 13 16 2 40L0 32Z" fill="#d75e6d" stroke="#b44757" strokeWidth="2"/>
+            <path d="M-1-23q-9 21 1 46 12-25-1-46Z" fill="#f6bac0"/>
+            {[[ -22,-7],[-21,8],[-14,17],[20,-7],[21,8],[14,17]].map(([x,y]) => <ellipse key={`${x}-${y}`} cx={x} cy={y} rx="1.8" ry="3" fill="#f8d2a6"/>)}
+          </g>
+          <g transform="translate(252 244) rotate(-9)">
+            <path d="M-64 24q-7-78 60-80 68-1 66 80c-23 17-100 19-126 0Z" fill="#fffaf2" stroke="#d5ada7" strokeWidth="3"/>
+            <path d="M-49 20q-5-60 46-64 51-1 50 64c-27 13-69 13-96 0Z" fill="#875453"/>
+            <path d="M-34 10q-10-23 2-39 13-17 29-3 20-14 33 4 12 18 0 39L-2 31Z" fill="#df6576" stroke="#bc495f" strokeWidth="2"/>
+            <path d="M-3-29q-10 25 1 53 13-26-1-53Z" fill="#f8b9c3"/>
+            {[[-23,-11],[-22,3],[-14,15],[20,-10],[21,4],[13,16]].map(([x,y]) => <ellipse key={`${x}-${y}`} cx={x} cy={y} rx="1.8" ry="3" fill="#ffe1ac"/>)}
+          </g>
+          <path d="M355 249q-20-17-25 6-2 18 23 35 24-14 23-34-4-23-21-7Z" fill="#cf5367" stroke="#b34455" strokeWidth="2"/>
+          <path d="m355 250-18-14 16 4 7-11 1 13 14-3-12 11" fill="#758662"/>
+          <path d="m342 262 2 4m12-3 1 4m10-6-1 4m-11 9 1 4" stroke="#f8d6a1" strokeWidth="2.5" strokeLinecap="round"/>
+        </g>}
+
+        {art === "dubai-mochi" && <g>
+          <circle cx="300" cy="186" r="142" fill="#faf0db" stroke="#a58761" strokeWidth="4"/>
+          <circle cx="300" cy="186" r="125" stroke="#c9b78c" strokeWidth="2"/>
+          <ellipse cx="261" cy="151" rx="63" ry="18" fill="#614638" opacity=".15"/>
+          <path d="M199 147c-6-37 17-68 57-69 46-2 71 32 65 65-5 33-110 38-122 4Z" fill="#9b735d" stroke="#6d4a39" strokeWidth="3"/>
+          <path d="M219 111q12-19 36-19" stroke="#bd9475" strokeWidth="6" strokeLinecap="round"/>
+          <path d="M219 89q10 35 8 69m16-76q11 39 6 81m17-80q11 38 7 77m17-65q8 29 5 55" stroke="#55372c" strokeWidth="5" strokeLinecap="round"/>
+          {[[352,181,13],[259,251,-13]].map(([x,y,r]) => <g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-65 24q-7-81 64-82 67-2 65 82c-21 19-106 19-129 0Z" fill="#a67b62" stroke="#6d4a39" strokeWidth="3"/>
+            <path d="M-49 20q-3-61 48-64 50-1 49 64c-23 13-75 13-97 0Z" fill="#93a064" stroke="#76834d" strokeWidth="2"/>
+            <path d="m-32-8 17-8m11-14 18 8m13 5-11 14m-41 2 17 8m14-13 14 8m-46 6 5 14m20-10 15 12m13-17 10 8m-65 3 11-9" stroke="#d3c48b" strokeWidth="3" strokeLinecap="round"/>
+            <path d="m-22-22 11 5m18-14 9 4m-45 25 9 2m21-5 10-4m-5 25 10-2m17-12 2 9" stroke="#667347" strokeWidth="2.5" strokeLinecap="round"/>
+            <path d="M-38-42q-1 8-4 14m33-25 1 9m29-6 3 11m26 3 4 14" stroke="#55372c" strokeWidth="4" strokeLinecap="round"/>
+          </g>)}
+          {[[349,278,-35],[378,261,20],[208,199,-10]].map(([x,y,r]) => <g key={x} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <ellipse rx="9" ry="15" fill="#d8c7a2" stroke="#ab926e" strokeWidth="2"/>
+            <path d="M0-12q-9 13 0 24 10-12 0-24Z" fill="#8d9b5b"/>
+          </g>)}
+          <path d="m323 291 12-4m52-52 12 2m-183-24 12 3" stroke="#c3a671" strokeWidth="3" strokeLinecap="round"/>
+        </g>}
+
         {art === "papet-vaudois" && <g>
           <circle cx="300" cy="186" r="142" fill="#fbf3e4" stroke="#668b9e" strokeWidth="5"/>
           <circle cx="300" cy="186" r="126" stroke="#a0bcc6" strokeWidth="2"/>

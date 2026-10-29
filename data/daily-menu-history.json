@@ -1337,6 +1337,55 @@
         "대파의 달큼함을 살린 스튜",
         "완전히 익힌 소시지 사용"
       ]
+    },
+    {
+      "date": "2026-10-29",
+      "recipeSlug": "hong-kong-inspired-radish-cake",
+      "title": "홍콩풍 무떡구이와 달걀 채소 한 접시",
+      "canonicalDish": "Hong Kong inspired lo bak go radish rice cake with eggs and vegetables",
+      "aliases": [
+        "로박고",
+        "로바까오",
+        "蘿蔔糕",
+        "Lo bak go",
+        "홍콩 무떡",
+        "Turnip cake"
+      ],
+      "keyIngredients": [
+        "무",
+        "건식 멥쌀가루",
+        "옥수수전분",
+        "건새우",
+        "표고버섯",
+        "달걀",
+        "청경채"
+      ],
+      "method": "익힌 무채와 볶은 새우·버섯을 멥쌀가루 반죽에 섞어 틀에서 찐다. 냉장해 굳힌 뒤 썰어 팬에 굽고, 별도로 익힌 달걀과 청경채를 곁들인다.",
+      "selectionReason": "홍콩 딤섬의 무떡을 국내 가을무로 응용했습니다. 달큼한 무채와 고소한 구운 면이 대비되고, 달걀과 청경채를 함께 차려 든든한 저녁으로 즐깁니다.",
+      "videoIdea": "무를 채 써는 장면 → 걸쭉한 반죽을 틀에 펴기 → 식힌 떡의 단면 → 팬에서 뒤집으며 드러나는 금빛 구운 면. 제목 아이디어: 가을무가 홍콩 딤섬이 되는 순간.",
+      "duplicateReview": "기존 91개 레시피의 제목·핵심 재료·조리 순서, 기준 기록 27개와 일일 기록 23개의 별칭, steak-recipes·recipe-narratives·TonightPick 및 관련 Git 이력을 비교했다. 찹쌀떡은 찹쌀피로 단 속을 감싸고, 기름떡볶이는 시판 떡을 양념하며, 익산 치즈전은 으깬 고구마를 빚어 바로 굽는다. 이번 메뉴는 무채와 멥쌀 반죽을 틀에 쪄 굳혀 썬 뒤 굽는 짭짤한 로박고로 조리 구조가 다르다. 최근 중국·이탈리아·스위스 다음 홍콩 딤섬 식탁으로 순환하며 한국 날짜 10월 29일에 한 메뉴만 추가한다.",
+      "research": {
+        "checkedAt": "2026-10-29",
+        "seasonalNote": "홍콩관광청의 중서구 식당 소개와 딤섬 안내에서 무떡을 확인했다. 홍콩 위생방호센터는 설 명절 무떡과 건새우·표고 등의 응용을 소개한다. 홍콩 교육국 2016년 교재의 무·멥쌀가루·전분 찜 구성과 이금기의 식힌 뒤 냉장해 썰어 굽는 순서를 참고했다. 교재 발행 시기는 요리 기원이 아니며 특정 발명자나 연도는 단정하지 않는다. 홍콩 어농자연호리서의 일본무 재배 안내는 9월 하순~12월 파종 및 약 70일 후 수확으로, 국내 10~11월 가을무 수확과 구분했다. 국내 무·생표고·옥수수전분 배합과 달걀·청경채 곁들임은 자체 가정용 응용이며 현지 식당의 공식 레시피가 아니다. FDA 신속 냉장·달걀 완전 가열, FoodSafety.gov 재가열 74°C를 확인했다. 미국 외식업협회 2026 전망의 세계 가정식·지역 재료 경향은 편집 참고이며 국내 유행이나 조회 수의 증거가 아니다.",
+        "sources": [
+          "https://www.discoverhongkong.com/eng/food-and-drink/unmissable-hong-kong-dim-sum-restaurants.html",
+          "https://tastehk.discoverhongkong.com/en/restaurants/sheung-hei",
+          "https://www.chp.gov.hk/en/static/90046.html",
+          "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/technology-edu/resources/technology-and-living/Day_1_Food_Tests1-5_20160705.pdf",
+          "https://hk.lkk.com/en/recipes/xo-turnip-pudding",
+          "https://www.afcd.gov.hk/english/agriculture/agr_useful/agr_useful_spe/japanese_radish_cult.html",
+          "https://www.nongsaro.go.kr/portal/ps/psb/psby/vodPlay.ps?menuId=PS65512&mvpNo=2075",
+          "https://www.fda.gov/consumers/consumer-updates/7-tips-cleaning-fruits-vegetables",
+          "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely",
+          "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-egg-safety",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "찜·냉장 2시간 포함 총 4시간",
+        "떡은 미리 만들어 두어도 좋아요"
+      ]
     }
   ]
 }

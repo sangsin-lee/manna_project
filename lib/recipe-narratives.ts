@@ -1,6 +1,6 @@
 import type { Recipe, SourceLink } from "./content";
 import { hanjeongseonSources } from "./hanjeongseon-sources";
-import { papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
+import { radishCakeSources, papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
 import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buckwheatGaletteSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
@@ -54,6 +54,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "hong-kong-inspired-radish-cake": narrative(
+    ["차와 함께 나누는 짭짤한 무떡", "로박고는 무와 멥쌀가루를 쪄 만드는 광둥식 딤섬입니다. 홍콩관광청은 중환의 무떡구이와 케네디타운의 무떡 요리를 소개합니다. 오늘은 그 식탁에서 영감을 받아 국내 가을무로 만들어 봅니다."],
+    ["명절의 음식이 오늘의 한 접시로", "홍콩의 설 식탁에서도 무떡을 만납니다. 2016년 홍콩 교육국 실습 교재에는 무와 쌀가루를 섞어 찌는 방법이 담겨 있습니다. 이는 교육 자료의 발행 시점으로, 요리의 탄생 연도를 뜻하지 않습니다. 이번 저녁에는 달걀과 채소를 곁들입니다."],
+    ["바삭한 구운 면, 부드러운 무채", "겉면에는 얇은 구운 층이 생기고 안쪽에는 달큼한 무채가 남습니다. 건새우의 짭짤함과 표고의 구수한 향이 쌀가루 반죽에 스밉니다. 충분히 식힌 뒤 썰면 모양이 단정하고, 다시 구우면 따뜻한 속과 노릇한 면을 함께 즐길 수 있습니다."],
+    [radishCakeSources.region, radishCakeSources.neighborhood, radishCakeSources.culture, radishCakeSources.recipe, radishCakeSources.korea],
+  ),
   "hanjeongseon-inspired-fruit-mochi": narrative(
     ["성수동의 작은 과일 디저트", "서울관광재단은 한정선을 생과일과 다양한 속재료를 담는 찹쌀떡 가게로 소개합니다. 오늘은 작은 딸기와 팥앙금으로 응용합니다. 매장의 공식 배합이 아닌 만나의 식탁이 구성한 가정용 레시피입니다."],
     ["과일 다이후쿠와 오늘의 선물 문화", "일본의 나미사토는 딸기 다이후쿠가 1985년 무렵 알려졌고 여러 기원설이 있다고 설명합니다. 과일 떡 전체의 발명자를 단정하지 않습니다. 서울의 오늘날 디저트 문화에서는 개별 포장과 선물이라는 즐거움도 함께 만납니다."],

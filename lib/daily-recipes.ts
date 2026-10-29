@@ -1,9 +1,33 @@
 import type { Recipe } from "./content";
-import { papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
+import { radishCakeSources, papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
 import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buckwheatGaletteSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "hong-kong-inspired-radish-cake", title: "홍콩풍 무떡구이와 달걀 채소 한 접시", country: "hong-kong", category: "main", experienceStatus: "researched",
+    summary: "달큼하게 익힌 무채와 멥쌀가루를 쪄서 굳힌 뒤, 도톰하게 썰어 노릇하게 굽습니다. 새우와 표고의 감칠맛을 담은 무떡에 달걀과 청경채를 곁들이는 두 사람의 저녁입니다.",
+    culturalNote: "홍콩의 광둥식 딤섬 로박고에서 영감 받은 가정용 응용입니다. 중국식 소시지와 관자 대신 건새우·생표고를 쓰고, 국내 무와 건식 멥쌀가루에 맞춰 구성했습니다. 현지 식당의 공식 배합은 아니며 달걀·청경채 곁들임은 한 끼를 위한 추가 구성입니다.",
+    localTable: { region: "홍콩 · 중서구의 딤섬 식탁에서 영감", ingredient: "무 · 멥쌀가루 · 건새우 · 표고버섯", season: "국내 가을무 10~11월 수확 활용", note: "국내 가을무는 보통 10~11월 수확하며 지역에 따라 폭이 넓습니다. 홍콩의 일본무 재배 안내는 9월 하순~12월 파종, 약 70일 후 수확으로 서로 다른 달력입니다. 국내 판매 무를 사용하며 무의 다른 작형과 저장 유통, 재배 표고의 연중 공급도 구분합니다." },
+    cookingTime: 240, servings: 2, difficulty: "보통", visualLabel: "HONG KONG / LO BAK GO", visualCaption: "무의 크림빛, 구운 면의 금빛과 붉은 도자기를 떠올리는 격자",
+    keywords: ["홍콩", "중서구", "로박고", "무떡", "딤섬", "가을무", "건새우", "저녁"],
+    ingredientGroups: [
+      { title: "마트에서 살 재료 · 2인분 사용량", items: ["무 1개 또는 절단 팩 → 껍질 제거 후 600g", "무가당 건식 멥쌀가루 1봉 → 120g · 찹쌀가루·습식 떡가루 제외", "옥수수전분 1봉 → 15g · 옥수숫가루와 구분", "작은 건새우 1봉 → 20g, 생표고 1팩 → 질긴 밑동 제거 후 80g", "달걀 1팩 → 4개, 청경채 1봉 → 200g, 쪽파 1봉 → 10g"] },
+      { title: "양념과 도구", items: ["식용유 총 25ml · 틀 2ml, 속재료 5ml, 떡 13ml, 달걀 5ml", "소금 1g, 설탕 3g, 흰후추 약간", "무 익힐 물 50ml, 반죽은 무 국물과 찬물을 합해 180ml", "찍는 소스: 진간장 15ml + 식초 10ml + 물 10ml", "찜기, 약 18cm 사각 금속 틀, 종이호일, 채칼, 계량컵, 식품용 온도계"] },
+    ],
+    steps: [
+      { title: "무채와 속재료 준비", description: "무와 채소를 흐르는 물로 씻습니다. 무는 가늘게 채 썰고 표고는 5mm로 다집니다. 건새우는 헹궈 물에 10분 불린 뒤 물을 버리고 잘게 썹니다. 틀에 종이호일을 깔고 기름 2ml를 바릅니다.", tip: "틀 안의 반죽 두께는 3cm 이하로 합니다. 채칼은 손 보호대를 쓰고, 찜기에 들어가는 내열 금속 틀을 고르세요." },
+      { title: "무를 부드럽게 익히고 국물 계량", description: "팬에 무채와 물 50ml를 넣고 뚜껑을 덮어 중약불로 10~12분 익힙니다. 국물을 따라 따로 받고 무는 남깁니다. 국물에 찬물을 보태 총 180ml로 맞춰 미지근하게 식힙니다. 국물이 많으면 180ml만 사용합니다." },
+      { title: "멥쌀 반죽에 감칠맛 더하기", description: "빈 팬에 기름 5ml를 두르고 표고와 건새우를 3~4분 볶아 물기를 날립니다. 볼에 멥쌀가루·전분·계량한 국물·소금·설탕·후추를 고르게 풉니다. 익힌 무와 볶은 재료를 섞어 틀에 담고 윗면을 평평하게 합니다.", tip: "생가루 반죽은 맛보지 않습니다. 찹쌀가루로 바꾸면 늘어나는 성질이 달라져 같은 떡이 되지 않습니다." },
+      { title: "증기로 속까지 충분히 찌기", description: "김이 오른 찜기에 틀을 놓고 뚜껑을 덮어 45~50분 찝니다. 물이 줄면 옆으로 끓는 물을 보충합니다. 중심에 찌른 꼬치에 젖은 가루 반죽이 묻으면 5~10분 더 찌고 재확인합니다. 중심도 74°C 이상인지 확인합니다." },
+      { title: "얕은 틀에서 식혀 냉장으로 굳히기", description: "틀을 식힘망에 15~20분 두어 김을 빼고 덮개를 느슨하게 덮어 4°C 이하 냉장고에 넣습니다. 약 2시간, 중심까지 차갑고 단단해질 때까지 굳힙니다. 아직 무르면 냉장을 더 한 뒤 꺼내 1cm 두께로 자릅니다.", tip: "상온에서 완전히 차가워질 때까지 기다리지 않습니다. 조리 후 2시간 이내, 기온 32°C 초과 시 1시간 이내 냉장하세요. 이 단계까지 전날 준비할 수도 있습니다." },
+      { title: "겉은 노릇하게, 속은 뜨겁게", description: "팬에 기름 13ml를 나눠 두르고 떡을 두 번에 나눠 굽습니다. 중약불에서 면마다 약 3분씩, 뒤집개로 받쳐 뒤집습니다. 가장 두꺼운 조각 중심이 74°C 이상이 되도록 더 익힙니다. 갈색 표면만 보고 재가열을 끝내지 않습니다." },
+      { title: "달걀과 청경채를 더해 저녁으로", description: "떡을 굽는 동안 청경채를 끓는 물에 2~3분 데쳐 물기를 뺍니다. 별도 팬에 남은 기름 5ml로 달걀 4개를 흰자와 노른자까지 단단하게 익힙니다. 떡·채소·달걀을 두 접시에 나누고 쪽파와 따로 섞은 소스를 조금씩 곁들입니다." },
+    ],
+    substitutions: ["생표고는 같은 무게의 양송이로 바꿀 수 있습니다. 건새우를 생략하면 버섯을 30g 늘리되 해산물의 감칠맛은 달라집니다.", "청경채 대신 데친 브로콜리를 곁들여도 좋습니다. 멥쌀가루는 물이나 소금이 들어가지 않은 건식 제품을 확인하세요.", "구매 단위는 예시이며 이마트 등 매장의 재고·포장 중량은 방문 시 확인합니다."],
+    tips: ["총 4시간에는 찜과 냉장 2시간이 포함됩니다. 냉장고와 틀에 따라 굳는 시간이 더 필요할 수 있으며, 미리 만든 떡은 마지막 구이와 곁들임만 준비합니다.", "새우·달걀·대두·밀 알레르기 성분을 확인하세요. 남은 떡은 얕은 밀폐 용기에 냉장하고 먹을 만큼만 꺼내 중심 74°C까지 재가열합니다.", "무채, 틀에 담는 반죽, 식힌 단면, 뒤집을 때의 금빛 표면을 차례로 촬영하면 조리 변화가 잘 보입니다.", "표지는 재료와 홍콩의 식탁에서 영감 받은 그림입니다. 실제 음식 사진이나 전통 문양의 재현은 아닙니다."],
+    publishedAt: "2026-10-29", relatedStorySlugs: [], sources: Object.values(radishCakeSources), palette: { from: "#f4ecdd", mid: "#d7b885", to: "#c77e68", ink: "#49342e" },
+  },
   {
     slug: "vaud-inspired-leek-potato-sausage", title: "보주풍 대파 감자 스튜와 소시지", country: "switzerland", category: "main", experienceStatus: "researched",
     summary: "버터에 부드럽게 볶은 대파와 감자를 푹 익혀 되직하게 만듭니다. 달큼한 파와 포슬한 감자 위에 따뜻한 소시지를 얹어, 빵이나 밥 없이도 든든한 두 사람의 저녁을 차립니다.",

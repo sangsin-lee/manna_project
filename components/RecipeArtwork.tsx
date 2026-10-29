@@ -12,6 +12,30 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "radish-cake" && <g>
+          <circle cx="300" cy="186" r="142" fill="#fcf4e7" stroke="#ad6250" strokeWidth="5"/>
+          <circle cx="300" cy="186" r="127" stroke="#d3a38c" strokeWidth="2"/>
+          {Array.from({ length: 20 }, (_, i) => <path key={i} d="m296 53 4-3 4 3-4 3Z" fill="#b76951" transform={`rotate(${i * 18} 300 186)`}/>)}
+          {[[233,143,-14],[320,130,10],[364,194,18],[273,205,-9],[221,255,8]].map(([x,y,r]) => <g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="m-47-21 89-9 4 58-84 8Z" fill="#e7d5b3" stroke="#a88960" strokeWidth="2"/>
+            <path d="m-47-21 89-9-1 41-85 9Z" fill="#dfb575" stroke="#ad8150" strokeWidth="2"/>
+            <path d="m-44 20 85-9 5 17-84 8Z" fill="#f4e6ca"/>
+            <path d="m-34-11 26-6m18 2 21-3m-60 16 18-3m21 7 19-3" stroke="#f3d6a1" strokeWidth="4" strokeLinecap="round"/>
+            <path d="m-21-7 6 3m23-13 5 4m12 12 5 2m-28 12 5-3" stroke="#a15e42" strokeWidth="4" strokeLinecap="round"/>
+            <path d="m-31 25 6-1m19-2 7-1m16-1 9-1" stroke="#bea88a" strokeWidth="2" strokeLinecap="round"/>
+          </g>)}
+          <g transform="translate(350 268) rotate(12)">
+            <path d="M-45 1q-3-25 22-29 13-16 32-7 26-1 30 21 17 20-3 34-14 16-34 8-34 11-47-9Z" fill="#fffbed" stroke="#dcc5a2" strokeWidth="2"/>
+            <ellipse cx="1" cy="-2" rx="22" ry="19" fill="#edbb50"/>
+            <path d="M-9-11q10-8 20 0" stroke="#f8d88e" strokeWidth="4" strokeLinecap="round"/>
+          </g>
+          <g transform="translate(397 244) rotate(36)">
+            <path d="M0 33q-31-29-20-47 22-21 23 13 3-32 21-14 11 21-24 48Z" fill="#788b59" stroke="#526b46" strokeWidth="2"/>
+            <path d="M0 34 2-1m-2 32-12-29M1 28 16 3" stroke="#d4d8a7" strokeWidth="5" strokeLinecap="round"/>
+          </g>
+          <path d="m244 123 8 3m42 41 4-8m31 43 8 3m-90 22 5-6" stroke="#6b8252" strokeWidth="4" strokeLinecap="round"/>
+        </g>}
+
         {art === "fruit-mochi" && <g>
           <circle cx="300" cy="186" r="142" fill="#fff7ed" stroke="#c78d98" strokeWidth="4"/>
           <circle cx="300" cy="186" r="125" stroke="#e1b5ba" strokeWidth="2"/>

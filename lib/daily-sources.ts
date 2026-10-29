@@ -1,5 +1,20 @@
 import type { SourceLink } from "./content";
 
+// Hong Kong dim sum, adapted with Korean autumn radish, October 29.
+export const radishCakeSources = {
+  region: { label: "홍콩관광청 — 차와 나누는 딤섬, 중환의 무떡구이", url: "https://www.discoverhongkong.com/eng/food-and-drink/unmissable-hong-kong-dim-sum-restaurants.html" },
+  neighborhood: { label: "홍콩관광청 — 중서구 케네디타운의 무떡과 저녁 딤섬", url: "https://tastehk.discoverhongkong.com/en/restaurants/sheung-hei" },
+  culture: { label: "홍콩 위생방호센터 — 설 명절의 무떡과 재료 응용", url: "https://www.chp.gov.hk/en/static/90046.html" },
+  recipe: { label: "홍콩 교육국 — 2016년 식품 실습 교재 12쪽, 무떡의 재료와 찜 조리", url: "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/technology-edu/resources/technology-and-living/Day_1_Food_Tests1-5_20160705.pdf" },
+  chilling: { label: "이금기 홍콩 — 무떡의 냉장 후 썰기와 팬 구이", url: "https://hk.lkk.com/en/recipes/xo-turnip-pudding" },
+  season: { label: "홍콩 어농자연호리서 — 일본무의 파종 시기와 약 70일 재배", url: "https://www.afcd.gov.hk/english/agriculture/agr_useful/agr_useful_spe/japanese_radish_cult.html" },
+  korea: { label: "농촌진흥청 농사로 — 국내 무의 작형별 재배와 가을 수확", url: "https://www.nongsaro.go.kr/portal/ps/psb/psby/vodPlay.ps?menuId=PS65512&mvpNo=2075" },
+  washing: { label: "미국 FDA — 흐르는 물로 채소 세척하기", url: "https://www.fda.gov/consumers/consumer-updates/7-tips-cleaning-fruits-vegetables" },
+  storage: { label: "미국 FDA — 신속 냉장과 4°C 이하 보관", url: "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely" },
+  egg: { label: "미국 FDA — 달걀을 완전히 익혀 먹기", url: "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-egg-safety" },
+  temperature: { label: "FoodSafety.gov — 남은 음식 재가열 74°C", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+} satisfies Record<string, SourceLink>;
+
 // Vaud's papet adapted with Korean green onion and cooked sausage, October 28.
 export const papetSources = {
   region: { label: "보주 주정부 — 파페 보두아의 지역 식문화와 먹는 계절", url: "https://www.vd.ch/culture/patrimoine-mobilier-non-cantonal-et-immateriel-1/inventaire-cantonal-du-patrimoine-immateriel/pratiques-sociales/toute-lannee/papet-vaudois" },

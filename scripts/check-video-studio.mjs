@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import ts from "typescript";
 import { createRequire } from "node:module";
+import { EventEmitter } from "node:events";
 const load = createRequire(import.meta.url);
 load.extensions[".ts"] = (module, filename) => {
   const { outputText } = ts.transpileModule(fs.readFileSync(filename, "utf8"), {
@@ -111,7 +112,7 @@ assert.ok(new Set(recipes.map((recipe) => getRecipeDesign(recipe).soft)).size >=
 
 const route = load("../app/api/video/narration/route.ts");
 const originalFetch = globalThis.fetch;
-const names = ["ELEVENLABS_API_KEY", "ELEVENLABS_VOICE_ID", "VIDEO_STUDIO_PASSWORD"];
+const names = ["OPENAI_API_KEY", "ELEVENLABS_API_KEY", "ELEVENLABS_VOICE_ID", "VIDEO_STUDIO_PASSWORD"];
 const originalEnv = Object.fromEntries(names.map((name) => [name, process.env[name]]));
 let requests = 0;
 const password = "only-a-local-test-password";
@@ -156,4 +157,118 @@ try {
     else process.env[name] = originalEnv[name];
   }
 }
-console.log(`PASS: ${recipes.length} recipe scripts, intact safety text, captions on/off, 1080p/1440p/4K layouts in both orientations, timeline/SRT, API authentication and bounded requests.`);
+
+// Exercise the actual OpenAI adapter and route with a scripted WebSocket peer.
+// No real credentials or network calls are used, including error/abort cases.
+const ws = load("ws");
+const OriginalWebSocket = ws.WebSocket;
+const { createOpenAINarration } = load("../lib/openai-narration.ts");
+const testKey = "sk-local-test-key-that-is-not-a-real-key";
+const pcm = Buffer.from([0, 0, 16, 0, 240, 255]);
+let peerMode = "success";
+const sockets = [];
+class FakeWebSocket extends EventEmitter {
+  constructor(url, options) {
+    super();
+    assert.equal(url, "wss://api.openai.com/v1/realtime?model=gpt-realtime-2.1-mini");
+    assert.equal(options.headers.Authorization, `Bearer ${testKey}`);
+    this.sent = [];
+    this.terminated = false;
+    sockets.push(this);
+    queueMicrotask(() => {
+      if (peerMode === "unauthorized") this.emit("unexpected-response", {}, { statusCode: 401, resume() {} });
+      else if (peerMode === "close") this.emit("close");
+      else if (peerMode === "malformed") this.emit("message", Buffer.from("not json"));
+      else this.event({ type: "session.created" });
+    });
+  }
+  event(value) { this.emit("message", Buffer.from(JSON.stringify(value))); }
+  send(value) {
+    const message = JSON.parse(value);
+    this.sent.push(message);
+    queueMicrotask(() => {
+      if (message.type === "session.update") {
+        this.event({ type: "session.updated" });
+        this.event({ type: "session.updated" }); // Never bill twice on repeated acknowledgments.
+      } else if (peerMode === "quota") this.event({ type: "error", error: { code: "insufficient_quota", message: "private-provider-error" } });
+      else if (peerMode === "access") this.event({ type: "error", error: { code: "model_not_found" } });
+      else if (peerMode !== "wait") {
+        if (peerMode === "oversize") {
+          for (let i = 0; i < 5; i++) this.event({ type: "response.output_audio.delta", delta: Buffer.alloc(600000).toString("base64") });
+        } else if (peerMode !== "empty") {
+          this.event({ type: "response.output_audio.delta", delta: pcm.subarray(0, 2).toString("base64") });
+          this.event({ type: "response.output_audio.delta", delta: (peerMode === "odd" ? Buffer.from([1]) : pcm.subarray(2)).toString("base64") });
+        }
+        this.event({ type: "response.done", response: { status: peerMode === "incomplete" ? "incomplete" : "completed" } });
+      }
+    });
+  }
+  terminate() { this.terminated = true; }
+}
+try {
+  ws.WebSocket = FakeWebSocket;
+  for (const name of names) delete process.env[name];
+  process.env.OPENAI_API_KEY = "key_tracking-id-is-not-a-secret";
+  process.env.VIDEO_STUDIO_PASSWORD = password;
+  assert.deepEqual(await (await route.GET()).json(), { ready: false, provider: null, issue: "api-key" });
+  assert.equal((await route.POST(request({ text: spoken }))).status, 503);
+  process.env.OPENAI_API_KEY = testKey;
+  delete process.env.VIDEO_STUDIO_PASSWORD;
+  assert.deepEqual(await (await route.GET()).json(), { ready: false, provider: "OpenAI", issue: "studio-password" });
+  process.env.VIDEO_STUDIO_PASSWORD = password;
+  process.env.ELEVENLABS_API_KEY = "legacy-key";
+  process.env.ELEVENLABS_VOICE_ID = "legacy-voice";
+  const config = await route.GET();
+  assert.equal(config.headers.get("cache-control"), "no-store");
+  assert.deepEqual(await config.json(), { ready: true, provider: "OpenAI", issue: null });
+  assert.equal((await route.POST(request({ text: spoken }, { "x-studio-password": "bad" }))).status, 401);
+  assert.equal((await route.POST(request({ text: spoken }, { origin: "https://elsewhere.test" }))).status, 403);
+  assert.equal((await route.POST(request({ text: "a".repeat(701) }))).status, 400);
+  assert.equal((await route.POST(request("x".repeat(8193)))).status, 413);
+  assert.equal(sockets.length, 0, "Reject invalid inputs before any billable session");
+  const response = await route.POST(request({ text: spoken }));
+  assert.equal(response.status, 200);
+  const data = await response.json();
+  assert.equal(data.alignment, null, "Realtime has no character timestamps; captions use the marked estimate");
+  assert.equal(JSON.stringify(data).includes(testKey), false);
+  const audio = Buffer.from(data.audio_base64, "base64");
+  assert.equal(audio.toString("ascii", 0, 4), "RIFF");
+  assert.equal(audio.readUInt32LE(4), audio.length - 8);
+  assert.equal(audio.toString("ascii", 8, 16), "WAVEfmt ");
+  assert.equal(audio.readUInt16LE(20), 1);
+  assert.equal(audio.readUInt16LE(22), 1);
+  assert.equal(audio.readUInt32LE(24), 24000);
+  assert.equal(audio.readUInt16LE(34), 16);
+  assert.equal(audio.readUInt32LE(40), pcm.length);
+  assert.deepEqual(audio.subarray(44), pcm, "Stream chunks must stay in order and intact");
+  assert.equal(sockets[0].sent.length, 2);
+  assert.deepEqual(sockets[0].sent[0].session.audio.output, { format: { type: "audio/pcm", rate: 24000 }, voice: "marin" });
+  assert.match(sockets[0].sent[0].session.instructions, /한국어/);
+  assert.equal(sockets[0].sent[1].response.conversation, "none");
+  assert.ok(sockets[0].sent[1].response.input[0].content[0].text.endsWith(spoken), "Keep temperature, timing and safety wording in the input");
+  for (const mode of ["unauthorized", "quota", "access", "incomplete", "empty", "odd", "oversize", "close", "malformed"]) {
+    peerMode = mode;
+    const before = sockets.length;
+    const failed = await route.POST(request({ text: spoken }));
+    assert.equal(failed.status, 502, mode);
+    const body = await failed.text();
+    assert.ok(!body.includes(testKey) && !body.includes("private-provider-error"));
+    assert.equal(sockets.length, before + 1, "Do not retry or fall back to another paid provider");
+  }
+  peerMode = "wait";
+  const controller = new AbortController();
+  const pending = createOpenAINarration(spoken, testKey, controller.signal);
+  controller.abort();
+  await assert.rejects(pending, (error) => error.kind === "interrupted");
+  const before = sockets.length;
+  await assert.rejects(createOpenAINarration(spoken, testKey, controller.signal), (error) => error.kind === "interrupted");
+  assert.equal(sockets.length, before, "Already-aborted requests must not connect");
+  assert.ok(sockets.every((socket) => socket.terminated), "Always close billable sessions after success or failure");
+} finally {
+  ws.WebSocket = OriginalWebSocket;
+  for (const name of names) {
+    if (originalEnv[name] === undefined) delete process.env[name];
+    else process.env[name] = originalEnv[name];
+  }
+}
+console.log(`PASS: ${recipes.length} recipe scripts, intact safety text, captions on/off, 1080p/1440p/4K layouts, timeline/SRT, OpenAI PCM/WAV narration, provider failures/abort, API authentication and bounded requests.`);

@@ -1,19 +1,27 @@
 import { createHash, timingSafeEqual } from "node:crypto";
+import { createOpenAINarration, NarrationError } from "../../../../lib/openai-narration";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
 function configuration() {
-  const key = process.env.ELEVENLABS_API_KEY?.trim();
+  const openaiKey = process.env.OPENAI_API_KEY?.trim();
+  const provider = openaiKey ? "OpenAI" : "ElevenLabs";
+  const key = openaiKey || process.env.ELEVENLABS_API_KEY?.trim();
   const voice = process.env.ELEVENLABS_VOICE_ID?.trim();
   const password = process.env.VIDEO_STUDIO_PASSWORD;
-  return { key, voice, password, ready: Boolean(key && voice && /^[a-zA-Z0-9_-]{1,80}$/.test(voice) && password && password.length >= 16 && password.length <= 256) };
+  const keyReady = Boolean(key && (provider !== "OpenAI" || /^sk-[A-Za-z0-9_-]{20,}$/.test(key)));
+  const voiceReady = provider === "OpenAI" || Boolean(voice && /^[a-zA-Z0-9_-]{1,80}$/.test(voice));
+  const passwordReady = Boolean(password && password.length >= 16 && password.length <= 256);
+  const issue = !keyReady ? "api-key" : !voiceReady ? "voice" : !passwordReady ? "studio-password" : null;
+  return { key, voice, password, provider, issue, ready: issue === null };
 }
 function reply(data: unknown, status = 200) {
   return Response.json(data, { status, headers: { "Cache-Control": "no-store" } });
 }
 export async function GET() {
-  return reply({ ready: configuration().ready });
+  const { ready, provider, issue } = configuration();
+  return reply({ ready, provider: issue === "api-key" ? null : provider, issue });
 }
 
 export async function POST(request: Request) {
@@ -41,6 +49,10 @@ export async function POST(request: Request) {
   catch { return reply({ error: "대본을 확인해 주세요." }, 400); }
   if (typeof text !== "string" || !text.trim() || text.length > 700) return reply({ error: "대본은 1~700자로 입력해 주세요." }, 400);
   try {
+    if (config.provider === "OpenAI") {
+      const audio = await createOpenAINarration(text.trim(), config.key!, request.signal);
+      return reply({ audio_base64: audio.toString("base64"), alignment: null });
+    }
     const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${config.voice}/with-timestamps?output_format=mp3_44100_128`, {
       method: "POST", cache: "no-store", signal: AbortSignal.any([request.signal, AbortSignal.timeout(45000)]),
       headers: { "Content-Type": "application/json", "xi-api-key": config.key! },
@@ -50,7 +62,13 @@ export async function POST(request: Request) {
     const data = await response.json();
     if (typeof data.audio_base64 !== "string" || data.audio_base64.length > 3500000) throw new Error("Invalid audio");
     return reply({ audio_base64: data.audio_base64, alignment: data.alignment ?? null });
-  } catch {
+  } catch (cause) {
+    if (cause instanceof NarrationError) {
+      if (cause.kind === "credentials") return reply({ error: "OpenAI API 키가 유효하지 않습니다. 서버에 저장한 비밀키를 확인해 주세요. Tracking ID로는 음성을 만들 수 없습니다." }, 502);
+      if (cause.kind === "quota") return reply({ error: "OpenAI API 잔액이나 사용 한도를 확인해 주세요. 자동으로 다시 요청하지 않았습니다." }, 502);
+      if (cause.kind === "access") return reply({ error: "이 OpenAI 프로젝트에서 음성 모델을 사용할 수 없습니다. 키의 권한과 모델 사용 권한을 확인해 주세요." }, 502);
+      if (cause.kind === "invalid") return reply({ error: "완전한 음성을 받지 못했습니다. 대본을 짧게 나누어 다시 시도해 주세요." }, 502);
+    }
     return reply({ error: "음성 생성이 중단되었습니다. 완성된 장면은 남아 있으니 이어서 만들 수 있어요." }, 502);
   }
 }

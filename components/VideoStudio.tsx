@@ -28,6 +28,8 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
   const [showCaptions, setShowCaptions] = useState(true);
   const [voices, setVoices] = useState<ReadonlyMap<string, VoiceClip>>(new Map());
   const [ready, setReady] = useState<boolean | null>(null);
+  const [provider, setProvider] = useState("AI 음성 서비스");
+  const [connectionIssue, setConnectionIssue] = useState("");
   const [connectionError, setConnectionError] = useState(false);
   const [password, setPassword] = useState("");
   const [time, setTime] = useState(0);
@@ -58,7 +60,11 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
     fetch("/api/video/narration", { cache: "no-store", signal: controller.signal }).then((response) => {
       if (!response.ok) throw new Error("Connection check failed");
       return response.json();
-    }).then((data) => setReady(data.ready === true)).catch(() => { if (!controller.signal.aborted) setConnectionError(true); });
+    }).then((data) => {
+      setReady(data.ready === true);
+      setProvider(data.provider === "OpenAI" ? "OpenAI" : data.provider === "ElevenLabs" ? "ElevenLabs" : "AI 음성 서비스");
+      setConnectionIssue(data.issue === "studio-password" ? "studio-password" : "");
+    }).catch(() => { if (!controller.signal.aborted) setConnectionError(true); });
     return () => controller.abort();
   }, []);
   useEffect(() => {
@@ -117,14 +123,15 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
     } catch { if (context) void context.close(); setError("미리 듣기를 시작하지 못했습니다. 다시 재생해 주세요."); }
   }
 
-  async function generateVoice() {
+  async function generateVoice(firstOnly = false) {
     pause(); setError(""); setResult(null); setBusy("voice"); setProgress(0);
     const controller = new AbortController(); abort.current = controller;
     const cache = new Map(voices);
     let context: AudioContext | undefined;
     try {
       context = new AudioContext();
-      const missing = narrations.filter((text) => !cache.has(text));
+      const pending = narrations.filter((text) => !cache.has(text));
+      const missing = firstOnly ? pending.slice(0, 1) : pending;
       for (let i = 0; i < missing.length; i++) {
         controller.signal.throwIfAborted();
         setStatus(`한국어 내레이션을 만드는 중 · ${i + 1} / ${missing.length}`);
@@ -141,7 +148,7 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
         setVoices(new Map(cache)); setProgress(Math.round((i + 1) / missing.length * 100));
       }
       controller.signal.throwIfAborted();
-      setTime(0); setStatus("내레이션이 완성됐어요. 재생해서 목소리와 자막을 확인해 주세요.");
+      setTime(0); setStatus(firstOnly ? "첫 장면 음성이 준비됐어요. 재생해서 발음과 읽는 속도를 확인한 뒤 나머지를 만들어 주세요." : "내레이션이 완성됐어요. 재생해서 목소리와 자막을 확인해 주세요.");
     } catch (cause) {
       if (controller.signal.aborted) setStatus("음성 생성을 중단했어요. 완성된 장면은 보관합니다.");
       else { setStatus(""); setError(cause instanceof Error ? cause.message : "음성을 만들지 못했습니다."); }
@@ -205,9 +212,9 @@ export default function VideoStudio({ recipes, initialRecipe }: { recipes: Recip
             <p className="studio-preview-note">{scenes.length}개 화면 · {voiced ? `내레이션 ${voiced}/${narrations.length} 완성` : "현재 무음 미리 보기"}{!allVoiced && voiced > 0 ? " · 미완성 장면은 무음" : ""} · {showCaptions ? hasEstimated ? "자막 시간 추정" : "음성에 맞춘 자막" : "하단 자막 없음"}</p>
           </section>
           <section className="studio-produce" aria-label="음성과 영상 만들기">
-            <div className="studio-section-heading"><span>03</span><h2>목소리를 입혀 완성하기</h2><small className={ready ? "studio-connected" : ""}>{ready ? "AI 음성 연결됨" : connectionError ? "연결 확인 실패" : ready === null ? "연결 확인 중" : "AI 음성 연결 전"}</small></div>
-            {ready ? <div className="studio-voice-row"><div><label htmlFor="studio-password">제작실 비밀번호</label><input type="password" id="studio-password" autoComplete="off" maxLength={256} placeholder="운영자에게 받은 비밀번호" value={password} disabled={busy !== null} onChange={(event) => setPassword(event.target.value)} /></div><button className="studio-outline" disabled={busy !== null || !password || allVoiced || !valid} onClick={generateVoice}>{allVoiced ? "내레이션 완성" : voiced ? "남은 내레이션 만들기" : "AI 내레이션 만들기"}</button></div> : <p className="studio-connection-note">{connectionError ? "음성 연결 상태를 확인하지 못했어요. 대본을 저장한 뒤 새로고침해 주세요. 무음 영상은 계속 만들 수 있습니다." : ready === null ? "음성 서비스 연결을 확인하고 있어요." : "AI 음성 서비스를 연결하면 한국어 내레이션을 만들 수 있어요. 지금도 대본 편집, 미리 보기, 자막과 무음 영상 저장은 가능합니다."}</p>}
-            {ready && <p className="studio-help">음성 생성은 ElevenLabs 계정의 사용량을 소모합니다. 완성된 음성은 이 탭에서 재사용하며, 새로고침하면 사라집니다. 유튜브 수익화 등 상업적 사용은 음성 서비스의 이용 권한을 확인해 주세요.</p>}
+            <div className="studio-section-heading"><span>03</span><h2>목소리를 입혀 완성하기</h2><small className={ready ? "studio-connected" : ""}>{ready ? `${provider} 음성 설정됨` : connectionError ? "연결 확인 실패" : ready === null ? "연결 확인 중" : "AI 음성 연결 전"}</small></div>
+            {ready ? <><div className="studio-voice-row"><div><label htmlFor="studio-password">제작실 비밀번호</label><input type="password" id="studio-password" autoComplete="off" maxLength={256} placeholder="운영자에게 받은 비밀번호" value={password} disabled={busy !== null} onChange={(event) => setPassword(event.target.value)} /></div><button className="studio-outline" disabled={busy !== null || !password || allVoiced || !valid} onClick={() => generateVoice()}>{allVoiced ? "내레이션 완성" : voiced ? "남은 내레이션 만들기" : "AI 내레이션 만들기"}</button></div>{voiced === 0 && <button className="studio-text-button" disabled={busy !== null || !password || !valid} onClick={() => generateVoice(true)}>첫 장면 음성만 만들어 보기</button>}</> : <p className="studio-connection-note">{connectionError ? "음성 연결 상태를 확인하지 못했어요. 대본을 저장한 뒤 새로고침해 주세요. 무음 영상은 계속 만들 수 있습니다." : ready === null ? "음성 서비스 연결을 확인하고 있어요." : connectionIssue === "studio-password" ? "음성 서비스 키가 등록되어 있습니다. 운영자가 제작실 비밀번호를 설정하면 한국어 내레이션을 만들 수 있어요." : "음성 서비스 키 등록을 기다리고 있어요. 운영자 설정을 마친 뒤 새로고침해 주세요. 지금도 대본 편집, 자막과 무음 영상 저장은 가능합니다."}</p>}
+            {ready && <p className="studio-help">{provider}에서 만드는 AI 합성 음성입니다. 대본을 음성 서비스로 보내며 해당 계정의 API 사용료가 발생할 수 있습니다. 먼저 첫 장면으로 한국어 발음과 속도를 확인하세요. 완성된 음성은 이 탭에서 재사용하며, 새로고침하면 사라집니다. 자막 시간은 추정될 수 있으니 저장 전 재생해 확인해 주세요.</p>}
             {!valid && <p className="studio-error" role="alert">제목과 대본을 채우고, 영상 길이를 10분 이내로 줄여 주세요.</p>}
             <div className="studio-export-actions"><button className="studio-primary" disabled={busy !== null || !allVoiced || !valid} onClick={() => exportVideo(true)}>음성 포함 영상 만들기 ↓</button><button className="studio-outline" disabled={busy !== null || !valid} onClick={() => exportVideo(false)}>무음 영상 만들기</button><button className="studio-text-button" disabled={busy !== null || !valid} onClick={() => downloadText(srtFor(timeline), "manna-captions.srt")}>자막 저장 .srt</button></div>
             <p className="studio-help">{VIDEO_QUALITIES[resolution].label} · {showCaptions ? "자막 포함" : "자막 없이"} 설정으로 저장합니다. 자막 파일은 별도로 저장할 수 있어요. MP4를 우선 사용하고, 지원하지 않는 브라우저는 WebM으로 저장합니다.{resolution !== "1080p" ? " 고화질은 제작 시간과 파일 크기가 늘어날 수 있어요." : ""} 영상이 완성될 때까지 이 탭을 열어 두세요.</p>

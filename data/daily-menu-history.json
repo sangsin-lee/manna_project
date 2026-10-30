@@ -1386,6 +1386,51 @@
         "찜·냉장 2시간 포함 총 4시간",
         "떡은 미리 만들어 두어도 좋아요"
       ]
+    },
+    {
+      "date": "2026-10-31",
+      "recipeSlug": "massachusetts-inspired-clam-chowder",
+      "title": "매사추세츠풍 바지락 감자 차우더",
+      "canonicalDish": "Massachusetts inspired New England clam chowder with Korean clams and potatoes",
+      "aliases": [
+        "클램 차우더",
+        "뉴잉글랜드 클램 차우더",
+        "Clam chowder",
+        "New England clam chowder",
+        "바지락 감자 차우더"
+      ],
+      "keyIngredients": [
+        "바지락",
+        "감자",
+        "우유",
+        "생크림",
+        "베이컨",
+        "양파",
+        "셀러리",
+        "빵"
+      ],
+      "method": "바지락을 먼저 충분히 삶아 살과 거른 국물을 따로 준비한다. 베이컨과 채소에 밀가루를 볶고 조개 국물에 감자를 익힌 뒤 우유·크림과 조갯살을 더해 빵을 곁들인다.",
+      "selectionReason": "매사추세츠 해안의 조개 식문화와 미국 북동부 감자의 가을 수확에서 영감을 받았습니다. 바지락 국물에 포슬한 감자와 우유를 더하고 빵을 곁들여 든든한 저녁을 차립니다.",
+      "videoIdea": "삶아 입이 열린 조개 → 맑게 거르는 조개 국물 → 우유를 부으며 크림빛으로 변하는 냄비 → 감자와 조갯살을 뜨는 국자와 빵 찍기. 제목 아이디어: 바지락으로 떠나는 뉴잉글랜드의 저녁.",
+      "duplicateReview": "기존 레시피 92개의 제목·핵심 재료·조리 단계, 기준 기록 27개와 일일 기록 24개의 별칭·조리법 및 관련 Git 이력을 비교했다. 그라우뷘덴 보리수프는 보리·고기 중심이고, 강원 옥수수 감자 수프는 옥수수를 갈아 만든다. 보주 파페는 대파·감자 일부를 으깨는 되직한 스튜에 소시지를 곁들인다. 이번 차우더는 별도로 삶은 조개와 거른 국물, 감자 덩어리, 우유·크림을 합치는 해산물 수프이며 소스만 바꾼 메뉴가 아니다. 최근 중국·이탈리아·스위스·홍콩 다음 미국 매사추세츠로 순환한다. 한국 날짜 10월 31일 한 메뉴만 추가하며 빈 날짜를 소급하지 않는다.",
+      "research": {
+        "checkedAt": "2026-10-31",
+        "seasonalNote": "Historic New England의 매사추세츠 노스쇼어 조개 산업 전시에서 지역 식문화와 1870~1880년대 철도 여행·해안 휴양지의 조개 요리를 확인했다. 이를 차우더의 확정 발명 시기로 해석하지 않는다. SARE 북동부 수확 안내의 저장용 감자는 9월 중순~10월이며, 농촌진흥청 농사로의 국내 고랭지 여름감자 수확은 8월 중순~9월 하순, 가을작형 수확은 주로 11월로 구분했다. 국내는 여러 작형과 저장 유통을 활용하며 바지락을 10월 제철이라고 단정하지 않는다. 바지락·시판 베이컨·우유·크림의 배합은 자체 가정용 응용이다. CDC의 조개 입이 열린 뒤 3~5분 더 끓이기와 닫힌 조개 폐기, FDA 냉장·해산물 취급, FoodSafety.gov 남은 음식 재가열 74°C를 확인했다. 미국 외식업협회 2026 전망의 지역 재료·편안한 가정식 경향은 편집 참고이며 특정 메뉴의 국내 유행이나 유튜브 조회 수 증거가 아니다.",
+        "sources": [
+          "https://www.historicnewengland.org/visit/exhibitions/clamming-on-massachusetts-north-shore/",
+          "https://www.sare.org/publications/northeast-crop-production-harvest-manual/potatoes/?tid=2",
+          "https://www.nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?cntntsNo=30699&menuId=PS00087&sKidofcomdtySeCode=FC",
+          "https://www.cdc.gov/vibrio/prevention/",
+          "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+          "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "조개 국물과 우유의 감칠맛",
+        "해감 완료 바지락 기준 55분"
+      ]
     }
   ]
 }

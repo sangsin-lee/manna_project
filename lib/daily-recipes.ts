@@ -1,9 +1,32 @@
 import type { Recipe } from "./content";
-import { radishCakeSources, papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
+import { clamChowderSources, radishCakeSources, papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
 import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buckwheatGaletteSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "massachusetts-inspired-clam-chowder", title: "매사추세츠풍 바지락 감자 차우더", country: "usa", category: "main", experienceStatus: "researched",
+    summary: "바지락을 삶아 거른 국물에 감자를 부드럽게 익히고 우유와 크림을 더합니다. 조갯살의 감칠맛, 포슬한 감자, 베이컨의 은은한 훈연 향을 빵과 함께 즐기는 두 사람의 저녁입니다.",
+    culturalNote: "매사추세츠를 포함한 뉴잉글랜드 해안의 클램 차우더에서 영감 받은 가정용 응용입니다. 현지 조개와 국내 바지락은 같은 품종으로 보지 않습니다. 바지락·시판 베이컨·우유·크림의 배합은 만나의 식탁이 제안하며 특정 식당의 공식 레시피를 재현한 것은 아닙니다.",
+    localTable: { region: "미국 · 매사추세츠 노스쇼어의 해안 식문화에서 영감", ingredient: "조개 · 감자 · 우유 → 국내 바지락과 감자로 응용", season: "미국 북동부 저장용 감자 9월 중순~10월 수확", note: "SARE의 미국 북동부 감자 수확 달력을 참고했습니다. 국내 고랭지 여름감자는 보통 8월 중순~9월 하순, 가을작형은 주로 11월에 수확하므로 현지 달력과 구분합니다. 국내에서는 여러 작형과 저장 유통 감자를 활용합니다. 바지락의 10월 제철을 뜻하지 않으며 차우더도 가을에만 먹는 음식은 아닙니다." },
+    cookingTime: 55, servings: 2, difficulty: "보통", visualLabel: "MASSACHUSETTS / CLAM CHOWDER", visualCaption: "차우더의 크림빛과 감자의 옅은 금빛, 매사추세츠 해안을 떠올리는 푸른 물결",
+    keywords: ["미국", "매사추세츠", "뉴잉글랜드", "클램차우더", "바지락", "감자", "크림수프", "저녁", "이마트장보기"],
+    ingredientGroups: [
+      { title: "마트 장보기 · 구매 단위 → 2인분 사용량", items: ["해감 완료 표시가 있는 살아 있는 껍데기 바지락 400g 팩 2개 → 총 800g", "감자 1봉 또는 중간 크기 2~3개 → 껍질 제거 후 350g", "양파 1개 → 100g, 셀러리 1봉 → 50g", "베이컨 1팩 → 60g, 우유 1팩 → 300ml", "무가당 동물성 생크림 소포장 → 80ml, 식사용 빵 → 160g"] },
+      { title: "집에 있는 재료·도구", items: ["무염버터 10g, 중력분 15g", "조개 삶을 물 1L부터 · 조개가 잠기도록 보충, 거른 국물은 400ml만 사용", "후추 약간, 소금 0~1g · 완성 후 간을 보고 조절", "파슬리 2g(선택), 농도 조절용 물 최대 100ml", "냄비 2개, 촘촘한 체와 깨끗한 여과 천, 계량컵, 식품용 온도계"] },
+    ],
+    steps: [
+      { title: "채소와 조개를 따로 준비", description: "채소를 흐르는 물에 씻고 감자는 1.5cm 주사위 모양으로, 양파·셀러리는 잘게 썹니다. 베이컨은 1cm 폭으로 썹니다. 바지락은 포장 지침에 따라 세척하고 깨졌거나 입이 벌어진 것은 버립니다. 생조개에 닿은 손과 도구를 씻습니다.", tip: "55분은 해감이 끝난 바지락 기준입니다. 추가 해감이 필요한 제품은 포장 안내를 따르고 그 시간은 별도로 잡습니다. 조개·우유·크림은 사용할 때까지 냉장합니다." },
+      { title: "조개를 충분히 삶고 국물 거르기", description: "냄비에 물 1L를 끓이고 바지락을 넣습니다. 조개가 잠기도록 필요하면 끓는 물을 보충합니다. 조개 입이 열리면 3~5분 더 끓이고, 끝까지 열리지 않은 것은 버립니다. 건져 잠깐 식힌 뒤 살을 발라 깨끗한 그릇에 담습니다.", tip: "삶은 국물을 잠시 가라앉혀 바닥의 모래는 남기고 체와 여과 천으로 거릅니다. 400ml만 계량하며 짜면 일부를 물로 바꿔 총 400ml로 맞춥니다. 익힌 살은 덮어 냉장해 마지막에 넣습니다." },
+      { title: "베이컨과 채소로 고소한 바탕 만들기", description: "다른 냄비에 버터와 베이컨을 넣어 중약불로 2분 볶습니다. 양파·셀러리를 넣고 5분 더 볶아 부드럽게 합니다. 밀가루 15g을 뿌려 1분 저으며 볶되 갈색으로 태우지 않습니다." },
+      { title: "조개 국물에 감자 익히기", description: "계량한 국물 400ml를 조금씩 부으며 밀가루를 풉니다. 감자를 넣고 끓으면 중약불로 낮춥니다. 뚜껑을 비스듬히 덮고 15~18분, 포크가 쉽게 들어갈 때까지 익힙니다. 중간에 바닥을 저어 눌어붙지 않게 합니다." },
+      { title: "우유와 조갯살을 더해 크림빛으로", description: "우유 300ml와 생크림 80ml를 붓고 약불에서 저으며 약 5분 데웁니다. 익힌 조갯살을 넣고 전체가 74°C 이상이 되도록 고르게 저으며 다시 데웁니다. 너무 되직하면 물을 조금씩 보충하고 후추와 소금으로 마무리합니다.", tip: "조개 국물과 베이컨에 염분이 있어 소금은 마지막에 맛을 보고 넣습니다. 세게 펄펄 끓이거나 오래 졸이면 우유가 분리되고 조갯살이 질겨질 수 있습니다." },
+      { title: "따뜻한 빵과 한 끼로 담기", description: "수프를 마무리하는 동안 빵을 마른 팬이나 토스터에서 노릇하게 데웁니다. 차우더를 두 그릇에 나누고 선택한 파슬리를 올립니다. 한 사람당 빵 80g을 곁들여 바로 먹습니다." },
+    ],
+    substitutions: ["셀러리가 없으면 양파를 50g 더 사용합니다. 특유의 산뜻한 향은 줄어듭니다.", "생크림 80ml 대신 우유 80ml를 더 넣을 수 있습니다. 가벼운 농도가 되므로 익은 감자 몇 조각을 으깨 풀어 주세요.", "베이컨을 빼면 버터를 5g 더 넣고 채소를 볶습니다. 훈연 향과 짠맛이 줄어 마지막 간을 다시 맞춥니다.", "장보기 포장은 예시입니다. 이마트 등 매장의 바지락 판매 형태·해감 여부·중량·재고를 확인하고, 채집한 조개 대신 정상 유통되는 식용 조개를 사용합니다."],
+    tips: ["조개류·우유·밀 및 베이컨의 알레르기 표시를 확인합니다. 살아 있는 조개를 충분히 삶는 단계는 국물 거르기로 대체할 수 없습니다.", "남은 음식은 얕은 용기에 나눠 2시간 이내 4°C 이하로 냉장합니다. 기온이 32°C를 넘으면 1시간 이내 냉장하고, 다시 먹을 때는 중심까지 74°C로 재가열합니다.", "조개가 열린 모습, 국물을 거르는 장면, 우유가 섞이며 바뀌는 색, 감자와 조갯살이 담긴 국자를 촬영하면 조리 흐름이 잘 보입니다.", "표지는 재료의 색과 매사추세츠 해안에서 영감 받은 그림입니다. 실제 음식 사진이나 전통 문양의 재현은 아닙니다."],
+    publishedAt: "2026-10-31", relatedStorySlugs: [], sources: Object.values(clamChowderSources), palette: { from: "#f1e9d9", mid: "#bdd1d5", to: "#7796a8", ink: "#294653" },
+  },
   {
     slug: "hong-kong-inspired-radish-cake", title: "홍콩풍 무떡구이와 달걀 채소 한 접시", country: "hong-kong", category: "main", experienceStatus: "researched",
     summary: "달큼하게 익힌 무채와 멥쌀가루를 쪄서 굳힌 뒤, 도톰하게 썰어 노릇하게 굽습니다. 새우와 표고의 감칠맛을 담은 무떡에 달걀과 청경채를 곁들이는 두 사람의 저녁입니다.",

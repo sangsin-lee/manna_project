@@ -12,6 +12,32 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "clam-chowder" && <g>
+          <circle cx="300" cy="186" r="143" fill="#f9f5e9" stroke="#63879a" strokeWidth="6"/>
+          <circle cx="300" cy="186" r="130" stroke="#9ab2bf" strokeWidth="2"/>
+          <circle cx="300" cy="186" r="120" fill="#eadbb9"/>
+          <path d="M191 178q24-90 110-103 95 12 115 104-15 102-116 124-95-19-109-125Z" fill="#f5e8ca"/>
+          <path d="M207 135q30-44 81-47m28 201q55-9 80-53" stroke="#fff9e9" strokeWidth="6" strokeLinecap="round"/>
+          {[[234,137,-12],[322,117,14],[369,177,-9],[267,212,14],[323,260,-8],[216,233,-15]].map(([x,y,r]) => <g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="m-18-15 30-5 9 29-32 9Z" fill="#e2bf77" stroke="#c9aa6c" strokeWidth="1.5"/>
+            <path d="m-18-15 30-5 1 24-24 14Z" fill="#f8df9d"/>
+            <path d="m-12-10 18-4" stroke="#fff0c7" strokeWidth="3" strokeLinecap="round"/>
+          </g>)}
+          {[[287,147,-18],[343,214,20],[244,270,12],[222,185,-20],[318,187,14]].map(([x,y,r]) => <g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${r})`}>
+            <path d="M-19 3q-6-17 7-21 11-4 16 7 16-8 21 4 3 15-13 22-24 6-31-12Z" fill="#bc9f89" stroke="#826f62" strokeWidth="2"/>
+            <path d="M-13 1q-3-12 6-11 5 1 7 10 14-8 16-1 2 10-11 11-13 3-18-9Z" fill="#e7cbb1"/>
+          </g>)}
+          <path d="m268 105 14 5-4 8-15-4Zm81 43 16 5-3 9-17-5Zm-73 86 14-4 4 8-15 4Zm61 41 17-5 3 8-17 6Z" fill="#a5644d"/>
+          <path d="m273 108 5 2m77 43 5 2m-76 84 5-1m53 44 7-2" stroke="#e9b596" strokeWidth="2"/>
+          <path d="m250 167 6-5m44 77 6-4m70-18 5 4m-135-17 7 3m63-98 4-5m35 138 5 4" stroke="#64805c" strokeWidth="4" strokeLinecap="round"/>
+          <g transform="translate(427 268) rotate(32)">
+            <path d="M-31-42q31-19 62 0l7 73q-34 23-76 0Z" fill="#bc8450" stroke="#916441" strokeWidth="2"/>
+            <path d="M-24-35q24-14 48 0l6 60q-29 15-60 0Z" fill="#ecd4a2"/>
+            <path d="m-18-23 34 4m-32 14 34 4m-33 14 34 4" stroke="#b9935d" strokeWidth="4" strokeLinecap="round"/>
+            <circle cx="-10" cy="-11" r="2" fill="#c5a373"/><circle cx="12" cy="17" r="2.5" fill="#c5a373"/>
+          </g>
+        </g>}
+
         {art === "radish-cake" && <g>
           <circle cx="300" cy="186" r="142" fill="#fcf4e7" stroke="#ad6250" strokeWidth="5"/>
           <circle cx="300" cy="186" r="127" stroke="#d3a38c" strokeWidth="2"/>

@@ -1,6 +1,6 @@
 import type { Recipe, SourceLink } from "./content";
 import { hanjeongseonSources } from "./hanjeongseon-sources";
-import { radishCakeSources, papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
+import { clamChowderSources, radishCakeSources, papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
 import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buckwheatGaletteSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
@@ -54,6 +54,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "massachusetts-inspired-clam-chowder": narrative(
+    ["매사추세츠 해안에서 떠올린 한 그릇", "뉴잉글랜드 해안의 클램 차우더를 국내 바지락으로 응용합니다. 매사추세츠 노스쇼어에는 조개잡이와 조개 요리가 지역 생활에 이어져 온 이야기가 남아 있습니다. 특정 발명자나 연도를 단정하지 않고, 오늘은 감자와 우유를 더한 가정용 한 그릇으로 풀어냅니다."],
+    ["철도가 바닷가 식탁으로 이끈 사람들", "Historic New England의 전시는 1870~1880년대 철도로 매사추세츠 해안을 찾던 여름 휴양객과 조개 요리를 소개합니다. 조개는 해안의 일과 여행의 식탁을 잇는 재료였습니다. 이 시기는 차우더의 탄생 연도가 아니라, 지역 조개 식문화가 넓어지는 배경으로 읽습니다."],
+    ["짭짤한 바다 향을 감싸는 우유", "거른 조개 국물의 감칠맛에 우유와 크림이 부드러움을 더합니다. 감자는 숟가락에 덩어리로 남아 포슬하게 부서지고, 베이컨은 은은한 훈연 향을 보탭니다. 구운 빵을 찍어 먹으면 바삭한 가장자리와 따뜻한 수프가 한입 안에서 만납니다."],
+    [clamChowderSources.region, clamChowderSources.season, clamChowderSources.korea],
+  ),
   "hong-kong-inspired-radish-cake": narrative(
     ["차와 함께 나누는 짭짤한 무떡", "로박고는 무와 멥쌀가루를 쪄 만드는 광둥식 딤섬입니다. 홍콩관광청은 중환의 무떡구이와 케네디타운의 무떡 요리를 소개합니다. 오늘은 그 식탁에서 영감을 받아 국내 가을무로 만들어 봅니다."],
     ["명절의 음식이 오늘의 한 접시로", "홍콩의 설 식탁에서도 무떡을 만납니다. 2016년 홍콩 교육국 실습 교재에는 무와 쌀가루를 섞어 찌는 방법이 담겨 있습니다. 이는 교육 자료의 발행 시점으로, 요리의 탄생 연도를 뜻하지 않습니다. 이번 저녁에는 달걀과 채소를 곁들입니다."],

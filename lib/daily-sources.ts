@@ -1,5 +1,16 @@
 import type { SourceLink } from "./content";
 
+// Massachusetts coastal food culture, adapted with Korean clams, October 31.
+export const clamChowderSources = {
+  region: { label: "Historic New England — 매사추세츠 노스쇼어의 조개 산업과 해안 식문화", url: "https://www.historicnewengland.org/visit/exhibitions/clamming-on-massachusetts-north-shore/" },
+  season: { label: "SARE 북동부 수확 안내 — 저장용 감자의 9월 중순~10월 수확", url: "https://www.sare.org/publications/northeast-crop-production-harvest-manual/potatoes/?tid=2" },
+  korea: { label: "농촌진흥청 농사로 — 국내 감자의 작형별 파종·수확 일정", url: "https://www.nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?cntntsNo=30699&menuId=PS00087&sKidofcomdtySeCode=FC" },
+  cooking: { label: "미국 CDC — 껍데기 조개를 삶는 시간과 열리지 않은 조개 폐기", url: "https://www.cdc.gov/vibrio/prevention/" },
+  seafood: { label: "미국 FDA — 해산물 구매·보관·교차오염 예방", url: "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely" },
+  storage: { label: "미국 FDA — 신속 냉장과 4°C 이하 보관", url: "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely" },
+  temperature: { label: "FoodSafety.gov — 남은 음식 재가열 74°C", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+} satisfies Record<string, SourceLink>;
+
 // Hong Kong dim sum, adapted with Korean autumn radish, October 29.
 export const radishCakeSources = {
   region: { label: "홍콩관광청 — 차와 나누는 딤섬, 중환의 무떡구이", url: "https://www.discoverhongkong.com/eng/food-and-drink/unmissable-hong-kong-dim-sum-restaurants.html" },

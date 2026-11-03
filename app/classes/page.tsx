@@ -44,18 +44,17 @@ const classes = [
 const process = [
   {
     number: "01",
-    title: "문의 남기기",
+    title: "예약 신청",
     description: "관심 주제, 희망 날짜와 예상 인원을 적어 주세요.",
   },
   {
     number: "02",
-    title: "구성 협의",
-    description:
-      "참여자와 공간, 예산에 맞춰 메뉴와 진행 방식을 조정합니다.",
+    title: "운영자 확인·협의",
+    description: "참여자와 공간, 예산에 맞춰 메뉴와 진행 방식을 조정합니다.",
   },
   {
     number: "03",
-    title: "일정 확정",
+    title: "조건 합의 후 확정",
     description: "운영 가능 일정과 준비 사항을 확인한 뒤 예약을 확정합니다.",
   },
 ];
@@ -74,15 +73,14 @@ export default function ClassesPage() {
             문화까지 나누는 시간
           </h1>
           <p className="mt-7 max-w-2xl break-keep text-base leading-8 text-neutral-600 sm:text-lg">
-            만나의 식탁 클래스는 레시피만 배우는 수업이 아닙니다. 음식이
-            태어난 배경을 알아보고 함께 조리한 뒤 한 식탁에서 경험을
-            나눕니다.
+            만나의 식탁 클래스는 레시피만 배우는 수업이 아닙니다. 음식이 태어난
+            배경을 알아보고 함께 조리한 뒤 한 식탁에서 경험을 나눕니다.
           </p>
           <Link
             href="#class-inquiry"
             className="mt-9 inline-flex rounded-full bg-neutral-950 px-6 py-3.5 text-sm font-black !text-white transition hover:bg-[#943706]"
           >
-            클래스 문의하기
+            모임 예약 신청하기
           </Link>
         </div>
       </section>
@@ -95,8 +93,8 @@ export default function ClassesPage() {
           클래스 예시
         </h2>
         <p className="mt-4 max-w-2xl break-keep leading-7 text-neutral-600">
-          아래 내용은 기본 구성 예시이며, 실제 일정과 메뉴는 문의 후
-          조정합니다.
+          아래는 선택 가능한 테마 예시입니다. 장소와 회차별 정원은 아직 정해지지
+          않았으며, 실제 일정·메뉴·비용은 신청 후 조정합니다.
         </p>
 
         <div className="mt-10 grid gap-7 lg:grid-cols-3">
@@ -141,7 +139,7 @@ export default function ClassesPage() {
                 href="#class-inquiry"
                 className="mt-auto pt-8 text-sm font-black !text-[#943706]"
               >
-                이 구성으로 문의하기 →
+                이 테마로 예약 신청하기 →
               </Link>
             </article>
           ))}
@@ -187,7 +185,10 @@ export default function ClassesPage() {
             클래스 문의
           </h2>
           <p className="mt-4 break-keep leading-7 text-neutral-600">
-            관심 있는 프로그램과 원하는 메뉴를 문의 내용에 적어 주세요.
+            서울의 대여 키친에서 특정 나라의 문화와 요리를 함께 경험하는
+            모임입니다. 일요일을 제외한 희망 날짜로 신청해 주세요.
+            장소·정원·메뉴·비용은 개별 협의 후 정하며, 신청만으로 예약이
+            확정되지 않습니다.
           </p>
         </div>
         <ReservationForm />

@@ -51,8 +51,9 @@ export default function AboutPage() {
             세계를 이해하는 방법
           </h1>
           <p className="mt-7 max-w-3xl break-keep text-base leading-8 text-neutral-600 sm:text-lg">
-            만나의 식탁은 세계 음식을 단순히 소비하는 데서 멈추지 않고,
-            한 끼에 담긴 지역의 환경과 역사, 사람들의 생활방식을 함께
+            이상신(李相信)이라는 이름에는 ‘서로 믿고 살아가라’는 뜻이 담겨
+            있습니다. 만나의 식탁은 세계 음식을 단순히 소비하는 데서 멈추지
+            않고, 한 끼에 담긴 지역의 환경과 역사, 사람들의 생활방식을 함께
             이해하는 음식·문화 프로젝트입니다.
           </p>
         </div>
@@ -65,21 +66,30 @@ export default function AboutPage() {
           </p>
           <h2 className="mt-3 break-keep text-3xl font-black leading-tight tracking-tight sm:text-4xl">
             “왜 이곳에서는
-            <br />
-            이 음식을 먹게 되었을까?”
+            <br />이 음식을 먹게 되었을까?”
           </h2>
         </div>
         <div className="article-copy">
           <p>
-            레시피에는 재료의 양과 조리 순서가 적혀 있지만, 그 음식이
-            사람들의 삶에서 어떤 역할을 했는지는 충분히 설명되지 않는
-            경우가 많습니다.
+            아버지의 사진과 블로그 일을 통해 접한 여러 공간의 즐거움, 스물두 살
+            송크란에서 넓어진 세계, 신앙 안에서 고민한 삶의 방향이 만나의
+            출발점입니다.{" "}
+            <a
+              href="https://sangsin-manna-story.gotka1128.chatgpt.site/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              이상신과 만나의 이야기 ↗
+            </a>
           </p>
           <p>
-            만나의 식탁은 음식 이름에서 출발해 시장과 가정, 계절과
-            지역, 이주와 문화 교류까지 연결합니다. 글로 배경을 읽고
-            레시피로 직접 만들어 본 뒤, 클래스와 영상에서 경험을
-            나누는 구조를 지향합니다.
+            레시피에는 재료의 양과 조리 순서가 적혀 있지만, 그 음식이 사람들의
+            삶에서 어떤 역할을 했는지는 충분히 설명되지 않는 경우가 많습니다.
+          </p>
+          <p>
+            만나의 식탁은 음식 이름에서 출발해 시장과 가정, 계절과 지역, 이주와
+            문화 교류까지 연결합니다. 글로 배경을 읽고 레시피로 직접 만들어 본
+            뒤, 클래스와 영상에서 경험을 나누는 구조를 지향합니다.
           </p>
         </div>
       </section>

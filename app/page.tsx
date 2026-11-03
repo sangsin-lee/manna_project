@@ -84,26 +84,61 @@ export default function HomePage() {
       <section className="home-opening">
         <div className="editorial-wrap home-opening-grid">
           <div>
-            <p className="editorial-eyebrow"><span className="editorial-dot" /> FOOD, CULTURE & YOU</p>
-            <h1>한 끼를 만들고,<br /><em>세계를 만나다.</em></h1>
-            <p className="home-intro">지역의 특산물과 계절의 재료를 따라 세계의 식탁을 만납니다. 한 끼의 배경을 읽고, 우리 집 재료로 그 맛을 이어 보세요.</p>
-            <div className="home-opening-links"><Link className="manna-button manna-button-primary" href="/recipes">오늘의 레시피 찾기 ↗</Link><Link className="manna-button manna-button-outline" href="/stories">식문화 이야기</Link></div>
+            <p className="editorial-eyebrow">
+              <span className="editorial-dot" /> FOOD, CULTURE & YOU
+            </p>
+            <h1>
+              한 끼를 만들고,
+              <br />
+              <em>세계를 만나다.</em>
+            </h1>
+            <p className="home-intro">
+              지역의 특산물과 계절의 재료를 따라 세계의 식탁을 만납니다. 한 끼의
+              배경을 읽고, 우리 집 재료로 그 맛을 이어 보세요.
+            </p>
+            <div className="home-opening-links">
+              <Link
+                className="manna-button manna-button-primary"
+                href="/recipes"
+              >
+                오늘의 레시피 찾기 ↗
+              </Link>
+              <Link
+                className="manna-button manna-button-outline"
+                href="/stories"
+              >
+                식문화 이야기
+              </Link>
+            </div>
           </div>
           <SeasonalFeature />
         </div>
       </section>
 
-      <section aria-labelledby="steak-recipes-title" className="border-b border-stone-200 bg-[#fffdf9]">
+      <section
+        aria-labelledby="steak-recipes-title"
+        className="border-b border-stone-200 bg-[#fffdf9]"
+      >
         <div className="mx-auto max-w-6xl px-6 py-12 lg:py-16">
-          <p className="text-xs font-black tracking-[0.2em] text-[#943706]">STEAK AT HOME · 2026.09.18</p>
-          <h2 id="steak-recipes-title" className="mt-3 text-3xl font-black tracking-tight">이마트 장보기로 완성하는 스테이크</h2>
+          <p className="text-xs font-black tracking-[0.2em] text-[#943706]">
+            STEAK AT HOME · 2026.09.18
+          </p>
+          <h2
+            id="steak-recipes-title"
+            className="mt-3 text-3xl font-black tracking-tight"
+          >
+            이마트 장보기로 완성하는 스테이크
+          </h2>
           <p className="mt-4 max-w-3xl break-keep leading-7 text-neutral-600">
-            리베라 스타일에서 영감 받은 소고기 스테이크와 촉촉한 돼지 등심 스테이크.
-            1인분 재료, 소스, 굽기와 휴지 순서를 함께 정리했습니다.
-            돼지고기는 색이 아닌 중심온도 63°C 이상과 최소 3분 휴지로 익힘을 확인하세요.
+            리베라 스타일에서 영감 받은 소고기 스테이크와 촉촉한 돼지 등심
+            스테이크. 1인분 재료, 소스, 굽기와 휴지 순서를 함께 정리했습니다.
+            돼지고기는 색이 아닌 중심온도 63°C 이상과 최소 3분 휴지로 익힘을
+            확인하세요.
           </p>
           <div className="mt-8 grid gap-7 md:grid-cols-2">
-            {steakRecipes.map((recipe) => <RecipeCard key={recipe.slug} recipe={recipe} />)}
+            {steakRecipes.map((recipe) => (
+              <RecipeCard key={recipe.slug} recipe={recipe} />
+            ))}
           </div>
         </div>
       </section>
@@ -119,13 +154,11 @@ export default function HomePage() {
               </p>
               <h2 className="mt-3 break-keep text-3xl font-black tracking-tight sm:text-4xl">
                 파리에서 로마까지,
-                <br className="hidden sm:block" />
-                네 도시의 식탁을 잇습니다.
+                <br className="hidden sm:block" />네 도시의 식탁을 잇습니다.
               </h2>
               <p className="mt-5 max-w-2xl break-keep text-sm leading-7 text-neutral-300">
-                인스타그램 하이라이트는 개인 여행 기록의 출발점으로
-                연결하고, 문화 설명은 공식 관광·문화 기관 자료로 별도
-                검토했습니다.
+                인스타그램 하이라이트는 개인 여행 기록의 출발점으로 연결하고,
+                문화 설명은 공식 관광·문화 기관 자료로 별도 검토했습니다.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -135,7 +168,12 @@ export default function HomePage() {
               >
                 여행 동선 자세히 보기
               </Link>
-              <Link href={`/stories/${heroStory.slug}`} className="rounded-full border border-neutral-600 px-6 py-3 text-sm font-black !text-white">로마의 식문화 이야기 ↗</Link>
+              <Link
+                href={`/stories/${heroStory.slug}`}
+                className="rounded-full border border-neutral-600 px-6 py-3 text-sm font-black !text-white"
+              >
+                로마의 식문화 이야기 ↗
+              </Link>
               <a
                 href={siteConfig.instagramUrl}
                 target="_blank"
@@ -240,8 +278,8 @@ export default function HomePage() {
                 유럽의 한 끼를 직접 만들기
               </h2>
               <p className="mt-4 max-w-2xl break-keep leading-7 text-neutral-600">
-                현지에서 본 식탁의 맥락을 읽고, 한국에서 구할 수 있는
-                재료와 대체 방법으로 다시 구성합니다.
+                현지에서 본 식탁의 맥락을 읽고, 한국에서 구할 수 있는 재료와
+                대체 방법으로 다시 구성합니다.
               </p>
             </div>
             <Link
@@ -268,13 +306,11 @@ export default function HomePage() {
             </p>
             <h2 className="mt-4 break-keep text-3xl font-black leading-tight sm:text-4xl">
               음식 한 접시를 넘어
-              <br />
-              그 나라의 문화와 사람을 만납니다.
+              <br />그 나라의 문화와 사람을 만납니다.
             </h2>
             <p className="mt-5 max-w-2xl break-keep text-sm leading-7 text-neutral-300">
-              직접 다녀온 곳의 기록, 공식 자료를 바탕으로 정리한 문화
-              이야기, 집에서 재현할 수 있는 레시피를 하나의 흐름으로
-              연결합니다.
+              직접 다녀온 곳의 기록, 공식 자료를 바탕으로 정리한 문화 이야기,
+              집에서 재현할 수 있는 레시피를 하나의 흐름으로 연결합니다.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 lg:justify-end">
@@ -304,11 +340,11 @@ export default function HomePage() {
               RESERVATION
             </p>
             <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
-              클래스 및 모임 문의
+              요리·문화 모임 예약 신청
             </h2>
             <p className="mt-4 break-keep leading-7 text-neutral-600">
-              관심 있는 나라와 메뉴, 희망 날짜와 인원을 남겨 주시면 운영
-              가능 일정과 구성을 확인한 뒤 연락드립니다.
+              관심 있는 나라와 메뉴, 희망 날짜와 인원을 남겨 주시면 운영 가능
+              일정과 구성을 확인한 뒤 연락드립니다.
             </p>
           </div>
           <ReservationForm />

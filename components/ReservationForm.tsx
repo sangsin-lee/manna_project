@@ -1,244 +1,239 @@
 "use client";
-
 import Link from "next/link";
-import { FormEvent, useMemo, useState } from "react";
-
-type Feedback =
-  | { type: "success"; message: string }
-  | { type: "error"; message: string }
-  | null;
-
-function getLocalDateString() {
-  const now = new Date();
-  const offset = now.getTimezoneOffset();
-  return new Date(now.getTime() - offset * 60_000)
-    .toISOString()
-    .slice(0, 10);
-}
-
+import { useRef, useState, type FormEvent } from "react";
+import { dateError, seoulDate, timeOptions } from "@/lib/reservation-policy";
+const input =
+  "mt-2 w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-base text-neutral-950";
 export default function ReservationForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [feedback, setFeedback] = useState<Feedback>(null);
-  const minDate = useMemo(getLocalDateString, []);
-
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-
-    const name = String(formData.get("name") ?? "").trim();
-    const phone = String(formData.get("phone") ?? "").trim();
-    const preferredDate = String(
-      formData.get("preferredDate") ?? "",
-    ).trim();
-    const guestsValue = String(formData.get("guests") ?? "").trim();
-    const message = String(formData.get("message") ?? "").trim();
-    const website = String(formData.get("website") ?? "").trim();
-    const privacyAgreed = formData.get("privacyAgreed") === "on";
-
-    if (!name || !phone) {
-      setFeedback({
-        type: "error",
-        message: "이름과 연락처를 확인해 주세요.",
-      });
+  const identity = useRef<{ id: string; token: string } | null>(null);
+  const [busy, setBusy] = useState(false),
+    [error, setError] = useState(""),
+    [receipt, setReceipt] = useState<{
+      id: string;
+      url: string;
+      notified: boolean;
+    } | null>(null);
+  async function submit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    if (!form.reportValidity()) return;
+    const f = new FormData(form),
+      date = String(f.get("preferredDate"));
+    const issue = dateError(date);
+    if (issue) {
+      setError(issue);
       return;
     }
-
-    if (!privacyAgreed) {
-      setFeedback({
-        type: "error",
-        message: "문의 접수를 위해 개인정보 수집 안내에 동의해 주세요.",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-    setFeedback(null);
-
+    if (!identity.current)
+      identity.current = {
+        id: crypto.randomUUID(),
+        token: Array.from(crypto.getRandomValues(new Uint8Array(32)), (n) =>
+          n.toString(16).padStart(2, "0"),
+        ).join(""),
+      };
+    const identityValue = identity.current;
+    setBusy(true);
+    setError("");
     try {
-      const response = await fetch("/api/inquiries", {
+      const r = await fetch("/api/reservations", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name,
-          phone,
-          preferredDate: preferredDate || undefined,
-          guests: guestsValue ? Number(guestsValue) : undefined,
-          message: message || undefined,
-          privacyAgreed,
-          website,
+          requestId: identityValue.id,
+          trackingToken: identityValue.token,
+          name: f.get("name"),
+          phone: f.get("phone"),
+          preferredDate: date,
+          guests: Number(f.get("guests")),
+          theme: f.get("theme"),
+          time: f.get("time"),
+          message: f.get("message"),
+          website: f.get("website"),
+          privacyAgreed: f.get("privacyAgreed") === "on",
         }),
       });
-
-      const result = (await response.json().catch(() => null)) as {
-        message?: string;
-      } | null;
-
-      if (!response.ok) {
-        throw new Error(
-          result?.message || "문의 접수 중 오류가 발생했습니다.",
-        );
-      }
-
-      form.reset();
-      setFeedback({
-        type: "success",
-        message:
-          result?.message ||
-          "문의가 접수되었습니다. 확인 후 연락드리겠습니다.",
+      const data = await r.json();
+      if (!r.ok) throw Error(data.message || "접수하지 못했습니다.");
+      setReceipt({
+        id: data.reservationId,
+        url:
+          "/reservations#id=" +
+          data.reservationId +
+          "&token=" +
+          identityValue.token,
+        notified: data.notified !== false,
       });
-    } catch (error) {
-      setFeedback({
-        type: "error",
-        message:
-          error instanceof Error
-            ? error.message
-            : "문의 접수 중 오류가 발생했습니다.",
-      });
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "잠시 후 다시 신청해 주세요.");
     } finally {
-      setIsSubmitting(false);
+      setBusy(false);
     }
   }
-
+  if (receipt)
+    return (
+      <div
+        role="status"
+        className="rounded-3xl border border-emerald-300 bg-white p-8"
+      >
+        <p className="text-sm font-bold text-emerald-800">
+          신청 저장 완료 · 확인 대기
+        </p>
+        <h3 className="mt-3 text-2xl font-black">신청이 접수되었습니다.</h3>
+        <p className="mt-4 leading-8">
+          장소·시간·메뉴·인원·총비용을 협의한 뒤 운영자가 확정합니다. 현재는
+          확정된 예약이 아닙니다.
+        </p>
+        <p className="mt-4 break-all text-sm">접수번호: {receipt.id}</p>
+        <Link
+          className="mt-6 inline-block rounded-full bg-neutral-950 px-6 py-3 font-bold !text-white"
+          href={receipt.url}
+        >
+          예약 상태 확인 및 링크 보관 →
+        </Link>
+        {!receipt.notified && (
+          <p className="mt-4 text-sm text-amber-800">
+            신청은 저장됐으나 운영자 이메일 알림을 보내지 못했습니다. 상태 확인
+            링크를 보관해 주세요.
+          </p>
+        )}
+        <p className="mt-4 text-xs text-neutral-500">
+          확인 링크는 신청 정보를 열 수 있는 전용 링크입니다. 다른 사람에게
+          공유하지 마세요.
+        </p>
+      </div>
+    );
   return (
     <form
-      onSubmit={handleSubmit}
-      className="rounded-[2rem] border border-[#e0d5c8] bg-white p-6 shadow-[0_20px_60px_rgba(70,50,25,0.06)] sm:p-8"
-      noValidate
+      onSubmit={submit}
+      className="rounded-3xl border border-stone-300 bg-white p-6 sm:p-8"
     >
+      <div className="mb-7 rounded-2xl bg-[#f7f3ed] p-5 text-sm leading-7">
+        <strong>서울의 대여 키친에서 함께하는 소규모 요리·문화 모임</strong>
+        <p>일요일 제외 · 장소와 정원 미정 · 테마별 비용 협의</p>
+        <p>
+          아래는 희망 조건입니다. 신청 후 가능한 공간과 진행 범위를 확인해 개별
+          연락드리며, 합의 전에는 예약이 확정되거나 결제되지 않습니다.
+        </p>
+      </div>
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="block">
-          <span className="text-sm font-bold text-neutral-800">
-            이름 <span className="text-[#b9480c]">*</span>
-          </span>
+        <label>
+          이름 *
           <input
-            type="text"
+            className={input}
             name="name"
             required
             maxLength={50}
             autoComplete="name"
-            placeholder="이름을 입력해 주세요"
-            className="mt-2 w-full rounded-2xl border border-stone-300 bg-white px-4 py-3.5 text-base text-neutral-950 outline-none transition placeholder:text-neutral-400 focus:border-[#b9480c] focus:ring-2 focus:ring-[#b9480c]/15"
           />
         </label>
-
-        <label className="block">
-          <span className="text-sm font-bold text-neutral-800">
-            연락처 <span className="text-[#b9480c]">*</span>
-          </span>
+        <label>
+          연락처 *
           <input
-            type="tel"
+            className={input}
             name="phone"
+            type="tel"
+            inputMode="tel"
             required
+            minLength={8}
             maxLength={30}
             autoComplete="tel"
-            inputMode="tel"
-            placeholder="010-0000-0000"
-            className="mt-2 w-full rounded-2xl border border-stone-300 bg-white px-4 py-3.5 text-base text-neutral-950 outline-none transition placeholder:text-neutral-400 focus:border-[#b9480c] focus:ring-2 focus:ring-[#b9480c]/15"
+            placeholder="연락 가능한 전화번호"
           />
         </label>
-
-        <label className="block">
-          <span className="text-sm font-bold text-neutral-800">
-            희망 날짜
-          </span>
+        <label>
+          희망 날짜 *
           <input
-            type="date"
+            className={input}
             name="preferredDate"
-            min={minDate}
-            className="mt-2 w-full rounded-2xl border border-stone-300 bg-white px-4 py-3.5 text-base text-neutral-950 outline-none transition focus:border-[#b9480c] focus:ring-2 focus:ring-[#b9480c]/15"
+            type="date"
+            min={seoulDate(new Date(Date.now() + 86400000))}
+            required
+            onChange={(e) => {
+              e.target.setCustomValidity(dateError(e.target.value) || "");
+            }}
           />
-        </label>
-
-        <label className="block">
-          <span className="text-sm font-bold text-neutral-800">
-            예상 인원
+          <span className="text-xs text-neutral-500">
+            내일 이후 · 일요일 제외
           </span>
+        </label>
+        <label>
+          희망 시간대 *
+          <select className={input} name="time" required>
+            <option value="">선택해 주세요</option>
+            {timeOptions.map((t) => (
+              <option key={t}>{t}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          희망 인원 *
           <input
-            type="number"
+            className={input}
             name="guests"
+            type="number"
+            required
             min={1}
             max={100}
-            inputMode="numeric"
-            placeholder="예: 6"
-            className="mt-2 w-full rounded-2xl border border-stone-300 bg-white px-4 py-3.5 text-base text-neutral-950 outline-none transition placeholder:text-neutral-400 focus:border-[#b9480c] focus:ring-2 focus:ring-[#b9480c]/15"
+            placeholder="실제 정원은 협의 후 결정"
+          />
+          <span className="text-xs text-neutral-500">
+            운영자 1명이 진행할 수 있는 규모로 조율합니다.
+          </span>
+        </label>
+        <label>
+          함께 알아보고 싶은 나라·음식 *
+          <input
+            className={input}
+            name="theme"
+            required
+            maxLength={80}
+            placeholder="예: 독일의 식문화와 가정식"
           />
         </label>
       </div>
-
       <label className="mt-5 block">
-        <span className="text-sm font-bold text-neutral-800">문의 내용</span>
+        희망 메뉴·모임 목적·준비 시 참고할 점
         <textarea
+          className={input}
           name="message"
-          rows={6}
-          maxLength={2000}
-          placeholder="관심 있는 나라와 음식, 모임 목적, 가능한 시간대를 적어 주세요."
-          className="mt-2 w-full resize-y rounded-2xl border border-stone-300 bg-white px-4 py-3.5 text-base leading-7 text-neutral-950 outline-none transition placeholder:text-neutral-400 focus:border-[#b9480c] focus:ring-2 focus:ring-[#b9480c]/15"
+          rows={4}
+          maxLength={500}
+          placeholder="희망 조건을 적어 주세요. 민감한 건강정보는 적지 마시고, 음식 관련 주의사항은 개별 협의 때 알려주세요."
         />
       </label>
-
-      <div
-        aria-hidden="true"
-        className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden"
-      >
-        <label>
-          Website
-          <input
-            type="text"
-            name="website"
-            tabIndex={-1}
-            autoComplete="off"
-          />
-        </label>
-      </div>
-
-      <label className="mt-5 flex cursor-pointer items-start gap-3 rounded-2xl bg-[#f7f3ed] p-4">
+      <div aria-hidden="true" className="absolute -left-[9999px]">
         <input
-          type="checkbox"
-          name="privacyAgreed"
-          required
-          className="mt-1 h-4 w-4 shrink-0 accent-[#b9480c]"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-label="Website"
         />
-        <span className="break-keep text-sm leading-6 text-neutral-600">
-          문의 처리를 위한 이름, 연락처 및 문의 내용 수집에 동의합니다.{" "}
-          <Link
-            href="/privacy"
-            className="font-bold !text-[#943706] underline underline-offset-4"
-          >
+      </div>
+      <label className="mt-6 flex items-start gap-3 text-sm leading-7">
+        <input className="mt-2" type="checkbox" name="privacyAgreed" required />
+        <span>
+          예약 상담·진행을 위한 이름, 연락처, 희망 일정·인원·테마·요청사항
+          수집에 동의합니다.{" "}
+          <Link className="underline" href="/privacy">
             개인정보 처리 안내
           </Link>
         </span>
       </label>
-
-      {feedback && (
-        <div
-          role={feedback.type === "error" ? "alert" : "status"}
-          aria-live="polite"
-          className={`mt-5 rounded-2xl border px-4 py-3 text-sm font-semibold ${
-            feedback.type === "success"
-              ? "border-emerald-200 bg-emerald-50 text-emerald-800"
-              : "border-red-200 bg-red-50 text-red-800"
-          }`}
-        >
-          {feedback.message}
-        </div>
-      )}
-
-      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="break-keep text-xs leading-5 text-neutral-500">
-          구체적인 일정과 비용은 문의 내용을 확인한 뒤 개별 안내합니다.
+      {error && (
+        <p role="alert" className="mt-5 rounded-xl bg-red-50 p-4 text-red-800">
+          {error}
         </p>
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="inline-flex min-h-12 items-center justify-center rounded-full bg-neutral-950 px-7 py-3 text-sm font-bold text-white transition hover:bg-[#943706] disabled:cursor-not-allowed disabled:bg-neutral-400"
-        >
-          {isSubmitting ? "접수 중..." : "문의 보내기"}
-        </button>
-      </div>
+      )}
+      <button
+        disabled={busy}
+        className="mt-7 min-h-12 rounded-full bg-neutral-950 px-7 py-3 font-bold text-white disabled:opacity-50"
+      >
+        {busy ? "저장 중…" : "예약 신청하기"}
+      </button>
+      <p className="mt-4 text-xs text-neutral-500">
+        신청 접수 → 운영자 연락·조건 협의 → 예약 확정. 확정 전 결제는 받지
+        않습니다.
+      </p>
     </form>
   );
 }

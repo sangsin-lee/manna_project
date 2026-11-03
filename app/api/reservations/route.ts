@@ -95,7 +95,13 @@ export async function POST(request: Request) {
       .select("id", { count: "exact", head: true })
       .eq("phone", phone)
       .gte("created_at", new Date(Date.now() - 600000).toISOString());
-    if (countError) throw Error();
+    if (countError) {
+      console.error("Reservation count failed", {
+        code: countError.code,
+        message: countError.message,
+      });
+      throw Error("Reservation count failed");
+    }
     if ((count || 0) >= 3)
       return json(
         {
@@ -112,17 +118,19 @@ export async function POST(request: Request) {
       note,
       trackingHash: hash(token),
     };
-    const { error } = await db
-      .from("inquiries")
-      .insert({
-        id,
-        name,
-        phone,
-        preferred_date: date,
-        guests: b.guests,
-        message: JSON.stringify(meta),
-      });
+    const { error } = await db.from("inquiries").insert({
+      id,
+      name,
+      phone,
+      preferred_date: date,
+      guests: b.guests,
+      message: JSON.stringify(meta),
+    });
     if (error) {
+      console.error("Reservation insert failed", {
+        code: error.code,
+        message: error.message,
+      });
       if (error.code === "23505")
         return json(
           { message: "접수 상태를 확인한 뒤 다시 시도해 주세요." },
@@ -159,8 +167,11 @@ export async function POST(request: Request) {
       },
       201,
     );
-  } catch {
-    console.error("Reservation persistence unavailable");
+  } catch (error) {
+    console.error(
+      "Reservation persistence unavailable",
+      error instanceof Error ? error.message : "unknown",
+    );
     return json(
       {
         message:

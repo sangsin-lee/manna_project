@@ -26,7 +26,13 @@ export async function readBooking(id: string) {
     .select("id,name,phone,preferred_date,guests,message,created_at")
     .eq("id", id)
     .maybeSingle();
-  if (error) throw new Error("Reservation read failed");
+  if (error) {
+    console.error("Reservation read failed", {
+      code: error.code,
+      message: error.message,
+    });
+    throw new Error("Reservation read failed");
+  }
   const meta = decodeBooking(data?.message);
   return data && meta ? { db, row: data, meta } : null;
 }

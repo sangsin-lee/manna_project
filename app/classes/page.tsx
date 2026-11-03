@@ -18,7 +18,7 @@ const classes = [
     description:
       "딤섬의 기본 구조와 홍콩식 밀크티를 만들며 차찬텡과 얌차 문화를 함께 살펴봅니다.",
     duration: "약 2시간 30분",
-    people: "4~8명",
+    people: "규모 협의",
     includes: ["문화 이야기", "실습", "함께 먹는 식사"],
   },
   {
@@ -27,7 +27,7 @@ const classes = [
     description:
       "지역별 파스타의 차이를 알아보고 한 가지 파스타와 디저트를 만들어 대화를 나눕니다.",
     duration: "약 3시간",
-    people: "4~8명",
+    people: "규모 협의",
     includes: ["지역 음식 소개", "요리 실습", "테이블 모임"],
   },
   {
@@ -36,7 +36,7 @@ const classes = [
     description:
       "나라별 디저트에 담긴 재료와 이야기를 알아보고 계절에 맞는 한 가지 디저트를 완성합니다.",
     duration: "약 2시간",
-    people: "4~10명",
+    people: "규모 협의",
     includes: ["디저트 스토리", "실습", "포장"],
   },
 ];
@@ -179,10 +179,10 @@ export default function ClassesPage() {
       >
         <div className="mb-10 max-w-3xl">
           <p className="text-xs font-black tracking-[0.28em] text-[#b9480c]">
-            CLASS INQUIRY
+            RESERVATION REQUEST
           </p>
           <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
-            클래스 문의
+            모임 예약 신청
           </h2>
           <p className="mt-4 break-keep leading-7 text-neutral-600">
             서울의 대여 키친에서 특정 나라의 문화와 요리를 함께 경험하는

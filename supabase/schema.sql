@@ -24,3 +24,7 @@ comment on column public.inquiries.phone is
 
 create index if not exists inquiries_created_at_idx
   on public.inquiries (created_at desc);
+
+-- Server-only access, including projects with automatic Data API grants disabled.
+revoke all on public.inquiries from anon, authenticated;
+grant select, insert, update, delete on public.inquiries to service_role;

@@ -84,7 +84,10 @@ export async function POST(request: Request) {
             message: "이미 접수된 신청입니다.",
           })
         : json({ message: "다시 신청해 주세요." }, 409);
-    if (!process.env.RESEND_API_KEY || !process.env.ADMIN_EMAIL)
+    if (
+      !process.env.RESERVATION_ADMIN_TOKEN &&
+      (!process.env.RESEND_API_KEY || !process.env.ADMIN_EMAIL)
+    )
       return json(
         { message: "예약 접수 준비 중입니다. 잠시 후 다시 이용해 주세요." },
         503,
@@ -138,8 +141,10 @@ export async function POST(request: Request) {
         );
       throw Error();
     }
-    let notified = false;
+    let notified = Boolean(process.env.RESERVATION_ADMIN_TOKEN);
     try {
+      if (!process.env.RESEND_API_KEY || !process.env.ADMIN_EMAIL)
+        throw Error("Email not configured; dashboard available");
       const link = new URL("/api/reservations/manage", request.url);
       link.searchParams.set("id", id);
       link.searchParams.set("token", adminToken(id));
@@ -153,9 +158,10 @@ export async function POST(request: Request) {
         subject: `[만나의 식탁] 예약 확인 요청 · ${date}`,
         html: `<h2>새 모임 신청 · 확인 대기</h2><p>${escape(name)} / ${escape(phone)}</p><p>${escape(date)} · ${escape(time)} · 희망 ${b.guests}명</p><p>나라·음식: ${escape(theme)}</p><p>${escape(note)}</p><p>서울 대여 키친, 메뉴·인원·비용 협의가 필요합니다. 신청자에게 연락해 합의한 뒤 확정하세요.</p><p><a href="${escape(link.href)}">신청 확인 및 확정·진행 불가 처리</a></p><p>접수번호 ${id}. 이 링크는 운영자 전용입니다. 다른 사람에게 전달하지 마세요.</p>`,
       });
-      notified = !mailError;
+      notified = Boolean(process.env.RESERVATION_ADMIN_TOKEN) || !mailError;
     } catch {
-      console.error("Reservation notification failed");
+      if (!process.env.RESERVATION_ADMIN_TOKEN)
+        console.error("Reservation notification failed");
     }
     return json(
       {
@@ -184,7 +190,10 @@ export async function POST(request: Request) {
 export async function GET(request: Request) {
   if (!new URL(request.url).searchParams.has("id")) {
     try {
-      if (!process.env.RESEND_API_KEY || !process.env.ADMIN_EMAIL)
+      if (
+        !process.env.RESERVATION_ADMIN_TOKEN &&
+        (!process.env.RESEND_API_KEY || !process.env.ADMIN_EMAIL)
+      )
         throw Error();
       const db = createSupabaseAdmin();
       const { error } = await db

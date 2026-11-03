@@ -29,7 +29,11 @@ const fixture = http.createServer(async (req, res) => {
     return;
   }
   if (req.method === "GET") {
-    res.end(JSON.stringify(old || null));
+    res.end(
+      JSON.stringify(
+        u.searchParams.has("order") ? [...rows.values()] : old || null,
+      ),
+    );
     return;
   }
   if (req.method === "POST") {
@@ -76,6 +80,7 @@ const child = spawn(
       NEXT_PUBLIC_SUPABASE_URL: "http://127.0.0.1:4176",
       SUPABASE_SERVICE_ROLE_KEY: secret,
       RESEND_API_KEY: "re_test_fixture",
+      RESERVATION_ADMIN_TOKEN: "test-admin-private-key",
       ADMIN_EMAIL: "operator@example.invalid",
       RESEND_BASE_URL: "http://127.0.0.1:4176",
       NEXT_TELEMETRY_DISABLED: "1",
@@ -148,6 +153,13 @@ try {
       headers: { Authorization: "Bearer " + token },
     });
   assert.equal((await fetch(base + "/api/reservations?id=" + id)).status, 404);
+  assert.equal((await fetch(base + "/api/reservations")).status, 200);
+  assert.equal((await fetch(base + "/api/admin/reservations")).status, 401);
+  const adminList = await fetch(base + "/api/admin/reservations", {
+    headers: { Authorization: "Bearer test-admin-private-key" },
+  });
+  assert.equal(adminList.status, 200);
+  assert.equal((await adminList.json()).bookings.length, 1);
   let state = await (await lookup()).json();
   assert.equal(state.status, "pending");
   assert.equal("phone" in state, false);

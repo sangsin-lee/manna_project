@@ -182,6 +182,28 @@ export async function POST(request: Request) {
   }
 }
 export async function GET(request: Request) {
+  if (!new URL(request.url).searchParams.has("id")) {
+    try {
+      if (!process.env.RESEND_API_KEY || !process.env.ADMIN_EMAIL)
+        throw Error();
+      const db = createSupabaseAdmin();
+      const { error } = await db
+        .from("inquiries")
+        .select("id", { head: true })
+        .limit(1);
+      if (error) throw Error();
+      return json({ available: true });
+    } catch {
+      return json(
+        {
+          available: false,
+          message:
+            "예약 접수 준비 중입니다. 저장소 연결을 확인한 뒤 신청을 받겠습니다.",
+        },
+        503,
+      );
+    }
+  }
   const u = new URL(request.url),
     id = u.searchParams.get("id") || "",
     token = (request.headers.get("authorization") || "").replace(

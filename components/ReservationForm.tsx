@@ -1,10 +1,25 @@
 "use client";
 import Link from "next/link";
-import { useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { dateError, seoulDate, timeOptions } from "@/lib/reservation-policy";
 const input =
   "mt-2 w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-base text-neutral-950";
 export default function ReservationForm() {
+  const [available, setAvailable] = useState<boolean | null>(null);
+  useEffect(() => {
+    let active = true;
+    fetch("/api/reservations", { cache: "no-store" })
+      .then(async (r) => {
+        const data = await r.json();
+        if (active) setAvailable(r.ok && data.available === true);
+      })
+      .catch(() => {
+        if (active) setAvailable(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
   const identity = useRef<{ id: string; token: string } | null>(null);
   const [busy, setBusy] = useState(false),
     [error, setError] = useState(""),
@@ -99,6 +114,24 @@ export default function ReservationForm() {
         <p className="mt-4 text-xs text-neutral-500">
           확인 링크는 신청 정보를 열 수 있는 전용 링크입니다. 다른 사람에게
           공유하지 마세요.
+        </p>
+      </div>
+    );
+  if (available !== true)
+    return (
+      <div
+        role="status"
+        className="rounded-3xl border border-stone-300 bg-white p-8"
+      >
+        <h3 className="text-xl font-bold">
+          {available === null
+            ? "접수 가능 여부 확인 중…"
+            : "예약 접수 준비 중입니다"}
+        </h3>
+        <p className="mt-4 leading-8">
+          {available === null
+            ? "잠시만 기다려 주세요."
+            : "저장소 연결을 확인한 뒤 신청을 받겠습니다. 지금은 신청 정보가 접수되지 않습니다."}
         </p>
       </div>
     );

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const regionLabels: Record<AtlasRegion, string> = {
-  ...continentLabels, "south-america": "남아메리카", africa: "아프리카",
+  ...continentLabels, "south-america": "남아메리카", africa: "아프리카", oceania: "오세아니아",
 };
 
 type RecommendedProfile = { region: AtlasRegion; headline: string; summary: string; tags: string[] };
@@ -30,6 +30,12 @@ const recommended: Record<string, RecommendedProfile> = {
   peru: { region: "south-america", headline: "라임과 고추로 맛을 잡는 해안의 한 접시", summary: "페루 해안의 세비체에서는 생선, 라임, 고추의 조합을 만납니다. 만나의 클래스에서는 익힌 새우로 응용해 산미의 차이를 맛봐요.", tags: ["페루 해안", "세비체", "라임"] },
   georgia: { region: "asia", headline: "주름진 만두 안에 뜨거운 육즙을 담는 식탁", summary: "반죽을 돌려 접어 꼭지를 만든 힌칼리는 손으로 들어 맛봅니다. 각자 빚은 모양을 구경하는 재미가 있는 만두예요.", tags: ["힌칼리", "손으로 빚는 만두", "후추"] },
   india: { region: "asia", headline: "묽은 쌀 반죽으로 얇게 부치는 해안의 도사", summary: "카르나타카의 니르 도사는 쌀 반죽을 얇게 펴서 익히는 음식입니다. 부드럽게 접은 한 장에 코코넛과 재거리를 곁들여요.", tags: ["카르나타카", "쌀 반죽", "코코넛"] },
+  greece: { region: "europe", headline: "크레타의 보리빵에 토마토가 스며드는 시간", summary: "다코스는 단단하게 두 번 구운 보리빵에 토마토와 치즈를 얹어 먹는 크레타의 음식이에요. 바삭한 빵이 토마토즙과 올리브유를 만나 부드러워집니다.", tags: ["크레타", "보리 러스크", "토마토"] },
+  sweden: { region: "europe", headline: "계피 빵 한 바구니를 나누는 피카", summary: "스웨덴에서는 커피와 간식을 앞에 두고 잠시 함께 쉬는 시간을 피카라고 불러요. 계피를 넣은 빵 카넬불레가 그 곁에 자주 놓입니다.", tags: ["피카", "계피 빵", "커피"] },
+  egypt: { region: "africa", headline: "부드러운 렌틸콩 위에 바삭한 양파를 얹는 한 끼", summary: "이집트의 코샤리는 쌀과 렌틸콩, 파스타를 한 그릇에 담는 음식이에요. 소스와 고명을 먹는 사람이 조절하는 재미가 있습니다.", tags: ["한 그릇 식사", "렌틸콩", "튀긴 양파"] },
+  brazil: { region: "south-america", headline: "미나스제라이스에서 커피와 나누는 치즈빵", summary: "벨루오리존치 중앙시장에서는 작은 치즈빵 팡 지 케이주를 커피와 곁들여요. 카사바 전분 반죽 덕에 겉은 얇고 속은 쫄깃합니다.", tags: ["미나스제라이스", "치즈빵", "카사바"] },
+  lebanon: { region: "asia", headline: "곡물보다 파슬리를 넉넉히 담는 샐러드", summary: "타불레는 레바논을 비롯한 레반트 지역에서 나누는 음식이에요. 잘게 썬 파슬리가 주인공이고 토마토, 레몬즙, 불구르가 그 사이를 채워요.", tags: ["메제", "이탈리안 파슬리", "불구르"] },
+  australia: { region: "oceania", headline: "귀리 비스킷을 구우며 기억하는 안작 데이", summary: "호주와 뉴질랜드의 안작 기념 문화와 연결된 비스킷이에요. 귀리의 씹는 맛과 골든시럽의 단맛이 남는 작은 과자를 차와 함께 나눕니다.", tags: ["안작 데이", "귀리", "골든시럽"] },
 };
 
 const tables: AtlasTable[] = tableEntries.map<AtlasTable>((entry) => {

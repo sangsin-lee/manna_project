@@ -26,7 +26,7 @@ type TableEntry = {
   source: { label: string; url: string };
 };
 
-export type AtlasRegion = Country["continent"] | "south-america" | "africa";
+export type AtlasRegion = Country["continent"] | "south-america" | "africa" | "oceania";
 
 export type AtlasTable = TableEntry & {
   group: AtlasGroup;
@@ -244,5 +244,65 @@ export const tableEntries: TableEntry[] = [
     notes: "풋귤 · 샌들우드",
     diffuser: "풋귤과 라임 잎", candle: "샌들우드와 은은한 생강", perfume: "베르가못과 녹차",
     product: "greenTea", source: { label: "인도 관광청의 카르나타카 음식", url: "https://www.incredibleindia.gov.in/en/karnataka/bengaluru/the-delectable-cuisine-of-karnataka-13-must-try-local-dishes-in-bengaluru" },
+  },
+  {
+    slug: "greece", name: "그리스", english: "Greece", code: "GRC",
+    point: [25.13, 35.34], place: "크레타섬", recommend: "popular",
+    dish: "다코스", ingredients: "보리 러스크 · 토마토 · 페타 치즈",
+    activity: "토마토를 갈아 보리 러스크 위에 얹고 페타 치즈를 손끝으로 부숴 올려요. 두 조각을 만들어 하나는 바로, 하나는 토마토즙이 스며든 뒤 맛봐요.",
+    mood: "작은 접시에 올리브유와 오레가노를 따로 놓아요. 손님이 자기 접시에 마지막 한 방울을 더하게 해요.",
+    notes: "허브 잎 · 만다린",
+    diffuser: "바질과 만다린 껍질", candle: "올리브 잎과 마른 나무", perfume: "베르가못과 초록 잎",
+    product: "lime", source: { label: "그리스관광청의 크레타 다코스", url: "https://www.visitgreece.gr/en/blog/visit-greece/a-veggie-adventure-through-greece-your-guide-to-plant-based-greek-flavours" },
+  },
+  {
+    slug: "sweden", name: "스웨덴", english: "Sweden", code: "SWE",
+    point: [18.07, 59.33], place: "스톡홀름 · 피카", recommend: "discovery",
+    dish: "카넬불레", ingredients: "밀가루 · 계피 · 카다멈",
+    activity: "카다멈을 넣어 미리 발효한 반죽에 계피 버터를 펴 발라요. 돌돌 말아 자른 빵이 오븐에서 나오는 동안 커피잔을 놓고 피카를 준비해요.",
+    mood: "빵 바구니를 가운데 놓고 일을 잠시 멈춰요. 한 사람씩 커피를 따라 주며 오늘 누구와 이 시간을 나누고 싶은지 이야기해요.",
+    notes: "솔잎 · 마른 나무",
+    diffuser: "시더와 솔잎", candle: "전나무와 잔잔한 수지 향", perfume: "주니퍼와 시더",
+    product: "fir", source: { label: "스웨덴관광청의 계피 빵과 피카", url: "https://visitsweden.com/what-to-do/food-drink/swedish-kitchen/cinnamon-rolls-and-where-get-best-ones/" },
+  },
+  {
+    slug: "egypt", name: "이집트", english: "Egypt", code: "EGY",
+    point: [31.24, 30.04], place: "카이로의 한 그릇 식사", recommend: "discovery",
+    dish: "코샤리", ingredients: "쌀 · 렌틸콩 · 파스타",
+    activity: "쌀과 렌틸콩, 짧은 파스타를 한 그릇에 차례로 담아요. 토마토소스와 바삭한 양파를 올리고 마늘 식초를 조금씩 보태며 신맛을 조절해요.",
+    mood: "양파는 마지막까지 따로 담아 바삭함을 살려요. 같은 재료에서 출발해도 서로의 그릇이 어떻게 달라졌는지 맛봐요.",
+    notes: "장미 잎 · 베르가못",
+    diffuser: "장미 잎과 베르가못", candle: "시더와 말린 장미", perfume: "산뜻한 장미와 리치",
+    product: "rose", source: { label: "유네스코의 이집트 코샤리 식문화", url: "https://ich.unesco.org/en/RL/koshary-daily-life-dish-and-practices-associated-with-it-02278" },
+  },
+  {
+    slug: "brazil", name: "브라질", english: "Brazil", code: "BRA",
+    point: [-43.94, -19.92], place: "미나스제라이스 · 벨루오리존치", recommend: "discovery",
+    dish: "팡 지 케이주", ingredients: "카사바 전분 · 치즈 · 달걀",
+    activity: "카사바 전분을 익반죽한 뒤 치즈와 달걀을 섞어요. 반죽을 한입 크기로 둥글려 굽고 따뜻할 때 반으로 갈라 쫄깃한 속을 살펴봐요.",
+    mood: "커피와 갓 구운 치즈빵을 한 쟁반에 내요. 빵을 하나씩 건네며 겉과 속의 식감에 어울리는 말을 골라 봐요.",
+    notes: "귤꽃 · 가벼운 나무 향",
+    diffuser: "귤꽃과 초록 잎", candle: "네롤리와 시더", perfume: "오렌지꽃과 화이트 라일락",
+    product: "orange", source: { label: "브라질관광청의 벨루오리존치 시장과 치즈빵", url: "https://visitbrasil.com/en/blog/discover-the-delights-of-belo-horizontes-central-market/" },
+  },
+  {
+    slug: "lebanon", name: "레바논", english: "Lebanon", code: "LBN",
+    point: [35.50, 33.89], place: "베이루트 · 레반트의 메제", recommend: "discovery",
+    dish: "타불레", ingredients: "이탈리안 파슬리 · 불구르 · 레몬",
+    activity: "파슬리 잎을 모아 잘게 썰고 토마토와 고운 불구르를 섞어요. 레몬즙과 올리브유로 간한 타불레를 상추 잎에 한 숟갈씩 얹어 먹어요.",
+    mood: "작은 그릇을 여럿 놓는 메제 식탁을 꾸며요. 파슬리를 다듬는 동안 허브를 한 잎씩 만져 보고 음식을 나눠 담아요.",
+    notes: "레몬 껍질 · 허브",
+    diffuser: "시트러스와 바질 잎", candle: "레몬 잎과 마른 나무", perfume: "풋라임과 베르가못",
+    product: "lime", source: { label: "레바논 식문화재단의 타불레 이야기", url: "https://food-heritage.org/national-tabbouleh-day/" },
+  },
+  {
+    slug: "australia", name: "호주", english: "Australia", code: "AUS",
+    point: [149.13, -35.28], place: "캔버라 · 안작 기념 문화", recommend: "popular",
+    dish: "안작 비스킷", ingredients: "압착 귀리 · 코코넛 · 골든시럽",
+    activity: "버터와 골든시럽을 녹여 귀리와 코코넛에 섞고 숟가락으로 반죽을 떠서 구워요. 식힘망에서 가장자리가 단단해지는 동안 호주와 뉴질랜드가 함께 기리는 안작 데이 이야기를 읽어요.",
+    mood: "바삭하게 식힌 비스킷을 접시에 펼쳐 차와 함께 내요. 오븐에서 먼저 꺼낸 것과 나중에 꺼낸 것을 나눠 먹으며 식감을 비교해요.",
+    notes: "바닐라빈 · 따뜻한 나무 향",
+    diffuser: "바닐라와 시더", candle: "바닐라빈과 마른 나무", perfume: "바닐라와 옅은 머스크",
+    product: "vanille", source: { label: "호주 수도청의 안작 비스킷 수업 자료", url: "https://www.nca.gov.au/education/learning-resources/anzac-parade-bikkies" },
   },
 ];

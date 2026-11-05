@@ -1,13 +1,6 @@
-import { useLayoutEffect, useRef, useState } from "react";
-import type { AtlasTable } from "@/lib/atlas";
-
-const width = 1000;
-const height = 440;
-
-function project([lon, lat]: [number, number]) {
-  const radians = (lat * Math.PI) / 180;
-  return { x: 500 + lon * 2.68 * (1 - 0.32 * Math.sin(radians) ** 2), y: 240 - lat * 2.53 };
-}
+import { useEffect, useLayoutEffect, useRef, useState, type PointerEvent } from "react";
+import { groupLabels, type AtlasTable } from "@/lib/atlas";
+import { clamp, height, maxZoom, panTo, project, startingView, width, zoomAt, type View } from "./atlas-viewport";
 
 // Pixel offsets separate neighbors on small screens. A line connects each pin to its location.
 const offsets: Record<string, [number, number]> = {
@@ -43,11 +36,26 @@ function placePins(tables: AtlasTable[], box: { left: number; top: number; w: nu
   return pins;
 }
 
-export default function AtlasMap({ tables, selected, zoom, fitRegion, onSelect }: {
-  tables: AtlasTable[]; selected?: AtlasTable; zoom: number; fitRegion: boolean; onSelect: (slug: string) => void;
+type Drag = { id: number; startX: number; startY: number; view: View; moved: boolean };
+type Preview = { table: AtlasTable; x: number; y: number };
+
+export default function AtlasMap({ tables, selected, fitRegion, onSelect }: {
+  tables: AtlasTable[]; selected?: AtlasTable; fitRegion: boolean; onSelect: (slug: string) => void;
 }) {
   const stage = useRef<HTMLDivElement>(null);
+  const drag = useRef<Drag | null>(null);
+  const suppressClick = useRef(false);
+  const hideTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const [initial] = useState(() => startingView(tables, fitRegion));
+  const [view, setView] = useState(initial);
   const [pixels, setPixels] = useState(760);
+  const [dragging, setDragging] = useState(false);
+  const [preview, setPreview] = useState<Preview | null>(null);
+  const hasTables = tables.length > 0;
+  const { left, top, zoom } = view;
+  const w = width / zoom, h = height / zoom;
+  const stageHeight = pixels * height / width;
+
   useLayoutEffect(() => {
     const node = stage.current;
     if (!node) return;
@@ -55,27 +63,110 @@ export default function AtlasMap({ tables, selected, zoom, fitRegion, onSelect }
     observer.observe(node);
     return () => observer.disconnect();
   }, []);
-  const points = tables.map((table) => project(table.point));
-  const minX = Math.min(...points.map((p) => p.x));
-  const maxX = Math.max(...points.map((p) => p.x));
-  const minY = Math.min(...points.map((p) => p.y));
-  const maxY = Math.max(...points.map((p) => p.y));
-  const fitted = fitRegion && points.length > 0;
-  const baseZoom = fitted ? Math.min(4, width / (maxX - minX + 115), height / (maxY - minY + 85)) : 1;
-  const center = fitted ? { x: (minX + maxX) / 2, y: (minY + maxY) / 2 } : { x: width / 2, y: height / 2 };
-  const focus = selected && zoom > 1 ? project(selected.point) : center;
-  const w = width / (Math.max(1, baseZoom) * zoom);
-  const h = height / (Math.max(1, baseZoom) * zoom);
-  const left = Math.min(width - w, Math.max(0, focus.x - w / 2));
-  const top = Math.min(height - h, Math.max(0, focus.y - h / 2));
-  return (
-    <div ref={stage} className="atlas-map-stage" role="group" aria-label="나라와 지역을 선택하는 세계지도">
+  useEffect(() => {
+    const node = stage.current;
+    if (!node || !hasTables) return;
+    function wheel(event: WheelEvent) {
+      if (!event.deltaY || event.ctrlKey || event.metaKey || drag.current) return;
+      event.preventDefault();
+      const bounds = (event.currentTarget as HTMLElement).getBoundingClientRect();
+      const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? bounds.height : 1;
+      const factor = Math.exp(-clamp(event.deltaY * unit, -400, 400) * 0.0025);
+      const x = (event.clientX - bounds.left) / bounds.width;
+      const y = (event.clientY - bounds.top) / bounds.height;
+      setPreview(null);
+      setView((previous) => zoomAt(previous, factor, x, y));
+    }
+    node.addEventListener("wheel", wheel, { passive: false });
+    return () => node.removeEventListener("wheel", wheel);
+  }, [hasTables]);
+
+  const previewOpen = preview !== null;
+  useEffect(() => {
+    if (!previewOpen) return;
+    const dismiss = (event: KeyboardEvent) => { if (event.key === "Escape") setPreview(null); };
+    document.addEventListener("keydown", dismiss);
+    return () => document.removeEventListener("keydown", dismiss);
+  }, [previewOpen]);
+  useEffect(() => () => clearTimeout(hideTimer.current), []);
+
+  function showPreview(table: AtlasTable, clientX: number, clientY: number) {
+    const rect = stage.current?.getBoundingClientRect();
+    if (!rect || drag.current) return;
+    clearTimeout(hideTimer.current);
+    setPreview({ table, x: clientX - rect.left, y: clientY - rect.top });
+  }
+  function hover(event: PointerEvent, table: AtlasTable) {
+    if (event.pointerType !== "touch") showPreview(table, event.clientX, event.clientY);
+  }
+  function leavePreview() {
+    clearTimeout(hideTimer.current);
+    hideTimer.current = setTimeout(() => setPreview(null), 140);
+  }
+  function select(slug: string) {
+    setPreview(null);
+    onSelect(slug);
+  }
+  function moveDrag(event: PointerEvent<HTMLDivElement>) {
+    const start = drag.current;
+    if (!start || event.pointerId !== start.id) return;
+    const dx = event.clientX - start.startX, dy = event.clientY - start.startY;
+    if (!start.moved) {
+      if (Math.hypot(dx, dy) < 5) return;
+      start.moved = true;
+      suppressClick.current = true;
+      event.currentTarget.setPointerCapture(event.pointerId);
+      setDragging(true);
+      setPreview(null);
+    }
+    const scale = width / (pixels * start.view.zoom);
+    setView(panTo(start.view.zoom, start.view.left - dx * scale, start.view.top - dy * scale));
+  }
+  function endDrag(event: PointerEvent<HTMLDivElement>) {
+    if (event.pointerId !== drag.current?.id) return;
+    drag.current = null;
+    setDragging(false);
+  }
+  function stepZoom(factor: number) {
+    const point = selected && project(selected.point);
+    const x = point ? (point.x - left) / w : 0.5, y = point ? (point.y - top) / h : 0.5;
+    const visible = x >= 0 && x <= 1 && y >= 0 && y <= 1;
+    setView(zoomAt(view, factor, visible ? x : 0.5, visible ? y : 0.5));
+    setPreview(null);
+  }
+  const cardWidth = Math.min(210, pixels - 16);
+  const previewLeft = preview && clamp(preview.x < pixels / 2 ? preview.x + 12 : preview.x - cardWidth - 12, 8, pixels - cardWidth - 8);
+  return <>
+    <div ref={stage} className="atlas-map-stage" data-zoomed={zoom > 1} data-dragging={dragging}
+      role="group" tabIndex={0} aria-label="나라와 지역을 선택하는 세계지도. 화살표 키로 이동할 수 있습니다."
+      onPointerDown={(event) => {
+        if (!event.isPrimary || event.button !== 0) return;
+        suppressClick.current = false;
+        if (!hasTables || (event.pointerType === "touch" && zoom <= 1)) return;
+        drag.current = { id: event.pointerId, startX: event.clientX, startY: event.clientY, view, moved: false };
+      }}
+      onPointerMove={moveDrag} onPointerUp={endDrag} onPointerCancel={endDrag}
+      onLostPointerCapture={(event) => { if (event.target === event.currentTarget) endDrag(event); }}
+      onPointerLeave={(event) => { if (!drag.current?.moved) endDrag(event); leavePreview(); }}
+      onClickCapture={(event) => {
+        if (suppressClick.current && event.detail > 0) { event.stopPropagation(); suppressClick.current = false; }
+      }}
+      onKeyDown={(event) => {
+        if (event.target !== event.currentTarget || !hasTables) return;
+        const shifts: Record<string, [number, number]> = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] };
+        const shift = shifts[event.key];
+        if (!shift) return;
+        event.preventDefault();
+        setPreview(null);
+        setView(panTo(zoom, left + shift[0] * w / 6, top + shift[1] * h / 6));
+      }}>
       <svg className="atlas-map-svg" viewBox={`${left} ${top} ${w} ${h}`} aria-hidden="true">
         <image href="/atlas/world.svg" x="0" y="0" width={width} height={height} />
         {tables.filter((table) => table.code !== "HKG" && table.code !== "MAC").map((table) => (
           <use key={table.slug} href={`/atlas/world.svg#${table.code}`}
             className={`atlas-land ${table.slug === selected?.slug ? "chosen" : ""}`}
-            onClick={() => onSelect(table.slug)}><title>{table.name}</title></use>
+            data-preview={preview?.table.slug === table.slug}
+            onPointerEnter={(e) => hover(e, table)} onPointerLeave={leavePreview} onClick={() => select(table.slug)} />
         ))}
       </svg>
       {placePins(tables, { left, top, w, h }, pixels).map(({ table, originX, originY, x, y }) => {
@@ -87,13 +178,36 @@ export default function AtlasMap({ tables, selected, zoom, fitRegion, onSelect }
             style={{ left: `${100 * originX / pixels}%`, top: `${100 * originY / (pixels * height / width)}%` }}>
             {(dx !== 0 || dy !== 0) && <svg aria-hidden="true" width="1" height="1"><path d={`M0 0 L${dx} ${dy}`} /></svg>}
             <button type="button" className="world-pin" data-selected={active} style={{ left: dx, top: dy }}
-              id={`pin-${table.slug}`} aria-label={`${table.name} 식탁 선택`} aria-haspopup="dialog" onClick={() => onSelect(table.slug)}>
+              id={`pin-${table.slug}`} aria-label={`${table.name} 식탁 선택`} aria-haspopup="dialog"
+              aria-describedby={preview?.table.slug === table.slug ? "atlas-preview" : undefined}
+              onPointerEnter={(e) => hover(e, table)} onPointerLeave={leavePreview}
+              onFocus={(e) => {
+                if (!e.currentTarget.matches(":focus-visible")) return;
+                const rect = e.currentTarget.getBoundingClientRect();
+                showPreview(table, rect.left + rect.width / 2, rect.top + rect.height / 2);
+              }}
+              onBlur={leavePreview} onClick={() => select(table.slug)}>
               <span className="atlas-pin-dot" aria-hidden="true" />
-              <span className={`world-pin-label${x > pixels - 90 ? " label-left" : ""}`} aria-hidden="true">{table.name}</span>
+              {active && !preview && !dragging && <span className={`world-pin-label${x > pixels - 90 ? " label-left" : ""}`} aria-hidden="true">{table.name}</span>}
             </button>
           </div>
         );
       })}
+      {preview && <div id="atlas-preview" role="tooltip" className={`atlas-preview group-${preview.table.group}`}
+        style={{ width: cardWidth, left: previewLeft ?? 8, ...(preview.y < stageHeight / 2
+          ? { top: Math.max(6, preview.y - 16) } : { bottom: Math.max(6, stageHeight - preview.y - 16) }) }}
+        onPointerEnter={() => clearTimeout(hideTimer.current)} onPointerLeave={leavePreview}>
+        <div className="atlas-preview-heading"><strong>{preview.table.name}</strong><small>{groupLabels[preview.table.group]}</small></div>
+        <dl><div><dt>요리</dt><dd>{preview.table.dish}</dd></div><div><dt>향</dt><dd>{preview.table.notes}</dd></div></dl>
+      </div>}
     </div>
-  );
+    <div className="atlas-zoom">
+      <button type="button" aria-label="지도 확대" disabled={!hasTables || zoom >= maxZoom} onClick={() => stepZoom(2)}>+</button>
+      <button type="button" aria-label="지도 축소" disabled={!hasTables || zoom <= 1} onClick={() => stepZoom(0.5)}>−</button>
+      <button type="button" aria-label="지도 처음 위치로" title="처음 위치로" disabled={zoom === initial.zoom && left === initial.left && top === initial.top}
+        onClick={() => { setView(initial); setPreview(null); }}>
+        <svg width="15" height="15" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3.5 8a6.5 6.5 0 1 1 .6 5M3.5 3.5v4.8h4.8"/></svg>
+      </button>
+    </div>
+  </>;
 }

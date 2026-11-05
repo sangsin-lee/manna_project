@@ -259,6 +259,12 @@ export default async function CountryDetailPage({
               <p className="mt-5 max-w-2xl break-keep leading-8 text-neutral-600">
                 {country.summary}
               </p>
+              <Link
+                href={`/countries/atlas?country=${country.slug}#explore`}
+                className="mt-4 self-start text-sm font-bold !text-[#943706] underline underline-offset-4"
+              >
+                {country.nameKo} 쿠킹 클래스와 어울리는 향 보기 →
+              </Link>
 
               {country.visit && (
                 <aside className="mt-7 rounded-2xl border border-[#e6d9cc] bg-[#fffaf5] p-5">

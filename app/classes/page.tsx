@@ -82,6 +82,12 @@ export default function ClassesPage() {
           >
             모임 예약 신청하기
           </Link>
+          <Link
+            href="/countries/atlas"
+            className="ml-3 mt-3 inline-flex rounded-full border border-stone-300 bg-white px-6 py-3.5 text-sm font-black !text-neutral-900 hover:border-[#943706]"
+          >
+            나라별 요리와 향 지도 →
+          </Link>
         </div>
       </section>
 

@@ -127,9 +127,15 @@ export default async function CountriesPage({
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/countries/atlas"
+                className="inline-flex rounded-full bg-[#b9480c] px-6 py-3 text-sm font-black !text-white transition hover:bg-[#943706]"
+              >
+                맛과 향의 세계지도 열기 →
+              </Link>
               <a
                 href="#country-list"
-                className="inline-flex rounded-full bg-[#b9480c] px-6 py-3 text-sm font-black !text-white transition hover:bg-[#943706]"
+                className="inline-flex rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-black !text-neutral-900 transition hover:border-[#b9480c]"
               >
                 나라 선택하기
               </a>

@@ -109,6 +109,9 @@ export default function HomePage() {
               >
                 식문화 이야기
               </Link>
+              <Link className="manna-button manna-button-outline" href="/countries/atlas">
+                맛과 향의 세계지도 ↗
+              </Link>
             </div>
           </div>
           <SeasonalFeature />

@@ -22,6 +22,9 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  async redirects() {
+    return [{ source: "/countries/atlas", destination: "/countries", permanent: true }];
+  },
   async headers() {
     return [
       {

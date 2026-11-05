@@ -43,8 +43,8 @@ function placePins(tables: AtlasTable[], box: { left: number; top: number; w: nu
   return pins;
 }
 
-export default function AtlasMap({ tables, selected, zoom, onSelect }: {
-  tables: AtlasTable[]; selected: AtlasTable; zoom: number; onSelect: (slug: string) => void;
+export default function AtlasMap({ tables, selected, zoom, fitRegion, onSelect }: {
+  tables: AtlasTable[]; selected?: AtlasTable; zoom: number; fitRegion: boolean; onSelect: (slug: string) => void;
 }) {
   const stage = useRef<HTMLDivElement>(null);
   const [pixels, setPixels] = useState(760);
@@ -55,9 +55,17 @@ export default function AtlasMap({ tables, selected, zoom, onSelect }: {
     observer.observe(node);
     return () => observer.disconnect();
   }, []);
-  const focus = project(selected.point);
-  const w = width / zoom;
-  const h = height / zoom;
+  const points = tables.map((table) => project(table.point));
+  const minX = Math.min(...points.map((p) => p.x));
+  const maxX = Math.max(...points.map((p) => p.x));
+  const minY = Math.min(...points.map((p) => p.y));
+  const maxY = Math.max(...points.map((p) => p.y));
+  const fitted = fitRegion && points.length > 0;
+  const baseZoom = fitted ? Math.min(4, width / (maxX - minX + 115), height / (maxY - minY + 85)) : 1;
+  const center = fitted ? { x: (minX + maxX) / 2, y: (minY + maxY) / 2 } : { x: width / 2, y: height / 2 };
+  const focus = selected && zoom > 1 ? project(selected.point) : center;
+  const w = width / (Math.max(1, baseZoom) * zoom);
+  const h = height / (Math.max(1, baseZoom) * zoom);
   const left = Math.min(width - w, Math.max(0, focus.x - w / 2));
   const top = Math.min(height - h, Math.max(0, focus.y - h / 2));
   return (
@@ -66,22 +74,22 @@ export default function AtlasMap({ tables, selected, zoom, onSelect }: {
         <image href="/atlas/world.svg" x="0" y="0" width={width} height={height} />
         {tables.filter((table) => table.code !== "HKG" && table.code !== "MAC").map((table) => (
           <use key={table.slug} href={`/atlas/world.svg#${table.code}`}
-            className={`atlas-land ${table.slug === selected.slug ? "chosen" : ""}`}
+            className={`atlas-land ${table.slug === selected?.slug ? "chosen" : ""}`}
             onClick={() => onSelect(table.slug)}><title>{table.name}</title></use>
         ))}
       </svg>
       {placePins(tables, { left, top, w, h }, pixels).map(({ table, originX, originY, x, y }) => {
         const dx = x - originX;
         const dy = y - originY;
-        const active = table.slug === selected.slug;
+        const active = table.slug === selected?.slug;
         return (
           <div key={table.slug} className={`atlas-map-anchor group-${table.group}${active ? " active" : ""}`}
             style={{ left: `${100 * originX / pixels}%`, top: `${100 * originY / (pixels * height / width)}%` }}>
             {(dx !== 0 || dy !== 0) && <svg aria-hidden="true" width="1" height="1"><path d={`M0 0 L${dx} ${dy}`} /></svg>}
-            <button type="button" className="atlas-pin" style={{ left: dx, top: dy }}
-              aria-label={`${table.name} 식탁 선택`} aria-pressed={active} onClick={() => onSelect(table.slug)}>
+            <button type="button" className="world-pin" data-selected={active} style={{ left: dx, top: dy }}
+              id={`pin-${table.slug}`} aria-label={`${table.name} 식탁 선택`} aria-haspopup="dialog" onClick={() => onSelect(table.slug)}>
               <span className="atlas-pin-dot" aria-hidden="true" />
-              <span className={`atlas-pin-label${x > pixels - 90 ? " label-left" : ""}`} aria-hidden="true">{table.name}</span>
+              <span className={`world-pin-label${x > pixels - 90 ? " label-left" : ""}`} aria-hidden="true">{table.name}</span>
             </button>
           </div>
         );

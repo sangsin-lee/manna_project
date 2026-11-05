@@ -1,332 +1,60 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import CountryCard from "@/components/CountryCard";
-import {
-  continentLabels,
-  countries,
-  type Continent,
-} from "@/lib/content";
+import { connection } from "next/server";
+import { countries, continentLabels } from "@/lib/content";
+import { tableEntries, type AtlasRegion, type AtlasTable } from "@/lib/atlas";
+import AtlasExplorer from "./atlas/AtlasExplorer";
+import "./atlas/atlas.css";
 
 export const metadata: Metadata = {
-  title: "나라별 식탁",
-  description:
-    "파리, 슈투트가르트, 융프라우, 로마와 바티칸을 포함해 직접 다녀온 나라와 지역의 음식·식문화를 살펴보세요.",
-  alternates: {
-    canonical: "/countries",
+  title: "나라별 식탁 · 맛과 향의 세계지도",
+  description: "세계지도에서 나라를 골라 대표 음식과 식문화, 여행 기록, 쿠킹 클래스와 어울리는 향을 만나보세요.",
+  alternates: { canonical: "/countries" },
+  openGraph: {
+    title: "나라별 식탁 | 만나의 식탁",
+    description: "세계지도에서 펼쳐 보는 나라별 음식과 문화, 향.",
+    url: "/countries", images: ["/atlas/pasta-workshop.webp"],
   },
 };
 
-const explorationSteps = [
-  {
-    number: "01",
-    eyebrow: "TRAVEL",
-    title: "직접 방문한 장소 확인하기",
-    description:
-      "여행 기록에 남은 도시와 지역을 먼저 확인하고, 개인 경험과 일반적인 문화 설명의 범위를 구분합니다.",
-  },
-  {
-    number: "02",
-    eyebrow: "UNDERSTAND",
-    title: "식문화의 배경 읽기",
-    description:
-      "지역의 기후와 재료, 식사 공간을 살펴보며 그곳의 한 끼가 어떤 생활 환경에서 만들어졌는지 이해합니다.",
-  },
-  {
-    number: "03",
-    eyebrow: "COOK",
-    title: "대표 음식 직접 만들어 보기",
-    description:
-      "공식 자료로 검토한 문화적 배경을 확인한 뒤 한국에서 구할 수 있는 재료로 한 가지 음식을 재현합니다.",
-  },
-] as const;
-
-const continentOptions: Array<{
-  value: "all" | Continent;
-  label: string;
-}> = [
-  { value: "all", label: "전체" },
-  ...Object.entries(continentLabels).map(([value, label]) => ({
-    value: value as Continent,
-    label,
-  })),
-];
-
-type ContinentFilter = "all" | Continent;
-
-type CountriesPageProps = {
-  searchParams: Promise<{
-    continent?: string;
-  }>;
+const regionLabels: Record<AtlasRegion, string> = {
+  ...continentLabels, "south-america": "남아메리카", africa: "아프리카",
 };
 
-function buildCountriesHref(continent: ContinentFilter) {
-  return continent === "all"
-    ? "/countries#country-list"
-    : `/countries?continent=${continent}#country-list`;
-}
+type RecommendedProfile = { region: AtlasRegion; headline: string; summary: string; tags: string[] };
+const recommended: Record<string, RecommendedProfile> = {
+  spain: { region: "europe", headline: "넓은 팬 하나로 차리는 발렌시아의 점심", summary: "닭과 콩, 쌀을 얕은 팬에 익힙니다. 바닥에 노릇하게 눌은 쌀까지 나누는 빠에야 한 판이 오늘의 식탁입니다.", tags: ["발렌시아", "쌀 요리", "한 팬 나누기"] },
+  mexico: { region: "north-america", headline: "옥수수 반죽을 누르고 따뜻한 한 장을 나누는 식탁", summary: "옥수수 마사를 눌러 구운 토르티야에 콩과 살사를 얹습니다. 같은 재료로도 각자 다른 한입을 만들 수 있어요.", tags: ["옥수수 마사", "토르티야", "살사"] },
+  turkiye: { region: "asia", headline: "여럿이 빚어 마늘 요거트를 얹는 작은 만두", summary: "카이세리의 만트는 밀반죽에 고기 소를 넣어 작게 빚는 음식입니다. 삶은 만두에 요거트와 향신료 버터를 곁들여요.", tags: ["카이세리", "만두 빚기", "요거트"] },
+  indonesia: { region: "asia", headline: "땅콩 소스 한 숟갈로 어우러지는 자카르타의 채소 접시", summary: "가도가도 한 접시에 채소와 템페, 두부가 모입니다. 땅콩 소스의 농도에 따라 달라지는 식감을 비교해 보세요.", tags: ["베타위", "템페", "땅콩 소스"] },
+  morocco: { region: "africa", headline: "찐 쿠스쿠스와 채소를 커다란 접시에 모으는 식탁", summary: "쿠스쿠스는 모로코를 비롯한 북아프리카 여러 지역이 공유하는 음식입니다. 찐 곡물을 가볍게 풀고 익힌 채소를 함께 담아요.", tags: ["마그레브", "쿠스쿠스", "함께 나누는 접시"] },
+  peru: { region: "south-america", headline: "라임과 고추로 맛을 잡는 해안의 한 접시", summary: "페루 해안의 세비체에서는 생선, 라임, 고추의 조합을 만납니다. 만나의 클래스에서는 익힌 새우로 응용해 산미의 차이를 맛봐요.", tags: ["페루 해안", "세비체", "라임"] },
+  georgia: { region: "asia", headline: "주름진 만두 안에 뜨거운 육즙을 담는 식탁", summary: "반죽을 돌려 접어 꼭지를 만든 힌칼리는 손으로 들어 맛봅니다. 각자 빚은 모양을 구경하는 재미가 있는 만두예요.", tags: ["힌칼리", "손으로 빚는 만두", "후추"] },
+  india: { region: "asia", headline: "묽은 쌀 반죽으로 얇게 부치는 해안의 도사", summary: "카르나타카의 니르 도사는 쌀 반죽을 얇게 펴서 익히는 음식입니다. 부드럽게 접은 한 장에 코코넛과 재거리를 곁들여요.", tags: ["카르나타카", "쌀 반죽", "코코넛"] },
+};
 
-export default async function CountriesPage({
-  searchParams,
-}: CountriesPageProps) {
-  const params = await searchParams;
+const tables: AtlasTable[] = tableEntries.map<AtlasTable>((entry) => {
+  const country = countries.find((item) => item.slug === entry.slug);
+  if (country?.visit) {
+    return {
+      ...entry, group: country.visit.status === "visited" ? "visited" : "home",
+      region: country.continent, headline: country.headline, summary: country.summary, tags: country.foodCulture.slice(0, 3),
+      cover: { eyebrow: country.eyebrow, caption: country.representativeFoods.slice(0, 3).join(" · "), palette: country.palette },
+      archive: { places: country.visit.places, regions: country.regionalNotes.length, stories: country.storySlugs.length, recipes: country.recipeSlugs.length, updatedAt: country.updatedAt },
+    };
+  }
+  const profile = recommended[entry.slug];
+  if (!entry.recommend || !profile) throw new Error(`Missing country card for ${entry.slug}`);
+  return {
+    ...entry, ...profile, group: entry.recommend,
+    cover: {
+      eyebrow: entry.place, caption: entry.ingredients,
+      palette: entry.recommend === "popular" ? { from: "#f1e4c4", mid: "#e1d6b4", to: "#c5ceae", ink: "#35422c" }
+        : { from: "#f1e1d3", mid: "#ebcdbb", to: "#d8b7a3", ink: "#4f342b" },
+    },
+  };
+}).sort((a, b) => a.name.localeCompare(b.name, "ko"));
 
-  const activeContinent: ContinentFilter = continentOptions.some(
-    (option) => option.value === params.continent,
-  )
-    ? (params.continent as Continent)
-    : "all";
-
-  const filteredCountries = countries.filter(
-    (country) =>
-      activeContinent === "all" || country.continent === activeContinent,
-  );
-
-  const totalStories = countries.reduce(
-    (sum, country) => sum + country.storySlugs.length,
-    0,
-  );
-  const totalRecipes = countries.reduce(
-    (sum, country) => sum + country.recipeSlugs.length,
-    0,
-  );
-  const visitedCountries = countries.filter(
-    (country) => country.visit?.status === "visited",
-  );
-  const europeCountries = countries.filter(
-    (country) => country.continent === "europe",
-  );
-
-  const featuredCountry =
-    activeContinent === "europe"
-      ? countries.find((country) => country.slug === "france")
-      : activeContinent === "north-america"
-        ? countries.find((country) => country.slug === "usa")
-        : activeContinent === "asia"
-          ? countries.find((country) => country.slug === "macau")
-          : countries.find((country) => country.slug === "france");
-
-  return (
-    <main className="min-h-screen bg-[#fffdf9] text-neutral-950">
-      <section className="border-b border-stone-200 bg-[#f4efe7]">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:py-28">
-          <div>
-            <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-8 bg-[#b9480c]" />
-              <p className="text-xs font-black tracking-[0.28em] text-[#b9480c]">
-                EXPLORE THE TABLE
-              </p>
-            </div>
-            <h1 className="text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">
-              나라별 식탁
-            </h1>
-            <p className="mt-7 max-w-2xl break-keep text-base leading-8 text-neutral-600 sm:text-lg">
-              인스타그램 여행 기록에 남은 도시와 지역에서 출발해 기후와
-              역사, 사람들이 살아온 방식을 음식으로 연결합니다. 방문 장소,
-              문화 이야기와 실제로 따라 할 수 있는 레시피를 한 흐름으로
-              살펴보세요.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/countries/atlas"
-                className="inline-flex rounded-full bg-[#b9480c] px-6 py-3 text-sm font-black !text-white transition hover:bg-[#943706]"
-              >
-                맛과 향의 세계지도 열기 →
-              </Link>
-              <a
-                href="#country-list"
-                className="inline-flex rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-black !text-neutral-900 transition hover:border-[#b9480c]"
-              >
-                나라 선택하기
-              </a>
-              <Link
-                href="/journeys/europe"
-                className="inline-flex rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-black !text-neutral-900 transition hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
-              >
-                유럽 여행 기록 보기
-              </Link>
-              {featuredCountry && (
-                <Link
-                  href={`/countries/${featuredCountry.slug}`}
-                  className="inline-flex rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-black !text-neutral-900 transition hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
-                >
-                  추천 식탁: {featuredCountry.nameKo}
-                </Link>
-              )}
-            </div>
-          </div>
-
-          <aside className="rounded-[2rem] border border-[#ddd2c5] bg-white/85 p-7 shadow-[0_18px_50px_rgba(80,60,35,0.06)]">
-            <p className="text-xs font-black tracking-[0.25em] text-[#b9480c]">
-              CONTENT STATUS
-            </p>
-            <p className="mt-4 break-keep text-xl font-bold leading-8">
-              여행의 기억을 문화 설명과 레시피로 확장하는 방문지 기반
-              콘텐츠 아카이브입니다.
-            </p>
-            <dl className="mt-7 grid grid-cols-2 gap-3">
-              <div className="rounded-2xl bg-[#f7f3ed] p-4 text-center">
-                <dt className="text-xs text-neutral-500">나라·지역</dt>
-                <dd className="mt-2 text-2xl font-black">{countries.length}</dd>
-              </div>
-              <div className="rounded-2xl bg-[#fff3ea] p-4 text-center">
-                <dt className="text-xs text-[#943706]">유럽 식탁</dt>
-                <dd className="mt-2 text-2xl font-black text-[#943706]">
-                  {europeCountries.length}
-                </dd>
-              </div>
-              <div className="rounded-2xl bg-[#f7f3ed] p-4 text-center">
-                <dt className="text-xs text-neutral-500">직접 방문</dt>
-                <dd className="mt-2 text-2xl font-black">
-                  {visitedCountries.length}
-                </dd>
-              </div>
-              <div className="rounded-2xl bg-[#f7f3ed] p-4 text-center">
-                <dt className="text-xs text-neutral-500">이야기·레시피</dt>
-                <dd className="mt-2 text-2xl font-black">
-                  {totalStories + totalRecipes}
-                </dd>
-              </div>
-            </dl>
-          </aside>
-        </div>
-      </section>
-
-      <section className="border-b border-stone-200 bg-[#fffdf9]">
-        <div className="mx-auto max-w-6xl px-6 py-16 lg:py-20">
-          <div className="max-w-2xl">
-            <p className="text-xs font-black tracking-[0.28em] text-[#b9480c]">
-              HOW TO EXPLORE
-            </p>
-            <h2 className="mt-3 break-keep text-3xl font-black tracking-tight sm:text-4xl">
-              여행 기록을 식문화 콘텐츠로 읽는 세 단계
-            </h2>
-            <p className="mt-5 break-keep leading-7 text-neutral-600">
-              개인 사진과 실제 방문지는 여행 기록으로 표시하고, 문화 설명과
-              레시피는 공식 자료와 별도의 검토 과정을 거쳐 연결합니다.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {explorationSteps.map((step) => (
-              <article
-                key={step.number}
-                className="rounded-[1.75rem] border border-stone-200 bg-white p-7 shadow-[0_14px_40px_rgba(70,50,25,0.04)]"
-              >
-                <div className="flex items-center justify-between gap-4">
-                  <p className="text-xs font-black tracking-[0.22em] text-[#b9480c]">
-                    {step.eyebrow}
-                  </p>
-                  <span className="text-3xl font-black text-[#e9ded1]">
-                    {step.number}
-                  </span>
-                </div>
-                <h3 className="mt-8 break-keep text-xl font-black leading-8">
-                  {step.title}
-                </h3>
-                <p className="mt-3 break-keep text-sm leading-7 text-neutral-600">
-                  {step.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="country-list"
-        className="scroll-mt-40 mx-auto max-w-6xl px-6 py-20 lg:py-28"
-      >
-        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-          <div>
-            <p className="text-xs font-black tracking-[0.28em] text-[#b9480c]">
-              COUNTRY &amp; REGION
-            </p>
-            <h2 className="mt-3 break-keep text-3xl font-black tracking-tight sm:text-4xl">
-              어느 나라의 식탁을 만나볼까요?
-            </h2>
-            <p className="mt-4 max-w-2xl break-keep leading-7 text-neutral-600">
-              대륙을 선택한 뒤 방문 지역, 문화 이야기와 레시피가 연결된
-              상세 식탁으로 이동하세요.
-            </p>
-          </div>
-          <p className="text-sm text-neutral-500">
-            {activeContinent === "all"
-              ? "전체 대륙"
-              : continentLabels[activeContinent]}{" "}
-            · {filteredCountries.length}개
-          </p>
-        </div>
-
-        <div className="mt-9">
-          <p className="mb-4 text-xs font-black tracking-[0.18em] text-neutral-500">
-            대륙
-          </p>
-          <nav
-            aria-label="대륙별 나라 필터"
-            className="flex gap-3 overflow-x-auto pb-2"
-          >
-            {continentOptions.map((option) => {
-              const active = option.value === activeContinent;
-              return (
-                <Link
-                  key={option.value}
-                  href={buildCountriesHref(option.value)}
-                  aria-current={active ? "page" : undefined}
-                  className={`shrink-0 rounded-full border px-5 py-2.5 text-sm font-bold no-underline transition ${
-                    active
-                      ? "border-[#b9480c] bg-[#b9480c] !text-white"
-                      : "border-stone-300 bg-white !text-neutral-600 hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
-                  }`}
-                >
-                  {option.label}
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
-
-        <nav
-          aria-label="필터된 나라 바로가기"
-          className="mt-6 flex gap-3 overflow-x-auto pb-2"
-        >
-          {filteredCountries.map((country) => (
-            <a
-              key={country.slug}
-              href={`#${country.slug}`}
-              className="shrink-0 rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-bold !text-neutral-700 no-underline transition hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
-            >
-              {country.nameKo}
-            </a>
-          ))}
-        </nav>
-
-        {filteredCountries.length > 0 ? (
-          <div className="mt-10 grid gap-7 md:grid-cols-2">
-            {filteredCountries.map((country) => (
-              <div
-                key={country.slug}
-                id={country.slug}
-                className="scroll-mt-40"
-              >
-                <CountryCard country={country} />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="mt-10 rounded-[1.75rem] border border-dashed border-stone-300 bg-white px-6 py-20 text-center">
-            <p className="text-lg font-bold text-neutral-800">
-              해당 대륙의 식탁을 준비하고 있습니다.
-            </p>
-            <Link
-              href="/countries#country-list"
-              className="mt-6 inline-flex rounded-full bg-neutral-950 px-6 py-3 text-sm font-black !text-white"
-            >
-              전체 나라 보기
-            </Link>
-          </div>
-        )}
-      </section>
-    </main>
-  );
+export default async function CountriesPage() {
+  await connection();
+  return <main className="atlas"><AtlasExplorer tables={tables} regions={regionLabels} /></main>;
 }

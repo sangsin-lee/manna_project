@@ -1,3 +1,4 @@
+import type { Country } from "./content";
 import type { products } from "./atlas-products";
 
 export type AtlasGroup = "visited" | "popular" | "discovery" | "home";
@@ -25,7 +26,23 @@ type TableEntry = {
   source: { label: string; url: string };
 };
 
-export type AtlasTable = TableEntry & { group: AtlasGroup; visitPlaces?: string[] };
+export type AtlasRegion = Country["continent"] | "south-america" | "africa";
+
+export type AtlasTable = TableEntry & {
+  group: AtlasGroup;
+  region: AtlasRegion;
+  headline: string;
+  summary: string;
+  tags: string[];
+  cover: { eyebrow: string; caption: string; palette: Country["palette"] };
+  archive?: {
+    places: string[];
+    regions: number;
+    stories: number;
+    recipes: number;
+    updatedAt: string;
+  };
+};
 
 export const tableEntries: TableEntry[] = [
   {

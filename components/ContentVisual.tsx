@@ -6,17 +6,19 @@ type ContentVisualProps = {
   label: string;
   caption: string;
   palette: Palette;
-  size?: "card" | "feature" | "hero";
+  size?: "card" | "feature" | "hero" | "atlas";
   className?: string;
 };
 
 const sizeClasses = {
+  atlas: "min-h-36 px-6 py-5 sm:min-h-40 sm:px-8",
   card: "min-h-56 p-7",
   feature: "min-h-[360px] p-8 sm:min-h-[440px] sm:p-10",
   hero: "min-h-[360px] p-8 sm:min-h-[500px] sm:p-12",
 } as const;
 
 const labelClasses = {
+  atlas: "text-4xl sm:text-5xl",
   card: "text-4xl sm:text-5xl",
   feature: "text-5xl sm:text-6xl",
   hero: "text-5xl sm:text-7xl lg:text-8xl",

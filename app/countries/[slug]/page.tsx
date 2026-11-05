@@ -260,7 +260,7 @@ export default async function CountryDetailPage({
                 {country.summary}
               </p>
               <Link
-                href={`/countries/atlas?country=${country.slug}#explore`}
+                href={`/countries?country=${country.slug}&section=class`}
                 className="mt-4 self-start text-sm font-bold !text-[#943706] underline underline-offset-4"
               >
                 {country.nameKo} 쿠킹 클래스와 어울리는 향 보기 →

@@ -226,7 +226,7 @@ export default function EuropeJourneyPage() {
                   Instagram 여행 기록 ↗
                 </a>
                 <Link
-                  href="/countries?continent=europe#country-archive"
+                  href="/countries?continent=europe&group=visited"
                   className="inline-flex rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-black !text-neutral-900 no-underline transition hover:border-[#b9480c] hover:bg-[#fff5ed] hover:!text-[#943706]"
                 >
                   유럽 나라별 식탁

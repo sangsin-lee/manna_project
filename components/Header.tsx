@@ -75,7 +75,7 @@ export default function Header() {
             href={isHomePage ? "/countries" : "/"}
             aria-label={
               isHomePage
-                ? "나라별 콘텐츠 둘러보기"
+                ? "나라별 식탁 지도 열기"
                 : "메인 화면으로 이동"
             }
             className={`group inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-5 py-3 text-sm font-bold no-underline shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b9480c] focus-visible:ring-offset-2 ${
@@ -92,7 +92,7 @@ export default function Header() {
                 ←
               </span>
             )}
-            {isHomePage ? "콘텐츠 둘러보기" : "메인으로"}
+            {isHomePage ? "식탁 지도 열기" : "메인으로"}
           </Link>
         </div>
 

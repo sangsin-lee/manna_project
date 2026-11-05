@@ -42,28 +42,28 @@ const europeStops = [
     country: "프랑스",
     place: "파리",
     description: "불랑주리와 카페, 비스트로에서 도시의 일상 식탁을 읽습니다.",
-    href: "/countries/france",
+    href: "/countries?country=france",
   },
   {
     number: "02",
     country: "독일",
     place: "슈투트가르트",
     description: "마울타셴과 슈페츨레로 슈바벤 지역의 반죽 문화를 살펴봅니다.",
-    href: "/countries/germany",
+    href: "/countries?country=germany",
   },
   {
     number: "03",
     country: "스위스",
     place: "융프라우",
     description: "산악 이동 동선과 감자·치즈 중심의 알프스 식탁을 연결합니다.",
-    href: "/countries/switzerland",
+    href: "/countries?country=switzerland",
   },
   {
     number: "04",
     country: "이탈리아",
     place: "로마·바티칸",
     description: "적은 재료와 정확한 조리로 완성되는 로마 파스타를 기록합니다.",
-    href: "/countries/italy",
+    href: "/countries?country=italy",
   },
 ] as const;
 
@@ -109,7 +109,7 @@ export default function HomePage() {
               >
                 식문화 이야기
               </Link>
-              <Link className="manna-button manna-button-outline" href="/countries/atlas">
+              <Link className="manna-button manna-button-outline" href="/countries">
                 맛과 향의 세계지도 ↗
               </Link>
             </div>
@@ -230,7 +230,7 @@ export default function HomePage() {
               </p>
             </div>
             <Link
-              href="/countries?continent=europe#country-archive"
+              href="/countries?continent=europe&group=visited"
               className="text-sm font-black !text-[#943706] no-underline"
             >
               유럽 전체 보기 →

@@ -1431,6 +1431,50 @@
         "조개 국물과 우유의 감칠맛",
         "해감 완료 바지락 기준 55분"
       ]
+    },
+    {
+      "date": "2026-11-05",
+      "recipeSlug": "nagano-inspired-pumpkin-oyaki",
+      "title": "나가노풍 단호박 오야키와 맑은 두부국",
+      "canonicalDish": "Nagano Shinshu oyaki stuffed with miso pumpkin, browned and steamed",
+      "aliases": [
+        "おやき",
+        "신슈 오야키",
+        "단호박 오야키",
+        "가보차 오야키",
+        "Kabocha oyaki",
+        "Pumpkin oyaki"
+      ],
+      "keyIngredients": [
+        "단호박",
+        "중력분",
+        "미소",
+        "두부",
+        "다시마"
+      ],
+      "method": "밀가루 반죽으로 익힌 호박 소를 감싸 납작하게 빚고, 팬에 양면을 구운 뒤 찜기에서 속까지 익힌다. 다시마 두부국과 함께 낸다.",
+      "selectionReason": "나가노 산간에서는 가을 호박을 밀가루 반죽에 싸서 오야키를 만듭니다. 국내 마트 단호박으로 노릇한 피와 포슬한 속을 살리고, 맑은 두부국을 곁들여 저녁으로 차립니다.",
+      "videoIdea": "반죽 가장자리를 오므리는 손을 위에서 찍고, 구운 오야키를 뒤집는 소리를 담습니다. 마지막에는 한 김 식힌 오야키를 반으로 갈라 얇은 피와 주황빛 호박 소를 가까이 보여 주세요.",
+      "duplicateReview": "기존 레시피 93개와 기준 기록 27개·일일 기록 25개의 이름, 별칭, 주재료, 조리법을 비교했다. 기존 만토바 뇨키는 호박을 반죽에 섞어 삶고 베로나 리소토는 쌀에 호박을 익힌다. 오야키는 밀가루 피와 호박 소를 따로 만들어 감싼 뒤 굽고 찐다. 삶는 마울타셴, 빵 자체를 뭉치는 경단, 찹쌀피 과일모찌와도 다르다. 최근 스위스·홍콩·미국에 이어 일본 나가노를 선택했다.",
+      "research": {
+        "checkedAt": "2026-11-05",
+        "seasonalNote": "농림수산성은 가을 오야키의 소로 호박을 소개한다. 나가노현 도감의 지노시 이토카야 호박 수확기는 9월 상순~11월 하순이고, 국내 제주 노지 터널재배 단호박 사례는 6월 하순~7월 수확 후 후숙한다. 두 산지의 작형을 구분하며 이토카야 품종 사용이나 국내 11월 수확을 전제하지 않는다. 미국 외식업협회의 2026 전망 중 지역 재료와 가정식에 대한 관심을 편집 참고로만 사용했다. 오야키의 국내 유행·조회 수를 주장하지 않는다.",
+        "sources": [
+          "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/oyaki_nagano.html",
+          "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/area_stories/nagano.html",
+          "https://www.oishii-shinshu.net/library/heritage/vegetable/21374.html",
+          "https://www.oishii-shinshu.net/topics/20377.html",
+          "https://www.agri.jeju.go.kr/files/board/060ef5e5-8460-47f1-831d-1825eb0d2232.pdf",
+          "https://www.fda.gov/food/buy-store-serve-safe-food/handling-flour-safely-what-you-need-know",
+          "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "2인분에 오야키 6개",
+        "반죽 휴지 60분 포함"
+      ]
     }
   ]
 }

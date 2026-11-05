@@ -1,9 +1,32 @@
 import type { Recipe } from "./content";
-import { clamChowderSources, radishCakeSources, papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
+import { oyakiSources, clamChowderSources, radishCakeSources, papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
 import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buckwheatGaletteSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
 
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
+  {
+    slug: "nagano-inspired-pumpkin-oyaki", title: "나가노풍 단호박 오야키와 맑은 두부국", country: "japan", category: "main", experienceStatus: "researched",
+    summary: "단호박을 거칠게 으깨 미소로 간하고, 얇게 편 밀가루 반죽 안에 감쌉니다. 팬에서 양면에 구운 자국을 낸 뒤 찌면 피는 쫀득하고 속은 포슬합니다. 따뜻한 두부국과 함께 한 사람 앞에 세 개씩 담습니다.",
+    culturalNote: "신슈 오야키는 집마다 피와 소, 익히는 방법이 다릅니다. 일본 농림수산성이 기록한 굽고 찌는 방식을 따르고, 소는 한국 마트의 단호박으로 만들었습니다. 두부국은 한 끼로 즐기기 위해 더한 곁들임입니다.",
+    localTable: { region: "일본 · 나가노현 신슈 산간과 지노시 이토카야", ingredient: "신슈의 가을 호박 소 · 가정에서는 시판 단호박 사용", season: "이토카야 호박 수확: 9월 상순~11월 하순", note: "나가노현 지노시의 이토카야 호박은 옅은 청색 껍질과 포슬한 살이 특징입니다. 한국에서는 이 품종을 찾을 필요 없이 손질한 단호박을 씁니다. 제주 노지 터널재배의 경우 6월 하순~7월에 수확해 후숙하므로, 11월 매장 판매 시점과 수확 시기는 다를 수 있습니다." },
+    cookingTime: 110, servings: 2, difficulty: "보통", visualLabel: "SHINSHU / PUMPKIN OYAKI", visualCaption: "노릇한 밀가루 피와 단호박 속의 주황빛, 신슈 산등성이에서 따온 겹선",
+    keywords: ["일본", "나가노", "신슈", "오야키", "おやき", "단호박", "미소", "두부국"],
+    ingredientGroups: [
+      { title: "오야키 6개 · 장보기 단위와 사용량", items: ["단호박 1개 또는 손질 팩 1개 → 씨와 껍질을 뺀 살 270g", "중력분 1봉 → 반죽 180g과 덧가루 최대 10g", "미소 작은 통 1개 → 12g, 식용유 1병 → 8ml", "소금 1g, 미지근한 물 115~125ml"] },
+      { title: "맑은 두부국 2그릇과 도구", items: ["두부 1모 → 200g, 마른 다시마 1봉 → 3g", "대파 1대 → 10g, 양조간장 1병 → 5~10ml", "국물용 물 500ml, 찜기용 물 별도", "뚜껑 있는 찜기, 넓은 팬, 작은 국냄비, 면포 또는 종이호일"] },
+    ],
+    steps: [
+      { title: "반죽을 만들어 한 시간 쉬게 하기", description: "중력분 180g에 소금 1g을 섞고 미지근한 물 115ml를 부어 한 덩이로 모읍니다. 마른 가루가 남으면 물을 조금씩 더합니다. 5분간 치댄 뒤 마르지 않게 덮어 60분 둡니다.", tip: "생밀가루와 생반죽은 맛보지 않습니다. 반죽을 만진 손과 도구는 완성 음식에 닿기 전에 씻습니다." },
+      { title: "단호박을 쪄서 미소 소 만들기", description: "반죽이 쉬는 동안 씻어 손질한 단호박을 2cm 크기로 썹니다. 김 오른 찜기에 넣고 12~15분, 포크가 쉽게 들어갈 때까지 찝니다. 꺼내 거칠게 으깨 미소 12g을 섞고 넓은 접시에 펼쳐 식힙니다.", tip: "소가 질면 팬에서 약불로 잠시 저어 수분을 날립니다. 숟가락으로 떴을 때 흐르지 않아야 반죽에 담기 쉽습니다." },
+      { title: "여섯 개로 나눠 가장자리 오므리기", description: "반죽과 식은 소를 각각 여섯 등분합니다. 덧가루를 가볍게 뿌린 뒤 반죽 한 덩이를 지름 10~11cm로 펴고 가장자리만 얇게 늘립니다. 소를 올리고 둘레를 모아 꼭 붙인 뒤 두께 2~2.5cm로 납작하게 누릅니다." },
+      { title: "양면을 굽고 속까지 찌기", description: "팬에 기름 8ml를 얇게 펴고 오므린 면부터 중약불에 2~3분씩 양면을 굽습니다. 종이호일을 한 개 크기로 잘라 받쳐 김 오른 찜기에 간격을 두고 놓습니다. 뚜껑을 덮고 15~18분 찝니다.", tip: "가장 두꺼운 한 개를 갈라 접힌 피까지 익었는지 봅니다. 밀가루처럼 하얗고 끈끈한 생반죽이 보이면 몇 분 더 찝니다. 겉의 구운 색만으로 익힘을 판단하지 않습니다." },
+      { title: "찌는 동안 맑은 두부국 끓이기", description: "작은 냄비에 다시마 3g과 물 500ml를 넣고 중약불로 데웁니다. 끓기 직전에 다시마를 건지고 두부를 2cm 크기로 썰어 넣습니다. 약하게 3~4분 끓인 뒤 송송 썬 대파와 간장 5ml를 넣고, 싱거우면 간장을 조금 더합니다." },
+      { title: "노릇한 면을 위로 올려 담기", description: "오야키를 집게로 꺼내 한 김 식힙니다. 두 접시에 세 개씩 담고 두부국을 나눕니다. 한 개를 반으로 갈라 뜨거운 김을 먼저 보내면 주황빛 소와 피의 얇은 경계가 잘 보입니다." },
+    ],
+    substitutions: ["손질한 냉동 단호박도 270g 사용합니다. 포장 안내에 맞게 익힌 뒤 물기를 충분히 날립니다.", "미소 대신 집된장은 6g부터 넣어 맛을 봅니다. 된장의 염도와 콩알 크기에 따라 속맛이 달라집니다.", "대파 대신 쪽파 10g을 쓰거나 다시마 대신 무염 채소 육수 500ml를 씁니다."],
+    tips: ["총 110분에는 반죽 휴지 60분이 포함됩니다. 기다리는 동안 소를 만들면 굽고 찌는 시간을 따로 확보할 수 있습니다.", "밀·대두 알레르기가 있다면 밀가루·된장·간장·두부의 성분 표시를 확인합니다.", "남은 오야키와 국은 얕은 용기에 나눠 2시간 이내에 4°C 이하로 냉장합니다. 실내가 32°C보다 더우면 1시간 이내에 넣고, 먹을 때는 중심까지 74°C로 재가열합니다."],
+    publishedAt: "2026-11-05", relatedStorySlugs: [], sources: Object.values(oyakiSources), palette: { from: "#f7e7c9", mid: "#e3ad61", to: "#ae8e92", ink: "#48332e" },
+  },
   {
     slug: "massachusetts-inspired-clam-chowder", title: "매사추세츠풍 바지락 감자 차우더", country: "usa", category: "main", experienceStatus: "researched",
     summary: "바지락을 삶아 거른 국물에 감자를 부드럽게 익히고 우유와 크림을 더합니다. 조갯살의 감칠맛, 포슬한 감자, 베이컨의 은은한 훈연 향을 빵과 함께 즐기는 두 사람의 저녁입니다.",

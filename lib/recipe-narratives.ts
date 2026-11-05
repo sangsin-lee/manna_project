@@ -1,6 +1,6 @@
 import type { Recipe, SourceLink } from "./content";
 import { hanjeongseonSources } from "./hanjeongseon-sources";
-import { clamChowderSources, radishCakeSources, papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
+import { oyakiSources, clamChowderSources, radishCakeSources, papetSources, broccoliPastaSources, riceSteamedPorkSources } from "./daily-sources";
 import { usMexicanSources } from "./us-mexican-sources";
 import { usChickenSources } from "./us-chicken-sources";
 import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buckwheatGaletteSources, cabbageRollSources, calabacitasSources, chaCaSources, chanchanyakiSources, crabCurrySources, imoniSources, kiritanpoSources, lotusRibSoupSources, normandyChickenSources, onionTartSources, pumpkinRisottoSources, ribollitaSources, shrimpEtouffeeSources } from "./daily-sources";
@@ -54,6 +54,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "nagano-inspired-pumpkin-oyaki": narrative(
+    ["산간의 곡식 한 줌이 식사가 되기까지", "나가노 산간에는 논을 내기 어려운 비탈이 많았습니다. 밀이나 메밀을 가루 내고 얇게 편 피에 그때 나는 채소를 담으면, 밥 대신 손에 들고 먹을 한 끼가 됐습니다. 가을 호박은 그렇게 오야키 안에 들어가는 여러 소 중 하나입니다."],
+    ["화롯가에서 굽던 오야키", "니시야마에서는 쇠솥에 겉을 구운 뒤 화롯재 속의 열기로 속을 익히기도 했습니다. 집마다 굽거나 찌는 법이 달랐고, 북부에서는 오봉에 오야키를 빚어 조상에게 올리는 풍습도 전해집니다. 오늘의 주방에서는 팬과 찜기가 화로의 두 가지 일을 나눠 맡습니다."],
+    ["구운 피를 가르면 나오는 단호박", "먼저 팬에 닿았던 면에서 구수한 냄새가 나고, 씹으면 김을 머금은 피가 부드럽게 늘어납니다. 호박을 완전히 갈지 않아 포슬한 덩어리가 남습니다. 미소가 호박의 단맛을 받쳐 주고 맑은 두부국이 다음 한입을 가볍게 이어 줍니다."],
+    [oyakiSources.oyaki, oyakiSources.autumn, oyakiSources.harvest],
+  ),
   "massachusetts-inspired-clam-chowder": narrative(
     ["매사추세츠 해안에서 떠올린 한 그릇", "뉴잉글랜드 해안의 클램 차우더를 국내 바지락으로 응용합니다. 매사추세츠 노스쇼어에는 조개잡이와 조개 요리가 지역 생활에 이어져 온 이야기가 남아 있습니다. 특정 발명자나 연도를 단정하지 않고, 오늘은 감자와 우유를 더한 가정용 한 그릇으로 풀어냅니다."],
     ["철도가 바닷가 식탁으로 이끈 사람들", "Historic New England의 전시는 1870~1880년대 철도로 매사추세츠 해안을 찾던 여름 휴양객과 조개 요리를 소개합니다. 조개는 해안의 일과 여행의 식탁을 잇는 재료였습니다. 이 시기는 차우더의 탄생 연도가 아니라, 지역 조개 식문화가 넓어지는 배경으로 읽습니다."],

@@ -1,5 +1,16 @@
 import type { SourceLink } from "./content";
 
+export const oyakiSources = {
+  oyaki: { label: "일본 농림수산성 — 나가노의 오야키, 화덕 조리와 굽고 찌는 방법", url: "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/oyaki_nagano.html" },
+  autumn: { label: "일본 농림수산성 — 신슈의 가루 음식과 가을 호박 소", url: "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/area_stories/nagano.html" },
+  harvest: { label: "나가노현 전통 채소 도감 — 이토카야 호박의 특징과 수확기", url: "https://www.oishii-shinshu.net/library/heritage/vegetable/21374.html" },
+  farms: { label: "나가노현 스와 농업농촌지원센터 — 지노시 이토카야의 호박 재배", url: "https://www.oishii-shinshu.net/topics/20377.html" },
+  korea: { label: "제주특별자치도 농업기술원 — 제주 단호박의 여름 수확과 후숙", url: "https://www.agri.jeju.go.kr/files/board/060ef5e5-8460-47f1-831d-1825eb0d2232.pdf" },
+  flour: { label: "미국 FDA — 생밀가루 취급과 반죽을 익혀 먹는 방법", url: "https://www.fda.gov/food/buy-store-serve-safe-food/handling-flour-safely-what-you-need-know" },
+  storage: { label: "미국 FDA — 조리한 음식의 냉장 보관", url: "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely" },
+  heat: { label: "FoodSafety.gov — 남은 음식 재가열 온도", url: "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures" },
+} satisfies Record<string, SourceLink>;
+
 // Massachusetts coastal food culture, adapted with Korean clams, October 31.
 export const clamChowderSources = {
   region: { label: "Historic New England — 매사추세츠 노스쇼어의 조개 산업과 해안 식문화", url: "https://www.historicnewengland.org/visit/exhibitions/clamming-on-massachusetts-north-shore/" },

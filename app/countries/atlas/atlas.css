@@ -164,3 +164,6 @@
   .table-card-body { padding: 16px 20px max(20px, env(safe-area-inset-bottom)); }
   .table-close { min-height: 40px; }
 }
+
+@keyframes atlas-arrive{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:none}}
+.atlas-cartography,.atlas-directory{animation:atlas-arrive .35s ease-out both}.table-dialog{animation:atlas-arrive .3s ease-out .15s both}@media(prefers-reduced-motion:reduce){.atlas-cartography,.atlas-directory,.table-dialog{animation:none}}

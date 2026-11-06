@@ -48,6 +48,29 @@ export default function AtlasMap({ tables, selected, fitRegion, onSelect }: {
   const hideTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const [initial] = useState(() => startingView(tables, fitRegion));
   const [view, setView] = useState(initial);
+  const flight = useRef<number | null>(null);
+  const liveView = useRef(initial);
+  function flyTo(target: View) {
+    if (flight.current !== null) cancelAnimationFrame(flight.current);
+    const from = liveView.current; let start: number | undefined;
+    const duration = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 450;
+    function frame(now: number) {
+      start ??= now;
+      const t = duration ? Math.min(1, (now-start)/duration) : 1, ease = 1-(1-t)**3;
+      const next = {left:from.left+(target.left-from.left)*ease, top:from.top+(target.top-from.top)*ease, zoom:from.zoom+(target.zoom-from.zoom)*ease};
+      liveView.current=next; setView(next);
+      flight.current=t<1?requestAnimationFrame(frame):null;
+    }
+    flight.current=requestAnimationFrame(frame);
+  }
+  useEffect(() => () => { if(flight.current !== null) cancelAnimationFrame(flight.current); }, []);
+  useEffect(() => {
+    if (!selected) return;
+    const point=project(selected.point), z=3;
+    flyTo(panTo(z,point.x-width/z/2,point.y-height/z/2));
+    // Selection drives the flight; animation frames must not restart it.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selected?.slug]);
   const [pixels, setPixels] = useState(760);
   const [dragging, setDragging] = useState(false);
   const [preview, setPreview] = useState<Preview | null>(null);
@@ -75,7 +98,8 @@ export default function AtlasMap({ tables, selected, fitRegion, onSelect }: {
       const x = (event.clientX - bounds.left) / bounds.width;
       const y = (event.clientY - bounds.top) / bounds.height;
       setPreview(null);
-      setView((previous) => zoomAt(previous, factor, x, y));
+      if(flight.current !== null) cancelAnimationFrame(flight.current);
+      setView(previous => {const next=zoomAt(previous,factor,x,y);liveView.current=next;return next;});
     }
     node.addEventListener("wheel", wheel, { passive: false });
     return () => node.removeEventListener("wheel", wheel);
@@ -120,7 +144,8 @@ export default function AtlasMap({ tables, selected, fitRegion, onSelect }: {
       setPreview(null);
     }
     const scale = width / (pixels * start.view.zoom);
-    setView(panTo(start.view.zoom, start.view.left - dx * scale, start.view.top - dy * scale));
+    if(flight.current !== null) cancelAnimationFrame(flight.current);
+    const next=panTo(start.view.zoom,start.view.left-dx*scale,start.view.top-dy*scale);liveView.current=next;setView(next);
   }
   function endDrag(event: PointerEvent<HTMLDivElement>) {
     if (event.pointerId !== drag.current?.id) return;
@@ -131,7 +156,7 @@ export default function AtlasMap({ tables, selected, fitRegion, onSelect }: {
     const point = selected && project(selected.point);
     const x = point ? (point.x - left) / w : 0.5, y = point ? (point.y - top) / h : 0.5;
     const visible = x >= 0 && x <= 1 && y >= 0 && y <= 1;
-    setView(zoomAt(view, factor, visible ? x : 0.5, visible ? y : 0.5));
+    flyTo(zoomAt(view, factor, visible ? x : 0.5, visible ? y : 0.5));
     setPreview(null);
   }
   const cardWidth = Math.min(210, pixels - 16);
@@ -158,7 +183,7 @@ export default function AtlasMap({ tables, selected, fitRegion, onSelect }: {
         if (!shift) return;
         event.preventDefault();
         setPreview(null);
-        setView(panTo(zoom, left + shift[0] * w / 6, top + shift[1] * h / 6));
+        flyTo(panTo(zoom, left + shift[0] * w / 6, top + shift[1] * h / 6));
       }}>
       <svg className="atlas-map-svg" viewBox={`${left} ${top} ${w} ${h}`} aria-hidden="true">
         <image href="/atlas/world.svg" x="0" y="0" width={width} height={height} />
@@ -205,7 +230,7 @@ export default function AtlasMap({ tables, selected, fitRegion, onSelect }: {
       <button type="button" aria-label="지도 확대" disabled={!hasTables || zoom >= maxZoom} onClick={() => stepZoom(2)}>+</button>
       <button type="button" aria-label="지도 축소" disabled={!hasTables || zoom <= 1} onClick={() => stepZoom(0.5)}>−</button>
       <button type="button" aria-label="지도 처음 위치로" title="처음 위치로" disabled={zoom === initial.zoom && left === initial.left && top === initial.top}
-        onClick={() => { setView(initial); setPreview(null); }}>
+        onClick={() => { flyTo(initial); setPreview(null); }}>
         <svg width="15" height="15" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3.5 8a6.5 6.5 0 1 1 .6 5M3.5 3.5v4.8h4.8"/></svg>
       </button>
     </div>

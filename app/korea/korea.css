@@ -24,3 +24,7 @@
 .atlas-mobile-leaders{display:none;stroke:#8f9a82;stroke-width:1.4;fill:#8f9a82}
 @media(max-width:760px){.atlas-pin{left:var(--pin-mobile-x);top:var(--pin-mobile-y)}.atlas-mobile-leaders{display:block}.atlas-cover-copy{max-width:55%}.atlas-cover-copy h3{max-width:150px}.atlas-cover-art{left:53%}.atlas-hero-fish{left:10px;width:78px}.atlas-map-note{margin-top:28px}}
 @media(prefers-reduced-motion:reduce){.korea-atlas *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+@keyframes local-arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes ingredient-arrive{from{opacity:0;scale:.7}to{opacity:1;scale:1}}
+.atlas-map-panel{animation:local-arrive .4s ease-out both}.atlas-pin{animation:ingredient-arrive .4s ease-out both}.atlas-pin:nth-of-type(2n){animation-delay:60ms}.atlas-pin:nth-of-type(3n){animation-delay:120ms}.atlas-region-content,.atlas-recipes{animation:local-arrive .28s ease-out both}.atlas-pin-art{transition:transform .24s,box-shadow .24s}.atlas-pin:hover .atlas-pin-art,.atlas-pin:focus-visible .atlas-pin-art{transform:translateY(-5px) rotate(-5deg)}.atlas-pin.is-selected .atlas-pin-art{transform:translateY(-5px) scale(1.12)}@media(prefers-reduced-motion:reduce){.korea-atlas *{animation:none!important;transition:none!important}.atlas-pin-art{transform:none!important}}

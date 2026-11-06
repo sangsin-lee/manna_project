@@ -50,7 +50,9 @@ export default function AtlasMap({ tables, selected, fitRegion, onSelect }: {
   const [view, setView] = useState(initial);
   const flight = useRef<number | null>(null);
   const liveView = useRef(initial);
+  const targetView = useRef(initial);
   function flyTo(target: View) {
+    targetView.current = target;
     if (flight.current !== null) cancelAnimationFrame(flight.current);
     const from = liveView.current; let start: number | undefined;
     const duration = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 450;
@@ -98,11 +100,12 @@ export default function AtlasMap({ tables, selected, fitRegion, onSelect }: {
       const x = (event.clientX - bounds.left) / bounds.width;
       const y = (event.clientY - bounds.top) / bounds.height;
       setPreview(null);
-      if(flight.current !== null) cancelAnimationFrame(flight.current);
-      setView(previous => {const next=zoomAt(previous,factor,x,y);liveView.current=next;return next;});
+      flyTo(zoomAt(targetView.current, factor, x, y));
     }
     node.addEventListener("wheel", wheel, { passive: false });
     return () => node.removeEventListener("wheel", wheel);
+    // The listener reads the current camera through refs.
+     
   }, [hasTables]);
 
   const previewOpen = preview !== null;
@@ -145,7 +148,7 @@ export default function AtlasMap({ tables, selected, fitRegion, onSelect }: {
     }
     const scale = width / (pixels * start.view.zoom);
     if(flight.current !== null) cancelAnimationFrame(flight.current);
-    const next=panTo(start.view.zoom,start.view.left-dx*scale,start.view.top-dy*scale);liveView.current=next;setView(next);
+    const next=panTo(start.view.zoom,start.view.left-dx*scale,start.view.top-dy*scale);liveView.current=next;targetView.current=next;setView(next);
   }
   function endDrag(event: PointerEvent<HTMLDivElement>) {
     if (event.pointerId !== drag.current?.id) return;

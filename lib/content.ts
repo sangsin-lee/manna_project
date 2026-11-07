@@ -321,6 +321,7 @@ export const countries: Country[] = [
     storySlugs: [hanjeongseonStory.slug, "korean-banchan-culture", "korean-market-food"],
     recipeSlugs: [
       ...hanjeongseonRecipes.map((recipe) => recipe.slug),
+      "mala-tteokbokki",
       ...gyeongbukRecipes.map((recipe) => recipe.slug),
       ...gyeongnamRecipes.map((recipe) => recipe.slug),
       ...jeonnamRecipes.map((recipe) => recipe.slug),
@@ -2874,6 +2875,36 @@ export const stories: Story[] = [
 ];
 
 export const recipes: Recipe[] = [
+  {
+    slug: "mala-tteokbokki",
+    title: "마라떡볶이",
+    country: "korea",
+    category: "street-food",
+    summary: "쫄깃한 떡과 어묵, 아삭한 알배추를 얼얼하고 살짝 걸쭉한 마라 국물에 끓이는 떡볶이입니다.",
+    culturalNote: "한국 분식의 떡볶이 양념에 마라소스를 더한 가정용 응용입니다. 고추장의 달큰한 매운맛 뒤로 마라소스의 얼얼함이 남습니다.",
+    cookingTime: 20,
+    difficulty: "쉬움",
+    servings: 2,
+    visualLabel: "얼얼한 마라 국물",
+    visualCaption: "붉은 국물이 쌀떡을 감싸고 알배추가 단맛을 보탭니다.",
+    keywords: ["마라떡볶이", "마라소스", "떡볶이", "분식", "어묵", "분모자"],
+    ingredientGroups: [
+      { title: "떡과 채소", items: ["떡볶이 떡 300g", "사각 어묵 2장", "알배추 3잎", "대파 ½대"] },
+      { title: "마라 국물", items: ["물 400mL", "마라소스 1~2큰술", "고추장 1큰술", "설탕 1큰술", "다진 마늘 ½큰술"] },
+    ],
+    steps: [
+      { title: "재료 손질", description: "냉장 떡은 찬물에 10분 정도 담가 떼어 놓습니다. 그동안 어묵과 배추는 한입 크기로, 대파는 어슷하게 썹니다." },
+      { title: "마라 국물 끓이기", description: "물에 고추장, 설탕, 다진 마늘과 마라소스 1큰술을 풀어 끓입니다." },
+      { title: "떡과 어묵 익히기", description: "떡과 어묵을 넣고 중불에서 5~7분 동안 바닥을 저으며 끓입니다. 떡이 말랑해지면 배추와 대파를 넣고 2분 더 끓입니다." },
+      { title: "얼얼함과 농도 맞추기", description: "국물을 맛보고 마라소스를 ½큰술씩 더합니다. 국물이 너무 걸쭉하면 물을 조금 더 넣습니다." },
+    ],
+    substitutions: ["알배추 대신 양배추를 한 줌 넣어도 좋습니다.", "떡 100g을 분모자 100g으로 바꿔도 좋습니다. 분모자는 포장에 적힌 방법대로 손질하고 익힙니다."],
+    tips: ["마라소스는 제품마다 짠맛이 다르므로 처음에는 1큰술만 넣으세요.", "고소하게 먹으려면 마지막에 무가당 땅콩버터 1작은술을 풀어 주세요."],
+    publishedAt: "2026-11-07",
+    relatedStorySlugs: ["korean-market-food"],
+    sources: [],
+    palette: { from: "#f8e1bd", mid: "#eaa37e", to: "#be6e65", ink: "#49251d" },
+  },
   ...hanjeongseonRecipes,
   ...usChickenRecipes,
   ...usMexicanRecipes,

@@ -321,6 +321,7 @@ export const countries: Country[] = [
     storySlugs: [hanjeongseonStory.slug, "korean-banchan-culture", "korean-market-food"],
     recipeSlugs: [
       ...hanjeongseonRecipes.map((recipe) => recipe.slug),
+      "same-day-kimjang-kimchi",
       "mala-tteokbokki",
       ...gyeongbukRecipes.map((recipe) => recipe.slug),
       ...gyeongnamRecipes.map((recipe) => recipe.slug),
@@ -2875,6 +2876,41 @@ export const stories: Story[] = [
 ];
 
 export const recipes: Recipe[] = [
+  {
+    slug: "same-day-kimjang-kimchi",
+    title: "절임배추로 당일 담그는 김장김치",
+    country: "korea",
+    category: "main",
+    experienceStatus: "researched",
+    summary: "시판 절임배추 2kg으로 담그는 소량 김장입니다. 채반에서 물을 빼는 동안 양념을 만들어 약 1시간이면 김치통에 담을 수 있습니다.",
+    culturalNote: "김장은 늦가을에 겨울에 먹을 김치를 함께 담그고 나누는 풍습입니다. 유네스코는 2013년에 한국의 김장 문화를 인류무형문화유산 대표목록에 올렸습니다. 이 레시피는 시판 절임배추로 절이는 시간을 줄인 가정용 배합입니다.",
+    cookingTime: 60,
+    difficulty: "쉬움",
+    servings: 20,
+    visualLabel: "늦가을 소량 김장",
+    visualCaption: "하얀 배추 줄기 사이로 고춧가루와 무채를 켜켜이 채웁니다.",
+    keywords: ["김장", "김장김치", "절임배추", "배추김치", "당일 김장"],
+    ingredientGroups: [
+      { title: "절임배추와 채소", items: ["세척된 시판 절임배추 2kg(2kg 한 팩 또는 5kg 포장에서 2kg 계량)", "무 250g(작은 무 약 ⅓개)", "쪽파 50g(한 줌)"] },
+      { title: "김치 양념", items: ["고춧가루 85g", "멸치액젓 60g", "새우젓 25g", "다진 마늘 40g", "다진 생강 8g", "설탕 8g", "찹쌀가루 15g", "물 150mL"] },
+    ],
+    steps: [
+      { title: "받은 날 배추 물 빼기", description: "수령일을 김장하는 날로 잡고, 제품의 세척·보관 표시를 확인합니다. 세척 완료 제품은 당일 사용할 때 추가로 씻지 않아도 됩니다. 깨끗한 채반에 자른 면을 아래로 놓고 30~40분 물을 뺍니다." },
+      { title: "물 빠지는 동안 양념 만들기", description: "찬물 150mL에 찹쌀가루를 풀고 저으면서 끓여 걸쭉해지면 식힙니다. 무는 채 썰고 쪽파는 3cm로 자릅니다. 식은 풀에 고춧가루, 액젓 45g, 새우젓, 마늘, 생강, 설탕을 섞은 뒤 무와 쪽파를 넣습니다. 남은 액젓 15g은 간을 맞출 때 씁니다." },
+      { title: "한 잎으로 간 보고 버무리기", description: "배추 한 잎에 양념을 조금 얹어 간을 봅니다. 싱거우면 남겨 둔 액젓을 조금씩 더합니다. 배춧잎을 한 장씩 들춰 두꺼운 줄기 쪽에 양념을 얇게 바릅니다." },
+      { title: "당일 먹을 만큼 덜고 냉장하기", description: "바로 먹을 김치를 덜어 두고 나머지는 깨끗한 김치통에 담습니다. 위쪽에 여유를 두고 뚜껑을 닫아 바로 냉장 또는 김치냉장고에 보관합니다. 담근 날은 줄기가 아삭하고, 냉장 숙성이 진행되면 산미가 생깁니다." },
+    ],
+    substitutions: ["쪽파가 없으면 대파의 연한 부분을 가늘게 썰어 넣으세요.", "양념 만들 시간도 줄이려면 시판 김치 양념을 사용하세요. 절임배추 2kg에 맞는 양은 제품 표기를 보고, 한 잎에 먼저 발라 간을 확인하세요."],
+    tips: ["약 1시간은 물 빼는 동안 양념을 준비하는 기준이며 숙성 시간은 별도입니다. 20인분은 반찬으로 나누어 먹는 기준입니다.", "절임배추는 수령 당일 사용을 권장합니다. 식약처는 상온에 하루 이상 둔 절임배추를 사용할 경우 세 번 세척하도록 안내합니다.", "같은 배합으로 5kg을 담글 때는 양념과 채소를 2.5배로 늘리고, 액젓은 배추의 간을 보며 넣으세요."],
+    publishedAt: "2026-11-11",
+    relatedStorySlugs: ["korean-banchan-culture"],
+    sources: [
+      { label: "식품의약품안전처 — 절임배추 당일 사용과 세척 안내", url: "https://impfood.mfds.go.kr/CFBBB02F02/getCntntsDetail?cntntsSn=281730" },
+      { label: "농촌진흥청 농사로 — 배추김치 양념과 담그는 순서", url: "https://www.nongsaro.go.kr/portal/ps/psb/psby/vodPlay.ps?cntntsNo=92804&menuId=PS00069&mvpNo=17" },
+      { label: "유네스코 — 김치를 담그고 나누는 한국의 김장 문화", url: "https://ich.unesco.org/en/RL/kimjang-making-and-sharing-kimchi-in-the-republic-of-korea-00881" },
+    ],
+    palette: { from: "#f6e8cf", mid: "#e7a184", to: "#b86455", ink: "#48291f" },
+  },
   {
     slug: "mala-tteokbokki",
     title: "마라떡볶이",

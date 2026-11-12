@@ -5,6 +5,104 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "holstein-inspired-pear-bean-stew",
+    "title": "홀슈타인풍 배·그린빈 베이컨 스튜",
+    "country": "germany",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "훈연 베이컨 국물에 배를 끓여 단맛을 내고, 푹 삶은 그린빈과 포슬한 감자를 곁들입니다.",
+    "culturalNote": "슐레스비히홀슈타인 주정부는 조리용 배와 그린빈, 훈연 돼지고기를 함께 익혀 감자와 내는 늦여름 요리를 소개합니다. 국내 배와 베이컨으로 만드는 가정용 응용입니다.",
+    "localTable": {
+      "region": "독일 · 슐레스비히홀슈타인",
+      "ingredient": "조리용 배와 그린빈",
+      "season": "현지 늦여름 식탁 · 국내 배는 품종별 가을 수확",
+      "note": "현지에서는 단단한 조리용 배를 씁니다. 국내 신고의 대표 수확기는 9월 하순~10월 상순이며, 11월에는 유통되는 저장 배도 사용할 수 있습니다. 국내 배는 쉽게 무르므로 마지막에 넣습니다."
+    },
+    "cookingTime": 45,
+    "servings": 2,
+    "difficulty": "쉬움",
+    "visualLabel": "HOLSTEIN / PEAR & BEANS",
+    "visualCaption": "배의 크림색, 그린빈의 초록, 훈연 베이컨의 갈색과 북독일 해안에서 따온 물결",
+    "keywords": [
+      "독일",
+      "홀슈타인",
+      "배",
+      "그린빈",
+      "베이컨",
+      "스튜"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "장보기 단위와 사용량",
+        "items": [
+          "배 1개 → 껍질과 씨를 뺀 과육 200g",
+          "냉동 그린빈 1봉 → 200g",
+          "베이컨 1팩 → 150g",
+          "감자 2~3개 → 350g",
+          "양파 1개 → 80g",
+          "국물용 물 550mL, 삶는 물 별도, 후추 약간"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "그린빈과 감자 삶기",
+        "description": "그린빈을 넉넉한 끓는 물에 넣고 다시 끓기 시작한 뒤 30분 이상 삶습니다. 제품 표시가 더 길면 그 시간을 따르고 삶은 물은 버립니다. 별도 냄비에서 한입 크기로 썬 감자를 15~20분 삶아 물을 뺍니다.",
+        "tip": "그린빈은 생으로 맛보거나 짧게 데치는 정도로 끝내지 않습니다."
+      },
+      {
+        "title": "베이컨 국물 만들기",
+        "description": "그린빈이 익는 동안 냄비에 베이컨과 양파를 넣어 중불에 5분 볶습니다. 물 550mL를 붓고 10분 끓입니다. 베이컨은 포장에 적힌 가열 지침대로 충분히 익힙니다."
+      },
+      {
+        "title": "배와 그린빈 넣기",
+        "description": "배를 2cm 두께로 썰어 베이컨 국물에 넣고 5~7분 끓입니다. 익혀 건진 그린빈을 넣고 2분 더 끓인 뒤 후추로 마무리합니다."
+      },
+      {
+        "title": "감자와 함께 담기",
+        "description": "삶은 감자를 두 그릇에 나누고 배와 베이컨, 그린빈을 얹어 국물을 끼얹습니다."
+      }
+    ],
+    "substitutions": [
+      "냉동 그린빈 대신 생 그린빈을 같은 양 쓰고 동일하게 충분히 삶습니다.",
+      "신고 대신 단단한 국내 배를 쓰고 익는 상태에 따라 시간을 줄입니다."
+    ],
+    "tips": [
+      "베이컨의 염도가 달라 소금은 완성한 뒤 필요할 때만 넣습니다.",
+      "배가 익으면 가장자리가 반투명해집니다. 오래 끓이면 국물에서 부서지니 마지막에 넣으세요."
+    ],
+    "publishedAt": "2026-11-12",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "url": "https://www.schleswig-holstein.de/DE/landesportal/land-und-leute/typisch-sh/die-traditionelle-norddeutsche-kueche/deftiges/_documents/birnen_bohnen_speck",
+        "label": "슐레스비히홀슈타인 주정부 · 배, 콩, 훈연 돼지고기"
+      },
+      {
+        "url": "https://www.nihhs.go.kr/usr/nihhs/news_Press_view.do?dataNo=100000785514",
+        "label": "국립원예특작과학원 · 국내 배 품종과 수확기"
+      },
+      {
+        "url": "https://www.bfr.bund.de/assets/01_Ver%C3%B6ffentlichungen/BfR2GO_englisch/bfr2go-issue-1-2025_en.pdf",
+        "label": "독일 연방위해평가원 · 그린빈의 충분한 가열"
+      },
+      {
+        "url": "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/",
+        "label": "미국 외식업협회 · 2026 음식 트렌드 전망"
+      },
+      {
+        "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+        "label": "미국 식품안전정보 · 돼지고기 조리 온도"
+      }
+    ],
+    "palette": {
+      "from": "#f3e9c9",
+      "mid": "#c3ce9e",
+      "to": "#91aaac",
+      "ink": "#303c32"
+    }
+  },
+  {
     slug: "nagano-inspired-pumpkin-oyaki", title: "나가노풍 단호박 오야키와 맑은 두부국", country: "japan", category: "main", experienceStatus: "researched",
     summary: "단호박을 거칠게 으깨 미소로 간하고, 얇게 편 밀가루 반죽 안에 감쌉니다. 팬에서 양면에 구운 자국을 낸 뒤 찌면 피는 쫀득하고 속은 포슬합니다. 따뜻한 두부국과 함께 한 사람 앞에 세 개씩 담습니다.",
     culturalNote: "신슈 오야키는 집마다 피와 소, 익히는 방법이 다릅니다. 일본 농림수산성이 기록한 굽고 찌는 방식을 따르고, 소는 한국 마트의 단호박으로 만들었습니다. 두부국은 한 끼로 즐기기 위해 더한 곁들임입니다.",

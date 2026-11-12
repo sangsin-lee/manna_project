@@ -54,6 +54,24 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "same-day-kimjang-kimchi": narrative(
+    ["겨울을 준비하는 김장", "늦가을에 배추에 양념을 넣고 겨울 동안 먹을 김치를 담급니다. 집마다 양념과 젓갈의 배합이 다릅니다."],
+    ["함께 담그고 나누는 날", "김장에서는 가족과 이웃이 손질과 양념 바르기를 나눠 맡습니다. 시판 절임배추를 쓰면 물을 빼는 동안 김치소를 준비할 수 있습니다."],
+    ["아삭한 배추와 익어가는 산미", "당일에는 배추 줄기의 아삭함과 무채의 단맛이 두드러집니다. 냉장 숙성이 진행되면서 산미가 더해집니다."],
+    [{ label: "유네스코 · 김장 문화", url: "https://ich.unesco.org/en/RL/kimjang-making-and-sharing-kimchi-in-the-republic-of-korea-00881" }],
+  ),
+  "mala-tteokbokki": narrative(
+    ["떡볶이에 마라를 더한 한 냄비", "고추장 떡볶이 국물에 마라소스를 풀어 만드는 가정용 응용입니다. 마라소스를 넣는 양에 따라 얼얼함이 달라집니다."],
+    ["분식 재료로 만드는 집밥", "떡과 어묵은 그대로 쓰고, 배추와 대파로 국물 맛을 더합니다. 분모자를 함께 넣으면 씹는 느낌이 달라집니다."],
+    ["달큰한 국물과 얼얼한 끝맛", "고추장과 설탕의 단맛 뒤로 마라의 향이 남습니다. 부드러운 떡과 살짝 아삭한 배추를 한입에 먹어 보세요."],
+    [{ label: "한국관광공사 · 떡볶이의 기본 재료와 분식 문화", url: "https://english.visitkorea.or.kr/svc/thingsToDo/foodTrip/special_view.do?vcontsId=178955" }],
+  ),
+  "holstein-inspired-pear-bean-stew": narrative(
+    ["북독일의 늦여름 냄비","슐레스비히홀슈타인에서는 단단한 조리용 배와 그린빈을 훈연 돼지고기와 함께 익혀 삶은 감자와 먹습니다. 주정부는 이를 늦여름에 지역 재료로 차리는 식탁으로 소개합니다."],
+    ["단맛을 국물에 들이는 식탁","과일의 단맛과 고기의 짭조름한 맛을 한 접시에 담는 방식은 이 지역 요리의 특징입니다. 집에서는 국내 배와 얇은 베이컨을 사용하고 배를 마지막에 넣습니다."],
+    ["훈연 향과 포슬한 감자","익힌 배의 달큰한 즙이 국물에 퍼집니다. 그린빈은 충분히 삶아 부드럽게 익히고, 포슬한 감자에 국물을 묻혀 훈연 향을 함께 맛봅니다."],
+    [{"url":"https://www.schleswig-holstein.de/DE/landesportal/land-und-leute/typisch-sh/die-traditionelle-norddeutsche-kueche/deftiges/_documents/birnen_bohnen_speck","label":"슐레스비히홀슈타인 주정부 · 배, 콩, 훈연 돼지고기"},{"url":"https://www.nihhs.go.kr/usr/nihhs/news_Press_view.do?dataNo=100000785514","label":"국립원예특작과학원 · 국내 배 품종과 수확기"}],
+  ),
   "nagano-inspired-pumpkin-oyaki": narrative(
     ["산간의 곡식 한 줌이 식사가 되기까지", "나가노 산간에는 논을 내기 어려운 비탈이 많았습니다. 밀이나 메밀을 가루 내고 얇게 편 피에 그때 나는 채소를 담으면, 밥 대신 손에 들고 먹을 한 끼가 됐습니다. 가을 호박은 그렇게 오야키 안에 들어가는 여러 소 중 하나입니다."],
     ["화롯가에서 굽던 오야키", "니시야마에서는 쇠솥에 겉을 구운 뒤 화롯재 속의 열기로 속을 익히기도 했습니다. 집마다 굽거나 찌는 법이 달랐고, 북부에서는 오봉에 오야키를 빚어 조상에게 올리는 풍습도 전해집니다. 오늘의 주방에서는 팬과 찜기가 화로의 두 가지 일을 나눠 맡습니다."],

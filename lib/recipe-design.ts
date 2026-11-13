@@ -53,6 +53,7 @@ const details: Record<string, { art: RecipeArt; caption: string; place?: string;
   "punggi-ginseng-chicken-gomtang": { art: "ginseng-soup", caption: "풍기 수삼의 옅은 흙빛과 담백한 닭국물의 크림색", pattern: "contours" },
   "mala-tteokbokki": { art: "chili-tteok", caption: "쌀떡과 마라 국물의 붉은빛", pattern: "grain" },
   "holstein-inspired-pear-bean-stew": { art: "bowl", caption: "배와 그린빈의 색, 북독일 해안에서 따온 물결", pattern: "waves" },
+  "savoie-inspired-tartiflette": { art: "potato", caption: "노릇한 감자와 크림색 치즈, 사부아 산등성이를 닮은 겹선", pattern: "contours" },
   "yeongyang-chili-oil-tteokbokki": { art: "chili-tteok", caption: "영양 고춧가루의 붉은빛과 쌀떡, 깨의 작은 금빛 점", pattern: "grain" },
   "uljin-red-snow-crab-egg-custard": { art: "crab-custard", caption: "울진 동해의 푸른 회색과 게살의 산호빛, 달걀의 노랑", pattern: "waves" },
   "jinyeong-persimmon-chicken-curry": { art: "persimmon-curry", caption: "진영 단감의 주홍과 카레의 황갈색, 흰 밥의 여백", pattern: "grain" },

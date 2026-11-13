@@ -1511,6 +1511,42 @@
         "2인분 · 감자 곁들임",
         "그린빈은 30분 삶기"
       ]
+    },
+    {
+      "date": "2026-11-13",
+      "recipeSlug": "savoie-inspired-tartiflette",
+      "title": "사부아풍 감자 치즈 타르티플레트",
+      "canonicalDish": "Savoie potato and cheese tartiflette",
+      "aliases": [
+        "Tartiflette",
+        "타르티플레트",
+        "사부아 감자 치즈 오븐구이"
+      ],
+      "keyIngredients": [
+        "감자",
+        "양파",
+        "훈연 베이컨",
+        "브리"
+      ],
+      "method": "감자를 미리 익히고 볶은 양파와 베이컨을 섞어 치즈를 얹고 오븐에서 굽는다.",
+      "selectionReason": "국내 가을 감자에 부드럽게 녹는 치즈를 얹어, 서늘한 날 두 사람이 나눌 따뜻한 저녁을 차립니다.",
+      "videoIdea": "감자 위에 치즈를 포개는 손과 오븐에서 가장자리가 끓는 장면을 찍고, 한 주걱 들어 포슬한 단면을 보여 줍니다.",
+      "duplicateReview": "홀슈타인 스튜는 배와 그린빈을 훈연 국물에 삶고, 보주 스튜는 대파와 감자를 끓여 소시지를 곁들인다. 스위스 뢰스티는 간 감자를 팬에서 바삭하게 굽고 알프스 마카로니는 파스타가 들어간다. 타르티플레트는 익힌 감자와 양파에 치즈를 얹어 오븐에서 굽는 요리다. 최근 독일·일본·미국에 이어 프랑스 사부아를 골랐다.",
+      "research": {
+        "checkedAt": "2026-11-13",
+        "seasonalNote": "사부아에서는 르블로숑을 얹은 겨울 식탁으로 소개한다. 농촌진흥청의 제주·남부 해안 가을 감자 수확 달력은 11월 상순~하순이다. 국내 감자는 다른 작형과 저장품으로도 유통된다. 미국 외식업협회 전망에서 지역 재료와 세계 가정식에 대한 관심을 참고했다.",
+        "sources": [
+          "https://www.reblochon.fr/le-deguster/la-tartiflette/",
+          "https://www.reblochon.fr/nos-recettes/tartiflette-reblochon-de-savoie/",
+          "https://www.nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?cntntsNo=30699&menuId=PS00087&sKidofcomdtySeCode=FC",
+          "https://www.foodsafety.gov/people-at-risk",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "2인분 · 오븐 200°C",
+        "감자를 미리 익혀 굽기"
+      ]
     }
   ]
 }

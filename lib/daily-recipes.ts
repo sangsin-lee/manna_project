@@ -5,6 +5,109 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "savoie-inspired-tartiflette",
+    "title": "사부아풍 감자 치즈 타르티플레트",
+    "country": "france",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "포슬한 감자와 볶은 양파, 베이컨에 브리를 얹어 노릇하게 굽습니다. 산뜻한 잎채소 샐러드를 곁들여 두 사람이 나눕니다.",
+    "culturalNote": "르블로숑 생산자 협회는 사부아의 타르티플레트를 1980년대에 등장한 요리로 소개합니다. 이 레시피는 르블로숑 대신 브리를 쓰는 가정용 응용입니다.",
+    "localTable": {
+      "region": "프랑스 · 사부아",
+      "ingredient": "사부아 르블로숑과 감자 · 가정에서는 브리와 국내 감자",
+      "season": "사부아의 겨울 식탁 · 제주·남부 해안 가을 감자 11월 수확",
+      "note": "겨울은 사부아에서 이 요리를 즐기는 계절입니다. 국내 농촌진흥청 달력에서 제주·남부 해안 가을 감자는 11월 상순~하순에 수확하며, 매장에는 다른 작형과 저장 감자도 유통됩니다."
+    },
+    "cookingTime": 50,
+    "servings": 2,
+    "difficulty": "쉬움",
+    "visualLabel": "SAVOIE / TARTIFLETTE",
+    "visualCaption": "감자의 금빛과 녹은 치즈의 크림색, 사부아 산등성이를 떠올리는 겹선",
+    "keywords": [
+      "프랑스",
+      "사부아",
+      "타르티플레트",
+      "감자",
+      "브리",
+      "그라탱"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "오븐구이 · 장보기와 사용량",
+        "items": [
+          "감자 3~4개 → 껍질 벗긴 것 500g",
+          "양파 1개 → 120g",
+          "베이컨 1팩 → 100g",
+          "브리 1팩 → 125g",
+          "무염 채소 육수 또는 물 50mL, 후추 약간"
+        ]
+      },
+      {
+        "title": "곁들일 샐러드",
+        "items": [
+          "샐러드 채소 1봉 → 80g",
+          "올리브유 10mL, 레몬즙 5mL"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "감자를 먼저 익히기",
+        "description": "오븐을 200°C로 예열합니다. 감자를 1.5cm 두께로 썰어 끓는 물에서 8~10분 삶습니다. 가운데에 포크가 거의 들어가면 물을 빼고 2분간 김을 날립니다."
+      },
+      {
+        "title": "양파와 베이컨 볶기",
+        "description": "베이컨과 양파를 썰어 중불에서 6~8분 볶습니다. 베이컨의 포장 가열 지침에 따라 충분히 익히고 육수 50mL를 넣어 팬 바닥을 긁으며 2분 끓입니다."
+      },
+      {
+        "title": "브리를 얹어 굽기",
+        "description": "내열 용기에 감자와 양파·베이컨을 고루 담고 후추를 뿌립니다. 브리를 얇게 썰어 위에 올린 뒤 200°C에서 18~22분 굽습니다. 치즈가 녹고 감자 중심까지 포크가 부드럽게 들어가면 꺼냅니다."
+      },
+      {
+        "title": "한 김 식혀 샐러드와 내기",
+        "description": "5분 두었다가 두 접시에 나눕니다. 씻어 물기를 뺀 채소를 올리브유와 레몬즙에 가볍게 버무려 곁들입니다."
+      }
+    ],
+    "substitutions": [
+      "브리 대신 같은 양의 카망베르를 써도 좋습니다.",
+      "훈연 베이컨 대신 가열 조리용 햄을 쓸 수 있으며 포장 안내에 따라 익힙니다."
+    ],
+    "tips": [
+      "베이컨과 치즈의 간을 고려해 감자에 소금은 따로 넣지 않습니다.",
+      "남은 음식은 얕은 용기에 나눠 2시간 안에 냉장합니다. 주변 온도가 32°C를 넘으면 1시간 이내에 넣고, 다시 먹을 때는 중심까지 74°C로 데웁니다."
+    ],
+    "publishedAt": "2026-11-13",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "르블로숑 생산자 협회 · 타르티플레트의 역사",
+        "url": "https://www.reblochon.fr/le-deguster/la-tartiflette/"
+      },
+      {
+        "label": "르블로숑 생산자 협회 · 사부아식 배합",
+        "url": "https://www.reblochon.fr/nos-recettes/tartiflette-reblochon-de-savoie/"
+      },
+      {
+        "label": "농촌진흥청 · 감자 작형별 수확 달력",
+        "url": "https://www.nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?cntntsNo=30699&menuId=PS00087&sKidofcomdtySeCode=FC"
+      },
+      {
+        "label": "미국 식품안전정보 · 남은 음식 보관과 재가열",
+        "url": "https://www.foodsafety.gov/people-at-risk"
+      },
+      {
+        "label": "미국 외식업협회 · 2026 음식 트렌드 전망",
+        "url": "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+      }
+    ],
+    "palette": {
+      "from": "#f7ecd3",
+      "mid": "#e6bb75",
+      "to": "#b78970",
+      "ink": "#4a3027"
+    }
+  },
+  {
     "slug": "holstein-inspired-pear-bean-stew",
     "title": "홀슈타인풍 배·그린빈 베이컨 스튜",
     "country": "germany",

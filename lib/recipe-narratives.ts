@@ -54,6 +54,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "savoie-inspired-tartiflette": narrative(
+    ["사부아의 감자 오븐구이","감자와 양파, 훈연 돼지고기 위에 르블로숑을 올려 굽는 사부아 요리입니다. 생산자 협회는 오늘날의 타르티플레트를 1980년대에 등장한 요리로 소개합니다."],
+    ["겨울에 나눠 먹는 한 그릇","사부아에서는 따뜻한 타르티플레트를 여럿이 나누며, 스키를 즐긴 뒤 먹는 음식으로도 소개합니다. 이번에는 브리와 국내 감자를 사용합니다."],
+    ["녹은 치즈 아래 포슬한 감자","브리가 감자 사이로 흐르고 가장자리에 구운 향이 납니다. 부드러운 감자와 달큰한 양파 사이로 베이컨의 짭짤한 맛이 들어옵니다."],
+    [{"label":"르블로숑 생산자 협회 · 타르티플레트의 역사","url":"https://www.reblochon.fr/le-deguster/la-tartiflette/"},{"label":"르블로숑 생산자 협회 · 사부아식 배합","url":"https://www.reblochon.fr/nos-recettes/tartiflette-reblochon-de-savoie/"}],
+  ),
   "same-day-kimjang-kimchi": narrative(
     ["겨울을 준비하는 김장", "늦가을에 배추에 양념을 넣고 겨울 동안 먹을 김치를 담급니다. 집마다 양념과 젓갈의 배합이 다릅니다."],
     ["함께 담그고 나누는 날", "김장에서는 가족과 이웃이 손질과 양념 바르기를 나눠 맡습니다. 시판 절임배추를 쓰면 물을 빼는 동안 김치소를 준비할 수 있습니다."],

@@ -1547,6 +1547,44 @@
         "2인분 · 오븐 200°C",
         "감자를 미리 익혀 굽기"
       ]
+    },
+    {
+      "date": "2026-11-14",
+      "recipeSlug": "mekong-inspired-canh-chua",
+      "title": "메콩풍 파인애플 대구 깐쭈아",
+      "canonicalDish": "Southern Vietnamese canh chua ca",
+      "aliases": [
+        "Canh chua cá",
+        "깐쭈아까",
+        "베트남 남부 새콤한 생선국"
+      ],
+      "keyIngredients": [
+        "파인애플",
+        "대구",
+        "토마토",
+        "가을무",
+        "라임"
+      ],
+      "method": "무와 과일을 끓인 새콤달콤한 국물에 대구를 포칭하고 라임즙으로 간해 밥과 먹는다.",
+      "selectionReason": "국내 가을무의 시원한 맛에 파인애플과 라임의 산미를 더해, 대구와 밥이 어울리는 저녁으로 골랐습니다.",
+      "videoIdea": "노란 파인애플과 붉은 토마토가 냄비에 들어가는 장면을 위에서 찍고, 마지막에 대구 살을 숟가락으로 가릅니다.",
+      "duplicateReview": "갈치조림은 고추장 양념에 졸이고, 하노이 차까는 강황에 재운 생선을 팬에 굽는다. 홍콩 무떡은 쌀가루와 무를 쪄서 굽는다. 이번에는 파인애플과 토마토를 우린 산미 있는 국물에 대구를 익히는 남부 베트남식 생선국이다.",
+      "research": {
+        "checkedAt": "2026-11-14",
+        "seasonalNote": "베트남 산업무역부는 메콩의 떤프억 파인애플 산지를 소개한다. 베트남은 출하 시기를 분산해 연중 공급하며 한국 판매 시기와 별개다. 국내 가을무 수확은 11월이다. 미국 외식업협회의 지역 식재료와 세계 가정식 전망을 참고했다.",
+        "sources": [
+          "https://vov.gov.vn/vietnamese-sweet-and-sour-soup-listed-among-top-84-sea-seafood-dishes-dtnew-861356",
+          "https://thuongmaibiengioimiennui.gov.vn/san-xuat-tieu-thu/2022/12/huyen-tan-phuoc-tien-giang-mo-hinh-san-xuat-chuyen-canh-khom-mang-lai-qua-kinh-te-cao",
+          "https://asemconnectvietnam.gov.vn/default.aspx?ID1=2&ID8=129559&ZID1=14",
+          "https://www.nongsaro.go.kr/mfood/kfi/foodMonth/view?cntntsNo=207815&code=&dtlCode=2&menuId=PS03924&month=11&tabCode=1",
+          "https://www.foodsafety.gov/blog/safe-selection-and-handling-fish-and-shellfish",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "2인분 · 밥 곁들임",
+        "대구 중심 63°C"
+      ]
     }
   ]
 }

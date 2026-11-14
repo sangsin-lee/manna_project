@@ -5,6 +5,108 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "mekong-inspired-canh-chua",
+    "title": "메콩풍 파인애플 대구 깐쭈아",
+    "country": "vietnam",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "파인애플과 토마토가 새콤달콤한 국물에 가을무와 대구를 익힙니다. 밥을 곁들여 두 사람이 먹는 따뜻한 저녁입니다.",
+    "culturalNote": "깐쭈아까는 베트남 남부의 새콤한 생선국입니다. 타마린드를 쓰는 배합에서 아이디어를 얻어, 국내 가정에서는 라임즙으로 산미를 내고 대구와 무를 사용합니다.",
+    "localTable": {
+      "region": "베트남 · 메콩 삼각주 떤프억",
+      "ingredient": "떤프억 지역 파인애플에서 착안 · 국내 가을무",
+      "season": "베트남 파인애플 연중 공급 · 국내 가을무 11월 수확",
+      "note": "베트남은 파인애플 수확 시기를 분산합니다. 한국에서는 수입산 손질 파인애플을 쓰고, 11월에 수확하는 국내 가을무로 국물 맛을 보탭니다."
+    },
+    "cookingTime": 35,
+    "servings": 2,
+    "difficulty": "쉬움",
+    "visualLabel": "MEKONG / CANH CHUA",
+    "visualCaption": "노란 파인애플과 붉은 토마토, 메콩 물길에서 따온 겹물결",
+    "keywords": [
+      "베트남",
+      "메콩",
+      "깐쭈아",
+      "대구",
+      "파인애플",
+      "생선국"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "장보기 단위와 사용량",
+        "items": [
+          "손질 대구 1팩 → 300g",
+          "손질 파인애플 1팩 → 150g",
+          "토마토 2개 → 220g",
+          "무 1개 → 150g",
+          "라임 1개 → 즙 15~25mL",
+          "액젓 1병 → 15mL, 설탕 4g, 물 650mL",
+          "쪽파 1단 → 15g, 밥 2공기 → 360g"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "재료 손질",
+        "description": "냉동 대구는 냉장 해동하고 큰 가시를 확인한 뒤 4등분합니다. 무는 5mm 두께로, 파인애플과 토마토는 한입 크기로 썹니다."
+      },
+      {
+        "title": "과일과 무로 국물 내기",
+        "description": "물 650mL에 무를 넣어 10분 끓입니다. 파인애플, 토마토, 액젓과 설탕을 넣고 중불로 5분 더 끓입니다."
+      },
+      {
+        "title": "대구 넣고 익히기",
+        "description": "대구를 넣고 국물이 약하게 끓도록 불을 줄입니다. 5~8분을 기준으로 익히되, 두꺼운 조각의 중심이 63°C에 도달했는지 확인합니다."
+      },
+      {
+        "title": "라임즙 넣고 밥과 내기",
+        "description": "불을 끄고 라임즙 15mL를 섞은 뒤 맛을 보고 더합니다. 쪽파를 올리고 밥과 함께 냅니다."
+      }
+    ],
+    "substitutions": [
+      "라임 대신 레몬즙 15mL부터 넣습니다.",
+      "대구 대신 명태 순살을 같은 양 사용하고 중심을 63°C까지 익힙니다."
+    ],
+    "tips": [
+      "생선을 넣은 뒤 국물을 세게 젓지 않으면 살이 덜 부서집니다.",
+      "생대구에 닿은 도마와 칼은 세척한 뒤 쪽파나 다른 바로 먹는 재료를 손질합니다."
+    ],
+    "publishedAt": "2026-11-14",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "베트남 국영방송 · 깐쭈아의 국물과 재료",
+        "url": "https://vov.gov.vn/vietnamese-sweet-and-sour-soup-listed-among-top-84-sea-seafood-dishes-dtnew-861356"
+      },
+      {
+        "label": "베트남 산업무역부 · 떤프억 파인애플 재배",
+        "url": "https://thuongmaibiengioimiennui.gov.vn/san-xuat-tieu-thu/2022/12/huyen-tan-phuoc-tien-giang-mo-hinh-san-xuat-chuyen-canh-khom-mang-lai-qua-kinh-te-cao"
+      },
+      {
+        "label": "베트남 정부 · 파인애플 연중 출하 계획",
+        "url": "https://asemconnectvietnam.gov.vn/default.aspx?ID1=2&ID8=129559&ZID1=14"
+      },
+      {
+        "label": "농촌진흥청 · 11월 가을무",
+        "url": "https://www.nongsaro.go.kr/mfood/kfi/foodMonth/view?cntntsNo=207815&code=&dtlCode=2&menuId=PS03924&month=11&tabCode=1"
+      },
+      {
+        "label": "미국 식품안전정보 · 생선 가열 기준",
+        "url": "https://www.foodsafety.gov/blog/safe-selection-and-handling-fish-and-shellfish"
+      },
+      {
+        "label": "미국 외식업협회 · 2026 음식 전망",
+        "url": "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+      }
+    ],
+    "palette": {
+      "from": "#faeabe",
+      "mid": "#e4ab69",
+      "to": "#c97b63",
+      "ink": "#482b27"
+    }
+  },
+  {
     "slug": "savoie-inspired-tartiflette",
     "title": "사부아풍 감자 치즈 타르티플레트",
     "country": "france",

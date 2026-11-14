@@ -54,6 +54,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "mekong-inspired-canh-chua": narrative(
+    ["메콩의 새콤한 생선국","깐쭈아까는 베트남 남부 식탁에서 먹는 생선국입니다. 타마린드의 신맛에 파인애플과 토마토를 더하는 식으로 재료를 조합합니다."],
+    ["메콩 삼각주의 파인애플 산지","베트남 산업무역부는 떤프억의 파인애플 재배가 지역 농업에 자리 잡은 사례를 소개합니다. 가정용 배합에는 국내 가을무도 넣습니다."],
+    ["달큰하고 새콤한 한 숟갈","파인애플의 단맛과 라임의 산미가 국물에 겹칩니다. 무는 부드럽게 익고, 대구는 숟가락을 대면 결을 따라 갈라집니다."],
+    [{"label":"베트남 국영방송 · 깐쭈아의 국물과 재료","url":"https://vov.gov.vn/vietnamese-sweet-and-sour-soup-listed-among-top-84-sea-seafood-dishes-dtnew-861356"},{"label":"베트남 산업무역부 · 떤프억 파인애플 재배","url":"https://thuongmaibiengioimiennui.gov.vn/san-xuat-tieu-thu/2022/12/huyen-tan-phuoc-tien-giang-mo-hinh-san-xuat-chuyen-canh-khom-mang-lai-qua-kinh-te-cao"}],
+  ),
   "savoie-inspired-tartiflette": narrative(
     ["사부아의 감자 오븐구이","감자와 양파, 훈연 돼지고기 위에 르블로숑을 올려 굽는 사부아 요리입니다. 생산자 협회는 오늘날의 타르티플레트를 1980년대에 등장한 요리로 소개합니다."],
     ["겨울에 나눠 먹는 한 그릇","사부아에서는 따뜻한 타르티플레트를 여럿이 나누며, 스키를 즐긴 뒤 먹는 음식으로도 소개합니다. 이번에는 브리와 국내 감자를 사용합니다."],

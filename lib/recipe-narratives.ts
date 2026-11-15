@@ -54,6 +54,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "okinawa-inspired-carrot-shirishiri": narrative(
+    ["강판에서 시작하는 당근 요리","오키나와의 시리시리는 당근을 전용 강판에 갈아 볶고 달걀을 더하는 요리입니다. 이름은 가는 동작이나 그때 나는 소리와 연결됩니다."],
+    ["오키나와에서 평소에 먹는 반찬","일본 농림수산성은 시리시리를 오키나와 전역의 일상 가정식으로 소개합니다. 우루마시 쓰켄섬은 당근 산지이며, 이 덮밥은 국내 가을 당근으로 만듭니다."],
+    ["당근의 단맛과 달걀의 부드러움","가늘게 썬 당근이 익으면서 부드러워지고 단맛이 살아납니다. 달걀이 당근채에 엉기고 참치의 감칠맛이 밥에 이어집니다."],
+    [{"label":"일본 농림수산성 · 당근 시리시리","url":"https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_13_okinawa.html"},{"label":"오키나와 관광정보 · 쓰켄섬 당근","url":"https://www.okinawastory.jp/about/around_area/tsuken"}],
+  ),
   "mekong-inspired-canh-chua": narrative(
     ["메콩의 새콤한 생선국","깐쭈아까는 베트남 남부 식탁에서 먹는 생선국입니다. 타마린드의 신맛에 파인애플과 토마토를 더하는 식으로 재료를 조합합니다."],
     ["메콩 삼각주의 파인애플 산지","베트남 산업무역부는 떤프억의 파인애플 재배가 지역 농업에 자리 잡은 사례를 소개합니다. 가정용 배합에는 국내 가을무도 넣습니다."],

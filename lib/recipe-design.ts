@@ -20,6 +20,7 @@ const places: Record<CountrySlug, [string, RecipePattern]> = {
 
 // Visual interpretations of ingredients and places, not claims of traditional patterns.
 const details: Record<string, { art: RecipeArt; caption: string; place?: string; pattern?: RecipePattern; colors?: [string, string, string, string] }> = {
+  "okinawa-inspired-carrot-shirishiri": { art: "rice", caption: "당근과 달걀의 따뜻한 색, 오키나와 바다에서 따온 물결", pattern: "waves" },
   "nagano-inspired-pumpkin-oyaki": { art: "pumpkin-oyaki", caption: "노릇한 밀가루 피와 단호박 속의 주황빛, 신슈 산등성이에서 따온 겹선", place: "일본 · 나가노현", pattern: "contours" },
   "massachusetts-inspired-clam-chowder": { art: "clam-chowder", caption: "차우더의 크림빛과 감자의 옅은 금빛, 매사추세츠 해안을 떠올리는 푸른 물결", place: "미국 · 매사추세츠 해안", pattern: "waves" },
   "hong-kong-inspired-radish-cake": { art: "radish-cake", caption: "무떡의 크림빛과 구운 금빛, 붉은 도자기와 딤섬 식탁을 떠올리는 격자", place: "홍콩 · 중서구", pattern: "tiles" },

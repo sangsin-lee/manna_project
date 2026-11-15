@@ -5,6 +5,103 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "okinawa-inspired-carrot-shirishiri",
+    "title": "오키나와풍 당근 시리시리 참치 덮밥",
+    "country": "japan",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "당근채를 볶아 단맛을 끌어내고 참치와 달걀을 섞어 따뜻한 밥 위에 얹습니다. 당근은 부드럽고 달걀은 가볍게 엉깁니다.",
+    "culturalNote": "일본 농림수산성은 당근을 전용 강판에 갈아 볶고 달걀로 엉기게 하는 시리시리를 오키나와 전역의 일상 가정식으로 기록합니다. 참치와 밥을 더한 덮밥은 가정용 응용입니다.",
+    "localTable": {
+      "region": "일본 · 오키나와현과 우루마시 쓰켄섬",
+      "ingredient": "쓰켄섬 특산 당근에서 착안 · 국내 가을 당근 사용",
+      "season": "쓰켄섬 봄 수확 체험 · 국내 가을 당근 11월부터 수확",
+      "note": "오키나와 관광정보가 소개하는 쓰켄섬 당근 수확 체험은 3~5월입니다. 한국에서는 11월부터 수확하는 국내 가을 작형 당근을 쓰며, 다른 작형의 당근으로도 만들 수 있습니다."
+    },
+    "cookingTime": 25,
+    "servings": 2,
+    "difficulty": "쉬움",
+    "visualLabel": "OKINAWA / NINJIN SHIRISHIRI",
+    "visualCaption": "당근채의 주황빛과 달걀의 노란빛, 섬의 물결을 떠올리는 선",
+    "keywords": [
+      "오키나와",
+      "시리시리",
+      "당근",
+      "참치",
+      "달걀",
+      "덮밥"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "장보기와 사용량",
+        "items": [
+          "당근 2개 → 손질한 것 300g",
+          "달걀 한 팩 → 3개",
+          "물담금 참치 1캔 → 물을 뺀 살 100g",
+          "즉석밥 2개 또는 지은 밥 2공기 → 총 400g",
+          "식용유 10mL, 물 30mL, 양조간장 10mL, 후추 약간",
+          "쪽파 1단 → 10g"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "당근 채 썰기",
+        "description": "당근을 씻어 곱게 채 썹니다. 달걀은 풀고 참치는 물기를 뺍니다. 쪽파는 송송 썰고 밥을 따뜻하게 준비합니다."
+      },
+      {
+        "title": "당근 볶아 부드럽게 익히기",
+        "description": "팬에 식용유를 두르고 중불에서 당근을 3분 볶습니다. 물 30mL를 넣어 뚜껑을 덮고 중약불에서 3~4분 익힌 뒤 뚜껑을 열어 남은 물기를 날립니다."
+      },
+      {
+        "title": "참치와 달걀 섞기",
+        "description": "참치와 간장을 넣고 섞습니다. 푼 달걀을 부어 주걱으로 천천히 접으며 익힙니다. 달걀이 묻은 가장 두꺼운 부분이 71°C 이상이고 흐르는 달걀이 없을 때까지 익힙니다."
+      },
+      {
+        "title": "밥 위에 담기",
+        "description": "따뜻한 밥을 두 그릇에 나누고 당근볶음을 올립니다. 쪽파와 후추를 뿌려 냅니다."
+      }
+    ],
+    "substitutions": [
+      "가느다란 채칼이 없으면 칼로 2~3mm 폭으로 썹니다.",
+      "기름에 담긴 참치를 쓰면 기름을 충분히 빼고 팬에 넣는 식용유는 절반으로 줄입니다."
+    ],
+    "tips": [
+      "팬에 당근을 펼쳐 볶으면 고르게 익습니다.",
+      "참치와 간장의 짠맛을 고려해 간장을 나눠 넣습니다."
+    ],
+    "publishedAt": "2026-11-16",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "일본 농림수산성 · 당근 시리시리",
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_13_okinawa.html"
+      },
+      {
+        "label": "오키나와 관광정보 · 쓰켄섬 당근",
+        "url": "https://www.okinawastory.jp/about/around_area/tsuken"
+      },
+      {
+        "label": "농촌진흥청 · 당근 재배 작형",
+        "url": "https://www.nongsaro.go.kr/portal/ps/psb/psby/vodPlay.ps?mvpNo=334"
+      },
+      {
+        "label": "미국 식품안전정보 · 달걀 조리 온도",
+        "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+      },
+      {
+        "label": "미국 외식업협회 · 2026 음식 전망",
+        "url": "https://restaurant.org/research-and-media/research/research-reports/whats-hot-food-beverage-trends/"
+      }
+    ],
+    "palette": {
+      "from": "#faecd0",
+      "mid": "#eda35f",
+      "to": "#c9856c",
+      "ink": "#492b25"
+    }
+  },
+  {
     "slug": "mekong-inspired-canh-chua",
     "title": "메콩풍 파인애플 대구 깐쭈아",
     "country": "vietnam",

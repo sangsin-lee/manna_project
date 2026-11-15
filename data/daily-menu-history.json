@@ -1585,6 +1585,42 @@
         "2인분 · 밥 곁들임",
         "대구 중심 63°C"
       ]
+    },
+    {
+      "date": "2026-11-16",
+      "recipeSlug": "okinawa-inspired-carrot-shirishiri",
+      "title": "오키나와풍 당근 시리시리 참치 덮밥",
+      "canonicalDish": "Okinawan ninjin shirishiri with tuna and rice",
+      "aliases": [
+        "人参シリシリー",
+        "Ninjin shirishiri",
+        "당근 시리시리"
+      ],
+      "keyIngredients": [
+        "당근",
+        "달걀",
+        "참치 통조림",
+        "밥"
+      ],
+      "method": "당근을 가늘게 채 썰어 볶고 뚜껑을 덮어 익힌 뒤 참치와 달걀을 넣어 굳혀 밥에 얹는다.",
+      "selectionReason": "11월부터 수확하는 국내 가을 당근을 볶아 단맛을 살리고, 참치와 달걀을 더해 든든한 덮밥으로 차립니다.",
+      "videoIdea": "가늘게 썬 당근이 팬에 들어가는 장면과 주황빛 당근 사이로 달걀이 익는 모습을 가까이 찍습니다.",
+      "duplicateReview": "일본 소고기 숙주볶음은 숙주와 소고기가 주재료이고, 닭고기 버섯 솥밥은 쌀과 재료를 함께 익힌다. 시리시리는 당근채를 볶아 달걀로 엉기게 한 뒤 밥에 얹는다. 최근 베트남·프랑스·독일에 이어 오키나와를 골랐다.",
+      "research": {
+        "checkedAt": "2026-11-16",
+        "seasonalNote": "오키나와 관광정보는 쓰켄섬 당근의 봄 수확 체험을 소개한다. 한국 가을 당근은 11월부터 수확하며 현지 달력과 다르다. 외식업협회의 세계 가정식과 친숙한 재료 활용 전망을 편집에 참고했다.",
+        "sources": [
+          "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_13_okinawa.html",
+          "https://www.okinawastory.jp/about/around_area/tsuken",
+          "https://www.nongsaro.go.kr/portal/ps/psb/psby/vodPlay.ps?mvpNo=334",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://restaurant.org/research-and-media/research/research-reports/whats-hot-food-beverage-trends/"
+        ]
+      },
+      "preparationLabels": [
+        "2인분 · 팬 하나",
+        "달걀 71°C까지"
+      ]
     }
   ]
 }

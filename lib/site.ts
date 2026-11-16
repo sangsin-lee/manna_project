@@ -2,7 +2,7 @@ const configuredUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
   "https://manna-project-ashen.vercel.app";
 
-const defaultInstagramUrl = "https://www.instagram.com/manna._.project/";
+const defaultInstagramUrl = "https://www.instagram.com/manna._.table/";
 
 export const siteConfig = {
   name: "만나의 식탁",
@@ -12,8 +12,12 @@ export const siteConfig = {
     "직접 다녀온 지역의 한 끼에서 시작해 세계 각지의 역사와 생활방식, 식문화를 기록하는 음식·문화 아카이브입니다.",
   url: configuredUrl.replace(/\/+$/, ""),
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "",
-  instagramHandle: "@manna._.project",
+  instagramHandle: "@manna._.table",
+  personalInstagramHandle: "@manna._.project",
+  personalInstagramUrl: "https://www.instagram.com/manna._.project/",
   instagramUrl:
     process.env.NEXT_PUBLIC_INSTAGRAM_URL?.trim() || defaultInstagramUrl,
-  youtubeUrl: process.env.NEXT_PUBLIC_YOUTUBE_URL?.trim() || "",
+  youtubeUrl:
+    process.env.NEXT_PUBLIC_YOUTUBE_URL?.trim() ||
+    "https://www.youtube.com/@mannatablekitchen",
 } as const;

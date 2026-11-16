@@ -178,7 +178,7 @@ export default function HomePage() {
                 로마의 식문화 이야기 ↗
               </Link>
               <a
-                href={siteConfig.instagramUrl}
+                href={siteConfig.personalInstagramUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-full border border-neutral-600 px-6 py-3 text-sm font-black !text-white no-underline transition hover:border-white"

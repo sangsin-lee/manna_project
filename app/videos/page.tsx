@@ -68,6 +68,28 @@ export default function VideosPage() {
         </div>
       </section>
 
+      <section aria-labelledby="published-videos" className="mx-auto max-w-6xl px-6 pt-16">
+        <p className="text-xs font-black tracking-[0.28em] text-[#b9480c]">WATCH MANNA TABLE</p>
+        <h2 id="published-videos" className="mt-3 text-3xl font-black tracking-tight">지금 만나는 짧은 식탁 이야기</h2>
+        <p className="mt-4 break-keep leading-7 text-neutral-600">떡, 우베, 보울을 소개하는 쇼츠와 릴스를 만나보세요. 아래 영상은 AI로 제작한 콘셉트 영상이며 직접 촬영한 조리 기록과 구분합니다.</p>
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {[
+            { title: "떡 이야기", youtube: "https://www.youtube.com/shorts/-kLj9aEarkM", instagram: "https://www.instagram.com/reel/DfyIXylDPmk/" },
+            { title: "우베 이야기", youtube: "https://www.youtube.com/shorts/QITFD3BnFpI", instagram: "https://www.instagram.com/reel/DfyWCp7k5tK/" },
+            { title: "보울 이야기", youtube: "https://www.youtube.com/shorts/Ci6i1ryXR5Q", instagram: "https://www.instagram.com/reel/Dfy_w9jDyHQ/" },
+          ].map((video) => (
+            <article key={video.youtube} className="rounded-3xl border border-[#dfd5c9] bg-white p-7">
+              <p className="text-xs font-bold text-neutral-500">SHORTS · REELS · AI 제작</p>
+              <h3 className="mt-3 text-xl font-black">{video.title}</h3>
+              <div className="mt-6 flex flex-wrap gap-4 text-sm font-bold">
+                <a href={video.youtube} target="_blank" rel="noreferrer" className="underline underline-offset-4">YouTube에서 보기 ↗</a>
+                <a href={video.instagram} target="_blank" rel="noreferrer" className="underline underline-offset-4">Instagram에서 보기 ↗</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
         <p className="text-xs font-black tracking-[0.28em] text-[#b9480c]">
           CONTENT FORMATS
@@ -112,7 +134,7 @@ export default function VideosPage() {
               START WITH STORIES
             </p>
             <h2 className="mt-3 break-keep text-3xl font-black tracking-tight">
-              영상 공개 전에도 문화 이야기와 레시피를 먼저 만나보세요.
+              영상에서 만난 음식의 문화 이야기와 레시피도 함께 읽어보세요.
             </h2>
           </div>
           <div className="flex shrink-0 flex-wrap gap-3">

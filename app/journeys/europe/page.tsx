@@ -218,7 +218,7 @@ export default function EuropeJourneyPage() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href={siteConfig.instagramUrl}
+                  href={siteConfig.personalInstagramUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex rounded-full bg-neutral-950 px-6 py-3 text-sm font-black !text-white no-underline transition hover:bg-[#943706]"
@@ -478,12 +478,12 @@ export default function EuropeJourneyPage() {
             </p>
           </div>
           <a
-            href={siteConfig.instagramUrl}
+            href={siteConfig.personalInstagramUrl}
             target="_blank"
             rel="noreferrer"
             className="mt-8 inline-flex rounded-full bg-white px-6 py-3.5 text-sm font-black !text-neutral-950 no-underline transition hover:bg-neutral-200 lg:mt-0 lg:shrink-0"
           >
-            {siteConfig.instagramHandle} 보기 ↗
+            {siteConfig.personalInstagramHandle} 보기 ↗
           </a>
         </div>
       </section>

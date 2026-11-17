@@ -54,6 +54,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "naples-inspired-spinach-pasta-frittata": narrative(
+    ["나폴리에서 면을 부쳐 먹는 법","나폴리에서는 삶은 파스타를 굳혀 부치거나 튀겨 먹습니다. 관광청은 작은 길거리 버전도 소개하며, 이 집밥 버전은 면을 달걀에 섞어 둥글게 부칩니다."],
+    ["그라냐노의 건면과 나폴리의 한 끼","캄파니아의 그라냐노 건파스타는 2013년 유럽 지리적 표시를 받았습니다. 나폴리시 급식 자료에도 달걀로 굳힌 마카로니 프리타타가 실려 있습니다."],
+    ["바삭한 면과 부드러운 시금치","팬에 닿은 면은 노릇해지고 가운데는 달걀이 면과 시금치를 부드럽게 묶습니다. 치즈의 짭조름한 맛이 시금치의 단맛과 어울립니다."],
+    [{"label":"이탈리아 관광청 · 나폴리의 파스타 프리타타","url":"https://www.italia.it/en/campania/naples/things-to-do/best-streetfood-naples"},{"label":"나폴리시 · 급식용 마카로니 프리타타","url":"https://static-www.comune.napoli.it/wp-content/uploads/2025/07/MENU_Ricettario_Tabelle_Merceologiche.pdf"},{"label":"그라냐노 파스타 생산자 협회 · 지역 파스타의 역사","url":"https://www.consorziogragnanocittadellapasta.it/la-storia/"}],
+  ),
   "okinawa-inspired-carrot-shirishiri": narrative(
     ["강판에서 시작하는 당근 요리","오키나와의 시리시리는 당근을 전용 강판에 갈아 볶고 달걀을 더하는 요리입니다. 이름은 가는 동작이나 그때 나는 소리와 연결됩니다."],
     ["오키나와에서 평소에 먹는 반찬","일본 농림수산성은 시리시리를 오키나와 전역의 일상 가정식으로 소개합니다. 우루마시 쓰켄섬은 당근 산지이며, 이 덮밥은 국내 가을 당근으로 만듭니다."],

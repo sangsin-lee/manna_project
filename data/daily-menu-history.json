@@ -1621,6 +1621,43 @@
         "2인분 · 팬 하나",
         "달걀 71°C까지"
       ]
+    },
+    {
+      "date": "2026-11-17",
+      "recipeSlug": "naples-inspired-spinach-pasta-frittata",
+      "title": "나폴리풍 시금치 파스타 프리타타",
+      "canonicalDish": "Neapolitan frittata di pasta with spinach",
+      "aliases": [
+        "Frittata di pasta",
+        "Frittata di maccheroni",
+        "파스타 달걀부침"
+      ],
+      "keyIngredients": [
+        "스파게티",
+        "시금치",
+        "달걀",
+        "파르미자노"
+      ],
+      "method": "삶은 면과 볶은 시금치를 달걀과 섞어 원형으로 양면을 부친다.",
+      "selectionReason": "가을 시금치와 스파게티를 달걀로 묶어 부치면 바삭한 가장자리와 부드러운 속을 한 조각에서 즐길 수 있어요.",
+      "videoIdea": "팬 위에 접시를 덮어 뒤집는 장면과 구운 면이 엉긴 단면을 보여 주세요.",
+      "duplicateReview": "카르보나라와 카초 에 페페는 면을 소스에 버무리고, 알프스 마카로니는 감자와 면에 치즈를 곁들인다. 남해 시금치 두부 된장국은 국물 요리다. 이번 메뉴는 면과 시금치를 달걀로 묶어 양면을 부친다. 최근 일본·베트남·프랑스·독일 다음으로 이탈리아를 골랐다.",
+      "research": {
+        "checkedAt": "2026-11-17",
+        "seasonalNote": "그라냐노 건면은 저장해서 쓰는 지역 특산품이다. 시금치는 국내 가을 수확과 지역별 겨울 재배가 가능하다. 미국 외식업협회의 친숙한 세계 가정식 전망을 참고했다.",
+        "sources": [
+          "https://www.italia.it/en/campania/naples/things-to-do/best-streetfood-naples",
+          "https://static-www.comune.napoli.it/wp-content/uploads/2025/07/MENU_Ricettario_Tabelle_Merceologiche.pdf",
+          "https://www.consorziogragnanocittadellapasta.it/la-storia/",
+          "https://www.nongsaro.go.kr/portal/ps/psx/psxa/mlrdCurationDtl.ps?curationNo=46&menuId=PS03974",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://restaurant.org/research-and-media/research/research-reports/whats-hot-food-beverage-trends/"
+        ]
+      },
+      "preparationLabels": [
+        "20cm 팬 사용",
+        "달걀 중심 71°C"
+      ]
     }
   ]
 }

@@ -5,6 +5,110 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "naples-inspired-spinach-pasta-frittata",
+    "title": "나폴리풍 시금치 파스타 프리타타",
+    "country": "italy",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "삶은 스파게티와 가을 시금치를 달걀에 섞어 팬에서 둥글게 부칩니다. 가장자리는 바삭하고 속은 부드럽습니다.",
+    "culturalNote": "이탈리아 관광청은 파스타를 튀기거나 부쳐 먹는 나폴리의 길거리 음식을 소개하고, 나폴리시 급식 자료에도 파스타 프리타타가 나옵니다. 이 레시피는 시금치를 넣어 큰 팬에 부치는 가정용 응용입니다.",
+    "localTable": {
+      "region": "이탈리아 · 캄파니아 나폴리와 그라냐노",
+      "ingredient": "그라냐노 건파스타 문화 · 국내 가을 시금치",
+      "season": "건면은 연중 사용 · 국내 시금치는 가을 및 일부 지역 겨울 수확",
+      "note": "그라냐노의 건파스타는 저장식품입니다. 한국에서는 일반 건스파게티로 만들 수 있습니다. 농촌진흥청은 국내 가을 시금치 수확과 지역·보온 조건에 따른 겨울 재배를 안내합니다."
+    },
+    "cookingTime": 35,
+    "servings": 2,
+    "difficulty": "보통",
+    "visualLabel": "NAPOLI / FRITTATA DI PASTA",
+    "visualCaption": "구운 면의 금빛과 시금치의 짙은 초록, 나폴리만을 떠올리는 물결",
+    "keywords": [
+      "나폴리",
+      "그라냐노",
+      "프리타타",
+      "스파게티",
+      "시금치",
+      "달걀"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "장보기와 사용량",
+        "items": [
+          "건스파게티 1봉 → 160g",
+          "시금치 1단 → 손질한 것 120g",
+          "달걀 1팩 → 4개",
+          "파르미자노 1팩 → 30g",
+          "올리브유 20mL, 면 삶는 물 2L와 소금 10g, 후추 약간"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "면 삶고 식히기",
+        "description": "물 2L에 소금 10g을 넣고 스파게티를 포장 시간에 맞춰 삶습니다. 물을 뺀 뒤 넓은 접시에 펼쳐 한 김 식힙니다."
+      },
+      {
+        "title": "시금치 물기 날리기",
+        "description": "시금치를 씻어 물기를 빼고 3cm로 썹니다. 팬에 올리브유 5mL를 두르고 중불에서 2~3분 볶은 뒤 식힙니다."
+      },
+      {
+        "title": "달걀과 면 섞어 첫 면 굽기",
+        "description": "달걀을 풀어 치즈와 후추를 섞고, 식힌 면과 시금치를 넣습니다. 지름 20cm 팬에 올리브유 10mL를 두르고 반죽을 평평하게 펴 중약불에서 뚜껑을 덮어 6~8분 굽습니다."
+      },
+      {
+        "title": "뒤집어 속까지 익히기",
+        "description": "가장자리가 굳고 윗면에 흐르는 달걀이 없으면 불을 잠시 끕니다. 팬보다 넓은 접시로 덮어 장갑을 끼고 뒤집은 뒤, 남은 기름 5mL를 두르고 다시 팬에 밀어 넣습니다. 중약불에서 4~6분 익히고 달걀 중심이 71°C 이상인지 확인합니다."
+      },
+      {
+        "title": "조각으로 잘라 내기",
+        "description": "2분 두었다가 네 조각으로 잘라 두 접시에 나눕니다."
+      }
+    ],
+    "substitutions": [
+      "스파게티 대신 짧은 펜네를 같은 무게로 사용합니다.",
+      "파르미자노 대신 그라나 파다노를 같은 양 씁니다."
+    ],
+    "tips": [
+      "면과 시금치의 물기를 빼야 잘 뒤집힙니다.",
+      "큰 판을 뒤집기 어렵다면 반씩 두 장으로 부치고 같은 중심 온도를 확인합니다."
+    ],
+    "publishedAt": "2026-11-17",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "이탈리아 관광청 · 나폴리의 파스타 프리타타",
+        "url": "https://www.italia.it/en/campania/naples/things-to-do/best-streetfood-naples"
+      },
+      {
+        "label": "나폴리시 · 급식용 마카로니 프리타타",
+        "url": "https://static-www.comune.napoli.it/wp-content/uploads/2025/07/MENU_Ricettario_Tabelle_Merceologiche.pdf"
+      },
+      {
+        "label": "그라냐노 파스타 생산자 협회 · 지역 파스타의 역사",
+        "url": "https://www.consorziogragnanocittadellapasta.it/la-storia/"
+      },
+      {
+        "label": "농촌진흥청 · 가을 시금치와 겨울 재배",
+        "url": "https://www.nongsaro.go.kr/portal/ps/psx/psxa/mlrdCurationDtl.ps?curationNo=46&menuId=PS03974"
+      },
+      {
+        "label": "미국 식품안전정보 · 달걀 조리 온도",
+        "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+      },
+      {
+        "label": "미국 외식업협회 · 세계 가정식 전망",
+        "url": "https://restaurant.org/research-and-media/research/research-reports/whats-hot-food-beverage-trends/"
+      }
+    ],
+    "palette": {
+      "from": "#faedcc",
+      "mid": "#e4bb6c",
+      "to": "#9ab0a2",
+      "ink": "#38392b"
+    }
+  },
+  {
     "slug": "okinawa-inspired-carrot-shirishiri",
     "title": "오키나와풍 당근 시리시리 참치 덮밥",
     "country": "japan",

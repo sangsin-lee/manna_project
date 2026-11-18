@@ -5,6 +5,104 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "isan-inspired-pork-larb",
+    "title": "이산풍 볶은 쌀가루 돼지고기 라프",
+    "country": "thailand",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "익힌 돼지고기 다짐육을 라임과 액젓에 버무리고, 노릇하게 볶아 빻은 찹쌀을 더합니다. 양배추와 따뜻한 밥에 곁들여 먹습니다.",
+    "culturalNote": "라프는 라오스와 태국 북동부 이산에서 만나는 다진 고기 요리입니다. 이번에는 국내 양배추와 일반 밥을 곁들이는 이산풍 가정용 배합입니다.",
+    "localTable": {
+      "region": "태국 · 북동부 이산",
+      "ingredient": "이산 식탁의 찹쌀과 볶은 쌀가루 · 국내 가을 양배추",
+      "season": "건조 찹쌀은 연중 사용 · 국내 가을 양배추 10~11월 수확",
+      "note": "이산에서 찹쌀은 밥으로 곁들이고 볶아 빻아 양념에도 씁니다. 건조 찹쌀은 저장해 사용합니다. 한국에서는 가을 작형 양배추를 10~11월에 수확하며 다른 작형의 양배추도 유통됩니다."
+    },
+    "cookingTime": 30,
+    "servings": 2,
+    "difficulty": "쉬움",
+    "visualLabel": "ISAN / LARB MOO",
+    "visualCaption": "볶은 쌀의 금빛과 라임색, 이산의 찹쌀 바구니를 떠올리는 격자",
+    "keywords": [
+      "태국",
+      "이산",
+      "라프",
+      "라임",
+      "볶은 쌀가루"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "장보기 단위와 사용량",
+        "items": [
+          "돼지고기 다짐육 1팩 → 300g",
+          "찹쌀 1봉 → 20g",
+          "양배추 1통 → 잎 150g",
+          "적양파 1개 → 50g",
+          "라임 1~2개 → 즙 25mL",
+          "민트 1팩 → 잎 5g",
+          "액젓 1병 → 15mL, 고춧가루 1~2g, 물 45mL",
+          "즉석밥 2개 → 총 400g"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "쌀 볶아 빻기",
+        "description": "마른 팬에 찹쌀을 넣고 중약불에서 계속 저어 전체가 노릇해질 때까지 10~15분 볶습니다. 식힌 뒤 절구로 굵게 빻습니다."
+      },
+      {
+        "title": "쌈 채소 준비",
+        "description": "양배추 잎과 민트를 흐르는 물에 씻고 물기를 뺍니다. 적양파는 얇게 썰고 라임즙을 짭니다."
+      },
+      {
+        "title": "다짐육 익히기",
+        "description": "팬에 물 45mL와 돼지고기를 넣고 중불에서 주걱으로 고루 풀어 익힙니다. 고기가 가장 많이 모인 부분을 식품용 온도계로 확인해 71.1°C 이상까지 익힙니다."
+      },
+      {
+        "title": "불을 끄고 버무리기",
+        "description": "라임즙과 액젓, 고춧가루를 넣어 섞습니다. 적양파와 민트를 넣고 볶은 쌀가루를 뿌린 뒤 가볍게 버무립니다. 밥과 양배추를 곁들입니다."
+      }
+    ],
+    "substitutions": [
+      "라임 대신 레몬즙을 20mL부터 넣고 맛을 봅니다.",
+      "찹쌀이 없으면 멥쌀을 같은 양 볶아 사용합니다."
+    ],
+    "tips": [
+      "생고기에 닿은 도구를 씻은 뒤 익힌 고기와 쌈 채소에 사용합니다.",
+      "액젓은 10mL부터 넣고 남은 5mL로 간을 맞추면 짠맛을 조절하기 쉽습니다."
+    ],
+    "publishedAt": "2026-11-18",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "태국 국가연구위원회 자료 · 이산 라프와 찹쌀 식탁",
+        "url": "https://doi.nrct.go.th/ListDoi/Download/477917?Resolve_DOI=10.14457%2FCU.the.2011.251"
+      },
+      {
+        "label": "태국 국가연구위원회 자료 · 라프와 볶은 쌀가루",
+        "url": "https://doi.nrct.go.th/ListDoi/Download/157913?Resolve_DOI=10.14457%2FCMU.the.2009.542"
+      },
+      {
+        "label": "농촌진흥청 · 가을 양배추 수확기",
+        "url": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?cntntsNo=270257&menuId=PS00077"
+      },
+      {
+        "label": "미국 식품안전정보 · 다짐육 가열 기준",
+        "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+      },
+      {
+        "label": "미국 외식업협회 · 2026 음식 전망",
+        "url": "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+      }
+    ],
+    "palette": {
+      "from": "#f7eacc",
+      "mid": "#d9ad77",
+      "to": "#ae887c",
+      "ink": "#46312a"
+    }
+  },
+  {
     "slug": "naples-inspired-spinach-pasta-frittata",
     "title": "나폴리풍 시금치 파스타 프리타타",
     "country": "italy",

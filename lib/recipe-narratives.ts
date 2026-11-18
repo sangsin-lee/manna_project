@@ -54,6 +54,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "isan-inspired-pork-larb": narrative(
+    ["이산과 라오스의 다진 고기 요리","라프는 라오스와 태국 북동부 이산에서 다양한 이름과 재료로 만납니다. 이산식에서는 볶아 빻은 쌀이 고기 양념에 고소함을 더합니다."],
+    ["찹쌀밥과 함께 나누는 식탁","이산 음식문화 연구는 산미와 매운맛이 또렷한 라프를 찹쌀밥과 함께 나누는 식탁을 설명합니다. 집에서 만드는 이번 배합에는 일반 밥과 양배추를 곁들입니다."],
+    ["라임의 산미와 볶은 쌀의 고소함","라임과 민트가 한입을 산뜻하게 하고, 굵게 빻은 쌀이 씹힙니다. 양배추 잎에 밥과 고기를 함께 올리면 아삭한 식감이 더해집니다."],
+    [{"label":"태국 국가연구위원회 자료 · 이산 라프와 찹쌀 식탁","url":"https://doi.nrct.go.th/ListDoi/Download/477917?Resolve_DOI=10.14457%2FCU.the.2011.251"},{"label":"태국 국가연구위원회 자료 · 라프와 볶은 쌀가루","url":"https://doi.nrct.go.th/ListDoi/Download/157913?Resolve_DOI=10.14457%2FCMU.the.2009.542"}],
+  ),
   "naples-inspired-spinach-pasta-frittata": narrative(
     ["나폴리에서 면을 부쳐 먹는 법","나폴리에서는 삶은 파스타를 굳혀 부치거나 튀겨 먹습니다. 관광청은 작은 길거리 버전도 소개하며, 이 집밥 버전은 면을 달걀에 섞어 둥글게 부칩니다."],
     ["그라냐노의 건면과 나폴리의 한 끼","캄파니아의 그라냐노 건파스타는 2013년 유럽 지리적 표시를 받았습니다. 나폴리시 급식 자료에도 달걀로 굳힌 마카로니 프리타타가 실려 있습니다."],

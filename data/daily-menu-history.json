@@ -1658,6 +1658,43 @@
         "20cm 팬 사용",
         "달걀 중심 71°C"
       ]
+    },
+    {
+      "date": "2026-11-18",
+      "recipeSlug": "isan-inspired-pork-larb",
+      "title": "이산풍 볶은 쌀가루 돼지고기 라프",
+      "canonicalDish": "Isan pork larb with toasted rice",
+      "aliases": [
+        "Larb moo",
+        "Laap muu",
+        "ลาบหมู",
+        "돼지고기 라프"
+      ],
+      "keyIngredients": [
+        "돼지고기 다짐육",
+        "볶은 찹쌀가루",
+        "라임",
+        "양배추"
+      ],
+      "method": "다짐육을 익혀 라임과 액젓에 버무리고 볶아 빻은 찹쌀을 더해 밥과 양배추로 싸 먹는다.",
+      "selectionReason": "가을 양배추에 라임으로 버무린 돼지고기와 밥을 싸면 아삭함과 볶은 쌀의 고소함을 한입에 즐길 수 있어요.",
+      "videoIdea": "마른 팬에서 찹쌀이 노릇해지는 장면과 볶은 쌀을 빻는 소리를 담고, 마지막에 양배추에 한입을 싸서 보여 주세요.",
+      "duplicateReview": "쏨땀은 파파야를 찧어 무치는 채소 요리이고, 마카오 민치는 다짐육을 감자와 볶는 덮밥이다. 라프는 익힌 다짐육을 라임·허브와 버무리고 볶은 쌀가루로 마무리한다. 최근 이탈리아·일본·베트남에 이어 태국 이산을 골랐다.",
+      "research": {
+        "checkedAt": "2026-11-18",
+        "seasonalNote": "이산 식탁의 찹쌀은 건조해 저장하는 식재료다. 국내 가을 작형 양배추는 10~11월 수확하며 다른 작형도 있다. 미국 외식업협회의 세계 가정식과 지역 식재료 전망을 참고했다.",
+        "sources": [
+          "https://doi.nrct.go.th/ListDoi/Download/477917?Resolve_DOI=10.14457%2FCU.the.2011.251",
+          "https://doi.nrct.go.th/ListDoi/Download/157913?Resolve_DOI=10.14457%2FCMU.the.2009.542",
+          "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?cntntsNo=270257&menuId=PS00077",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "2인분 · 밥 곁들임",
+        "다짐육 71.1°C 이상"
+      ]
     }
   ]
 }

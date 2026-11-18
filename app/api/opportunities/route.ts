@@ -7,7 +7,7 @@ const hour = 3_600_000;
 const freshFor = 6 * hour;
 const keepFor = 24 * hour;
 const unavailable: Discovery = { status: "unavailable", sourceName, sourceUrl, checkedAt: null, opportunities: [] };
-const cachedDiscovery = unstable_cache(discover, ["stay-soban-touraz-public-calls-v1"], { revalidate: freshFor / 1000 });
+const cachedDiscovery = unstable_cache(discover, ["stay-soban-touraz-public-calls-v2"], { revalidate: freshFor / 1000 });
 let retryAfter = 0;
 let lastRead: Discovery | null = null;
 

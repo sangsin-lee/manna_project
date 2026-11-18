@@ -45,6 +45,10 @@ function validDate(day: string) {
 }
 function seoulDay(now: number) { return new Date(now + 9 * 3_600_000).toISOString().slice(0, 10); }
 
+function noticeId(organization: string, title: string, start: string, end: string) {
+  return JSON.stringify([organization, title, start, end].map(value => value.normalize("NFKC").trim().replace(/\s+/g, " ").toLowerCase()));
+}
+
 function detailUrl(href: string) {
   const url = URL.parse(href.replace(/&amp;/g, "&"), sourceUrl);
   if (!url || url.origin !== "https://touraz.kr" || url.pathname !== "/announcementList/pssrpView" || url.username || url.password) return null;
@@ -88,7 +92,8 @@ export function parseListings(html: string, now: number): Candidate[] {
     recognized++;
     if (dates[1] > today || dates[2] < today ||
         !invitation.test(link.title) || !potentialTitle.test(link.title) || ignoreTitle.test(link.title)) continue;
-    const { id, url } = link.target!;
+    const { url } = link.target!;
+    const id = noticeId(state[2], link.title, dates[1], dates[2]);
     result.set(id, { id, url, title: link.title, organization: state[2], startDate: dates[1], endDate: dates[2] });
   }
   if (!recognized) throw new Error("공모의 접수 상태를 읽을 수 없습니다.");
@@ -177,7 +182,7 @@ export function verifiedFallback(now: number): Discovery {
   return {
     status: "stale", checkedAt, sourceName, sourceUrl,
     opportunities: [{
-      id: "i3cP^0MiEThFPKnoPKxg^g==",
+      id: noticeId("한국관광공사", "2027 VISITKOREA 얼라이언스 회원사 모집", "2026-11-18", "2026-12-09"),
       title: "2027 VISITKOREA 얼라이언스 회원사 모집", organization: "한국관광공사",
       url: "https://touraz.kr/announcementList/pssrpView?curPage=1&pssrpSeqEnc=i3cP%5E0MiEThFPKnoPKxg%5Eg%3D%3D",
       startDate: "2026-11-18", endDate: "2026-12-09", deadlineAt: new Date(deadlineAt).toISOString(),

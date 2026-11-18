@@ -58,3 +58,13 @@ test("the manually verified source is always identified as prior information and
   assert.deepEqual(verifiedFallback(checked + 72 * 3_600_000).opportunities, []);
   assert.deepEqual(verifiedFallback(Date.parse(result.opportunities[0].deadlineAt)).opportunities, []);
 });
+
+test("one notice keeps its identity when TourAZ rotates its link", () => {
+  const changed = card("접수", title, href.replace("i3cP", "qGBr"));
+  const original = parseListings(card("접수"), now)[0];
+  const latest = parseListings(changed, now)[0];
+  assert.notEqual(original.url, latest.url);
+  assert.equal(original.id, latest.id);
+  assert.equal(parseListings(card("접수") + changed, now).length, 1);
+  assert.equal(verifiedFallback(now).opportunities[0].id, original.id);
+});

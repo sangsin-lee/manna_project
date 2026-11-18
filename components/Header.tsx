@@ -12,6 +12,7 @@ const navigation = [
   { label: "여행 기록", href: "/journeys/europe" },
   { label: "영상", href: "/videos" },
   { label: "클래스", href: "/classes" },
+  { label: "스테이소반", href: "/stay-soban" },
   { label: "소개", href: "/about" },
 ] as const;
 

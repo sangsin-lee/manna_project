@@ -29,6 +29,15 @@ export default function PrivacyPage() {
 
       <div className="mx-auto max-w-4xl px-6 py-20">
         <div className="space-y-12">
+          <section id="stay-soban">
+            <h2 className="text-2xl font-black">스테이소반 관심등록과 파트너 연결</h2>
+            <p className="mt-4 break-keep leading-8 text-neutral-600">
+              희망 지역·일정·언어·인원·가격과 연락용 이메일을 받아 여행 수요를 확인합니다.
+              연결을 신청하면 조건이 맞는 상대에게 여행 조건을 보여줍니다. 이메일은 양쪽이 각자 주소를 확인하고 해당 연결에 정보 제공을 수락한 뒤에만 상대에게 표시됩니다.
+              접수 관리 링크로 현재 상태를 확인하거나 등록을 철회할 수 있습니다. 생성 후 90일이 지난 접수는 조회·매칭에서 제외하고 서비스 이용 시 정리합니다.
+            </p>
+            <a className="mt-3 inline-flex font-bold underline" href="mailto:manna.sangsin@gmail.com">스테이소반 개인정보 문의 · manna.sangsin@gmail.com</a>
+          </section>
           <section>
             <h2 className="text-2xl font-black">1. 수집 항목</h2>
             <p className="mt-4 break-keep leading-8 text-neutral-600">

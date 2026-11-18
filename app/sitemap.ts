@@ -5,6 +5,11 @@ import { siteConfig } from "@/lib/site";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
+      url: `${siteConfig.url}/stay-soban`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${siteConfig.url}/korea`,
       lastModified: new Date("2026-09-20T00:00:00+09:00"),
       changeFrequency: "weekly",

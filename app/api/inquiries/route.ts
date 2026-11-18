@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { createSupabaseAdmin } from "@/lib/supabaseAdmin";
+import { isReservedSobanName } from "@/lib/soban-store";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -86,6 +87,10 @@ export async function POST(request: Request) {
         { message: "이름은 1자 이상 50자 이하로 입력해 주세요." },
         { status: 400 },
       );
+    }
+
+    if (isReservedSobanName(name)) {
+      return NextResponse.json({ message: "문의자 이름을 다시 입력해 주세요." }, { status: 400 });
     }
 
     if (!phone || !validatePhone(phone) || phone.length > 30) {

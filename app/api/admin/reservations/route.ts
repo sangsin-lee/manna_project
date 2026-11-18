@@ -29,6 +29,7 @@ export async function GET(request: Request) {
     const { data, error } = await createSupabaseAdmin()
       .from("inquiries")
       .select("id,name,phone,preferred_date,guests,message,created_at")
+      .not("message", "like", "SB1.%")
       .order("created_at", { ascending: false })
       .limit(100);
     if (error) throw Error();

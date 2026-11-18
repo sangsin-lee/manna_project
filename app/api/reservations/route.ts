@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { createSupabaseAdmin } from "@/lib/supabaseAdmin";
+import { isReservedSobanName } from "@/lib/soban-store";
 import {
   dateError,
   timeOptions,
@@ -51,6 +52,7 @@ export async function POST(request: Request) {
   if (
     !name ||
     name.length > 50 ||
+    isReservedSobanName(name) ||
     !/^[0-9+()\s-]{8,30}$/.test(phone) ||
     phone.replace(/\D/g, "").length < 8
   )

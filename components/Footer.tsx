@@ -9,6 +9,7 @@ const footerLinks = [
   { label: "세계 레시피", href: "/recipes" },
   { label: "영상", href: "/videos" },
   { label: "클래스", href: "/classes" },
+  { label: "스테이소반 여행·제휴", href: "/stay-soban" },
   { label: "브랜드 소개", href: "/about" },
   { label: "개인정보 처리 안내", href: "/privacy" },
 ] as const;

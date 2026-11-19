@@ -5,6 +5,105 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "chengdu-inspired-mapo-tofu",
+    "title": "청두풍 마파두부와 가을배추찜",
+    "country": "china",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "부드러운 두부를 돼지고기와 두반장 소스에 끓이고, 전분물로 농도를 잡습니다. 달큰하게 찐 가을배추와 밥을 곁들입니다.",
+    "culturalNote": "중국 상무부의 진마파 브랜드 기록은 청두의 작은 식당에서 두부 요리가 알려진 이야기를 전합니다. 이 배합은 돼지고기와 시판 두반장을 쓰는 가정용 응용이며, 배추찜은 한 끼를 위한 곁들임입니다.",
+    "localTable": {
+      "region": "중국 · 쓰촨성 청두와 피두구",
+      "ingredient": "피두의 두반장 · 국내 가을배추",
+      "season": "발효 두반장은 연중 사용 · 국내 가을배추 늦가을 출하",
+      "note": "피두의 두반장은 지역 발효 특산품입니다. 한국에서는 시판 두반장을 쓰며, 11월 김장철에 출하하는 국내 가을배추를 찜으로 곁들입니다."
+    },
+    "cookingTime": 30,
+    "servings": 2,
+    "difficulty": "쉬움",
+    "visualLabel": "CHENGDU / MAPO TOFU",
+    "visualCaption": "두부의 크림빛과 붉은 두반장, 청두 찻집을 떠올리는 격자",
+    "keywords": [
+      "중국",
+      "쓰촨",
+      "청두",
+      "마파두부",
+      "두반장",
+      "배추"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "장보기와 사용량",
+        "items": [
+          "두부 1모 → 300g",
+          "돼지고기 다짐육 1팩 → 150g",
+          "두반장 1병 → 20g",
+          "배추 1포기 또는 손질 팩 → 250g",
+          "대파 1대 → 20g, 다진 마늘 10g",
+          "식용유 10mL, 양조간장 5mL, 설탕 3g, 물 180mL",
+          "감자전분 6g과 물 15mL, 화자오 가루 선택 0.3g",
+          "밥 2공기 → 총 400g"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "배추와 두부 준비",
+        "description": "배추를 씻어 먹기 좋게 썰고 김 오른 찜기에 7~10분 찝니다. 두부는 2cm로 썰어 끓는 물에서 1분 데친 뒤 조심히 건집니다."
+      },
+      {
+        "title": "다짐육과 두반장 볶기",
+        "description": "팬에 기름을 두르고 송송 썬 대파와 마늘을 30초 볶습니다. 다짐육을 넣어 덩어리를 풀며 충분히 익힙니다. 고기 중심이 71.1°C 이상인지 확인하고 두반장을 넣어 약불에서 30초 볶습니다."
+      },
+      {
+        "title": "두부와 끓이기",
+        "description": "물 180mL와 간장, 설탕을 넣고 끓입니다. 두부를 넣어 중약불에서 3~4분 끓이고, 주걱으로 세게 젓는 대신 팬을 가볍게 흔듭니다."
+      },
+      {
+        "title": "전분물로 마무리",
+        "description": "전분과 물을 섞어 조금씩 부으며 농도를 봅니다. 1분 끓여 전분을 익히고, 원하면 화자오 가루를 뿌립니다. 밥과 배추찜을 곁들여 냅니다."
+      }
+    ],
+    "substitutions": [
+      "감자전분 대신 옥수수전분을 같은 양 사용합니다.",
+      "두반장의 염도가 높으면 처음에 15g만 넣고 간장은 맛을 본 뒤 넣습니다."
+    ],
+    "tips": [
+      "부침용보다 찌개용 두부가 부드럽지만 쉽게 부서지므로 넓은 주걱으로 다룹니다.",
+      "화자오는 아주 적게 넣어 향을 확인하고 추가합니다."
+    ],
+    "publishedAt": "2026-11-19",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "중국 상무부 · 진마파두부의 지역과 역사",
+        "url": "https://lzhbwg.mofcom.gov.cn/edi_ecms_web_front/thb/detail/f7ab3a6e7ea0426d8fd104fc7c93df79"
+      },
+      {
+        "label": "주EU 중국대표부 · 청두 피두의 두반장",
+        "url": "https://eu.china-mission.gov.cn/eng/zgggfz/cega/202301/t20230103_11000269.htm"
+      },
+      {
+        "label": "농촌진흥청 · 가을배추 출하기",
+        "url": "https://www.nongsaro.go.kr/mfood/kfi/foodMonth/view?cntntsNo=209115&code=&dtlCode=2&menuId=PS03599&month=11&tabCode=1"
+      },
+      {
+        "label": "미국 식품안전정보 · 다짐육 조리 온도",
+        "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+      },
+      {
+        "label": "미국 외식업협회 · 2026 음식 전망",
+        "url": "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+      }
+    ],
+    "palette": {
+      "from": "#f7e5cb",
+      "mid": "#d58d6e",
+      "to": "#a7685b",
+      "ink": "#482b26"
+    }
+  },
+  {
     "slug": "isan-inspired-pork-larb",
     "title": "이산풍 볶은 쌀가루 돼지고기 라프",
     "country": "thailand",

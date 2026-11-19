@@ -549,7 +549,7 @@ export const countries: Country[] = [
       },
     ],
     storySlugs: ["chinese-regional-spiciness"],
-    recipeSlugs: ["nanchang-inspired-rice-powder-steamed-pork", "hubei-inspired-lotus-root-pork-rib-soup", "mala-xiang-guo"],
+    recipeSlugs: ["chengdu-inspired-mapo-tofu", "nanchang-inspired-rice-powder-steamed-pork", "hubei-inspired-lotus-root-pork-rib-soup", "mala-xiang-guo"],
     updatedAt: "2026-10-19",
     palette: {
       from: "#efd6c0",

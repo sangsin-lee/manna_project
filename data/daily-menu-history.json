@@ -1695,6 +1695,42 @@
         "2인분 · 밥 곁들임",
         "다짐육 71.1°C 이상"
       ]
+    },
+    {
+      "date": "2026-11-19",
+      "recipeSlug": "chengdu-inspired-mapo-tofu",
+      "title": "청두풍 마파두부와 가을배추찜",
+      "canonicalDish": "Chengdu mapo tofu with steamed autumn cabbage",
+      "aliases": [
+        "麻婆豆腐",
+        "Mapo doufu",
+        "마파두부"
+      ],
+      "keyIngredients": [
+        "두부",
+        "돼지고기 다짐육",
+        "두반장",
+        "배추"
+      ],
+      "method": "다짐육과 두반장을 볶아 두부를 짧게 끓이고 전분물로 농도를 잡는다. 찐 배추와 밥을 곁들인다.",
+      "selectionReason": "부드러운 두부에 두반장의 감칠맛을 입히고, 제철 배추를 쪄서 밥과 함께 차리는 따뜻한 저녁입니다.",
+      "videoIdea": "두반장이 기름에 풀리는 장면과 두부 모양을 지키며 팬을 흔드는 장면을 담고, 마지막에 밥 위에 한 숟갈 올립니다.",
+      "duplicateReview": "마라샹궈는 여러 재료를 기름에 볶는 요리이고 두부 버섯전골은 맑은 국물에 끓인다. 이번 요리는 두부를 두반장·다짐육 소스에 끓이고 전분으로 농도를 잡는 청두식 마파두부다. 최근 태국·이탈리아·일본에 이어 중국 쓰촨을 골랐다.",
+      "research": {
+        "checkedAt": "2026-11-19",
+        "seasonalNote": "두반장은 청두 피두의 발효 특산품으로 저장해 연중 사용한다. 국내 가을배추는 10월 말부터 수확하며 11월 중순~12월 중순 김장철에 출하한다. 외식업협회의 지역 재료와 세계 가정식 전망을 참고했다.",
+        "sources": [
+          "https://lzhbwg.mofcom.gov.cn/edi_ecms_web_front/thb/detail/f7ab3a6e7ea0426d8fd104fc7c93df79",
+          "https://eu.china-mission.gov.cn/eng/zgggfz/cega/202301/t20230103_11000269.htm",
+          "https://www.nongsaro.go.kr/mfood/kfi/foodMonth/view?cntntsNo=209115&code=&dtlCode=2&menuId=PS03599&month=11&tabCode=1",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "2인분 · 밥 곁들임",
+        "다짐육 중심 71.1°C"
+      ]
     }
   ]
 }

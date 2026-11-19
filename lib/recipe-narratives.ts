@@ -54,6 +54,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "chengdu-inspired-mapo-tofu": narrative(
+    ["청두 식당에서 전해지는 두부 이야기","중국 상무부의 진마파 브랜드 기록은 1862년 청두 완푸교 곁의 식당 이야기를 전합니다. 이 레시피는 그 조리법을 그대로 재현한 배합이 아닌 가정용 응용입니다."],
+    ["피두의 발효 두반장","청두 피두구의 두반장은 쓰촨 요리에 감칠맛과 매운맛을 보태는 지역 특산품입니다. 발효해 저장하는 양념이라 계절에 관계없이 사용할 수 있습니다."],
+    ["부드러운 두부와 걸쭉한 양념","두부는 부드럽게 부서지고 다짐육이 씹는 맛을 더합니다. 두반장 소스가 밥알에 묻고, 찐 배추의 단맛이 한입 사이를 이어 줍니다."],
+    [{"label":"중국 상무부 · 진마파두부의 지역과 역사","url":"https://lzhbwg.mofcom.gov.cn/edi_ecms_web_front/thb/detail/f7ab3a6e7ea0426d8fd104fc7c93df79"},{"label":"주EU 중국대표부 · 청두 피두의 두반장","url":"https://eu.china-mission.gov.cn/eng/zgggfz/cega/202301/t20230103_11000269.htm"}],
+  ),
   "isan-inspired-pork-larb": narrative(
     ["이산과 라오스의 다진 고기 요리","라프는 라오스와 태국 북동부 이산에서 다양한 이름과 재료로 만납니다. 이산식에서는 볶아 빻은 쌀이 고기 양념에 고소함을 더합니다."],
     ["찹쌀밥과 함께 나누는 식탁","이산 음식문화 연구는 산미와 매운맛이 또렷한 라프를 찹쌀밥과 함께 나누는 식탁을 설명합니다. 집에서 만드는 이번 배합에는 일반 밥과 양배추를 곁들입니다."],

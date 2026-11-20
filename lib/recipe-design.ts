@@ -20,6 +20,7 @@ const places: Record<CountrySlug, [string, RecipePattern]> = {
 
 // Visual interpretations of ingredients and places, not claims of traditional patterns.
 const details: Record<string, { art: RecipeArt; caption: string; place?: string; pattern?: RecipePattern; colors?: [string, string, string, string] }> = {
+  "carolina-inspired-bean-stuffed-sweet-potatoes": { art: "sweet-potato-chicken", caption: "고구마와 콩 양념의 색, 캐롤라이나 들녘에서 따온 결", pattern: "grain" },
   "chengdu-inspired-mapo-tofu": { art: "tofu-hotpot", caption: "두부와 두반장의 색, 청두 찻집에서 따온 격자", pattern: "tiles" },
   "isan-inspired-pork-larb": { art: "minchi", caption: "볶은 쌀의 금빛과 이산 찹쌀 바구니에서 따온 격자", pattern: "tiles" },
   "naples-inspired-spinach-pasta-frittata": { art: "cabbage-jeon", caption: "구운 면의 금빛과 시금치의 초록, 나폴리만에서 따온 물결", pattern: "waves" },

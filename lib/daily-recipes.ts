@@ -5,6 +5,104 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "carolina-inspired-bean-stuffed-sweet-potatoes",
+    "title": "캐롤라이나풍 콩 치즈 군고구마",
+    "country": "usa",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "군고구마를 반으로 갈라 토마토에 끓인 콩을 채우고 치즈를 녹입니다. 달큰한 고구마 속과 짭조름한 콩 양념이 한입에 어우러집니다.",
+    "culturalNote": "노스캐롤라이나는 고구마 산지이며 생산자 협회는 여러 가지 속을 채운 군고구마 요리를 소개합니다. 이 메뉴는 국내 고구마와 통조림 콩으로 만드는 가정용 응용입니다.",
+    "localTable": {
+      "region": "미국 · 노스캐롤라이나",
+      "ingredient": "지역 특산 고구마에서 착안 · 국내 고구마 사용",
+      "season": "노스캐롤라이나 늦여름~초겨울 수확 · 국내 보통재배 9~10월",
+      "note": "노스캐롤라이나 고구마는 수확 뒤 큐어링과 저장으로 연중 유통합니다. 국내 고구마도 가을 수확과 판매 시기가 다를 수 있어, 11월에는 저장 유통품을 활용합니다."
+    },
+    "cookingTime": 70,
+    "servings": 2,
+    "difficulty": "쉬움",
+    "visualLabel": "CAROLINA / STUFFED SWEETPOTATO",
+    "visualCaption": "고구마의 금빛과 붉은 콩 양념, 캐롤라이나 들녘을 떠올리는 결",
+    "keywords": [
+      "미국",
+      "캐롤라이나",
+      "고구마",
+      "콩",
+      "치즈",
+      "군고구마"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "장보기와 사용량",
+        "items": [
+          "큰 고구마 2개 → 총 600g",
+          "익힌 강낭콩 통조림 1개 → 헹궈 물 뺀 콩 240g",
+          "토마토 통조림 1개 → 200g",
+          "양파 1개 → 80g",
+          "체더치즈 1팩 → 60g",
+          "올리브유 10mL, 다진 마늘 5g, 파프리카 가루 2g, 후추 약간",
+          "플레인 요거트 1개 → 60g"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "고구마 통째로 굽기",
+        "description": "오븐을 200°C로 예열합니다. 고구마를 깨끗이 씻어 물기를 닦고 포크로 표면을 여러 곳 찌릅니다. 팬에 놓고 45~60분, 가운데까지 포크가 부드럽게 들어갈 때까지 굽습니다."
+      },
+      {
+        "title": "토마토 콩 소 만들기",
+        "description": "고구마가 익는 동안 팬에 기름을 두르고 다진 양파와 마늘을 3분 볶습니다. 토마토, 파프리카 가루, 헹군 통조림 콩을 넣고 중약불에서 8~10분 끓입니다. 후추로 간합니다."
+      },
+      {
+        "title": "속 채우고 치즈 녹이기",
+        "description": "구운 고구마를 집게로 잡고 길게 가릅니다. 뜨거운 김을 뺀 뒤 포크로 속을 살짝 풀고 콩 소를 나눠 채웁니다. 치즈를 얹고 200°C 오븐에 5분 정도 더 넣어 녹입니다."
+      },
+      {
+        "title": "요거트 곁들여 내기",
+        "description": "한 사람 앞에 고구마 한 개씩 담고 플레인 요거트를 곁들입니다."
+      }
+    ],
+    "substitutions": [
+      "강낭콩 통조림 대신 병아리콩 통조림을 같은 양 씁니다.",
+      "체더 대신 모차렐라를 같은 양 사용할 수 있습니다."
+    ],
+    "tips": [
+      "말린 생콩을 통조림 콩과 같은 조리 시간으로 넣지 않습니다. 이 레시피는 이미 익힌 통조림 제품 기준입니다.",
+      "남은 것은 얕은 용기에 나눠 2시간 안에 냉장하고, 주변 온도가 32°C를 넘으면 1시간 안에 냉장합니다. 다시 먹을 때는 중심까지 74°C로 데웁니다."
+    ],
+    "publishedAt": "2026-11-20",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "노스캐롤라이나 농업부 · 고구마 수확과 연중 유통",
+        "url": "https://blog.ncagr.gov/2019/12/13/not-just-for-holidays-sweet-potatoes-make-it-from-field-to-fork-in-a-simple-process/"
+      },
+      {
+        "label": "노스캐롤라이나 고구마 생산자 협회 · 속 채운 고구마 요리",
+        "url": "https://ncsweetpotatoes.com/recipes/"
+      },
+      {
+        "label": "농촌진흥청 · 국내 고구마 수확과 저장",
+        "url": "https://nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?cntntsNo=30701&menuId=PS00087&sKidofcomdtySeCode=210005&totalSearchYn=Y"
+      },
+      {
+        "label": "미국 식품안전정보 · 조리한 음식 보관",
+        "url": "https://www.foodsafety.gov/blog/leftovers-gift-keeps-giving"
+      },
+      {
+        "label": "미국 외식업협회 · 2026 가정식 전망",
+        "url": "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+      }
+    ],
+    "palette": {
+      "from": "#f7e8ca",
+      "mid": "#dca76e",
+      "to": "#ab776a",
+      "ink": "#4b3028"
+    }
+  },
+  {
     "slug": "chengdu-inspired-mapo-tofu",
     "title": "청두풍 마파두부와 가을배추찜",
     "country": "china",

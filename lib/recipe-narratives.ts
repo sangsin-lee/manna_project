@@ -54,6 +54,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "carolina-inspired-bean-stuffed-sweet-potatoes": narrative(
+    ["노스캐롤라이나의 고구마 식탁","노스캐롤라이나 농업부는 가을에 거둔 고구마가 큐어링과 저장을 거쳐 연중 식탁에 오르는 과정을 소개합니다. 생산자 협회는 속을 채워 먹는 군고구마도 제안합니다."],
+    ["달큰한 작물로 만드는 짭짤한 한 끼","속을 채운 군고구마는 고구마를 식사의 그릇처럼 활용합니다. 이번 배합은 국내 고구마에 콩과 토마토를 채우고 치즈를 녹여 만드는 가정용 응용입니다."],
+    ["부드러운 속과 씹히는 콩","포슬한 군고구마 안에 콩의 씹는 맛이 더해집니다. 토마토와 요거트의 산미가 단맛을 잡고 치즈가 짭조름함을 보탭니다."],
+    [{"label":"노스캐롤라이나 농업부 · 고구마 수확과 연중 유통","url":"https://blog.ncagr.gov/2019/12/13/not-just-for-holidays-sweet-potatoes-make-it-from-field-to-fork-in-a-simple-process/"},{"label":"노스캐롤라이나 고구마 생산자 협회 · 속 채운 고구마 요리","url":"https://ncsweetpotatoes.com/recipes/"}],
+  ),
   "chengdu-inspired-mapo-tofu": narrative(
     ["청두 식당에서 전해지는 두부 이야기","중국 상무부의 진마파 브랜드 기록은 1862년 청두 완푸교 곁의 식당 이야기를 전합니다. 이 레시피는 그 조리법을 그대로 재현한 배합이 아닌 가정용 응용입니다."],
     ["피두의 발효 두반장","청두 피두구의 두반장은 쓰촨 요리에 감칠맛과 매운맛을 보태는 지역 특산품입니다. 발효해 저장하는 양념이라 계절에 관계없이 사용할 수 있습니다."],

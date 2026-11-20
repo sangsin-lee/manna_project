@@ -1731,6 +1731,41 @@
         "2인분 · 밥 곁들임",
         "다짐육 중심 71.1°C"
       ]
+    },
+    {
+      "date": "2026-11-20",
+      "recipeSlug": "carolina-inspired-bean-stuffed-sweet-potatoes",
+      "title": "캐롤라이나풍 콩 치즈 군고구마",
+      "canonicalDish": "Carolina inspired bean and cheese stuffed baked sweetpotato",
+      "aliases": [
+        "Bean stuffed sweetpotatoes",
+        "콩 치즈 스터프트 고구마"
+      ],
+      "keyIngredients": [
+        "고구마",
+        "통조림 강낭콩",
+        "토마토",
+        "체더치즈"
+      ],
+      "method": "고구마를 통째로 구워 가르고 토마토에 익힌 콩을 채운 뒤 치즈를 녹인다.",
+      "selectionReason": "가을에 거둔 고구마에 콩과 치즈를 채워 달큰함과 짭조름함이 어우러지는 든든한 저녁으로 만듭니다.",
+      "videoIdea": "구운 고구마를 갈라 김을 보여 준 뒤 콩을 채우고 치즈가 녹는 장면을 가까이 담습니다.",
+      "duplicateReview": "여주 고구마 닭조림은 잘라 졸이고, 익산 치즈전은 으깨 부친다. 이번에는 통고구마를 구워 껍질을 그릇처럼 쓰고 콩 토마토 소를 채운다. 최근 중국·태국·이탈리아 다음 미국 노스캐롤라이나를 골랐다.",
+      "research": {
+        "checkedAt": "2026-11-20",
+        "seasonalNote": "노스캐롤라이나 농업부는 늦여름~초겨울 수확 뒤 큐어링과 저장으로 연중 공급한다고 안내한다. 국내 보통재배 고구마는 9~10월 수확하며 저장품도 유통한다. 세계 가정식에 대한 외식업협회 전망을 참고했다.",
+        "sources": [
+          "https://blog.ncagr.gov/2019/12/13/not-just-for-holidays-sweet-potatoes-make-it-from-field-to-fork-in-a-simple-process/",
+          "https://ncsweetpotatoes.com/recipes/",
+          "https://nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?cntntsNo=30701&menuId=PS00087&sKidofcomdtySeCode=210005&totalSearchYn=Y",
+          "https://www.foodsafety.gov/blog/leftovers-gift-keeps-giving",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "2인분 · 오븐 200°C",
+        "통조림 콩 사용"
+      ]
     }
   ]
 }

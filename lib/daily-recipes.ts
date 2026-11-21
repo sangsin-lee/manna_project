@@ -5,6 +5,112 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "yangzhou-inspired-lions-head-meatballs",
+    "title": "양저우풍 사자머리 완자 배추탕",
+    "country": "china",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "생강 향을 넣은 돼지고기를 큼직한 완자로 빚어 배추와 잔잔하게 끓입니다. 부드러운 고기와 달큰한 배추 국물에 밥을 곁들이는 저녁입니다.",
+    "culturalNote": "사자머리 완자는 중국 장쑤성 양저우의 화이양 요리로 알려져 있습니다. 이 레시피는 게살과 긴 조리 과정을 생략하고 작은 완자 네 개로 만드는 2인 가정용 응용입니다. 옛 황제와 관련된 탄생 이야기는 전설로 전합니다.",
+    "localTable": {
+      "region": "중국 · 장쑤성 양저우",
+      "ingredient": "지역 완자 요리의 돼지고기 · 국내 가을배추",
+      "season": "현지 곁재료는 계절별 변화 · 국내 배추 11월 김장철 출하",
+      "note": "양저우 요리협회 표준은 사자머리 완자에 곁들이는 재료가 사계절 달라진다고 설명합니다. 여기서는 한국에서 김장철에 출하하는 배추를 쓰며, 이를 양저우 배추의 수확 시기라고 설명하지 않습니다. 배추는 다른 작형으로도 유통합니다."
+    },
+    "cookingTime": 50,
+    "servings": 2,
+    "difficulty": "보통",
+    "visualLabel": "YANGZHOU / SHIZITOU",
+    "visualCaption": "완자의 옅은 갈색과 배추의 크림빛, 양저우 수로를 떠올리는 물결",
+    "keywords": [
+      "중국",
+      "양저우",
+      "장쑤",
+      "사자머리 완자",
+      "시쯔터우",
+      "배추탕"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "장보기 단위와 2인분 사용량",
+        "items": [
+          "돼지고기 다짐육 1팩 → 300g (지방이 조금 섞인 부위)",
+          "배추 손질 팩 또는 1포기 → 300g",
+          "대파 1대 → 30g, 생강 1톨 → 다진 것 8g",
+          "감자전분 1봉 → 12g, 양조간장 15mL, 소금 1g, 후추 약간",
+          "완자에 섞을 찬물 40mL",
+          "무염 닭육수 1팩 → 700mL (또는 물 700mL)",
+          "밥 2공기 → 총 400g",
+          "지름 20cm 안팎 냄비, 식품용 온도계"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "채소와 고기 따로 준비",
+        "description": "배추를 씻어 줄기와 잎을 나누고 4cm 길이로 썹니다. 대파는 잘게 다집니다. 생고기는 씻지 않고 별도 그릇에 담고, 고기를 만진 도구와 손은 씻습니다."
+      },
+      {
+        "title": "완자 네 개 빚기",
+        "description": "차가운 다짐육에 대파 20g, 생강, 전분, 간장 10mL와 후추를 넣습니다. 찬물 40mL를 두 번에 나눠 넣고 한 방향으로 저어 끈기를 냅니다. 젖은 손으로 네 등분해 지름 약 5~6cm의 완자를 빚습니다."
+      },
+      {
+        "title": "국물에서 천천히 익히기",
+        "description": "냄비에 육수와 배추 줄기를 넣어 끓인 뒤 약불로 낮춥니다. 국자로 완자를 하나씩 넣고 처음 3분은 건드리지 않습니다. 뚜껑을 살짝 걸치고 잔잔하게 20분 끓입니다. 국물이 부족하면 뜨거운 물을 조금 보충합니다.",
+        "tip": "팔팔 끓이면 완자가 부서지기 쉬우므로 작은 기포가 올라오는 정도를 유지합니다."
+      },
+      {
+        "title": "배추 잎 넣고 온도 확인",
+        "description": "배추 잎을 넣고 약불로 8~10분 더 끓입니다. 가장 큰 완자 가운데에 온도계를 찔러 71.1°C 이상인지 확인하고 부족하면 더 익힙니다. 남은 간장 5mL와 소금 최대 1g으로 간합니다. 가염 육수라면 맛을 본 뒤 소금은 생략합니다."
+      },
+      {
+        "title": "밥과 함께 차리기",
+        "description": "완자 두 개씩 배추와 국물을 함께 담고 남은 대파를 올립니다. 따뜻한 밥 한 공기를 곁들입니다. 완자를 숟가락으로 나누면 배추 국물에 촉촉한 속이 풀어집니다."
+      }
+    ],
+    "substitutions": [
+      "돼지고기 대신 닭 다짐육을 쓰면 가장 큰 완자 중심을 74°C 이상으로 익힙니다.",
+      "무염 닭육수 대신 물을 쓰고 간은 완성 직전에 조절합니다.",
+      "감자전분 대신 옥수수전분을 같은 양 사용합니다."
+    ],
+    "tips": [
+      "게살이나 밤을 넣는 현지 배합을 그대로 재현한 요리가 아닙니다. 작은 완자로 크기와 조리 시간을 조정한 가정용 응용입니다.",
+      "생 다짐육은 냉장 상태로 준비하고 조리 중 맛보지 않습니다. 완자의 겉색이나 시간만으로 속의 익힘을 판단하지 않습니다.",
+      "물결 표지와 문양은 음식과 지역에서 영감 받은 그림이며 실제 음식 사진이나 전통 문양의 재현이 아닙니다."
+    ],
+    "publishedAt": "2026-11-21",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "베이징시 문화관광국 · 사자머리 완자의 이름과 조리 방식",
+        "url": "https://english.visitbeijing.com.cn/article/47OOONu1vPi"
+      },
+      {
+        "label": "양저우 요리협회 · 삼두연 조리기술 단체표준",
+        "url": "https://www.ttbz.org.cn/Home/PdfFileStreamGet/c3QsMjIyOTQ%28eq%29"
+      },
+      {
+        "label": "농촌진흥청 · 가을배추의 수확과 김장철 출하",
+        "url": "https://www.nongsaro.go.kr/mfood/kfi/foodMonth/view?cntntsNo=209115&code=&dtlCode=2&menuId=PS03599&month=11&tabCode=1"
+      },
+      {
+        "label": "미국 식품안전정보 · 다짐육 중심온도",
+        "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+      },
+      {
+        "label": "미국 외식업협회 · 2026 세계 가정식 전망",
+        "url": "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+      }
+    ],
+    "palette": {
+      "from": "#f7eedb",
+      "mid": "#c4b7a0",
+      "to": "#9eaaaa",
+      "ink": "#3e3934"
+    }
+  },
+  {
     "slug": "carolina-inspired-bean-stuffed-sweet-potatoes",
     "title": "캐롤라이나풍 콩 치즈 군고구마",
     "country": "usa",

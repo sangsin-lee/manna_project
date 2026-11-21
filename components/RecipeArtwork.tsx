@@ -12,6 +12,22 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "lion-head" && <g>
+          <ellipse cx="300" cy="201" rx="133" ry="104" fill="#eee1c6" stroke="#8c9998" strokeWidth="4" />
+          <ellipse cx="300" cy="195" rx="120" ry="88" fill="#d5c4a1" />
+          {[[220,180,-35],[367,172,30],[241,250,-65],[356,251,55]].map(([x,y,angle]) => <g key={x} transform={`translate(${x} ${y}) rotate(${angle})`}>
+            <path d="M-22 33Q-43-12-24-41Q-7-56 0-41Q19-54 30-32Q42 0 18 36Z" fill="#c6ce9a" stroke="#8e9c73" strokeWidth="2" />
+            <path d="M0 32Q-4 0 0-36M0 6l-19-18M0-8l19-16" stroke="#f8efce" strokeWidth="5" strokeLinecap="round" />
+          </g>)}
+          {[[266,160],[334,162],[266,224],[334,226]].map(([x,y]) => <g key={`${x}-${y}`} transform={`translate(${x} ${y})`}>
+            <ellipse cy="10" rx="36" ry="30" fill="#8e6d51" opacity=".24" />
+            <path d="M-34 6Q-40-19-20-30Q0-43 24-27Q41-13 33 12Q21 34-4 33Q-29 30-34 6Z" fill="#bb9570" stroke="#8f7055" strokeWidth="2" />
+            <path d="M-24-10Q-12-27 6-23M-20 15l8 4M15 9l5-7" stroke="#ead0aa" strokeWidth="4" strokeLinecap="round" />
+            <path d="m-8-8 6 4m11 15 5 2" stroke="#71815c" strokeWidth="3" strokeLinecap="round" />
+          </g>)}
+          <path d="M259 87q-12-12 0-24m40 20q-12-12 0-24m40 28q-12-12 0-24" stroke="#9eaaaa" strokeWidth="4" strokeLinecap="round" opacity=".6" />
+        </g>}
+
         {art === "pumpkin-oyaki" && <g>
           <ellipse cx="287" cy="201" rx="137" ry="102" fill="#f6eee4" stroke="#a98d8c" strokeWidth="3"/>
           <ellipse cx="287" cy="201" rx="125" ry="91" stroke="#cab9aa" strokeWidth="2"/>

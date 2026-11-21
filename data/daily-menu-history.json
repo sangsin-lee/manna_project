@@ -1766,6 +1766,43 @@
         "2인분 · 오븐 200°C",
         "통조림 콩 사용"
       ]
+    },
+    {
+      "date": "2026-11-21",
+      "recipeSlug": "yangzhou-inspired-lions-head-meatballs",
+      "title": "양저우풍 사자머리 완자 배추탕",
+      "canonicalDish": "Yangzhou inspired shizitou pork meatballs with napa cabbage",
+      "aliases": [
+        "Shizi tou",
+        "Lion’s head meatballs",
+        "狮子头",
+        "사자머리 완자"
+      ],
+      "keyIngredients": [
+        "돼지고기 다짐육",
+        "배추",
+        "생강",
+        "감자전분"
+      ],
+      "method": "돼지고기를 큼직한 완자로 빚어 맑은 국물에 부드럽게 익히고 배추와 끓여 밥을 곁들인다.",
+      "selectionReason": "김장철 배추의 달큰함과 생강 향 돼지고기 완자를 따뜻한 국물 한 그릇에 담습니다.",
+      "videoIdea": "젖은 손으로 완자를 빚는 장면, 잔잔한 국물에 완자를 넣는 장면과 숟가락으로 반을 가르는 장면을 담습니다.",
+      "duplicateReview": "전체 레시피와 추천 기록을 비교했다. 디트마르셴 양배추롤은 고기 소를 잎으로 싸서 굽고 졸인다. 이번 요리는 잎으로 감싸지 않은 큰 완자를 맑은 국물에 익힌다. 청두 마파두부와도 두부·두반장·전분 소스 조리가 다르다. 전날 미국에서 중국 장쑤의 다른 지역으로 이동한다.",
+      "research": {
+        "checkedAt": "2026-11-21",
+        "seasonalNote": "양저우 요리협회 표준은 사자머리 완자의 곁재료가 사계절 달라진다고 설명한다. 이번 배추는 국내 11월 김장철 출하품을 사용하며 양저우의 수확 달력과 동일시하지 않는다. 2026 세계 가정식 전망은 선정 참고이며 이 음식의 유행을 입증하는 자료는 아니다.",
+        "sources": [
+          "https://english.visitbeijing.com.cn/article/47OOONu1vPi",
+          "https://www.ttbz.org.cn/Home/PdfFileStreamGet/c3QsMjIyOTQ%28eq%29",
+          "https://www.nongsaro.go.kr/mfood/kfi/foodMonth/view?cntntsNo=209115&code=&dtlCode=2&menuId=PS03599&month=11&tabCode=1",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "2인분 · 밥 곁들임",
+        "다짐육 중심 71.1°C"
+      ]
     }
   ]
 }

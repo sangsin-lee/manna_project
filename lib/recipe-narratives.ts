@@ -54,6 +54,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "yangzhou-inspired-lions-head-meatballs": narrative(
+    ["양저우의 큼직한 완자", "사자머리 완자는 장쑤성 양저우의 화이양 요리입니다. 이름은 큼직한 완자의 모습에 빗댄 표현입니다. 옛 황제와 관련된 탄생 이야기는 전설로 전해지므로 확정된 기원으로 소개하지 않습니다."],
+    ["계절마다 달라지는 곁재료", "양저우 요리협회 표준에는 계절에 따라 곁재료가 달라지는 음식으로 설명되어 있습니다. 여기서는 국내 김장철에 출하하는 가을배추를 쓰고, 게살 없이 완자 네 개로 만드는 가정용 조리법으로 바꿨습니다."],
+    ["부드러운 완자와 달큰한 국물", "완자는 끈기를 내어 빚고 잔잔하게 끓여 모양을 지킵니다. 고기 맛이 밴 배추와 생강 향 국물이 어우러지고 밥이 한 끼를 채웁니다. 다짐육의 속은 온도계로 확인해 충분히 익힙니다."],
+    [{"label":"베이징시 문화관광국 · 사자머리 완자의 이름과 조리 방식","url":"https://english.visitbeijing.com.cn/article/47OOONu1vPi"},{"label":"양저우 요리협회 · 삼두연 조리기술 단체표준","url":"https://www.ttbz.org.cn/Home/PdfFileStreamGet/c3QsMjIyOTQ%28eq%29"},{"label":"농촌진흥청 · 가을배추의 수확과 김장철 출하","url":"https://www.nongsaro.go.kr/mfood/kfi/foodMonth/view?cntntsNo=209115&code=&dtlCode=2&menuId=PS03599&month=11&tabCode=1"},{"label":"미국 식품안전정보 · 다짐육 중심온도","url":"https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"},{"label":"미국 외식업협회 · 2026 세계 가정식 전망","url":"https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"}]
+  ),
   "carolina-inspired-bean-stuffed-sweet-potatoes": narrative(
     ["노스캐롤라이나의 고구마 식탁","노스캐롤라이나 농업부는 가을에 거둔 고구마가 큐어링과 저장을 거쳐 연중 식탁에 오르는 과정을 소개합니다. 생산자 협회는 속을 채워 먹는 군고구마도 제안합니다."],
     ["달큰한 작물로 만드는 짭짤한 한 끼","속을 채운 군고구마는 고구마를 식사의 그릇처럼 활용합니다. 이번 배합은 국내 고구마에 콩과 토마토를 채우고 치즈를 녹여 만드는 가정용 응용입니다."],

@@ -5,6 +5,106 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "hiroshima-inspired-layered-okonomiyaki",
+    "title": "히로시마풍 양배추 오코노미야키",
+    "country": "japan",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "얇은 밀전병 위에 채 썬 양배추를 쌓아 익히고, 노릇하게 구운 면과 달걀을 포갭니다. 한 사람 앞에 지름 18cm 한 장씩 차립니다.",
+    "culturalNote": "히로시마의 철판 요리를 국내 가정의 팬 두 개로 옮긴 응용입니다. 돼지고기 대신 달걀과 면, 양배추로 속을 채웁니다.",
+    "localTable": {
+      "region": "일본 · 히로시마현",
+      "ingredient": "히로시마식 철판 요리의 양배추와 중화면",
+      "season": "현지 연중 조리 · 국내 가을재배 양배추 10~11월 수확",
+      "note": "히로시마에서는 철판 요리로 연중 즐깁니다. 국내 가을재배 양배추는 10~11월에 수확하고 다른 작형도 있어 계절을 달리해 유통합니다."
+    },
+    "cookingTime": 40,
+    "servings": 2,
+    "difficulty": "보통",
+    "visualLabel": "HIROSHIMA / OKONOMIYAKI",
+    "visualCaption": "달걀의 금빛과 소스의 밤색, 히로시마만 물결에서 따온 선",
+    "keywords": [
+      "히로시마",
+      "오코노미야키",
+      "양배추",
+      "철판",
+      "야키소바"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "두 장을 위한 장보기와 사용량",
+        "items": [
+          "양배추 ¼통 → 심을 뺀 잎 240g",
+          "익힌 야키소바면 2봉 → 총 240g",
+          "달걀 1팩 → 2개",
+          "중력분 1봉 → 60g, 물 100mL",
+          "오코노미야키 소스 1병 → 35g",
+          "식용유 1병 → 15mL, 김 1봉 → 반 장을 잘게 부수기"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "반죽과 양배추 준비",
+        "description": "밀가루에 물을 나눠 넣어 멍울 없이 풉니다. 양배추는 씻어 물기를 닦고 2~3mm 폭으로 채 썹니다. 반죽과 양배추, 면을 두 몫으로 나눕니다."
+      },
+      {
+        "title": "밀전병 위에 양배추 쌓기",
+        "description": "팬에 기름을 얇게 바르고 중약불에 반죽 한 몫을 한 숟가락 남겨 지름 18cm로 폅니다. 표면이 굳기 시작하면 양배추 한 몫을 쌓고 남긴 반죽을 가늘게 뿌립니다."
+      },
+      {
+        "title": "양배추를 찌듯 굽고 면 익히기",
+        "description": "뒤집개 두 개로 양쪽을 받쳐 양배추가 아래로 가도록 뒤집습니다. 뚜껑을 덮어 약불에서 5~7분, 숨이 죽을 때까지 굽습니다. 다른 팬에 기름을 두르고 면 한 몫을 포장 지침에 따라 데운 뒤 둥글게 모아 밑면이 노릇해질 때까지 2분 굽습니다."
+      },
+      {
+        "title": "면과 달걀 포개기",
+        "description": "전병과 양배추를 그대로 들어 양배추 쪽이 면에 닿게 얹습니다. 빈 팬에 기름을 조금 바르고 달걀 한 개를 깨 노른자를 터뜨려 둥글게 폅니다. 달걀이 굳기 전에 면 쪽을 달걀 위로 옮겨 중약불에서 흰자와 노른자가 모두 굳을 때까지 익힙니다."
+      },
+      {
+        "title": "뒤집고 소스 바르기",
+        "description": "깨끗한 접시를 대고 뒤집어 달걀이 위로 오게 합니다. 소스 절반을 바르고 김을 뿌립니다. 두 번째 장도 같은 순서로 굽습니다."
+      }
+    ],
+    "substitutions": [
+      "야키소바면 대신 익힌 우동면을 같은 무게로 사용하고 물기를 충분히 뺍니다.",
+      "오코노미야키 소스 대신 돈가스 소스를 얇게 바릅니다."
+    ],
+    "tips": [
+      "양배추를 뒤집은 직후 세게 누르면 수분이 빠집니다. 숨이 죽은 뒤 가장자리만 살짝 정돈하세요.",
+      "달걀 껍데기를 만진 뒤 손을 씻고, 덜 익은 달걀이 묻은 도구는 씻은 뒤 완성품에 사용합니다."
+    ],
+    "publishedAt": "2026-11-22",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "일본 농림수산성 · 히로시마 오코노미야키",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2805/index.html"
+      },
+      {
+        "label": "일본 농림수산성 · 히로시마 철판 요리 교실",
+        "url": "https://www.maff.go.jp/e/policies/rural_dev/eatmeetjapan/winners-2020/1.html"
+      },
+      {
+        "label": "농촌진흥청 · 양배추 작형별 수확기",
+        "url": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?cntntsNo=270257&menuId=PS00077"
+      },
+      {
+        "label": "미국 식품안전정보 · 달걀 익힘 기준",
+        "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+      },
+      {
+        "label": "미국 외식업협회 · 2026 음식 동향",
+        "url": "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+      }
+    ],
+    "palette": {
+      "from": "#f9ead2",
+      "mid": "#dfa969",
+      "to": "#b47654",
+      "ink": "#452d27"
+    }
+  },
+  {
     "slug": "yangzhou-inspired-lions-head-meatballs",
     "title": "양저우풍 사자머리 완자 배추탕",
     "country": "china",

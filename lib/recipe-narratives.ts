@@ -54,6 +54,25 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "hiroshima-inspired-layered-okonomiyaki": narrative(
+    ["철판 위에서 자란 히로시마의 한 끼","일본 농림수산성은 전쟁 전 얇은 밀반죽을 구워 팔던 잇센요쇼쿠를 이 음식의 뿌리로 소개합니다. 전후에는 허기를 채우는 한 끼로 자리 잡으면서 고기와 면 같은 재료가 더해졌습니다."],
+    ["양배추를 반죽 위에 쌓는 이유","히로시마에서는 철판에 얇은 반죽을 펴고 채 썬 양배추를 수북하게 얹습니다. 이번에는 집에 있는 팬 두 개를 철판처럼 써서 양배추가 익는 동안 옆에서 면을 굽습니다."],
+    ["칼끝에 드러나는 세 겹","처음에는 달짝지근한 소스와 달걀 맛이 나고, 그 아래에서 노릇한 면과 촉촉한 양배추가 씹힙니다. 가운데를 잘라 면과 채소의 층이 보이도록 따뜻할 때 냅니다."],
+    [
+      {
+        "label": "일본 농림수산성 · 히로시마 오코노미야키",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2805/index.html"
+      },
+      {
+        "label": "일본 농림수산성 · 히로시마 철판 요리 교실",
+        "url": "https://www.maff.go.jp/e/policies/rural_dev/eatmeetjapan/winners-2020/1.html"
+      },
+      {
+        "label": "농촌진흥청 · 양배추 작형별 수확기",
+        "url": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?cntntsNo=270257&menuId=PS00077"
+      }
+    ]
+  ),
   "yangzhou-inspired-lions-head-meatballs": narrative(
     ["양저우의 큼직한 완자", "사자머리 완자는 장쑤성 양저우의 화이양 요리입니다. 이름은 큼직한 완자의 모습에 빗댄 표현입니다. 옛 황제와 관련된 탄생 이야기는 전설로 전해지므로 확정된 기원으로 소개하지 않습니다."],
     ["계절마다 달라지는 곁재료", "양저우 요리협회 표준에는 계절에 따라 곁재료가 달라지는 음식으로 설명되어 있습니다. 여기서는 국내 김장철에 출하하는 가을배추를 쓰고, 게살 없이 완자 네 개로 만드는 가정용 조리법으로 바꿨습니다."],

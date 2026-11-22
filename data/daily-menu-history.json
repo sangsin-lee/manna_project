@@ -1803,6 +1803,42 @@
         "2인분 · 밥 곁들임",
         "다짐육 중심 71.1°C"
       ]
+    },
+    {
+      "date": "2026-11-22",
+      "recipeSlug": "hiroshima-inspired-layered-okonomiyaki",
+      "title": "히로시마풍 양배추 오코노미야키",
+      "canonicalDish": "Hiroshima-style layered okonomiyaki",
+      "aliases": [
+        "広島のお好み焼き",
+        "히로시마식 오코노미야키",
+        "Hiroshima yaki"
+      ],
+      "keyIngredients": [
+        "양배추",
+        "밀가루",
+        "야키소바면",
+        "달걀"
+      ],
+      "method": "얇은 반죽과 채 썬 양배추를 겹쳐 뒤집어 익힌 뒤 구운 면과 달걀을 포갠다.",
+      "selectionReason": "국내 가을 양배추의 단맛과 철판에 눌어붙듯 구운 면의 바삭한 식감을 함께 즐길 수 있습니다.",
+      "videoIdea": "양배추 더미가 낮아지는 모습과 뒤집개로 잘라 드러낸 면·달걀 단면을 담습니다.",
+      "duplicateReview": "일본 소개에 음식 이름만 있으며 개별 레시피는 없었다. 봉평 메밀배추전은 배춧잎과 메밀 반죽을 부치고 나폴리 프리타타는 달걀물에 면을 섞는다. 이번 요리는 밀전병·양배추·볶은 면·달걀을 각각 익혀 포개는 방식이다.",
+      "research": {
+        "checkedAt": "2026-11-22",
+        "seasonalNote": "히로시마에서는 철판 요리로 연중 즐깁니다. 국내 가을재배 양배추는 10~11월에 수확하고 다른 작형도 있어 계절을 달리해 유통합니다. 세계 각지의 친숙한 음식에 주목한 2026 외식업협회 전망도 참고했다.",
+        "sources": [
+          "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2805/index.html",
+          "https://www.maff.go.jp/e/policies/rural_dev/eatmeetjapan/winners-2020/1.html",
+          "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?cntntsNo=270257&menuId=PS00077",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "작은 팬 두 개",
+        "한 장씩 굽기"
+      ]
     }
   ]
 }

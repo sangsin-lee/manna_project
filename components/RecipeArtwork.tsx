@@ -12,6 +12,15 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "aligot" && <g>
+          <ellipse cx="294" cy="221" rx="117" ry="57" fill="#c69f75" opacity=".3"/>
+          <path d="M180 216Q174 189 208 178Q226 149 267 157Q296 162 310 127L347 88L361 97Q327 138 324 171Q352 180 355 205Q356 244 275 252Q208 254 180 216Z" fill="#f4df9e" stroke="#bb9764" strokeWidth="3"/>
+          <path d="M200 212Q252 242 306 209M222 188Q272 202 297 178M303 162Q325 136 339 108" stroke="#fff2c6" strokeWidth="6" strokeLinecap="round"/>
+          <path d="M340 94q-13-12 3-21l18 2 39-35 8 8-39 37q-5 25-29 9Z" fill="#ad7953" stroke="#76513f" strokeWidth="2"/>
+          <path d="M330 242Q375 233 389 185" stroke="#884b38" strokeWidth="35" strokeLinecap="round"/>
+          <path d="M330 238Q369 230 383 185" stroke="#c97e53" strokeWidth="26" strokeLinecap="round"/>
+          <path d="m338 226 8 15m10-27 10 12m1-31 13 8" stroke="#844a35" strokeWidth="4"/>
+        </g>}
         {art === "lion-head" && <g>
           <ellipse cx="300" cy="201" rx="133" ry="104" fill="#eee1c6" stroke="#8c9998" strokeWidth="4" />
           <ellipse cx="300" cy="195" rx="120" ry="88" fill="#d5c4a1" />

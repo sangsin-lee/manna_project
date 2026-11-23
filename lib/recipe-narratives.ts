@@ -54,6 +54,21 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "aubrac-inspired-aligot-sausage": narrative(
+    ["산막에서 먹던 치즈와 감자","오브라크의 생산자 협동조합은 산막에서 일하던 사람들이 신선한 치즈를 빵과 함께 먹다가 18세기에 으깬 감자를 쓰게 되었다고 전합니다. 오늘날에도 가축을 여름 목초지로 올려보내는 축제에서 알리고를 나눕니다."],
+    ["오브라크에서 온 신선한 치즈","현지에서는 숙성 전의 톰 프레슈를 감자에 섞습니다. 1960년 지역 낙농가들이 협동조합을 세우면서 치즈와 알리고를 만드는 기술도 이어졌습니다. 이 가정용 배합은 국내에서 구하기 쉬운 모차렐라를 씁니다."],
+    ["주걱을 들면 보이는 익힘","감자를 먼저 곱게 으깨 두면 치즈가 녹을 때 덩어리 없이 섞입니다. 들어 올린 퓌레가 넓은 띠처럼 이어질 때 한 숟갈 떠서, 가장자리가 노릇한 소시지와 함께 먹습니다."],
+    [
+      {
+        "label": "오브라크 생산자 협동조합 · 알리고와 여름 산지 방목",
+        "url": "https://www.jeune-montagne-aubrac.fr/aligot-aubrac/histoire-aligot/"
+      },
+      {
+        "label": "프랑스 농업부 · 오브라크의 낙농과 알리고",
+        "url": "https://agriculture.gouv.fr/laligot-la-bonne-etoile-de-laubrac"
+      }
+    ]
+  ),
   "hiroshima-inspired-layered-okonomiyaki": narrative(
     ["철판 위에서 자란 히로시마의 한 끼","일본 농림수산성은 전쟁 전 얇은 밀반죽을 구워 팔던 잇센요쇼쿠를 이 음식의 뿌리로 소개합니다. 전후에는 허기를 채우는 한 끼로 자리 잡으면서 고기와 면 같은 재료가 더해졌습니다."],
     ["양배추를 반죽 위에 쌓는 이유","히로시마에서는 철판에 얇은 반죽을 펴고 채 썬 양배추를 수북하게 얹습니다. 이번에는 집에 있는 팬 두 개를 철판처럼 써서 양배추가 익는 동안 옆에서 면을 굽습니다."],

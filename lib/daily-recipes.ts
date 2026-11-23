@@ -5,6 +5,108 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "aubrac-inspired-aligot-sausage",
+    "title": "오브라크풍 감자 알리고와 구운 소시지",
+    "country": "france",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "따뜻한 으깬 감자에 모차렐라를 조금씩 녹여 주걱으로 길게 들어 올립니다. 마늘 향이 은은한 알리고에 구운 소시지를 곁들입니다.",
+    "culturalNote": "현지에서는 숙성 전의 톰 프레슈를 감자에 섞습니다. 1960년 지역 낙농가들이 협동조합을 세우면서 치즈와 알리고를 만드는 기술도 이어졌습니다. 이 가정용 배합은 국내에서 구하기 쉬운 모차렐라를 씁니다.",
+    "localTable": {
+      "region": "프랑스 · 오브라크 고원",
+      "ingredient": "오브라크의 톰 프레슈에서 착안한 모차렐라와 국내 감자",
+      "season": "현지 여름 산지 방목 · 국내 가을감자는 서리 뒤 수확",
+      "note": "오브라크에서는 여름 고지대 방목 때 산막에서 치즈를 만들었고 오늘날 협동조합은 연중 원유를 수집합니다. 한국에서는 서리가 내린 뒤 수확하는 가을감자나 저장 감자를 쓸 수 있습니다."
+    },
+    "cookingTime": 40,
+    "servings": 2,
+    "difficulty": "보통",
+    "visualLabel": "AUBRAC / ALIGOT",
+    "visualCaption": "감자와 치즈의 크림빛, 오브라크 고원의 굽은 능선",
+    "keywords": [
+      "프랑스",
+      "오브라크",
+      "알리고",
+      "감자",
+      "모차렐라",
+      "소시지"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "장보기와 두 사람 분량",
+        "items": [
+          "감자 1봉 → 껍질 벗긴 무게 450g",
+          "저수분 모차렐라 1봉 → 잘게 썬 것 150g",
+          "우유 작은 팩 1개 → 80mL",
+          "버터 1팩 → 15g, 마늘 1통 → 1쪽(5g)",
+          "돼지고기 소시지 1팩 → 2개(총 200g)",
+          "식용유 1병 → 5mL, 소금 1g, 후추 한 꼬집",
+          "소시지 팬에 넣을 물 40mL, 감자가 잠길 만큼의 삶는 물"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "감자와 마늘 삶기",
+        "description": "감자를 3cm 크기로 잘라 마늘과 함께 냄비에 넣습니다. 찬물을 잠길 만큼 붓고 끓어오르면 중불로 줄여 15~20분 삶습니다. 감자 가운데에 포크가 힘들이지 않고 들어가면 물을 버립니다."
+      },
+      {
+        "title": "소시지 굽기",
+        "description": "감자가 익는 동안 팬에 소시지와 물 40mL를 넣고 뚜껑을 덮어 중약불에서 익힙니다. 물이 졸면 기름을 두르고 굴려 겉을 노릇하게 굽습니다. 생 돼지고기 소시지는 가장 굵은 곳의 중심이 71.1°C 이상이 될 때까지 익히고, 가열 완료 제품은 포장 지침에 따라 데웁니다."
+      },
+      {
+        "title": "감자를 곱게 으깨기",
+        "description": "물기를 뺀 감자와 마늘을 따뜻할 때 으깹니다. 버터를 넣고 데운 우유를 조금씩 섞어 매끈한 퓌레를 만듭니다. 우유 한두 숟가락은 마지막 농도 조절용으로 남겨 둡니다."
+      },
+      {
+        "title": "치즈 접어 넣기",
+        "description": "아주 약한 불에 냄비를 올립니다. 모차렐라를 세 번에 나눠 넣고 매번 바닥부터 주걱으로 들어 접습니다. 치즈가 사라지고 퓌레가 한 줄기로 늘어나면 불을 끕니다. 너무 되면 남긴 따뜻한 우유를 한 숟가락씩 섞습니다."
+      },
+      {
+        "title": "따뜻할 때 담기",
+        "description": "맛을 보고 소금과 후추로 간합니다. 데운 접시 두 개에 알리고를 나눠 담고 소시지를 한 개씩 곁들입니다."
+      }
+    ],
+    "substitutions": [
+      "톰 프레슈가 있으면 모차렐라 대신 같은 무게로 넣습니다. 치즈 종류와 수분에 따라 늘어나는 정도가 달라집니다.",
+      "우유의 절반을 무가당 생크림으로 바꾸면 더 진한 맛이 납니다."
+    ],
+    "tips": [
+      "감자는 손으로 으깨면 농도를 조절하기 쉽습니다. 치즈를 넣은 뒤에는 끓이지 말고 녹을 만큼만 데웁니다.",
+      "생 소시지를 만진 집게와 접시는 완성품을 담기 전에 씻습니다."
+    ],
+    "publishedAt": "2026-11-23",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "오브라크 생산자 협동조합 · 알리고와 여름 산지 방목",
+        "url": "https://www.jeune-montagne-aubrac.fr/aligot-aubrac/histoire-aligot/"
+      },
+      {
+        "label": "프랑스 농업부 · 오브라크의 낙농과 알리고",
+        "url": "https://agriculture.gouv.fr/laligot-la-bonne-etoile-de-laubrac"
+      },
+      {
+        "label": "농촌진흥청 · 서리가 내린 뒤 거두는 가을감자",
+        "url": "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=2315"
+      },
+      {
+        "label": "FoodSafety.gov · 다짐육 소시지 중심온도",
+        "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+      },
+      {
+        "label": "미국 외식업협회 · 2026 세계 가정식 전망",
+        "url": "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+      }
+    ],
+    "palette": {
+      "from": "#faf0d3",
+      "mid": "#e3c78b",
+      "to": "#b99276",
+      "ink": "#47372e"
+    }
+  },
+  {
     "slug": "hiroshima-inspired-layered-okonomiyaki",
     "title": "히로시마풍 양배추 오코노미야키",
     "country": "japan",

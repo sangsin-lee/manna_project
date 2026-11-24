@@ -1601,7 +1601,7 @@ export const countries: Country[] = [
       "roman-pasta-simplicity",
       "rome-vatican-food-route",
     ],
-    recipeSlugs: [      "naples-inspired-spinach-pasta-frittata",      "puglia-inspired-broccoli-anchovy-pasta",
+    recipeSlugs: ["teglio-inspired-buckwheat-pizzoccheri", "naples-inspired-spinach-pasta-frittata",      "puglia-inspired-broccoli-anchovy-pasta",
       "verona-inspired-pumpkin-pork-risotto",
       "tuscan-inspired-ribollita",
       "mantua-inspired-pumpkin-gnocchi",

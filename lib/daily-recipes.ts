@@ -5,6 +5,111 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "teglio-inspired-buckwheat-pizzoccheri",
+    "title": "테글리오풍 메밀 손파스타 피초케리",
+    "country": "italy",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "메밀 반죽을 칼로 짧게 썰어 감자와 가을 양배추를 넣은 냄비에 삶습니다. 따뜻한 그릇에 면과 고다를 번갈아 담고 마늘 버터를 끼얹습니다.",
+    "culturalNote": "테글리오에서는 감자와 잎채소를 면과 함께 삶아 건진 뒤 뜨거울 때 치즈를 켜켜이 얹습니다. 이 가정용 배합은 주름양배추와 현지 치즈 대신 국내 가을 양배추와 고다를 쓰고, 반죽을 밀기 쉽도록 밀가루 비율을 높였습니다.",
+    "localTable": {
+      "region": "이탈리아 · 롬바르디아 발텔리나의 테글리오",
+      "ingredient": "테글리오의 메밀 파스타 · 국내 가을 양배추",
+      "season": "현지 계절 채소 활용 · 국내 가을 양배추 10~11월 수확",
+      "note": "테글리오에서는 메밀가루를 반죽하고 철에 따라 양배추나 다른 잎채소를 곁들입니다. 국내 가을재배 양배추의 수확기는 10~11월이며, 다른 작형의 양배추도 연중 유통됩니다."
+    },
+    "cookingTime": 50,
+    "servings": 2,
+    "difficulty": "보통",
+    "visualLabel": "TEGLIO / PIZZOCCHERI",
+    "visualCaption": "메밀 껍질의 회갈색과 버터의 금빛, 발텔리나 산비탈에서 따온 등고선",
+    "keywords": [
+      "이탈리아",
+      "테글리오",
+      "피초케리",
+      "메밀",
+      "양배추"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "두 사람 분량과 구매 단위",
+        "items": [
+          "메밀가루 1봉 → 110g, 중력분 1봉 → 반죽용 70g과 덧가루 5g",
+          "미지근한 물 95~105mL, 삶을 물 2L",
+          "감자 1~2개 → 껍질 벗긴 무게 150g",
+          "양배추 ¼통 → 심을 뺀 잎 160g",
+          "고다치즈 1팩 → 70g, 파르메산 치즈 1통 → 10g",
+          "무염버터 1팩 → 25g, 마늘 1통 → 2쪽(8g)",
+          "소금 1봉 → 삶는 물에 6g"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "반죽해 쉬게 하기",
+        "description": "메밀가루와 중력분 70g에 물 95mL를 넣고 5분간 손으로 눌러 한 덩이로 만듭니다. 부스러지면 남은 물을 한 숟갈씩 더합니다. 덮어서 10분 쉬게 합니다. 생반죽은 맛보지 않습니다."
+      },
+      {
+        "title": "채소와 치즈 손질하기",
+        "description": "감자는 1.5cm 주사위 모양으로, 씻은 양배추는 3cm 폭으로 썹니다. 고다는 얇게 썰고 마늘은 편으로 자릅니다. 큰 냄비에 물 2L와 소금을 넣어 끓입니다."
+      },
+      {
+        "title": "메밀 반죽을 짧게 썰기",
+        "description": "작업대에 덧가루를 얇게 뿌리고 반죽을 두 덩이로 나눠 각각 2mm 두께로 밉니다. 6cm 폭의 띠로 자른 뒤 짧은 변을 따라 7mm 간격으로 썰어 면을 펼쳐 둡니다. 손과 칼, 작업대를 씻습니다."
+      },
+      {
+        "title": "감자와 면 함께 삶기",
+        "description": "끓는 물에 감자를 넣고 4분 뒤 양배추, 다시 2분 뒤 면을 흩어 넣습니다. 물이 다시 끓으면 5~8분 삶습니다. 면을 잘라 가운데까지 고르게 익었고 감자에 포크가 쉽게 들어가는지 확인합니다."
+      },
+      {
+        "title": "치즈를 겹쳐 담고 버터 끼얹기",
+        "description": "면이 익는 동안 작은 팬에 버터와 마늘을 약불로 2~3분 데워 마늘 가장자리가 금빛이 되면 불을 끕니다. 따뜻한 그릇에 건진 면과 채소 절반, 치즈 절반을 차례로 담고 한 번 더 반복합니다. 마늘 버터를 끼얹고 1분 두었다가 따뜻할 때 나눕니다."
+      }
+    ],
+    "substitutions": [
+      "고다 대신 에멘탈을 같은 양 씁니다.",
+      "양배추 대신 근대를 쓰면 줄기는 잘게 썰어 감자와 넣고 잎은 면이 익기 2분 전에 넣습니다."
+    ],
+    "tips": [
+      "반죽이 갈라지면 손에 물을 묻혀 가장자리를 눌러 붙이세요. 덧가루를 과하게 쓰면 면이 더 건조해집니다.",
+      "생밀가루가 완성된 음식에 닿지 않도록 반죽을 썬 도마와 완성 접시를 따로 씁니다."
+    ],
+    "publishedAt": "2026-11-24",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "테글리오 피초케리 아카데미 · 전통 배합과 제철 채소",
+        "url": "https://accademiadelpizzocchero.it/la-ricetta/"
+      },
+      {
+        "label": "테글리오 피초케리 아카데미 · 지역 기록과 식문화",
+        "url": "https://accademiadelpizzocchero.it/storia-e-leggenda/"
+      },
+      {
+        "label": "테글리오 관광 안내 · 메밀 면과 계절 채소",
+        "url": "https://www.teglioturismo.com/en/proposal-detail/traditional-tastes/pizzoccheri/"
+      },
+      {
+        "label": "농촌진흥청 · 양배추 작형별 수확기",
+        "url": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?cntntsNo=270257&menuId=PS00077"
+      },
+      {
+        "label": "미국 FDA · 생밀가루 취급",
+        "url": "https://www.fda.gov/consumers/consumer-updates/flour-raw-food-and-other-safety-facts"
+      },
+      {
+        "label": "미국 외식업협회 · 2026 음식 전망",
+        "url": "https://www.restaurant.org/research-and-media/research/research-reports/whats-hot-food-beverage-trends/"
+      }
+    ],
+    "palette": {
+      "from": "#f5e8d4",
+      "mid": "#ccada2",
+      "to": "#a58f91",
+      "ink": "#473238"
+    }
+  },
+  {
     "slug": "aubrac-inspired-aligot-sausage",
     "title": "오브라크풍 감자 알리고와 구운 소시지",
     "country": "france",

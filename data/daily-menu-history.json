@@ -1875,6 +1875,44 @@
         "감자 으깨기",
         "약불에서 치즈 접기"
       ]
+    },
+    {
+      "date": "2026-11-24",
+      "recipeSlug": "teglio-inspired-buckwheat-pizzoccheri",
+      "title": "테글리오풍 메밀 손파스타 피초케리",
+      "canonicalDish": "Pizzoccheri di Teglio",
+      "aliases": [
+        "Pizzoccheri della Valtellina",
+        "피쪼케리",
+        "발텔리나 메밀 파스타"
+      ],
+      "keyIngredients": [
+        "메밀가루",
+        "밀가루",
+        "양배추",
+        "감자",
+        "치즈"
+      ],
+      "method": "메밀 반죽을 짧고 넓게 썰어 감자·양배추와 삶고, 뜨거운 면과 치즈를 층층이 담아 마늘 버터를 끼얹는다.",
+      "selectionReason": "국내 늦가을 양배추로 테글리오의 메밀 손파스타를 만들어 고소한 면과 달큰한 채소를 함께 맛봅니다.",
+      "videoIdea": "메밀 반죽을 짧은 띠로 자르고 뜨거운 면과 채소 위에 마늘 버터를 끼얹는 순간을 담습니다.",
+      "duplicateReview": "루체른 알프스 마카로니는 마카로니와 크림을 쓰고, 봉평 메밀전은 잎을 반죽에 부친다. 이번에는 손으로 자른 메밀 면을 양배추·감자와 삶고 치즈를 층층이 녹인다. 전날 프랑스 오브라크에서 이탈리아 테글리오로 옮겼다.",
+      "research": {
+        "checkedAt": "2026-11-24",
+        "seasonalNote": "테글리오에서는 메밀가루를 반죽하고 철에 따라 양배추나 다른 잎채소를 곁들입니다. 국내 가을재배 양배추의 수확기는 10~11월이며, 다른 작형의 양배추도 연중 유통됩니다. 2026 외식업협회의 세계 가정식 전망을 참고했다.",
+        "sources": [
+          "https://accademiadelpizzocchero.it/la-ricetta/",
+          "https://accademiadelpizzocchero.it/storia-e-leggenda/",
+          "https://www.teglioturismo.com/en/proposal-detail/traditional-tastes/pizzoccheri/",
+          "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?cntntsNo=270257&menuId=PS00077",
+          "https://www.fda.gov/consumers/consumer-updates/flour-raw-food-and-other-safety-facts",
+          "https://www.restaurant.org/research-and-media/research/research-reports/whats-hot-food-beverage-trends/"
+        ]
+      },
+      "preparationLabels": [
+        "달걀 없는 메밀 반죽",
+        "마늘 버터 마무리"
+      ]
     }
   ]
 }

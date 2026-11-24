@@ -54,6 +54,25 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "teglio-inspired-buckwheat-pizzoccheri": narrative(
+    ["발텔리나 골짜기의 메밀 면","이탈리아 롬바르디아주 테글리오에서는 메밀 반죽을 짧은 띠 모양으로 잘라 피초케리를 만듭니다. 지역 아카데미가 소개하는 19세기 말 기록에는 메밀 음식이 농가의 손님상에도 올랐다는 이야기가 남아 있습니다."],
+    ["한 냄비에서 익는 면과 채소","테글리오에서는 감자와 잎채소를 면과 함께 삶아 건진 뒤 뜨거울 때 치즈를 켜켜이 얹습니다. 이 가정용 배합은 주름양배추와 현지 치즈 대신 국내 가을 양배추와 고다를 쓰고, 반죽을 밀기 쉽도록 밀가루 비율을 높였습니다."],
+    ["면 사이로 녹아드는 치즈","짧고 넓은 면은 씹을수록 메밀 향이 납니다. 포슬한 감자와 부드러운 양배추 사이로 치즈가 녹고, 마지막에 부은 마늘 버터가 면의 거친 표면을 얇게 감쌉니다."],
+    [
+      {
+        "label": "테글리오 피초케리 아카데미 · 전통 배합과 제철 채소",
+        "url": "https://accademiadelpizzocchero.it/la-ricetta/"
+      },
+      {
+        "label": "테글리오 피초케리 아카데미 · 지역 기록과 식문화",
+        "url": "https://accademiadelpizzocchero.it/storia-e-leggenda/"
+      },
+      {
+        "label": "테글리오 관광 안내 · 메밀 면과 계절 채소",
+        "url": "https://www.teglioturismo.com/en/proposal-detail/traditional-tastes/pizzoccheri/"
+      }
+    ]
+  ),
   "aubrac-inspired-aligot-sausage": narrative(
     ["산막에서 먹던 치즈와 감자","오브라크의 생산자 협동조합은 산막에서 일하던 사람들이 신선한 치즈를 빵과 함께 먹다가 18세기에 으깬 감자를 쓰게 되었다고 전합니다. 오늘날에도 가축을 여름 목초지로 올려보내는 축제에서 알리고를 나눕니다."],
     ["오브라크에서 온 신선한 치즈","현지에서는 숙성 전의 톰 프레슈를 감자에 섞습니다. 1960년 지역 낙농가들이 협동조합을 세우면서 치즈와 알리고를 만드는 기술도 이어졌습니다. 이 가정용 배합은 국내에서 구하기 쉬운 모차렐라를 씁니다."],

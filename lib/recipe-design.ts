@@ -20,6 +20,7 @@ const places: Record<CountrySlug, [string, RecipePattern]> = {
 
 // Visual interpretations of ingredients and places, not claims of traditional patterns.
 const details: Record<string, { art: RecipeArt; caption: string; place?: string; pattern?: RecipePattern; colors?: [string, string, string, string] }> = {
+  "teglio-inspired-buckwheat-pizzoccheri": { art: "noodles", pattern: "contours", caption: "메밀의 회갈색과 발텔리나 산비탈을 따라 그린 선" },
   "aubrac-inspired-aligot-sausage": { art: "aligot", pattern: "contours", caption: "감자 퓌레의 크림빛과 오브라크 능선을 따라 그린 선" },
   "hiroshima-inspired-layered-okonomiyaki": { art: "cabbage-jeon", pattern: "waves", caption: "양배추전의 금빛과 소스의 밤색, 히로시마만을 떠올리는 물결" },
   "yangzhou-inspired-lions-head-meatballs": { art: "lion-head", caption: "완자와 배추의 부드러운 색, 양저우 수로에서 영감 받은 물결", place: "중국 · 장쑤성 양저우", pattern: "waves" },

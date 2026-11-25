@@ -54,6 +54,21 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "yau-ma-tei-inspired-claypot-rice": narrative(
+    ["템플 스트리트에서 만나는 솥밥","홍콩 구룡의 야우마테이에서는 템플 스트리트를 걷다 작은 솥에 지은 밥을 만날 수 있습니다. 홍콩관광청은 뽀짜이판을 이 거리에서 맛볼 수 있는 음식으로 소개합니다."],
+    ["서늘한 날 꺼내는 보존육","광둥식 보존육인 랍메이에는 말린 소시지와 절인 고기가 있습니다. 서늘한 계절에 보존육을 쌀 위에 얹어 짓는 식습관이 오늘날 홍콩의 겨울 별미로 이어집니다. 집에서는 익힌 돼지고기 소시지를 써서 짭짤한 맛을 살립니다."],
+    ["한 냄비에 담긴 두 가지 식감","윗밥은 뜸을 들여 촉촉하게 두고 바닥은 얇게 눌립니다. 먹기 직전에 생강 간장을 둘러 섞으면 부드러운 밥알 사이에서 고소한 누룽지가 씹힙니다. 데친 시금치를 곁들여 한입씩 번갈아 먹습니다."],
+    [
+      {
+        "label": "홍콩관광청 · 템플 스트리트의 뽀짜이판",
+        "url": "https://www.discoverhongkong.com/eng/food-and-drink/local-cuisine-to-try-on-temple-street.html"
+      },
+      {
+        "label": "홍콩 식품안전센터 · 겨울 솥밥과 광둥식 보존육",
+        "url": "https://www.cfs.gov.hk/english/multimedia/multimedia_pub/multimedia_pub_fsf_233_03.html"
+      }
+    ]
+  ),
   "teglio-inspired-buckwheat-pizzoccheri": narrative(
     ["발텔리나 골짜기의 메밀 면","이탈리아 롬바르디아주 테글리오에서는 메밀 반죽을 짧은 띠 모양으로 잘라 피초케리를 만듭니다. 지역 아카데미가 소개하는 19세기 말 기록에는 메밀 음식이 농가의 손님상에도 올랐다는 이야기가 남아 있습니다."],
     ["한 냄비에서 익는 면과 채소","테글리오에서는 감자와 잎채소를 면과 함께 삶아 건진 뒤 뜨거울 때 치즈를 켜켜이 얹습니다. 이 가정용 배합은 주름양배추와 현지 치즈 대신 국내 가을 양배추와 고다를 쓰고, 반죽을 밀기 쉽도록 밀가루 비율을 높였습니다."],

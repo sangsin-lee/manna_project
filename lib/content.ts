@@ -658,7 +658,7 @@ export const countries: Country[] = [
       },
     ],
     storySlugs: ["hong-kong-cha-chaan-teng", "hong-kong-macaroni-soup"],
-    recipeSlugs: ["hong-kong-inspired-radish-cake", "hong-kong-macaroni-soup", "hong-kong-milk-tea"],
+    recipeSlugs: ["yau-ma-tei-inspired-claypot-rice", "hong-kong-inspired-radish-cake", "hong-kong-macaroni-soup", "hong-kong-milk-tea"],
     updatedAt: "2026-10-29",
     palette: {
       from: "#ecdac3",

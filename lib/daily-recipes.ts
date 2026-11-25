@@ -5,6 +5,107 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "yau-ma-tei-inspired-claypot-rice",
+    "title": "야우마테이풍 소시지 누룽지밥 뽀짜이판",
+    "country": "hong-kong",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "생강과 소시지를 얹어 지은 밥 아래에 얇은 누룽지를 만듭니다. 촉촉한 윗밥에 간장을 두르고, 바닥에 붙은 밥은 마지막에 숟가락으로 긁어 먹습니다.",
+    "culturalNote": "홍콩의 토기 솥밥에서 착안해 두꺼운 금속 냄비와 시판 가열 소시지로 만드는 가정용 배합입니다. 국내 시금치는 따로 데쳐 밥을 지을 때 물이 늘어나는 것을 막습니다.",
+    "localTable": {
+      "region": "홍콩 · 구룡 야우마테이 템플 스트리트",
+      "ingredient": "광둥식 보존육에서 착안한 돼지고기 소시지 · 국내 시금치",
+      "season": "홍콩의 서늘한 계절 솥밥 · 국내 가을·겨울 노지 시금치",
+      "note": "홍콩에서는 날이 서늘해지면 광둥식 보존육을 얹은 솥밥을 즐깁니다. 국내에서는 가을·겨울 노지 시금치를 곁들일 수 있고, 시설 재배품도 유통됩니다."
+    },
+    "cookingTime": 55,
+    "servings": 2,
+    "difficulty": "보통",
+    "visualLabel": "YAU MA TEI / CLAYPOT RICE",
+    "visualCaption": "솥 가장자리의 호박빛 누룽지와 템플 스트리트의 벽돌빛 격자",
+    "keywords": [
+      "홍콩",
+      "구룡",
+      "야우마테이",
+      "뽀짜이판",
+      "솥밥",
+      "누룽지"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "2인분 장보기와 사용량",
+        "items": [
+          "멥쌀 1봉 → 마른 쌀 180g, 불리는 물 별도, 밥물 220mL",
+          "가열 완료 돼지고기 소시지 1팩 → 140g",
+          "시금치 1단 → 120g, 데칠 물 1L",
+          "생강 1톨 → 6g, 대파 1대 → 15g",
+          "식용유 1병 → 10mL",
+          "양조간장 1병 → 12mL, 설탕 1봉 → 3g, 양념용 물 15mL"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "쌀 불리고 재료 썰기",
+        "description": "쌀을 씻어 물에 20분 불린 뒤 체에 밭칩니다. 소시지는 5mm 두께로 어슷하게 썰고 생강은 가늘게 채 썹니다. 대파는 송송 썹니다."
+      },
+      {
+        "title": "시금치와 간장 준비",
+        "description": "시금치를 씻어 끓는 물에 30~60초 데친 뒤 찬물에 헹궈 물기를 짜고 반으로 자릅니다. 작은 팬에 간장, 설탕, 양념용 물, 생강 절반을 넣고 한소끔 끓여 둡니다."
+      },
+      {
+        "title": "밥 위에 소시지 얹기",
+        "description": "뚜껑이 잘 맞는 두꺼운 금속 냄비 바닥에 기름 5mL를 바릅니다. 쌀과 밥물 220mL를 넣고 중불로 끓입니다. 물이 끓으면 약불로 줄여 뚜껑을 덮고 5분 익힌 다음 소시지와 남은 생강을 펼쳐 얹습니다. 다시 덮어 약불에서 약 8분 익힙니다. 소시지는 포장에 표시된 가열 지침도 따릅니다."
+      },
+      {
+        "title": "바닥을 눌리고 뜸 들이기",
+        "description": "쌀이 부드럽고 물기가 잦아들면 냄비 가장자리로 남은 기름 5mL를 두릅니다. 중약불로 1~2분, 고소한 냄새와 잔잔한 지글거림이 나면 불을 끕니다. 뚜껑을 덮은 채 8분 뜸을 들입니다. 밥알에 단단한 심이 남았다면 먼저 물 1~2큰술을 더해 약불로 익힙니다."
+      },
+      {
+        "title": "생강 간장 둘러 차리기",
+        "description": "뜸이 든 밥에 시금치와 대파를 올립니다. 생강 간장은 절반만 먼저 두르고 맛을 보아 더합니다. 윗밥을 덜고 바닥의 누룽지를 떼어 두 사람에게 나눕니다."
+      }
+    ],
+    "substitutions": [
+      "시금치 대신 청경채 150g을 길게 갈라 데쳐 곁들입니다.",
+      "생 돼지고기 소시지를 쓸 때는 별도 팬에서 중심온도 71.1°C 이상으로 익힌 후 썰어 밥에 얹습니다. 닭고기 소시지는 74°C 이상 익힙니다."
+    ],
+    "tips": [
+      "바닥이 얇은 냄비는 쉽게 타므로 누룽지 단계의 불을 낮추세요. 고소한 향이 나면 바로 불을 끕니다.",
+      "소시지의 염도에 맞춰 양념을 별도로 내면 밥이 짜거나 축축해지는 것을 피할 수 있습니다."
+    ],
+    "publishedAt": "2026-11-25",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "홍콩관광청 · 템플 스트리트의 뽀짜이판",
+        "url": "https://www.discoverhongkong.com/eng/food-and-drink/local-cuisine-to-try-on-temple-street.html"
+      },
+      {
+        "label": "홍콩 식품안전센터 · 겨울 솥밥과 광둥식 보존육",
+        "url": "https://www.cfs.gov.hk/english/multimedia/multimedia_pub/multimedia_pub_fsf_233_03.html"
+      },
+      {
+        "label": "농촌진흥청 · 시금치의 노지·시설 재배",
+        "url": "https://www.nongsaro.go.kr/portal/ps/psb/psby/vodPlay.ps?mvpNo=333"
+      },
+      {
+        "label": "미국 식품안전정보 · 소시지 안전 중심온도",
+        "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+      },
+      {
+        "label": "미국 외식업협회 · 2026 음식 전망",
+        "url": "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+      }
+    ],
+    "palette": {
+      "from": "#f6e6cb",
+      "mid": "#dda87c",
+      "to": "#a66553",
+      "ink": "#412d29"
+    }
+  },
+  {
     "slug": "teglio-inspired-buckwheat-pizzoccheri",
     "title": "테글리오풍 메밀 손파스타 피초케리",
     "country": "italy",

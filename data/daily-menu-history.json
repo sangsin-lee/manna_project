@@ -1913,6 +1913,44 @@
         "달걀 없는 메밀 반죽",
         "마늘 버터 마무리"
       ]
+    },
+    {
+      "date": "2026-11-25",
+      "recipeSlug": "yau-ma-tei-inspired-claypot-rice",
+      "title": "야우마테이풍 소시지 누룽지밥 뽀짜이판",
+      "canonicalDish": "Hong Kong Cantonese preserved sausage claypot rice",
+      "aliases": [
+        "煲仔飯",
+        "煲仔饭",
+        "보자이판",
+        "Claypot rice",
+        "Bo zai fan"
+      ],
+      "keyIngredients": [
+        "쌀",
+        "돼지고기 소시지",
+        "생강",
+        "시금치"
+      ],
+      "method": "두꺼운 냄비에 밥을 짓다가 소시지를 얹고, 가장자리에 기름을 둘러 바닥에 누룽지를 만든 후 뜸 들여 간장을 곁들인다.",
+      "selectionReason": "홍콩 겨울 솥밥의 바삭한 바닥과 촉촉한 윗밥을 살리고 국내 늦가을 시금치를 곁들였습니다.",
+      "videoIdea": "뚜껑을 열어 생강 간장을 두르고 바닥에서 노릇한 누룽지 한 조각을 들어 올립니다.",
+      "duplicateReview": "일본 닭고기 버섯 다키코미고항은 양념 국물에 재료를 함께 넣어 짓는다. 이 요리는 반쯤 익은 밥에 소시지를 얹은 뒤 가장자리에 기름을 둘러 바닥을 굽고, 먹기 직전에 간장을 더한다. 최근 이탈리아·프랑스·일본에서 홍콩 구룡으로 지역을 옮겼다.",
+      "research": {
+        "checkedAt": "2026-11-25",
+        "seasonalNote": "홍콩에서는 날이 서늘해지면 광둥식 보존육을 얹은 솥밥을 즐깁니다. 국내에서는 가을·겨울 노지 시금치를 곁들일 수 있고, 시설 재배품도 유통됩니다. 세계 가정식에 관한 외식업협회 전망을 참고했다.",
+        "sources": [
+          "https://www.discoverhongkong.com/eng/food-and-drink/local-cuisine-to-try-on-temple-street.html",
+          "https://www.cfs.gov.hk/english/multimedia/multimedia_pub/multimedia_pub_fsf_233_03.html",
+          "https://www.nongsaro.go.kr/portal/ps/psb/psby/vodPlay.ps?mvpNo=333",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "쌀 불리기 20분 포함",
+        "두꺼운 냄비 18~20cm"
+      ]
     }
   ]
 }

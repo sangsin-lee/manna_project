@@ -1366,7 +1366,7 @@ export const countries: Country[] = [
       },
     ],
     storySlugs: ["stuttgart-swabian-table", "german-abendbrot-culture"],
-    recipeSlugs: ["holstein-inspired-pear-bean-stew", "dithmarschen-inspired-cabbage-rolls", "bavarian-inspired-mushroom-bread-dumplings", "swabian-inspired-onion-tart", "swabian-maultaschen", "swabian-potato-salad"],
+    recipeSlugs: ["hamburg-inspired-beet-labskaus", "holstein-inspired-pear-bean-stew", "dithmarschen-inspired-cabbage-rolls", "bavarian-inspired-mushroom-bread-dumplings", "swabian-inspired-onion-tart", "swabian-maultaschen", "swabian-potato-salad"],
     updatedAt: "2026-10-16",
     palette: {
       from: "#e7dfcf",

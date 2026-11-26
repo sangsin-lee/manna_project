@@ -12,6 +12,16 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "labskaus" && <g>
+          <path d="M181 213Q172 183 204 165Q220 133 256 141Q283 122 316 147Q351 150 358 184Q378 223 332 242Q235 273 181 213Z" fill="#b96678" stroke="#8a465e" strokeWidth="3"/>
+          <path d="m202 193 16 7m22 29 26-3m34-60 18 5m-30 59 25-8" stroke="#de91a0" strokeWidth="5" strokeLinecap="round"/>
+          <path d="M215 178Q203 158 229 145Q241 121 267 131Q292 116 310 140Q337 158 322 178Q315 201 284 196Q244 212 215 178Z" fill="#fff6dc" stroke="#dbbb89" strokeWidth="3"/>
+          <ellipse cx="268" cy="158" rx="24" ry="19" fill="#e6a834"/>
+          {[[350,185],[359,206],[354,228]].map(([x,y]) => <g key={y} transform={`translate(${x} ${y}) rotate(-22)`}>
+            <ellipse rx="24" ry="10" fill="#abb180" stroke="#747d50" strokeWidth="3"/>
+            <path d="m-10 0 5-2m9 3 6-3" stroke="#e4dcb0" strokeWidth="3"/>
+          </g>)}
+        </g>}
         {art === "aligot" && <g>
           <ellipse cx="294" cy="221" rx="117" ry="57" fill="#c69f75" opacity=".3"/>
           <path d="M180 216Q174 189 208 178Q226 149 267 157Q296 162 310 127L347 88L361 97Q327 138 324 171Q352 180 355 205Q356 244 275 252Q208 254 180 216Z" fill="#f4df9e" stroke="#bb9764" strokeWidth="3"/>

@@ -5,6 +5,103 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "hamburg-inspired-beet-labskaus",
+    "title": "함부르크풍 비트 감자 랍스카우스",
+    "country": "germany",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "잘게 썬 비트를 감자와 따로 삶아 으깨면 감자가 짙은 분홍빛으로 물듭니다. 볶은 고기와 양파를 섞고 달걀프라이와 오이피클을 곁들입니다.",
+    "culturalNote": "함부르크에서는 으깬 감자와 고기에 비트를 섞고 달걀프라이, 오이피클, 돌돌 만 절임 청어를 곁들입니다. 집에서 만들기 쉽도록 이번에는 볶은 소고기 다짐육을 사용하고 곁들임은 달걀과 피클로 꾸렸습니다.",
+    "localTable": {
+      "region": "독일 · 함부르크 항구",
+      "ingredient": "함부르크식 감자·비트 요리와 국내 가을감자",
+      "season": "독일 늦가을 비트와 겨울 저장품 · 국내 서리 뒤 가을감자 수확",
+      "note": "독일산 비트는 12월부터 주로 저장품으로 유통됩니다. 국내 가을감자는 8월에 심어 서리가 내린 뒤 거둡니다. 한국에서 장을 볼 때는 저장 감자와 포장 삶은 비트도 쓸 수 있습니다."
+    },
+    "cookingTime": 40,
+    "servings": 2,
+    "difficulty": "쉬움",
+    "visualLabel": "HAMBURG / LABSKAUS",
+    "visualCaption": "비트의 자줏빛과 노른자의 금빛, 함부르크 항구를 떠올리는 물결",
+    "keywords": [
+      "독일",
+      "함부르크",
+      "랍스카우스",
+      "비트",
+      "감자"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "두 사람 장보기와 사용량",
+        "items": [
+          "감자 1봉 → 껍질 벗긴 것 400g",
+          "비트 1개 → 껍질 벗긴 것 150g",
+          "소고기 다짐육 1팩 → 180g",
+          "양파 1개 → 80g, 달걀 1팩 → 2개",
+          "오이피클 1병 → 피클 60g과 절임 국물 10mL",
+          "식용유 1병 → 10mL, 버터 1팩 → 10g",
+          "소금 1g, 후추 한 꼬집, 감자 삶은 물 40mL"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "비트와 감자 삶기",
+        "description": "비트는 1cm, 감자는 2cm 크기로 잘라 각각 작은 냄비에 넣습니다. 물을 잠길 만큼 붓고 끓기 시작하면 중불에서 비트는 15~20분, 감자는 12~15분 삶습니다. 둘 다 포크가 쉽게 들어갈 때 건지고 감자 삶은 물은 조금 남깁니다."
+      },
+      {
+        "title": "양파와 소고기 볶기",
+        "description": "채소가 익는 동안 양파를 다져 기름 5mL에 3분 볶습니다. 다짐육을 넣고 덩어리를 풀어 볶습니다. 고기를 한데 모아 중심이 71.1°C 이상인지 확인합니다. 생고기를 만진 도구는 씻습니다."
+      },
+      {
+        "title": "비트 물들이기",
+        "description": "물기를 뺀 감자는 버터와 으깹니다. 삶은 비트를 포크로 굵게 으깨 넣고 볶은 고기와 양파를 섞습니다. 약불에서 1~2분 저으며 감자 삶은 물을 조금씩 넣어 숟가락으로 뜰 만큼 농도를 맞춥니다. 피클 국물과 후추로 맛을 내고 소금은 마지막에 조절합니다."
+      },
+      {
+        "title": "달걀과 피클 올리기",
+        "description": "깨끗한 팬에 남은 기름 5mL를 두르고 달걀을 부칩니다. 뚜껑을 덮고 약불에서 흰자와 노른자가 모두 굳을 때까지 익힙니다. 랍스카우스를 두 접시에 나누고 달걀 한 개씩과 얇게 썬 피클을 곁들입니다."
+      }
+    ],
+    "substitutions": [
+      "생비트 대신 무가당 삶은 비트 150g을 잘게 썰어 따뜻하게 데운 뒤 으깨면 냄비 하나를 줄일 수 있습니다.",
+      "익힌 콘비프 통조림 180g으로 다짐육을 대신하면 양파를 먼저 볶고 고기를 부숴 넣어 포장 지침대로 데웁니다. 소금은 맛을 본 뒤 조절합니다."
+    ],
+    "tips": [
+      "감자를 믹서에 갈면 끈적해집니다. 물기를 뺀 뒤 따뜻할 때 포크로 으깨면 포슬한 결이 남습니다.",
+      "피클은 일부만 섞고 나머지는 곁에 두면 뜨거운 감자와 차가운 피클을 함께 맛볼 수 있습니다."
+    ],
+    "publishedAt": "2026-11-26",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "함부르크시 · 선원 음식 랍스카우스",
+        "url": "https://www.hamburg.com/visitors/dine-and-drink/labskaus-1022236"
+      },
+      {
+        "label": "독일 연방영양센터 · 비트의 저장 유통",
+        "url": "https://www.bzfe.de/presse/pressemeldungen-archiv/rote-bete-eine-knolle-mit-charakter"
+      },
+      {
+        "label": "농촌진흥청 · 국내 가을감자 수확",
+        "url": "https://www.rda.go.kr/board/board.do?dataNo=100000812397&mode=updateCnt&prgId=day_farmprmninfoEntry"
+      },
+      {
+        "label": "미국 식품안전정보 · 다짐육과 달걀 익힘",
+        "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+      },
+      {
+        "label": "미국 외식업협회 · 세계 가정식 전망",
+        "url": "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+      }
+    ],
+    "palette": {
+      "from": "#f8e1d7",
+      "mid": "#d99796",
+      "to": "#ab6071",
+      "ink": "#4a2634"
+    }
+  },
+  {
     "slug": "yau-ma-tei-inspired-claypot-rice",
     "title": "야우마테이풍 소시지 누룽지밥 뽀짜이판",
     "country": "hong-kong",

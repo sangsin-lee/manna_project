@@ -54,6 +54,25 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "hamburg-inspired-beet-labskaus": narrative(
+    ["배에서 항구의 식탁으로","독일 북부 함부르크에서는 선원들이 먹던 랍스카우스를 지금도 향토 음식으로 소개합니다. 항해 중 보관하기 좋은 소금에 절인 쇠고기와 감자를 한 접시에 담던 식문화가 배경입니다."],
+    ["분홍빛 감자 옆에 놓이는 것들","함부르크에서는 으깬 감자와 고기에 비트를 섞고 달걀프라이, 오이피클, 돌돌 만 절임 청어를 곁들입니다. 집에서 만들기 쉽도록 이번에는 볶은 소고기 다짐육을 사용하고 곁들임은 달걀과 피클로 꾸렸습니다."],
+    ["포크 한 번에 달라지는 식감","감자는 포슬하게 으깨고 비트는 작은 알갱이를 남깁니다. 비트의 단맛이 밴 감자에 짭짤한 고기와 아삭한 오이피클을 조금씩 얹으면 한입마다 맛이 달라집니다."],
+    [
+      {
+        "label": "함부르크시 · 선원 음식 랍스카우스",
+        "url": "https://www.hamburg.com/visitors/dine-and-drink/labskaus-1022236"
+      },
+      {
+        "label": "독일 연방영양센터 · 비트의 저장 유통",
+        "url": "https://www.bzfe.de/presse/pressemeldungen-archiv/rote-bete-eine-knolle-mit-charakter"
+      },
+      {
+        "label": "농촌진흥청 · 국내 가을감자 수확",
+        "url": "https://www.rda.go.kr/board/board.do?dataNo=100000812397&mode=updateCnt&prgId=day_farmprmninfoEntry"
+      }
+    ]
+  ),
   "yau-ma-tei-inspired-claypot-rice": narrative(
     ["템플 스트리트에서 만나는 솥밥","홍콩 구룡의 야우마테이에서는 템플 스트리트를 걷다 작은 솥에 지은 밥을 만날 수 있습니다. 홍콩관광청은 뽀짜이판을 이 거리에서 맛볼 수 있는 음식으로 소개합니다."],
     ["서늘한 날 꺼내는 보존육","광둥식 보존육인 랍메이에는 말린 소시지와 절인 고기가 있습니다. 서늘한 계절에 보존육을 쌀 위에 얹어 짓는 식습관이 오늘날 홍콩의 겨울 별미로 이어집니다. 집에서는 익힌 돼지고기 소시지를 써서 짭짤한 맛을 살립니다."],

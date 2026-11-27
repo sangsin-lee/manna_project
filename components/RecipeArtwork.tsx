@@ -12,6 +12,17 @@ export default function RecipeArtwork({ design, label, compact = false }: { desi
         <circle cx="300" cy="186" r="117" fill={to} fillOpacity=".18" />
 
 
+        {art === "miso-katsu" && <g>
+          <g stroke="#a8ad76" strokeWidth="5" strokeLinecap="round">
+            {[0,1,2,3,4,5].map(i => <path key={i} d={`M${302+i*9} 168q17-40 46-37m-48 32q41-6 51-27`}/>)}
+          </g>
+          <g transform="rotate(-13 294 200)">
+            <path d="M185 205Q185 164 232 151Q296 134 350 155Q395 176 389 211Q381 245 327 249Q230 262 193 232Z" fill="#d99d51" stroke="#996235" strokeWidth="4"/>
+            <path d="M286 153Q338 143 368 169Q390 187 380 204Q364 219 349 208Q336 195 320 205Q299 217 291 200Q282 184 270 180Z" fill="#804533"/>
+            <path d="m230 160-12 81m51-91-9 99m52-99-7 98m49-89-7 83" stroke="#fff0c7" strokeWidth="6"/>
+            <path d="m202 198 7-5m26-17 8 3m-3 39 8-3m17 18 8-3m40-7 8-4m40-32 7 3" stroke="#9c6738" strokeWidth="3" strokeLinecap="round"/>
+          </g>
+        </g>}
         {art === "labskaus" && <g>
           <path d="M181 213Q172 183 204 165Q220 133 256 141Q283 122 316 147Q351 150 358 184Q378 223 332 242Q235 273 181 213Z" fill="#b96678" stroke="#8a465e" strokeWidth="3"/>
           <path d="m202 193 16 7m22 29 26-3m34-60 18 5m-30 59 25-8" stroke="#de91a0" strokeWidth="5" strokeLinecap="round"/>

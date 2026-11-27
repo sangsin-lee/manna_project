@@ -5,6 +5,103 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "nagoya-inspired-miso-katsu",
+    "title": "나고야풍 미소카츠와 가을 양배추",
+    "country": "japan",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "돼지 등심을 빵가루에 묻혀 노릇하게 튀기고 짙은 미소 소스를 반쪽에만 끼얹습니다. 밥과 가을 양배추채를 곁들여 바삭한 쪽과 소스가 밴 쪽을 번갈아 맛봅니다.",
+    "culturalNote": "아이치현 나고야의 미소카츠를 시판 적미소와 작은 팬으로 만드는 가정용 배합입니다.",
+    "localTable": {
+      "region": "일본 · 아이치현 나고야",
+      "ingredient": "아이치의 콩미소 · 국내 가을 양배추",
+      "season": "현지 숙성 미소는 연중 사용 · 국내 가을 양배추 10~11월 수확",
+      "note": "아이치의 콩미소는 숙성해서 연중 쓰는 양념입니다. 국내 가을재배 양배추는 10~11월에 수확하며 다른 작형도 있어 계절을 달리해 유통됩니다."
+    },
+    "cookingTime": 35,
+    "servings": 2,
+    "difficulty": "보통",
+    "visualLabel": "NAGOYA / MISO KATSU",
+    "visualCaption": "빵가루의 금빛과 미소의 밤색, 나고야 식당의 격자를 떠올리는 표지",
+    "keywords": [
+      "일본",
+      "아이치",
+      "나고야",
+      "미소카츠",
+      "돈카츠",
+      "양배추"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "2인분 장보기와 사용량",
+        "items": [
+          "돼지 통등심 1팩 → 연육하거나 성형하지 않은 1.5cm 두께 2장(총 300g)",
+          "양배추 ¼통 → 160g, 밥 2공기 → 총 360g",
+          "중력분 1봉 → 25g, 달걀 1팩 → 1개, 빵가루 1봉 → 50g",
+          "적미소 1팩 → 25g, 설탕 1봉 → 8g, 물 45mL",
+          "식용유 1병 → 20cm 팬 바닥에 약 5mm(약 120~150mL)",
+          "소금 1g, 후추 한 꼬집, 식품용 온도계"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "양배추채와 미소 소스 준비",
+        "description": "양배추를 씻어 가늘게 채 썰고 물기를 털어 접시에 나눕니다. 팬에 미소와 설탕, 물을 풀어 약불에서 저으며 2분 끓입니다. 숟가락을 얇게 덮을 때 그릇에 덜고 팬을 씻어 물기를 완전히 닦습니다."
+      },
+      {
+        "title": "등심에 빵가루 옷 입히기",
+        "description": "등심 표면의 물기를 닦고 소금·후추를 뿌립니다. 밀가루를 얇게 묻혀 턴 뒤 풀어 놓은 달걀과 빵가루를 차례로 입힙니다. 손으로 가볍게 눌러 붙이고, 생고기와 닿은 가루·달걀은 버립니다."
+      },
+      {
+        "title": "한 장씩 얕게 튀기기",
+        "description": "팬에 기름을 붓고 약 170°C로 데웁니다. 등심 한 장을 몸에서 먼 방향으로 넣어 중불에서 2~3분씩 양면을 굽듯 튀깁니다. 깨끗한 온도계를 옆면으로 넣어 가장 두꺼운 중심이 63°C 이상인지 확인하고 부족하면 더 익힙니다. 두 번째 장도 같은 방법으로 튀깁니다."
+      },
+      {
+        "title": "석쇠에서 쉬게 한 뒤 담기",
+        "description": "각 등심을 깨끗한 석쇠에 올려 최소 3분 둔 뒤 2cm 폭으로 썹니다. 양배추채 옆에 놓고 고기 절반에 미소 소스를 끼얹습니다. 나머지 소스는 따로 내고 따뜻한 밥을 곁들입니다."
+      }
+    ],
+    "substitutions": [
+      "핫초미소가 있으면 적미소 대신 같은 양을 사용하고 물을 조금씩 더해 농도와 짠맛을 맞춥니다.",
+      "빵가루가 없으면 마른 식빵을 굵게 갈아 사용합니다."
+    ],
+    "tips": [
+      "온도와 휴지 기준은 연육하거나 재성형하지 않은 돼지 통등심 기준입니다.",
+      "양배추와 소스를 먼저 준비하고 생고기를 만진 손·집게·도마를 씻습니다. 튀김용 기름에 물이 들어가지 않도록 합니다."
+    ],
+    "publishedAt": "2026-11-27",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "나고야 관광 안내 · 1947년에 문을 연 야바톤과 콩미소",
+        "url": "https://www.nagoya-info.jp/en/gourmet/detail/24/"
+      },
+      {
+        "label": "일본 농림수산성 · 아이치의 지역 요리와 핫초미소",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/areastory/1168/index.html"
+      },
+      {
+        "label": "농촌진흥청 · 가을재배 양배추 수확기",
+        "url": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?cntntsNo=270257&menuId=PS00077"
+      },
+      {
+        "label": "미국 식품안전정보 · 돼지고기 통살의 중심온도와 휴지",
+        "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+      },
+      {
+        "label": "미국 외식업협회 · 2026 세계 가정식 전망",
+        "url": "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+      }
+    ],
+    "palette": {
+      "from": "#f6e5c8",
+      "mid": "#d6a15f",
+      "to": "#965d46",
+      "ink": "#422b22"
+    }
+  },
+  {
     "slug": "hamburg-inspired-beet-labskaus",
     "title": "함부르크풍 비트 감자 랍스카우스",
     "country": "germany",

@@ -54,6 +54,21 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "nagoya-inspired-miso-katsu": narrative(
+    ["나고야의 돈카츠에 미소를 얹다","나고야에서는 빵가루 입힌 돼지고기 튀김에 콩미소 소스를 끼얹습니다. 나고야 관광 안내에 소개된 전문점 야바톤은 1947년에 문을 열어 전후 이 도시의 미소카츠 식문화를 이어 왔습니다."],
+    ["콩미소가 빚는 짙은 맛","아이치현 오카자키의 핫초미소는 이 지역의 대표적인 콩 발효 양념입니다. 집에서는 구하기 쉬운 적미소에 물과 설탕을 조금 넣어 숟가락에서 천천히 흐르는 소스를 만듭니다."],
+    ["소스를 반쪽에만 끼얹는 즐거움","갓 튀긴 빵가루는 결이 살아 있고, 미소가 스민 쪽은 촉촉하고 짭짤합니다. 한 조각에 가늘게 채 친 양배추를 조금 얹으면 아삭한 단맛이 더해집니다."],
+    [
+      {
+        "label": "나고야 관광 안내 · 1947년에 문을 연 야바톤과 콩미소",
+        "url": "https://www.nagoya-info.jp/en/gourmet/detail/24/"
+      },
+      {
+        "label": "일본 농림수산성 · 아이치의 지역 요리와 핫초미소",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/areastory/1168/index.html"
+      }
+    ]
+  ),
   "hamburg-inspired-beet-labskaus": narrative(
     ["배에서 항구의 식탁으로","독일 북부 함부르크에서는 선원들이 먹던 랍스카우스를 지금도 향토 음식으로 소개합니다. 항해 중 보관하기 좋은 소금에 절인 쇠고기와 감자를 한 접시에 담던 식문화가 배경입니다."],
     ["분홍빛 감자 옆에 놓이는 것들","함부르크에서는 으깬 감자와 고기에 비트를 섞고 달걀프라이, 오이피클, 돌돌 만 절임 청어를 곁들입니다. 집에서 만들기 쉽도록 이번에는 볶은 소고기 다짐육을 사용하고 곁들임은 달걀과 피클로 꾸렸습니다."],

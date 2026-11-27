@@ -1988,6 +1988,44 @@
         "생비트부터 40분",
         "달걀프라이 곁들임"
       ]
+    },
+    {
+      "date": "2026-11-27",
+      "recipeSlug": "nagoya-inspired-miso-katsu",
+      "title": "나고야풍 미소카츠와 가을 양배추",
+      "canonicalDish": "Nagoya miso katsu",
+      "aliases": [
+        "味噌カツ",
+        "みそかつ",
+        "미소가츠",
+        "미소 돈카츠",
+        "miso tonkatsu"
+      ],
+      "keyIngredients": [
+        "돼지 등심",
+        "빵가루",
+        "적미소",
+        "양배추"
+      ],
+      "method": "통등심에 밀가루·달걀·빵가루를 입혀 팬에 얕게 튀긴 뒤 단맛을 낸 미소 소스를 끼얹고 양배추채와 밥을 곁들인다.",
+      "selectionReason": "콩미소의 깊은 맛을 입힌 바삭한 등심에 늦가을 양배추채를 곁들여 든든한 저녁을 차립니다.",
+      "videoIdea": "금빛 빵가루 옷을 자르는 소리와 단면, 절반에만 미소 소스를 두르는 모습을 담습니다.",
+      "duplicateReview": "돼지 등심 스테이크는 통살을 직접 굽고 휴지한다. 이번에는 빵가루 옷을 입혀 얕은 기름에 튀기는 돈카츠이며 기존 돈카츠 레시피가 없다. 양배추 오코노미야키는 반죽과 채소·면을 겹쳐 굽는다.",
+      "research": {
+        "checkedAt": "2026-11-27",
+        "seasonalNote": "아이치의 콩미소는 숙성해서 연중 쓰는 양념입니다. 국내 가을재배 양배추는 10~11월에 수확하며 다른 작형도 있어 계절을 달리해 유통됩니다. 세계 각지의 가정식에 주목한 외식업협회 전망을 참고했습니다.",
+        "sources": [
+          "https://www.nagoya-info.jp/en/gourmet/detail/24/",
+          "https://www.maff.go.jp/e/policies/market/k_ryouri/areastory/1168/index.html",
+          "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?cntntsNo=270257&menuId=PS00077",
+          "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "https://restaurant.org/education-and-resources/resource-library/what%E2%80%99s-hot-in-2026-comfort-health-and-value/"
+        ]
+      },
+      "preparationLabels": [
+        "통등심 두 장",
+        "중심 63°C · 3분 휴지"
+      ]
     }
   ]
 }

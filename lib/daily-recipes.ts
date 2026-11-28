@@ -5,6 +5,97 @@ import { alpineMacaroniSources, barleySoupSources, bavarianDumplingSources, buck
 // Append new dinners here; previous recipe URLs remain available.
 export const dailyRecipes: Recipe[] = [
   {
+    "slug": "new-orleans-red-beans-and-rice",
+    "title": "뉴올리언스식 붉은콩 스튜와 햅쌀밥",
+    "country": "usa",
+    "category": "main",
+    "experienceStatus": "researched",
+    "summary": "소시지의 노릇한 단면에 양파와 피망의 단맛을 더합니다. 붉은콩 몇 숟갈을 냄비 벽에 눌러 으깨면 밥알 사이로 스미는 걸쭉한 국물이 생깁니다.",
+    "culturalNote": "뉴올리언스의 월요일 콩 요리를 통조림 강낭콩과 국내 쌀밥으로 30분에 차리는 가정용 응용입니다.",
+    "localTable": {
+      "region": "미국 · 루이지애나주 뉴올리언스",
+      "ingredient": "루이지애나의 쌀 · 붉은 강낭콩",
+      "season": "현지 첫 벼 수확 7~8월 · 국내 가을 햅쌀",
+      "note": "루이지애나 남서부의 첫 벼 수확은 보통 7~8월입니다. 한국에서는 가을에 거둔 쌀을 쓰고, 다른 계절에는 저장 쌀이나 즉석밥으로 같은 한 끼를 차릴 수 있습니다."
+    },
+    "cookingTime": 30,
+    "servings": 2,
+    "difficulty": "쉬움",
+    "visualLabel": "NEW ORLEANS / RED BEANS AND RICE",
+    "visualCaption": "붉은콩과 쌀밥의 색, 미시시피강에서 따온 물결",
+    "keywords": [
+      "루이지애나",
+      "뉴올리언스",
+      "크리올",
+      "강낭콩",
+      "햅쌀"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "2인분 장보기와 사용량",
+        "items": [
+          "완숙 붉은 강낭콩 통조림 1캔(약 400g) → 물기를 뺀 콩 240g",
+          "완전히 익힌 훈제 소시지 1팩 → 120g, 따뜻한 밥 2공기 → 360g",
+          "양파 1개 → 80g, 청피망 1개 → 60g, 셀러리 1봉 → 줄기 40g",
+          "마늘 1통 → 2쪽, 식용유 1병 → 1작은술, 물 250mL",
+          "말린 타임 1병 → ¼작은술, 후추 1병 → 한 꼬집"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "콩을 헹구고 향채 썰기",
+        "description": "완숙 강낭콩을 체에 담아 헹굽니다. 씻은 양파·피망·셀러리를 1cm로 썰고 마늘은 다집니다. 소시지는 5mm 두께로 동그랗게 썹니다."
+      },
+      {
+        "title": "소시지를 굽고 채소 볶기",
+        "description": "깊은 팬에 기름을 두르고 중불에서 소시지를 3분 굽습니다. 양파·피망·셀러리를 보태 5분간 저어 양파가 투명해지면 마늘과 타임을 넣고 30초 더 볶습니다."
+      },
+      {
+        "title": "콩을 눌러 국물 농도 잡기",
+        "description": "콩과 물을 붓고 끓으면 중약불로 낮춰 뚜껑을 열고 10분 끓입니다. 콩의 ⅓을 냄비 벽에 눌러 으깬 뒤 바닥을 저으며 3분 더 끓입니다. 너무 되직하면 물을 한 숟갈씩 더합니다."
+      },
+      {
+        "title": "밥 둘레에 스튜 담기",
+        "description": "후추로 마무리하고 맛을 봅니다. 따뜻한 밥을 두 그릇 가운데에 담고 가장자리로 스튜를 부어 콩과 밥을 한 숟갈에 뜹니다."
+      }
+    ],
+    "substitutions": [
+      "청피망 대신 빨간 파프리카 60g을 쓰면 단맛이 조금 더 납니다.",
+      "햅쌀밥 대신 즉석밥도 좋습니다. 이 조리 시간은 완숙 통조림콩 기준이므로 마른 강낭콩은 바로 넣지 마세요."
+    ],
+    "tips": [
+      "밥 짓는 시간은 별도입니다. 소시지 간이 제품마다 달라 마지막에 맛을 보세요.",
+      "남은 밥과 스튜는 얕은 용기에 나누어 2시간 안에 냉장하고, 다시 먹을 때 중심까지 74°C로 데웁니다."
+    ],
+    "publishedAt": "2026-11-28",
+    "relatedStorySlugs": [],
+    "sources": [
+      {
+        "label": "뉴올리언스 관광청 · 레드 빈스 앤 라이스",
+        "url": "https://www.neworleans.com/restaurants/traditional-new-orleans-foods/red-beans-and-rice/"
+      },
+      {
+        "label": "루이지애나주립대 농업센터 · 남서부 벼 수확기",
+        "url": "https://www.lsuagcenter.com/nr/rdonlyres/4f633421-ec5c-4bf6-b3d6-5889bd117f83/44934/ricecrawfishrotationstaffreport200804.pdf"
+      },
+      {
+        "label": "FoodSafety.gov · 남은 음식 보관과 재가열",
+        "url": "https://www.foodsafety.gov/print/pdf/node/23?id="
+      },
+      {
+        "label": "미국 외식업협회 · 2026년 가정식과 가치 소비 전망",
+        "url": "https://www.restaurant.org/research-and-media/research/research-reports/whats-hot-food-beverage-trends"
+      }
+    ],
+    "palette": {
+      "from": "#f5dac0",
+      "mid": "#c88061",
+      "to": "#803c43",
+      "ink": "#362024"
+    }
+  },
+  {
     "slug": "nagoya-inspired-miso-katsu",
     "title": "나고야풍 미소카츠와 가을 양배추",
     "country": "japan",

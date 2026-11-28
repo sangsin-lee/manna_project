@@ -2026,6 +2026,41 @@
         "통등심 두 장",
         "중심 63°C · 3분 휴지"
       ]
+    },
+    {
+      "date": "2026-11-28",
+      "recipeSlug": "new-orleans-red-beans-and-rice",
+      "title": "뉴올리언스식 붉은콩 스튜와 햅쌀밥",
+      "canonicalDish": "New Orleans red beans and rice",
+      "aliases": [
+        "레드 빈스 앤 라이스",
+        "Creole red beans and rice"
+      ],
+      "keyIngredients": [
+        "붉은 강낭콩",
+        "쌀밥",
+        "훈제 소시지",
+        "셀러리",
+        "피망"
+      ],
+      "method": "향채와 소시지를 볶고 익힌 콩을 끓여 일부를 으깬 뒤 따로 지은 밥에 곁들인다.",
+      "selectionReason": "붉은콩을 으깨 만든 걸쭉한 국물이 가을 햅쌀밥 한 술에 고루 배어듭니다.",
+      "videoIdea": "냄비 벽에 콩을 눌러 으깨고 흰밥 둘레로 자줏빛 스튜를 붓는 모습을 담습니다.",
+      "duplicateReview": "캐롤라이나 메뉴는 구운 고구마에 콩소를 채우고, 치폴레 볼은 닭과 데운 콩을 따로 얹습니다. 새우 에투페는 루로 농도를 내지만 이 스튜는 강낭콩 자체를 으깨 걸쭉하게 만듭니다.",
+      "research": {
+        "checkedAt": "2026-11-28",
+        "seasonalNote": "루이지애나 남서부의 첫 벼 수확은 보통 7~8월입니다. 한국에서는 가을에 거둔 쌀을 쓰고, 다른 계절에는 저장 쌀이나 즉석밥으로 같은 한 끼를 차릴 수 있습니다.",
+        "sources": [
+          "https://www.neworleans.com/restaurants/traditional-new-orleans-foods/red-beans-and-rice/",
+          "https://www.lsuagcenter.com/nr/rdonlyres/4f633421-ec5c-4bf6-b3d6-5889bd117f83/44934/ricecrawfishrotationstaffreport200804.pdf",
+          "https://www.foodsafety.gov/print/pdf/node/23?id=",
+          "https://www.restaurant.org/research-and-media/research/research-reports/whats-hot-food-beverage-trends"
+        ]
+      },
+      "preparationLabels": [
+        "완숙 통조림콩 사용",
+        "밥 준비 기준 30분"
+      ]
     }
   ]
 }

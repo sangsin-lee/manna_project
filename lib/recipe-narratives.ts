@@ -54,6 +54,12 @@ const references = {
 // Every published recipe has an individually written opening. A new recipe can
 // still render its existing culturalNote until its sourced narrative is added.
 export const recipeNarratives: Record<string, RecipeNarrative> = {
+  "new-orleans-red-beans-and-rice": narrative(
+    ["빨래하던 월요일의 냄비","뉴올리언스에서는 월요일에 빨래를 하는 동안 붉은콩 냄비를 약한 불에 올려 두곤 했습니다. 손이 바쁜 날에도 천천히 익힐 수 있는 음식이어서 오늘날까지 월요일 식탁과 식당 메뉴에 남아 있습니다."],
+    ["집집마다 다른 돼지고기 한 조각","어떤 집은 햄 뼈를, 어떤 집은 소시지를 넣어 콩에 짭짤한 맛을 냅니다. 여기서는 완숙 콩과 훈제 소시지를 써서 오래 끓이는 과정을 줄이고 양파·피망·셀러리를 충분히 볶아 향을 냅니다."],
+    ["한 냄비 안의 두 가지 콩 식감","냄비 벽에 누른 콩은 국물에 풀려 밥알을 감싸고, 남겨 둔 통콩은 껍질이 톡 터집니다. 그 사이에서 구운 소시지 가장자리가 씹히도록 얇게 썹니다."],
+    [{"label":"뉴올리언스 관광청 · 레드 빈스 앤 라이스","url":"https://www.neworleans.com/restaurants/traditional-new-orleans-foods/red-beans-and-rice/"},{"label":"루이지애나주립대 농업센터 · 남서부 벼 수확기","url":"https://www.lsuagcenter.com/nr/rdonlyres/4f633421-ec5c-4bf6-b3d6-5889bd117f83/44934/ricecrawfishrotationstaffreport200804.pdf"}],
+  ),
   "nagoya-inspired-miso-katsu": narrative(
     ["나고야의 돈카츠에 미소를 얹다","나고야에서는 빵가루 입힌 돼지고기 튀김에 콩미소 소스를 끼얹습니다. 나고야 관광 안내에 소개된 전문점 야바톤은 1947년에 문을 열어 전후 이 도시의 미소카츠 식문화를 이어 왔습니다."],
     ["콩미소가 빚는 짙은 맛","아이치현 오카자키의 핫초미소는 이 지역의 대표적인 콩 발효 양념입니다. 집에서는 구하기 쉬운 적미소에 물과 설탕을 조금 넣어 숟가락에서 천천히 흐르는 소스를 만듭니다."],
